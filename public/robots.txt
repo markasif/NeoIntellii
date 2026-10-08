@@ -1,0 +1,92 @@
+# robots.txt for https://neointelli.com/
+# SEO + GEO/AI discoverability policy
+#
+# Search crawlers (Googlebot, Bingbot) and answer-engine crawlers
+# (OAI-SearchBot, Claude-SearchBot, PerplexityBot) must stay allowed.
+# Training crawlers (GPTBot, ClaudeBot, CCBot, Google-Extended) are listed
+# separately below so the training preference can be changed on its own;
+# the current company policy allows them. Do not block search or answer
+# crawlers at the CDN or WAF layer either.
+# Machine-readable site summary: https://neointelli.com/llms.txt
+
+User-agent: *
+Allow: /
+
+# Restrict non-public/system areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /auth/
+Disallow: /internal/
+Disallow: /tmp/
+Disallow: /build/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Explicitly allow major search and AI crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+Sitemap: https://neointelli.com/sitemap.xml

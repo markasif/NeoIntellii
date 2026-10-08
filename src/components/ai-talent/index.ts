@@ -1,0 +1,13 @@
+export { default as AiTalentPageLayout, talentBookingUrl } from "./AiTalentPageLayout";
+export { default as AiTalentHero } from "./AiTalentHero";
+export { default as AiTalentSubnav } from "./AiTalentSubnav";
+export { default as AiTalentCTA } from "./AiTalentCTA";
+export { default as RelatedAiTalentServices } from "./RelatedAiTalentServices";
+export { default as RoleProfiles } from "./RoleProfiles";
+export { default as RoleMatrix } from "./RoleMatrix";
+export { default as HiringPathCards } from "./HiringPathCards";
+export { default as ValidationRoadmap } from "./ValidationRoadmap";
+export { default as ExecutiveSearchFlow } from "./ExecutiveSearchFlow";
+export { default as ReskillingPathwayCards } from "./ReskillingPathwayCards";
+export { default as ReskillingLifecycleFlow } from "./ReskillingLifecycleFlow";
+export { default as SpecialistHiringMosaic } from "./SpecialistHiringMosaic";

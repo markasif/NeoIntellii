@@ -1,0 +1,125 @@
+# NeoIntelli
+
+> AI GCC Operating Partner in India. NeoIntelli designs, builds, hires, enables, operates and scales AI Global Capability Centers (GCCs) in India for companies headquartered in the US, the UK and Europe. Start with an AI Micro GCC of one squad, build a full capability center, or transform an existing GCC so AI adoption turns into measurable business value.
+
+Headquarters: Bengaluru, Karnataka, India
+Contact: reachus@neointelli.com
+LinkedIn: https://in.linkedin.com/company/neointelli
+
+One AI GCC. Multiple operating engines: AI Advisory & GCC Design, GCC Setup & Operations, Recruitment Hub + NeoHireX Hiring OS, People & HR Operations, Workspace, IT & Security, AI Infrastructure & GPU, Data, GenAI & AI Engineering, MLOps, AgentOps & AI Governance, and Scale, BOT & Ownership (Managed, EOR-first, Build-Operate-Transfer, Captive).
+
+## AI Engineering
+
+NeoIntelli designs and engineers production AI systems across Generative AI, Agentic AI, machine learning and data, from proof of value through production to permanent capability. This is a different question from AI GCC: AI Engineering asks whether NeoIntelli can design and build an AI capability for a company; AI GCC asks what capabilities an India capability center should own.
+
+- [Enterprise AI Engineering](https://neointelli.com/services/ai-engineering) - Enterprise AI engineering overview: what AI engineering is, the three kinds of AI, the proof of value to production to capability lifecycle, build/buy/integrate decisions
+- [Generative & Agentic AI](https://neointelli.com/services/ai-engineering/generative-agentic-ai) - Generative and Agentic AI engineering: enterprise RAG, copilots, agents, tool calling, MCP where relevant, evaluation, guardrails, human escalation
+- [Applied AI & Machine Learning](https://neointelli.com/services/ai-engineering/applied-ai-ml) - Applied AI and machine learning: forecasting, prediction, optimization, recommendation, anomaly detection, computer vision, NLP, ML evaluation
+- [AI Data Engineering](https://neointelli.com/services/ai-engineering/data-engineering) - AI-ready data engineering: pipelines, lakehouse, governed data products, document pipelines, vector and hybrid retrieval, evaluation datasets
+- [AI Product Engineering](https://neointelli.com/services/ai-engineering/ai-product-engineering) - AI product engineering: AI-native products, AI features in SaaS, copilots, semantic search, recommendations, AI UX, cost per interaction
+- [AI Agents & Automation](https://neointelli.com/services/ai-engineering/ai-agents-automation) - Enterprise AI agents and workflow automation: deterministic, AI-assisted and agentic layers, permissions, human-in-the-loop, AgentOps
+- [MLOps, LLMOps & AgentOps](https://neointelli.com/services/ai-engineering/mlops-llmops-agentops) - Production MLOps, LLMOps and AgentOps: versioning, evaluation gates, deployment, tracing, observability, rollback, AI FinOps
+- [AI Evaluation & Assurance](https://neointelli.com/services/ai-engineering/ai-evaluation-assurance) - AI evaluation and assurance: golden datasets, RAG and agent evaluation, groundedness, red teaming, production monitoring
+
+## AI GCC
+
+- [AI GCC in India](https://neointelli.com/services/ai-gcc) - Hub page: what an AI GCC is, why India, three ways to start, the operating engines, ownership models, existing GCC transformation
+- [AI Micro GCC](https://neointelli.com/services/micro-gcc) - Lean captive model of 8 to 50 people; the most common starting point, with a path to your own GCC
+- [AI Advisory](https://neointelli.com/services/ai-gcc/ai-advisory-strategy) - AI maturity, GCC mandate, use-case portfolio, operating model, talent architecture, compute direction, responsible AI, value roadmap
+- [AI GCC Setup & Operations](https://neointelli.com/services/ai-gcc/setup-operations) - Entity coordination, Hiring OS, HR and payroll, workspace, IT and security, cloud and GPU, AI platform, governance, BOT and captive transition, responsibility table
+- [Generative & Agentic AI](https://neointelli.com/services/ai-gcc/generative-ai) - Enterprise RAG, copilots, agentic AI, model adaptation, evaluation, production engineering, AI economics
+- [Data Engineering](https://neointelli.com/services/ai-gcc/data-engineering) - Data platform, batch and streaming, AI-ready data products, RAG and vector foundation, evaluation datasets, governance and lineage, data FinOps
+- [MLOps, LLMOps & AgentOps](https://neointelli.com/services/ai-gcc/mlops) - Model, prompt and agent lifecycle, CI/CD, continuous evaluation, observability, reliability, AI FinOps, governance integration
+- [AI Governance & Responsible AI](https://neointelli.com/services/ai-gcc/responsible-ai) - AI inventory, risk classification, policy and controls, model and agent governance, evaluation and red teaming, third-party AI risk, incident management, board and audit reporting
+- [AI Infrastructure & GPU](https://neointelli.com/services/ai-gcc/ai-infrastructure-gpu) - Workload and capacity planning, cloud, reserved, dedicated and hybrid GPU, development, training and inference environments, AI FinOps
+
+## AI Delivery Teams
+
+NeoIntelli provides AI execution capacity as embedded engineering teams that work inside the client's roadmap, repositories and delivery cadence. Four engagement models sit under one category. Team configurations (GenAI and Agentic AI, applied ML, data, production AI, AI product, AI evaluation) are shapes of these models rather than separate services.
+
+- [AI Delivery Teams](https://neointelli.com/services/ai-delivery-teams) - Category page: dedicated teams, delivery pods, forward-deployed engineers, build and transfer, plus a model-selection framework
+- [Dedicated AI Engineering Team](https://neointelli.com/services/ai-delivery-teams/dedicated-ai-engineering-team) - A stable AI engineering team aligned to one ongoing client roadmap
+- [AI Delivery Pod](https://neointelli.com/services/ai-delivery-teams/ai-delivery-pod) - A cross-functional unit organised around one defined AI outcome, with a written pod charter
+- [Forward-Deployed AI Engineers](https://neointelli.com/services/ai-delivery-teams/forward-deployed-ai-engineers) - Engineers embedded in client product, engineering and business environments to move AI from pilot to production
+- [AI Team Build & Transfer](https://neointelli.com/services/ai-delivery-teams/ai-team-transfer) - Deliver now, then transfer knowledge and ownership to an internal team, Micro GCC or AI GCC
+
+## AI Talent
+
+Technically validated AI talent: specialist recruiters, the NeoHireX Hiring OS (AI screening, ranking, AI first-round interviews, pipeline and evaluation record) and practitioner-led technical validation. NeoHireX does not make hiring decisions; the client does. When one hire becomes a team, the engagement can become an AI Micro GCC or AI GCC.
+
+- [AI, ML & Data Talent Services in India](https://neointelli.com/services/ai-talent) - Hub: one critical hire, an AI team, an AI Recruitment Hub or an AI GCC; the eight-step "We interview. You hire." validation flow
+- [AI & ML Recruitment](https://neointelli.com/services/ai-talent/ai-ml-recruitment) - AI engineers, ML engineers, deep learning, NLP, computer vision, research engineers, data scientists, AI solution architects
+- [GenAI & Agentic AI Hiring](https://neointelli.com/services/ai-talent/genai-agentic-ai-hiring) - GenAI, LLM, RAG, agentic AI, AI agent, AI application, AI systems and forward deployed engineers; GenAI and agentic architects; what we test
+- [Data Engineering & Data Science Hiring](https://neointelli.com/services/ai-talent/data-engineering-data-science-hiring) - Data, analytics, platform and streaming engineers, data architects, data and applied scientists, AI data engineers
+- [MLOps & AI Platform Hiring](https://neointelli.com/services/ai-talent/mlops-ai-platform-hiring) - MLOps, ML and AI platform, AI infrastructure, LLMOps, AgentOps, GPU infrastructure, AI DevSecOps
+- [AI Leadership & Executive Search](https://neointelli.com/services/ai-talent/ai-leadership-executive-search) - Chief AI Officer, Head of AI, VP AI and Data, AI directors, distinguished architects, GCC AI heads
+- [AI Recruitment Hub + NeoHireX](https://neointelli.com/services/ai-talent/recruitment-hub) - Dedicated recruitment POD, Hiring OS and technical validation for 10 to 100+ technical hires (RPO and managed hiring)
+- [AI Talent Academy & Reskilling](https://neointelli.com/services/ai-talent/ai-reskilling-academy) - Convert backend, data, DevOps, ML, QA and architecture engineers into validated AI roles
+- [Contract & Contract-to-Hire](https://neointelli.com/recruitment/contract-staffing) - Contract and C2H engagement model
+- [GCC Workforce Strategy](https://neointelli.com/services/gcc-operations/workforce-strategy) - Workforce planning, leadership architecture, capability development and retention for a GCC
+- [NeoHireX](https://neohirex.ai/) - NeoIntelli's AI hiring platform
+
+## GCC Strategy & Setup
+
+Decide the GCC, design the GCC, launch the GCC. Running the center after launch is covered by the GCC operations services below.
+
+- [GCC Strategy & Setup](https://neointelli.com/services/gcc) - GCC strategy and setup services in India
+- [Strategy & Business Case](https://neointelli.com/services/gcc/strategy-business-case) - GCC strategy, feasibility and business-case design
+- [Location Strategy](https://neointelli.com/services/gcc/location-strategy) - India GCC city and location strategy
+- [Setup & Launch](https://neointelli.com/services/gcc/setup-launch) - GCC setup and launch execution
+- [Modernization & Transformation](https://neointelli.com/services/gcc/modernization-transformation) - Existing GCC modernization and transformation
+- [AI Micro GCC](https://neointelli.com/services/micro-gcc) - Lean AI Micro GCC starting model
+
+## GCC Operations
+
+NeoIntelli runs and scales India GCCs through one accountable operating layer (GCC Operations & Managed Services) while the client retains the mandate, product, IP, data and hiring decisions. Managed operations can move to Build-Operate-Transfer and then to captive ownership.
+
+- [GCC Operations & Managed Services](https://neointelli.com/services/gcc-operations) - GCC operations and managed services overview
+- [People & HR Operations](https://neointelli.com/services/gcc-operations/people-hr-operations) - People and HR operations for India GCCs
+- [Workforce Strategy](https://neointelli.com/services/gcc-operations/workforce-strategy) - GCC workforce strategy and talent management
+- [Workplace, IT & Security](https://neointelli.com/services/gcc-operations/workplace-it-security) - GCC workplace, IT and security operations
+- [Service Management & Performance](https://neointelli.com/services/gcc-operations/service-management-performance) - Service management, KPIs and GCC performance
+- [Governance & Compliance](https://neointelli.com/services/gcc-operations/governance-compliance) - GCC governance, risk and compliance operations
+- [BOT & Transition](https://neointelli.com/services/gcc-operations/bot-transition) - GCC Build-Operate-Transfer and transition
+- [Scale & Expansion](https://neointelli.com/services/gcc-operations/scale-expansion) - GCC scaling and mandate expansion
+- [Managed GCC & Build-Operate-Transfer](https://neointelli.com/gcc-as-a-service) - Fully managed India GCC with a BOT option
+
+## Industries
+
+The same AI GCC operating model, applied to the regulatory, data and talent constraints of a sector.
+
+- [Industries](https://neointelli.com/industries) - Index of the industry-specific GCC and AI pages
+- [BFSI GCC](https://neointelli.com/industries/bfsi-gcc) - Banking, financial services and insurance: risk, payments, regulatory technology, data residency
+- [Healthcare & Life Sciences GCC](https://neointelli.com/industries/healthcare-gcc) - Payers, providers, pharma and med-tech: clinical, R&D, regulatory, HIPAA and GxP-aware delivery
+- [Software & SaaS GCC](https://neointelli.com/industries/technology-gcc) - Product engineering, platform engineering, AI/ML and developer productivity
+- [Manufacturing GCC](https://neointelli.com/industries/manufacturing-gcc) - Industry 4.0, IoT, digital twins, predictive maintenance, supply chain engineering
+- [Private Equity GCC](https://neointelli.com/industries/private-equity-gcc) - Cross-portfolio GCC platforms, 100-day plans, EBITDA and value creation
+- [Retail & E-commerce GCC](https://neointelli.com/industries/retail-gcc) - Personalisation, demand forecasting, supply chain and omnichannel engineering
+
+## Answers & Comparisons
+
+Direct answers to the questions buyers ask before choosing a model. These pages carry the definitions, cost benchmarks and trade-offs rather than service descriptions.
+
+- [GCC FAQ](https://neointelli.com/gcc-faq) - What a GCC is, what it costs, how long setup takes, legal and talent questions answered directly
+- [GCC vs Outsourcing](https://neointelli.com/gcc-vs-outsourcing) - Captive GCC compared with outsourcing and staff augmentation on cost, control, IP and retention, including when outsourcing is the better answer
+- [GCC India Cost Benchmarks](https://neointelli.com/gcc-india-cost) - Talent, real estate, infrastructure and compliance cost benchmarks for an India GCC, with fully loaded salary figures
+- [Our Approach](https://neointelli.com/case-studies) - The four-phase delivery methodology, engagement types and how outcomes are measured
+- [IT Recruitment & Staffing](https://neointelli.com/recruitment) - Permanent hiring, contract staffing, executive search and RPO across India
+
+## Tools
+
+- [GCC Decision Lab](https://neointelli.com/lp/gcc-playbook) - Design an AI GCC team, model the full cost month by month, compare cities, check readiness and export a decision pack
+- [GCC Cost Calculator](https://neointelli.com/gcc-cost-calculator) - Role-by-role cost estimate for an India GCC
+- [GCC ROI Estimator](https://neointelli.com/gcc-roi-estimator) - Model value against cost
+- [GCC Readiness Assessment](https://neointelli.com/gcc-readiness-assessment) - Readiness check before starting
+- [GCC Blueprint](https://neointelli.com/blueprint) - Board-ready GCC blueprint engagement
+
+## Company
+
+- [About](https://neointelli.com/about)
+- [Contact](https://neointelli.com/contact)
+- [Blog](https://neointelli.com/blog)
+
+## Disambiguation
+
+"GCC" on this site always means Global Capability Center (an India-based capability center owned by a global company). It does not refer to the Gulf Cooperation Council region. "AI GCC" means a GCC designed to own and operate AI, data and AI-enabled engineering capabilities. "AI Micro GCC" means a dedicated India AI capability of roughly 8 to 50 people running on the same operating model as a full GCC.

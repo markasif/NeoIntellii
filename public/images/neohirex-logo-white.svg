@@ -1,0 +1,16 @@
+<svg width="560" height="120" viewBox="0 0 560 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NeoHireX">
+  <g fill="#38BDF8">
+    <path d="M60 8L102 32V80L60 104L18 80V32L60 8ZM60 22L30 39V73L60 90L90 73V39L60 22Z"/>
+    <path d="M44 70V39H49L68 63V39H76V70H71L52 47V70H44Z"/>
+    <circle cx="77" cy="42" r="4"/>
+  </g>
+  <text
+    x="130"
+    y="76"
+    font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, sans-serif"
+    font-size="52"
+    font-weight="700"
+    letter-spacing="-1.5"
+    fill="#FFFFFF"
+  >NeoHire<tspan fill="#38BDF8">X</tspan></text>
+</svg>

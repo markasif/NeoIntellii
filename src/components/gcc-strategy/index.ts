@@ -1,0 +1,16 @@
+export { default as GccStrategySubnav } from "./GccStrategySubnav";
+export { default as GccStrategyHero } from "./GccStrategyHero";
+export { default as GccStrategyPageLayout } from "./GccStrategyPageLayout";
+export { default as InBrief } from "./InBrief";
+export { default as SourceNote } from "./SourceNote";
+export { default as ResponsiveMatrix } from "./ResponsiveMatrix";
+export { default as GccFlow } from "./GccFlow";
+export { default as GccModelComparison } from "./GccModelComparison";
+export { default as GccDecisionFramework } from "./GccDecisionFramework";
+export { default as LocationDecisionMatrix } from "./LocationDecisionMatrix";
+export { default as GccSetupWorkstreams } from "./GccSetupWorkstreams";
+export { default as GccModernizationFramework } from "./GccModernizationFramework";
+export { default as RelatedGccServices } from "./RelatedGccServices";
+export { default as GccStrategyCTA } from "./GccStrategyCTA";
+export { default as AnswerList } from "./AnswerList";
+export { default as FiveCardHeroGrid } from "@/components/shared/FiveCardHeroGrid";

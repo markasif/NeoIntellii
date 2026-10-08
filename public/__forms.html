@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Netlify Forms: hidden declarations</title>
+<meta name="robots" content="noindex,nofollow"></head>
+<body>
+<!--
+  This file does two jobs, both forced by @netlify/plugin-nextjs v5 (OpenNext).
+
+  1. DETECTION. Pages are served by a Lambda function, so Netlify's crawler
+     cannot scan rendered HTML for data-netlify attributes. These hidden stubs
+     live in public/ (uploaded as a static file) so the build bot registers
+     every form and field name. Netlify only stores fields it detected here -
+     anything missing is dropped from the submission without an error.
+
+  2. SUBMISSION. Every request to a rendered route - POSTs included - is
+     handled by the Next.js function, which answers 200 with page HTML and
+     never lets Netlify's form handler see the body. So the app posts here
+     instead: a static file served from the CDN, where the form handler does
+     run. See src/lib/netlifyForms.ts.
+
+  Every form below repeats the marketing attribution block, because
+  appendAttributionToFormData() in src/lib/attribution.ts appends those keys to
+  every submission. Keep the two in step.
+-->
+
+<form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+  <input name="bot-field">
+  <input name="name">
+  <input name="email">
+  <input name="company">
+  <select name="topic"></select>
+  <textarea name="message"></textarea>
+  <!-- Lead metadata carried from service-page CTAs (?service=&cta=&source=). -->
+  <input name="source_page"><input name="service_interest"><input name="cta_name">
+  <input name="utm_source"><input name="utm_medium"><input name="utm_campaign">
+  <input name="utm_term"><input name="utm_content"><input name="utm_id">
+  <input name="gclid"><input name="gbraid"><input name="wbraid"><input name="fbclid">
+  <input name="msclkid"><input name="li_fat_id"><input name="ttclid">
+  <input name="first_landing_page"><input name="first_referrer">
+  <input name="captured_at"><input name="expires_at">
+</form>
+
+<form name="blueprint" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+  <input name="bot-field">
+  <input name="name">
+  <input name="email">
+  <input name="company">
+  <textarea name="message"></textarea>
+  <input name="source_page"><input name="service_interest"><input name="cta_name">
+  <input name="utm_source"><input name="utm_medium"><input name="utm_campaign">
+  <input name="utm_term"><input name="utm_content"><input name="utm_id">
+  <input name="gclid"><input name="gbraid"><input name="wbraid"><input name="fbclid">
+  <input name="msclkid"><input name="li_fat_id"><input name="ttclid">
+  <input name="first_landing_page"><input name="first_referrer">
+  <input name="captured_at"><input name="expires_at">
+</form>
+
+<form name="ai-hiring-lp" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+  <input name="bot-field">
+  <input name="email">
+  <input name="company">
+  <select name="companyType"></select>
+  <select name="roles" multiple></select>
+  <select name="hireCount"></select>
+  <input name="phone">
+  <input name="utm_source"><input name="utm_medium"><input name="utm_campaign">
+  <input name="utm_term"><input name="utm_content"><input name="utm_id">
+  <input name="gclid"><input name="gbraid"><input name="wbraid"><input name="fbclid">
+  <input name="msclkid"><input name="li_fat_id"><input name="ttclid">
+  <input name="first_landing_page"><input name="first_referrer">
+  <input name="captured_at"><input name="expires_at">
+</form>
+
+<form name="micro-gcc-lp" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+  <input name="bot-field">
+  <input name="name">
+  <input name="email">
+  <input name="company">
+  <select name="companyStage"></select>
+  <select name="capability"></select>
+  <select name="teamSize"></select>
+  <select name="timeline"></select>
+  <input name="phone">
+  <input name="utm_source"><input name="utm_medium"><input name="utm_campaign">
+  <input name="utm_term"><input name="utm_content"><input name="utm_id">
+  <input name="gclid"><input name="gbraid"><input name="wbraid"><input name="fbclid">
+  <input name="msclkid"><input name="li_fat_id"><input name="ttclid">
+  <input name="first_landing_page"><input name="first_referrer">
+  <input name="captured_at"><input name="expires_at">
+</form>
+
+<form name="lp-ssc" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+  <input name="bot-field">
+  <input name="source">
+  <input name="name">
+  <input name="email">
+  <input name="company">
+  <select name="role"></select>
+  <select name="headquarters"></select>
+  <select name="processes" multiple></select>
+  <select name="entities"></select>
+  <select name="targetSize"></select>
+  <select name="timeline"></select>
+  <input name="phone">
+  <input name="utm_source"><input name="utm_medium"><input name="utm_campaign">
+  <input name="utm_term"><input name="utm_content"><input name="utm_id">
+  <input name="gclid"><input name="gbraid"><input name="wbraid"><input name="fbclid">
+  <input name="msclkid"><input name="li_fat_id"><input name="ttclid">
+  <input name="first_landing_page"><input name="first_referrer">
+  <input name="captured_at"><input name="expires_at">
+</form>
+
+<form name="lp-squad" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+  <input name="bot-field">
+  <input name="source">
+  <input name="name">
+  <input name="email">
+  <input name="company">
+  <input name="companyWebsite">
+  <select name="headquarters"></select>
+  <select name="companyStage"></select>
+  <select name="productType"></select>
+  <textarea name="teamOwns"></textarea>
+  <input name="capabilities" type="checkbox">
+  <select name="teamSize"></select>
+  <select name="startWhen"></select>
+  <input name="phone">
+  <input name="utm_source"><input name="utm_medium"><input name="utm_campaign">
+  <input name="utm_term"><input name="utm_content"><input name="utm_id">
+  <input name="gclid"><input name="gbraid"><input name="wbraid"><input name="fbclid">
+  <input name="msclkid"><input name="li_fat_id"><input name="ttclid">
+  <input name="first_landing_page"><input name="first_referrer">
+  <input name="captured_at"><input name="expires_at">
+</form>
+
+<!--
+  The three tool forms below are posted by src/components/shared/ToolLeadCapture.tsx,
+  which sits under the result each tool renders. Their extra fields carry the
+  inputs and computed numbers the visitor was looking at, so a lead arrives with
+  its context attached.
+-->
+
+<form name="roi-estimator" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+  <input name="bot-field">
+  <input name="name">
+  <input name="email">
+  <input name="company">
+  <input name="spend">
+  <input name="teamSize">
+  <input name="location">
+  <input name="role">
+  <input name="horizon">
+  <input name="year1Savings">
+  <input name="totalSavings">
+  <input name="roiPct">
+  <input name="breakEvenMonth">
+  <input name="utm_source"><input name="utm_medium"><input name="utm_campaign">
+  <input name="utm_term"><input name="utm_content"><input name="utm_id">
+  <input name="gclid"><input name="gbraid"><input name="wbraid"><input name="fbclid">
+  <input name="msclkid"><input name="li_fat_id"><input name="ttclid">
+  <input name="first_landing_page"><input name="first_referrer">
+  <input name="captured_at"><input name="expires_at">
+</form>
+
+<form name="readiness-assessment" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+  <input name="bot-field">
+  <input name="name">
+  <input name="email">
+  <input name="company">
+  <input name="score">
+  <input name="tier">
+  <input name="industry">
+  <textarea name="answers"></textarea>
+  <input name="utm_source"><input name="utm_medium"><input name="utm_campaign">
+  <input name="utm_term"><input name="utm_content"><input name="utm_id">
+  <input name="gclid"><input name="gbraid"><input name="wbraid"><input name="fbclid">
+  <input name="msclkid"><input name="li_fat_id"><input name="ttclid">
+  <input name="first_landing_page"><input name="first_referrer">
+  <input name="captured_at"><input name="expires_at">
+</form>
+
+<form name="cost-calculator" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+  <input name="bot-field">
+  <input name="name">
+  <input name="email">
+  <input name="company">
+  <input name="hqCountry">
+  <input name="plannedStart">
+  <input name="pageVariant">
+  <input name="totalTeam">
+  <input name="roles">
+  <input name="specializations">
+  <input name="city">
+  <input name="seniority">
+  <input name="engagement">
+  <input name="blueprintPod">
+  <input name="complexityTier">
+  <input name="cloudProvider">
+  <input name="smeIncluded">
+  <input name="monthlyLow">
+  <input name="monthlyHigh">
+  <input name="annualLow">
+  <input name="annualHigh">
+  <input name="salaryLow">
+  <input name="salaryHigh">
+  <input name="infraLow">
+  <input name="infraHigh">
+  <input name="opsLow">
+  <input name="opsHigh">
+  <input name="partnerLow">
+  <input name="partnerHigh">
+  <input name="smeLow">
+  <input name="smeHigh">
+  <input name="usEquivLow">
+  <input name="usEquivHigh">
+  <input name="savingsLow">
+  <input name="savingsHigh">
+  <input name="savingsPctLow">
+  <input name="savingsPctHigh">
+  <input name="utm_source"><input name="utm_medium"><input name="utm_campaign">
+  <input name="utm_term"><input name="utm_content"><input name="utm_id">
+  <input name="gclid"><input name="gbraid"><input name="wbraid"><input name="fbclid">
+  <input name="msclkid"><input name="li_fat_id"><input name="ttclid">
+  <input name="first_landing_page"><input name="first_referrer">
+  <input name="captured_at"><input name="expires_at">
+</form>
+
+<form name="gcc-decision-lab" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+  <input name="bot-field">
+  <input name="name">
+  <input name="email">
+  <input name="company">
+  <input name="role">
+  <input name="reviewObjective">
+  <input name="consent">
+  <input name="marketingConsent">
+  <input name="submissionId">
+  <input name="caseId">
+  <input name="inputHash">
+  <input name="modelVersion">
+  <input name="dataVersion">
+  <input name="currency">
+  <input name="city">
+  <input name="country">
+  <input name="teamSize">
+  <input name="objective">
+  <input name="firstYearCash">
+  <input name="steadyStateMonthly">
+  <input name="paybackState">
+  <input name="openQuestions">
+  <input name="exclusions">
+  <input name="utm_source"><input name="utm_medium"><input name="utm_campaign">
+  <input name="utm_term"><input name="utm_content"><input name="utm_id">
+  <input name="gclid"><input name="gbraid"><input name="wbraid"><input name="fbclid">
+  <input name="msclkid"><input name="li_fat_id"><input name="ttclid">
+  <input name="first_landing_page"><input name="first_referrer">
+  <input name="captured_at"><input name="expires_at">
+</form>
+
+</body>
+</html>

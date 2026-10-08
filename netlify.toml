@@ -1,0 +1,38 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NEXT_TELEMETRY_DISABLED = "1"
+  NODE_VERSION = "20"
+  EMAIL_FROM = "NeoIntelli <estimates@neointelli.com>"
+  # RESEND_API_KEY must be set in Netlify → Site configuration → Environment
+  # variables. Never commit it. See docs/NETLIFY_DEPLOYMENT_GUIDE.md.
+
+# Note: Apex-to-www and HTTP-to-HTTPS redirects are handled automatically
+# by Netlify's domain management. Do NOT add forced redirect rules for
+# these as they conflict with Netlify's built-in handling and cause
+# redirect loops.
+
+# Security headers, cache headers, and redirect rules are all defined in
+# next.config.mjs and translated to Netlify rules by @netlify/plugin-nextjs.
+# Defining them here too would create duplicates in the final _headers output.
+
+[context.deploy-preview]
+  command = "npm run build"
+
+  [[context.deploy-preview.headers]]
+    for = "/*"
+    [context.deploy-preview.headers.values]
+      X-Robots-Tag = "noindex, nofollow"
+
+[context.branch-deploy]
+  command = "npm run build"
+
+  [[context.branch-deploy.headers]]
+    for = "/*"
+    [context.branch-deploy.headers.values]
+      X-Robots-Tag = "noindex, nofollow"

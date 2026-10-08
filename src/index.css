@@ -1,0 +1,999 @@
+/* Fonts are self-hosted via next/font in pages/_app.tsx, which defines
+   --font-inter and --font-instrument-serif on :root. */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============ AI-First GCC landing utilities ============ */
+.font-serif-display {
+  font-family: var(--font-instrument-serif, 'Instrument Serif'), 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.btn-shadow-primary {
+  box-shadow:
+    0 1px 2px 0 rgba(5,26,36,0.10),
+    0 4px 4px 0 rgba(5,26,36,0.09),
+    0 9px 6px 0 rgba(5,26,36,0.05),
+    0 17px 7px 0 rgba(5,26,36,0.01),
+    0 26px 7px 0 rgba(5,26,36,0),
+    inset 0 2px 8px 0 rgba(255,255,255,0.30);
+}
+
+.btn-shadow-secondary {
+  box-shadow:
+    0 0 0 0.5px rgba(0,0,0,0.05),
+    0 4px 30px rgba(0,0,0,0.08);
+}
+
+.card-shadow-soft {
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.04),
+    0 4px 16px rgba(0,0,0,0.06);
+}
+
+@keyframes ai-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-ai-marquee {
+  animation: ai-marquee 45s linear infinite;
+}
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* GCC Starting Point Stacking Cards Deck */
+.gcc-stack-deck {
+  --stack-top: 64px;
+  --stack-stagger: 8px;
+}
+@media (min-width: 640px) {
+  .gcc-stack-deck {
+    --stack-top: 80px;
+    --stack-stagger: 12px;
+  }
+}
+@media (min-width: 1024px) {
+  .gcc-stack-deck {
+    --stack-top: 92px;
+    --stack-stagger: 12px;
+  }
+}
+
+/* Editorial Amber Drop Cap for narrative/statutory sections */
+.drop-cap-amber::first-letter {
+  float: left;
+  font-size: 3.5rem;
+  line-height: 0.8;
+  font-weight: 800;
+  color: #F59E0B;
+  margin-right: 0.85rem;
+  margin-top: 0.15rem;
+  padding-top: 0.1rem;
+}
+
+@media (min-width: 640px) {
+  .drop-cap-amber::first-letter {
+    font-size: 4.25rem;
+    line-height: 0.8;
+    margin-right: 1rem;
+    margin-top: 0.2rem;
+  }
+}
+
+/* AI-GCC Editorial Amber Drop Cap (#F19326) matching Core Architecture editorial styling */
+.drop-cap-amber-f19326::first-letter,
+.ai-gcc-drop-cap::first-letter,
+.ai-gcc-drop-cap > p:first-of-type::first-letter {
+  float: left;
+  font-size: 3.5rem;
+  line-height: 0.8;
+  font-weight: 800;
+  color: #F19326;
+  margin-right: 0.85rem;
+  margin-top: 0.15rem;
+  padding-top: 0.1rem;
+}
+
+@media (min-width: 640px) {
+  .drop-cap-amber-f19326::first-letter,
+  .ai-gcc-drop-cap::first-letter,
+  .ai-gcc-drop-cap > p:first-of-type::first-letter {
+    font-size: 4.25rem;
+    line-height: 0.8;
+    margin-right: 1rem;
+    margin-top: 0.2rem;
+  }
+}
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 244 36% 31%; /* #36326a navy heading / primary CTA */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 193 89% 39%; /* #0a93bd teal accent / secondary CTA */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 193 89% 39%; /* teal accent */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 91%;
+    --input: 0 0% 91%;
+    --ring: 193 89% 39%;
+    --radius: 0.75rem;
+
+    /* ---- Card design system -------------------------------------------
+       One card shape for the whole site. Every card surface (service,
+       feature, process, blog, team, CTA, pricing, inner page) resolves to
+       these four values, so no page can drift into its own card style. */
+    --card-radius: 1rem;          /* 16px - matches rounded-2xl */
+    --card-radius-sm: 0.75rem;    /* nested chips / inner tiles */
+    --card-border: rgba(14, 19, 32, 0.07);
+    --card-border-strong: rgba(14, 19, 32, 0.12);
+    --card-shadow: 0 1px 2px rgba(14, 19, 32, 0.04);
+    --card-pad: 1.5rem;           /* 24px */
+    --card-pad-lg: 1.75rem;       /* 28px from md up */
+
+    /* ---- Vertical rhythm ---------------------------------------------- */
+    --section-y: 5rem;            /* 80px  mobile  */
+    --section-y-lg: 7rem;         /* 112px desktop */
+
+    --navy: 193 89% 39%;
+    --navy-mid: 193 89% 35%;
+    --navy-lighter: 193 89% 45%;
+    --gold: 38 93% 53%;
+    --cyan: 192 85% 42%;
+
+    /* Brand teal, darkened to meet WCAG AA as text and behind white text.
+       The brand --secondary (#0b96bc) measures 3.44:1 on white, which is fine
+       for a border or a control fill (3:1) and short of the 4.5:1 that normal
+       text needs either way round. This is the same hue at 32% lightness,
+       4.87:1, used by the GCC Decision Lab for small links, eyebrows and solid
+       teal buttons. It is an addition, not a replacement: --secondary is
+       untouched and no existing page changes. */
+    --accent-strong: 193 89% 32%;
+
+    --heading: 244 36% 31%; /* #36326a navy heading */
+    --body: 228 16% 35%; /* muted navy-gray body text */
+    --body-muted: 228 12% 46%; /* >=4.5:1 on white and #f5f5f7 (was 50%, which measured 4.48:1 on white) */
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 0 0% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * { @apply border-border; }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter, 'Inter'), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, sans-serif;
+    font-feature-settings: "cv11", "ss01", "ss03";
+    font-optical-sizing: auto;
+    font-size: 17px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: hsl(var(--body));
+    font-weight: 400;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-inter, 'Inter'), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    color: hsl(var(--heading));
+    line-height: 1.08;
+  }
+  h1 {
+    font-weight: 700;
+    color: hsl(var(--heading));
+  }
+  /* Site-wide weight normalization: everything except h1 renders at 400. */
+  :where(:not(h1)).font-medium,
+  :where(:not(h1)).font-semibold,
+  :where(:not(h1)).font-bold,
+  :where(:not(h1)).font-extrabold,
+  :where(:not(h1)).font-black { font-weight: 400; }
+
+  ::selection {
+    background: hsl(221 83% 53% / 0.15);
+    color: hsl(var(--heading));
+  }
+}
+
+@layer utilities {
+  .text-heading { color: hsl(var(--heading)); }
+  .text-body { color: hsl(var(--body)); }
+  .text-body-muted { color: hsl(var(--body-muted)); }
+  .text-accent-strong { color: hsl(var(--accent-strong)); }
+  .bg-accent-strong { background-color: hsl(var(--accent-strong)); }
+  .hover\:bg-accent-strong-dark:hover { background-color: hsl(193 89% 27%); }
+  .text-section-label { color: #0a93bd; }
+  .dark-section .text-section-label { color: #ffffff; }
+  .text-accent-teal { color: #0e92b8; }
+  .link-teal {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    color: #0a93bd; font-weight: 500;
+    border-bottom: 1px solid transparent;
+  }
+  .bg-navy { background-color: hsl(var(--navy)); }
+  .bg-navy-mid { background-color: hsl(var(--navy-mid)); }
+  /* Was a teal gradient; converted to a light surface so inner pages match the homepage. */
+  .bg-footer-cta { background: #f5f5f7; }
+
+  /* Apple-style gradients */
+  .gradient-primary { background: linear-gradient(135deg, #2563eb, #7c3aed); }
+  .gradient-gold { background: linear-gradient(135deg, #f59e0b, #f97316); }
+  .gradient-ai { background: linear-gradient(135deg, #7c3aed, #ec4899); }
+  .gradient-cyan { background: linear-gradient(135deg, #06b6d4, #0d9488); }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .gradient-text-gold {
+    background: linear-gradient(90deg, #f59e0b, #f97316, #ef4444);
+    background-size: 200% auto;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .gradient-text-ai {
+    background: linear-gradient(90deg, #7c3aed, #ec4899, #f97316);
+    background-size: 200% auto;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .gradient-text-blue {
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+
+  /* Legacy class kept for backward compatibility. The original dark teal treatment
+     has been retired in favour of a modern light surface that matches the homepage.
+     We remap text/background utilities so existing JSX with text-white / bg-white/10
+     etc. renders correctly on the new light background.
+
+     WARNING: only apply `dark-section` on top of a LIGHT background such as
+     `bg-footer-cta` (#f5f5f7). Pairing it with a dark/teal background will
+     force all white text to dark navy via !important and make text invisible.
+     For truly dark sections, omit `dark-section` and use native `text-white*`
+     and `bg-white/*` opacities directly. */
+  .dark-section { background: #f5f5f7; }
+  .dark-section [class*="text-white"] { color: hsl(var(--body)) !important; }
+  .dark-section h1[class*="text-white"],
+  .dark-section h2[class*="text-white"],
+  .dark-section h3[class*="text-white"],
+  .dark-section h4[class*="text-white"] { color: hsl(var(--heading)) !important; }
+  .dark-section [class*="bg-white/"] { background-color: #ffffff !important; }
+  .dark-section [class*="border-white/"] { border-color: rgba(0,0,0,0.06) !important; }
+  .dark-section .text-primary { color: #0e92b8 !important; }
+
+  .shadow-card { box-shadow: 0 2px 8px rgb(0 0 0/.04), 0 12px 40px -8px rgb(0 0 0/.08); }
+  .shadow-card-hover { box-shadow: 0 8px 30px rgb(0 0 0/.08), 0 30px 60px -12px rgb(0 0 0/.15); }
+  .shadow-premium { box-shadow: 0 20px 60px -12px hsl(221 83% 53%/.35); }
+
+  .glass-nav {
+    background: hsl(0 0% 100% / 0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+  }
+  .glass-dark {
+    background: hsl(0 0% 100% / 0.06);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(0 0% 100% / 0.1);
+  }
+  .glass-card {
+    background: hsl(0 0% 100% / 0.5);
+    backdrop-filter: blur(40px) saturate(150%);
+    -webkit-backdrop-filter: blur(40px) saturate(150%);
+    border: 1px solid hsl(0 0% 100% / 0.6);
+  }
+
+  .glow-orb { border-radius: 50%; filter: blur(80px); pointer-events: none; }
+
+  .badge { @apply inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-2xs font-medium tracking-[0.06em]; }
+  .badge-blue { @apply badge bg-blue-50 text-blue-600; }
+  .badge-gold { @apply badge bg-amber-50 text-amber-600; }
+  .badge-purple { @apply badge bg-purple-50 text-purple-600; }
+  .badge-white { @apply badge bg-white/10 text-white/80 border border-white/15; }
+
+  /* Pattern removed Apple doesn't use grid patterns */
+  .pattern-grid { background: none; }
+  .pattern-grid-dark { background: none; }
+
+  /* Top nav hover handled per-link in Navbar.tsx */
+  .nav-link-gradient {
+    background-image: linear-gradient(90deg, #0e92b8 0%, #0a6f8e 50%, #36326a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+  .nav-link-gradient.is-active {
+    background-image: linear-gradient(90deg, #0a6f8e 0%, #0e92b8 50%, #36326a 100%);
+    filter: brightness(0.9) saturate(1.1);
+  }
+
+  /* Primary pill gradient CTA button */
+  .btn-gradient,
+  .btn-gradient-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #169DC8 0%, #0D306C 100%);
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  .btn-gradient:hover,
+  .btn-gradient-primary:hover {
+    box-shadow: 0 0 22px rgba(22, 157, 200, 0.55), 0 4px 16px rgba(13, 48, 108, 0.3);
+    transform: translateY(-1px);
+    color: #ffffff !important;
+  }
+
+  /* Primary white pill CTA button (for navy / dark surfaces) */
+  .btn-white,
+  .btn-white-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    background: #ffffff;
+    border: 1px solid #CBD5E1;
+    color: #0D244D !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 1px 2px rgba(13, 36, 77, 0.1);
+  }
+  .btn-white:hover,
+  .btn-white-primary:hover {
+    box-shadow: 0 0 22px rgba(255, 255, 255, 0.35), 0 4px 16px rgba(13, 48, 108, 0.12);
+    transform: translateY(-1px);
+    border-color: #94A3B8;
+    color: #0D244D !important;
+  }
+
+  /* Primary cyan pill CTA button (like .btn-white, but cyan) */
+  .btn-cyan,
+  .btn-cyan-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    background: #169DC8;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 1px 2px rgba(22, 157, 200, 0.25);
+  }
+  .btn-cyan:hover,
+  .btn-cyan-primary:hover {
+    background: #0D306C;
+    box-shadow: 0 0 22px rgba(22, 157, 200, 0.55), 0 4px 16px rgba(13, 48, 108, 0.3);
+    transform: translateY(-1px);
+    color: #ffffff !important;
+  }
+}
+
+@layer components {
+  .container-custom { @apply max-w-6xl mx-auto; }
+  .container-wide { @apply max-w-7xl mx-auto; }
+
+  /* ====================================================================
+     TYPOGRAPHY SYSTEM
+     --------------------------------------------------------------------
+     Semantic classes for new markup. They are thin wrappers over the
+     scale in tailwind.config.ts, so a size class and its semantic class
+     always resolve to the same numbers. Colour is deliberately NOT set
+     here - keep using text-heading / text-body / text-body-muted.
+     ==================================================================== */
+
+  /* H1 - one per page, page title only. 36px -> 72px, fluid. */
+  .type-h1 { @apply text-hero-sm md:text-hero; }
+  /* H2 - section title. 28px -> 46px, fluid. */
+  .type-h2 { @apply text-display-sm md:text-display; }
+  /* H3 - sub-section title. 24px -> 28px. */
+  .type-h3 { @apply text-2xl md:text-3xl; }
+  /* H4 / card title. 19px -> 21px. */
+  .type-h4 { @apply text-lg md:text-xl; }
+  /* Lede - the intro paragraph under an H1/H2. */
+  .type-lede { @apply text-lg md:text-xl leading-relaxed; }
+  /* Body - default running text. Same size as <body>. */
+  .type-body { @apply text-base leading-relaxed; }
+  /* Small - card body, dense UI, secondary copy. */
+  .type-small { @apply text-sm leading-relaxed; }
+  /* Caption - table cells, source notes, meta. */
+  .type-caption { @apply text-xs; }
+  /* Label - uppercase micro label. See also .eyebrow for the teal variant. */
+  .type-label { @apply text-2xs uppercase tracking-[0.16em]; }
+  /* Button and nav share the small step so controls never drift. */
+  .type-button { @apply text-sm; }
+  .type-nav { @apply text-sm; }
+
+  /* ====================================================================
+     CARD SYSTEM
+     --------------------------------------------------------------------
+     One card shape site-wide: white surface, single hairline border,
+     16px radius, one soft shadow, even padding. No coloured top strips,
+     no coloured left borders, no per-page accent blocks.
+     ==================================================================== */
+  .card {
+    background: #ffffff;
+    border: 1px solid var(--card-border);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    padding: var(--card-pad);
+    transition: border-color .3s ease, box-shadow .3s ease;
+  }
+  @media (min-width: 768px) {
+    .card { padding: var(--card-pad-lg); }
+  }
+  /* Dense variant - list tiles, stat tiles, chips-with-copy. */
+  .card-compact { padding: 1.25rem; }
+  @media (min-width: 768px) {
+    .card-compact { padding: 1.5rem; }
+  }
+  /* Feature / CTA variant - the one card allowed to breathe more. */
+  .card-lg { padding: 2rem; }
+  @media (min-width: 768px) {
+    .card-lg { padding: 2.5rem; }
+  }
+  /* Card with its own media/edge-to-edge content: keep the shape, drop the pad. */
+  .card-flush { padding: 0; overflow: hidden; }
+
+  /* Card interior rhythm, so text never sits against the border. */
+  .card-title { @apply text-lg md:text-xl text-heading; }
+  .card-body  { @apply text-sm leading-relaxed text-body; }
+
+  /* Cards on a dark surface. Same geometry, inverted hairline. */
+  .card-on-dark {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--card-radius);
+    box-shadow: none;
+    padding: var(--card-pad);
+  }
+  @media (min-width: 768px) {
+    .card-on-dark { padding: var(--card-pad-lg); }
+  }
+
+  /* Global text links: no weight/size/scale/color change on hover.
+     Buttons keep their own filter-based hover (whitelisted below). */
+  a:not(.btn-primary):not(.btn-secondary):not(.btn-outline):not(.btn-ghost-white) {
+    transition: none;
+  }
+  a:not(.btn-primary):not(.btn-secondary):not(.btn-outline):not(.btn-ghost-white):hover {
+    transform: none !important;
+    scale: none !important;
+    text-shadow: none !important;
+  }
+  /* Keep layout stable on group hover, but NEVER strip an element's own font
+     weight: bold card titles and nav CTAs must stay bold while hovered.
+     (The previous `font-weight: inherit !important` here was what made bold
+     text flip to the parent's 400 on hover.)
+     Colour accents authored via `group-hover:text-*` are now allowed through,
+     so a hovered card gets a tasteful colour shift instead of losing weight. */
+  .group:hover [class*="group-hover:scale-"]:not(.round-arrow-btn),
+  .group:hover [class*="group-hover:gap-"],
+  .group:hover [class*="group-hover:translate-"]:not(svg):not(.round-arrow-btn):not(.slotted-step-number),
+  .group:hover [class*="group-hover:-translate-"]:not(.slotted-step-number) {
+    scale: none !important;
+    gap: inherit !important;
+  }
+
+  .slotted-step-number,
+  .group:hover .slotted-step-number {
+    font-weight: 800 !important;
+  }
+
+  .round-arrow-btn {
+    color: #0D306C;
+  }
+  .group:hover .round-arrow-btn,
+  .round-arrow-btn:hover {
+    background-color: #0D306C !important;
+    color: #FFFFFF !important;
+  }
+  .group:hover .round-arrow-btn svg,
+  .round-arrow-btn:hover svg {
+    color: #FFFFFF !important;
+    stroke: #FFFFFF !important;
+  }
+
+  /* Specific rule for Discuss Your GCC card: text never changes on hover */
+  .discuss-gcc-card,
+  .discuss-gcc-card:hover,
+  .discuss-gcc-card * {
+    color: #FFFFFF !important;
+  }
+  .discuss-gcc-card .discuss-gcc-desc,
+  .discuss-gcc-card:hover .discuss-gcc-desc {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 400 !important;
+  }
+  .discuss-gcc-card .discuss-gcc-title,
+  .discuss-gcc-card:hover .discuss-gcc-title {
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+  }
+
+  /* Hard guard: links inside header, mega menu panels, and footer
+     must never change size, spacing, or position on hover — but their own
+     font weight is preserved so bold CTAs stay bold. */
+  header a:hover,
+  footer a:hover {
+    transform: none !important;
+    scale: none !important;
+  }
+
+  /* Two section rhythms only: standard and tight. The site previously mixed
+     py-16/20/24 with md:py-24/28/32/36 across pages. */
+  .section { @apply px-6 sm:px-8 lg:px-12 py-20 md:py-28; }
+  .section-sm { @apply px-6 sm:px-8 lg:px-12 py-14 md:py-20; }
+  .section-padding { @apply px-6 sm:px-8 lg:px-12 py-20 md:py-28; }
+  .bg-section-alt { background-color: hsl(0 0% 97%); }
+
+  /* Buttons - Apple-like pills */
+  .btn-primary {
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-medium text-sm text-white transition-colors duration-300;
+    background: hsl(var(--primary));
+  }
+  /* .btn-primary hover intentionally removed: cursor change only */
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-medium text-sm transition-colors duration-300;
+    background: #0a93bd;
+    color: #ffffff;
+  }
+  /* .btn-secondary hover intentionally removed */
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-medium text-sm transition-colors duration-300 border text-heading bg-transparent;
+    border-color: hsl(var(--border));
+  }
+  /* .btn-outline hover intentionally removed */
+
+  .btn-ghost-white {
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-medium text-sm transition-colors duration-300;
+    color: hsl(0 0% 100% / 0.85);
+    border: 1px solid hsl(0 0% 100% / 0.2);
+  }
+  /* .btn-ghost-white hover intentionally removed */
+
+  /* Top menu: keep size fixed; color handled in component.
+     Do NOT set font-size here - each link's own class controls its size. */
+  header nav a:hover {
+    transform: none;
+  }
+
+  /* Footer: rely on global link hover for color, keep size fixed.
+     Do NOT set font-size here - each link's own class controls its size. */
+  footer a:hover,
+  footer button:hover {
+    transform: none;
+  }
+
+  .link-arrow {
+    @apply inline-flex items-center gap-1.5 text-primary font-medium text-base transition-colors duration-300;
+  }
+  /* .link-arrow hover intentionally removed */
+
+  .divider { @apply h-px w-full bg-border; }
+
+  /* Keyframes */
+  @keyframes accordion-down { from { height: 0; } to { height: var(--radix-accordion-content-height); } }
+  @keyframes accordion-up { from { height: var(--radix-accordion-content-height); } to { height: 0; } }
+  @keyframes fade-up { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes float { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-10px); } }
+  @keyframes shimmer { from{ background-position:-200% center; } to{ background-position:200% center; } }
+  @keyframes pulse-glow { 0%,100%{ opacity:.5; } 50%{ opacity:.85; } }
+
+  .animate-fade-up { animation: fade-up 0.55s cubic-bezier(.16,1,.3,1) forwards; }
+  .animate-fade-up-1 { animation: fade-up 0.55s 0.1s cubic-bezier(.16,1,.3,1) both; }
+  .animate-fade-up-2 { animation: fade-up 0.55s 0.2s cubic-bezier(.16,1,.3,1) both; }
+  .animate-fade-up-3 { animation: fade-up 0.55s 0.3s cubic-bezier(.16,1,.3,1) both; }
+  .animate-fade-up-4 { animation: fade-up 0.55s 0.4s cubic-bezier(.16,1,.3,1) both; }
+  .animate-float { animation: float 4s ease-in-out infinite; }
+  .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+  .shimmer-text {
+    background: linear-gradient(90deg, #2563eb, #7c3aed, #2563eb);
+    background-size: 200% auto;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    animation: shimmer 3s linear infinite;
+  }
+
+  /* --- Premium motion utilities --------------------------------------- */
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  .text-balance { text-wrap: balance; }
+
+  /* Hairline grid backdrop used in cinematic dark sections */
+  .bg-grid-cyan {
+    background-image:
+      linear-gradient(rgba(10,147,189,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(10,147,189,0.08) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .bg-grid-fade {
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  }
+
+  /* Conic shimmer used behind hero headlines */
+  .aurora {
+    background:
+      radial-gradient(60% 60% at 30% 40%, rgba(10,147,189,0.35), transparent 60%),
+      radial-gradient(40% 40% at 70% 60%, rgba(124,58,237,0.30), transparent 65%),
+      radial-gradient(80% 80% at 50% 100%, rgba(54,50,106,0.40), transparent 70%);
+    filter: blur(40px);
+  }
+
+  /* Animated gradient text for headline accents */
+  .text-gradient-cinematic {
+    background-image: linear-gradient(120deg, #ffffff 0%, #b8e8f4 35%, #c4b5fd 55%, #ffffff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 6s linear infinite;
+  }
+
+  /* Premium pill button - glow on hover */
+  .btn-glow {
+    position: relative;
+    isolation: isolate;
+    transition: transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease;
+  }
+  .btn-glow::before {
+    content: "";
+    position: absolute; inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(10,147,189,.9), rgba(124,58,237,.9), rgba(10,147,189,0));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    opacity: 0; transition: opacity .35s ease;
+    z-index: -1;
+  }
+  /* .btn-glow hover intentionally removed */
+
+  /* Soft hairline separator that fades at the edges */
+  .hairline {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(10,147,189,.35), transparent);
+  }
+
+  /* ── Paper / sculpture surfaces ───────────────────────────────────── */
+  .surface-paper { background-color: #fbfaf7; color: #0e1320; }
+  .surface-paper-2 { background-color: #f3f1ec; color: #0e1320; }
+  .ink { color: #0e1320; }
+  .ink-muted { color: #5b6273; }
+
+  .hairline-rule {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(14,19,32,0.18), transparent);
+  }
+
+  .bg-grid-ink {
+    background-image:
+      linear-gradient(rgba(14,19,32,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(14,19,32,0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .aurora-paper {
+    background:
+      radial-gradient(60% 60% at 30% 40%, rgba(10,147,189,0.18), transparent 60%),
+      radial-gradient(45% 45% at 70% 60%, rgba(124,58,237,0.14), transparent 65%);
+    filter: blur(40px);
+  }
+
+  .text-gradient-ink {
+    background-image: linear-gradient(120deg, #0ab8e6 0%, #0a93bd 50%, #086a89 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* One eyebrow spec site-wide. Previously 9-14px with tracking anywhere
+     between 0.08em and 0.3em depending on the page. */
+  .eyebrow {
+    font-size: 0.75rem;      /* 12px - the 2xs step */
+    line-height: 1.45;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #0a93bd;
+    font-weight: 500;
+  }
+
+  /* Legacy alias - resolves to the shared card shape. */
+  .specimen-card {
+    background: #ffffff;
+    border: 1px solid var(--card-border);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    transition: border-color .3s ease, box-shadow .3s ease;
+  }
+  /* .specimen-card hover intentionally removed */
+
+  .btn-ink {
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-medium text-sm transition-colors duration-300;
+    background: #0e1320;
+    color: #fbfaf7;
+  }
+  /* .btn-ink hover intentionally removed */
+
+  .btn-ghost-ink {
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-medium text-sm transition-colors duration-300;
+    color: #0e1320;
+    border: 1px solid rgba(14,19,32,0.18);
+    background: transparent;
+  }
+  /* .btn-ghost-ink hover intentionally removed */
+}
+
+/* CTA right-arrow slide on hover */
+a svg.lucide-arrow-right,
+button svg.lucide-arrow-right {
+  transition: transform 200ms ease-out;
+  will-change: transform;
+}
+a:hover svg.lucide-arrow-right,
+a:focus-visible svg.lucide-arrow-right,
+button:hover svg.lucide-arrow-right,
+button:focus-visible svg.lucide-arrow-right {
+  transform: translateX(3px);
+}
+
+/* ---------------------------------------------------------------------------
+   Print
+
+   The GCC Decision Lab's decision pack has to be readable on paper, and
+   "Print, save as PDF" is the fallback whenever the PDF export cannot run.
+   `.no-print` marks the chrome and the controls; everything else prints.
+
+   These rules are scoped to what carries `.no-print` plus generic print
+   hygiene, so they do not change how any other page prints today beyond
+   removing link underline noise and page-breaking inside cards.
+--------------------------------------------------------------------------- */
+@media print {
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+  }
+
+  /* Sticky panels become inline blocks on paper; a fixed element would
+     otherwise repeat on every page or cover the content. */
+  .sticky,
+  .fixed {
+    position: static !important;
+  }
+
+  /* Keep a card and its heading together rather than splitting mid-table. */
+  section,
+  table,
+  figure,
+  li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 10px;
+    color: #555;
+    word-break: break-all;
+  }
+
+  @page {
+    margin: 16mm;
+  }
+}
+
+/* =========================================================================
+   GLOBAL REDESIGN DESIGN SYSTEM TOKENS & UTILITIES
+   Extracted from /redesign-source for seamless cross-site reusability
+   ========================================================================= */
+
+:root {
+  --navy: #2B3D66;
+  --navy-dark: #1C2A48;
+  --navy-muted: #536485;
+  --blue: #169DC8;
+  --blue-light: #EBF7FC;
+  --blue-hover: #1181A6;
+  --orange: #F19326;
+  --orange-hover: #DE8017;
+  --bg-white: #FFFFFF;
+  --bg-surface: #F7FBFD;
+  --bg-surface-alt: #F0F6FA;
+  --border-subtle: #E2EDF5;
+  --border-blue: rgba(22, 157, 200, 0.25);
+}
+
+/* Hero full viewport fit guarantee */
+.hero-viewport-fit {
+  height: 100vh;
+  height: 100dvh;
+  height: 100svh;
+  max-height: 100vh;
+  max-height: 100dvh;
+  max-height: 100svh;
+}
+
+/* Liquid Glass System */
+.liquid-glass {
+  background: rgba(0, 0, 0, 0.4);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 20%,
+    rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%,
+    rgba(255,255,255,0.1) 80%, rgba(255,255,255,0.3) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Enterprise Surface Cards */
+.enterprise-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px -2px rgba(43, 61, 102, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.enterprise-card:hover {
+  border-color: rgba(22, 157, 200, 0.4);
+  box-shadow: 0 12px 32px -4px rgba(43, 61, 102, 0.08), 0 0 0 1px rgba(22, 157, 200, 0.2);
+  transform: translateY(-2px);
+}
+
+.surface-tint {
+  background-color: #F7FBFD;
+}
+
+/* Hexagon CSS Utilities */
+.hex-clip {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.hex-clip-horizontal {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* Subtle Technical Grid & Line Accents */
+.tech-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(22, 157, 200, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(22, 157, 200, 0.04) 1px, transparent 1px);
+}
+
+.tech-dot-pattern {
+  background-image: radial-gradient(rgba(22, 157, 200, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Button & Pill styles */
+.btn-primary-orange {
+  background-color: #F19326;
+  color: #FFFFFF;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px 0 rgba(241, 147, 38, 0.3);
+}
+
+.btn-primary-orange:hover {
+  background-color: #DE8017;
+  box-shadow: 0 6px 20px 0 rgba(241, 147, 38, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-secondary-navy {
+  background-color: #2B3D66;
+  color: #FFFFFF;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px 0 rgba(43, 61, 102, 0.2);
+}
+
+.btn-secondary-navy:hover {
+  background-color: #1C2A48;
+  transform: translateY(-1px);
+}
+
+.btn-outline-blue {
+  background-color: #FFFFFF;
+  border: 1px solid #169DC8;
+  color: #169DC8;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-blue:hover {
+  background-color: #EBF7FC;
+  border-color: #1181A6;
+  color: #1181A6;
+}
+
+/* Cross-browser no-scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+.no-scrollbar::-webkit-scrollbar-track,
+.no-scrollbar::-webkit-scrollbar-thumb,
+.no-scrollbar::-webkit-scrollbar-corner {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+  overflow-y: hidden !important;
+}
+
