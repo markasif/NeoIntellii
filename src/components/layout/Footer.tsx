@@ -229,7 +229,7 @@ export default function Footer() {
           {/* ── RIGHT: Main Navigation Links (About, Industries, Our Approach, Insights, Careers, Contact) ── */}
           <div className="flex justify-start lg:justify-end">
             <nav aria-label="Footer navigation">
-              <ul className="space-y-2.5 sm:space-y-3 text-left lg:text-right">
+              <ul className="grid grid-cols-3 lg:grid-cols-1 gap-x-4 sm:gap-x-6 gap-y-2.5 sm:gap-y-3 text-left lg:text-right">
                 {mainNavLinks.map((link) => (
                   <li key={link.label}>
                     <Link

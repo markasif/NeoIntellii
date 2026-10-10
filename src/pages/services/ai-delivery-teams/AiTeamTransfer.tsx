@@ -269,6 +269,7 @@ export default function AiTeamTransfer() {
           lead="Transfer is not the finish line. It is the point where you decide how large the capability should be."
           theme="navy"
           width="wide"
+          wavesOnMobile
         >
           <UniversalLifecycle
             theme="navy"

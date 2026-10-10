@@ -690,7 +690,7 @@ export default function UniversalLifecycle({
       {/* ========================================================================= */}
       <div
         ref={mobileTimelineRef}
-        className={`block lg:hidden relative pl-6 sm:pl-8 mt-8 sm:mt-10 space-y-4 sm:space-y-5 transition-all duration-1000 ease-out delay-200 ${
+        className={`block lg:hidden relative w-full max-w-2xl mx-auto pl-6 sm:pl-8 mt-8 sm:mt-10 space-y-4 sm:space-y-5 transition-all duration-1000 ease-out delay-200 ${
           isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
@@ -769,7 +769,11 @@ export default function UniversalLifecycle({
                 </div>
 
                 {/* Stage Details */}
-                <div className="flex-1 min-w-0 pt-0.5 pb-1">
+                <div
+                  className={`flex-1 min-w-0 rounded-2xl border p-4 sm:p-5 shadow-sm transition-colors ${
+                    isNavy ? "border-white/10 bg-white/[0.04]" : "border-[#D2DCF0] bg-white/95"
+                  }`}
+                >
                   <div className="flex items-center gap-2 mb-1">
                     <span
                       className={`text-xs font-mono font-bold ${
@@ -842,7 +846,7 @@ export default function UniversalLifecycle({
 
                   {/* Mobile Tag Pill (rendered only when no items are supplied) */}
                   {!stage.items && resolvedTagStyle === "status" && (
-                    <div className="mt-1">{getStatusTagBadge(stage)}</div>
+                    <div className="mt-1 w-fit">{getStatusTagBadge(stage)}</div>
                   )}
 
                   {resolvedTagStyle === "diagram" && (stage.visual || stage.tagText) && (

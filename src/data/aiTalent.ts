@@ -26,6 +26,7 @@ export interface AiTalentPage {
   summary: string;
   anchor: string;
   ctaLabel: string;
+  mobileCtaLabel?: string;
   serviceInterest: string;
   /** Subnav grouping label. */
   group: "Overview" | "Specialist Hiring" | "Scale Hiring" | "Leadership" | "Build Capability";
@@ -34,28 +35,28 @@ export interface AiTalentPage {
 export const AI_TALENT_PAGES: AiTalentPage[] = [
   { key: "overview", path: AI_TALENT_HUB_PATH, navLabel: "Overview", name: "AI Talent", group: "Overview",
     summary: "Technically validated GenAI, Agentic AI, ML, Data, MLOps and AI Platform talent in India, from one hire to a complete AI team.",
-    anchor: "Explore AI Talent Services", ctaLabel: "Discuss My AI Hiring Plan", serviceInterest: "AI Talent" },
+    anchor: "Explore AI Talent Services", ctaLabel: "Discuss My AI Hiring Plan", mobileCtaLabel: "Discuss AI Hiring", serviceInterest: "AI Talent" },
   { key: "aiml", path: `${AI_TALENT_HUB_PATH}/ai-ml-recruitment`, navLabel: "AI & ML Recruitment", name: "AI & ML Recruitment", group: "Specialist Hiring",
     summary: "AI engineers, ML engineers, applied and deep learning, NLP, computer vision, research engineers, data scientists and AI solution architects.",
-    anchor: "Explore AI & ML Recruitment", ctaLabel: "Discuss an AI/ML Hire", serviceInterest: "AI & ML Recruitment" },
+    anchor: "Explore AI & ML Recruitment", ctaLabel: "Discuss an AI/ML Hire", mobileCtaLabel: "Discuss AI/ML Hire", serviceInterest: "AI & ML Recruitment" },
   { key: "genai", path: `${AI_TALENT_HUB_PATH}/genai-agentic-ai-hiring`, navLabel: "GenAI & Agentic AI", name: "GenAI & Agentic AI Hiring", group: "Specialist Hiring",
     summary: "GenAI, LLM, RAG, agentic AI and AI application engineers and architects, assessed on production ownership rather than framework names.",
-    anchor: "Explore GenAI & Agentic AI Hiring", ctaLabel: "Discuss a GenAI or Agent Hire", serviceInterest: "GenAI & Agentic AI Hiring" },
+    anchor: "Explore GenAI & Agentic AI Hiring", ctaLabel: "Discuss a GenAI or Agent Hire", mobileCtaLabel: "Discuss GenAI Hire", serviceInterest: "GenAI & Agentic AI Hiring" },
   { key: "data", path: `${AI_TALENT_HUB_PATH}/data-engineering-data-science-hiring`, navLabel: "Data Engineering & Science", name: "Data Engineering & Data Science Hiring", group: "Specialist Hiring",
     summary: "Data engineers, analytics and platform engineers, streaming engineers, data architects, data and applied scientists, and AI data specialists.",
-    anchor: "Explore Data Engineering & Data Science Hiring", ctaLabel: "Discuss a Data Hire", serviceInterest: "Data Engineering & Data Science Hiring" },
+    anchor: "Explore Data Engineering & Data Science Hiring", ctaLabel: "Discuss a Data Hire", mobileCtaLabel: "Discuss Data Hire", serviceInterest: "Data Engineering & Data Science Hiring" },
   { key: "mlops", path: `${AI_TALENT_HUB_PATH}/mlops-ai-platform-hiring`, navLabel: "MLOps & AI Platform", name: "MLOps & AI Platform Hiring", group: "Specialist Hiring",
     summary: "MLOps, ML and AI platform, AI infrastructure, LLMOps, AgentOps, GPU infrastructure and AI DevSecOps engineers for production AI.",
-    anchor: "Explore MLOps & AI Platform Hiring", ctaLabel: "Discuss an MLOps or Platform Hire", serviceInterest: "MLOps & AI Platform Hiring" },
+    anchor: "Explore MLOps & AI Platform Hiring", ctaLabel: "Discuss an MLOps or Platform Hire", mobileCtaLabel: "Discuss Platform Hire", serviceInterest: "MLOps & AI Platform Hiring" },
   { key: "leadership", path: `${AI_TALENT_HUB_PATH}/ai-leadership-executive-search`, navLabel: "AI Leadership", name: "AI Leadership & Executive Search", group: "Leadership",
     summary: "Chief AI Officer, Head of AI, VP AI and Data, AI engineering and platform directors, distinguished architects and GCC AI heads.",
-    anchor: "Explore AI Leadership & Executive Search", ctaLabel: "Discuss an AI Leadership Search", serviceInterest: "AI Leadership & Executive Search" },
+    anchor: "Explore AI Leadership & Executive Search", ctaLabel: "Discuss an AI Leadership Search", mobileCtaLabel: "Discuss Leadership Search", serviceInterest: "AI Leadership & Executive Search" },
   { key: "hub", path: `${AI_TALENT_HUB_PATH}/recruitment-hub`, navLabel: "Recruitment Hub + NeoHireX", name: "AI Recruitment Hub + NeoHireX", group: "Scale Hiring",
     summary: "A dedicated recruitment POD, NeoHireX Hiring OS and practitioner technical validation in one operating model for 10 to 100+ technical hires.",
-    anchor: "Explore the AI Recruitment Hub + NeoHireX", ctaLabel: "Plan My AI Recruitment Hub", serviceInterest: "AI Recruitment Hub" },
+    anchor: "Explore the AI Recruitment Hub + NeoHireX", ctaLabel: "Plan My AI Recruitment Hub", mobileCtaLabel: "Plan Recruitment Hub", serviceInterest: "AI Recruitment Hub" },
   { key: "academy", path: `${AI_TALENT_HUB_PATH}/ai-reskilling-academy`, navLabel: "Academy & Reskilling", name: "AI Talent Academy & Reskilling", group: "Build Capability",
     summary: "Convert backend, data, DevOps, ML, QA and architecture engineers you already employ into validated AI capability.",
-    anchor: "Explore AI Talent Academy & Reskilling", ctaLabel: "Discuss AI Reskilling for My Team", serviceInterest: "AI Talent Academy & Reskilling" },
+    anchor: "Explore AI Talent Academy & Reskilling", ctaLabel: "Discuss AI Reskilling for My Team", mobileCtaLabel: "Discuss AI Reskilling", serviceInterest: "AI Talent Academy & Reskilling" },
 ];
 
 export const AI_TALENT_PAGE_BY_KEY = Object.fromEntries(AI_TALENT_PAGES.map((page) => [page.key, page])) as Record<AiTalentPageKey, AiTalentPage>;

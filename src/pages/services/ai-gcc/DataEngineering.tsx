@@ -127,6 +127,7 @@ export default function DataEngineering() {
         width="wide"
         align="center"
         theme="navy"
+        wavesOnMobile
       >
         <DataCapabilitiesGrid items={CAPABILITIES} />
       </Section>

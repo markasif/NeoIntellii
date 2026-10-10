@@ -39,19 +39,18 @@ export default function WrongAnswerCards({ items, className = "" }: WrongAnswerC
                 </p>
               </div>
 
-              {/* Slanted / Chevron Divider Line (Visible on md+) */}
+              {/* Slanted / Chevron Arrow (Visible on md+) — navy filled so the sharp arrow area carries the panel colour */}
               <div className="hidden md:block relative w-8 self-stretch shrink-0 overflow-hidden">
                 <svg
                   className="absolute inset-0 w-full h-full"
                   viewBox="0 0 32 100"
                   preserveAspectRatio="none"
-                  fill="none"
+                  aria-hidden="true"
                 >
-                  <polyline
-                    points="4,0 28,50 4,100"
-                    stroke="#D2DCF0"
-                    strokeWidth="1.5"
-                    fill="none"
+                  <path
+                    d="M -1,0 L 30,50 L -1,100 Z M 12,0 L 31,50 L 12,100 Z"
+                    fill="#081B3E"
+                    fillRule="evenodd"
                   />
                 </svg>
               </div>

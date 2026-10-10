@@ -9,7 +9,7 @@ interface AiGccCTAProps {
   pageKey: AiGccPageKey;
   title: string;
   description: string;
-  secondary?: { label: string; href: string };
+  secondary?: { label: string; mobileLabel?: string; href: string };
 }
 
 /**
@@ -33,10 +33,12 @@ export default function AiGccCTA({ pageKey, title, description, secondary }: AiG
       description={description}
       primaryCta={{
         label: page.ctaLabel,
+        mobileLabel: page.mobileCtaLabel,
         href,
       }}
       secondaryCta={secondary ? {
         label: secondary.label,
+        mobileLabel: secondary.mobileLabel,
         href: secondary.href,
       } : undefined}
     />

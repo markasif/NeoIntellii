@@ -281,6 +281,7 @@ export default function ForwardDeployedAiEngineers() {
           lead="The model starts from the real environment rather than from a specification of it. That is the whole difference."
           theme="navy"
           width="wide"
+          wavesOnMobile
         >
           <UniversalLifecycle
             theme="navy"

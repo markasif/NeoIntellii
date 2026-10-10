@@ -398,19 +398,19 @@ export default function StrategyBusinessCase() {
             ))}
           </div>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <div className="mt-10 flex flex-wrap justify-center items-center gap-1.5 sm:gap-4">
             <Link
               to={GCC_TOOL_LINKS.costCalculator.href}
-              className="btn-gradient-primary inline-flex items-center gap-2 text-xs sm:text-sm px-6 py-3 font-semibold shadow-md group"
+              className="btn-gradient-primary inline-flex items-center justify-center whitespace-nowrap gap-2 !px-3 sm:!px-6 py-3 text-xs sm:text-sm font-semibold shadow-md group"
             >
-              <span>Estimate fully loaded cost with the GCC Cost Calculator</span>
+              <span>Estimate GCC cost</span>
               <ArrowRight aria-hidden className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
               to={GCC_TOOL_LINKS.costGuide.href}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[#D2DCF0] bg-white hover:border-[#008EC4] text-[#0D306C] hover:text-[#008EC4] text-xs sm:text-sm font-semibold transition-all duration-200 shadow-2xs hover:shadow-xs group"
+              className="inline-flex items-center justify-center whitespace-nowrap gap-2 !px-3 sm:!px-6 py-3 rounded-full border border-[#D2DCF0] bg-white hover:border-[#008EC4] text-[#0D306C] hover:text-[#008EC4] text-xs sm:text-sm font-semibold transition-all duration-200 shadow-2xs hover:shadow-xs group"
             >
-              <span>Read the GCC India cost guide</span>
+              <span>View cost guide</span>
               <ArrowRight aria-hidden className="w-4 h-4 transition-transform group-hover:translate-x-1 text-[#008EC4]" />
             </Link>
           </div>
@@ -575,6 +575,7 @@ export default function StrategyBusinessCase() {
           theme="navy"
           width="wide"
           align="center"
+          wavesOnMobile
         >
           <UniversalLifecycle
             theme="navy"

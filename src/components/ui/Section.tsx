@@ -23,6 +23,8 @@ export interface SectionProps {
   glow?: "left" | "right" | "center" | "none";
   paddingVariant?: "default" | "ops";
   waveFill?: string;
+  /** Keep the top/bottom wave dividers visible on mobile (<sm). Off by default. */
+  wavesOnMobile?: boolean;
 }
 
 const WIDTHS = {
@@ -60,6 +62,7 @@ export default function Section({
   glow = "none",
   paddingVariant = "default",
   waveFill,
+  wavesOnMobile = false,
 }: SectionProps) {
   // Support both theme="navy" and legacy tone="dark"
   const isNavy = theme === "navy" || tone === "dark";
@@ -94,7 +97,7 @@ export default function Section({
     >
       {/* ── TOP ORGANIC WAVE SECTION DIVIDER (Light -> Navy) ─────────── */}
       {isNavy && (
-        <div className="absolute -top-[2px] sm:-top-[3px] inset-x-0 z-20 pointer-events-none leading-none w-full overflow-hidden select-none hidden sm:block">
+        <div className={`absolute -top-[2px] sm:-top-[3px] inset-x-0 z-20 pointer-events-none leading-none w-full overflow-hidden select-none ${wavesOnMobile ? "" : "hidden sm:block"}`}>
           <svg
             viewBox="0 0 1440 140"
             fill="none"
@@ -150,7 +153,7 @@ export default function Section({
 
       {/* ── BOTTOM ORGANIC WAVE SECTION DIVIDER (Navy -> Light) ──────── */}
       {isNavy && (
-        <div className="absolute -bottom-[2px] sm:-bottom-[3px] inset-x-0 z-20 pointer-events-none leading-none w-full overflow-hidden select-none hidden sm:block">
+        <div className={`absolute -bottom-[2px] sm:-bottom-[3px] inset-x-0 z-20 pointer-events-none leading-none w-full overflow-hidden select-none ${wavesOnMobile ? "" : "hidden sm:block"}`}>
           <svg
             viewBox="0 0 1440 120"
             fill="none"

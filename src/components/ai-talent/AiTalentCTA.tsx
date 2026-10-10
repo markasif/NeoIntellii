@@ -29,8 +29,9 @@ export default function AiTalentCTA({ pageKey, title, description, secondary }: 
       description={description}
       primaryCta={{
         label: page.ctaLabel,
+        mobileLabel: page.mobileCtaLabel,
         href,
-        icon: <Sparkles className="w-4 h-4 mr-2" />,
+        icon: <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 shrink-0" />,
       }}
       secondaryCta={secondary ? {
         label: secondary.label,

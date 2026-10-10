@@ -500,6 +500,7 @@ export default function GCCServices() {
           lead="The NeoIntelli GCC design framework in one line. The first seven stages are this section's work; the last belongs to GCC Operations, which runs and scales the center after launch."
           theme="navy"
           width="wide"
+          wavesOnMobile
         >
           <UniversalLifecycle
             theme="navy"

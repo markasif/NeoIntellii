@@ -39,11 +39,13 @@ export default function AiEngineeringCTA({ pageKey, title, description }: AiEngi
       description={description}
       primaryCta={{
         label: page.ctaLabel,
+        mobileLabel: page.mobileCtaLabel,
         href: bookingHref,
-        icon: <Sparkles className="w-4 h-4 mr-2 text-white/90 transition-transform duration-200 group-hover:rotate-12" />,
+        icon: <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 text-white/90 shrink-0 transition-transform duration-200 group-hover:rotate-12" />,
       }}
       secondaryCta={{
         label: secondaryLabel,
+        mobileLabel: "Send use case in writing",
         href: contactHref,
       }}
       footnote="A 30-minute working session with a senior AI engineer. Bring the workflow, the data it depends on and the constraint that has stopped it so far."

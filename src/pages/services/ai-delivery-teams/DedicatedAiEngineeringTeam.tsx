@@ -649,10 +649,12 @@ export default function DedicatedAiEngineeringTeam() {
             theme="light"
             tagStyle="none"
           />
-          <CapabilitiesSection
-            items={cadenceItems.map((item) => ({ title: item.title, body: item.desc, icon: item.icon }))}
-            columns={3}
-          />
+          <div className="mt-10 sm:mt-12 lg:mt-14">
+            <CapabilitiesSection
+              items={cadenceItems.map((item) => ({ title: item.title, body: item.desc, icon: item.icon }))}
+              columns={3}
+            />
+          </div>
         </Section>
 
         {/* 8. What sits inside the team */}

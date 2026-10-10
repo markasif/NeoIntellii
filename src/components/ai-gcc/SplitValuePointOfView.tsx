@@ -35,7 +35,7 @@ export default function SplitValuePointOfView({
   ourViewText,
   ourViewLabel = "OUR VIEW",
   className = "",
-  centerPillsOnMobile = true,
+  centerPillsOnMobile = false,
 }: SplitValuePointOfViewProps) {
   return (
     <div

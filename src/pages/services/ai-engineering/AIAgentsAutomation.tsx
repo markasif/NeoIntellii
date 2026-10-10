@@ -284,6 +284,7 @@ export default function AIAgentsAutomation() {
         width="wide"
         align="center"
         theme="navy"
+        wavesOnMobile
       >
         <AgentCapabilitiesGrid items={CAPABILITIES} theme="navy" />
       </Section>

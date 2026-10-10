@@ -223,20 +223,22 @@ export default function AITalentOverview() {
           ))}
         </div>
 
-        <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-3.5 sm:gap-4">
+        <div className="mt-8 sm:mt-10 flex flex-row items-center justify-center gap-2 sm:gap-4 w-full max-w-xl mx-auto px-1 sm:px-0">
           <Link
             to={AI_TALENT_CONTEXT_LINKS.aiGcc.path}
-            className="btn-gradient-primary inline-flex items-center gap-2"
+            className="btn-gradient-primary flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold tracking-tight rounded-full whitespace-nowrap shadow-sm text-center"
           >
-            <span>{AI_TALENT_CONTEXT_LINKS.aiGcc.anchor}</span>
-            <ArrowRight className="w-4 h-4 text-white" aria-hidden />
+            <span className="hidden sm:inline">{AI_TALENT_CONTEXT_LINKS.aiGcc.anchor}</span>
+            <span className="sm:hidden">Explore AI GCC</span>
+            <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0" aria-hidden />
           </Link>
           <Link
             to={AI_TALENT_CONTEXT_LINKS.microGcc.path}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[#0D306C]/25 bg-white text-[#0D306C] text-sm font-semibold transition-all duration-200 shadow-xs"
+            className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-full border border-[#0D306C]/25 bg-white hover:bg-slate-50 text-[#0D306C] text-xs sm:text-sm font-semibold transition-all duration-200 shadow-xs whitespace-nowrap text-center"
           >
-            <span>{AI_TALENT_CONTEXT_LINKS.microGcc.anchor}</span>
-            <ArrowRight className="w-4 h-4" aria-hidden />
+            <span className="hidden sm:inline">{AI_TALENT_CONTEXT_LINKS.microGcc.anchor}</span>
+            <span className="sm:hidden">Start AI Micro</span>
+            <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 text-[#0D306C]" aria-hidden />
           </Link>
         </div>
       </Section>

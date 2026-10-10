@@ -31,6 +31,8 @@ export interface AiGccPage {
   anchor: string;
   /** The one contextual CTA label for the page. */
   ctaLabel: string;
+  /** Shortened CTA label for mobile screens to stay on one single line. */
+  mobileCtaLabel?: string;
   /** Lead-form / analytics service interest value. */
   serviceInterest: string;
 }
@@ -44,6 +46,7 @@ export const AI_GCC_PAGES: AiGccPage[] = [
     summary: "Build and operate your AI GCC in India with one operating partner for strategy, hiring, people operations, infrastructure, AI engineering and governance.",
     anchor: "Explore AI GCC in India",
     ctaLabel: "Plan My AI GCC",
+    mobileCtaLabel: "Plan My AI GCC",
     serviceInterest: "AI GCC",
   },
   {
@@ -54,6 +57,7 @@ export const AI_GCC_PAGES: AiGccPage[] = [
     summary: "AI maturity, GCC mandate, use-case portfolio, operating model, talent architecture and a value roadmap measured in business outcomes.",
     anchor: "Explore AI Advisory & GCC Design",
     ctaLabel: "Discuss My AI GCC Strategy",
+    mobileCtaLabel: "Discuss AI GCC Strategy",
     serviceInterest: "AI Advisory",
   },
   {
@@ -64,6 +68,7 @@ export const AI_GCC_PAGES: AiGccPage[] = [
     summary: "Entity coordination, Hiring OS, people operations, workspace, IT, cloud and GPU, AI platform, governance and the path from managed to captive.",
     anchor: "Explore AI GCC Setup & Operations",
     ctaLabel: "Plan My AI GCC Setup",
+    mobileCtaLabel: "Plan AI GCC Setup",
     serviceInterest: "AI GCC Setup",
   },
   {
@@ -74,6 +79,7 @@ export const AI_GCC_PAGES: AiGccPage[] = [
     summary: "Enterprise RAG, copilots, agentic AI, model adaptation, evaluation and production engineering inside your GCC.",
     anchor: "Explore Generative & Agentic AI",
     ctaLabel: "Discuss a Production AI Use Case",
+    mobileCtaLabel: "Discuss Production AI",
     serviceInterest: "Agentic AI",
   },
   {
@@ -84,6 +90,7 @@ export const AI_GCC_PAGES: AiGccPage[] = [
     summary: "The AI-ready data foundation: platform architecture, pipelines, reusable data products, vector infrastructure, lineage and data FinOps.",
     anchor: "Explore Data Engineering for AI GCCs",
     ctaLabel: "Assess My AI Data Foundation",
+    mobileCtaLabel: "Assess Data Foundation",
     serviceInterest: "Data Engineering",
   },
   {
@@ -94,6 +101,7 @@ export const AI_GCC_PAGES: AiGccPage[] = [
     summary: "The production operating layer for models, LLM applications and agents: CI/CD, evaluation, observability, cost and governance integration.",
     anchor: "Explore MLOps, LLMOps & AgentOps",
     ctaLabel: "Review My AI Production Stack",
+    mobileCtaLabel: "Review AI Stack",
     serviceInterest: "MLOps & AgentOps",
   },
   {
@@ -104,6 +112,7 @@ export const AI_GCC_PAGES: AiGccPage[] = [
     summary: "AI inventory, risk classification, model and agent governance, evaluation, controls, monitoring and audit evidence.",
     anchor: "Explore AI Governance & Responsible AI",
     ctaLabel: "Assess My AI Governance",
+    mobileCtaLabel: "Assess AI Governance",
     serviceInterest: "AI Governance",
   },
   {
@@ -114,6 +123,7 @@ export const AI_GCC_PAGES: AiGccPage[] = [
     summary: "Cloud, reserved and dedicated GPU, developer environments, training and inference infrastructure, storage, networking and AI FinOps.",
     anchor: "Explore AI Infrastructure & GPU",
     ctaLabel: "Plan My AI Infrastructure",
+    mobileCtaLabel: "Plan AI Infrastructure",
     serviceInterest: "AI Infrastructure & GPU",
   },
 ];

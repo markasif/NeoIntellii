@@ -3,7 +3,7 @@
 import { useRef, type ReactNode } from "react";
 
 interface ResponsiveTableProps {
-  caption: string;
+  caption?: string;
   headers: string[];
   rows: ReactNode[][];
   /** Visually hide the caption while keeping it for assistive tech. */
@@ -18,10 +18,8 @@ interface ResponsiveTableProps {
  * - Accessible table markup
  */
 export default function ResponsiveTable({
-  caption,
   headers,
   rows,
-  hideCaption = true,
 }: ResponsiveTableProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -32,11 +30,6 @@ export default function ResponsiveTable({
         className="overflow-x-auto rounded-2xl border border-[#D2DCF0] bg-white shadow-[0_4px_24px_rgba(13,48,108,0.05)] max-w-6xl mx-auto"
       >
         <table className="w-full text-left min-w-[720px] border-collapse">
-          {caption && (
-            <caption className={hideCaption ? "sr-only" : "p-4 text-xs font-semibold text-[#0D306C] text-left"}>
-              {caption}
-            </caption>
-          )}
           <thead className="bg-[#0D244D] text-white">
             <tr>
               {headers.map((header, idx) => (

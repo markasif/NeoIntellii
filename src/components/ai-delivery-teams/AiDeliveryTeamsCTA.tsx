@@ -7,8 +7,8 @@ interface AiDeliveryTeamsCTAProps {
   serviceInterest?: string;
   title: string;
   description: string;
-  primaryCta: { label: string; href: string };
-  secondaryCta?: { label: string; href: string };
+  primaryCta: { label: string; mobileLabel?: string; href: string };
+  secondaryCta?: { label: string; mobileLabel?: string; href: string };
   bottomText?: React.ReactNode;
 }
 

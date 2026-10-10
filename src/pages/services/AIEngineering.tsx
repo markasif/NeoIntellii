@@ -473,6 +473,7 @@ export default function AIEngineering() {
         theme="navy"
         width="wide"
         align="center"
+        wavesOnMobile
       >
         <AiGccArchitecture layers={AI_ENGINEERING_LAYERS} />
       </Section>

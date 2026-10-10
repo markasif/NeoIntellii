@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -341,79 +341,7 @@ function CardWaveArtwork({ index }: { index: number }) {
   );
 }
 
-/**
- * CTA button for the card: single-line and uniform width, fade-truncated by
- * default and sliding to reveal the full label on hover (same pattern used on
- * the Industries and AI Talent cards).
- */
-function RevealCtaButton({ label, isNavy }: { label: string; isNavy: boolean }) {
-  const wrapRef = useRef<HTMLSpanElement>(null);
-  const labelRef = useRef<HTMLSpanElement>(null);
-  const [hovered, setHovered] = useState(false);
-  const [shift, setShift] = useState(0);
-
-  const measure = useCallback(() => {
-    if (wrapRef.current && labelRef.current) {
-      const extra = labelRef.current.scrollWidth - wrapRef.current.clientWidth;
-      setShift(extra > 2 ? extra : 0);
-    }
-  }, []);
-
-  useEffect(() => {
-    const raf = requestAnimationFrame(measure);
-    const timer = window.setTimeout(measure, 250);
-    window.addEventListener("resize", measure);
-    return () => {
-      cancelAnimationFrame(raf);
-      clearTimeout(timer);
-      window.removeEventListener("resize", measure);
-    };
-  }, [measure]);
-
-  const truncated = shift > 0;
-
-  return (
-    <span
-      onMouseEnter={() => {
-        measure();
-        setHovered(true);
-      }}
-      onMouseLeave={() => setHovered(false)}
-      className={`mt-auto w-full inline-flex items-center justify-between gap-2 rounded-full px-5 py-2.5 text-[13px] font-bold font-manrope tracking-tight transition-all duration-200 ${
-        isNavy
-          ? "bg-[#38BDF8] text-[#04122C] group-hover:bg-white"
-          : "bg-[#0D244D] text-white group-hover:bg-[#008EC4]"
-      }`}
-    >
-      <span
-        ref={wrapRef}
-        className={`relative block min-w-0 flex-1 overflow-hidden whitespace-nowrap text-left ${
-          truncated && !hovered
-            ? "[mask-image:linear-gradient(to_right,black_calc(100%-16px),transparent_100%)]"
-            : ""
-        }`}
-      >
-        <span
-          ref={labelRef}
-          className="inline-block will-change-transform"
-          style={{
-            transform: hovered && truncated ? `translateX(-${shift + 6}px)` : "translateX(0px)",
-            transition:
-              hovered && truncated
-                ? `transform ${Math.max(0.5, shift * 0.012)}s cubic-bezier(0.2, 0.8, 0.4, 1)`
-                : "transform 0.3s ease-out",
-          }}
-        >
-          {label}
-        </span>
-      </span>
-      <ArrowRight className="w-4 h-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
-    </span>
-  );
-}
-
-/**
- * Standardized Pill Feature Card Grid:
+/* Standardized Pill Feature Card Grid:
  * Reusable card grid component with high-fidelity visual styling,
  * spaced typography, pill badge capsules, and bottom wave ribbons matching reference.
  */
@@ -453,16 +381,26 @@ export default function PillFeatureCardGrid({
               </span>
             )}
 
-            {/* Title */}
-            <h3
-              className={`text-[22px] sm:text-[25px] lg:text-[27px] font-extrabold tracking-tight leading-[1.25] mb-4 font-sans transition-colors ${
-                isNavy
-                  ? "text-white group-hover:text-[#38BDF8]"
-                  : "text-[#0D244D] group-hover:text-[#008EC4]"
-              }`}
-            >
-              {item.title}
-            </h3>
+            {/* Title + round arrow button in the top-right corner (home GCC Decision Toolkit look) */}
+            <div className="flex items-start justify-between gap-3 sm:gap-4 mb-4">
+              <h3
+                className={`text-[22px] sm:text-[25px] lg:text-[27px] font-extrabold tracking-tight leading-[1.25] font-sans transition-colors flex-1 min-w-0 ${
+                  isNavy
+                    ? "text-white group-hover:text-[#38BDF8]"
+                    : "text-[#0D244D] group-hover:text-[#008EC4]"
+                }`}
+              >
+                {item.title}
+              </h3>
+              {item.href && (
+                <div
+                  title={cta}
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white shadow-md border border-slate-200/80 flex items-center justify-center text-[#0D306C] group-hover:bg-[#0D306C] group-hover:!text-white group-hover:scale-105 transition-all duration-300 shrink-0 mt-0.5 round-arrow-btn"
+                >
+                  <ArrowRight className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-inherit group-hover:!text-white transition-all duration-200 group-hover:translate-x-0.5" />
+                </div>
+              )}
+            </div>
 
             {/* Pill chips */}
             {pills.length > 0 && (
@@ -492,9 +430,6 @@ export default function PillFeatureCardGrid({
                 {content}
               </p>
             )}
-
-            {/* CTA Action Button */}
-            {item.href && <RevealCtaButton label={cta} isNavy={isNavy} />}
           </div>
         );
 

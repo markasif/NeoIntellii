@@ -1050,6 +1050,7 @@ export default function AiDeliveryTeams() {
           lead="Delivery is the entry point, not the destination. Once the capability runs in production, four paths are open and none of them is automatic."
           theme="navy"
           width="wide"
+          wavesOnMobile
         >
           <AiDeliveryPathwaysFlow />
         </Section>

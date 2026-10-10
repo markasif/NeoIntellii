@@ -40,6 +40,8 @@ export interface AiEngineeringPage {
   summary: string;
   /** Primary CTA label for the page. */
   ctaLabel: string;
+  /** Shortened CTA label for mobile screens to stay on one single line. */
+  mobileCtaLabel?: string;
   /** Value passed as service_interest on CTA links and the contact form. */
   serviceInterest: string;
 }
@@ -69,6 +71,7 @@ export const AI_ENGINEERING_PAGES: AiEngineeringPage[] = [
     summary:
       "Production AI systems across Generative AI, Agentic AI, machine learning and data, from proof of value to permanent capability.",
     ctaLabel: "Discuss My AI Use Case",
+    mobileCtaLabel: "Discuss AI Use Case",
     serviceInterest: "AI Engineering",
   },
   {
@@ -91,6 +94,7 @@ export const AI_ENGINEERING_PAGES: AiEngineeringPage[] = [
     ],
     summary: "RAG, LLM applications, copilots and agentic systems.",
     ctaLabel: "Discuss My GenAI / Agentic Use Case",
+    mobileCtaLabel: "Discuss GenAI / Agentic",
     serviceInterest: "Generative & Agentic AI",
   },
   {
@@ -111,6 +115,7 @@ export const AI_ENGINEERING_PAGES: AiEngineeringPage[] = [
     ],
     summary: "Forecasting, prediction, optimization, CV, NLP and ML systems.",
     ctaLabel: "Assess My AI / ML Use Case",
+    mobileCtaLabel: "Assess AI / ML Use Case",
     serviceInterest: "Applied AI & ML",
   },
   {
@@ -131,6 +136,7 @@ export const AI_ENGINEERING_PAGES: AiEngineeringPage[] = [
     ],
     summary: "Data platforms, pipelines, AI-ready data and retrieval infrastructure.",
     ctaLabel: "Assess My AI Data Foundation",
+    mobileCtaLabel: "Assess AI Data Foundation",
     serviceInterest: "AI Data Engineering",
   },
   {
@@ -151,6 +157,7 @@ export const AI_ENGINEERING_PAGES: AiEngineeringPage[] = [
     ],
     summary: "AI-native products and AI capabilities inside existing software.",
     ctaLabel: "Discuss My AI Product",
+    mobileCtaLabel: "Discuss AI Product",
     serviceInterest: "AI Product Engineering",
   },
   {
@@ -171,6 +178,7 @@ export const AI_ENGINEERING_PAGES: AiEngineeringPage[] = [
     ],
     summary: "Tool-using agents and AI-enabled enterprise workflows.",
     ctaLabel: "Map My AI Automation Opportunity",
+    mobileCtaLabel: "Map AI Automation",
     serviceInterest: "AI Agents & Automation",
   },
   {
@@ -186,6 +194,7 @@ export const AI_ENGINEERING_PAGES: AiEngineeringPage[] = [
     keywords: ["MLOps services", "LLMOps services", "AgentOps services", "AI observability"],
     summary: "Production lifecycle, observability, deployment and operations.",
     ctaLabel: "Review My Production AI Stack",
+    mobileCtaLabel: "Review AI Stack",
     serviceInterest: "MLOps / LLMOps / AgentOps",
   },
   {
@@ -207,6 +216,7 @@ export const AI_ENGINEERING_PAGES: AiEngineeringPage[] = [
     ],
     summary: "Evaluation, testing, red teaming and production quality.",
     ctaLabel: "Assess My AI Evaluation Approach",
+    mobileCtaLabel: "Assess AI Evaluation",
     serviceInterest: "AI Evaluation & Assurance",
   },
 ];
