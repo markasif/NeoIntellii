@@ -1,6 +1,6 @@
 "use client";
 
-import { type ReactNode, type Ref } from "react";
+import { useEffect, useRef, useState, type ReactNode, type Ref, type RefObject } from "react";
 
 export interface MatrixRow {
   label: string;
@@ -28,6 +28,42 @@ interface ResponsiveMatrixProps {
   scrollRef?: Ref<HTMLDivElement>;
 }
 
+/** Tracks whether a horizontally scrollable element can scroll left/right. */
+function useTableScrollEdges(target: RefObject<HTMLDivElement | null>) {
+  const [edges, setEdges] = useState({ left: false, right: false });
+  useEffect(() => {
+    const el = target.current;
+    if (!el) return;
+    const update = () =>
+      setEdges({
+        left: el.scrollLeft > 4,
+        right: el.scrollLeft + el.clientWidth < el.scrollWidth - 4,
+      });
+    el.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+    return () => {
+      el.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, [target]);
+  return edges;
+}
+
+/** Attaches a node to every ref in the list. */
+function mergeRefs<T>(...refs: Array<Ref<T> | undefined>) {
+  return (node: T) => {
+    refs.forEach((ref) => {
+      if (!ref) return;
+      if (typeof ref === "function") {
+        (ref as (instance: T | null) => void)(node);
+      } else {
+        (ref as { current: T | null }).current = node;
+      }
+    });
+  };
+}
+
 /**
  * A comparison table matching the approved NeoIntelli ResponsiveTable system.
  * Scrolls inside its container on desktop and stacks into clean cards on mobile.
@@ -44,9 +80,13 @@ export default function ResponsiveMatrix({
   stickyRowHeader = false,
   scrollRef,
 }: ResponsiveMatrixProps) {
+  const shadowRef = useRef<HTMLDivElement>(null);
+  const { left, right } = useTableScrollEdges(shadowRef);
+
   return (
     <div className={className}>
-      <div ref={scrollRef} className="hidden md:block overflow-x-auto scroll-smooth rounded-2xl border border-[#D2DCF0] bg-white shadow-[0_4px_24px_rgba(13,48,108,0.05)]">
+      <div className="relative">
+      <div ref={mergeRefs(scrollRef, shadowRef)} className="hidden md:block overflow-x-auto scroll-smooth rounded-2xl border border-[#D2DCF0] bg-white shadow-[0_4px_24px_rgba(13,48,108,0.05)]">
         <table className={`w-full text-left text-sm border-collapse ${minTableWidth}`}>
           <caption className="sr-only">{caption}</caption>
           <thead className="bg-[#0D244D] text-white">
@@ -116,6 +156,17 @@ export default function ResponsiveMatrix({
             })}
           </tbody>
         </table>
+      </div>
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none absolute inset-y-0 left-0 w-5 sm:w-8 transition-opacity duration-300 ${left ? "opacity-100" : "opacity-0"}`}
+        style={{ background: "linear-gradient(to right, rgba(13,48,108,0.18), rgba(13,48,108,0))" }}
+      />
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none absolute inset-y-0 right-0 w-5 sm:w-8 transition-opacity duration-300 ${right ? "opacity-100" : "opacity-0"}`}
+        style={{ background: "linear-gradient(to left, rgba(13,48,108,0.18), rgba(13,48,108,0))" }}
+      />
       </div>
 
       <div className="md:hidden space-y-3" role="list" aria-label={caption}>

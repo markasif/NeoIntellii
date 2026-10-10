@@ -17,7 +17,6 @@ import {
   Brain,
   TestTube2,
   GitMerge,
-  Check,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
@@ -29,6 +28,7 @@ import StatementSection from "@/components/shared/StatementSection";
 import CapabilitiesSection from "@/components/ai-gcc/CapabilitiesSection";
 import SlottedStepNumber from "@/components/gcc-operations/SlottedStepNumber";
 import FiveCardHeroGrid from "@/components/shared/FiveCardHeroGrid";
+import PillFeatureCardGrid from "@/components/shared/PillFeatureCardGrid";
 import IndustriesSubnav from "@/components/industries/IndustriesSubnav";
 import Consultation from "@/features/home/components/Consultation";
 import { CAL_BOOKING_URL } from "@/lib/constants";
@@ -344,36 +344,16 @@ export default function PrivateEquityGCC() {
             eyebrow="Portfolio Architecture"
             align="center"
           />
-          <div className="grid md:grid-cols-3 gap-6">
-            {engagementModels.map((model) => (
-              <div
-                key={model.title}
-                className="relative p-8 rounded-2xl bg-white/80 backdrop-blur-xs border border-[#CBD5E1]/60 shadow-xs hover:shadow-md hover:border-[#00A3E0]/40 transition-all duration-300 h-full flex flex-col justify-between"
-              >
-                <div>
-                  <span className="inline-block text-2xs font-mono font-bold uppercase tracking-[0.16em] text-[#008EC4] bg-[#00A3E0]/10 border border-[#00A3E0]/20 px-3 py-1 rounded-full mb-4">
-                    {model.tag}
-                  </span>
-                  <h3 className="text-xl font-bold font-manrope text-[#0D306C] tracking-tight mb-3">
-                    {model.title}
-                  </h3>
-                  <p className="text-sm text-[#505D74] leading-relaxed mb-6 font-normal">
-                    {model.desc}
-                  </p>
-                </div>
-                <ul className="mt-auto space-y-2.5 pt-4 border-t border-[#CBD5E1]/50">
-                  {model.points.map((point) => (
-                    <li
-                      key={point}
-                      className="flex items-center gap-2.5 text-sm text-[#2B3D66] font-medium"
-                    >
-                      <Check className="w-4 h-4 text-[#00A3E0] shrink-0 stroke-[2.5]" />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="max-w-6xl mx-auto">
+            <PillFeatureCardGrid
+              columns={3}
+              items={engagementModels.map((model) => ({
+                title: model.title,
+                verb: model.tag,
+                body: model.desc,
+                items: model.points,
+              }))}
+            />
           </div>
         </Section>
 

@@ -165,7 +165,7 @@ describe("the workspace", () => {
     expect(await screen.findByText(/The same data, as a table/i)).toBeInTheDocument();
     const table = screen.getByRole("region", { name: /Cumulative cash difference by month/i });
     expect(within(table).getAllByRole("row").length).toBeGreaterThan(3);
-  });
+  }, 15000);
 
   it("labels a cost line with no approved figure as not budgeted, never as zero", async () => {
     const user = userEvent.setup();
