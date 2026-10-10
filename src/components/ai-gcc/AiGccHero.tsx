@@ -151,7 +151,7 @@ export default function AiGccHero({
                       href={secondaryCta.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-full bg-white hover:bg-slate-50 border border-slate-300/90 text-[#0D244D] text-xs sm:text-[13px] font-bold tracking-tight px-3.5 sm:px-5 py-2 sm:py-2.5 transition-all duration-200 shadow-xs hover:shadow-md cursor-pointer shrink-0 whitespace-nowrap"
+                      className="btn-white cursor-pointer shrink-0 whitespace-nowrap text-xs sm:text-[13px] !py-2 sm:!py-2.5 !px-3.5 sm:!px-5"
                     >
                       <span>{secondaryCta.label}</span>
                       <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0 text-[#169DC8]" />
@@ -159,7 +159,7 @@ export default function AiGccHero({
                   ) : (
                     <Link
                       to={secondaryCta.href}
-                      className="inline-flex items-center justify-center rounded-full bg-white hover:bg-slate-50 border border-slate-300/90 text-[#0D244D] text-xs sm:text-[13px] font-bold tracking-tight px-3.5 sm:px-5 py-2 sm:py-2.5 transition-all duration-200 shadow-xs hover:shadow-md cursor-pointer shrink-0 whitespace-nowrap"
+                      className="btn-white cursor-pointer shrink-0 whitespace-nowrap text-xs sm:text-[13px] !py-2 sm:!py-2.5 !px-3.5 sm:!px-5"
                     >
                       <span>{secondaryCta.label}</span>
                       <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0 text-[#169DC8]" />

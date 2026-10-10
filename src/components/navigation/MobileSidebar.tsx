@@ -84,6 +84,18 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
   useEffect(() => {
     if (isOpen) {
       const scrollY = window.scrollY;
+      const initialPath = window.location.pathname + window.location.search;
+      let routeChanged = false;
+
+      const handleRouteChange = () => {
+        routeChanged = true;
+      };
+
+      if (router?.events) {
+        router.events.on("routeChangeStart", handleRouteChange);
+      }
+
+      const originalHtmlScrollBehavior = document.documentElement.style.scrollBehavior;
       const originalBodyOverflow = document.body.style.overflow;
       const originalHtmlOverflow = document.documentElement.style.overflow;
       const originalBodyPosition = document.body.style.position;
@@ -106,6 +118,11 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
       }
 
       return () => {
+        if (router?.events) {
+          router.events.off("routeChangeStart", handleRouteChange);
+        }
+
+        document.documentElement.style.scrollBehavior = "auto";
         document.documentElement.style.overflow = originalHtmlOverflow;
         document.documentElement.style.overscrollBehavior = originalHtmlOverscroll;
         document.body.style.overflow = originalBodyOverflow;
@@ -114,10 +131,17 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
         document.body.style.width = originalBodyWidth;
         document.body.style.paddingRight = originalPaddingRight;
         document.body.style.overscrollBehavior = originalOverscroll;
-        window.scrollTo(0, scrollY);
+
+        const currentWindowPath = window.location.pathname + window.location.search;
+        if (routeChanged || currentWindowPath !== initialPath) {
+          window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+        } else {
+          window.scrollTo({ top: scrollY, behavior: "instant" as ScrollBehavior });
+        }
+        document.documentElement.style.scrollBehavior = originalHtmlScrollBehavior;
       };
     }
-  }, [isOpen]);
+  }, [isOpen, router]);
 
   // Close on Escape key
   useEffect(() => {
