@@ -40,4 +40,4 @@ tsconfig.tsbuildinfo
 
 # Temp scratch & debug files
 step_*
-
+scratch/

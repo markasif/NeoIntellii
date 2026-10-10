@@ -36,7 +36,7 @@ export default function CashflowChart({ data, currency, paybackMonth, descriptio
   return (
     <figure className="m-0">
       <div className="h-64 w-full" role="img" aria-label={description}>
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="100%" minWidth={300} minHeight={200}>
           <LineChart data={data} margin={{ top: 8, right: 8, bottom: 8, left: 0 }}>
             <CartesianGrid stroke="rgba(14,19,32,0.06)" vertical={false} />
             <XAxis

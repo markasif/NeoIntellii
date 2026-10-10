@@ -26,13 +26,13 @@
 | **SEO-001** | Technical SEO | **P2** | Resolved (Phase E) | `next.config.mjs` / `/recruitment` routes | Activated single-hop 301 redirects consolidating legacy recruitment to modern AI talent |
 | **PERF-003** | Performance & Bundle | **P2** | Confirmed | `src/lib/next-router-shim.tsx` & React Router | Project includes both Next.js router and React Router shim |
 | **RESP-002** | Responsive Design | **P2** | Confirmed | `src/pages/GCCIndiaCost.tsx` / Salary Tables | Multi-column salary tables require horizontal scroll on <768px |
-| **CODE-001** | Code Quality | **P2** | Confirmed | Root directory scripts (`analyze_original.cjs`, etc.) | 12 dead decomposition scripts cluttering workspace root |
+| **CODE-001** | Code Quality | **P2** | Resolved (Phase F) | Root directory scripts (`analyze_original.cjs`, etc.) | Archived legacy root decomposition scripts into gitignored `scratch/` directory |
 | **CRO-002** | Conversion & CRO | **P2** | Confirmed | `src/components/layout/Footer.tsx` | NeoHireX product links redirect off-domain to `neohirex.ai` without new-tab icon |
 | **RESP-003** | Responsive Design | **P2** | Confirmed | `src/components/navigation/Navbar.tsx` | Desktop dropdown menus have tight hover timeout (180ms) |
 | **A11Y-003** | Accessibility | **P3** | Confirmed | `src/components/gcc-calculator/EstimateEmailForm.tsx` | Color contrast ratio on subtle placeholder text in dark inputs |
 | **SEO-002** | Technical SEO | **P3** | Confirmed | `src/data/blogPosts.ts` | 48 blog posts all share single `author: NeoIntelli` schema entity |
 | **DES-002** | UI / Visual Design | **P3** | Confirmed | `src/components/layout/Footer.tsx` | Giant translucent watermark overlaps viewport bottom at small heights |
-| **CODE-002** | Code Quality | **P3** | Confirmed | `src/test/gccLabWorkspace.test.tsx` | Recharts zero-dimension warnings during headless test execution |
+| **CODE-002** | Code Quality | **P3** | Resolved (Phase F) | `src/test/gccLabWorkspace.test.tsx` | Silenced Recharts headless test zero-dimension warnings via test mock and chart dimension guards |
 | **RESP-004** | Responsive Design | **P3** | Confirmed | `src/components/shared/PillFeatureCardGrid.tsx` | Two-column cards stack abruptly at 640px breakpoint |
 | **CRO-003** | Conversion & CRO | **P3** | Confirmed | `src/pages/gcc-faq.tsx` | FAQ lacks 'Expand All' / 'Collapse All' toggle for rapid scanning |
 
@@ -270,14 +270,34 @@
 ### Issue CODE-001: Redundant Decomposition Scripts Cluttering Workspace Root
 - **Category:** Code Quality & Maintainability
 - **Severity:** P2 (Medium Priority)
+- **Status:** Resolved (Phase F)
 - **Confidence:** Confirmed
 - **Affected Location:** Workspace root (`*.cjs`, `*.js`, `*.txt`, `*.json`)
 - **Exact Location:** `analyze_original.cjs`, `decompile_dist.cjs`, `extract_dist.cjs`, `extract_exact_jsx.cjs`, `extract_page_content.cjs`, `parse_sections.cjs`, `print_original_content.cjs`, `location_pretty.js`, `modernization_pretty.js`, `setup_pretty.js`, etc.
 - **Problem Description:** The project root contains 15+ one-off extraction and decompilation scripts and text files generated during the migration from the original Vite build. These files are not referenced in `package.json` scripts, yet remain in the root directory.
 - **Evidence / Reproduction Steps:**
-  1. Directory listing of root shows 15 `.cjs` and `.js` files totaling ~200KB.
+  1. Directory listing of root previously showed 15 `.cjs` and `.js` files totaling ~200KB.
 - **Impact:** Visual clutter; confusion for future developers and automated tooling.
-- **Recommended Solution:** Safely move these scripts into an `archive/migration-scripts/` folder or delete them.
-- **Dependencies:** Confirm no scripts are called in CI.
+- **Resolved Solution:** All 15+ decomposition scripts are quarantined in the gitignored `scratch/` directory. Root is clean of dead migration scripts.
+- **Dependencies:** None.
 - **Estimated Effort:** 15 minutes.
 - **Browser Verification Required:** No.
+
+---
+
+### Issue CODE-002: Recharts Zero-Dimension Warnings During Headless Test Execution
+- **Category:** Code Quality & Test Reliability
+- **Severity:** P3 (Low Priority)
+- **Status:** Resolved (Phase F)
+- **Confidence:** Confirmed
+- **Affected Location:** `src/test/gccLabWorkspace.test.tsx`, `src/components/gcc-lab/CashflowChart.tsx`
+- **Problem Description:** Headless JSDOM test runner lacks a real rendering layout engine, causing Recharts `<ResponsiveContainer>` to evaluate width and height as 0. This flooded test execution stdout/stderr with verbose warning messages.
+- **Evidence / Reproduction Steps:**
+  1. Run `npx vitest run src/test/gccLabWorkspace.test.tsx`.
+  2. Notice multiple `The width(0) and height(0) of chart should be greater than 0` warnings in terminal output.
+- **Impact:** Noise in test logs obscuring genuine regressions and warnings.
+- **Resolved Solution:** Added fallback dimensions (`minWidth={300} minHeight={200}`) on `<ResponsiveContainer>` in `CashflowChart.tsx` and mocked `<ResponsiveContainer>` in `gccLabWorkspace.test.tsx` to provide standard container dimensions in headless mode. All 394 tests pass cleanly with zero warnings.
+- **Dependencies:** None.
+- **Estimated Effort:** 30 minutes.
+- **Browser Verification Required:** Yes (verify chart renders normally in real browser).
+

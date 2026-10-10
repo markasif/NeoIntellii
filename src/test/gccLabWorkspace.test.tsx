@@ -4,6 +4,16 @@ import userEvent from "@testing-library/user-event";
 import LabWorkspace from "@/components/gcc-lab/LabWorkspace";
 import { STORAGE_KEY } from "@/lib/gcc-lab/storage";
 
+vi.mock("recharts", async () => {
+  const original = await vi.importActual<typeof import("recharts")>("recharts");
+  return {
+    ...original,
+    ResponsiveContainer: ({ children }: { children?: React.ReactNode }) => (
+      <div style={{ width: 800, height: 400 }}>{children}</div>
+    ),
+  };
+});
+
 /**
  * Behaviour tests for the workspace itself: the things that are only true once
  * the pieces are wired together - inputs surviving a move between areas, a
