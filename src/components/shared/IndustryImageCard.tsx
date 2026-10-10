@@ -117,7 +117,7 @@ export default function IndustryImageCard({
   ) : null;
 
   const linkClasses = isButton
-    ? `btn-cyan group/btn w-full justify-start overflow-hidden`
+    ? `btn-cyan btn-cyan-compact group/btn w-full justify-start overflow-hidden`
     : "inline-flex items-center gap-1.5 text-xs sm:text-[13px] lg:text-sm font-bold text-[#169DC8] group-hover:text-[#0D306C] transition-colors group/link leading-snug";
 
   const colWidthClass = isButton

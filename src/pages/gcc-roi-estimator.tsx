@@ -818,10 +818,10 @@ export default function GCCROIEstimator() {
         {/* ============================================================ */}
         <section
           id="strategic-consultation"
-          className="relative bg-gradient-to-b from-[#081B3E] via-[#0A224E] to-[#081B3E] text-white pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden font-sans select-none"
+          className="relative bg-gradient-to-b from-[#081B3E] via-[#0A224E] to-[#081B3E] text-white pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 overflow-x-clip font-sans select-none"
         >
           {/* ── TOP ORGANIC WAVE SECTION DIVIDER (Light -> Navy) ─────────── */}
-          <div className="absolute top-0 inset-x-0 z-20 pointer-events-none leading-none w-full overflow-hidden select-none">
+          <div className="absolute -top-[2px] sm:-top-[3px] inset-x-0 z-20 pointer-events-none leading-none w-full overflow-hidden select-none">
             <svg
               viewBox="0 0 1440 140"
               fill="none"
@@ -829,12 +829,12 @@ export default function GCCROIEstimator() {
               className="w-full h-10 sm:h-14 lg:h-16 xl:h-18 block pointer-events-none"
             >
               <path
-                d="M0,0 L1440,0 L1440,30 C1300,32 1160,65 1000,82 C840,99 720,74 540,84 C360,94 200,136 0,136 Z"
+                d="M0,-4 L1440,-4 L1440,30 C1300,32 1160,65 1000,82 C840,99 720,74 540,84 C360,94 200,136 0,136 Z"
                 fill="#D2DCF0"
                 opacity="0.6"
               />
               <path
-                d="M0,0 L1440,0 L1440,22 C1300,24 1160,58 1000,74 C840,90 720,66 540,76 C360,86 200,126 0,126 Z"
+                d="M0,-4 L1440,-4 L1440,22 C1300,24 1160,58 1000,74 C840,90 720,66 540,76 C360,86 200,126 0,126 Z"
                 fill="#F0F5FA"
               />
             </svg>

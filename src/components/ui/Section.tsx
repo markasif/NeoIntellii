@@ -86,7 +86,7 @@ export default function Section({
     <section
       id={id}
       aria-labelledby={title ? headingId : undefined}
-      className={`relative scroll-mt-28 overflow-hidden select-none px-4 sm:px-6 lg:px-8 ${
+      className={`relative scroll-mt-28 overflow-x-clip select-none px-4 sm:px-6 lg:px-8 ${
         isNavy
           ? `bg-gradient-to-b from-[#081B3E] via-[#0A224E] to-[#061530] text-white ${paddingClasses}`
           : `bg-transparent text-[#2B3D66] ${paddingClasses}`
@@ -94,7 +94,7 @@ export default function Section({
     >
       {/* ── TOP ORGANIC WAVE SECTION DIVIDER (Light -> Navy) ─────────── */}
       {isNavy && (
-        <div className="absolute top-0 inset-x-0 z-20 pointer-events-none leading-none w-full overflow-hidden select-none">
+        <div className="absolute -top-[2px] sm:-top-[3px] inset-x-0 z-20 pointer-events-none leading-none w-full overflow-hidden select-none">
           <svg
             viewBox="0 0 1440 140"
             fill="none"
@@ -102,12 +102,12 @@ export default function Section({
             className="w-full h-10 sm:h-14 lg:h-16 xl:h-18 block pointer-events-none"
           >
             <path
-              d="M0,0 L1440,0 L1440,30 C1300,32 1160,65 1000,82 C840,99 720,74 540,84 C360,94 200,136 0,136 Z"
+              d="M0,-4 L1440,-4 L1440,30 C1300,32 1160,65 1000,82 C840,99 720,74 540,84 C360,94 200,136 0,136 Z"
               fill="#D2DCF0"
               opacity="0.6"
             />
             <path
-              d="M0,0 L1440,0 L1440,22 C1300,24 1160,58 1000,74 C840,90 720,66 540,76 C360,86 200,126 0,126 Z"
+              d="M0,-4 L1440,-4 L1440,22 C1300,24 1160,58 1000,74 C840,90 720,66 540,76 C360,86 200,126 0,126 Z"
               fill={fillColor}
             />
           </svg>
@@ -150,7 +150,7 @@ export default function Section({
 
       {/* ── BOTTOM ORGANIC WAVE SECTION DIVIDER (Navy -> Light) ──────── */}
       {isNavy && (
-        <div className="absolute bottom-0 inset-x-0 z-20 pointer-events-none leading-none w-full overflow-hidden select-none">
+        <div className="absolute -bottom-[2px] sm:-bottom-[3px] inset-x-0 z-20 pointer-events-none leading-none w-full overflow-hidden select-none">
           <svg
             viewBox="0 0 1440 120"
             fill="none"
@@ -159,19 +159,19 @@ export default function Section({
           >
             {/* Subtle cyan accent wave undertone */}
             <path
-              d="M0,120 L1440,120 L1440,42 C1260,78 1060,18 800,56 C540,94 300,36 0,72 Z"
+              d="M0,124 L1440,124 L1440,42 C1260,78 1060,18 800,56 C540,94 300,36 0,72 Z"
               fill="#169DC8"
               opacity="0.25"
             />
             {/* Soft pearl-blue wave layer */}
             <path
-              d="M0,120 L1440,120 L1440,30 C1280,62 1080,22 830,50 C570,80 320,28 0,62 Z"
+              d="M0,124 L1440,124 L1440,30 C1280,62 1080,22 830,50 C570,80 320,28 0,62 Z"
               fill="#D2DCF0"
               opacity="0.75"
             />
             {/* Main solid wave seamlessly matching section below */}
             <path
-              d="M0,120 L1440,120 L1440,18 C1220,52 1020,12 760,42 C500,72 270,24 0,52 Z"
+              d="M0,124 L1440,124 L1440,18 C1220,52 1020,12 760,42 C500,72 270,24 0,52 Z"
               fill={fillColor}
             />
           </svg>

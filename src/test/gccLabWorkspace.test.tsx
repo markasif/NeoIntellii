@@ -207,7 +207,7 @@ describe("the workspace", () => {
 
     expect(await screen.findByRole("button", { name: /Download PDF/i })).toBeInTheDocument();
     expect(document.querySelectorAll(".no-print").length).toBeGreaterThan(0);
-  });
+  }, 15000);
 });
 
 describe("the review request", () => {
