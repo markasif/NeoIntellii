@@ -290,8 +290,8 @@ export default function Consultation({ hideUpperCta = false, hideWaveDivider = f
               {/* Horizontal Divider */}
               <div className="pt-2 border-t border-white/15">
                 
-                {/* 3 Metric Cards Styled Like 'What Connecting Those Layers' with Chamfered Bottom-Left Cut & Animation */}
-                <div className="grid grid-cols-1 min-[400px]:grid-cols-3 gap-2.5 sm:gap-3 pt-3">
+                {/* 3 Metric Cards Styled Like 'What Connecting Those Layers' with Chamfered Bottom-Left Cut & Animation - 2 Rows on Mobile */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-3">
                   
                   {/* Card 1: 30+ GCCs Shaped */}
                   <div
@@ -367,9 +367,9 @@ export default function Consultation({ hideUpperCta = false, hideWaveDivider = f
                     </div>
                   </div>
 
-                  {/* Card 3: 100% Senior-Led (Cyan-to-Amber Gradient Highlight matching 'Discuss Your GCC') */}
+                  {/* Card 3: 100% Senior-Led (Cyan-to-Amber Gradient Highlight matching 'Discuss Your GCC') - Spans full width on mobile (Row 2) */}
                   <div
-                    className="relative p-3 sm:p-3.5 rounded-2xl bg-gradient-to-br from-[#169DC8] via-[#0EA5C9] to-[#DE8017] border border-white/30 backdrop-blur-md transition-all duration-300 shadow-[0_10px_28px_rgba(22,157,200,0.3)] hover:shadow-[0_14px_35px_rgba(222,128,23,0.38)] group hover:-translate-y-0.5 text-left flex flex-col justify-between overflow-hidden"
+                    className="col-span-2 sm:col-span-1 relative p-3 sm:p-3.5 rounded-2xl bg-gradient-to-br from-[#169DC8] via-[#0EA5C9] to-[#DE8017] border border-white/30 backdrop-blur-md transition-all duration-300 shadow-[0_10px_28px_rgba(22,157,200,0.3)] hover:shadow-[0_14px_35px_rgba(222,128,23,0.38)] group hover:-translate-y-0.5 text-left flex flex-row sm:flex-col items-center sm:items-stretch justify-between overflow-hidden"
                     style={{
                       clipPath:
                         "polygon(0 0, 100% 0, 100% 100%, 16px 100%, 0 calc(100% - 16px))",
@@ -378,9 +378,9 @@ export default function Consultation({ hideUpperCta = false, hideWaveDivider = f
                     {/* Inner subtle glow overlay */}
                     <div className="absolute inset-0 bg-gradient-to-tl from-white/15 via-transparent to-transparent pointer-events-none" />
 
-                    <div className="relative z-10">
+                    <div className="relative z-10 flex items-center gap-3 sm:block">
                       {/* Hexagon Shape Icon Badge matching 'Discuss Your GCC' section */}
-                      <div className="relative flex items-center justify-center w-7 h-8 mb-2">
+                      <div className="relative flex items-center justify-center w-7 h-8 mb-0 sm:mb-2 shrink-0">
                         <svg viewBox="0 0 54 60" className="w-full h-full drop-shadow-sm">
                           <polygon
                             points="27,3 50,16 50,44 27,57 4,44 4,16"
@@ -394,15 +394,17 @@ export default function Consultation({ hideUpperCta = false, hideWaveDivider = f
                           <CheckCircle2 className="w-3.5 h-3.5" />
                         </div>
                       </div>
-                      <div className="flex items-baseline font-mono font-black text-xl sm:text-2xl text-white tracking-tight leading-none">
-                        <AnimatedCounter value={100} trigger={isInView} />
-                        <span className="text-base sm:text-lg font-bold ml-0.5 text-white">%</span>
-                      </div>
-                      <div className="text-[10.5px] sm:text-xs text-white font-bold mt-1.5 leading-tight">
-                        Senior-led
+                      <div>
+                        <div className="flex items-baseline font-mono font-black text-xl sm:text-2xl text-white tracking-tight leading-none">
+                          <AnimatedCounter value={100} trigger={isInView} />
+                          <span className="text-base sm:text-lg font-bold ml-0.5 text-white">%</span>
+                        </div>
+                        <div className="text-[10.5px] sm:text-xs text-white font-bold mt-0.5 sm:mt-1.5 leading-tight">
+                          Senior-led
+                        </div>
                       </div>
                     </div>
-                    <div className="relative z-10 text-right text-[9px] text-white/90 font-medium mt-2">
+                    <div className="relative z-10 text-right text-[9px] text-white/90 font-medium mt-0 sm:mt-2 shrink-0">
                       Partners
                     </div>
                   </div>
