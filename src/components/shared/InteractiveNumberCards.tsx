@@ -29,6 +29,40 @@ export default function InteractiveNumberCards({
   className = "",
 }: InteractiveNumberCardsProps) {
   const [active, setActive] = useState(0);
+  const cardRefs = React.useRef<(HTMLDivElement | null)[]>([]);
+
+  // Automatically activate cards on mobile as the user scrolls / moves past them
+  React.useEffect(() => {
+    if (typeof window === "undefined") return;
+    const isMobile = window.innerWidth < 1024;
+    if (!isMobile) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const indexStr = entry.target.getAttribute("data-card-index");
+            if (indexStr !== null) {
+              const idx = parseInt(indexStr, 10);
+              if (!isNaN(idx)) {
+                setActive(idx);
+              }
+            }
+          }
+        });
+      },
+      {
+        rootMargin: "-25% 0px -25% 0px",
+        threshold: 0.25,
+      }
+    );
+
+    cardRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [items.length]);
 
   const colClass =
     columns === 2
@@ -46,11 +80,17 @@ export default function InteractiveNumberCards({
         return (
           <motion.div
             key={item.title}
+            ref={(el) => {
+              cardRefs.current[index] = el;
+            }}
+            data-card-index={index}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.6, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
             onMouseEnter={() => setActive(index)}
+            onTouchStart={() => setActive(index)}
+            onTouchMove={() => setActive(index)}
             onClick={() => setActive(index)}
             className={`relative p-5 sm:p-7 lg:p-8 flex flex-col justify-between min-h-[360px] sm:min-h-[420px] lg:min-h-[460px] transition-all duration-500 ease-out cursor-pointer rounded-2xl ${
               isActive

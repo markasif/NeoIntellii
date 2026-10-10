@@ -78,8 +78,8 @@ function CtaButton({
   const isGradient = variant === "gradient";
   const isWhiteToCyan = variant === "white-to-cyan" || variant === "white-cyan" || variant === "white";
 
-  const buttonClasses = `w-full inline-flex items-center justify-between gap-2 group/btn ${
-    isCompact ? "px-3 py-2 xl:px-3.5 xl:py-2.5 text-xs" : "px-3.5 py-2 sm:px-4 sm:py-2.5 text-xs"
+  const buttonClasses = `w-fit sm:w-full inline-flex items-center justify-between gap-2.5 group/btn ${
+    isCompact ? "px-3 py-2 xl:px-3.5 xl:py-2.5 text-xs" : "px-4 py-2 sm:px-4 sm:py-2.5 text-xs"
   } ${
     isGradient || isWhiteToCyan ? "rounded-full" : "rounded-sm"
   } font-bold tracking-normal transition-all duration-200 shrink-0 cursor-pointer overflow-hidden ${
@@ -174,26 +174,43 @@ export default function HiringPathCards({
   const isThree = totalCols === 3;
   const defaultIdx = cardList.findIndex((p) => p.highlight);
   const [activePath, setActivePath] = useState<number>(defaultIdx >= 0 ? defaultIdx : 0);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  // Automatically activate cards on mobile as the user scrolls / moves past them
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const isMobile = window.innerWidth < 1024;
+    if (!isMobile) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const indexStr = entry.target.getAttribute("data-card-index");
+            if (indexStr !== null) {
+              const idx = parseInt(indexStr, 10);
+              if (!isNaN(idx)) {
+                setActivePath(idx);
+              }
+            }
+          }
+        });
+      },
+      {
+        rootMargin: "-25% 0px -25% 0px",
+        threshold: 0.25,
+      }
+    );
+
+    cardRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [cardList.length]);
 
   return (
     <div>
-      {/* Mobile quick-selector pills */}
-      <div className={`flex ${isFiveOrMore ? "xl:hidden" : isThree ? "md:hidden" : "lg:hidden"} items-center gap-2 overflow-x-auto pb-3 mb-6 no-scrollbar`}>
-        {cardList.map((p, idx) => (
-          <button
-            key={p.title}
-            onClick={() => setActivePath(idx)}
-            className={`px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
-              activePath === idx
-                ? "bg-[#0D306C] text-white shadow-sm scale-105"
-                : "bg-white/80 text-[#505D74] border border-[#D2DCF0]"
-            }`}
-          >
-            {String(idx + 1).padStart(2, "0")}. {p.title}
-          </button>
-        ))}
-      </div>
-
       {/* Process Columns with smooth staggered entrance animation */}
       <div
         className={
@@ -218,11 +235,17 @@ export default function HiringPathCards({
           return (
             <motion.div
               key={path.title}
+              ref={(el) => {
+                cardRefs.current[index] = el;
+              }}
+              data-card-index={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
               onMouseEnter={() => setActivePath(index)}
+              onTouchStart={() => setActivePath(index)}
+              onTouchMove={() => setActivePath(index)}
               onClick={() => setActivePath(index)}
               className={
                 isFiveOrMore
@@ -350,7 +373,7 @@ export default function HiringPathCards({
 
               {/* Bottom CTA Button */}
               {hasCta && (
-                <div className="relative z-10 pt-6 text-left">
+                <div className="relative z-10 pt-6 text-left flex justify-start sm:block">
                   <CtaButton
                     label={cta.label}
                     href={cta.href}

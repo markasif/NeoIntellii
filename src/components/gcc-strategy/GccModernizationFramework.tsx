@@ -76,26 +76,43 @@ const stages: FrameworkStage[] = [
 
 export default function GccModernizationFramework({ className = "" }: { className?: string }) {
   const [activeStage, setActiveStage] = useState(0);
+  const cardRefs = React.useRef<(HTMLDivElement | null)[]>([]);
+
+  // Automatically activate cards on mobile as the user scrolls / moves past them
+  React.useEffect(() => {
+    if (typeof window === "undefined") return;
+    const isMobile = window.innerWidth < 1024;
+    if (!isMobile) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const indexStr = entry.target.getAttribute("data-card-index");
+            if (indexStr !== null) {
+              const idx = parseInt(indexStr, 10);
+              if (!isNaN(idx)) {
+                setActiveStage(idx);
+              }
+            }
+          }
+        });
+      },
+      {
+        rootMargin: "-25% 0px -25% 0px",
+        threshold: 0.25,
+      }
+    );
+
+    cardRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [stages.length]);
 
   return (
     <div className={`w-full ${className}`}>
-      {/* Mobile quick-selector pills */}
-      <div className="flex lg:hidden items-center gap-2 overflow-x-auto pb-3 mb-6 no-scrollbar">
-        {stages.map((s, idx) => (
-          <button
-            key={s.title}
-            onClick={() => setActiveStage(idx)}
-            className={`px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
-              activeStage === idx
-                ? "bg-[#0D306C] text-white shadow-sm scale-105"
-                : "bg-white/80 text-[#505D74] border border-[#D2DCF0]"
-            }`}
-          >
-            {s.step}. {s.title}
-          </button>
-        ))}
-      </div>
-
       {/* 4-Card Horizontal Process Columns with staggered entrance animation & hover wash */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-8 items-stretch pt-2 sm:pt-4">
         {stages.map((stage, index) => {
@@ -105,11 +122,17 @@ export default function GccModernizationFramework({ className = "" }: { classNam
           return (
             <motion.div
               key={stage.title}
+              ref={(el) => {
+                cardRefs.current[index] = el;
+              }}
+              data-card-index={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
               onMouseEnter={() => setActiveStage(index)}
+              onTouchStart={() => setActiveStage(index)}
+              onTouchMove={() => setActiveStage(index)}
               onClick={() => setActiveStage(index)}
               className={`relative p-5 sm:p-7 lg:p-8 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] lg:min-h-[480px] transition-all duration-500 ease-out cursor-pointer rounded-2xl ${
                 isActive

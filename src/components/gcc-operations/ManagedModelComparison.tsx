@@ -73,27 +73,44 @@ const MODES: ModeItem[] = [
 
 export default function ManagedModelComparison() {
   const [activePhase, setActivePhase] = useState<number>(0);
+  const cardRefs = React.useRef<(HTMLDivElement | null)[]>([]);
+
+  // Automatically activate cards on mobile as the user scrolls / moves past them
+  React.useEffect(() => {
+    if (typeof window === "undefined") return;
+    const isMobile = window.innerWidth < 1024;
+    if (!isMobile) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const indexStr = entry.target.getAttribute("data-card-index");
+            if (indexStr !== null) {
+              const idx = parseInt(indexStr, 10);
+              if (!isNaN(idx)) {
+                setActivePhase(idx);
+              }
+            }
+          }
+        });
+      },
+      {
+        rootMargin: "-25% 0px -25% 0px",
+        threshold: 0.25,
+      }
+    );
+
+    cardRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [MODES.length]);
 
   return (
     <div className="relative w-full select-none py-1">
       <AmbientGlow position="center" />
-
-      {/* Mobile quick-phase selector pills */}
-      <div className="flex lg:hidden items-center gap-2 overflow-x-auto pb-3 mb-6 no-scrollbar">
-        {MODES.map((m, idx) => (
-          <button
-            key={m.number}
-            onClick={() => setActivePhase(idx)}
-            className={`px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
-              activePhase === idx
-                ? "bg-[#0D306C] text-white shadow-sm scale-105"
-                : "bg-white/80 text-[#505D74] border border-[#D2DCF0]"
-            }`}
-          >
-            {m.number}. {m.title}
-          </button>
-        ))}
-      </div>
 
       {/* 4-Card Horizontal Process Columns with smooth staggered entrance animation matching EngagementModel */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-8 items-stretch pb-4 lg:pb-6">
@@ -103,11 +120,17 @@ export default function ManagedModelComparison() {
           return (
             <motion.div
               key={mode.number}
+              ref={(el) => {
+                cardRefs.current[index] = el;
+              }}
+              data-card-index={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
               onMouseEnter={() => setActivePhase(index)}
+              onTouchStart={() => setActivePhase(index)}
+              onTouchMove={() => setActivePhase(index)}
               onClick={() => setActivePhase(index)}
               className={`relative p-5 sm:p-7 lg:p-8 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] lg:min-h-[480px] transition-all duration-500 ease-out cursor-pointer rounded-2xl ${
                 isActive
