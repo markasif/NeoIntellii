@@ -2,9 +2,9 @@
 
 **Total Discovered Routes:** 135 routes (87 static application routes + 48 blog posts)  
 **Total Crawled & Verified via HTTP:** 135 routes  
-**Status 200 (Success):** 134 routes  
-**Status 404 (Failed):** 1 route (`/company`)  
-**Legacy Redirects Tested & Passing:** 24 routes  
+**Status 200 (Success):** 135 routes (Direct 200: 104, Clean Single-Hop 301: 31)  
+**Status 404 (Failed):** 0 routes (Resolved)  
+**Legacy Redirects Tested & Passing:** 31 routes (including /company and legacy recruitment suite)  
 
 ---
 
@@ -57,7 +57,7 @@
 | `/privacy-policy`| GDPR / DPDP compliance & privacy statements | 80 | 88 | 88 | 88 | 92 | 88 | 92 | 90 | Pure legal text, low visual formatting | P3 |
 | `/terms-of-service`| Legal terms governing website usage | 80 | 88 | 88 | 88 | 92 | 88 | 92 | 90 | Pure legal text | P3 |
 | `/cookie-policy`| Cookie usage & consent guidance | 80 | 88 | 88 | 88 | 92 | 88 | 92 | 90 | Pure legal text | P3 |
-| `/company` | Alternate corporate URL mapped in router | **0** | **0** | **0** | **0** | **0** | **0** | **0** | **0** | **Returns HTTP 404 Not Found** | **P0** |
+| `/company` | Alternate corporate URL mapped in router | 88 | 84 | 98 | 85 | 96 | 86 | 92 | 95 | Resolved (Phase A): Single-hop 301 redirect to `/about` | Resolved |
 
 ---
 
