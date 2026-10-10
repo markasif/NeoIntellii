@@ -70,7 +70,8 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
-    unoptimized: true,
+    unoptimized: false,
+    formats: ['image/avif', 'image/webp'],
   },
   async redirects() {
     return [

@@ -18,8 +18,8 @@
 | **RESP-001** | Responsive Design | **P1** | Confirmed | `src/index.css` (`.hero-viewport-fit`) | Height clamp (`100svh`) clips content on short mobile viewports |
 | **DES-001** | UI / Visual Design | **P1** | Confirmed | `src/index.css` (lines 224–229) | Global CSS rule forcibly resets non-H1 bold classes to 400 |
 | **A11Y-001** | Accessibility | **P1** | Confirmed | `src/pages/services/gcc/StrategyBusinessCase.tsx` | 14 risk cards render decorative images with empty alt attributes |
-| **PERF-001** | Performance & Bundle | **P2** | Confirmed | `package.json` (`three`, `@react-three/*`) | Unused Three.js dependencies present in project dependencies |
-| **PERF-002** | Performance & Media | **P2** | Confirmed | `next.config.mjs` (`images.unoptimized: true`) | Image optimization disabled globally, serving full-size media |
+| **PERF-001** | Performance & Bundle | **P2** | Resolved (Phase D) | `package.json` (`three`, `@react-three/*`) | Uninstalled unused Three.js bloat (~35MB) from dependencies |
+| **PERF-002** | Performance & Media | **P2** | Resolved (Phase D) | `next.config.mjs` (`images.unoptimized: false`) | Re-enabled Next.js image optimization with AVIF and WebP formats |
 | **CRO-001** | Conversion & CRO | **P2** | Resolved (Phase B) | Hero Sections (`AiGccHero`, `GccStrategyHero`, etc.) | Unified secondary CTA buttons on `.btn-white` across all 6 pillar heroes |
 | **NAV-002** | Navigation & UX | **P2** | Resolved (Phase B) | `src/components/navigation/MobileSidebar.tsx` | Refined scroll-lock restoration without jumping on same page or route change |
 | **A11Y-002** | Accessibility | **P2** | Confirmed | `src/components/gcc-lab/DecisionPackArea.tsx` | Export action buttons lack accessible tooltips on icon-only states |
