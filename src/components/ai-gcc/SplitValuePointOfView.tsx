@@ -14,6 +14,7 @@ export interface SplitValuePointOfViewProps {
   ourViewText: ReactNode;
   ourViewLabel?: string;
   className?: string;
+  centerPillsOnMobile?: boolean;
 }
 
 /**
@@ -34,6 +35,7 @@ export default function SplitValuePointOfView({
   ourViewText,
   ourViewLabel = "OUR VIEW",
   className = "",
+  centerPillsOnMobile = true,
 }: SplitValuePointOfViewProps) {
   return (
     <div
@@ -47,17 +49,21 @@ export default function SplitValuePointOfView({
           </div>
 
           {pills.length > 0 && (
-            <div>
+            <div className={centerPillsOnMobile ? "text-center sm:text-left" : ""}>
               {pillsTitle && (
                 <p className="text-xs uppercase tracking-wider font-bold text-[#0D306C] mb-3">
                   {pillsTitle}
                 </p>
               )}
-              <ul className="flex flex-wrap gap-2.5 list-none p-0 m-0">
+              <ul
+                className={`flex flex-wrap gap-2 sm:gap-2.5 list-none p-0 m-0 ${
+                  centerPillsOnMobile ? "justify-center sm:justify-start" : ""
+                }`}
+              >
                 {pills.map((pill) => (
                   <li
                     key={pill}
-                    className="inline-flex items-center px-4 py-1.5 sm:px-5 sm:py-2 rounded-full border border-[#00A3E0] bg-transparent text-[#0D244D] text-xs sm:text-[13.5px] font-semibold hover:border-[#0D306C] hover:bg-white/40 transition-all duration-200 shadow-xs select-none"
+                    className="inline-flex items-center justify-center text-center px-3.5 py-1.5 sm:px-5 sm:py-2 rounded-full border border-[#00A3E0] bg-transparent text-[#0D244D] text-xs sm:text-[13.5px] font-semibold hover:border-[#0D306C] hover:bg-white/40 transition-all duration-200 shadow-xs select-none"
                   >
                     {pill}
                   </li>
