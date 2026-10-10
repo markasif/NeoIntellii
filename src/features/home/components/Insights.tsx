@@ -76,7 +76,7 @@ export default function Insights() {
 
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 rounded-lg bg-white border border-[#D2DCF0] px-5 py-2.5 text-xs sm:text-sm font-bold text-[#0D306C] shadow-2xs hover:border-[#169DC8] hover:text-[#169DC8] transition-all duration-200 group shrink-0"
+            className="btn-white group shrink-0"
           >
             <span>Explore Insights</span>
             <ArrowRight className="w-4 h-4 text-[#169DC8] transition-transform duration-200 group-hover:translate-x-1" />

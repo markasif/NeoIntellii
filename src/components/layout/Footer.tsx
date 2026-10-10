@@ -22,7 +22,10 @@ const mainNavLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-const serviceCategories = [
+type FooterLink = { label: string; href: string };
+type FooterCategory = { title: string; links: FooterLink[]; sub?: { title: string; links: FooterLink[] } };
+
+const serviceCategories: FooterCategory[] = [
   {
     title: "AI GCC",
     links: [
@@ -102,14 +105,14 @@ const serviceCategories = [
       { label: "Recruitment Hub", href: "/recruitment" },
       { label: "Contract & Contract-to-Hire", href: "/recruitment/contract-staffing" },
     ],
-  },
-  {
-    title: "Product",
-    links: [
-      { label: "AI Interview", href: "https://neohirex.ai/platform/ai-interviews" },
-      { label: "DPDP Act 2023", href: "https://neohirex.ai/platform/compliance" },
-      { label: "Book Demo", href: "/book-a-call?type=neohirex" },
-    ],
+    sub: {
+      title: "Product",
+      links: [
+        { label: "AI Interview", href: "https://neohirex.ai/platform/ai-interviews" },
+        { label: "DPDP Act 2023", href: "https://neohirex.ai/platform/compliance" },
+        { label: "Book Demo", href: "/book-a-call?type=neohirex" },
+      ],
+    },
   },
   {
     title: "Resources",
@@ -263,6 +266,26 @@ export default function Footer() {
                     </li>
                   ))}
                 </ul>
+
+                {category.sub && (
+                  <div className="pt-5 mt-3 border-t border-[#0D306C]/10">
+                    <h4 className="text-[13px] sm:text-[14px] font-bold text-[#0D306C] tracking-tight mb-2 sm:mb-2.5">
+                      {category.sub.title}
+                    </h4>
+                    <ul className="space-y-1.5 sm:space-y-2">
+                      {category.sub.links.map((link) => (
+                        <li key={link.label}>
+                          <Link
+                            href={link.href}
+                            className="text-[11.5px] sm:text-[12px] text-[#475569] hover:text-[#169DC8] transition-colors duration-150 font-medium leading-normal block"
+                          >
+                            {link.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             ))}
           </div>
