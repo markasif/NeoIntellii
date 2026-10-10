@@ -478,7 +478,8 @@ export default function StrategyBusinessCase() {
                 <div className="absolute inset-0 pointer-events-none overflow-hidden">
                   <img
                     src={item.image}
-                    alt=""
+                    alt={item.title}
+                    role="presentation"
                     aria-hidden="true"
                     className="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-500"
                   />

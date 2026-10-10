@@ -17,13 +17,13 @@
 | **SEC-001** | Security & Privacy | **P1** | Resolved (Phase A) | `.env` repository root | Untracked from Git; added to `.gitignore`; `.env.example` created |
 | **RESP-001** | Responsive Design | **P1** | Confirmed | `src/index.css` (`.hero-viewport-fit`) | Height clamp (`100svh`) clips content on short mobile viewports |
 | **DES-001** | UI / Visual Design | **P1** | Confirmed | `src/index.css` (lines 224–229) | Global CSS rule forcibly resets non-H1 bold classes to 400 |
-| **A11Y-001** | Accessibility | **P1** | Confirmed | `src/pages/services/gcc/StrategyBusinessCase.tsx` | 14 risk cards render decorative images with empty alt attributes |
+| **A11Y-001** | Accessibility | **P1** | Resolved (Phase E) | `src/pages/services/gcc/StrategyBusinessCase.tsx` | Enhanced 14 risk cards with contextual alt labels and role="presentation" |
 | **PERF-001** | Performance & Bundle | **P2** | Resolved (Phase D) | `package.json` (`three`, `@react-three/*`) | Uninstalled unused Three.js bloat (~35MB) from dependencies |
 | **PERF-002** | Performance & Media | **P2** | Resolved (Phase D) | `next.config.mjs` (`images.unoptimized: false`) | Re-enabled Next.js image optimization with AVIF and WebP formats |
 | **CRO-001** | Conversion & CRO | **P2** | Resolved (Phase B) | Hero Sections (`AiGccHero`, `GccStrategyHero`, etc.) | Unified secondary CTA buttons on `.btn-white` across all 6 pillar heroes |
 | **NAV-002** | Navigation & UX | **P2** | Resolved (Phase B) | `src/components/navigation/MobileSidebar.tsx` | Refined scroll-lock restoration without jumping on same page or route change |
 | **A11Y-002** | Accessibility | **P2** | Confirmed | `src/components/gcc-lab/DecisionPackArea.tsx` | Export action buttons lack accessible tooltips on icon-only states |
-| **SEO-001** | Technical SEO | **P2** | Confirmed | `src/lib/seo.ts` / `/recruitment` routes | Duplicate search intent between legacy `/recruitment` and `/services/ai-talent` |
+| **SEO-001** | Technical SEO | **P2** | Resolved (Phase E) | `next.config.mjs` / `/recruitment` routes | Activated single-hop 301 redirects consolidating legacy recruitment to modern AI talent |
 | **PERF-003** | Performance & Bundle | **P2** | Confirmed | `src/lib/next-router-shim.tsx` & React Router | Project includes both Next.js router and React Router shim |
 | **RESP-002** | Responsive Design | **P2** | Confirmed | `src/pages/GCCIndiaCost.tsx` / Salary Tables | Multi-column salary tables require horizontal scroll on <768px |
 | **CODE-001** | Code Quality | **P2** | Confirmed | Root directory scripts (`analyze_original.cjs`, etc.) | 12 dead decomposition scripts cluttering workspace root |
