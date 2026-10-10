@@ -23,27 +23,27 @@ export default function InBriefCard({
 
   return (
     <div
-      className={`w-full h-full relative overflow-hidden rounded-none bg-gradient-to-b from-[#06152F] via-[#091F44] to-[#051126] border border-[#16427D]/60 p-6 sm:p-7 lg:p-8 flex flex-col justify-center text-left group ${className}`}
+      className={`w-full h-full relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-b from-[#081B3E] via-[#0A224E] to-[#081B3E] border border-white/15 shadow-2xl p-6 sm:p-7 lg:p-8 flex flex-col justify-center text-left group ${className}`}
     >
-      {/* 1. DECORATIVE NAVY + CYAN BACKGROUND (MATCHES THE SITE THEME) */}
+      {/* 1. DECORATIVE NAVY + CYAN BACKGROUND MATCHING LET'S BUILD TOGETHER SECTION */}
       <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden">
-        {/* Soft technical grid */}
+        {/* Ambient background glow highlights */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-80 h-80 bg-[#169DC8]/12 rounded-full blur-3xl pointer-events-none z-0" />
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#0066CC]/15 rounded-full blur-3xl pointer-events-none z-0" />
+
+        {/* Subtle technical grid pattern matching Consultation / Let's build together theme */}
         <div
-          className="absolute inset-0 opacity-[0.05]"
+          className="absolute inset-0 opacity-[0.045] pointer-events-none"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
+              "linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)",
+            backgroundSize: "44px 44px",
           }}
         />
 
-        {/* Ambient glows */}
-        <div className="absolute top-0 right-0 w-80 h-80 bg-[#169DC8]/12 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-[#00A3E0]/10 rounded-full blur-3xl" />
-
-        {/* Soft cyan wave accent along the bottom edge (kept clear of the text) */}
+        {/* Soft cyan wave accent along the bottom edge */}
         <svg
-          className="absolute inset-x-0 bottom-0 w-full h-16 sm:h-20"
+          className="absolute inset-x-0 bottom-0 w-full h-16 sm:h-20 pointer-events-none select-none"
           viewBox="0 0 1000 120"
           preserveAspectRatio="none"
           fill="none"
@@ -72,11 +72,11 @@ export default function InBriefCard({
         </span>
         <div className="w-10 sm:w-12 h-[3px] bg-[#EA8A1A] rounded-full mb-3.5 sm:mb-4 shadow-[0_0_10px_rgba(234,138,26,0.6)]" />
         {typeof children === "string" ? (
-          <p className="text-[#F0F6FC] text-sm sm:text-base leading-relaxed sm:leading-[1.75] font-normal drop-shadow-[0_1px_3px_rgba(0,0,0,0.7)]">
+          <p className="text-[#C5D7F0] text-sm sm:text-base leading-relaxed sm:leading-[1.75] font-normal drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
             {children}
           </p>
         ) : (
-          <div className="text-[#F0F6FC] text-sm sm:text-base leading-relaxed sm:leading-[1.75] font-normal drop-shadow-[0_1px_3px_rgba(0,0,0,0.7)]">
+          <div className="text-[#C5D7F0] text-sm sm:text-base leading-relaxed sm:leading-[1.75] font-normal drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
             {children}
           </div>
         )}
