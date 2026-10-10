@@ -74,6 +74,7 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      { source: '/company', destination: '/about', statusCode: 301 },
       { source: '/services', destination: '/services/gcc', permanent: true },
       { source: '/services/', destination: '/services/gcc', permanent: true },
       { source: '/gcc-solutions', destination: '/services/gcc', permanent: true },

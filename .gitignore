@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Local Environment
+.env
+.env*.local
+
 # Next.js build output
 .next/
 out/

@@ -53,7 +53,6 @@ const pageLoaders: Record<string, PageLoader> = {
   "/services/ai-talent/recruitment-hub":            () => import("./pages/services/ai-talent/RecruitmentHub"),
   "/services/ai-talent/ai-reskilling-academy":      () => import("./pages/services/ai-talent/AIReskillingAcademy"),
   "/about":                                         () => import("./pages/About"),
-  "/company":                                       () => import("./pages/About"),
   "/blog":                                          () => import("./pages/Blog"),
   "/contact":                                       () => import("./pages/Contact"),
   "/case-studies":                                  () => import("./pages/CaseStudies"),
