@@ -1,7 +1,7 @@
 "use client";
 
 import { Link } from "react-router-dom";
-import { ChevronRight, Target, Users, GitBranch, Code2, CheckCircle2, Rocket, Handshake, ClipboardList, FileCode2, Layers, RefreshCw, Scale, User, Package, FileText, ArrowRight, Sparkles, Bot, Database, ShieldCheck } from "lucide-react";
+import { ChevronRight, Target, Users, GitBranch, Code2, CheckCircle2, Check, Rocket, Handshake, ClipboardList, FileCode2, Layers, RefreshCw, Scale, User, Package, FileText, ArrowRight, Sparkles, Bot, Database, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import AmbientGlow from "@/components/ui/AmbientGlow";
 import {
@@ -290,7 +290,7 @@ export default function DedicatedAiEngineeringTeam() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.55, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
-                  className="flex-1 relative rounded-[24px] sm:rounded-[28px] bg-gradient-to-br from-[#FFF8EE] via-[#FFFDF8] to-[#FFF3E0] border border-[#F7E7D2] shadow-[0_8px_25px_rgba(13,48,108,0.06)] hover:shadow-[0_14px_35px_rgba(13,48,108,0.11)] p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 overflow-hidden min-h-[290px] sm:min-h-[310px]"
+                  className="flex-1 relative rounded-[24px] sm:rounded-[28px] bg-gradient-to-br from-[#FFF8EE] via-[#FFFDF8] to-[#FFF3E0] border border-[#F7E7D2] shadow-[0_8px_25px_rgba(13,48,108,0.06)] hover:shadow-[0_14px_35px_rgba(13,48,108,0.11)] p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 overflow-visible min-h-[290px] sm:min-h-[310px]"
                 >
                   <div className="relative z-10">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border text-[11px] font-bold uppercase tracking-wider shadow-2xs bg-[#FEF3C7]/80 text-[#B45309] border-[#FDE68A]">
@@ -302,9 +302,17 @@ export default function DedicatedAiEngineeringTeam() {
                       {bestFor[0].title}
                     </h3>
 
-                    <p className="text-xs sm:text-[13px] text-[#475569] leading-relaxed font-medium mb-3 max-w-[76%] sm:max-w-[70%]">
-                      {bestFor[0].desc}
-                    </p>
+                    <div className="flex items-start gap-2.5 mb-3 max-w-[80%] sm:max-w-[76%]">
+                      <span
+                        className="shrink-0 mt-0.5 flex items-center justify-center w-4 h-4 rounded-full text-white shadow-2xs"
+                        style={{ backgroundColor: "#EA580C" }}
+                      >
+                        <Check className="w-2.5 h-2.5 stroke-[3]" />
+                      </span>
+                      <p className="text-xs sm:text-[12.5px] text-[#475569] leading-snug font-medium">
+                        {bestFor[0].desc}
+                      </p>
+                    </div>
                   </div>
 
                   <div className="relative z-20 pt-1">
@@ -313,19 +321,15 @@ export default function DedicatedAiEngineeringTeam() {
                     </div>
                   </div>
 
-                  {/* Corner Realistic Image */}
+                  {/* 3D Illustration Breaking Out of the Div */}
                   <div
-                    className="absolute -bottom-1 sm:-bottom-2 -right-1 sm:-right-2 pointer-events-none select-none z-10 flex items-end justify-end overflow-hidden rounded-br-[24px] sm:rounded-br-[28px]"
-                    style={{ width: "56%", height: "56%" }}
+                    className="absolute -bottom-2.5 sm:-bottom-3.5 -right-2 sm:-right-3 pointer-events-none select-none z-10 flex items-end justify-end overflow-visible"
+                    style={{ width: "74%", height: "72%" }}
                   >
                     <img
-                      src="/images/roadmap_realistic.jpg"
+                      src="/images/pillar_card1_arch_v2.png"
                       alt={bestFor[0].title}
-                      className="w-full h-full object-cover object-center rounded-tl-2xl shadow-sm transition-transform duration-500 group-hover:scale-105"
-                      style={{
-                        maskImage: "radial-gradient(circle at bottom right, black 65%, rgba(0,0,0,0.4) 85%, transparent 100%)",
-                        WebkitMaskImage: "radial-gradient(circle at bottom right, black 65%, rgba(0,0,0,0.4) 85%, transparent 100%)",
-                      }}
+                      className="w-full h-full object-contain object-right-bottom scale-105 sm:scale-[1.08] origin-bottom-right drop-shadow-sm transition-transform duration-500 group-hover:scale-110"
                     />
                   </div>
                 </motion.div>
@@ -336,7 +340,7 @@ export default function DedicatedAiEngineeringTeam() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.55, delay: 0.22, ease: [0.21, 0.47, 0.32, 0.98] }}
-                  className="flex-1 relative rounded-[24px] sm:rounded-[28px] bg-gradient-to-br from-[#F0F9FF] via-[#F8FCFF] to-[#E6F4FE] border border-[#D0E9FA] shadow-[0_8px_25px_rgba(13,48,108,0.06)] hover:shadow-[0_14px_35px_rgba(13,48,108,0.11)] p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 overflow-hidden min-h-[290px] sm:min-h-[310px]"
+                  className="flex-1 relative rounded-[24px] sm:rounded-[28px] bg-gradient-to-br from-[#F0F9FF] via-[#F8FCFF] to-[#E6F4FE] border border-[#D0E9FA] shadow-[0_8px_25px_rgba(13,48,108,0.06)] hover:shadow-[0_14px_35px_rgba(13,48,108,0.11)] p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 overflow-visible min-h-[290px] sm:min-h-[310px]"
                 >
                   <div className="relative z-10">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border text-[11px] font-bold uppercase tracking-wider shadow-2xs bg-[#E0F2FE] text-[#0369A1] border-[#BAE6FD]">
@@ -348,9 +352,17 @@ export default function DedicatedAiEngineeringTeam() {
                       {bestFor[1].title}
                     </h3>
 
-                    <p className="text-xs sm:text-[13px] text-[#475569] leading-relaxed font-medium mb-3 max-w-[76%] sm:max-w-[70%]">
-                      {bestFor[1].desc}
-                    </p>
+                    <div className="flex items-start gap-2.5 mb-3 max-w-[80%] sm:max-w-[76%]">
+                      <span
+                        className="shrink-0 mt-0.5 flex items-center justify-center w-4 h-4 rounded-full text-white shadow-2xs"
+                        style={{ backgroundColor: "#0284C7" }}
+                      >
+                        <Check className="w-2.5 h-2.5 stroke-[3]" />
+                      </span>
+                      <p className="text-xs sm:text-[12.5px] text-[#475569] leading-snug font-medium">
+                        {bestFor[1].desc}
+                      </p>
+                    </div>
                   </div>
 
                   <div className="relative z-20 pt-1">
@@ -359,25 +371,21 @@ export default function DedicatedAiEngineeringTeam() {
                     </div>
                   </div>
 
-                  {/* Corner Realistic Image */}
+                  {/* 3D Illustration Breaking Out of the Div */}
                   <div
-                    className="absolute -bottom-1 sm:-bottom-2 -right-1 sm:-right-2 pointer-events-none select-none z-10 flex items-end justify-end overflow-hidden rounded-br-[24px] sm:rounded-br-[28px]"
-                    style={{ width: "56%", height: "56%" }}
+                    className="absolute -bottom-1 sm:-bottom-1.5 right-0 sm:right-0.5 pointer-events-none select-none z-10 flex items-end justify-end overflow-visible"
+                    style={{ width: "66%", height: "65%" }}
                   >
                     <img
-                      src="/images/agentic_realistic.jpg"
+                      src="/images/pillar_card2_valid_v3.png"
                       alt={bestFor[1].title}
-                      className="w-full h-full object-cover object-center rounded-tl-2xl shadow-sm transition-transform duration-500 group-hover:scale-105"
-                      style={{
-                        maskImage: "radial-gradient(circle at bottom right, black 65%, rgba(0,0,0,0.4) 85%, transparent 100%)",
-                        WebkitMaskImage: "radial-gradient(circle at bottom right, black 65%, rgba(0,0,0,0.4) 85%, transparent 100%)",
-                      }}
+                      className="w-full h-full object-contain object-right-bottom scale-100 origin-bottom-right drop-shadow-sm transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                 </motion.div>
               </div>
 
-              {/* MIDDLE COLUMN: Bento Cards (2 Top Cards + 1 Deep Navy Glass Anchor Card with Realistic Team Image) */}
+              {/* MIDDLE COLUMN: Bento Cards (2 Top Cards + 1 Deep Navy Glass Anchor Card with Cutout) */}
               <div className="flex flex-col gap-4 sm:gap-5 order-2 lg:order-2 h-full">
                 
                 {/* TOP ROW: 2 Cards (Data & AI platform + Multiple production releases) */}
@@ -425,7 +433,7 @@ export default function DedicatedAiEngineeringTeam() {
                   </motion.div>
                 </div>
 
-                {/* BOTTOM ROW: Dedicated Team Anchor Card matching Skyscraper card with Realistic Team Image */}
+                {/* BOTTOM ROW: Dedicated Team Anchor Card matching Skyscraper card with Cutout */}
                 <div className="flex-1 flex flex-col min-h-[220px]">
                   <Link
                     to={primaryCta}
@@ -453,25 +461,25 @@ export default function DedicatedAiEngineeringTeam() {
                       />
                     </svg>
 
-                    {/* Warm sunset ambient glow behind the team photo */}
+                    {/* Warm sunset ambient glow behind the building */}
                     <div className="absolute right-0 bottom-0 w-[72%] h-[95%] bg-radial from-[#F59E0B]/35 via-[#F59E0B]/10 to-transparent pointer-events-none rounded-full blur-xl" />
 
-                    {/* Realistic Team Illustration with Seamlessly Blended Left Edge */}
+                    {/* Skyscraper Cutout Illustration with Seamlessly Blended Left Edge */}
                     <div
                       className="absolute -right-2 sm:-right-3 -bottom-1 sm:-bottom-2 pointer-events-none select-none flex items-end justify-end"
                       style={{
-                        width: "74%",
-                        height: "100%",
-                        maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 16%, black 38%)",
-                        WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 16%, black 38%)",
+                        width: "76%",
+                        height: "148%",
+                        maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.45) 10%, black 28%)",
+                        WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.45) 10%, black 28%)",
                       }}
                     >
                       <img
-                        src="/images/dedicated_ai_team_realistic.jpg"
+                        src="/images/gcc_skyscraper_cutout.png"
                         alt="Dedicated AI Engineering Team"
-                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-contain object-right-bottom scale-105 origin-bottom-right"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B254E]/75 via-transparent to-transparent pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#E98D1C]/25 via-transparent to-transparent pointer-events-none" />
                     </div>
 
                     <div className="relative z-10">
@@ -502,7 +510,7 @@ export default function DedicatedAiEngineeringTeam() {
 
                     {/* Bottom-left Circular Arrow Button */}
                     <div className="relative z-20 pt-1">
-                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white shadow-md border border-slate-100/90 flex items-center justify-center text-[#0D306C] group-hover:bg-[#169DC8] group-hover:text-white group-hover:scale-105 transition-all duration-300">
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white shadow-md border border-slate-100/90 flex items-center justify-center text-[#0D306C] group-hover:bg-[#0D306C] group-hover:text-white group-hover:scale-105 transition-all duration-300">
                         <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                       </div>
                     </div>
@@ -518,7 +526,7 @@ export default function DedicatedAiEngineeringTeam() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.55, delay: 0.15, ease: [0.21, 0.47, 0.32, 0.98] }}
-                  className="flex-1 relative rounded-[24px] sm:rounded-[28px] bg-gradient-to-br from-[#F0F9FF] via-[#F8FCFF] to-[#E6F4FE] border border-[#D0E9FA] shadow-[0_8px_25px_rgba(13,48,108,0.06)] hover:shadow-[0_14px_35px_rgba(13,48,108,0.11)] p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 overflow-hidden min-h-[290px] sm:min-h-[310px]"
+                  className="flex-1 relative rounded-[24px] sm:rounded-[28px] bg-gradient-to-br from-[#F0F9FF] via-[#F8FCFF] to-[#E6F4FE] border border-[#D0E9FA] shadow-[0_8px_25px_rgba(13,48,108,0.06)] hover:shadow-[0_14px_35px_rgba(13,48,108,0.11)] p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 overflow-visible min-h-[290px] sm:min-h-[310px]"
                 >
                   <div className="relative z-10">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border text-[11px] font-bold uppercase tracking-wider shadow-2xs bg-[#E0F2FE] text-[#0369A1] border-[#BAE6FD]">
@@ -530,9 +538,17 @@ export default function DedicatedAiEngineeringTeam() {
                       {bestFor[3].title}
                     </h3>
 
-                    <p className="text-xs sm:text-[13px] text-[#475569] leading-relaxed font-medium mb-3 max-w-[76%] sm:max-w-[70%]">
-                      {bestFor[3].desc}
-                    </p>
+                    <div className="flex items-start gap-2.5 mb-3 max-w-[80%] sm:max-w-[76%]">
+                      <span
+                        className="shrink-0 mt-0.5 flex items-center justify-center w-4 h-4 rounded-full text-white shadow-2xs"
+                        style={{ backgroundColor: "#0284C7" }}
+                      >
+                        <Check className="w-2.5 h-2.5 stroke-[3]" />
+                      </span>
+                      <p className="text-xs sm:text-[12.5px] text-[#475569] leading-snug font-medium">
+                        {bestFor[3].desc}
+                      </p>
+                    </div>
                   </div>
 
                   <div className="relative z-20 pt-1">
@@ -541,19 +557,15 @@ export default function DedicatedAiEngineeringTeam() {
                     </div>
                   </div>
 
-                  {/* Corner Realistic Image */}
+                  {/* 3D Illustration Breaking Out of the Div */}
                   <div
-                    className="absolute -bottom-1 sm:-bottom-2 -right-1 sm:-right-2 pointer-events-none select-none z-10 flex items-end justify-end overflow-hidden rounded-br-[24px] sm:rounded-br-[28px]"
-                    style={{ width: "56%", height: "56%" }}
+                    className="absolute bottom-0 sm:bottom-0.5 right-0 sm:right-1 pointer-events-none select-none z-10 flex items-end justify-end overflow-visible"
+                    style={{ width: "63%", height: "62%" }}
                   >
                     <img
-                      src="/images/saas_realistic.jpg"
+                      src="/images/pillar_card3_deliver_v3.png"
                       alt={bestFor[3].title}
-                      className="w-full h-full object-cover object-center rounded-tl-2xl shadow-sm transition-transform duration-500 group-hover:scale-105"
-                      style={{
-                        maskImage: "radial-gradient(circle at bottom right, black 65%, rgba(0,0,0,0.4) 85%, transparent 100%)",
-                        WebkitMaskImage: "radial-gradient(circle at bottom right, black 65%, rgba(0,0,0,0.4) 85%, transparent 100%)",
-                      }}
+                      className="w-full h-full object-contain object-right-bottom scale-100 origin-bottom-right drop-shadow-sm transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                 </motion.div>
@@ -564,7 +576,7 @@ export default function DedicatedAiEngineeringTeam() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.55, delay: 0.27, ease: [0.21, 0.47, 0.32, 0.98] }}
-                  className="flex-1 relative rounded-[24px] sm:rounded-[28px] bg-gradient-to-br from-[#FFF8EE] via-[#FFFDF8] to-[#FFF3E0] border border-[#F7E7D2] shadow-[0_8px_25px_rgba(13,48,108,0.06)] hover:shadow-[0_14px_35px_rgba(13,48,108,0.11)] p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 overflow-hidden min-h-[290px] sm:min-h-[310px]"
+                  className="flex-1 relative rounded-[24px] sm:rounded-[28px] bg-gradient-to-br from-[#FFF8EE] via-[#FFFDF8] to-[#FFF3E0] border border-[#F7E7D2] shadow-[0_8px_25px_rgba(13,48,108,0.06)] hover:shadow-[0_14px_35px_rgba(13,48,108,0.11)] p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1 overflow-visible min-h-[290px] sm:min-h-[310px]"
                 >
                   <div className="relative z-10">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border text-[11px] font-bold uppercase tracking-wider shadow-2xs bg-[#FEF3C7]/80 text-[#B45309] border-[#FDE68A]">
@@ -576,9 +588,17 @@ export default function DedicatedAiEngineeringTeam() {
                       {bestFor[4].title}
                     </h3>
 
-                    <p className="text-xs sm:text-[13px] text-[#475569] leading-relaxed font-medium mb-3 max-w-[76%] sm:max-w-[70%]">
-                      {bestFor[4].desc}
-                    </p>
+                    <div className="flex items-start gap-2.5 mb-3 max-w-[80%] sm:max-w-[76%]">
+                      <span
+                        className="shrink-0 mt-0.5 flex items-center justify-center w-4 h-4 rounded-full text-white shadow-2xs"
+                        style={{ backgroundColor: "#EA580C" }}
+                      >
+                        <Check className="w-2.5 h-2.5 stroke-[3]" />
+                      </span>
+                      <p className="text-xs sm:text-[12.5px] text-[#475569] leading-snug font-medium">
+                        {bestFor[4].desc}
+                      </p>
+                    </div>
                   </div>
 
                   <div className="relative z-20 pt-1">
@@ -587,19 +607,15 @@ export default function DedicatedAiEngineeringTeam() {
                     </div>
                   </div>
 
-                  {/* Corner Realistic Image */}
+                  {/* 3D Illustration Breaking Out of the Div */}
                   <div
-                    className="absolute -bottom-1 sm:-bottom-2 -right-1 sm:-right-2 pointer-events-none select-none z-10 flex items-end justify-end overflow-hidden rounded-br-[24px] sm:rounded-br-[28px]"
-                    style={{ width: "56%", height: "56%" }}
+                    className="absolute -bottom-2.5 sm:-bottom-3.5 -right-2 sm:-right-3 pointer-events-none select-none z-10 flex items-end justify-end overflow-visible"
+                    style={{ width: "74%", height: "72%" }}
                   >
                     <img
-                      src="/images/gcc_modernization.jpg"
+                      src="/images/pillar_card4_transfer_v2.png"
                       alt={bestFor[4].title}
-                      className="w-full h-full object-cover object-center rounded-tl-2xl shadow-sm transition-transform duration-500 group-hover:scale-105"
-                      style={{
-                        maskImage: "radial-gradient(circle at bottom right, black 65%, rgba(0,0,0,0.4) 85%, transparent 100%)",
-                        WebkitMaskImage: "radial-gradient(circle at bottom right, black 65%, rgba(0,0,0,0.4) 85%, transparent 100%)",
-                      }}
+                      className="w-full h-full object-contain object-right-bottom scale-105 sm:scale-[1.08] origin-bottom-right drop-shadow-sm transition-transform duration-500 group-hover:scale-110"
                     />
                   </div>
                 </motion.div>

@@ -5,26 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-function FacebookIcon({ className = "w-4 h-4" }: { className?: string }) {
-  return (
-    <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v1.51H6.198v3.98h3v8.01z" />
-    </svg>
-  );
-}
-
 function LinkedinIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.66 1.66 0 0 0-1.66 1.66 1.67 1.67 0 0 0 1.66 1.67 1.66 1.66 0 0 0 1.66-1.67c0-.92-.74-1.66-1.66-1.66Z" />
-    </svg>
-  );
-}
-
-function TwitterIcon({ className = "w-3.5 h-3.5" }: { className?: string }) {
-  return (
-    <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 24.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
     </svg>
   );
 }
@@ -120,6 +104,14 @@ const serviceCategories = [
     ],
   },
   {
+    title: "Product",
+    links: [
+      { label: "AI Interview", href: "https://neohirex.ai/platform/ai-interviews" },
+      { label: "DPDP Act 2023", href: "https://neohirex.ai/platform/compliance" },
+      { label: "Book Demo", href: "/book-a-call?type=neohirex" },
+    ],
+  },
+  {
     title: "Resources",
     links: [
       { label: "GCC Cost Calculator", href: "/gcc-cost-calculator" },
@@ -148,7 +140,7 @@ export default function Footer() {
           {/* ── LEFT: Brand + Socials + Contact Info ────────────────────────── */}
           <div className="space-y-4">
             {/* Logo */}
-            <a href="#" aria-label="NeoIntelli Home" className="inline-block">
+            <Link href="/" aria-label="NeoIntelli Home" className="inline-block">
               <Image
                 src="/logo/neointelli_logo.webp"
                 alt="NeoIntelli"
@@ -157,36 +149,18 @@ export default function Footer() {
                 className="h-7 sm:h-8 w-auto object-contain"
                 priority
               />
-            </a>
+            </Link>
 
             {/* Social Icons */}
             <div className="flex items-center gap-3.5 text-[#475569] pt-1">
               <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Facebook"
-                className="hover:text-[#169DC8] transition-colors"
-              >
-                <FacebookIcon className="w-4 h-4" />
-              </a>
-              <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/neointelli"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
                 className="hover:text-[#169DC8] transition-colors"
               >
                 <LinkedinIcon className="w-4 h-4" />
-              </a>
-              <a
-                href="https://x.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="X (Twitter)"
-                className="hover:text-[#169DC8] transition-colors"
-              >
-                <TwitterIcon className="w-3.5 h-3.5" />
               </a>
             </div>
 
@@ -239,7 +213,7 @@ export default function Footer() {
 
                 {/* Button */}
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="group/btn relative inline-flex items-center justify-center gap-2.5 w-full rounded-xl bg-gradient-to-r from-[#169DC8] via-[#1288B0] to-[#0D6EA8] text-white text-[13px] sm:text-[13.5px] font-semibold py-3 px-5 transition-all duration-200 shadow-[0_4px_16px_rgba(22,157,200,0.35)] hover:shadow-[0_6px_22px_rgba(22,157,200,0.5)] hover:-translate-y-0.5 active:translate-y-0 overflow-hidden"
                 >
                   <span>Let&apos;s Talk</span>
@@ -295,23 +269,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ── GIANT TRANSLUCENT WATERMARK OF NEOINTELLI (PLACED ABOVE THE LEGAL & COPYRIGHT BAR) ── */}
-      <div className="relative z-10 w-full overflow-hidden leading-none select-none pointer-events-none text-center pt-6 sm:pt-10 pb-0">
-        <div
-          className="w-full text-center font-extrabold tracking-tighter"
-          style={{
-            fontSize: "clamp(56px, 15.5vw, 240px)",
-            color: "rgba(255, 255, 255, 0.42)",
-            lineHeight: 0.8,
-            letterSpacing: "-0.04em",
-            whiteSpace: "nowrap",
-          }}
-          aria-hidden="true"
-        >
-          NeoIntelli
-        </div>
-      </div>
-
       {/* ── BOTTOM BAR: LEGAL LINKS & COPYRIGHT ───────────────────────── */}
       <div className="relative z-20 mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14 pt-4 sm:pt-6 pb-4 sm:pb-5 flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-3 text-[11.5px] sm:text-[12px] text-[#2C4D6F] font-medium">
         {/* Legal links */}
@@ -335,6 +292,24 @@ export default function Footer() {
       {/* ── DISCLAIMER TEXT ───────────────────────────────────────────── */}
       <div className="relative z-20 mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-14 pb-6 text-[10px] sm:text-[11px] text-[#505D74]/80 leading-relaxed text-center sm:text-left">
         Disclaimer: NeoIntelli and its affiliated parties are not authorized to request any payment from job applicants at any stage of the recruitment process. Any individual or entity posing as NeoIntelli and soliciting money from candidates with promises of employment is engaging in fraudulent activity and unlawfully using the company’s name. If you encounter such demands for money from someone claiming to be a NeoIntelli employee, affiliate, or consultant, please report this immediately by contacting us at reachus@neointelli.com.
+      </div>
+
+      {/* ── GIANT TRANSLUCENT WATERMARK OF NEOINTELLI (BELOW THE DISCLAIMER) ── */}
+      <div className="relative z-10 w-full overflow-hidden leading-none select-none pointer-events-none text-center pt-6 sm:pt-8 pb-0">
+        <div
+          className="w-full text-center font-extrabold tracking-tighter"
+          style={{
+            fontSize: "clamp(56px, 15.5vw, 240px)",
+            color: "rgba(255, 255, 255, 0.42)",
+            lineHeight: 0.8,
+            letterSpacing: "-0.04em",
+            whiteSpace: "nowrap",
+            textTransform: "uppercase",
+          }}
+          aria-hidden="true"
+        >
+          NeoIntelli
+        </div>
       </div>
     </footer>
   );

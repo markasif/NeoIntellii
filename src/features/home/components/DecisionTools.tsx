@@ -1,84 +1,45 @@
 "use client";
 
-import React, { useState } from "react";
 import Image from "next/image";
-import {
-  ArrowRight,
-  Check,
-  X,
-} from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
 import AmbientGlow from "@/components/ui/AmbientGlow";
 
 
-type ModalKey = "cost" | "roi" | "readiness";
-
 export default function DecisionTools() {
-  const [activeModal, setActiveModal] = useState<ModalKey | null>(null);
-
-  // ---------- Tool 1: Cost Calculator ----------
-  const [teamSize, setTeamSize] = useState<number>(25);
-  const [seniority, setSeniority] = useState<string>("Blended (Mid + Senior + Lead)");
-  const [location, setLocation] = useState<string>("Bengaluru (HSR / Tech Corridor)");
-  const usAverage = 185000;
-  const indiaAverage = 48000;
-  const usTotal = teamSize * usAverage;
-  const indiaTotal = teamSize * indiaAverage;
-  const savings = usTotal - indiaTotal;
-  const pctSavings = Math.round((savings / usTotal) * 100);
-
-  // ---------- Tool 2: ROI Estimator ----------
-  const [annualSpend, setAnnualSpend] = useState<number>(3500000);
-  const annualSavingsROI = annualSpend - annualSpend * 0.32;
-  const fiveYearROI = annualSavingsROI * 5;
-
-  // ---------- Tool 3: Readiness Assessment ----------
-  const [readinessAnswers, setReadinessAnswers] = useState<Record<number, boolean>>({
-    0: true, 1: true, 2: true, 3: false, 4: true,
-  });
-  const readinessQuestions = [
-    "Identified target technical competencies and functional charter",
-    "Executive sponsorship and board-level budget established",
-    "Operating model chosen: Direct Subsidiary (Pvt Ltd) vs BOT",
-    "IT security, compliance (SOC2/GDPR) and IP protections defined",
-    "Mentor team in HQ aligned for collaboration with India leads",
-  ];
-  const positiveAnswersCount = Object.values(readinessAnswers).filter(Boolean).length;
-  const toggleReadiness = (idx: number) =>
-    setReadinessAnswers((prev) => ({ ...prev, [idx]: !prev[idx] }));
-
   const toolCards = [
     {
       id: "01",
-      modalKey: "cost" as ModalKey,
       eyebrow: "GCC COST CALCULATOR",
       title: "What will it cost?",
       description:
         "Model roles, seniority, headcount and city for a fully loaded monthly and annual estimate.",
       ctaLabel: "Open Cost Calculator",
+      href: "/gcc-cost-calculator",
       image: "/images/tools/decision_cost_calculator.jpg",
       imageAlt: "GCC Cost Calculator - Financial modeling dashboard with Bangalore tech corridor",
     },
     {
       id: "02",
-      modalKey: "roi" as ModalKey,
       eyebrow: "GCC ROI ESTIMATOR",
       title: "When does the model pay back?",
       description:
         "Compare current spend against an India model to see break-even and multi-year effect.",
       ctaLabel: "Open ROI Estimator",
+      href: "/gcc-roi-estimator",
       image: "/images/tools/decision_roi_estimator.jpg",
       imageAlt: "GCC ROI Estimator - Executive multi-year break-even payback projection analysis",
     },
     {
       id: "03",
-      modalKey: "readiness" as ModalKey,
       eyebrow: "GCC READINESS ASSESSMENT",
       title: "Are you ready to build?",
       description:
         "A short structured assessment that returns a readiness view and a recommended next step.",
       ctaLabel: "Start Assessment",
+      href: "/gcc-readiness-assessment",
       image: "/images/tools/decision_readiness_assessment.jpg",
       imageAlt: "GCC Readiness Assessment - Strategic capability diagnostic framework and audit milestones",
     },
@@ -128,9 +89,13 @@ export default function DecisionTools() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.55, delay: idx * 0.12, ease: [0.16, 1, 0.3, 1] }}
-              onClick={() => setActiveModal(tool.modalKey)}
-              className="group relative bg-white rounded-2xl sm:rounded-3xl border border-[#D2DCF0]/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer hover:-translate-y-1.5"
+              className="group relative bg-white rounded-2xl sm:rounded-3xl border border-[#D2DCF0]/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden hover:-translate-y-1.5"
             >
+              <Link
+                to={tool.href}
+                aria-label={tool.ctaLabel}
+                className="flex flex-col justify-between h-full cursor-pointer"
+              >
               {/* TOP WHITE CONTENT SECTION */}
               <div className="p-5 sm:p-7 flex flex-col justify-between flex-1 bg-white">
                 <div>
@@ -173,6 +138,7 @@ export default function DecisionTools() {
                 {/* Subtle soft gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#081B3E]/30 via-transparent to-transparent pointer-events-none" />
               </div>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -273,274 +239,6 @@ export default function DecisionTools() {
         </motion.div>
       </div>
 
-      {/* ================================================================== */}
-      {/* INTERACTIVE MODAL                                                  */}
-      {/* ================================================================== */}
-      {activeModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#0D306C]/70 backdrop-blur-sm">
-          <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[32px] bg-white p-6 sm:p-8 shadow-2xl border border-[#D2DCF0]">
-            <button
-              onClick={() => setActiveModal(null)}
-              className="absolute top-6 right-6 h-9 w-9 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-[#0D306C] transition-colors cursor-pointer"
-            >
-              <X className="h-5 w-5" />
-            </button>
-
-            {/* -------- MODAL 1: Cost Calculator -------- */}
-            {activeModal === "cost" && (
-              <div className="space-y-6">
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#169DC8]">
-                    Interactive Tool
-                  </span>
-                  <h3 className="text-2xl font-extrabold text-[#0D306C] mt-1">
-                    GCC Cost Calculator
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#505D74] mt-1">
-                    Adjust target headcount, seniority, and location to estimate net enterprise arbitrage.
-                  </p>
-                </div>
-                <div className="rounded-2xl bg-[#E7EDF9]/50 border border-[#D2DCF0] p-5 space-y-4">
-                  <div>
-                    <div className="flex justify-between items-center text-xs font-bold text-[#0D306C] mb-2">
-                      <span>Target Engineering Headcount:</span>
-                      <span className="text-sm text-[#169DC8] font-mono font-extrabold">
-                        {teamSize} Engineers
-                      </span>
-                    </div>
-                    <input
-                      type="range"
-                      min={5}
-                      max={150}
-                      step={5}
-                      value={teamSize}
-                      onChange={(e) => setTeamSize(Number(e.target.value))}
-                      className="w-full accent-[#169DC8] cursor-pointer"
-                    />
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                    <div>
-                      <label className="text-[11px] font-bold text-[#505D74] uppercase tracking-wider block mb-1">
-                        Seniority Mix
-                      </label>
-                      <select
-                        value={seniority}
-                        onChange={(e) => setSeniority(e.target.value)}
-                        className="w-full rounded-xl border border-[#D2DCF0] bg-white p-2.5 text-xs text-[#0D306C] font-semibold focus:outline-none"
-                      >
-                        <option>Blended (Mid + Senior + Lead)</option>
-                        <option>Senior AI/ML Specialists (Top 5%)</option>
-                        <option>Full-Stack Core Product Pod</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="text-[11px] font-bold text-[#505D74] uppercase tracking-wider block mb-1">
-                        India Location Hub
-                      </label>
-                      <select
-                        value={location}
-                        onChange={(e) => setLocation(e.target.value)}
-                        className="w-full rounded-xl border border-[#D2DCF0] bg-white p-2.5 text-xs text-[#0D306C] font-semibold focus:outline-none"
-                      >
-                        <option>Bengaluru (HSR / Tech Corridor)</option>
-                        <option>Hyderabad (HITEC City)</option>
-                        <option>Pune (Hinjawadi Infotech)</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  <div className="rounded-xl border border-[#D2DCF0] bg-white p-4">
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-[#505D74]">
-                      US/EU Loaded Cost
-                    </div>
-                    <div className="text-lg font-extrabold text-[#0D306C] mt-1 font-mono">
-                      ${(usTotal / 1000000).toFixed(2)}M/yr
-                    </div>
-                  </div>
-                  <div className="rounded-xl border border-[#169DC8]/30 bg-[#169DC8]/5 p-4">
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-[#169DC8]">
-                      India GCC Cost
-                    </div>
-                    <div className="text-lg font-extrabold text-[#169DC8] mt-1 font-mono">
-                      ${(indiaTotal / 1000000).toFixed(2)}M/yr
-                    </div>
-                  </div>
-                  <div className="rounded-xl border border-[#F19326]/40 bg-[#F19326]/10 p-4">
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-[#D87E1B]">
-                      Projected Net Arbitrage
-                    </div>
-                    <div className="text-lg font-extrabold text-[#D87E1B] mt-1 font-mono">
-                      ${(savings / 1000000).toFixed(2)}M ({pctSavings}%)
-                    </div>
-                  </div>
-                </div>
-                <div className="flex flex-col-reverse sm:flex-row sm:items-center justify-end gap-3 pt-2">
-                  <button
-                    onClick={() => setActiveModal(null)}
-                    className="w-full sm:w-auto px-5 py-2.5 text-xs font-bold text-[#505D74] hover:text-[#0D306C] cursor-pointer"
-                  >
-                    Close
-                  </button>
-                  <a
-                    href="#contact"
-                    onClick={() => setActiveModal(null)}
-                    className="w-full sm:w-auto text-center rounded-full bg-[#F19326] hover:bg-[#D87E1B] text-white px-7 py-2.5 text-xs font-bold uppercase tracking-wider transition-colors shadow-md"
-                  >
-                    Lock In Pricing Model
-                  </a>
-                </div>
-              </div>
-            )}
-
-            {/* -------- MODAL 2: ROI Estimator -------- */}
-            {activeModal === "roi" && (
-              <div className="space-y-6">
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#169DC8]">
-                    Interactive Tool
-                  </span>
-                  <h3 className="text-2xl font-extrabold text-[#0D306C] mt-1">
-                    GCC ROI Estimator
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#505D74] mt-1">
-                    Analyze break-even timeline and multi-year EBITDA impact vs onshore or vendor models.
-                  </p>
-                </div>
-                <div className="rounded-2xl bg-[#E7EDF9]/50 border border-[#D2DCF0] p-5 space-y-4">
-                  <div className="flex justify-between items-center text-xs font-bold text-[#0D306C]">
-                    <span>Current Annual Tech Spend:</span>
-                    <span className="text-sm text-[#169DC8] font-mono font-extrabold">
-                      ${(annualSpend / 1000000).toFixed(2)}M
-                    </span>
-                  </div>
-                  <input
-                    type="range"
-                    min={1000000}
-                    max={20000000}
-                    step={500000}
-                    value={annualSpend}
-                    onChange={(e) => setAnnualSpend(Number(e.target.value))}
-                    className="w-full accent-[#169DC8] cursor-pointer"
-                  />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  <div className="rounded-xl border border-[#D2DCF0] bg-white p-4">
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-[#505D74]">
-                      Break-Even Point
-                    </div>
-                    <div className="text-lg font-extrabold text-[#0D306C] mt-1">Month 5.2</div>
-                  </div>
-                  <div className="rounded-xl border border-[#169DC8]/30 bg-[#169DC8]/5 p-4">
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-[#169DC8]">
-                      Annual Savings
-                    </div>
-                    <div className="text-lg font-extrabold text-[#169DC8] mt-1 font-mono">
-                      ${(annualSavingsROI / 1000000).toFixed(2)}M
-                    </div>
-                  </div>
-                  <div className="rounded-xl border border-[#F19326]/40 bg-[#F19326]/10 p-4">
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-[#D87E1B]">
-                      5-Year Cumulative ROI
-                    </div>
-                    <div className="text-lg font-extrabold text-[#D87E1B] mt-1 font-mono">
-                      ${(fiveYearROI / 1000000).toFixed(2)}M
-                    </div>
-                  </div>
-                </div>
-                <div className="flex flex-col-reverse sm:flex-row sm:items-center justify-end gap-3 pt-2">
-                  <button
-                    onClick={() => setActiveModal(null)}
-                    className="w-full sm:w-auto px-5 py-2.5 text-xs font-bold text-[#505D74] hover:text-[#0D306C] cursor-pointer"
-                  >
-                    Close
-                  </button>
-                  <a
-                    href="#contact"
-                    onClick={() => setActiveModal(null)}
-                    className="w-full sm:w-auto text-center rounded-full bg-[#F19326] hover:bg-[#D87E1B] text-white px-7 py-2.5 text-xs font-bold uppercase tracking-wider transition-colors shadow-md"
-                  >
-                    Request Board Model
-                  </a>
-                </div>
-              </div>
-            )}
-
-            {/* -------- MODAL 3: Readiness Assessment -------- */}
-            {activeModal === "readiness" && (
-              <div className="space-y-6">
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#169DC8]">
-                    Interactive Diagnostic
-                  </span>
-                  <h3 className="text-2xl font-extrabold text-[#0D306C] mt-1">
-                    GCC Readiness Assessment
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#505D74] mt-1">
-                    Evaluate your enterprise readiness across governance, operations, and leadership.
-                  </p>
-                </div>
-                <div className="space-y-2.5">
-                  {readinessQuestions.map((q, idx) => (
-                    <div
-                      key={idx}
-                      onClick={() => toggleReadiness(idx)}
-                      className={`flex items-center gap-3 p-3.5 rounded-xl border transition-all cursor-pointer ${
-                        readinessAnswers[idx]
-                          ? "bg-white border-[#169DC8] shadow-xs"
-                          : "bg-slate-50 border-[#D2DCF0] opacity-75"
-                      }`}
-                    >
-                      <div
-                        className={`h-5 w-5 rounded-md flex items-center justify-center transition-colors ${
-                          readinessAnswers[idx]
-                            ? "bg-[#169DC8] text-white"
-                            : "border border-slate-300 bg-white"
-                        }`}
-                      >
-                        {readinessAnswers[idx] && (
-                          <Check className="h-3.5 w-3.5" strokeWidth={3} />
-                        )}
-                      </div>
-                      <span className="text-xs sm:text-[13px] font-semibold text-[#0D306C]">
-                        {q}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                <div className="rounded-xl bg-[#E7EDF9]/70 border border-[#D2DCF0] p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                  <div>
-                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#505D74]">
-                      Readiness Score
-                    </div>
-                    <div className="text-xl font-extrabold text-[#0D306C]">
-                      {positiveAnswersCount}/5 Criteria Met ({positiveAnswersCount * 20}%)
-                    </div>
-                  </div>
-                  <span className="rounded-full bg-[#169DC8]/10 text-[#169DC8] font-bold px-3.5 py-1 text-xs">
-                    {positiveAnswersCount >= 4 ? "Ready to Launch" : "Foundation Stage"}
-                  </span>
-                </div>
-                <div className="flex flex-col-reverse sm:flex-row sm:items-center justify-end gap-3 pt-2">
-                  <button
-                    onClick={() => setActiveModal(null)}
-                    className="w-full sm:w-auto px-5 py-2.5 text-xs font-bold text-[#505D74] hover:text-[#0D306C] cursor-pointer"
-                  >
-                    Close
-                  </button>
-                  <a
-                    href="#contact"
-                    onClick={() => setActiveModal(null)}
-                    className="w-full sm:w-auto text-center rounded-full bg-[#F19326] hover:bg-[#D87E1B] text-white px-7 py-2.5 text-xs font-bold uppercase tracking-wider transition-colors shadow-md"
-                  >
-                    Book Diagnostic Call
-                  </a>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
     </section>
   );
 }

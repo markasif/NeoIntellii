@@ -57,10 +57,12 @@ function CardPillButton({
   }, []);
 
   useEffect(() => {
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, [measure, label]);
+    const handleResize = () => {
+      if (isHovered) measure();
+    };
+    window.addEventListener("resize", handleResize, { passive: true });
+    return () => window.removeEventListener("resize", handleResize);
+  }, [measure, isHovered]);
 
   const buttonStyles =
     tone === "navy"

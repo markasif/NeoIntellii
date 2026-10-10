@@ -59,15 +59,15 @@ export default function WrongAnswerCards({ items, className = "" }: WrongAnswerC
               {/* Mobile Horizontal Divider */}
               <div className="block md:hidden border-t border-slate-100 mx-5" />
 
-              {/* Right Side: Alternative & Recommendation Link */}
-              <div className="flex items-center justify-between gap-4 flex-1 py-4 sm:py-5 px-5 sm:px-6">
+              {/* Right Side: Alternative & Recommendation Link (navy panel) */}
+              <div className="flex items-center justify-between gap-4 flex-1 py-4 sm:py-5 px-5 sm:px-6 bg-[#081B3E]">
                 <div className="space-y-1">
-                  <p className="text-xs sm:text-sm text-[#505D74] font-normal leading-normal">
+                  <p className="text-xs sm:text-sm text-[#C5D7F0] font-normal leading-normal">
                     {item.alternative}
                   </p>
-                  <div className="inline-flex items-center gap-1.5 text-sm sm:text-[15px] font-bold text-[#008EC4] group-hover:text-[#008EC4] transition-colors">
+                  <div className="inline-flex items-center gap-1.5 text-sm sm:text-[15px] font-bold text-[#38BDF8] group-hover:text-white transition-colors">
                     <span>{item.label}</span>
-                    <ArrowRight className="w-4 h-4 text-[#081B3E] group-hover:text-[#008EC4] group-hover:translate-x-1 transition-all" strokeWidth={2.2} />
+                    <ArrowRight className="w-4 h-4 text-[#38BDF8] group-hover:text-white group-hover:translate-x-1 transition-all" strokeWidth={2.2} />
                   </div>
                 </div>
               </div>

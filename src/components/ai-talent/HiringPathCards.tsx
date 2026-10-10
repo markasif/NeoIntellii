@@ -24,8 +24,8 @@ export interface HiringPathCardsProps {
   items?: HiringPath[];
   columns?: number;
   showButton?: boolean;
-  /** "default" keeps the cyan/white CTA; "gradient" styles it like .btn-gradient. */
-  buttonVariant?: "default" | "gradient";
+  /** "default" keeps the cyan/white CTA; "gradient" styles it like .btn-gradient; "white-to-cyan" renders .btn-white idle and .btn-cyan on hover. */
+  buttonVariant?: "default" | "gradient" | "white-to-cyan" | "white-cyan" | "white";
 }
 
 const DEFAULT_IMAGES = [
@@ -53,7 +53,7 @@ function CtaButton({
   isActive: boolean;
   isExternal: boolean;
   isCompact?: boolean;
-  variant?: "default" | "gradient";
+  variant?: "default" | "gradient" | "white-to-cyan" | "white-cyan" | "white";
 }) {
   const containerRef = useRef<HTMLSpanElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
@@ -68,19 +68,26 @@ function CtaButton({
   }, []);
 
   useEffect(() => {
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, [measure, label]);
+    const handleResize = () => {
+      if (isBtnHovered) measure();
+    };
+    window.addEventListener("resize", handleResize, { passive: true });
+    return () => window.removeEventListener("resize", handleResize);
+  }, [measure, isBtnHovered]);
 
   const isGradient = variant === "gradient";
+  const isWhiteToCyan = variant === "white-to-cyan" || variant === "white-cyan" || variant === "white";
 
-  const buttonClasses = `w-full inline-flex items-center justify-between gap-2 ${
+  const buttonClasses = `w-full inline-flex items-center justify-between gap-2 group/btn ${
     isCompact ? "px-3 py-2 xl:px-3.5 xl:py-2.5 text-xs" : "px-3.5 py-2 sm:px-4 sm:py-2.5 text-xs"
   } ${
-    isGradient ? "rounded-full" : "rounded-sm"
-  } font-bold tracking-normal transition-all duration-200 shadow-sm shrink-0 cursor-pointer overflow-hidden ${
-    isGradient
+    isGradient || isWhiteToCyan ? "rounded-full" : "rounded-sm"
+  } font-bold tracking-normal transition-all duration-200 shrink-0 cursor-pointer overflow-hidden ${
+    isWhiteToCyan
+      ? isActive
+        ? "bg-[#169DC8] text-white border border-[#169DC8] shadow-[0_1px_2px_rgba(22,157,200,0.25)] hover:bg-[#0D306C] hover:border-[#0D306C] hover:shadow-[0_0_22px_rgba(22,157,200,0.55),0_4px_16px_rgba(13,48,108,0.3)] hover:-translate-y-0.5 active:translate-y-0"
+        : "bg-white text-[#0D244D] border border-[#CBD5E1] shadow-xs hover:bg-[#169DC8] hover:text-white hover:border-[#169DC8] hover:shadow-[0_0_22px_rgba(22,157,200,0.55),0_4px_16px_rgba(13,48,108,0.3)] hover:-translate-y-0.5 active:translate-y-0"
+      : isGradient
       ? "bg-gradient-to-br from-[#169DC8] to-[#0D306C] text-white hover:shadow-[0_0_22px_rgba(22,157,200,0.55),0_4px_16px_rgba(13,48,108,0.3)]"
       : isActive
       ? "bg-white hover:bg-slate-100 text-[#093552] shadow-md"
@@ -106,7 +113,11 @@ function CtaButton({
           {label}
         </span>
       </span>
-      <ArrowRight className="w-3.5 h-3.5 shrink-0 ml-1.5 transition-transform duration-200" />
+      <ArrowRight
+        className={`w-3.5 h-3.5 shrink-0 ml-1.5 transition-all duration-200 group-hover/btn:translate-x-0.5 ${
+          isWhiteToCyan ? (isActive ? "text-white" : "text-[#169DC8] group-hover/btn:text-white") : ""
+        }`}
+      />
     </>
   );
 
@@ -200,7 +211,7 @@ export default function HiringPathCards({
           const imageSrc = path.image || imgInfo.image;
           const imageAlt = path.imageAlt || imgInfo.alt;
           const hasCta = showButton && path.cta !== null;
-          const cta = path.cta || (path.href ? { label: path.linkLabel || "Explore", href: path.href } : { label: "Explore", href: "#" });
+          const cta = path.cta || (path.href ? { label: path.linkLabel || "Explore", href: path.href } : { label: "Explore", href: "/contact" });
           const isExternal = cta.href.startsWith("http");
           const bodyText = path.body || path.desc || "";
 

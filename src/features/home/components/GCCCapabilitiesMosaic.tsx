@@ -20,6 +20,10 @@ import {
   Building2,
   Shield,
   TrendingUp,
+  ArrowUpRight,
+  FileText,
+  Settings,
+  UsersRound,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -27,6 +31,7 @@ import {
   AnimatePresence,
   useScroll,
   useSpring,
+  useTransform,
   useMotionValueEvent,
 } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -38,23 +43,23 @@ interface ChecklistItem {
 
 export type AsideVariant =
   | {
-      type: "definition";
-      title: string;
-      paragraphs: string[];
-    }
+    type: "definition";
+    title: string;
+    paragraphs: string[];
+  }
   | {
-      type: "flow";
-      title: string;
-      steps: string[];
-      /** Optional matching icon per step (rendered in front of the step text). */
-      icons?: LucideIcon[];
-      footerNote?: string;
-    }
+    type: "flow";
+    title: string;
+    steps: string[];
+    /** Optional matching icon per step (rendered in front of the step text). */
+    icons?: LucideIcon[];
+    footerNote?: string;
+  }
   | {
-      type: "models";
-      title: string;
-      models: { name: string; summary: string }[];
-    };
+    type: "models";
+    title: string;
+    models: { name: string; summary: string }[];
+  };
 
 export interface CapabilityItem {
   id: string;
@@ -68,10 +73,14 @@ export interface CapabilityItem {
   checklist: ChecklistItem[];
   primaryCta: {
     label: string;
+    /** Shorter label shown on mobile. Falls back to `label`. */
+    mobileLabel?: string;
     href: string;
   };
   secondaryCta?: {
     label: string;
+    /** Shorter label shown on mobile. Falls back to `label`. */
+    mobileLabel?: string;
     href: string;
   };
   aside: AsideVariant;
@@ -102,6 +111,7 @@ export const CAPABILITIES: CapabilityItem[] = [
     },
     secondaryCta: {
       label: "Already operate a GCC? Transform it for AI",
+      mobileLabel: "Transform an existing GCC",
       href: "/services/gcc/modernization-transformation",
     },
     aside: {
@@ -136,7 +146,8 @@ export const CAPABILITIES: CapabilityItem[] = [
       href: "/services/ai-talent",
     },
     secondaryCta: {
-      label: "NeoHireX Screening",
+      label: "See how NeoHireX supports hiring at scale",
+      mobileLabel: "NeoHireX hiring at scale",
       href: "/services/ai-talent/recruitment-hub",
     },
     aside: {
@@ -248,7 +259,8 @@ export const CAPABILITIES: CapabilityItem[] = [
       href: "/services/gcc",
     },
     secondaryCta: {
-      label: "GCC Business Case",
+      label: "Start with the GCC business case",
+      mobileLabel: "GCC business case",
       href: "/services/gcc/strategy-business-case",
     },
     aside: {
@@ -283,8 +295,9 @@ export const CAPABILITIES: CapabilityItem[] = [
       href: "/services/gcc-operations",
     },
     secondaryCta: {
-      label: "Workplace & IT Security",
-      href: "/services/gcc-operations/workplace-it-security",
+      label: "See how BOT and transition works",
+      mobileLabel: "BOT & transition",
+      href: "/services/gcc-operations/bot-transition",
     },
     aside: {
       type: "flow",
@@ -336,17 +349,364 @@ interface AsideVisualProps {
   isMobile?: boolean;
 }
 
+function ShortlistFlowAsideVisual({
+  aside,
+  id,
+  isMobile = false,
+}: {
+  aside: Extract<AsideVariant, { type: "flow" }>;
+  id: string;
+  isMobile?: boolean;
+}) {
+  const [shortlistActiveIdx, setShortlistActiveIdx] = useState<number>(0);
+  const [shortlistProgress, setShortlistProgress] = useState<number>(0.2);
+  const [scrollProgress, setScrollProgress] = useState<number>(0);
+  const shortlistContainerRef = useRef<HTMLDivElement>(null);
+  const shortlistTimerRef = useRef<NodeJS.Timeout[]>([]);
+  const hasAnimatedRef = useRef<boolean>(false);
+
+  // Subtle scroll-driven movement for the arrow button (safe client listener, no Next.js hydration issues)
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!shortlistContainerRef.current) return;
+      const rect = shortlistContainerRef.current.getBoundingClientRect();
+      const winHeight = window.innerHeight || 800;
+      const p = Math.max(0, Math.min(1, (winHeight * 0.95 - rect.top) / (winHeight * 0.5)));
+      setScrollProgress(p);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Smooth step progression (01 to 05) on initial scroll into view, then stops with no looping
+  useEffect(() => {
+    const el = shortlistContainerRef.current;
+    if (!el) return;
+
+    setShortlistActiveIdx(0);
+    setShortlistProgress(0.2);
+    hasAnimatedRef.current = false;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimatedRef.current) {
+          hasAnimatedRef.current = true;
+          shortlistTimerRef.current.forEach((t) => clearTimeout(t));
+          shortlistTimerRef.current = [];
+
+          [0, 1, 2, 3, 4].forEach((idx) => {
+            const t = setTimeout(() => {
+              setShortlistActiveIdx(idx);
+              setShortlistProgress((idx + 1) / 5);
+            }, idx * 280);
+            shortlistTimerRef.current.push(t);
+          });
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      shortlistTimerRef.current.forEach((t) => clearTimeout(t));
+    };
+  }, []);
+
+  // 5-step staggered diagonal layout coordinates shifted left into available space
+  const stepCoords = [
+    { nodeX: 10, nodeY: 34, cardLeft: 30, cardTop: 10 },
+    { nodeX: 30, nodeY: 116, cardLeft: 56, cardTop: 92 },
+    { nodeX: 58, nodeY: 198, cardLeft: 86, cardTop: 174 },
+    { nodeX: 92, nodeY: 280, cardLeft: 122, cardTop: 256 },
+    { nodeX: 130, nodeY: 362, cardLeft: 160, cardTop: 338 },
+  ];
+
+  // Parse step titles and icons precisely matching the reference
+  const stepsData = aside.steps.map((rawText, idx) => {
+    const num = `0${idx + 1}`;
+    const coords = stepCoords[idx] || {
+      nodeX: 10 + idx * 30,
+      nodeY: 34 + idx * 82,
+      cardLeft: 30 + idx * 32,
+      cardTop: 10 + idx * 82,
+    };
+
+    let IconComp = aside.icons?.[idx] || Workflow;
+    let line1 = rawText;
+    let line2 = "";
+
+    const lower = rawText.toLowerCase();
+    if (lower === "source") {
+      IconComp = Database;
+      line1 = "Source";
+    } else if (lower.includes("neohirex")) {
+      IconComp = Search;
+      line1 = "NeoHireX";
+      line2 = "screen";
+    } else if (lower.includes("ai first")) {
+      IconComp = FileText;
+      line1 = "AI first";
+      line2 = "round";
+    } else if (lower.includes("validation")) {
+      IconComp = Settings;
+      line1 = "Technical";
+      line2 = "validation";
+    } else if (lower.includes("shortlist")) {
+      IconComp = UsersRound;
+      line1 = "Qualified";
+      line2 = "shortlist";
+    } else {
+      const parts = rawText.split(" ");
+      if (parts.length > 1) {
+        line1 = parts[0];
+        line2 = parts.slice(1).join(" ");
+      }
+    }
+
+    return { num, IconComp, line1, line2, rawText, ...coords };
+  });
+
+  // Smooth S-shaped curve passing accurately through all 5 milestone nodes shifted left
+  const curvePathD =
+    "M 6 0 C 6 12, 8 22, 10 34 C 14 62, 22 90, 30 116 C 40 148, 48 174, 58 198 C 70 228, 80 254, 92 280 C 106 310, 118 334, 130 362 C 138 386, 146 406, 150 430";
+
+  // Arrow subtle forward scroll translation
+  const arrowTranslateY = (1 - scrollProgress) * 12;
+  const arrowScale = 0.94 + scrollProgress * 0.06;
+
+  return (
+    <div
+      ref={shortlistContainerRef}
+      className={`relative w-full overflow-hidden select-none ${
+        isMobile ? "p-4 sm:p-5 min-h-[500px]" : "h-full p-5 sm:p-6 lg:p-7 flex flex-col justify-between"
+      }`}
+    >
+      {/* TOP-RIGHT REFINED COMPACT ORGANIC CURVED DESK SILHOUETTE */}
+      <div className="absolute top-0 right-0 w-[38%] sm:w-[41%] h-[42%] sm:h-[46%] pointer-events-none select-none z-10 overflow-hidden">
+        <svg
+          viewBox="0 0 240 240"
+          className="w-full h-full"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <clipPath id={`deskOrganicClip-${id}`}>
+              <path d="M 45 0 C 12 50, 8 115, 48 160 C 88 205, 155 232, 240 240 L 240 0 Z" />
+            </clipPath>
+          </defs>
+          <image
+            href="/images/ai-talent/shortlist-review-desk.jpg"
+            x="0"
+            y="0"
+            width="240"
+            height="240"
+            preserveAspectRatio="xMidYMid slice"
+            clipPath={`url(#deskOrganicClip-${id})`}
+          />
+          {/* Subtle light-cyan curve border accent matching reference */}
+          <path
+            d="M 45 0 C 12 50, 8 115, 48 160 C 88 205, 155 232, 240 240"
+            fill="none"
+            stroke="#D6EAF8"
+            strokeWidth="2.5"
+            opacity="0.9"
+          />
+        </svg>
+      </div>
+
+      {/* FLOATING ACTION BUTTON OVER IMAGE: NAVY BLUE, LAYERED ABOVE IMAGE, NO LOOP ANIMATION, SCROLL-DRIVEN FRONT MOVEMENT */}
+      <div
+        style={{
+          transform: `translateY(${arrowTranslateY}px) scale(${arrowScale})`,
+          transition: "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)",
+        }}
+        className="absolute top-[24%] sm:top-[26%] right-[14%] sm:right-[16%] z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#0D244D] shadow-[0_10px_25px_rgba(13,36,77,0.35)] hover:shadow-[0_12px_28px_rgba(13,36,77,0.45)] border-2 border-white flex items-center justify-center text-white cursor-pointer hover:scale-105 active:scale-95 transition-all duration-300"
+        title="Shortlist Progression"
+      >
+        <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-white">
+          {/* Corner L-bracket */}
+          <path
+            d="M 5 12 V 19 H 12"
+            stroke="white"
+            strokeWidth="2.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* Upward-right arrow */}
+          <path
+            d="M 11 13 L 19 5"
+            stroke="white"
+            strokeWidth="2.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M 14 5 H 19 V 10"
+            stroke="white"
+            strokeWidth="2.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+
+      {/* HEADER: CYAN ACCENT PILL + COMPACT SINGLE-LINE TITLE (Never touches image) */}
+      <div className="relative z-20 mb-2 w-fit">
+        <div className="w-10 sm:w-12 h-1 bg-[#008EC4] rounded-full mb-2 shadow-[0_0_8px_rgba(0,142,196,0.35)]" />
+        <h3 className="text-base sm:text-lg lg:text-[19px] font-extrabold text-[#0D244D] tracking-tight leading-tight whitespace-nowrap font-manrope">
+          {aside.title || "How a shortlist is built"}
+        </h3>
+      </div>
+
+      {/* MAIN STAGE: SOLID CURVED TIMELINE PATH + 5 STAGGERED WIDER FLOATING CARDS */}
+      <div className="relative flex-1 w-full min-h-[410px]">
+        {/* INLINE SVG: SOLID (NOT DOTTED) TIMELINE & MILESTONE NODES */}
+        <svg
+          viewBox="0 0 460 420"
+          preserveAspectRatio="none"
+          fill="none"
+          className="absolute inset-0 w-full h-full pointer-events-none z-10 overflow-visible"
+        >
+          <defs>
+            {/* Thin Cyan Glow Filter */}
+            <filter id={`thinCyanGlow-${id}`} x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="0" dy="0" stdDeviation="2.5" floodColor="#38BDF8" floodOpacity="0.45" />
+            </filter>
+            {/* Node Soft Shadow */}
+            <filter id={`nodeShadow-${id}`} x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="0" dy="1.5" stdDeviation="2" floodColor="#0D244D" floodOpacity="0.18" />
+            </filter>
+            {/* Solid Line Cyan Gradient */}
+            <linearGradient id={`shortlistLineGrad-${id}`} x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#169DC8" />
+              <stop offset="50%" stopColor="#00A3E0" />
+              <stop offset="100%" stopColor="#38BDF8" />
+            </linearGradient>
+          </defs>
+
+          {/* 1. Solid Base Track (Matches left navigation line stroke width: 2.2px) */}
+          <path
+            d={curvePathD}
+            stroke="#DCE8F5"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            opacity="0.85"
+          />
+
+          {/* 2. Solid Active Cyan Path (Matches left navigation line stroke width: 2.2px) */}
+          <path
+            d={curvePathD}
+            stroke={`url(#shortlistLineGrad-${id})`}
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            filter={`url(#thinCyanGlow-${id})`}
+            style={{
+              strokeDasharray: 430,
+              strokeDashoffset: 430 * (1 - shortlistProgress),
+              transition: "stroke-dashoffset 0.38s ease-out",
+            }}
+          />
+
+          {/* 3. Small White Circular Milestone Nodes along the path (Matches left navigation round styling) */}
+          {stepsData.map((step, idx) => {
+            const isReached = idx <= shortlistActiveIdx;
+            return (
+              <g key={`node-${step.num}`}>
+                {/* Active subtle cyan aura when reached */}
+                {isReached && (
+                  <circle
+                    cx={step.nodeX}
+                    cy={step.nodeY}
+                    r="7.5"
+                    fill="#169DC8"
+                    fillOpacity="0.22"
+                  />
+                )}
+
+                {/* Crisp White Round Circle */}
+                <circle
+                  cx={step.nodeX}
+                  cy={step.nodeY}
+                  r="4"
+                  fill="#FFFFFF"
+                  stroke={isReached ? "#169DC8" : "#93A8C7"}
+                  strokeWidth="1.8"
+                  filter={`url(#nodeShadow-${id})`}
+                  className="transition-colors duration-300"
+                />
+              </g>
+            );
+          })}
+        </svg>
+
+        {/* 4. Five Staggered Wider Floating Cards: 01 Source down to 05 Qualified shortlist */}
+        {stepsData.map((step, idx) => {
+          const IconComp = step.IconComp;
+          const isReached = idx <= shortlistActiveIdx;
+
+          return (
+            <div
+              key={step.num}
+              style={{
+                left: `${(step.cardLeft / 460) * 100}%`,
+                top: `${(step.cardTop / 420) * 100}%`,
+              }}
+              className={`absolute z-20 group/card transition-all duration-300 hover:scale-[1.03] hover:z-30 cursor-default ${
+                isReached ? "opacity-100" : "opacity-75"
+              }`}
+            >
+              <div className="relative w-[192px] sm:w-[214px] bg-white/95 backdrop-blur-xs rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-[0_6px_20px_rgba(10,37,84,0.07)] hover:shadow-[0_10px_24px_rgba(10,37,84,0.11)] border border-white/85 flex items-center gap-2.5 sm:gap-3 transition-shadow duration-300">
+                {/* Partially overlapping orange numbered circular badge */}
+                <span className="absolute -top-2.5 -left-2.5 w-7 h-7 rounded-full bg-[#FFA000] text-white font-mono font-bold text-[11px] flex items-center justify-center shadow-xs border-2 border-white ring-1 ring-[#FFA000]/25">
+                  {step.num}
+                </span>
+
+                {/* Soft light blue circular icon badge */}
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#E5F1FC] flex items-center justify-center text-[#0D306C] shrink-0 group-hover/card:bg-[#D5EAFD] transition-colors duration-200">
+                  <IconComp className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#0D306C]" strokeWidth={2.2} />
+                </div>
+
+                {/* Compact step title */}
+                <div className="pr-1 select-none flex-1 min-w-0">
+                  <div className="text-[13px] sm:text-[13.5px] font-extrabold text-[#0D244D] tracking-tight leading-tight whitespace-nowrap font-manrope">
+                    {step.line1}
+                  </div>
+                  {step.line2 && (
+                    <div className="text-[12px] sm:text-[12.5px] font-extrabold text-[#0D244D] tracking-tight leading-tight whitespace-nowrap font-manrope">
+                      {step.line2}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {aside.footerNote && (
+        <div className="relative z-20 text-center px-4 pt-1 pb-1">
+          <p className="text-[11px] sm:text-xs text-[#505D74] italic leading-tight">
+            {aside.footerNote}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function CapabilityAsideVisual({ aside, checklist, id, isMobile = false }: AsideVisualProps) {
+
   if (aside.type === "definition") {
     return (
       <div className={`flex flex-col justify-between ${isMobile ? "w-full" : "h-full gap-2 sm:gap-2.5"}`}>
         {/* 3D 5-Pillar Stepping Visual Stage with Crystal-Clear Animated Mosaic Cube Grid Background */}
         <div
-          className={`relative w-full flex flex-col justify-end rounded-2xl overflow-hidden ${
-            isMobile
+          className={`relative w-full flex flex-col justify-end rounded-2xl overflow-hidden ${isMobile
               ? "h-[270px] sm:h-[300px] p-2 sm:p-2.5 shadow-inner border border-[#D2DCF0]/60"
               : "flex-1 p-2.5 sm:p-3.5"
-          }`}
+            }`}
         >
           {/* 3D CUBE MOSAIC VECTOR BACKGROUND — 100% CRYSTAL CLEAR & CONTINUOUSLY ANIMATED */}
           <div className="absolute inset-0 pointer-events-none select-none overflow-hidden rounded-2xl">
@@ -470,9 +830,8 @@ function CapabilityAsideVisual({ aside, checklist, id, isMobile = false }: Aside
 
           {/* 5 Stepping Vertical Pillars Grid */}
           <div
-            className={`relative z-10 grid grid-cols-5 gap-1.5 sm:gap-2.5 items-end w-full px-1 pb-1 ${
-              isMobile ? "h-[240px] sm:h-[260px]" : "h-[390px] sm:h-[420px]"
-            }`}
+            className={`relative z-10 grid grid-cols-5 gap-1.5 sm:gap-2.5 items-end w-full px-1 pb-1 ${isMobile ? "h-[240px] sm:h-[260px]" : "h-[390px] sm:h-[420px]"
+              }`}
           >
             {checklist.map((item, idx) => {
               const IconComponent = item.icon;
@@ -502,22 +861,20 @@ function CapabilityAsideVisual({ aside, checklist, id, isMobile = false }: Aside
 
                   {/* Pillar Column Body with Pointed Top, Number at Apex, and Logo Below Number */}
                   <div
-                    className={`relative w-full flex-1 flex flex-col items-center justify-start pt-2.5 sm:pt-4 pb-1.5 px-0.5 sm:px-1 rounded-b-xl border-x border-b transition-all duration-300 group-hover:shadow-lg ${
-                      isHero
+                    className={`relative w-full flex-1 flex flex-col items-center justify-start pt-2.5 sm:pt-4 pb-1.5 px-0.5 sm:px-1 rounded-b-xl border-x border-b transition-all duration-300 group-hover:shadow-lg ${isHero
                         ? "bg-gradient-to-b from-[#008EC4] via-[#0070F3] to-[#0D244D] text-white border-[#38BDF8]/40 shadow-[0_14px_30px_rgba(0,142,196,0.3)]"
                         : idx === 4
-                        ? "bg-gradient-to-b from-[#0B2554] via-[#0D306C] to-[#081B3E] text-white border-[#16427D]/80 shadow-md"
-                        : "bg-gradient-to-b from-white via-[#F8FAFC] to-[#E9F1F8] text-[#0D306C] border-[#CBD5E1]/80 shadow-2xs group-hover:border-[#008EC4]/60"
-                    }`}
+                          ? "bg-gradient-to-b from-[#0B2554] via-[#0D306C] to-[#081B3E] text-white border-[#16427D]/80 shadow-md"
+                          : "bg-gradient-to-b from-white via-[#F8FAFC] to-[#E9F1F8] text-[#0D306C] border-[#CBD5E1]/80 shadow-2xs group-hover:border-[#008EC4]/60"
+                      }`}
                     style={{
                       clipPath: "polygon(50% 0%, 100% 12px, 100% 100%, 0% 100%, 0% 12px)",
                     }}
                   >
                     {/* Step Number at Apex */}
                     <span
-                      className={`font-mono font-extrabold text-xs sm:text-base tracking-tight leading-none pt-0.5 ${
-                        isHero || idx === 4 ? "text-white" : "text-[#0D306C]"
-                      }`}
+                      className={`font-mono font-extrabold text-xs sm:text-base tracking-tight leading-none pt-0.5 ${isHero || idx === 4 ? "text-white" : "text-[#0D306C]"
+                        }`}
                     >
                       {pillarData.number}
                     </span>
@@ -525,13 +882,12 @@ function CapabilityAsideVisual({ aside, checklist, id, isMobile = false }: Aside
                     {/* Logo / Matching Icon Badge Placed Below Number */}
                     <div className="mt-1.5 sm:mt-2.5 flex items-center justify-center">
                       <div
-                        className={`w-6 h-6 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-xs ${
-                          isHero
+                        className={`w-6 h-6 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-xs ${isHero
                             ? "bg-white/20 backdrop-blur-xs text-white border border-white/35 shadow-inner"
                             : idx === 4
-                            ? "bg-white/12 text-[#38BDF8] border border-[#38BDF8]/35"
-                            : "bg-white text-[#0D306C] border border-[#CBD5E1] group-hover:border-[#008EC4] group-hover:text-[#008EC4]"
-                        }`}
+                              ? "bg-white/12 text-[#38BDF8] border border-[#38BDF8]/35"
+                              : "bg-white text-[#0D306C] border border-[#CBD5E1] group-hover:border-[#008EC4] group-hover:text-[#008EC4]"
+                          }`}
                       >
                         <IconComponent className="w-3 h-3 sm:w-4 sm:h-4" />
                       </div>
@@ -540,9 +896,8 @@ function CapabilityAsideVisual({ aside, checklist, id, isMobile = false }: Aside
                     {/* Text Label INSIDE the Pillar Body */}
                     <div className="mt-1.5 sm:mt-2 px-0.5 sm:px-1.5 w-full text-center flex-1 flex flex-col justify-start">
                       <p
-                        className={`font-manrope font-bold text-[8px] sm:text-[9.5px] lg:text-[10px] leading-tight tracking-tight ${
-                          isHero || idx === 4 ? "text-white drop-shadow-xs" : "text-[#0D306C]"
-                        }`}
+                        className={`font-manrope font-bold text-[8px] sm:text-[9.5px] lg:text-[10px] leading-tight tracking-tight ${isHero || idx === 4 ? "text-white drop-shadow-xs" : "text-[#0D306C]"
+                          }`}
                       >
                         {item.label}
                       </p>
@@ -558,16 +913,21 @@ function CapabilityAsideVisual({ aside, checklist, id, isMobile = false }: Aside
   }
 
   if (aside.type === "flow") {
-    // Center for all 5 concentric circles (bottom-right origin)
-    const ARC_ORIGIN = { cx: 520, cy: 530 };
+    const isShortlistFlow =
+      aside.title.toLowerCase().includes("shortlist") || id.toLowerCase().includes("talent");
 
-    // 5 node positions along sweeping diagonal trajectory
+    if (isShortlistFlow) {
+      return <ShortlistFlowAsideVisual aside={aside} id={id} isMobile={isMobile} />;
+    }
+
+    // ORIGINAL ORBITAL CONCENTRIC ARC FLOW FOR GCC OPERATIONS ("An optional ownership path")
+    const ARC_ORIGIN = { cx: 520, cy: 530 };
     const nodes = [
-      { x: 375, y: 385, r: 32, num: "01" }, // Step 01
-      { x: 305, y: 315, r: 33, num: "02" }, // Step 02
-      { x: 235, y: 242, r: 34, num: "03" }, // Step 03
-      { x: 165, y: 165, r: 35, num: "04" }, // Step 04
-      { x: 92,  y: 82,  r: 43, num: "05" }, // Step 05 (Apex hero circle)
+      { x: 375, y: 385, r: 32, num: "01" },
+      { x: 305, y: 315, r: 33, num: "02" },
+      { x: 235, y: 242, r: 34, num: "03" },
+      { x: 165, y: 165, r: 35, num: "04" },
+      { x: 92, y: 82, r: 43, num: "05" },
     ];
 
     const arcRadii = nodes.map(n =>
@@ -594,16 +954,8 @@ function CapabilityAsideVisual({ aside, checklist, id, isMobile = false }: Aside
         );
       }
 
-      let line1 = words[0];
-      let line2 = words.slice(1).join(" ");
-      if (words[0] === "Senior" && words.length > 2) {
-        line1 = "Technical";
-        line2 = "validation";
-      } else if (words[0] === "AI" && words.length >= 3) {
-        line1 = "AI first";
-        line2 = "round";
-      }
-
+      const line1 = words[0];
+      const line2 = words.slice(1).join(" ");
       return (
         <>
           <text
@@ -649,16 +1001,13 @@ function CapabilityAsideVisual({ aside, checklist, id, isMobile = false }: Aside
 
     return (
       <div className={`flex flex-col justify-between ${isMobile ? "w-full" : "h-full gap-2 sm:gap-2.5"}`}>
-        {/* Orbital Stage Container */}
         <div className="relative flex-1 w-full flex flex-col justify-between p-1 sm:p-2 bg-transparent border-0 shadow-none overflow-hidden">
-          {/* CENTERED HEADING ONLY */}
           <div className="relative z-20 text-center pt-1 sm:pt-2 px-4 pb-1 shrink-0">
             <h5 className="text-base sm:text-lg lg:text-xl font-extrabold font-manrope text-[#0D306C] tracking-tight leading-snug">
               {aside.title}
             </h5>
           </div>
 
-          {/* Orbital SVG Canvas with Concentric Arcs, Arc Navy Plume, and Traveling Arrow */}
           <div
             className={`relative w-full flex items-center justify-center overflow-hidden ${
               isMobile ? "max-w-[360px] mx-auto min-h-[300px] sm:min-h-[330px]" : "flex-1 min-h-[340px]"
@@ -672,7 +1021,6 @@ function CapabilityAsideVisual({ aside, checklist, id, isMobile = false }: Aside
               }`}
             >
               <defs>
-                {/* Feathered Arc Plume Blur */}
                 <filter id={`archFeatherBlur-${id}`} x="-30%" y="-30%" width="160%" height="160%">
                   <feGaussianBlur in="SourceGraphic" stdDeviation="26" />
                 </filter>
@@ -686,7 +1034,6 @@ function CapabilityAsideVisual({ aside, checklist, id, isMobile = false }: Aside
                   <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="#061838" floodOpacity="0.25" />
                 </filter>
 
-                {/* Gradients */}
                 <radialGradient id={`apexGlowGrad-${id}`} cx="50%" cy="50%" r="50%">
                   <stop offset="0%" stopColor="#38BDF8" stopOpacity="0.9" />
                   <stop offset="45%" stopColor="#0284C7" stopOpacity="0.5" />
@@ -699,7 +1046,6 @@ function CapabilityAsideVisual({ aside, checklist, id, isMobile = false }: Aside
                   <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.08" />
                 </linearGradient>
 
-                {/* Amber Arrow Marker */}
                 <marker
                   id={`dottedAmberArrow-${id}`}
                   viewBox="0 0 10 10"
@@ -713,7 +1059,6 @@ function CapabilityAsideVisual({ aside, checklist, id, isMobile = false }: Aside
                 </marker>
               </defs>
 
-              {/* ARC-TYPE NAVY BLUE BACKDROP */}
               <g className="pointer-events-none select-none">
                 <g filter={`url(#archFeatherBlur-${id})`}>
                   <path
@@ -753,7 +1098,6 @@ function CapabilityAsideVisual({ aside, checklist, id, isMobile = false }: Aside
                 <circle cx="92" cy="82" r="38" fill="#38BDF8" opacity="0.4" filter={`url(#apexAuraBlur-${id})`} />
               </g>
 
-              {/* CONCENTRIC ORBITAL WHITE ARC LINES */}
               <g className="pointer-events-none select-none">
                 {arcRadii.map((r, i) => (
                   <path
@@ -768,7 +1112,6 @@ function CapabilityAsideVisual({ aside, checklist, id, isMobile = false }: Aside
                 ))}
               </g>
 
-              {/* AMBER DOTTED CONNECTING PATH WITH DIRECTIONAL ARROWS */}
               <g className="pointer-events-none select-none">
                 {nodes.slice(0, 4).map((curr, i) => {
                   const next = nodes[i + 1];
@@ -795,7 +1138,6 @@ function CapabilityAsideVisual({ aside, checklist, id, isMobile = false }: Aside
                 })}
               </g>
 
-              {/* 5 BORDERLESS WHITE DISC NODES */}
               {nodes.map((n, i) => {
                 const isHero = i === 4;
                 const stepText = aside.steps[i] || `Stage ${n.num}`;
@@ -905,6 +1247,9 @@ export default function GCCCapabilitiesMosaic() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const scrollSectionRef = useRef<HTMLDivElement>(null);
   const [reducedMotion, setReducedMotion] = useState(false);
+  /** True while a click-initiated smooth scroll is in flight, so scroll events don't fight the clicked stage. */
+  const clickScrollingRef = useRef(false);
+  const clickScrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Check prefers-reduced-motion
   useEffect(() => {
@@ -929,7 +1274,7 @@ export default function GCCCapabilitiesMosaic() {
 
   // Map scroll progress (0..1) to stage index (0..5) smoothly based on scroll
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (reducedMotion) return;
+    if (reducedMotion || clickScrollingRef.current) return;
     const clamped = Math.max(0, Math.min(0.999, latest));
     const newIdx = Math.min(CAPABILITIES.length - 1, Math.floor(clamped * CAPABILITIES.length));
     if (newIdx !== activeIndex) {
@@ -947,6 +1292,21 @@ export default function GCCCapabilitiesMosaic() {
     const scrollableDistance = scrollSectionRef.current.offsetHeight - window.innerHeight;
     if (scrollableDistance > 0) {
       const targetScroll = containerTop + ((idx + 0.5) / CAPABILITIES.length) * scrollableDistance;
+      // Hold off scroll-driven stage changes until the programmatic scroll settles,
+      // otherwise the in-between positions flicker the card through the other stages.
+      clickScrollingRef.current = true;
+      if (clickScrollTimeoutRef.current) clearTimeout(clickScrollTimeoutRef.current);
+      const release = () => {
+        clickScrollingRef.current = false;
+        if (clickScrollTimeoutRef.current) {
+          clearTimeout(clickScrollTimeoutRef.current);
+          clickScrollTimeoutRef.current = null;
+        }
+        window.removeEventListener("scrollend", release);
+      };
+      window.addEventListener("scrollend", release, { once: true });
+      // Fallback for browsers without the scrollend event.
+      clickScrollTimeoutRef.current = setTimeout(release, 1200);
       window.scrollTo({ top: targetScroll, behavior: "smooth" });
     }
   };
@@ -1012,7 +1372,11 @@ export default function GCCCapabilitiesMosaic() {
               <div className="hidden md:flex relative items-start select-none h-[560px]">
                 <div className="relative w-full flex items-start h-[560px]">
                   {/* 1. ICON LOGOS RAIL (ALL 6 STAGES EVENLY DISTRIBUTED WITH MATCHING LOGOS) */}
-                  <div className="flex-1 pr-1 relative flex flex-col h-[560px] justify-between items-center">
+                  <div
+                    role="tablist"
+                    aria-label="AI GCC Capabilities Stages"
+                    className="flex-1 pr-1 relative flex flex-col h-[560px] justify-between items-center"
+                  >
                     {CAPABILITIES.map((cap, idx) => {
                       const isActive = activeIndex === idx;
                       const IconComponent = cap.icon;
@@ -1020,35 +1384,34 @@ export default function GCCCapabilitiesMosaic() {
                       return (
                         <button
                           key={cap.id}
+                          id={`capability-tab-${cap.id}`}
                           type="button"
                           onClick={() => handleSelectStage(idx)}
                           style={{ height: NODE_SPACING }}
                           className="group relative flex flex-col items-center justify-center text-center transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169DC8] rounded-xl cursor-pointer w-full"
                           aria-selected={isActive}
                           role="tab"
+                          aria-controls={`capability-panel-${cap.id}`}
                           aria-label={`${cap.tabNumber} ${cap.titleName}`}
                         >
                           {/* Stage Number */}
                           <span
-                            className={`text-[11px] font-mono font-bold tracking-wider mb-1 transition-colors ${
-                              isActive ? "text-[#008EC4]" : "text-[#7B8B9E] group-hover:text-[#0D306C]"
-                            }`}
+                            className={`text-[11px] font-mono font-bold tracking-wider mb-1 transition-colors ${isActive ? "text-[#008EC4]" : "text-[#7B8B9E] group-hover:text-[#0D306C]"
+                              }`}
                           >
                             {cap.tabNumber}
                           </span>
 
                           {/* Matching Icon / Logo Tile */}
                           <div
-                            className={`relative w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                              isActive
+                            className={`relative w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${isActive
                                 ? "bg-gradient-to-br from-[#0D244D] to-[#051329] text-[#38BDF8] shadow-[0_6px_20px_rgba(22,157,200,0.3)] border border-[#169DC8]/60 scale-105"
                                 : "bg-white/85 hover:bg-white text-[#505D74] hover:text-[#0D306C] border border-[#CBD5E1]/80 hover:border-[#94A3B8] shadow-2xs hover:scale-105"
-                            }`}
+                              }`}
                           >
                             <IconComponent
-                              className={`w-5 h-5 transition-transform duration-200 ${
-                                isActive ? "text-[#38BDF8] scale-110" : "text-[#505D74] group-hover:text-[#0D306C]"
-                              }`}
+                              className={`w-5 h-5 transition-transform duration-200 ${isActive ? "text-[#38BDF8] scale-110" : "text-[#505D74] group-hover:text-[#0D306C]"
+                                }`}
                               aria-hidden="true"
                             />
                             {isActive && (
@@ -1151,6 +1514,9 @@ export default function GCCCapabilitiesMosaic() {
                 <AnimatePresence mode="popLayout" initial={false}>
                   <motion.div
                     key={activeCap.id}
+                    id={`capability-panel-${activeCap.id}`}
+                    role="tabpanel"
+                    aria-labelledby={`capability-tab-${activeCap.id}`}
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
@@ -1209,9 +1575,8 @@ export default function GCCCapabilitiesMosaic() {
                               return (
                                 <li
                                   key={item.label}
-                                  className={`group/tag relative rounded-xl border border-[#DCE8F4] bg-white px-2.5 py-2 sm:px-3 sm:py-2.5 flex items-center gap-2.5 text-left shadow-2xs hover:shadow-sm hover:border-[#008EC4]/50 transition-all duration-200 ${
-                                    isFullWidth ? "sm:col-span-2" : ""
-                                  }`}
+                                  className={`group/tag relative rounded-xl border border-[#DCE8F4] bg-white px-2.5 py-2 sm:px-3 sm:py-2.5 flex items-center gap-2.5 text-left shadow-2xs hover:shadow-sm hover:border-[#008EC4]/50 transition-all duration-200 ${isFullWidth ? "sm:col-span-2" : ""
+                                    }`}
                                 >
                                   {/* Left: Pastel Blue Circular Icon Disc */}
                                   <span className="w-8 h-8 sm:w-8.5 sm:h-8.5 shrink-0 rounded-full bg-[#E5F2FC] flex items-center justify-center text-[#0D306C] group-hover/tag:scale-105 transition-transform duration-200">
@@ -1391,7 +1756,7 @@ export default function GCCCapabilitiesMosaic() {
                     to={cap.primaryCta.href}
                     className="inline-flex items-center justify-center rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs font-bold tracking-tight px-4 py-2.5 transition-all duration-200 shadow-sm"
                   >
-                    <span>{cap.primaryCta.label}</span>
+                    <span>{cap.primaryCta.mobileLabel ?? cap.primaryCta.label}</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
                   </Link>
                   {cap.secondaryCta && (
@@ -1399,7 +1764,7 @@ export default function GCCCapabilitiesMosaic() {
                       to={cap.secondaryCta.href}
                       className="btn-white text-center justify-center text-xs py-2"
                     >
-                      <span>{cap.secondaryCta.label}</span>
+                      <span>{cap.secondaryCta.mobileLabel ?? cap.secondaryCta.label}</span>
                       <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0 text-[#169DC8]" />
                     </Link>
                   )}

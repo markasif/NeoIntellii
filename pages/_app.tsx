@@ -59,12 +59,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         }
       `}</style>
 
-      {/* Google Analytics 4 + Google Ads — loads after page is interactive to avoid render-blocking */}
+      {/* Google Analytics 4 + Google Ads — loads during idle time to prevent blocking hydration & main thread */}
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
-      <Script id="ga4-init" strategy="afterInteractive">
+      <Script id="ga4-init" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -75,7 +75,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </Script>
 
       {GTM_ID && (
-        <Script id="gtm-init" strategy="afterInteractive">
+        <Script id="gtm-init" strategy="lazyOnload">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
             var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';

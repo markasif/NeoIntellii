@@ -15,7 +15,25 @@ export async function submitNetlifyForm(formName: string, data: FormData): Promi
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: encodeNetlifyForm(formName, data),
   });
-  if (!response.ok) {
-    throw new Error(`Netlify form "${formName}" was rejected (HTTP ${response.status})`);
+  if (response.ok) return;
+
+  // Local development serves public/__forms.html as a static file and the dev
+  // server does not run Netlify's form handler, so it answers 404/405. Treat
+  // that as accepted so the form flow is testable locally — a real deployment
+  // is handled by Netlify and returns 2xx, so it never reaches this branch.
+  const isLocalHost =
+    typeof window !== "undefined" &&
+    /^(localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\])$/i.test(window.location.hostname);
+  if (
+    process.env.NODE_ENV === "development" &&
+    isLocalHost &&
+    (response.status === 404 || response.status === 405)
+  ) {
+    console.warn(
+      `[netlifyForms] "${formName}" submission skipped on localhost (HTTP ${response.status}); the Netlify form handler only runs in deployment.`,
+    );
+    return;
   }
+
+  throw new Error(`Netlify form "${formName}" was rejected (HTTP ${response.status})`);
 }

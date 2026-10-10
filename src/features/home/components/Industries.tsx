@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import AmbientGlow from "@/components/ui/AmbientGlow";
@@ -150,14 +151,14 @@ export default function Industries() {
 
         {/* Bottom CTA Button (Styled like Learn More button) */}
         <div className="mt-10 sm:mt-12 text-center flex justify-center">
-          <a
-            href="#contact"
+          <Link
+            href="/industries"
             title="Explore every industry we serve"
             className="btn-gradient"
           >
             <span>Explore every industry we serve</span>
             <ArrowRight className="h-4 w-4 text-white transition-transform duration-200 group-hover:translate-x-1" />
-          </a>
+          </Link>
         </div>
 
       </div>

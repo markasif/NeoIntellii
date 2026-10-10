@@ -38,6 +38,21 @@
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+/* CapabilityGrid particle wave — GPU-friendly CSS transform instead of SMIL */
+@keyframes cap-wave-shift {
+  from { transform: translate3d(-200px, 0, 0); }
+  to   { transform: translate3d(0, 0, 0); }
+}
+.cap-wave-layer {
+  animation-name: cap-wave-shift;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+.cap-wave-paused { animation-play-state: paused; will-change: auto; }
+@media (prefers-reduced-motion: reduce) {
+  .cap-wave-layer { animation: none; }
+}
 .animate-ai-marquee {
   animation: ai-marquee 45s linear infinite;
 }
@@ -350,7 +365,6 @@
   }
   .btn-gradient:hover,
   .btn-gradient-primary:hover {
-    box-shadow: 0 0 22px rgba(22, 157, 200, 0.55), 0 4px 16px rgba(13, 48, 108, 0.3);
     transform: translateY(-1px);
     color: #ffffff !important;
   }
@@ -376,7 +390,6 @@
   }
   .btn-white:hover,
   .btn-white-primary:hover {
-    box-shadow: 0 0 22px rgba(255, 255, 255, 0.35), 0 4px 16px rgba(13, 48, 108, 0.12);
     transform: translateY(-1px);
     border-color: #94A3B8;
     color: #0D244D !important;
@@ -403,7 +416,6 @@
   .btn-cyan:hover,
   .btn-cyan-primary:hover {
     background: #0D306C;
-    box-shadow: 0 0 22px rgba(22, 157, 200, 0.55), 0 4px 16px rgba(13, 48, 108, 0.3);
     transform: translateY(-1px);
     color: #ffffff !important;
   }

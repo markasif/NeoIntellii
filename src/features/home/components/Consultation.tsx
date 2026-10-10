@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, Target, Clock, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -152,26 +153,26 @@ export default function Consultation({ hideUpperCta = false, hideWaveDivider = f
 
             {/* Action pills row */}
             <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-2.5 sm:gap-3.5 mt-6 sm:mt-7 w-full sm:w-auto">
-              <a
-                href="#contact"
+              <Link
+                href="/services/ai-gcc"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-[#0A224E] hover:bg-[#F19326] hover:text-white px-6 py-2.5 text-xs sm:text-[13px] font-bold tracking-tight shadow-md transition-all duration-200 w-full sm:w-auto"
               >
                 <span>Plan My AI GCC</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href="#tools"
+              </Link>
+              <Link
+                href="/gcc-cost-calculator"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 text-white px-6 py-2.5 text-xs sm:text-[13px] font-bold tracking-tight transition-all duration-200 w-full sm:w-auto"
               >
                 <span>Calculate GCC Cost</span>
-              </a>
-              <a
-                href="#solutions"
+              </Link>
+              <Link
+                href="/services/micro-gcc"
                 className="inline-flex items-center justify-center gap-1.5 text-xs sm:text-[13px] font-bold text-[#38BDF8] hover:text-white transition-colors py-1.5 sm:py-0 sm:pl-2"
               >
                 <span>Explore AI Micro GCC</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}
@@ -212,10 +213,10 @@ export default function Consultation({ hideUpperCta = false, hideWaveDivider = f
                 <div className="relative flex-1 h-full rounded-[24px] sm:rounded-[36px] overflow-hidden border border-white/20 shadow-2xl group bg-[#0A224E]">
                   <div className="absolute inset-0 w-[200%] h-full left-0">
                     <Image
-                      src="/images/contact_engineer_blue_lounge.jpg"
+                      src="/images/contact_engineer_blue_lounge.webp"
                       alt="NeoIntelli AI Engineering Lounge Workspace in Bengaluru"
                       fill
-                      priority
+                      loading="lazy"
                       sizes="(max-width: 1024px) 100vw, 560px"
                       className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                     />
@@ -227,10 +228,10 @@ export default function Consultation({ hideUpperCta = false, hideWaveDivider = f
                 <div className="relative flex-1 h-full rounded-[24px] sm:rounded-[36px] overflow-hidden border border-white/20 shadow-2xl group bg-[#0A224E]">
                   <div className="absolute inset-0 w-[200%] h-full -left-[100%]">
                     <Image
-                      src="/images/contact_engineer_blue_lounge.jpg"
+                      src="/images/contact_engineer_blue_lounge.webp"
                       alt="NeoIntelli AI Engineering Lounge Workspace in Bengaluru"
                       fill
-                      priority
+                      loading="lazy"
                       sizes="(max-width: 1024px) 100vw, 560px"
                       className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                     />
@@ -269,21 +270,21 @@ export default function Consultation({ hideUpperCta = false, hideWaveDivider = f
 
               {/* Two Action Buttons matching screenshot */}
               <div className="space-y-2.5 sm:space-y-3 pt-1">
-                <a
-                  href="tel:+918041239800"
+                <Link
+                  href="/book-a-call"
                   className="w-full flex items-center justify-between rounded-xl sm:rounded-2xl bg-white hover:bg-[#F19326] text-[#0A224E] hover:text-white px-5 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm font-bold tracking-tight shadow-md transition-all duration-300 group"
-                >
-                  <span>Speak with a GCC Expert</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
-
-                <a
-                  href="mailto:reachus@neointelli.com?subject=Schedule%20a%20Strategy%20Meeting"
-                  className="w-full flex items-center justify-between rounded-xl sm:rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 text-white px-5 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm font-bold tracking-tight shadow-sm transition-all duration-300 group"
                 >
                   <span>Schedule a Strategy Meeting</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="w-full flex items-center justify-between rounded-xl sm:rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 text-white px-5 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm font-bold tracking-tight shadow-sm transition-all duration-300 group"
+                >
+                  <span>Contact with GCC Expert</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </div>
 
               {/* Horizontal Divider */}

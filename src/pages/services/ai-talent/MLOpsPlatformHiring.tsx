@@ -129,12 +129,12 @@ export default function MLOpsPlatformHiring() {
 
       <Section id="how-we-validate" eyebrow="We interview. You hire." title="The validation flow behind every MLOps and platform shortlist." tone="muted" width="wide">
         <ValidationRoadmap />
-        <div className="mt-8 p-6 text-[#2B3D66] shadow-xs">
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider font-mono text-[#0e92b8] mb-2">
+        <div className="mt-8 p-6 text-[#2B3D66] shadow-xs text-center">
+          <div className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider font-mono text-[#0e92b8] mb-2">
             <Cpu className="w-4 h-4" />
             <span>AI GCC Production Layer</span>
           </div>
-          <p className="text-body text-xs sm:text-sm leading-relaxed text-[#415A77]">
+          <p className="text-body text-xs sm:text-sm leading-relaxed text-[#415A77] max-w-5xl mx-auto">
             The operating layer these engineers build is described under{" "}
             <Link to={AI_TALENT_CONTEXT_LINKS.aiGccMlops.path} className="font-semibold text-[#077fa4] hover:underline">
               {AI_TALENT_CONTEXT_LINKS.aiGccMlops.name}

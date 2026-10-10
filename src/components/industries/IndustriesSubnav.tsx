@@ -29,7 +29,7 @@ export default function IndustriesSubnav() {
   const items = INDUSTRY_PAGES.map((page) => ({
     key: page.key,
     label: page.label,
-    href: `${page.path}#industries-content`,
+    href: page.path,
     active: pathname === page.path,
   }));
 

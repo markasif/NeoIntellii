@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -45,7 +46,7 @@ const DEFAULT_SOLUTIONS: NeoHireXMatrixItem[] = [
     description:
       "Build a dedicated AI engineering capability in India without starting with the overhead of a large traditional GCC. Begin with one focused team and expand as the business grows.",
     cta: "Explore AI Micro GCC",
-    href: "#contact",
+    href: "/services/micro-gcc",
     image: "/images/solution_micro_gcc.jpg",
     imageAlt:
       "AI Micro GCC engineering team collaborating in India on neural architectures and ML pipelines",
@@ -58,7 +59,7 @@ const DEFAULT_SOLUTIONS: NeoHireXMatrixItem[] = [
     description:
       "Build your team across GenAI, Agentic AI, machine learning, data engineering, MLOps and AI leadership through specialist sourcing, NeoHireX screening and practitioner-led technical validation.",
     cta: "Explore AI Talent",
-    href: "#neohirex",
+    href: "/services/ai-talent",
     image: "/images/solution_ai_talent.jpg",
     imageAlt:
       "Senior AI engineering practitioner conducting technical evaluation with code and scorecard metrics",
@@ -71,7 +72,7 @@ const DEFAULT_SOLUTIONS: NeoHireXMatrixItem[] = [
     description:
       "Model roles, seniority, headcount and city to estimate the fully loaded monthly and annual operating cost of your India team.",
     cta: "Calculate My GCC Cost",
-    href: "#tools",
+    href: "/gcc-cost-calculator",
     image: "/images/solution_gcc_calculator.jpg",
     imageAlt:
       "India GCC strategic cost and talent headcount modeling dashboard interface",
@@ -119,9 +120,8 @@ export default function NeoHireXMatrix({
               {/* TEXT HALF: Transparent with Adjusted High-Contrast Dark Text */}
               {/* ============================================================= */}
               <div
-                className={`lg:col-span-7 py-5 sm:py-8 lg:py-10 px-4 sm:px-7 md:px-8 lg:px-12 xl:px-16 flex items-center bg-transparent text-[#0D244D] ${
-                  isNavyRight ? "lg:order-first" : "lg:order-last"
-                }`}
+                className={`lg:col-span-7 py-5 sm:py-8 lg:py-10 px-4 sm:px-7 md:px-8 lg:px-12 xl:px-16 flex items-center bg-transparent text-[#0D244D] ${isNavyRight ? "lg:order-first" : "lg:order-last"
+                  }`}
               >
                 <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 lg:gap-8 w-full">
                   {/* Huge Outlined Number with Amber Underline */}
@@ -208,9 +208,8 @@ export default function NeoHireXMatrix({
               {/* NAVY BLUE HALF: Deep Navy Block with Solution Image           */}
               {/* ============================================================= */}
               <div
-                className={`lg:col-span-5 h-full flex flex-col justify-between bg-[#081B3E] text-white overflow-hidden ${
-                  isNavyRight ? "lg:order-last" : "lg:order-first"
-                }`}
+                className={`lg:col-span-5 h-full flex flex-col justify-between bg-[#081B3E] text-white overflow-hidden ${isNavyRight ? "lg:order-last" : "lg:order-first"
+                  }`}
               >
                 {/* Main Visual: Photorealistic Solution Image */}
                 <div className="relative w-full flex-1 min-h-[220px] sm:min-h-[260px] lg:min-h-[280px] overflow-hidden group/img">
@@ -227,19 +226,19 @@ export default function NeoHireXMatrix({
                 {/* Bottom Bar: Action Strip (rendered only if CTA provided) */}
                 {hasCta && (
                   <div className="flex items-center justify-between py-3 sm:py-3.5 px-5 sm:px-6 lg:px-8 border-t border-white/15 bg-[#061530]/90">
-                    <a
-                      href={item.href}
+                    <Link
+                      href={item.href || "#"}
                       className="text-xs sm:text-[13px] font-mono font-bold text-white hover:text-[#38BDF8] transition-colors tracking-wide uppercase truncate mr-3"
                     >
                       {item.cta}
-                    </a>
-                    <a
-                      href={item.href}
+                    </Link>
+                    <Link
+                      href={item.href || "#"}
                       className="w-7 h-7 sm:w-8 sm:h-8 border border-white/40 flex items-center justify-center text-white hover:bg-[#008EC4] hover:border-[#008EC4] transition-all shrink-0"
                       aria-label={item.cta}
                     >
                       <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>

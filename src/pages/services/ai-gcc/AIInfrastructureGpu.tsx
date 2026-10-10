@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { AiGccPageLayout, Section, InBrief, CapabilityGrid, AnswerBlock, AdvisoryProcessFlow, GpuComputeComparison, SplitValuePointOfView } from "@/components/ai-gcc";
+import PillTagList from "@/components/shared/PillTagList";
 import { AI_GCC_CONTEXT_LINKS, AI_GCC_PAGE_BY_KEY } from "@/data/aiGcc";
 import { aiGccBookingUrl } from "@/lib/aiGccCta";
 
@@ -107,16 +108,7 @@ export default function AIInfrastructureGpu() {
         <AdvisoryProcessFlow steps={FLOW} />
         <div className="mt-4 p-6 sm:p-7 max-w-4xl mx-auto text-center">
           <p className="text-2xs font-mono font-bold tracking-widest uppercase text-[#009BBF] mb-3.5">Runs on</p>
-          <ul className="flex flex-wrap justify-center gap-2.5 sm:gap-3 list-none p-0 m-0">
-            {ENVIRONMENTS.map((env) => (
-              <li
-                key={env}
-                className="inline-flex items-center px-4 py-1.5 sm:px-5 sm:py-2 rounded-full border border-[#00A3E0] bg-transparent text-[#0D244D] text-xs sm:text-[13.5px] font-semibold hover:border-[#0D306C] hover:bg-white/40 transition-all duration-200 shadow-xs select-none"
-              >
-                {env}
-              </li>
-            ))}
-          </ul>
+          <PillTagList items={ENVIRONMENTS} size="md" />
         </div>
       </Section>
 

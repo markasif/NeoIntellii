@@ -7,7 +7,7 @@
  * CTA shares one consistent look.
  */
 export const accentActionButtonClass =
-  "inline-flex items-center gap-1.5 px-4 py-2 sm:px-4.5 sm:py-2.5 rounded-sm bg-[#169DC8] hover:bg-[#0D306C] text-white text-xs font-bold tracking-wide transition-all duration-200 shadow-xs hover:gap-2.5";
+  "btn-cyan";
 
 /**
  * Variant for buttons that live inside a larger `group` click target (e.g. the

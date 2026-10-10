@@ -11,7 +11,7 @@ export default function AiGccSubnav({ current }: { current: AiGccPageKey }) {
   const items = AI_GCC_PAGES.map((page) => ({
     key: page.key,
     label: page.navLabel,
-    href: `${page.path}#ai-gcc-content`,
+    href: page.path,
     active: current === page.key,
   }));
 

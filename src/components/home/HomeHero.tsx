@@ -59,11 +59,11 @@ export default function HomeHero() {
 
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
-            to="/services/ai-gcc"
-            onClick={track("hero_plan_ai_gcc")}
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm bg-white text-[#054f67] shadow-lg transition-all duration-300 hover:bg-white/95 hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#07799c]"
+            to="/gcc-cost-calculator"
+            onClick={track("hero_cost_calculator")}
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm bg-[#0D244D] text-white shadow-lg transition-all duration-300 hover:bg-[#008EC4] hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#07799c]"
           >
-            Plan My AI GCC
+            GCC Cost Calculator
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
@@ -74,15 +74,6 @@ export default function HomeHero() {
             Explore AI Micro GCC
           </Link>
         </div>
-
-        <Link
-          to="/gcc-cost-calculator"
-          onClick={track("hero_cost_calculator")}
-          className="mt-6 inline-flex items-center gap-1.5 text-sm text-cyan-100 underline underline-offset-4 decoration-cyan-100/40 rounded-sm transition-colors duration-300 hover:text-white hover:decoration-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#07799c]"
-        >
-          Estimate GCC Cost
-          <ArrowRight className="w-4 h-4" />
-        </Link>
       </motion.div>
 
       {/* Capability strip. Six words, one line on desktop, wrapping on mobile. */}

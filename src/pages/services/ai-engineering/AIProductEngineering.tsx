@@ -28,6 +28,7 @@ import {
   ImageFeatureCardGrid,
   type ImageFeatureCardItem,
 } from "@/components/ai-engineering";
+import PillTagList from "@/components/shared/PillTagList";
 import { AI_ENGINEERING_CROSS_LINKS, AI_ENGINEERING_PAGE_BY_KEY } from "@/data/aiEngineering";
 import { aiEngineeringBookingUrl } from "@/lib/aiEngineeringCta";
 
@@ -263,13 +264,7 @@ export default function AIProductEngineering() {
         tone="muted"
         width="wide"
       >
-        <ul className="flex flex-wrap gap-2 justify-center mb-10 list-none pl-0">
-          {AUDIENCES.map((audience) => (
-            <li key={audience} className="inline-flex items-center px-3.5 py-1.5 rounded-full border border-[#00A3E0] bg-transparent text-[#0D244D] text-xs font-semibold select-none">
-              {audience}
-            </li>
-          ))}
-        </ul>
+        <PillTagList items={AUDIENCES} className="mb-10" />
         <NeoHireXMatrix items={PRODUCT_PROBLEMS} showHeader={false} />
       </Section>
 
@@ -312,13 +307,7 @@ export default function AIProductEngineering() {
             <h3 className="text-base sm:text-lg font-bold text-[#0D306C] tracking-tight leading-snug mb-4 font-sans text-center">
               Our focus
             </h3>
-            <ul className="flex flex-wrap gap-2 list-none pl-0">
-              {FOCUS.map((item) => (
-                <li key={item} className="inline-flex items-center px-3 py-1.5 rounded-full border border-[#00A3E0] bg-transparent text-[#0D244D] text-xs font-semibold select-none">
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <PillTagList items={FOCUS} align="start" />
           </div>
           <PointOfView statement="The value of AI is measured in the workflow, not the model demo.">
             <p>

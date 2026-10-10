@@ -29,3 +29,11 @@ tsconfig.tsbuildinfo
 *.njsproj
 *.sln
 *.sw?
+
+# Lovable & Generator metadata
+.lovable/
+.lovable*
+
+# Temp scratch & debug files
+step_*
+

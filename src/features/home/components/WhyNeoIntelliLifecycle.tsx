@@ -15,6 +15,7 @@ import {
   RefreshCw,
 } from "lucide-react";
 import { motion, useInView } from "framer-motion";
+import { Link } from "react-router-dom";
 import AmbientGlow from "@/components/ui/AmbientGlow";
 import UniversalLifecycle, {
   type LifecycleStageItem,
@@ -136,6 +137,7 @@ export default function WhyNeoIntelliLifecycle() {
       imgHeight: "72%",
       imgScale: "scale-105 sm:scale-[1.08]",
       btnDark: false,
+      textMaxW: "max-w-[58%] sm:max-w-[55%]",
     },
     {
       title: "Deep Technical Validation",
@@ -155,6 +157,7 @@ export default function WhyNeoIntelliLifecycle() {
       imgHeight: "65%",
       imgScale: "scale-100",
       btnDark: false,
+      textMaxW: "max-w-[72%] sm:max-w-[68%]",
     },
     {
       title: "Autonomous Outcome Squads",
@@ -174,6 +177,7 @@ export default function WhyNeoIntelliLifecycle() {
       imgHeight: "62%",
       imgScale: "scale-100",
       btnDark: true, // Matches Image 1 dark button
+      textMaxW: "max-w-[72%] sm:max-w-[68%]",
     },
     {
       title: "Integrated Transfer Roadmap",
@@ -193,6 +197,7 @@ export default function WhyNeoIntelliLifecycle() {
       imgHeight: "72%",
       imgScale: "scale-105 sm:scale-[1.08]",
       btnDark: false,
+      textMaxW: "max-w-[55%] sm:max-w-[52%]",
     },
   ];
 
@@ -340,7 +345,7 @@ export default function WhyNeoIntelliLifecycle() {
                     </h4>
 
                     {/* Arrow-bullet points */}
-                    <ul className="space-y-2 mb-3 max-w-[80%] sm:max-w-[76%]">
+                    <ul className={`space-y-2 mb-3 ${pillar.textMaxW}`}>
                       {pillar.points.map((point, pIdx) => (
                         <li key={pIdx} className="flex items-start gap-2.5">
                           <span
@@ -357,12 +362,6 @@ export default function WhyNeoIntelliLifecycle() {
                     </ul>
                   </div>
 
-                  {/* Bottom-left Circular Arrow Button (Card 0 has white button, Card 1 has white button matching Image 1) */}
-                  <div className="relative z-20 pt-1">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white shadow-md border border-slate-100/90 flex items-center justify-center text-[#0D306C] group-hover:bg-[#0D306C] group-hover:text-white group-hover:scale-105 transition-all duration-300">
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                    </div>
-                  </div>
 
                   {/* 3D Illustration Breaking Out of the Div */}
                   <div
@@ -452,95 +451,103 @@ export default function WhyNeoIntelliLifecycle() {
 
               {/* BOTTOM ROW: CTA Glass Skyscraper Card matching Reference Image 1 */}
               <div className="flex-1 flex flex-col min-h-[220px]">
-                <motion.a
-                  href="#contact"
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.55, delay: 0.28 }}
-                  className="flex-1 relative rounded-[24px] sm:rounded-[28px] bg-gradient-to-br from-[#0B254E] via-[#0E356E] to-[#124286] p-5 sm:p-6 text-white shadow-[0_12px_35px_rgba(11,37,78,0.25)] hover:shadow-[0_18px_45px_rgba(11,37,78,0.35)] transition-all duration-300 group hover:-translate-y-1 flex flex-col justify-between overflow-hidden cursor-pointer"
+                  className="flex-1 flex flex-col"
                 >
-                  {/* Subtle curved background lines */}
-                  <svg
-                    viewBox="0 0 400 300"
-                    fill="none"
-                    className="absolute inset-0 w-full h-full pointer-events-none opacity-20"
+                  <Link
+                    to="/services/gcc-operations"
+                    aria-label="Discuss Your GCC Operating Model — Architecture consultation with our senior GCC advisors"
+                    className="flex-1 relative rounded-[24px] sm:rounded-[28px] bg-gradient-to-br from-[#0B254E] via-[#0E356E] to-[#124286] p-5 sm:p-6 text-white shadow-[0_12px_35px_rgba(11,37,78,0.25)] hover:shadow-[0_18px_45px_rgba(11,37,78,0.35)] transition-all duration-300 group hover:-translate-y-1 flex flex-col justify-between overflow-hidden cursor-pointer block focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
                   >
-                    <path
-                      d="M -50 250 C 120 180, 260 280, 450 150"
-                      stroke="#FFFFFF"
-                      strokeWidth="36"
+                    {/* Subtle curved background lines */}
+                    <svg
+                      viewBox="0 0 400 300"
                       fill="none"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M -30 200 C 130 130, 270 230, 450 100"
-                      stroke="#FFFFFF"
-                      strokeWidth="28"
-                      fill="none"
-                      strokeLinecap="round"
-                    />
-                  </svg>
+                      className="absolute inset-0 w-full h-full pointer-events-none opacity-20"
+                    >
+                      <path
+                        d="M -50 250 C 120 180, 260 280, 450 150"
+                        stroke="#FFFFFF"
+                        strokeWidth="36"
+                        fill="none"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M -30 200 C 130 130, 270 230, 450 100"
+                        stroke="#FFFFFF"
+                        strokeWidth="28"
+                        fill="none"
+                        strokeLinecap="round"
+                      />
+                    </svg>
 
-                  {/* Warm sunset ambient glow behind the building */}
-                  <div className="absolute right-0 bottom-0 w-[72%] h-[95%] bg-radial from-[#F59E0B]/35 via-[#F59E0B]/10 to-transparent pointer-events-none rounded-full blur-xl" />
+                    {/* Warm sunset ambient glow behind the building */}
+                    <div className="absolute right-0 bottom-0 w-[72%] h-[95%] bg-radial from-[#F59E0B]/35 via-[#F59E0B]/10 to-transparent pointer-events-none rounded-full blur-xl" />
 
-                  {/* Skyscraper Illustration with Seamlessly Blended Left Edge */}
-                  <div
-                    className="absolute -right-2 sm:-right-3 -bottom-1 sm:-bottom-2 pointer-events-none select-none flex items-end justify-end"
-                    style={{
-                      width: "76%",
-                      height: "148%",
-                      maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.45) 10%, black 28%)",
-                      WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.45) 10%, black 28%)",
-                    }}
-                  >
-                    <Image
-                      src="/images/gcc_skyscraper_cutout.png"
-                      alt="Modern GCC Corporate Tower"
-                      fill
-                      sizes="(max-width: 640px) 76vw, 40vw"
-                      className="object-contain object-right-bottom scale-105 origin-bottom-right"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#E98D1C]/25 via-transparent to-transparent pointer-events-none" />
-                  </div>
+                    {/* Skyscraper Illustration with Seamlessly Blended Left Edge */}
+                    <div
+                      className="absolute -right-2 sm:-right-3 -bottom-1 sm:-bottom-2 pointer-events-none select-none flex items-end justify-end"
+                      style={{
+                        width: "76%",
+                        height: "148%",
+                        maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.45) 10%, black 28%)",
+                        WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.45) 10%, black 28%)",
+                      }}
+                    >
+                      <Image
+                        src="/images/gcc_skyscraper_cutout.png"
+                        alt="Modern GCC Corporate Tower"
+                        fill
+                        sizes="(max-width: 640px) 76vw, 40vw"
+                        className="object-contain object-right-bottom scale-105 origin-bottom-right"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#E98D1C]/25 via-transparent to-transparent pointer-events-none" />
+                    </div>
 
-                  <div className="relative z-10">
-                    {/* Top Hexagon Architectural Badge */}
-                    <div className="relative flex items-center justify-center w-8 h-9 mb-2.5">
-                      <svg viewBox="0 0 54 60" className="w-full h-full drop-shadow-sm">
-                        <polygon
-                          points="27,3 50,16 50,44 27,57 4,44 4,16"
-                          fill="rgba(255, 255, 255, 0.22)"
-                          stroke="rgba(255, 255, 255, 0.65)"
-                          strokeWidth="2.4"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      <div className="absolute inset-0 flex items-center justify-center text-white">
-                        <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                          <circle cx="12" cy="12" r="3" />
-                          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                    <div className="relative z-10">
+                      {/* Top Hexagon Architectural Badge */}
+                      <div className="relative flex items-center justify-center w-8 h-9 mb-2.5">
+                        <svg viewBox="0 0 54 60" className="w-full h-full drop-shadow-sm">
+                          <polygon
+                            points="27,3 50,16 50,44 27,57 4,44 4,16"
+                            fill="rgba(255, 255, 255, 0.22)"
+                            stroke="rgba(255, 255, 255, 0.65)"
+                            strokeWidth="2.4"
+                            strokeLinejoin="round"
+                          />
                         </svg>
+                        <div className="absolute inset-0 flex items-center justify-center text-white">
+                          <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="12" cy="12" r="3" />
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      <div className="text-lg sm:text-xl font-extrabold text-white leading-snug tracking-tight max-w-[68%] sm:max-w-[65%]">
+                        Discuss Your GCC Operating Model
+                      </div>
+
+                      <div className="text-xs sm:text-[13px] text-white/90 font-normal mt-2 leading-relaxed max-w-[68%] sm:max-w-[65%]">
+                        Architecture consultation with our senior GCC advisors.
                       </div>
                     </div>
 
-                    <div className="text-lg sm:text-xl font-extrabold text-white leading-snug tracking-tight max-w-[68%] sm:max-w-[65%]">
-                      Discuss Your GCC Operating Model
+                    {/* Bottom-left Circular Arrow Button — Navigates to GCC Operations */}
+                    <div className="relative z-20 pt-4">
+                      <div
+                        aria-hidden="true"
+                        className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white shadow-md border border-slate-100/90 flex items-center justify-center text-[#0D306C] group-hover:bg-[#169DC8] group-hover:text-white group-hover:scale-105 transition-all duration-300"
+                      >
+                        <ArrowRight className="w-4 h-4 sm:w-4.5 sm:h-4.5 transition-transform group-hover:translate-x-0.5" />
+                      </div>
                     </div>
-
-                    <div className="text-xs sm:text-[13px] text-white/90 font-normal mt-2 leading-relaxed max-w-[68%] sm:max-w-[65%]">
-                      Architecture consultation with our senior GCC advisors.
-                    </div>
-                  </div>
-
-                  {/* Bottom-left Circular Arrow Button (White circle matching Image 1) */}
-                  <div className="relative z-20 pt-1">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white shadow-md border border-slate-100/90 flex items-center justify-center text-[#0D306C] group-hover:bg-[#0D306C] group-hover:text-white group-hover:scale-105 transition-all duration-300">
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                    </div>
-                  </div>
-                </motion.a>
+                  </Link>
+                </motion.div>
               </div>
             </div>
 
@@ -574,7 +581,7 @@ export default function WhyNeoIntelliLifecycle() {
                     </h4>
 
                     {/* Arrow-bullet points */}
-                    <ul className="space-y-2 mb-3 max-w-[80%] sm:max-w-[76%]">
+                    <ul className={`space-y-2 mb-3 ${pillar.textMaxW}`}>
                       {pillar.points.map((point, pIdx) => (
                         <li key={pIdx} className="flex items-start gap-2.5">
                           <span
@@ -591,18 +598,6 @@ export default function WhyNeoIntelliLifecycle() {
                     </ul>
                   </div>
 
-                  {/* Bottom-left Circular Arrow Button (Card 2 has dark button matching Image 1, Card 3 has white) */}
-                  <div className="relative z-20 pt-1">
-                    <div
-                      className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full shadow-md flex items-center justify-center transition-all duration-300 ${
-                        pillar.btnDark
-                          ? "bg-[#0B254E] text-white hover:bg-[#071833] hover:scale-105"
-                          : "bg-white border border-slate-100/90 text-[#0D306C] group-hover:bg-[#0D306C] group-hover:text-white group-hover:scale-105"
-                      }`}
-                    >
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                    </div>
-                  </div>
 
                   {/* 3D Illustration Breaking Out of the Div */}
                   <div

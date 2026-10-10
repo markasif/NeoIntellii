@@ -60,7 +60,7 @@ const engagements = [
     desc: "End-to-end design and stand-up of a new captive center — strategy, entity, location, talent, technology, and governance delivered as one connected program.",
     image: "/images/gcc-setup.webp",
     ctaText: "Explore Setup & Launch",
-    href: "/services/gcc/turnkey-setup",
+    href: "/services/gcc/setup-launch",
   },
   {
     id: "02",
@@ -76,7 +76,7 @@ const engagements = [
     desc: "Hiring the leadership spine and specialist pods that define what the center actually delivers, with onboarding and retention designed in.",
     image: "/images/gcc-talent.webp",
     ctaText: "Explore Talent Build",
-    href: "/services/gcc/talent-recruitment",
+    href: "/services/ai-talent",
   },
   {
     id: "04",
@@ -92,7 +92,7 @@ const engagements = [
     desc: "Designing the decision-rights, risk, control, and reporting model so the center is audit-ready every day and the board sees a clean view at every review.",
     image: "/images/ai-governance.jpg",
     ctaText: "Explore Governance",
-    href: "/services/gcc/operations-management",
+    href: "/services/gcc-operations/governance-compliance",
   },
   {
     id: "06",

@@ -11,7 +11,7 @@ export default function AiTalentSubnav({ current }: { current: AiTalentPageKey }
   const items = AI_TALENT_PAGES.map((page) => ({
     key: page.key,
     label: page.navLabel,
-    href: `${page.path}#ai-talent-content`,
+    href: page.path,
     active: current === page.key,
   }));
 

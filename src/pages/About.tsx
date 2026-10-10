@@ -782,7 +782,7 @@ export default function About() {
           }}
           secondaryCta={{
             label: "Plan My AI GCC",
-            href: "/contact",
+            href: "/services/ai-gcc",
           }}
           footnote="A 30-minute working conversation. No generic GCC pitch: we start with what you want the India capability to own."
         />

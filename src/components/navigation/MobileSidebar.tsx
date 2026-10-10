@@ -70,26 +70,51 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
     company: false,
   });
 
-  // Pillars inner accordion state: first pillar open by default or current active pillar
-  const [openPillars, setOpenPillars] = useState<Record<string, boolean>>({
-    "AI GCC": true,
-  });
+  // Pillars inner accordion state: all pillars closed by default
+  const [openPillars, setOpenPillars] = useState<Record<string, boolean>>({});
 
-  // Lock body scroll when sidebar is open so background cannot scroll
+  // Reset inner pillar accordion state when sidebar closes so it never reopens expanded
+  useEffect(() => {
+    if (!isOpen) {
+      setOpenPillars({});
+    }
+  }, [isOpen]);
+
+  // Lock body & document scroll completely when sidebar is open so background cannot scroll on mobile or desktop
   useEffect(() => {
     if (isOpen) {
-      const originalOverflow = document.body.style.overflow;
+      const scrollY = window.scrollY;
+      const originalBodyOverflow = document.body.style.overflow;
+      const originalHtmlOverflow = document.documentElement.style.overflow;
+      const originalBodyPosition = document.body.style.position;
+      const originalBodyTop = document.body.style.top;
+      const originalBodyWidth = document.body.style.width;
       const originalPaddingRight = document.body.style.paddingRight;
+      const originalOverscroll = document.body.style.overscrollBehavior;
+      const originalHtmlOverscroll = document.documentElement.style.overscrollBehavior;
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 
+      document.documentElement.style.overflow = "hidden";
+      document.documentElement.style.overscrollBehavior = "none";
       document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+      document.body.style.overscrollBehavior = "none";
       if (scrollbarWidth > 0) {
         document.body.style.paddingRight = `${scrollbarWidth}px`;
       }
 
       return () => {
-        document.body.style.overflow = originalOverflow;
+        document.documentElement.style.overflow = originalHtmlOverflow;
+        document.documentElement.style.overscrollBehavior = originalHtmlOverscroll;
+        document.body.style.overflow = originalBodyOverflow;
+        document.body.style.position = originalBodyPosition;
+        document.body.style.top = originalBodyTop;
+        document.body.style.width = originalBodyWidth;
         document.body.style.paddingRight = originalPaddingRight;
+        document.body.style.overscrollBehavior = originalOverscroll;
+        window.scrollTo(0, scrollY);
       };
     }
   }, [isOpen]);
@@ -136,8 +161,11 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
-            className="fixed inset-0 bg-[#0A224E]/45 backdrop-blur-xs"
+            className="fixed inset-0 bg-[#0A224E]/45 backdrop-blur-xs touch-none"
             onClick={onClose}
+            onTouchMove={(e) => {
+              e.preventDefault();
+            }}
             aria-hidden="true"
           />
 
@@ -158,7 +186,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
             {/* ── TOP HEADER ── */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-white/60 bg-white/40 backdrop-blur-md shrink-0">
               <div className="flex items-center gap-2.5">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/80 shadow-2xs border border-white/80">
+                <div className="flex items-center justify-center">
                   <Image
                     src="/logo/neointelli_logo.webp"
                     alt="NeoIntelli"
@@ -204,23 +232,12 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                       : "hover:bg-white/50 text-[#0D306C]"
                   }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className={`flex h-8 w-8 items-center justify-center rounded-lg transition-colors ${
-                        openSections["what-we-do"]
-                          ? "bg-[#169DC8] text-white shadow-xs"
-                          : "bg-white/80 text-[#0D306C] border border-white/80"
-                      }`}
-                    >
-                      <Layers className="h-4 w-4" />
-                    </div>
+                  <div className="flex items-center gap-2.5">
+                    <Layers className={`h-4.5 w-4.5 shrink-0 ${openSections["what-we-do"] ? "text-[#169DC8]" : "text-[#0D306C]"}`} />
                     <span className="text-[14px] font-bold tracking-tight">What We Do</span>
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-[#169DC8]/15 text-[#0D306C]">
-                      6 Pillars
-                    </span>
                     <ChevronDown
                       className={`h-4 w-4 text-[#7B8B9E] transition-transform duration-200 ${
                         openSections["what-we-do"] ? "rotate-180 text-[#169DC8]" : ""
@@ -369,29 +386,16 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                       : "hover:bg-white/50 text-[#0D306C]"
                   }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className={`flex h-8 w-8 items-center justify-center rounded-lg transition-colors ${
-                        openSections["solutions"]
-                          ? "bg-[#169DC8] text-white shadow-xs"
-                          : "bg-white/80 text-[#0D306C] border border-white/80"
-                      }`}
-                    >
-                      <Zap className="h-4 w-4" />
-                    </div>
+                  <div className="flex items-center gap-2.5">
+                    <Zap className={`h-4.5 w-4.5 shrink-0 ${openSections["solutions"] ? "text-[#169DC8]" : "text-[#0D306C]"}`} />
                     <span className="text-[14px] font-bold tracking-tight">Solutions</span>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-[#169DC8]/15 text-[#0D306C]">
-                      3 Pathways
-                    </span>
-                    <ChevronDown
-                      className={`h-4 w-4 text-[#7B8B9E] transition-transform duration-200 ${
-                        openSections["solutions"] ? "rotate-180 text-[#169DC8]" : ""
-                      }`}
-                    />
-                  </div>
+                  <ChevronDown
+                    className={`h-4 w-4 text-[#7B8B9E] transition-transform duration-200 ${
+                      openSections["solutions"] ? "rotate-180 text-[#169DC8]" : ""
+                    }`}
+                  />
                 </button>
 
                 <AnimatePresence>
@@ -458,29 +462,16 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                       : "hover:bg-white/50 text-[#0D306C]"
                   }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className={`flex h-8 w-8 items-center justify-center rounded-lg transition-colors ${
-                        openSections["product"]
-                          ? "bg-[#169DC8] text-white shadow-xs"
-                          : "bg-white/80 text-[#0D306C] border border-white/80"
-                      }`}
-                    >
-                      <Cpu className="h-4 w-4" />
-                    </div>
+                  <div className="flex items-center gap-2.5">
+                    <Cpu className={`h-4.5 w-4.5 shrink-0 ${openSections["product"] ? "text-[#169DC8]" : "text-[#0D306C]"}`} />
                     <span className="text-[14px] font-bold tracking-tight">Product</span>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-[#10B981]/15 text-[#047857]">
-                      AI OS
-                    </span>
-                    <ChevronDown
-                      className={`h-4 w-4 text-[#7B8B9E] transition-transform duration-200 ${
-                        openSections["product"] ? "rotate-180 text-[#169DC8]" : ""
-                      }`}
-                    />
-                  </div>
+                  <ChevronDown
+                    className={`h-4 w-4 text-[#7B8B9E] transition-transform duration-200 ${
+                      openSections["product"] ? "rotate-180 text-[#169DC8]" : ""
+                    }`}
+                  />
                 </button>
 
                 <AnimatePresence>
@@ -577,29 +568,16 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                       : "hover:bg-white/50 text-[#0D306C]"
                   }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className={`flex h-8 w-8 items-center justify-center rounded-lg transition-colors ${
-                        openSections["industries"]
-                          ? "bg-[#169DC8] text-white shadow-xs"
-                          : "bg-white/80 text-[#0D306C] border border-white/80"
-                      }`}
-                    >
-                      <Building2 className="h-4 w-4" />
-                    </div>
+                  <div className="flex items-center gap-2.5">
+                    <Building2 className={`h-4.5 w-4.5 shrink-0 ${openSections["industries"] ? "text-[#169DC8]" : "text-[#0D306C]"}`} />
                     <span className="text-[14px] font-bold tracking-tight">Industries</span>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-[#169DC8]/15 text-[#0D306C]">
-                      6 Sectors
-                    </span>
-                    <ChevronDown
-                      className={`h-4 w-4 text-[#7B8B9E] transition-transform duration-200 ${
-                        openSections["industries"] ? "rotate-180 text-[#169DC8]" : ""
-                      }`}
-                    />
-                  </div>
+                  <ChevronDown
+                    className={`h-4 w-4 text-[#7B8B9E] transition-transform duration-200 ${
+                      openSections["industries"] ? "rotate-180 text-[#169DC8]" : ""
+                    }`}
+                  />
                 </button>
 
                 <AnimatePresence>
@@ -657,16 +635,8 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                       : "hover:bg-white/50 text-[#0D306C]"
                   }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className={`flex h-8 w-8 items-center justify-center rounded-lg transition-colors ${
-                        openSections["company"]
-                          ? "bg-[#169DC8] text-white shadow-xs"
-                          : "bg-white/80 text-[#0D306C] border border-white/80"
-                      }`}
-                    >
-                      <Users className="h-4 w-4" />
-                    </div>
+                  <div className="flex items-center gap-2.5">
+                    <Users className={`h-4.5 w-4.5 shrink-0 ${openSections["company"] ? "text-[#169DC8]" : "text-[#0D306C]"}`} />
                     <span className="text-[14px] font-bold tracking-tight">Company</span>
                   </div>
 

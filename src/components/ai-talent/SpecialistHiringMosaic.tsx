@@ -1,6 +1,6 @@
 "use client";
 
-import React, { type ReactNode } from "react";
+import React, { useState, useRef, useEffect, useCallback, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -38,6 +38,150 @@ const SPECIALIST_IMAGES: Record<string, string> = {
   hub: "/images/ai-talent/recruitment-hub.jpg",
   academy: "/images/ai-talent/reskilling-academy.jpg",
 };
+
+/**
+ * Single-line action button with marquee shift on hover
+ * ensuring the button NEVER wraps to two lines while revealing
+ * the full text whenever the card/button is hovered.
+ */
+function SpecialistMarqueeButton({
+  label,
+  isCardHovered,
+}: {
+  label: string;
+  isCardHovered: boolean;
+}) {
+  const containerRef = useRef<HTMLSpanElement>(null);
+  const textRef = useRef<HTMLSpanElement>(null);
+  const [shift, setShift] = useState<number>(0);
+
+  const measure = useCallback(() => {
+    if (containerRef.current && textRef.current) {
+      const extra = textRef.current.scrollWidth - containerRef.current.clientWidth;
+      setShift(extra > 2 ? extra : 0);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isCardHovered) {
+      measure();
+    }
+  }, [isCardHovered, measure]);
+
+  return (
+    <span
+      className="btn-cyan max-w-full inline-flex items-center justify-between gap-1.5 px-3 sm:px-3.5 py-1.5 sm:py-2 text-xs font-bold rounded-full whitespace-nowrap overflow-hidden transition-all duration-300 shadow-sm group-hover:shadow-[0_0_22px_rgba(22,157,200,0.55),0_4px_16px_rgba(13,48,108,0.3)] group-hover:bg-[#0D306C]"
+      title={label}
+    >
+      <span
+        ref={containerRef}
+        className="relative block min-w-0 flex-1 overflow-hidden whitespace-nowrap text-left"
+      >
+        <span
+          ref={textRef}
+          className="inline-block whitespace-nowrap will-change-transform"
+          style={{
+            transform: isCardHovered && shift > 0 ? `translateX(-${shift + 6}px)` : "translateX(0px)",
+            transition: isCardHovered && shift > 0
+              ? `transform ${Math.max(0.8, shift * 0.02)}s cubic-bezier(0.2, 0.8, 0.4, 1)`
+              : "transform 0.35s ease-out",
+          }}
+        >
+          {label}
+        </span>
+      </span>
+      <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 ml-1.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+    </span>
+  );
+}
+
+function SpecialistCard({
+  card,
+  idx,
+  showBadge,
+  showGroup,
+  showButton,
+}: {
+  card: SpecialistCardItem;
+  idx: number;
+  showBadge: boolean;
+  showGroup: boolean;
+  showButton: boolean;
+}) {
+  const [isHovered, setIsHovered] = useState(false);
+  const imgSrc = card.image || SPECIALIST_IMAGES[card.key] || "/images/ai-talent/aiml-recruitment.jpg";
+
+  return (
+    <motion.div
+      key={card.key}
+      initial={{ opacity: 0, y: 22 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{
+        duration: 0.5,
+        delay: idx * 0.06,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="relative overflow-hidden rounded-none shadow-md group min-h-[260px] sm:min-h-[280px] flex flex-col justify-end p-5 sm:p-6 border border-[#CBD7E8] bg-[#051329] transition-all duration-500 hover:shadow-xl text-left"
+    >
+      {/* Background Image with hover zoom */}
+      <Image
+        src={imgSrc}
+        alt={card.name}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 rounded-none"
+      />
+
+      {/* Dark Gradient Overlay for contrast and readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#051329] via-[#051329]/85 to-[#051329]/20" />
+
+      {/* Top Category Tag matching home page GCCCapabilitiesMosaic design */}
+      {showBadge && (
+        <div className="absolute top-2.5 sm:top-3 left-3.5 sm:left-4 z-10 pointer-events-none">
+          <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-[#169DC8] text-white text-[9px] sm:text-[9.5px] font-mono font-bold uppercase tracking-wider shadow-xs">
+            {showGroup && card.group && (
+              <>
+                <span>{card.group}</span>
+                <span className="text-white/60">·</span>
+              </>
+            )}
+            <span>{String(idx + 1).padStart(2, "0")}</span>
+          </span>
+        </div>
+      )}
+
+      {/* Entire card link wrapper (if path exists) */}
+      {card.path && (
+        <Link
+          to={card.path}
+          className="absolute inset-0 z-20 focus:outline-none focus:ring-2 focus:ring-[#169DC8]"
+          aria-label={card.anchor || card.name}
+        />
+      )}
+
+      {/* Card Content */}
+      <div className="relative z-10 space-y-2 text-left pointer-events-none w-full">
+        <h3 className="text-base sm:text-lg font-bold text-white tracking-tight leading-snug group-hover:text-[#67D5F7] transition-colors">
+          {card.name}
+        </h3>
+
+        <p className="text-xs sm:text-[12.5px] text-[#D2DCF0]/85 leading-relaxed line-clamp-2 font-normal">
+          {card.summary}
+        </p>
+
+        {/* Bottom Action Button - strictly ONE LINE with marquee reveal on hover */}
+        {showButton && card.anchor && (
+          <div className="pt-2 w-full max-w-full">
+            <SpecialistMarqueeButton label={card.anchor} isCardHovered={isHovered} />
+          </div>
+        )}
+      </div>
+    </motion.div>
+  );
+}
 
 /**
  * SpecialistHiringMosaic
@@ -104,81 +248,16 @@ export default function SpecialistHiringMosaic({
         {/* ================================================================= */}
         {/* 7 SPECIALIST CARDS: Uniform height cards matching GenAiMosaic    */}
         {/* ================================================================= */}
-        {items.map((card, idx) => {
-          const imgSrc = card.image || SPECIALIST_IMAGES[card.key] || "/images/ai-talent/aiml-recruitment.jpg";
-
-          return (
-            <motion.div
-              key={card.key}
-              initial={{ opacity: 0, y: 22 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{
-                duration: 0.5,
-                delay: idx * 0.06,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="relative overflow-hidden rounded-none shadow-md group min-h-[260px] sm:min-h-[280px] flex flex-col justify-end p-5 sm:p-6 border border-[#CBD7E8] bg-[#051329] transition-all duration-500 hover:shadow-xl text-left"
-            >
-              {/* Background Image with hover zoom */}
-              <Image
-                src={imgSrc}
-                alt={card.name}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 rounded-none"
-              />
-
-              {/* Dark Gradient Overlay for contrast and readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#051329] via-[#051329]/85 to-[#051329]/20" />
-
-              {/* Top Category Tag matching home page GCCCapabilitiesMosaic design */}
-              {showBadge && (
-                <div className="absolute top-2.5 sm:top-3 left-3.5 sm:left-4 z-10 pointer-events-none">
-                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-[#169DC8] text-white text-[9px] sm:text-[9.5px] font-mono font-bold uppercase tracking-wider shadow-xs">
-                    {showGroup && card.group && (
-                      <>
-                        <span>{card.group}</span>
-                        <span className="text-white/60">·</span>
-                      </>
-                    )}
-                    <span>{String(idx + 1).padStart(2, "0")}</span>
-                  </span>
-                </div>
-              )}
-
-              {/* Entire card link wrapper (if path exists) */}
-              {card.path && (
-                <Link
-                  to={card.path}
-                  className="absolute inset-0 z-20 focus:outline-none focus:ring-2 focus:ring-[#169DC8]"
-                  aria-label={card.anchor || card.name}
-                />
-              )}
-
-              {/* Card Content */}
-              <div className="relative z-10 space-y-2 text-left pointer-events-none">
-                <h3 className="text-base sm:text-lg font-bold text-white tracking-tight leading-snug group-hover:text-[#67D5F7] transition-colors">
-                  {card.name}
-                </h3>
-
-                <p className="text-xs sm:text-[12.5px] text-[#D2DCF0]/85 leading-relaxed line-clamp-2 font-normal">
-                  {card.summary}
-                </p>
-
-                {/* Bottom Action Button matching home page "Explore AI GCC" look */}
-                {showButton && card.anchor && (
-                  <div className="pt-2">
-                    <span className="btn-cyan shrink-0">
-                      <span>{card.anchor}</span>
-                      <ArrowRight className="w-3 h-3" />
-                    </span>
-                  </div>
-                )}
-              </div>
-            </motion.div>
-          );
-        })}
+        {items.map((card, idx) => (
+          <SpecialistCard
+            key={card.key}
+            card={card}
+            idx={idx}
+            showBadge={showBadge}
+            showGroup={showGroup}
+            showButton={showButton}
+          />
+        ))}
       </div>
     </div>
   );

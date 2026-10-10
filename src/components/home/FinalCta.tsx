@@ -33,7 +33,7 @@ export default function FinalCta() {
 
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
-            to="/contact"
+            to="/services/ai-gcc"
             onClick={() => trackEvent("cta_click", { location: "final_plan_ai_gcc" })}
             className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm bg-white text-[#054f67] shadow-lg transition-all duration-300 hover:bg-white/95 hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e1320]"
           >

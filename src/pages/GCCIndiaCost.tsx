@@ -329,9 +329,7 @@ export default function GCCIndiaCost() {
               </div>
             </motion.div>
           </div>
-        </section>
-
-        {/* ============================================================ */}
+        </section>        {/* ============================================================ */}
         {/* 2. COST BREAKDOWN BY CATEGORY */}
         {/* ============================================================ */}
         {costCategories.map((category) => {
@@ -344,9 +342,9 @@ export default function GCCIndiaCost() {
             <section
               key={category.title}
               id={sectionId}
-              className="scroll-mt-24 py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent"
+              className="scroll-mt-28 py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-6 lg:px-8 bg-transparent"
             >
-              <div className="max-w-6xl mx-auto">
+              <div className="max-w-7xl mx-auto">
                 <SectionHeader
                   eyebrow={`${category.percentage} OF TOTAL OPERATING BUDGET`}
                   title={category.title}
@@ -382,15 +380,15 @@ export default function GCCIndiaCost() {
         {/* ============================================================ */}
         {/* 3. TOTAL COST BY TEAM SIZE */}
         {/* ============================================================ */}
-        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-10 sm:py-12 md:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
+          <div className="max-w-7xl mx-auto">
             <SectionHeader
               eyebrow="HEADCOUNT SCALING"
               title="Total cost by team size"
               description="All-in estimates including salaries, office, technology, and operations across standard team milestones."
               variant="cyan"
               align="center"
-              className="mb-12 sm:mb-16"
+              className="mb-8 sm:mb-10 lg:mb-12"
             />
 
             <div className="grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
@@ -425,7 +423,7 @@ export default function GCCIndiaCost() {
                           opacity="0.6"
                         />
                         <defs>
-                          <linearGradient id="wave-gradient-dark" x1="0" y1="0" x2="1" y2="1">
+                          <linearGradient id="wave-gradient-dark" x1="0%" y1="0%" x2="1" y2="1">
                             <stop offset="0%" stopColor="#38BDF8" />
                             <stop offset="100%" stopColor="#0066CC" />
                           </linearGradient>
@@ -571,15 +569,15 @@ export default function GCCIndiaCost() {
         {/* ============================================================ */}
         {/* 4. CITY COMPARISON */}
         {/* ============================================================ */}
-        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-10 sm:py-12 md:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
+          <div className="max-w-7xl mx-auto">
             <SectionHeader
               eyebrow="METROPOLITAN HUBS"
               title="Cost comparison by city"
               description="India's top GCC hubs offer distinct cost profiles, talent depth, and infrastructure tradeoffs."
               variant="cyan"
               align="center"
-              className="mb-12 sm:mb-16"
+              className="mb-8 sm:mb-10 lg:mb-12"
             />
 
             <ResponsiveMatrix
@@ -604,18 +602,18 @@ export default function GCCIndiaCost() {
         {/* ============================================================ */}
         {/* 5. HIDDEN COSTS TO PLAN FOR (SlottedStepNumber Design) */}
         {/* ============================================================ */}
-        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-10 sm:py-12 md:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
+          <div className="max-w-7xl mx-auto">
             <SectionHeader
               eyebrow="REAL-WORLD FEASIBILITY"
               title="Hidden costs to plan for"
               description="The numbers most vendors don't talk about. We include these in every feasibility assessment."
               variant="cyan"
               align="center"
-              className="mb-12 sm:mb-16"
+              className="mb-8 sm:mb-10 lg:mb-12"
             />
 
-            <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-center max-w-6xl mx-auto">
+            <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-center max-w-7xl mx-auto">
               {hiddenCosts.map((cost, index) => {
                 const CostIcon = cost.icon;
                 return (
@@ -649,7 +647,7 @@ export default function GCCIndiaCost() {
         {/* ============================================================ */}
         {/* 6. FAQ (Typography and Accordion matching other pages) */}
         {/* ============================================================ */}
-        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
+        <section className="py-10 sm:py-12 md:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-4xl mx-auto">
             <SectionHeader
               eyebrow="COST INTELLIGENCE"
@@ -657,7 +655,7 @@ export default function GCCIndiaCost() {
               description="Authoritative answers regarding first-year budgets, statutory contributions, scale efficiencies, and entity structures."
               variant="cyan"
               align="center"
-              className="mb-10 sm:mb-14"
+              className="mb-8 sm:mb-10 lg:mb-12"
             />
 
             <div className="space-y-3 sm:space-y-4">

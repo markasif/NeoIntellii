@@ -128,7 +128,7 @@ export default function AITalentOverview() {
         align="center"
         lead="The validation flow is the same at every scale. What changes is how much of the operating environment NeoIntelli runs around the people."
       >
-        <HiringPathCards paths={PATHS} buttonVariant="gradient" />
+        <HiringPathCards paths={PATHS} buttonVariant="white-to-cyan" />
       </Section>
 
       <Section id="how-we-validate" eyebrow="We interview. You hire." title="Eight steps between a role and a decision." width="wide" lead="This flow is the architecture behind every specialist page. Every candidate on a NeoIntelli shortlist has been through it.">

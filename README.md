@@ -1,73 +1,53 @@
-# Welcome to your Lovable project
+# NeoIntelli Web Application
 
-## Project info
+Official web platform for **NeoIntelli** — India's AI-first Global Capability Centre (GCC), talent, and engineering delivery partner.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Tech Stack
 
-## How can I edit this code?
+- **Framework**: React 18, Vite, Next.js (SSG/SSR tooling)
+- **Styling**: Tailwind CSS, PostCSS, Framer Motion
+- **UI Components**: Radix UI primitives, Lucide Icons, shadcn-ui
+- **Type Safety**: TypeScript
 
-There are several ways of editing your application.
+## Getting Started
 
-**Use Lovable**
+### Prerequisites
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- Node.js (v18 or higher recommended)
+- npm or bun
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Local Development
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Install dependencies
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
+
+# Run test suite
+npm run test
+
+# Type check
+npx tsc --noEmit
 ```
 
-**Edit a file directly in GitHub**
+## Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+├── public/              # Static assets, images, icons
+├── src/
+│   ├── components/      # Reusable UI primitives and section components
+│   ├── data/            # Canonical domain and services data
+│   ├── features/        # Feature-specific components
+│   ├── lib/             # Utility functions, calculators, helpers
+│   ├── pages/           # Application views and service pages
+│   └── test/            # Vitest unit and integration test suite
+└── vite.config.ts       # Vite build configuration
+```
 
-**Use GitHub Codespaces**
+## Production Build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```sh
+npm run build
+```

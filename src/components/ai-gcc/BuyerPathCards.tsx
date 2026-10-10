@@ -42,7 +42,15 @@ const DEFAULT_METAS = [
  * Thin wrapper over the universal OutcomeCardGrid, which owns the editorial
  * outcome-framework card design used across the site.
  */
-export default function BuyerPathCards({ paths }: { paths: BuyerPath[] }) {
+export default function BuyerPathCards({
+  paths,
+  ctaButtonVariant,
+  ctaAfterContent,
+}: {
+  paths: BuyerPath[];
+  ctaButtonVariant?: "accent" | "gradient" | "cyan";
+  ctaAfterContent?: boolean;
+}) {
   return (
     <OutcomeCardGrid
       items={paths.map((path, idx) => {
@@ -65,6 +73,8 @@ export default function BuyerPathCards({ paths }: { paths: BuyerPath[] }) {
       columns={3}
       titleSize="md"
       maxWidthClassName="max-w-7xl mx-auto"
+      ctaButtonVariant={ctaButtonVariant}
+      ctaAfterContent={ctaAfterContent}
     />
   );
 }

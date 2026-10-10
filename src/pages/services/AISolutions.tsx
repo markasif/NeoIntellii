@@ -41,6 +41,7 @@ import { AI_GCC_CONTEXT_LINKS, AI_GCC_PAGE_BY_KEY } from "@/data/aiGcc";
 import { getResearch } from "@/data/aiGccSources";
 import { aiGccBookingUrl } from "@/lib/aiGccCta";
 import SmoothLineReveal from "@/components/gcc-operations/SmoothLineReveal";
+import PillTagList from "@/components/shared/PillTagList";
 
 function CountingNumber({ target, suffix = "%" }: { target: number; suffix?: string }) {
   const [value, setValue] = useState(0);
@@ -507,7 +508,7 @@ export default function AISolutions() {
         align="center"
         lead="The operating model is the same. The starting point depends on where you are."
       >
-        <BuyerPathCards paths={BUYER_PATHS} />
+        <BuyerPathCards paths={BUYER_PATHS} ctaButtonVariant="cyan" ctaAfterContent />
       </Section>
 
       {/* ── OPERATING SYSTEM ────────────────────────────────────────────── */}
@@ -556,16 +557,7 @@ export default function AISolutions() {
           </p>
 
           {/* Pill tags matching requested cyan pill design */}
-          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5">
-            {TIMELINE_DRIVERS.map((driver) => (
-              <span
-                key={driver}
-                className="inline-flex items-center px-5 py-2 sm:px-6 sm:py-2.5 rounded-full border border-[#00A3E0] bg-transparent text-[#0D244D] text-sm sm:text-[15px] font-semibold hover:border-[#0D306C] hover:bg-white/40 transition-all duration-200 shadow-xs select-none"
-              >
-                {driver}
-              </span>
-            ))}
-          </div>
+          <PillTagList items={TIMELINE_DRIVERS} size="lg" />
         </div>
       </Section>
 
@@ -585,13 +577,13 @@ export default function AISolutions() {
           id="ai-gcc-hiring-lifecycle"
         />
 
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mt-12 sm:mt-16 text-left">
-          {/* Card 1: What is NeoHireX? (transparent to the section background) */}
-          <div className="relative group p-7 sm:p-9 flex flex-col justify-between h-full">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mt-6 md:mt-8 text-left items-stretch">
+          {/* Left Column: What is NeoHireX? (Directly on section background, no container box) */}
+          <div className="flex flex-col justify-between h-full py-2 sm:py-3 px-1 sm:px-2">
             <div>
-              {/* NeoHireX OG Logo Badge nicely integrated */}
+              {/* NeoHireX OG Logo Badge */}
               <div className="flex items-center gap-3 mb-4">
-                <div className="inline-flex items-center px-3.5 py-1.5 rounded-xl bg-white shadow-md border border-white/90 group-hover:border-[#38BDF8] transition-all">
+                <div className="inline-flex items-center px-3.5 py-1.5 rounded-xl bg-white shadow-md border border-white/90 transition-all">
                   <img
                     src="/images/neohirex-logo.png"
                     alt="NeoHireX"
@@ -603,7 +595,7 @@ export default function AISolutions() {
                 </span>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-snug mb-3 group-hover:text-[#38BDF8] transition-colors">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-snug mb-3">
                 What is NeoHireX?
               </h3>
               <p className="text-sm sm:text-[15px] text-[#C5D7F0] leading-relaxed mb-6 font-normal">
@@ -611,26 +603,74 @@ export default function AISolutions() {
               </p>
             </div>
 
-            <Link
-              to={AI_GCC_CONTEXT_LINKS.talentAcquisition.path}
-              className="inline-flex items-center gap-2 text-[#38BDF8] hover:text-white font-semibold text-sm transition-colors group/link mt-auto"
-            >
-              <span>{AI_GCC_CONTEXT_LINKS.talentAcquisition.anchor}</span>
-              <ChevronRight className="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" aria-hidden />
-            </Link>
+            <div className="pt-2 mt-auto">
+              <Link
+                to={AI_GCC_CONTEXT_LINKS.talentAcquisition.path}
+                className="w-fit inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#0D244D] font-semibold text-xs sm:text-sm hover:bg-[#38BDF8] hover:text-white transition-all shadow-md hover:shadow-lg group/link cursor-pointer"
+              >
+                <span>{AI_GCC_CONTEXT_LINKS.talentAcquisition.anchor}</span>
+                <ChevronRight className="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" aria-hidden />
+              </Link>
+            </div>
           </div>
 
-          {/* Card 2: Specialist AI and Data hiring (rectangle shape) */}
-          <div className="relative overflow-hidden rounded-none bg-gradient-to-br from-white/[0.09] via-white/[0.05] to-white/[0.02] backdrop-blur-md border border-white/15 hover:border-[#38BDF8]/60 p-7 sm:p-9 transition-all duration-300 shadow-xl shadow-black/20 group">
-            {/* Top ambient glow */}
-            <div className="absolute -top-10 -right-10 w-44 h-44 bg-[#38BDF8]/15 rounded-full blur-3xl pointer-events-none group-hover:bg-[#38BDF8]/25 transition-all duration-500" />
+          {/* Card 2: Specialist AI and Data hiring (Navy Hero Card with Topic Clusters Wave Ribbon Background) */}
+          <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-b from-[#081B3E] via-[#0A224E] to-[#081B3E] border border-[#16427D] p-7 sm:p-9 transition-all duration-300 shadow-xl shadow-[#081B3E]/30 flex flex-col justify-between h-full group text-white">
+            {/* Abstract golden-blue flowing wave ribbons at top from Topic Clusters */}
+            <div className="absolute top-0 left-0 right-0 h-32 sm:h-36 overflow-hidden pointer-events-none opacity-85">
+              <svg className="w-full h-full" viewBox="0 0 400 120" preserveAspectRatio="none" fill="none">
+                <path
+                  d="M -20,28 C 80,8 160,82 260,38 C 320,12 360,36 420,10"
+                  stroke="url(#hiringTopicGoldGradient)"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M -20,44 C 90,18 180,96 280,48 C 340,22 380,46 420,18"
+                  stroke="url(#hiringTopicBlueGradient)"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  opacity="0.85"
+                />
+                <path
+                  d="M -20,60 C 100,28 200,108 300,58 C 350,32 390,56 420,28"
+                  stroke="url(#hiringTopicCyanGradient)"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  opacity="0.65"
+                />
+                <defs>
+                  <linearGradient id="hiringTopicGoldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#00A3E0" stopOpacity="0.2" />
+                    <stop offset="55%" stopColor="#F59E0B" stopOpacity="0.9" />
+                    <stop offset="100%" stopColor="#FDE68A" stopOpacity="1" />
+                  </linearGradient>
+                  <linearGradient id="hiringTopicBlueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#00A3E0" stopOpacity="0.8" />
+                    <stop offset="60%" stopColor="#38BDF8" stopOpacity="0.9" />
+                    <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.4" />
+                  </linearGradient>
+                  <linearGradient id="hiringTopicCyanGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#0284C7" stopOpacity="0.5" />
+                    <stop offset="100%" stopColor="#38BDF8" stopOpacity="0.8" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+
+            {/* Ambient top-right cyan glow */}
+            <div className="absolute -top-16 -right-16 w-44 h-44 bg-[#00A3E0]/20 rounded-full blur-3xl pointer-events-none group-hover:bg-[#00A3E0]/30 transition-all duration-500" />
 
             <div className="relative z-10 flex flex-col justify-between h-full">
               <div>
-                <span className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#38BDF8] mb-3">
-                  <Users className="w-4 h-4 text-[#38BDF8]" />
-                  SPECIALIST AI TALENT
-                </span>
+                {/* Header Badge */}
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#38BDF8]">
+                    <Users className="w-4 h-4 text-[#38BDF8]" />
+                    SPECIALIST AI TALENT
+                  </span>
+                </div>
+
                 <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-snug mb-3 group-hover:text-[#38BDF8] transition-colors">
                   Specialist AI and Data hiring
                 </h3>
@@ -638,10 +678,16 @@ export default function AISolutions() {
                   GenAI, agentic AI, ML, data engineering, MLOps and AI architecture roles are sourced by a specialist desk and validated by senior AI practitioners before a candidate reaches your interview.
                 </p>
               </div>
-              <Link to={AI_GCC_CONTEXT_LINKS.aiDataRecruitment.path} className="inline-flex items-center gap-2 text-[#38BDF8] hover:text-white font-semibold text-sm transition-colors group/link">
-                <span>{AI_GCC_CONTEXT_LINKS.aiDataRecruitment.anchor}</span>
-                <ChevronRight className="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" aria-hidden />
-              </Link>
+
+              <div className="pt-2 mt-auto">
+                <Link
+                  to={AI_GCC_CONTEXT_LINKS.aiDataRecruitment.path}
+                  className="btn-cyan"
+                >
+                  <span>{AI_GCC_CONTEXT_LINKS.aiDataRecruitment.anchor}</span>
+                  <ChevronRight className="w-4 h-4 transition-transform group-hover/link:translate-x-0.5" aria-hidden />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -850,11 +896,7 @@ export default function AISolutions() {
                 <div className="relative z-10 pt-6 text-left">
                   <a
                     href={booking(model.name)}
-                    className={`inline-flex items-center gap-1.5 px-4 py-2 sm:px-4.5 sm:py-2.5 rounded-sm text-xs font-bold tracking-wide transition-all duration-200 shadow-sm hover:gap-2.5 shrink-0 ${
-                      isActive
-                        ? "bg-white hover:bg-slate-100 text-[#093552] shadow-md"
-                        : "bg-[#169DC8] hover:bg-[#0D306C] text-white shadow-xs"
-                    }`}
+                    className={`${isActive ? "btn-cyan" : "btn-white"}`}
                   >
                     <span>Explore Model</span>
                     <ArrowRight className="w-3.5 h-3.5" />

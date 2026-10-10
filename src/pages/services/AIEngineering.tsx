@@ -101,7 +101,7 @@ const AI_ENGINEERING_CAPABILITY_CARDS = [
     key: "data",
     name: "AI Data Engineering",
     group: "DATA",
-    path: "/services/ai-engineering/ai-data-engineering",
+    path: "/services/ai-engineering/data-engineering",
     anchor: "Explore Data Engineering",
     summary: "Production pipelines, feature stores, vector stores, streaming ETL and data platforms that keep models fed and grounded.",
     image: "/images/ai-engineering/data-engineering-capability.jpg",
@@ -119,7 +119,7 @@ const AI_ENGINEERING_CAPABILITY_CARDS = [
     key: "agents",
     name: "Agentic AI & Multi-Agent Systems",
     group: "ORCHESTRATION",
-    path: "/services/ai-engineering/agentic-ai-systems",
+    path: "/services/ai-engineering/ai-agents-automation",
     anchor: "Explore Agentic AI",
     summary: "Multi-step autonomous execution, tool use, memory systems, boundary conditions and human-in-the-loop oversight.",
     image: "/images/ai-engineering/agentic-systems-capability.jpg",
@@ -128,7 +128,7 @@ const AI_ENGINEERING_CAPABILITY_CARDS = [
     key: "ops",
     name: "MLOps & AI Platform Engineering",
     group: "MLOPS",
-    path: "/services/ai-engineering/mlops-ai-platform",
+    path: "/services/ai-engineering/mlops-llmops-agentops",
     anchor: "Explore MLOps & Platform",
     summary: "Deployment, serving, scaling, latency optimization, CI/CD and GPU infrastructure monitoring for production reliability.",
     image: "/images/ai-engineering/mlops-platform-capability.jpg",
@@ -514,7 +514,7 @@ export default function AIEngineering() {
         lead="The engagement shape depends on where the AI is today. Each path enters the same six-stage lifecycle at a different stage."
         width="wide"
       >
-        <HiringPathCards paths={JOURNEY} buttonVariant="gradient" />
+        <HiringPathCards paths={JOURNEY} buttonVariant="white-to-cyan" />
       </Section>
 
       {/* 10. Buyer questions */}

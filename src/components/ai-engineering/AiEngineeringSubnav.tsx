@@ -11,7 +11,7 @@ export default function AiEngineeringSubnav({ current }: { current: AiEngineerin
   const items = AI_ENGINEERING_PAGES.map((page) => ({
     key: page.key,
     label: page.navLabel,
-    href: `${page.path}#ai-engineering-content`,
+    href: page.path,
     active: current === page.key,
   }));
 

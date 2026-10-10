@@ -46,12 +46,15 @@ interface ConnectedEcosystemProps {
   title?: string;
   cards?: ConnectedCardItem[];
   hideConsultation?: boolean;
+  /** Fill colour of the top organic wave divider (match the page canvas). */
+  waveFill?: string;
 }
 
 export default function ConnectedEcosystem({
   title = "Continue exploring",
   cards = defaultConnectedCards,
   hideConsultation = false,
+  waveFill = "#F0F5FA",
 }: ConnectedEcosystemProps) {
   const renderCard = (card: ConnectedCardItem) => {
     const CardIcon = card.icon;
@@ -149,7 +152,7 @@ export default function ConnectedEcosystem({
             />
             <path
               d="M0,0 L1440,0 L1440,22 C1300,24 1160,58 1000,74 C840,90 720,66 540,76 C360,86 200,126 0,126 Z"
-              fill="#F0F5FA"
+              fill={waveFill}
             />
           </svg>
         </div>

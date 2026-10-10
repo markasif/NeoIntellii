@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { type LucideIcon } from "lucide-react";
 
@@ -19,17 +19,87 @@ interface CapabilityGridProps {
   footer?: React.ReactNode;
 }
 
+
+// 3D Perspective Topological Particle Dot Wave rows (matching high-tech cyan particle lattice reference)
+interface DotWaveRow {
+  baseY: number;
+  amp1: number;
+  amp2: number;
+  amp3: number;
+  shift: number;
+  strokeWidth: number;
+  dash: string;
+  opacity: number;
+  color: string;
+}
+
+const DOT_WAVE_ROWS: DotWaveRow[] = [
+  // Deep background perspective rows (tight, dense, subtle navy-cyan depth)
+  { baseY: 30, amp1: 7, amp2: 2.5, amp3: 1.0, shift: 0, strokeWidth: 1.3, dash: "0.1 5.2", opacity: 0.30, color: "#16427D" },
+  { baseY: 35, amp1: 8, amp2: 2.8, amp3: 1.2, shift: 6, strokeWidth: 1.4, dash: "0.1 5.5", opacity: 0.38, color: "#0E5A86" },
+  { baseY: 40, amp1: 9, amp2: 3.2, amp3: 1.4, shift: 12, strokeWidth: 1.6, dash: "0.1 5.8", opacity: 0.45, color: "#0B6E9E" },
+  { baseY: 46, amp1: 10, amp2: 3.6, amp3: 1.6, shift: 18, strokeWidth: 1.8, dash: "0.1 6.2", opacity: 0.55, color: "#008EC4" },
+  { baseY: 52, amp1: 11, amp2: 4.0, amp3: 1.8, shift: 24, strokeWidth: 2.0, dash: "0.1 6.6", opacity: 0.65, color: "#00A3E0" },
+  // Midground rising crest
+  { baseY: 58, amp1: 13, amp2: 4.5, amp3: 2.2, shift: 30, strokeWidth: 2.2, dash: "0.1 7.0", opacity: 0.78, color: "#169DC8" },
+  { baseY: 65, amp1: 14, amp2: 5.0, amp3: 2.5, shift: 36, strokeWidth: 2.5, dash: "0.1 7.4", opacity: 0.90, color: "#38BDF8" },
+  // Main glowing luminous crest ridge (brand cyan crest)
+  { baseY: 72, amp1: 16, amp2: 5.8, amp3: 2.8, shift: 42, strokeWidth: 2.8, dash: "0.1 7.8", opacity: 1.00, color: "#38BDF8" },
+  { baseY: 79, amp1: 15, amp2: 5.2, amp3: 2.6, shift: 48, strokeWidth: 2.9, dash: "0.1 8.2", opacity: 0.95, color: "#22B8E6" },
+  // Foreground descending slope (larger dots, wider spacing for 3D perspective)
+  { baseY: 86, amp1: 13, amp2: 4.5, amp3: 2.2, shift: 54, strokeWidth: 3.0, dash: "0.1 8.6", opacity: 0.88, color: "#169DC8" },
+  { baseY: 93, amp1: 12, amp2: 4.0, amp3: 1.8, shift: 60, strokeWidth: 3.1, dash: "0.1 9.0", opacity: 0.80, color: "#008EC4" },
+  { baseY: 100, amp1: 10, amp2: 3.5, amp3: 1.5, shift: 66, strokeWidth: 3.2, dash: "0.1 9.4", opacity: 0.70, color: "#0B6E9E" },
+  { baseY: 106, amp1: 9, amp2: 3.0, amp3: 1.2, shift: 72, strokeWidth: 3.3, dash: "0.1 9.8", opacity: 0.60, color: "#16427D" },
+];
+
+function buildDotWavePath(baseY: number, amp1: number, amp2: number, amp3: number, shift: number): string {
+  const pts: string[] = [];
+  const L = 200;
+  for (let x = -200; x <= 400; x += 10) {
+    const effX = x - shift;
+    const rad1 = (effX * 2 * Math.PI) / L;
+    const rad2 = (effX * 4 * Math.PI) / L;
+    const rad3 = (effX * 6 * Math.PI) / L;
+    const y = baseY + amp1 * Math.sin(rad1) + amp2 * Math.cos(rad2) + amp3 * Math.sin(rad3);
+    pts.push(`${x === -200 ? "M" : "L"} ${x} ${y.toFixed(1)}`);
+  }
+  return pts.join(" ");
+}
+
+const PRECOMPUTED_DOT_PATHS = DOT_WAVE_ROWS.map((row) =>
+  buildDotWavePath(row.baseY, row.amp1, row.amp2, row.amp3, row.shift)
+);
+
 /**
  * Custom SVG illustration component for AI Acceleration, HR Scope, Workforce Strategy, Governance, Scale, Parallel Workstreams & Recruitment Hub cards
  */
 function CardIllustration({ index, variant }: { index: number; variant: CapabilityVariant }) {
   const idPrefix = `${variant}-${index}`;
-  const isNavyWave = variant === "workstreams" || variant === "hub";
+  const waveSvgRef = useRef<SVGSVGElement | null>(null);
+  const [waveActive, setWaveActive] = useState(true);
+
+  // Only run the particle drift while this card is near the viewport, so
+  // offscreen waves don't animate (and jank) during scroll.
+  useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") return;
+    const svg = waveSvgRef.current;
+    if (!svg) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => setWaveActive(entry.isIntersecting));
+      },
+      { rootMargin: "150px 0px" }
+    );
+    io.observe(svg);
+    return () => io.disconnect();
+  }, []);
 
   return (
-    <div className="h-20 sm:h-24 w-full mt-2 pt-0.5 flex items-end justify-center overflow-hidden relative select-none pointer-events-none">
-      {/* Full-width edge-to-edge colored wave path that stretches across the entire width of the card */}
+    <div className="h-20 sm:h-24 w-full mt-2 pt-0.5 flex items-end justify-center overflow-hidden relative select-none pointer-events-none rounded-xl">
+      {/* 3D Perspective Cyan Particle Dot Wave - All areas of CapabilityGrid use this animated dot wave */}
       <svg
+        ref={waveSvgRef}
         viewBox="0 0 200 110"
         fill="none"
         preserveAspectRatio="none"
@@ -38,20 +108,88 @@ function CardIllustration({ index, variant }: { index: number; variant: Capabili
         aria-hidden="true"
       >
         <defs>
-          <linearGradient id={`${idPrefix}-bg-wave`} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor={isNavyWave ? "#0B2A59" : "#EDF5FD"} stopOpacity={isNavyWave ? "0.95" : "0.95"} />
-            <stop offset="100%" stopColor={isNavyWave ? "#061838" : "#D4EAFB"} stopOpacity={isNavyWave ? "0.98" : "0.75"} />
+          {/* Deep Navy/Space Backdrop Gradient (brand navy) */}
+          <linearGradient id={`${idPrefix}-dotwave-bg`} x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#0D244D" stopOpacity="0" />
+            <stop offset="28%" stopColor="#0A224E" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#061530" stopOpacity="0.98" />
           </linearGradient>
+
+          {/* Ambient Radial Cyan Aura behind the crest (brand cyan) */}
+          <radialGradient id={`${idPrefix}-ambient-glow`} cx="35%" cy="45%" r="65%">
+            <stop offset="0%" stopColor="#00A3E0" stopOpacity="0.24" />
+            <stop offset="50%" stopColor="#169DC8" stopOpacity="0.10" />
+            <stop offset="100%" stopColor="#061530" stopOpacity="0" />
+          </radialGradient>
+
+          {/* Soft luminous horizon band behind the crest */}
+          <radialGradient id={`${idPrefix}-horizon`} cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#38BDF8" stopOpacity="0.30" />
+            <stop offset="100%" stopColor="#38BDF8" stopOpacity="0" />
+          </radialGradient>
         </defs>
+
+        {/* Backdrop Deep Ocean / Cyber Night Fill */}
         <path
-          d="M0 58 Q 50 46, 100 54 T 200 48 L 200 110 L 0 110 Z"
-          fill={`url(#${idPrefix}-bg-wave)`}
+          d="M -200 32 Q -100 22, 0 32 Q 100 22, 200 32 Q 300 22, 400 32 L 400 110 L -200 110 Z"
+          fill={`url(#${idPrefix}-dotwave-bg)`}
         />
-        <path
-          d="M0 72 Q 60 62, 120 70 T 200 66 L 200 110 L 0 110 Z"
-          fill={isNavyWave ? "#030E22" : "#DCEEFC"}
-          fillOpacity={isNavyWave ? 0.75 : 0.6}
-        />
+        <rect x="0" y="24" width="200" height="86" fill={`url(#${idPrefix}-ambient-glow)`} />
+        <ellipse cx="105" cy="72" rx="130" ry="16" fill={`url(#${idPrefix}-horizon)`} />
+
+        {/* Layer 1: Background perspective dot rows (slower rightward drift) */}
+        <g
+          className={`cap-wave-layer${waveActive ? "" : " cap-wave-paused"}`}
+          style={{ animationDuration: "26s" }}
+        >
+          {DOT_WAVE_ROWS.slice(0, 5).map((row, i) => (
+            <path
+              key={`bg-${i}`}
+              d={PRECOMPUTED_DOT_PATHS[i]}
+              fill="none"
+              stroke={row.color}
+              strokeWidth={row.strokeWidth}
+              strokeLinecap="round"
+              strokeDasharray={row.dash}
+              opacity={row.opacity}
+            />
+          ))}
+        </g>
+
+        {/* Layer 2: Foreground luminous crest & front slopes (gentle rightward flow) */}
+        <g
+          className={`cap-wave-layer${waveActive ? "" : " cap-wave-paused"}`}
+          style={{ animationDuration: "16s" }}
+        >
+          {DOT_WAVE_ROWS.slice(5).map((row, i) => {
+            const actualIndex = i + 5;
+            const isCrest = actualIndex === 7 || actualIndex === 8;
+            return (
+              <React.Fragment key={`fg-${actualIndex}`}>
+                {isCrest && (
+                  <path
+                    d={PRECOMPUTED_DOT_PATHS[actualIndex]}
+                    fill="none"
+                    stroke={row.color}
+                    strokeWidth={row.strokeWidth + 5}
+                    strokeLinecap="round"
+                    strokeDasharray={row.dash}
+                    opacity={row.opacity * 0.18}
+                  />
+                )}
+                <path
+                  d={PRECOMPUTED_DOT_PATHS[actualIndex]}
+                  fill="none"
+                  stroke={row.color}
+                  strokeWidth={row.strokeWidth}
+                  strokeLinecap="round"
+                  strokeDasharray={row.dash}
+                  opacity={row.opacity}
+                />
+              </React.Fragment>
+            );
+          })}
+        </g>
       </svg>
 
       {/* Foreground contextual vector elements */}
@@ -2049,12 +2187,14 @@ function CapabilityCard({
   const description = item.desc || item.body || "";
 
   return (
-    <div className="rounded-2xl border border-[#DCE8F4] bg-white p-3.5 sm:p-4 pb-1 sm:pb-1.5 flex flex-col justify-between text-left shadow-[0_2px_10px_rgba(13,48,108,0.03)] hover:shadow-[0_10px_24px_rgba(13,48,108,0.08)] hover:border-[#008EC4]/50 hover:-translate-y-1 transition-all duration-300 group overflow-hidden relative">
+    <div className="rounded-2xl border border-[#DCE8F4] bg-white p-3.5 sm:p-4 pb-1 sm:pb-1.5 flex flex-col justify-between text-left hover:border-[#008EC4]/50 hover:-translate-y-1 transition-all duration-300 group overflow-hidden relative">
       <div>
-        {/* Header: Logo and Title side-by-side without arrow button */}
-        <div className="flex items-center gap-2.5 sm:gap-3 mb-2">
-          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#EDF4FB] border border-[#CDE0F3] flex items-center justify-center text-[#008EC4] shrink-0 group-hover:bg-[#E2F2FC] group-hover:border-[#008EC4]/60 group-hover:text-[#0D306C] group-hover:scale-105 transition-all duration-200">
-            <Icon className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.8]" />
+        {/* Header: Upgraded Premium Logo Badge and Title */}
+        <div className="flex items-center gap-2.5 sm:gap-3 mb-2.5">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl relative flex items-center justify-center shrink-0 bg-gradient-to-br from-[#0B2554] via-[#081E44] to-[#04122C] border border-[#38BDF8]/40 group-hover:border-[#00E5FF] group-hover:scale-105 group-hover:bg-gradient-to-br group-hover:from-[#0D306C] group-hover:to-[#008EC4] transition-all duration-300">
+            {/* Ambient glass top sheen */}
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-white/15 to-transparent pointer-events-none" />
+            <Icon className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#38BDF8] stroke-[2] drop-shadow-[0_0_6px_rgba(56,189,248,0.6)] group-hover:text-white group-hover:scale-110 transition-all duration-300 relative z-10" />
           </div>
 
           <h3 className="text-[#0D244D] font-extrabold text-[12.5px] sm:text-[13.5px] leading-snug tracking-tight line-clamp-2 flex-1 min-w-0">

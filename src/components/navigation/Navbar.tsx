@@ -652,29 +652,26 @@ export default function Navbar({ appearance }: NavbarProps = {}) {
                   <p className="text-[10.5px] font-bold tracking-[0.16em] uppercase text-[#7B8B9E] mb-1.5">Six Services, One Operating Model</p>
                   <div className="w-8 h-[3px] bg-[#DE8017] rounded-full" />
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
                   {[
-                    { n: "01", title: "AI GCC", desc: "Build and operate an AI capability center in India under one operating model, from one squad to a full GCC.", href: "/services/ai-gcc" },
-                    { n: "02", title: "AI Talent", desc: "Technically validated GenAI, ML, Data and MLOps talent, from one specialist hire to a complete AI team.", href: "/services/ai-talent" },
-                    { n: "03", title: "AI Engineering", desc: "Build production AI: generative and agentic systems, applied ML, data, products and the operations around them.", href: "/services/ai-engineering" },
-                    { n: "04", title: "AI Delivery Teams", desc: "Senior-led AI squads that deliver inside your operating model, with a path to transferring the team to you.", href: "/services/ai-delivery-teams" },
-                    { n: "05", title: "GCC Strategy & Setup", desc: "Business case, location, entity and launch for a new India capability center, or the modernization of an existing one.", href: "/services/gcc" },
-                    { n: "06", title: "GCC Operations", desc: "Run the center day to day: people, workplace, service performance, governance, transition and expansion.", href: "/services/gcc-operations" },
+                    { title: "AI GCC", desc: "Build and operate an AI capability center in India under one operating model, from one squad to a full GCC.", href: "/services/ai-gcc" },
+                    { title: "AI Talent", desc: "Technically validated GenAI, ML, Data and MLOps talent, from one specialist hire to a complete AI team.", href: "/services/ai-talent" },
+                    { title: "AI Engineering", desc: "Build production AI: generative and agentic systems, applied ML, data, products and the operations around them.", href: "/services/ai-engineering" },
+                    { title: "AI Delivery Teams", desc: "Senior-led AI squads that deliver inside your operating model, with a path to transferring the team to you.", href: "/services/ai-delivery-teams" },
+                    { title: "GCC Strategy & Setup", desc: "Business case, location, entity and launch for a new India capability center, or the modernization of an existing one.", href: "/services/gcc" },
+                    { title: "GCC Operations", desc: "Run the center day to day: people, workplace, service performance, governance, transition and expansion.", href: "/services/gcc-operations" },
                   ].map((item) => (
-                    <Link key={item.n} href={item.href} onClick={() => setActiveMenu(null)}
-                      className={`group relative flex items-start gap-4 p-2.5 rounded-xl transition-colors duration-200 ${
-                        isActiveHref(item.href)
-                          ? ""
-                          : "hover:bg-white/60"
+                    <Link key={item.title} href={item.href} onClick={() => setActiveMenu(null)}
+                      className={`group relative block p-2 rounded-2xl transition-all duration-200 text-left ${
+                        isActiveHref(item.href) ? "" : "hover:bg-white/60 hover:shadow-2xs"
                       }`}>
-                      <span className="text-[22px] font-mono font-bold text-transparent shrink-0 leading-none pt-0.5"
-                        style={{ WebkitTextStroke: "1.5px #169DC8" }}>{item.n}</span>
-                      <div className="min-w-0">
-                        <h5 className={`text-[13.5px] font-bold transition-colors leading-snug mb-0.5 ${
+                      <div className="flex items-center gap-1.5">
+                        <span className={`text-[14px] sm:text-[15px] font-bold transition-colors leading-snug ${
                           isActiveHref(item.href) ? "text-[#169DC8]" : "text-[#0D306C] group-hover:text-[#169DC8]"
-                        }`}>{item.title}</h5>
-                        <p className="text-[11.5px] text-[#505D74] leading-relaxed">{item.desc}</p>
+                        }`}>{item.title}</span>
+                        <ChevronRight className="w-4 h-4 text-[#169DC8] shrink-0 transition-transform duration-200 group-hover:translate-x-0.5" />
                       </div>
+                      <p className="text-[12px] sm:text-[12.5px] text-[#505D74] leading-relaxed mt-1 font-normal">{item.desc}</p>
                     </Link>
                   ))}
                 </div>
@@ -736,8 +733,8 @@ export default function Navbar({ appearance }: NavbarProps = {}) {
             <div className="pt-[68px] sm:pt-[72px]">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-7 sm:py-8 flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch">
 
-              {/* Full-width 3-column Solutions grid (no left panel) */}
-              <div className="flex-1 p-0 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start text-left">
+              {/* Full-width columns: Build / Solve / Recruitment / Plan */}
+              <div className="flex-1 p-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-start text-left">
 
                 {/* Column 1: BUILD YOUR AI CAPABILITY */}
                 <div className="space-y-1.5 sm:space-y-2">
@@ -783,7 +780,29 @@ export default function Navbar({ appearance }: NavbarProps = {}) {
                   ))}
                 </div>
 
-                {/* Column 3: PLAN YOUR GCC */}
+                {/* Column 3: PLAN YOUR RECRUITMENT */}
+                <div className="space-y-1.5 sm:space-y-2">
+                  <div className="px-1 mb-1.5">
+                    <p className="text-[10.5px] font-bold tracking-[0.16em] uppercase text-[#7B8B9E] mb-1.5">Plan Your Recruitment</p>
+                    <div className="w-8 h-[3px] bg-[#DE8017] rounded-full" />
+                  </div>
+                  {[
+                    { title: "Recruitment & Staffing", desc: "Permanent, contract, executive search and RPO in India.", href: "/recruitment" },
+                    { title: "Permanent Recruitment", desc: "Direct hire for mid-to-senior roles, with a 90-day guarantee.", href: "/recruitment/permanent" },
+                    { title: "Executive Search", desc: "Retained CXO, board and leadership search.", href: "/recruitment/executive-search" },
+                  ].map((item) => (
+                    <Link key={item.title} href={item.href} onClick={() => setActiveMenu(null)}
+                      className={`group relative block p-2 rounded-2xl transition-all duration-200 text-left ${isActiveHref(item.href) ? "" : "hover:bg-white/60 hover:shadow-2xs"}`}>
+                      <div className="flex items-center gap-1.5">
+                        <span className={`text-[14px] sm:text-[15px] font-bold transition-colors leading-snug ${isActiveHref(item.href) ? "text-[#169DC8]" : "text-[#0D306C] group-hover:text-[#169DC8]"}`}>{item.title}</span>
+                        <ChevronRight className="w-4 h-4 text-[#169DC8] shrink-0 transition-transform duration-200 group-hover:translate-x-0.5" />
+                      </div>
+                      <p className="text-[12px] sm:text-[12.5px] text-[#505D74] leading-relaxed mt-1 font-normal line-clamp-1">{item.desc}</p>
+                    </Link>
+                  ))}
+                </div>
+
+                {/* Column 4: PLAN YOUR GCC */}
                 <div className="space-y-1.5 sm:space-y-2">
                   <div className="px-1 mb-1.5">
                     <p className="text-[10.5px] font-bold tracking-[0.16em] uppercase text-[#7B8B9E] mb-1.5">Plan Your GCC</p>

@@ -68,18 +68,15 @@ export default function IndustryImageCard({
   const handleMouseLeave = () => setIsHovered(false);
 
   useEffect(() => {
-    const measure = () => {
-      const label = labelRef.current;
-      const wrap = wrapRef.current;
-      if (label && wrap) {
-        const extra = label.scrollWidth - wrap.clientWidth;
+    const handleResize = () => {
+      if (isHovered && labelRef.current && wrapRef.current) {
+        const extra = labelRef.current.scrollWidth - wrapRef.current.clientWidth;
         setOverflowShift(extra > 2 ? extra : 0);
       }
     };
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, [linkLabel, isButton]);
+    window.addEventListener("resize", handleResize, { passive: true });
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isHovered]);
 
   const truncated = isButton && overflowShift > 0;
 

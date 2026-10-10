@@ -37,6 +37,7 @@ import SlottedStepNumber from "@/components/gcc-operations/SlottedStepNumber";
 import BuyerPathCards from "@/components/ai-gcc/BuyerPathCards";
 import UniversalLifecycle from "@/components/shared/UniversalLifecycle";
 import AnswerBlock from "@/components/ai-gcc/AnswerBlock";
+import PillTagList from "@/components/shared/PillTagList";
 import { gccOverviewFaqs } from "@/data/gccStrategyFaqs";
 import { gccMarketProof } from "@/data/gccMarketProof";
 import { gccMarketStats } from "@/data/gccMarketStats";
@@ -520,7 +521,7 @@ export default function GCCServices() {
         >
           <div className="max-w-5xl mx-auto">
             {/* Full-width narrative text */}
-            <div className="max-w-4xl mx-auto space-y-4 text-sm sm:text-base text-[#505D74] leading-relaxed font-normal text-center mb-8 sm:mb-10">
+            <div className="max-w-5xl mx-auto space-y-4 text-sm sm:text-base text-[#505D74] leading-relaxed font-normal text-center mb-8 sm:mb-10">
               <p>
                 Most slow GCC launches are slow because each workstream waits for the one before it: the entity before the
                 leadership search, the office before the hiring, the policies before the payroll. Once the five design decisions
@@ -539,16 +540,7 @@ export default function GCCServices() {
               <p className="text-2xs font-mono font-bold uppercase tracking-[0.2em] text-[#008EC4] mb-4">
                 Workstreams that run together
               </p>
-              <ul className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 list-none pl-0">
-                {parallelWorkstreams.map((w) => (
-                  <li
-                    key={w}
-                    className="inline-flex items-center px-4 py-2 rounded-full border border-[#00A3E0] bg-transparent text-[#0D244D] text-xs sm:text-[13px] font-semibold hover:border-[#008EC4] hover:bg-[#008EC4] hover:text-white transition-all duration-200 select-none shadow-2xs hover:shadow-xs"
-                  >
-                    {w}
-                  </li>
-                ))}
-              </ul>
+              <PillTagList items={parallelWorkstreams} size="md" />
             </div>
 
             {/* Centered CTA button in btn-gradient */}

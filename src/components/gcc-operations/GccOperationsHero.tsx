@@ -6,16 +6,13 @@ import { Link } from "react-router-dom";
 import {
   ArrowRight,
   ChevronRight,
-  ShieldCheck,
   Layers,
   GitFork,
-  Sparkles,
   Building2,
   Compass,
   Cpu,
-  Rocket,
-  Users,
 } from "lucide-react";
+import TypewriterContextButton from "@/components/ui/TypewriterContextButton";
 import { buildBreadcrumbItems, SITE_URL } from "@/lib/seo";
 import type { GccOpsPage } from "@/data/gccOperationsContent";
 import { gccOpsBookingHref, trackGccOpsCta } from "./GccOperationsCTA";
@@ -27,130 +24,6 @@ interface GccOperationsHeroProps {
   secondaryCta?: { label: string; href: string };
   contextualLink?: { label: string; href: string };
   trustStrip?: string[];
-}
-
-interface TypewriterLaunchButtonProps {
-  href: string;
-  fullLabel: string;
-}
-
-function TypewriterLaunchButton({ href, fullLabel }: TypewriterLaunchButtonProps) {
-  const [isHovered, setIsHovered] = React.useState(false);
-  const [displayedText, setDisplayedText] = React.useState("");
-  const hoverTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
-  
-  // Destination URL: ensure direct path to gcc setup-launch
-  const targetHref = href === "/services/gcc-setup-launch" ? "/services/gcc/setup-launch" : href;
-  
-  // Dynamic button name reflecting the specific page's contextual link
-  const targetText = React.useMemo(() => {
-    if (!fullLabel) return "Explore GCC Setup & Launch";
-    return fullLabel.replace(/→$/, "").trim();
-  }, [fullLabel]);
-
-  // Contextual icon based on destination
-  const IconComponent = React.useMemo(() => {
-    const lower = (targetHref + " " + targetText).toLowerCase();
-    if (lower.includes("talent") || lower.includes("recruit") || lower.includes("hired")) return Users;
-    if (lower.includes("engineering") || lower.includes("platform") || lower.includes("automate")) return Cpu;
-    if (lower.includes("responsible") || lower.includes("governance") || lower.includes("model")) return ShieldCheck;
-    if (lower.includes("ai gcc") || lower.includes("capability")) return Sparkles;
-    return Compass;
-  }, [targetHref, targetText]);
-
-  const handleMouseEnter = () => {
-    if (hoverTimeoutRef.current) {
-      clearTimeout(hoverTimeoutRef.current);
-      hoverTimeoutRef.current = null;
-    }
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    // 250ms grace period prevents rapid jitter/flicker
-    hoverTimeoutRef.current = setTimeout(() => {
-      setIsHovered(false);
-    }, 250);
-  };
-
-  React.useEffect(() => {
-    let intervalId: NodeJS.Timeout | null = null;
-    let charIndex = 0;
-
-    if (isHovered) {
-      setDisplayedText("");
-      intervalId = setInterval(() => {
-        if (charIndex <= targetText.length) {
-          setDisplayedText(targetText.slice(0, charIndex));
-          charIndex++;
-        } else if (intervalId) {
-          clearInterval(intervalId);
-        }
-      }, 14);
-    } else {
-      setDisplayedText("");
-    }
-
-    return () => {
-      if (intervalId) clearInterval(intervalId);
-      if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
-    };
-  }, [isHovered, targetText]);
-
-  const isInternal = targetHref.startsWith("/");
-  const sharedClassName =
-    "inline-flex items-center rounded-full bg-white/95 hover:bg-white border border-slate-300/90 hover:border-slate-400/90 shadow-xs hover:shadow-md backdrop-blur-sm p-1 sm:p-1.5 text-[#0D306C] transition-all duration-300 ease-out group shrink-0 cursor-pointer overflow-hidden";
-
-  const buttonContent = (
-    <>
-      {/* Icon: Round white container with brand color */}
-      <div className="flex items-center justify-center w-7 h-7 sm:w-7.5 sm:h-7.5 rounded-full bg-white shrink-0 text-[#0D306C] group-hover:text-[#169DC8] transition-colors">
-        <IconComponent className="w-4 h-4 sm:w-4.5 sm:h-4.5 transition-transform duration-300 group-hover:rotate-12" />
-      </div>
-
-      {/* Button Name Revealed on Hover inside the round white container */}
-      <div
-        className={`flex items-center gap-1.5 whitespace-nowrap overflow-hidden transition-all duration-300 ease-out ${
-          isHovered
-            ? "max-w-[440px] opacity-100 pr-3 sm:pr-3.5 pl-1"
-            : "max-w-0 opacity-0 pointer-events-none pr-0 pl-0"
-        }`}
-      >
-        <span className="text-xs sm:text-[13px] font-semibold text-[#0D306C] tracking-tight">
-          {displayedText}
-        </span>
-        <ArrowRight className="w-3.5 h-3.5 text-[#169DC8] shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 ml-0.5" />
-      </div>
-    </>
-  );
-
-  if (isInternal) {
-    return (
-      <Link
-        to={targetHref}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        title={targetText}
-        aria-label={targetText}
-        className={sharedClassName}
-      >
-        {buttonContent}
-      </Link>
-    );
-  }
-
-  return (
-    <a
-      href={targetHref}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      title={targetText}
-      aria-label={targetText}
-      className={sharedClassName}
-    >
-      {buttonContent}
-    </a>
-  );
 }
 
 /**
@@ -252,49 +125,52 @@ export default function GccOperationsHero({
             </p>
           </div>
 
-          {/* Action CTAs: Locked on the SAME LINE across tablet & desktop */}
-          <div className="flex flex-row flex-wrap sm:flex-nowrap items-center justify-start gap-2.5 sm:gap-3 lg:gap-3.5 w-full mb-1">
-            
-            {/* Primary Button: Discuss My GCC Operations */}
-            <a
-              href={gccOpsBookingHref("hero")}
-              onClick={() => trackGccOpsCta(page, page.ctaLabel, "hero")}
-              title={page.ctaLabel}
-              className="inline-flex items-center justify-center gap-2 sm:gap-2.5 rounded-lg bg-[#0A1222] px-4 sm:px-5.5 lg:px-6 py-2 sm:py-2.5 lg:py-3 text-xs sm:text-sm font-medium text-white shadow-md hover:bg-[#15243E] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 group shrink-0"
-            >
-              <span>{page.ctaLabel}</span>
-              <ArrowRight className="h-4 w-4 text-cyan-400 transition-transform duration-200 group-hover:translate-x-0.5" />
-            </a>
+          {/* Action CTAs: Locked on ONE LINE across mobile, tablet & desktop */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-start gap-2.5 sm:gap-3 lg:gap-3.5 w-full mb-1">
+            <div className="flex flex-nowrap items-center gap-2 sm:gap-3 max-w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden py-0.5 shrink-0">
+              {/* Primary Button: Discuss My GCC Operations */}
+              <a
+                href={gccOpsBookingHref("hero")}
+                onClick={() => trackGccOpsCta(page, page.ctaLabel, "hero")}
+                title={page.ctaLabel}
+                className="inline-flex items-center justify-center rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs sm:text-[13px] font-bold tracking-tight px-3.5 sm:px-5 py-2 sm:py-2.5 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer shrink-0 whitespace-nowrap"
+              >
+                <span>{page.ctaLabel}</span>
+                <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
+              </a>
 
-            {/* Secondary Button: See the Operating Model */}
-            {secondaryCta && (
-              secondaryCta.href.startsWith("#") ? (
-                <a
-                  href={secondaryCta.href}
-                  title={secondaryCta.label}
-                  className="inline-flex items-center justify-center gap-2 sm:gap-2.5 rounded-lg border border-slate-300/90 bg-white/95 backdrop-blur-sm px-4 sm:px-5.5 lg:px-6 py-2 sm:py-2.5 lg:py-3 text-xs sm:text-sm font-medium text-slate-800 shadow-xs hover:bg-slate-50 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 group shrink-0"
-                >
-                  <span>{secondaryCta.label}</span>
-                  <ArrowRight className="h-3.5 w-3.5 text-slate-600 transition-transform duration-200 group-hover:translate-x-0.5" />
-                </a>
-              ) : (
-                <Link
-                  to={secondaryCta.href}
-                  title={secondaryCta.label}
-                  className="inline-flex items-center justify-center gap-2 sm:gap-2.5 rounded-lg border border-slate-300/90 bg-white/95 backdrop-blur-sm px-4 sm:px-5.5 lg:px-6 py-2 sm:py-2.5 lg:py-3 text-xs sm:text-sm font-medium text-slate-800 shadow-xs hover:bg-slate-50 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 group shrink-0"
-                >
-                  <span>{secondaryCta.label}</span>
-                  <ArrowRight className="h-3.5 w-3.5 text-slate-600 transition-transform duration-200 group-hover:translate-x-0.5" />
-                </Link>
-              )
-            )}
+              {/* Secondary Button: See the Operating Model */}
+              {secondaryCta && (
+                secondaryCta.href.startsWith("#") ? (
+                  <a
+                    href={secondaryCta.href}
+                    title={secondaryCta.label}
+                    className="inline-flex items-center justify-center rounded-full bg-white hover:bg-slate-50 border border-slate-300/90 text-[#0D244D] text-xs sm:text-[13px] font-bold tracking-tight px-3.5 sm:px-5 py-2 sm:py-2.5 transition-all duration-200 shadow-xs hover:shadow-md cursor-pointer shrink-0 whitespace-nowrap"
+                  >
+                    <span>{secondaryCta.label}</span>
+                    <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0 text-[#169DC8]" />
+                  </a>
+                ) : (
+                  <Link
+                    to={secondaryCta.href}
+                    title={secondaryCta.label}
+                    className="inline-flex items-center justify-center rounded-full bg-white hover:bg-slate-50 border border-slate-300/90 text-[#0D244D] text-xs sm:text-[13px] font-bold tracking-tight px-3.5 sm:px-5 py-2 sm:py-2.5 transition-all duration-200 shadow-xs hover:shadow-md cursor-pointer shrink-0 whitespace-nowrap"
+                  >
+                    <span>{secondaryCta.label}</span>
+                    <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0 text-[#169DC8]" />
+                  </Link>
+                )
+              )}
+            </div>
 
-            {/* Icon Button right to See the Operating Model: Reveals Button Name on the Same Line on Hover */}
+            {/* Context Button right to See the Operating Model */}
             {contextualLink && (
-              <TypewriterLaunchButton
-                href={contextualLink.href}
-                fullLabel={contextualLink.label}
-              />
+              <div className="shrink-0 mt-0.5 sm:mt-0">
+                <TypewriterContextButton
+                  href={contextualLink.href}
+                  label={contextualLink.label}
+                />
+              </div>
             )}
           </div>
         </div>

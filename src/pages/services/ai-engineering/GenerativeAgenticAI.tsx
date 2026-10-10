@@ -338,7 +338,7 @@ export default function GenerativeAgenticAI() {
         title="Governance is designed into the system, not documented after it."
         width="regular"
       >
-        <div className="max-w-3xl mx-auto space-y-4 text-center">
+        <div className="max-w-5xl mx-auto space-y-4 text-center">
           <p className="text-base sm:text-[17px] text-[#0D244D] leading-relaxed font-normal">
             Every GenAI and agent build classifies the use case by risk, defines what data may reach a model and where, sets the human oversight points, and records the evaluation evidence and traces an audit will ask for. We do not claim regulatory compliance on a client's behalf; we engineer the controls and the evidence their own governance requires.
           </p>

@@ -14,8 +14,8 @@ export interface DeliverablesListProps {
   items: (DeliverableItem | string)[];
   className?: string;
   defaultIcon?: LucideIcon;
-  /** Wrap the leading icon in the NeoIntelli hexagon brand badge. */
-  iconBadge?: "none" | "hexagon";
+  /** Leading marker style: "none" = arrow icon, "hexagon" = icon in the brand hexagon, "hexagon-logo" = brand hexagon logo mark (no icon). */
+  iconBadge?: "none" | "hexagon" | "hexagon-logo";
 }
 
 /**
@@ -53,10 +53,14 @@ export default function DeliverablesList({
         key={item.id}
         className="flex items-center justify-between gap-3.5 sm:gap-5 py-2.5 sm:py-3.5 group select-none transition-colors border-b border-[#DCE8F4]/60 last:border-b-0"
       >
-        {/* Left: Navy Outline Icon (optionally in the brand hexagon badge) */}
-        {iconBadge === "hexagon" ? (
-          <div className="relative shrink-0 flex items-center justify-center w-8 h-9">
-            <svg viewBox="0 0 54 60" className="w-full h-full drop-shadow-sm" aria-hidden="true">
+        {/* Left: brand hexagon mark, or the leading icon */}
+        {iconBadge === "none" ? (
+          <div className="shrink-0 text-[#0D244D] group-hover:text-[#008EC4] transition-colors">
+            <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.8]" />
+          </div>
+        ) : (
+          <div className="relative shrink-0 flex items-center justify-center w-8 h-9 sm:w-8.5 sm:h-9.5">
+            <svg viewBox="0 0 54 60" className="w-full h-full drop-shadow-sm transition-transform duration-200 group-hover:scale-105" aria-hidden="true">
               <polygon
                 points="27,3 50,16 50,44 27,57 4,44 4,16"
                 fill="#EBF4FC"
@@ -66,13 +70,15 @@ export default function DeliverablesList({
                 strokeLinejoin="round"
               />
             </svg>
-            <div className="absolute inset-0 flex items-center justify-center text-[#008EC4] group-hover:text-[#0D306C] transition-colors">
-              <IconComponent className="w-4 h-4" />
-            </div>
-          </div>
-        ) : (
-          <div className="shrink-0 text-[#0D244D] group-hover:text-[#008EC4] transition-colors">
-            <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.8]" />
+            {iconBadge === "hexagon" || item.icon ? (
+              <div className="absolute inset-0 flex items-center justify-center text-[#008EC4] group-hover:text-[#0D306C] transition-colors">
+                <IconComponent className="w-4 h-4 sm:w-[17px] sm:h-[17px] stroke-[2]" />
+              </div>
+            ) : (
+              <span className="absolute inset-0 flex items-center justify-center text-[#0D306C] font-extrabold font-manrope text-[13px] leading-none" aria-hidden="true">
+                N
+              </span>
+            )}
           </div>
         )}
 

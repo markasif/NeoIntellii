@@ -10,7 +10,7 @@ import { GCC_OPERATIONS_PAGES } from "@/data/gccOperationsContent";
 export default function GccOperationsSubnav({ pathname }: { pathname: string }) {
   const items = GCC_OPERATIONS_PAGES.map((page) => ({
     label: page.subnavLabel,
-    href: `${page.path}#gcc-operations-content`,
+    href: page.path,
     active: pathname === page.path,
   }));
 

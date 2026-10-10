@@ -347,7 +347,7 @@ export default function AIAgentsAutomation() {
         title="Permissions, auditability and risk classification are part of the build."
         width="regular"
       >
-        <div className="max-w-3xl mx-auto space-y-4 text-center">
+        <div className="max-w-5xl mx-auto space-y-4 text-center">
           <p className="text-base sm:text-[17px] text-[#0D244D] leading-relaxed font-normal">
             Every agent we ship is classified by the risk of the actions it can take, runs under a reviewed permission set, keeps an audit trail of every step, and has human oversight at the points the classification requires. We engineer these controls and the evidence for them; the client's governance function owns the policy.
           </p>

@@ -126,14 +126,18 @@ export default function Contact() {
       .then(() => {
         setSubmitted(true);
         toast.success("Thank you. We'll be in touch.");
-        trackEvent("contact_form_submit", {
-          topic: (data.get("topic") as string) || undefined,
-          company: (data.get("company") as string) || undefined,
-          service_interest: (data.get("service_interest") as string) || undefined,
-          cta_name: (data.get("cta_name") as string) || undefined,
-          source_page: (data.get("source_page") as string) || undefined,
-        });
-        trackEvent("qualified_lead", { source: "contact_form" });
+        try {
+          trackEvent("contact_form_submit", {
+            topic: (data.get("topic") as string) || undefined,
+            company: (data.get("company") as string) || undefined,
+            service_interest: (data.get("service_interest") as string) || undefined,
+            cta_name: (data.get("cta_name") as string) || undefined,
+            source_page: (data.get("source_page") as string) || undefined,
+          });
+          trackEvent("qualified_lead", { source: "contact_form" });
+        } catch {
+          /* analytics must never break the form */
+        }
       })
       .catch(() => toast.error("Something went wrong. Please try again."));
   };

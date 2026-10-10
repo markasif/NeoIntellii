@@ -2,9 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import TypewriterContextButton from "@/components/ui/TypewriterContextButton";
 
 export default function Hero() {
   return (
@@ -16,11 +16,10 @@ export default function Hero() {
       {/* ── FULL-BLEED ARCHITECTURAL SUNSET BACKGROUND (ANCHORED TO BOTTOM TERRACE) ── */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
-          src="/hero/hero.png"
+          src="/hero/hero.webp"
           alt="NeoIntelli AI GCC Architecture Skyscrapers at Sunset"
           fill
           priority
-          unoptimized
           sizes="100vw"
           className="object-cover object-[70%_bottom] sm:object-bottom"
         />
@@ -32,32 +31,22 @@ export default function Hero() {
       {/* ── MAIN EDITORIAL HERO CONTENT ────────────────────────────────────── */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex-1 min-h-0 flex flex-col justify-center pb-6 sm:pb-10 lg:pb-14">
         <div className="max-w-xl lg:max-w-2xl text-left -translate-y-2 sm:-translate-y-4 lg:-translate-y-6">
-          
+
           {/* Eyebrow: AI GCC · INDIA with accent divider */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col items-start mb-1.5 sm:mb-2.5"
-          >
+          <div className="flex flex-col items-start mb-1.5 sm:mb-2.5">
             <span className="text-[11px] sm:text-xs lg:text-[13px] font-bold uppercase tracking-[0.22em] text-[#334E68]">
               AI GCC <span className="mx-1 text-[#169DC8]">·</span> INDIA
             </span>
             <div className="w-8 sm:w-9 h-[2px] bg-[#169DC8] mt-1 sm:mt-1.5 rounded-full" />
-          </motion.div>
+          </div>
 
-          {/* Main Headline: Exactly 2 lines matching reference photo */}
-          <motion.h1
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold text-[#0B1A38] tracking-[-0.035em] leading-[1.12] sm:leading-[1.1] mb-2 sm:mb-2.5 font-sans text-left"
-          >
+          {/* Main Headline: Rendered directly for instant LCP with zero paint delay */}
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold text-[#0B1A38] tracking-[-0.035em] leading-[1.12] sm:leading-[1.1] mb-2 sm:mb-2.5 font-sans text-left">
             <span className="block">Build and scale your</span>
             <span className="block">
               <span className="text-[#008EC4]">AI GCC</span> in India.
             </span>
-          </motion.h1>
+          </h1>
 
           {/* High-Contrast Description */}
           <motion.p
@@ -79,28 +68,25 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-row flex-wrap items-center justify-start gap-2.5 sm:gap-3 w-full sm:w-auto"
           >
-            {/* Primary Button: Plan My AI GCC */}
-            <a
-              href="#contact"
-              title="Plan My AI GCC"
+            {/* Button 1: GCC Cost Calculator (Navy-blue primary button) */}
+            <Link
+              href="/gcc-cost-calculator"
+              title="GCC Cost Calculator"
               className="inline-flex items-center justify-center rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs sm:text-[13px] font-bold tracking-tight px-4 sm:px-5 py-2 sm:py-2.5 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer shrink-0"
             >
-              <span>Plan My AI GCC</span>
+              <span>GCC Cost Calculator</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
-            </a>
+            </Link>
 
-            {/* Secondary Button: Explore AI Micro GCC */}
-            <a
-              href="#solutions"
+            {/* Button 2: Explore AI Micro GCC (Secondary button) */}
+            <Link
+              href="/services/micro-gcc"
               title="Explore AI Micro GCC"
               className="btn-white cursor-pointer shrink-0"
             >
               <span>Explore AI Micro GCC</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0 text-[#169DC8]" />
-            </a>
-
-            {/* Tertiary / Context Button: Estimate GCC Cost */}
-            <TypewriterContextButton href="#tools" label="Estimate GCC Cost" />
+            </Link>
           </motion.div>
 
         </div>
