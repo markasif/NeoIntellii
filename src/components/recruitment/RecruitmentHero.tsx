@@ -145,7 +145,7 @@ export default function RecruitmentHero({
             <div className="flex flex-wrap items-center gap-3 text-left">
               <Link
                 to={primaryCta.href}
-                className="inline-flex items-center justify-center rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs sm:text-[13px] font-bold font-manrope tracking-tight px-6 py-3 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer shrink-0"
+                className="btn-navy shrink-0"
               >
                 <span>{primaryCta.label}</span>
                 <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />

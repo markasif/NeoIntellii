@@ -298,14 +298,7 @@ export default function Navbar({ appearance }: NavbarProps = {}) {
 
         {/* Right: Consultation Button with btn-gradient-primary style */}
         <div className="flex items-center gap-3">
-          <Link
-            href="/book-a-call"
-            className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs sm:text-sm font-bold tracking-tight px-4 sm:px-5 py-2 sm:py-2.5 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer shrink-0"
-          >
-            <span>Book a consultation</span>
-            <ArrowRight className="w-3.5 h-3.5 text-white shrink-0" />
-          </Link>
-
+         
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -380,7 +373,7 @@ export default function Navbar({ appearance }: NavbarProps = {}) {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setActiveMenu(null)}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs sm:text-sm font-bold tracking-tight px-5 py-2.5 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
+                    className="btn-navy"
                   >
                     <span>Visit NeoHireX</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -701,7 +694,7 @@ export default function Navbar({ appearance }: NavbarProps = {}) {
                 </div>
                 <div className="pt-5 mt-3 border-t border-[#0D306C]/15">
                   <Link href="/case-studies" onClick={() => setActiveMenu(null)}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs font-bold tracking-tight px-5 py-2.5 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer">
+                    className="btn-navy">
                     <span>Learn about our approach</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -920,7 +913,7 @@ export default function Navbar({ appearance }: NavbarProps = {}) {
                 </div>
                 <div className="pt-5 mt-3 border-t border-[#0D306C]/15">
                   <Link href="/industries" onClick={() => setActiveMenu(null)}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs font-bold tracking-tight px-5 py-2.5 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer">
+                    className="btn-navy">
                     <span>All industries</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -1020,7 +1013,7 @@ export default function Navbar({ appearance }: NavbarProps = {}) {
                 </div>
                 <div className="pt-5 mt-3 border-t border-[#0D306C]/15">
                   <Link href="/book-a-call" onClick={() => setActiveMenu(null)}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs font-bold tracking-tight px-5 py-2.5 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer">
+                    className="btn-navy">
                     <span>Book a consultation</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>

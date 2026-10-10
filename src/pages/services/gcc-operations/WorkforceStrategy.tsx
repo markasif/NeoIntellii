@@ -378,6 +378,7 @@ export default function WorkforceStrategy() {
         theme="navy"
         align="center"
         width="wide"
+        wavesOnMobile
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-stretch max-w-6xl mx-auto text-left">
           {/* Card 1: AI Talent */}

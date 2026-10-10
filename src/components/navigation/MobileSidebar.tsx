@@ -39,6 +39,13 @@ const pillarIconMap: Record<string, LucideIcon> = {
   "GCC Operations": Settings2,
 };
 
+/** Planning tools surfaced first inside "What We Do" (they sit above the pillars). */
+const gccTools = [
+  { label: "GCC Cost Calculator", href: "/gcc-cost-calculator" },
+  { label: "GCC ROI Estimator", href: "/gcc-roi-estimator" },
+  { label: "GCC Readiness Assessment", href: "/gcc-readiness-assessment" },
+];
+
 const industryLinks = [
   { label: "BFSI", href: "/industries/bfsi-gcc", desc: "Banks, capital markets, and insurance" },
   { label: "Healthcare", href: "/industries/healthcare-gcc", desc: "Payers, providers, and life sciences" },
@@ -46,7 +53,6 @@ const industryLinks = [
   { label: "Technology", href: "/industries/technology-gcc", desc: "Software, SaaS, and platform GCCs" },
   { label: "Manufacturing", href: "/industries/manufacturing-gcc", desc: "Industrial & supply chain operations" },
   { label: "Retail & E-commerce", href: "/industries/retail-gcc", desc: "Omni-channel & consumer retail" },
-  { label: "All Industries", href: "/industries", desc: "Explore all specialized sectors" },
 ];
 
 const companyLinks = [
@@ -209,25 +215,14 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
           >
             {/* ── TOP HEADER ── */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-white/60 bg-white/40 backdrop-blur-md shrink-0">
-              <div className="flex items-center gap-2.5">
-                <div className="flex items-center justify-center">
-                  <Image
-                    src="/logo/neointelli_logo.webp"
-                    alt="NeoIntelli"
-                    width={24}
-                    height={24}
-                    className="h-5 w-auto object-contain"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[13.5px] font-extrabold text-[#0D306C] tracking-tight leading-none">
-                    Navigation
-                  </span>
-                  <span className="text-[10.5px] font-semibold text-[#169DC8] tracking-wider uppercase mt-0.5">
-                    NeoIntelli Menu
-                  </span>
-                </div>
-              </div>
+              <Image
+                src="/logo/neointelli_logo.webp"
+                alt="NeoIntelli"
+                width={150}
+                height={34}
+                priority
+                className="h-6 sm:h-7 w-auto object-contain"
+              />
 
               {/* Close Button */}
               <button
@@ -282,7 +277,24 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                     >
                       {/* Vertical Tree Trunk */}
                       <div className="relative pl-3.5 ml-5 border-l-2 border-[#169DC8]/30 space-y-2 mt-2 pb-1">
-                        {SERVICE_PILLARS.map((pillar, pIdx) => {
+                        {/* Planning tools first: the three GCC decision tools, styled like the footer CTA */}
+                        <div className="relative space-y-1.5 pt-0.5">
+                          <span className="block text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#169DC8] mb-1.5 px-0.5">
+                            Planning tools
+                          </span>
+                          {gccTools.map((tool) => (
+                            <Link
+                              key={tool.href}
+                              href={tool.href}
+                              onClick={onClose}
+                              className="group/btn relative inline-flex items-center justify-center gap-2.5 w-full rounded-xl bg-gradient-to-r from-[#169DC8] via-[#1288B0] to-[#0D6EA8] text-white text-[13px] font-semibold py-2.5 px-4 transition-all duration-200 shadow-[0_4px_16px_rgba(22,157,200,0.35)] hover:shadow-[0_6px_22px_rgba(22,157,200,0.5)] hover:-translate-y-0.5 active:translate-y-0"
+                            >
+                              <span>{tool.label}</span>
+                              <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                            </Link>
+                          ))}
+                        </div>
+                        {SERVICE_PILLARS.map((pillar) => {
                           const PillarIcon = pillarIconMap[pillar.name] || Layers;
                           const isPillarOpen = !!openPillars[pillar.name];
                           const hasActiveChild =
@@ -307,9 +319,6 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                                 }`}
                               >
                                 <div className="flex items-center gap-2 truncate">
-                                  <span className="text-[10px] font-mono font-bold text-[#169DC8]">
-                                    0{pIdx + 1}
-                                  </span>
                                   <PillarIcon className="h-3.5 w-3.5 text-[#169DC8] shrink-0" />
                                   <span className="text-[13px] truncate">{pillar.name}</span>
                                 </div>
@@ -614,7 +623,17 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                       className="overflow-hidden"
                     >
                       <div className="relative pl-3.5 ml-5 border-l-2 border-[#169DC8]/30 space-y-1 mt-2 pb-1">
-                        {industryLinks.map((item) => {
+                          {/* All Industries on top, styled like the What We Do planning-tool buttons */}
+                          <Link
+                            href="/industries"
+                            onClick={onClose}
+                            className="group/btn relative inline-flex items-center justify-center gap-2.5 w-full rounded-xl bg-gradient-to-r from-[#169DC8] via-[#1288B0] to-[#0D6EA8] text-white text-[12.5px] font-semibold py-2.5 px-4 transition-all duration-200 shadow-[0_4px_16px_rgba(22,157,200,0.35)] hover:shadow-[0_6px_22px_rgba(22,157,200,0.5)] hover:-translate-y-0.5 active:translate-y-0"
+                          >
+                            <span>All Industries</span>
+                            <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                          </Link>
+
+                          {industryLinks.map((item) => {
                           const active = isLinkActive(item.href);
                           return (
                             <div key={item.label} className="relative">
@@ -624,8 +643,8 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                                 onClick={onClose}
                                 className={`group flex items-center justify-between py-1.5 px-2.5 rounded-lg text-[12.5px] transition-all ${
                                   active
-                                    ? "bg-white/95 text-[#0D306C] font-bold shadow-2xs border border-white/80"
-                                    : "text-[#2B3D66] hover:text-[#0D306C] hover:bg-white/80 font-medium"
+                                    ? "text-[#169DC8] font-bold"
+                                    : "text-[#2B3D66] hover:text-[#0D306C] font-medium"
                                 }`}
                               >
                                 <span className="truncate">{item.label}</span>
@@ -640,7 +659,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                             </div>
                           );
                         })}
-                      </div>
+                        </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -734,7 +753,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
               <Link
                 href="/book-a-call"
                 onClick={onClose}
-                className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#0D244D] via-[#1288B0] to-[#169DC8] text-white text-[13.5px] font-bold py-3 px-4 shadow-[0_4px_16px_rgba(22,157,200,0.35)] hover:shadow-[0_6px_22px_rgba(22,157,200,0.5)] active:scale-[0.98] transition-all duration-200"
+                className="btn-navy self-center"
               >
                 <span>Book a Consultation</span>
                 <ArrowRight className="h-4 w-4 text-white shrink-0" />

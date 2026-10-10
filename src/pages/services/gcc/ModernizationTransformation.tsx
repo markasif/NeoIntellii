@@ -330,6 +330,7 @@ export default function ModernizationTransformation() {
           theme="navy"
           width="wide"
           align="center"
+          wavesOnMobile
         >
           <UniversalLifecycle
             id="ownership-ladder"

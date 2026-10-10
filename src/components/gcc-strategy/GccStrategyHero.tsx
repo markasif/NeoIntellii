@@ -124,7 +124,7 @@ export default function GccStrategyHero({
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={track(primaryCta.label)}
-                    className="inline-flex items-center justify-center rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs sm:text-[13px] font-bold tracking-tight px-3.5 sm:px-5 py-2 sm:py-2.5 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer shrink-0 whitespace-nowrap"
+                    className="btn-navy shrink-0"
                   >
                     <span>{primaryCta.label}</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
@@ -133,7 +133,7 @@ export default function GccStrategyHero({
                   <Link
                     to={primaryCta.href}
                     onClick={track(primaryCta.label)}
-                    className="inline-flex items-center justify-center rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs sm:text-[13px] font-bold tracking-tight px-3.5 sm:px-5 py-2 sm:py-2.5 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer shrink-0 whitespace-nowrap"
+                    className="btn-navy shrink-0"
                   >
                     <span>{primaryCta.label}</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />

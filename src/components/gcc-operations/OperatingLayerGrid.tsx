@@ -194,9 +194,11 @@ export default function OperatingLayerGrid({
 } = {}) {
   const topGridRef = useRef<HTMLDivElement>(null);
   const bottomGridRef = useRef<HTMLDivElement>(null);
+  const mobileStackRef = useRef<HTMLDivElement>(null);
 
   const isTopInView = useInView(topGridRef, { once: true, amount: 0.15 });
   const isBottomInView = useInView(bottomGridRef, { once: true, amount: 0.15 });
+  const isMobileInView = useInView(mobileStackRef, { once: true, amount: 0.15 });
 
   const p = items ?? DEFAULT_ITEMS;
 
@@ -259,7 +261,7 @@ export default function OperatingLayerGrid({
       </div>
 
       {/* Mobile: cards 01-04 stacked */}
-      <div className="flex flex-col gap-4 sm:hidden">
+      <div ref={mobileStackRef} className="flex flex-col gap-4 sm:hidden">
         {[p[0], p[1], p[2], p[3]].filter(Boolean).map((item, i) => {
           const dir = i % 3 === 0 ? "left" : i % 3 === 1 ? "center" : "right";
           return (
@@ -267,7 +269,7 @@ export default function OperatingLayerGrid({
               key={item.key ?? item.cardTitle}
               item={item}
               index={i}
-              isInView={isTopInView}
+              isInView={isMobileInView}
               direction={dir}
               delay={i * 0.1}
               className="min-h-[280px]"

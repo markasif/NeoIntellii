@@ -191,7 +191,7 @@ export default function Careers() {
                 <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-left">
                   <a
                     href="#open-roles"
-                    className="inline-flex items-center justify-center rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs sm:text-[13px] font-bold tracking-tight px-4 sm:px-5 py-2 sm:py-2.5 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer shrink-0"
+                    className="btn-navy shrink-0"
                   >
                     <span>View Open Positions</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />

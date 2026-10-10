@@ -23,7 +23,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
-import AiDeliveryTeamsCTA from "@/components/ai-delivery-teams/AiDeliveryTeamsCTA";
+import IndustryCTA from "@/components/shared/IndustryCTA";
 import StatementSection from "@/components/shared/StatementSection";
 import CapabilitiesSection from "@/components/ai-gcc/CapabilitiesSection";
 import SlottedStepNumber from "@/components/gcc-operations/SlottedStepNumber";
@@ -256,7 +256,7 @@ export default function PrivateEquityGCC() {
                     href={CAL_BOOKING_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs sm:text-[13px] font-bold font-manrope tracking-tight px-6 py-3 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer shrink-0"
+                    className="btn-navy shrink-0"
                   >
                     <span>Talk to Our PE Team</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
@@ -379,6 +379,7 @@ export default function PrivateEquityGCC() {
           theme="navy"
           width="wide"
           waveFill="#F0F5FA"
+          wavesOnMobile
         >
           <div className="max-w-4xl mx-auto text-center">
             {/* 3 Metrics */}
@@ -457,17 +458,19 @@ export default function PrivateEquityGCC() {
           </div>
         </Section>
 
-        {/* ── 9. CALL TO ACTION (BFSI Redesign Style) ─────────────────── */}
-        <AiDeliveryTeamsCTA
-          serviceInterest="• TAKE THE NEXT STEP"
+        {/* ── 9. INDUSTRY CTA (ExecutiveCTA with mobile labels) ─────────────────── */}
+        <IndustryCTA
+          eyebrow="• TAKE THE NEXT STEP"
           title="Ready to Build Your Private Equity GCC?"
           description="Speak with our team about your portfolio strategy, EBITDA expansion goals, and how cross-portfolio GCCs can accelerate value creation."
           primaryCta={{
             label: "Book a consultation",
+            mobileLabel: "Consultation",
             href: "/contact",
           }}
           secondaryCta={{
             label: "Explore all industries",
+            mobileLabel: "All industries",
             href: "/industries",
           }}
         />

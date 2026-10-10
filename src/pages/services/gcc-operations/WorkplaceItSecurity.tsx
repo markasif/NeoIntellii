@@ -642,6 +642,7 @@ export default function WorkplaceItSecurity() {
         theme="navy"
         align="center"
         width="wide"
+        wavesOnMobile
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 lg:gap-8">
           {good.map((item, index) => {

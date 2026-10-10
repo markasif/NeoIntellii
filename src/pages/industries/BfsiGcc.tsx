@@ -36,7 +36,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import SlottedStepNumber from "@/components/gcc-operations/SlottedStepNumber";
 import { OperatingRealityCard } from "@/components/gcc-operations/OperatingRealitySection";
 import AnswerBlock from "@/components/ai-gcc/AnswerBlock";
-import AiDeliveryTeamsCTA from "@/components/ai-delivery-teams/AiDeliveryTeamsCTA";
+import IndustryCTA from "@/components/shared/IndustryCTA";
 import ConnectedEcosystem from "@/components/shared/ConnectedEcosystem";
 import Consultation from "@/features/home/components/Consultation";
 import IndustryChallengesGrid from "@/components/shared/IndustryChallengesGrid";
@@ -263,7 +263,7 @@ export default function BfsiGcc() {
                 <div className="flex flex-wrap items-center gap-3 text-left">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs sm:text-[13px] font-bold font-manrope tracking-tight px-6 py-3 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer shrink-0"
+                    className="btn-navy shrink-0"
                   >
                     <span>Plan Your BFSI GCC</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
@@ -360,6 +360,7 @@ export default function BfsiGcc() {
           theme="navy"
           width="wide"
           waveFill="#F0F5FA"
+          wavesOnMobile
         >
           <SectionHeader
             title="BFSI-Specific Challenges NeoIntelli Addresses"
@@ -392,17 +393,19 @@ export default function BfsiGcc() {
           </div>
         </section>
 
-        {/* ── 7. BLUE DIV WITH TWO BUTTONS (First Image Content & AI GCC CTA Design) ── */}
-        <AiDeliveryTeamsCTA
-          serviceInterest="• TAKE THE NEXT STEP"
+        {/* ── 7. INDUSTRY CTA BANNER (ExecutiveCTA with mobile labels) ── */}
+        <IndustryCTA
+          eyebrow="• TAKE THE NEXT STEP"
           title="Discuss Your BFSI GCC"
           description="Speak with our team about building a financial services capability center in India."
           primaryCta={{
             label: "Plan Your BFSI GCC",
+            mobileLabel: "Plan BFSI GCC",
             href: "/contact",
           }}
           secondaryCta={{
             label: "Explore Cost Calculator",
+            mobileLabel: "Cost calculator",
             href: "/gcc-cost-calculator",
           }}
         />

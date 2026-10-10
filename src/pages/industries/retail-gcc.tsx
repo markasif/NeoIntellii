@@ -30,6 +30,7 @@ import CapabilitiesSection from "@/components/ai-gcc/CapabilitiesSection";
 import { OperatingRealityCard } from "@/components/gcc-operations/OperatingRealitySection";
 import IndustryChallengesGrid from "@/components/shared/IndustryChallengesGrid";
 import IndustriesSubnav from "@/components/industries/IndustriesSubnav";
+import IndustryCTA from "@/components/shared/IndustryCTA";
 import Consultation from "@/features/home/components/Consultation";
 import { CAL_BOOKING_URL } from "@/lib/constants";
 
@@ -247,7 +248,7 @@ export default function RetailGCC() {
                     href={CAL_BOOKING_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs sm:text-[13px] font-bold font-manrope tracking-tight px-6 py-3 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer shrink-0"
+                    className="btn-navy shrink-0"
                   >
                     <span>Book a Strategy Call</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
@@ -321,6 +322,7 @@ export default function RetailGCC() {
           theme="navy"
           width="wide"
           waveFill="#F0F5FA"
+          wavesOnMobile
         >
           <SectionHeader
             title="What Your Retail GCC Can Own"
@@ -410,37 +412,22 @@ export default function RetailGCC() {
           </div>
         </Section>
 
-        {/* ── 8. READY TO BUILD YOUR RETAIL GCC? (Callout CTA - Case Studies Style) ── */}
-        <section className="relative py-14 sm:py-18 lg:py-20 px-4 sm:px-6 lg:px-8 bg-transparent text-center select-none">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-3xl mx-auto"
-          >
-            <div className="flex justify-center mb-4 sm:mb-5">
-              <ShoppingCart className="w-10 h-10 text-[#2B3D66] stroke-[1.8]" />
-            </div>
-
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0D306C] tracking-tight leading-[1.18] mb-4 sm:mb-5 font-manrope">
-              Ready to Build Your Retail GCC?
-            </h2>
-
-            <p className="text-[#505D74] text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10 font-normal font-sans">
-              Talk to our team about building a retail and e-commerce GCC that gives you direct ownership of the technology powering modern commerce.
-            </p>
-
-            <a
-              href={CAL_BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-3.5 sm:py-4 rounded-full bg-[#2A2B68] hover:bg-[#1E1F4B] text-white text-sm sm:text-base font-bold font-manrope tracking-tight transition-all duration-200 shadow-md hover:shadow-lg cursor-pointer"
-            >
-              <span>Book a Strategy Call</span>
-            </a>
-          </motion.div>
-        </section>
+        {/* ── 8. INDUSTRY CTA BANNER (ExecutiveCTA with mobile labels) ── */}
+        <IndustryCTA
+          eyebrow="• TAKE THE NEXT STEP"
+          title="Ready to Build Your Retail GCC?"
+          description="Talk to our team about building a retail and e-commerce GCC that gives you direct ownership of the technology powering modern commerce."
+          primaryCta={{
+            label: "Book a Strategy Call",
+            mobileLabel: "Strategy call",
+            href: "/contact",
+          }}
+          secondaryCta={{
+            label: "Explore all industries",
+            mobileLabel: "All industries",
+            href: "/industries",
+          }}
+        />
 
         {/* ── 9. LET'S BUILD TOGETHER (Home Consultation with Wave Divider) ── */}
         <Consultation hideUpperCta={true} waveFill="#F0F5FA" />

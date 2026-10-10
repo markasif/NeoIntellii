@@ -230,6 +230,7 @@ export default function Permanent() {
         theme="navy"
         width="wide"
         align="center"
+        wavesOnMobile
       >
         <IndustryChallengesGrid items={rolesClosed} />
       </Section>

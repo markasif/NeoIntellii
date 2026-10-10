@@ -394,7 +394,11 @@ export default function OperatingBoundariesDiagram() {
                       setHoveredTarget({ side: "left", index: i })
                     }
                     onMouseLeave={() => setHoveredTarget(null)}
-                    className="flex items-center lg:justify-end gap-3 group cursor-default transition-all"
+                    className={`flex items-center lg:justify-end gap-3 group cursor-default transition-all w-full lg:w-auto rounded-xl border px-3 py-2.5 shadow-xs lg:rounded-none lg:border-0 lg:bg-transparent lg:px-0 lg:py-0 lg:shadow-none ${
+                      isHovered
+                        ? "border-[#008EC4] bg-[#EAF5FE] lg:border-0 lg:bg-transparent"
+                        : "border-[#D5E6F7] bg-white/90"
+                    }`}
                   >
                     {/* Mobile: Standard left-to-right (icon first, then text) */}
                     <div className="flex items-center gap-3 lg:hidden">
@@ -510,7 +514,11 @@ export default function OperatingBoundariesDiagram() {
                       setHoveredTarget({ side: "right", index: j })
                     }
                     onMouseLeave={() => setHoveredTarget(null)}
-                    className="flex items-center gap-3 group cursor-default transition-all"
+                    className={`flex items-center gap-3 group cursor-default transition-all w-full lg:w-auto rounded-xl px-3 py-2.5 shadow-xs lg:rounded-none lg:bg-transparent lg:px-0 lg:py-0 lg:shadow-none ${
+                      isHovered
+                        ? "bg-[#008EC4] lg:bg-transparent"
+                        : "bg-[#0D244D]"
+                    }`}
                   >
                     {/* Anchor ref for incoming SVG connector line */}
                     <div
@@ -525,7 +533,7 @@ export default function OperatingBoundariesDiagram() {
                       className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 shadow-sm transition-all duration-200 ${
                         isHovered
                           ? "bg-[#008EC4] text-white scale-105 shadow-md"
-                          : "bg-[#0D244D] text-white"
+                          : "bg-white/15 border border-white/25 text-[#38BDF8] lg:bg-[#0D244D] lg:border-0 lg:text-white"
                       }`}
                     >
                       <Icon className="w-4 h-4 stroke-[1.8]" />
@@ -534,7 +542,7 @@ export default function OperatingBoundariesDiagram() {
                     {/* Text Label */}
                     <span
                       className={`text-[13px] sm:text-[14px] font-medium transition-colors duration-200 ${
-                        isHovered ? "text-[#008EC4] font-semibold" : "text-[#0D244D]"
+                        isHovered ? "text-white lg:text-[#008EC4] font-semibold" : "text-white lg:text-[#0D244D]"
                       }`}
                     >
                       {item.label}

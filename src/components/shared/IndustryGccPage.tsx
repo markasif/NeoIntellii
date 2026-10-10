@@ -32,7 +32,7 @@ import SlottedStepNumber from "@/components/gcc-operations/SlottedStepNumber";
 import { OperatingRealityCard } from "@/components/gcc-operations/OperatingRealitySection";
 import IndustryChallengesGrid from "@/components/shared/IndustryChallengesGrid";
 import IndustriesSubnav from "@/components/industries/IndustriesSubnav";
-import AiDeliveryTeamsCTA from "@/components/ai-delivery-teams/AiDeliveryTeamsCTA";
+import IndustryCTA from "@/components/shared/IndustryCTA";
 import { getPageMeta } from "@/lib/pageMeta";
 
 const roleImages = [
@@ -201,7 +201,7 @@ export default function IndustryGccPage({
                 <div className="flex flex-wrap items-center gap-3 text-left">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs sm:text-[13px] font-bold font-manrope tracking-tight px-6 py-3 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer shrink-0"
+                    className="btn-navy shrink-0"
                   >
                     <span>{ctaText}</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
@@ -304,6 +304,7 @@ export default function IndustryGccPage({
           theme="navy"
           width="wide"
           waveFill="#F0F5FA"
+          wavesOnMobile
         >
           <SectionHeader
             title={darkSectionTitle}
@@ -383,14 +384,14 @@ export default function IndustryGccPage({
           </div>
         </Section>
 
-        {/* ── 8b. LET'S BUILD TOGETHER (CTA banner, manufacturing-gcc design) ── */}
+        {/* ── 8b. LET'S BUILD TOGETHER (CTA banner, canonical IndustryCTA design) ── */}
         {ctaBanner && (
-          <AiDeliveryTeamsCTA
-            serviceInterest="• TAKE THE NEXT STEP"
+          <IndustryCTA
+            eyebrow="• TAKE THE NEXT STEP"
             title={ctaBanner.title}
             description={ctaBanner.description}
             primaryCta={{ label: ctaBanner.buttonText, href: "/contact" }}
-            secondaryCta={{ label: "Explore all industries", href: "/industries" }}
+            secondaryCta={{ label: "Explore all industries", mobileLabel: "All industries", href: "/industries" }}
           />
         )}
 

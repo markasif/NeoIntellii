@@ -18,7 +18,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
-import AiDeliveryTeamsCTA from "@/components/ai-delivery-teams/AiDeliveryTeamsCTA";
+import IndustryCTA from "@/components/shared/IndustryCTA";
 import Consultation from "@/features/home/components/Consultation";
 import StatementSection from "@/components/shared/StatementSection";
 import CapabilitiesSection from "@/components/ai-gcc/CapabilitiesSection";
@@ -225,7 +225,7 @@ export default function ManufacturingGCC() {
                     href={CAL_BOOKING_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs sm:text-[13px] font-bold font-manrope tracking-tight px-6 py-3 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer shrink-0"
+                    className="btn-navy shrink-0"
                   >
                     <span>Book a consultation</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
@@ -290,6 +290,7 @@ export default function ManufacturingGCC() {
           theme="navy"
           width="wide"
           waveFill="#F0F5FA"
+          wavesOnMobile
         >
           <SectionHeader
             title="Compliance & Standards Built In"
@@ -421,17 +422,19 @@ export default function ManufacturingGCC() {
           </div>
         </Section>
 
-        {/* ── 8. CALL TO ACTION (BFSI Redesign Style) ─────────────────── */}
-        <AiDeliveryTeamsCTA
-          serviceInterest="• TAKE THE NEXT STEP"
+        {/* ── 8. INDUSTRY CTA (ExecutiveCTA with mobile labels) ─────────────────── */}
+        <IndustryCTA
+          eyebrow="• TAKE THE NEXT STEP"
           title="Ready to Build Your Manufacturing GCC?"
           description="Speak with our team about your Industry 4.0 ambitions, engineering needs, and how a GCC in India can accelerate your transformation."
           primaryCta={{
             label: "Book a consultation",
+            mobileLabel: "Consultation",
             href: "/contact",
           }}
           secondaryCta={{
             label: "Explore all industries",
+            mobileLabel: "All industries",
             href: "/industries",
           }}
         />

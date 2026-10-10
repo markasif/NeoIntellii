@@ -512,6 +512,7 @@ export default function LocationStrategy() {
           theme="navy"
           width="wide"
           align="center"
+          wavesOnMobile
         >
           <UniversalLifecycle
             theme="navy"

@@ -285,6 +285,29 @@ export const SOLUTION_GROUPS: SolutionGroup[] = [
     ],
   },
   {
+    label: "Plan Your Recruitment",
+    links: [
+      {
+        label: "Recruitment & Staffing",
+        href: "/recruitment",
+        desc: "Permanent, contract, executive search and RPO in India.",
+        icon: Users,
+      },
+      {
+        label: "Permanent Recruitment",
+        href: "/recruitment/permanent",
+        desc: "Direct hire for mid-to-senior roles, with a 90-day guarantee.",
+        icon: UserCheck,
+      },
+      {
+        label: "Executive Search",
+        href: "/recruitment/executive-search",
+        desc: "Retained CXO, board and leadership search.",
+        icon: Compass,
+      },
+    ],
+  },
+  {
     label: "Plan your GCC",
     links: [
       {

@@ -62,7 +62,7 @@ export default function ConnectedEcosystem({
       <Link
         key={card.path + card.name}
         to={card.path}
-        className="group relative flex flex-col justify-between w-full h-full min-h-[175px] sm:min-h-[190px] p-5 rounded-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8] focus-visible:ring-offset-2 bg-gradient-to-b from-[#0C3262] via-[#08234B] to-[#051836] border border-[#20528E]/70 hover:border-[#38BDF8]/70 backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.14),0_8px_24px_rgba(4,18,43,0.32)] hover:shadow-[0_14px_36px_rgba(22,157,200,0.28)]"
+        className="group relative flex flex-col justify-between w-full h-full min-h-[175px] sm:min-h-[190px] p-5 rounded-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8] focus-visible:ring-offset-2 bg-gradient-to-b from-[#081B3E] via-[#0A224E] to-[#061530] border border-[#16427D]/70 hover:border-[#38BDF8]/70 backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.14),0_8px_24px_rgba(4,18,43,0.32)] hover:shadow-[0_14px_36px_rgba(22,157,200,0.28)]"
         style={{
           clipPath: "polygon(0 0, 100% 0, 100% 100%, 22px 100%, 0 calc(100% - 22px))",
         }}
@@ -78,7 +78,7 @@ export default function ConnectedEcosystem({
             y1="2"
             x2="22"
             y2="24"
-            stroke="#20528E"
+            stroke="#16427D"
             strokeOpacity={0.75}
             strokeWidth="1.5"
             className="group-hover:stroke-[#38BDF8] transition-colors"
@@ -110,18 +110,18 @@ export default function ConnectedEcosystem({
             </div>
 
             {/* Title */}
-            <h3 className="block font-extrabold text-[15px] sm:text-base mb-1.5 leading-snug transition-colors text-white group-hover:text-[#38BDF8] font-manrope">
+            <h3 className="block font-extrabold text-[15px] sm:text-base mb-1 leading-snug transition-colors text-white group-hover:text-[#38BDF8] font-manrope">
               {card.name}
             </h3>
 
             {/* Description */}
-            <p className="text-xs sm:text-[12.5px] text-[#C5D7F0]/90 leading-relaxed font-normal">
+            <p className="text-xs sm:text-[12.5px] text-[#C5D7F0]/90 leading-relaxed line-clamp-2 sm:line-clamp-3 mt-1.5 font-normal">
               {card.summary}
             </p>
           </div>
 
           {/* Footer Action Tag / Anchor Link */}
-          <div className="mt-5 pt-2.5 border-t border-white/[0.08] flex items-center justify-between text-xs font-semibold text-[#38BDF8] group-hover:text-white transition-colors">
+          <div className="mt-4 pt-2.5 border-t border-white/[0.08] flex items-center justify-between text-xs font-semibold text-[#38BDF8] group-hover:text-white transition-colors">
             <span>{card.anchor}</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </div>

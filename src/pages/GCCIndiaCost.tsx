@@ -399,7 +399,7 @@ export default function GCCIndiaCost() {
                   return (
                     <div
                       key={team.size}
-                      className="relative rounded-3xl p-6 sm:p-8 md:py-9 bg-gradient-to-b from-[#012048] via-[#022A60] to-[#011B3D] border border-[#20528E] shadow-2xl flex flex-col justify-between overflow-hidden text-left text-white md:-my-2 md:scale-[1.02] z-10"
+                      className="relative rounded-3xl p-6 sm:p-8 md:py-9 bg-gradient-to-b from-[#012048] via-[#022A60] to-[#011B3D] border border-[#16427D] shadow-2xl flex flex-col justify-between overflow-hidden text-left text-white md:-my-2 md:scale-[1.02] z-10"
                     >
                       {/* Subtle corner glow */}
                       <div

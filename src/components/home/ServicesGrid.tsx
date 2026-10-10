@@ -8,7 +8,7 @@ const services = [
  title:"GCC Strategy & Setup",
  description:"Decide, design and launch the right GCC in India: business case, operating model, location and coordinated launch.",
  href:"/services/gcc",
- image:"/images/home-gcc.png",
+ image:"/images/home-ai-gcc.webp",
  },
  {
  title:"AI GCC Services",
@@ -20,13 +20,13 @@ const services = [
  title:"AI Engineering",
  description:"Engineer production AI across Generative AI, Agentic AI, machine learning and data, from proof of value to permanent capability.",
  href:"/services/ai-engineering",
- image:"/images/home-technology.png",
+ image:"/images/tech-data-platform.png",
  },
  {
  title:"AI Delivery Teams",
  description:"Deploy dedicated AI engineering teams, delivery pods and forward-deployed engineers that own production outcomes.",
  href:"/services/ai-delivery-teams",
- image:"/images/home-talent.png",
+ image:"/images/tech-product-engineering.png",
  },
 ];
 

@@ -12,7 +12,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SectionHeader from "@/components/ui/SectionHeader";
 import HiringPathCards from "@/components/ai-talent/HiringPathCards";
-import ContextAdvisoryCallout from "@/components/shared/ContextAdvisoryCallout";
+import IndustryCTA from "@/components/shared/IndustryCTA";
 import Consultation from "@/features/home/components/Consultation";
 
 const sectorPaths = [
@@ -245,7 +245,7 @@ export default function Industries() {
                 <div className="flex flex-wrap items-center gap-3 text-left">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs sm:text-[13px] font-bold font-manrope tracking-tight px-6 py-3 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer shrink-0"
+                    className="btn-navy shrink-0"
                   >
                     <span>Discuss Your Industry Context</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
@@ -446,12 +446,21 @@ export default function Industries() {
           </div>
         </section>
 
-        {/* ── 7. CONTEXT ADVISORY CALLOUT (Replaced repetition with reusable component) ── */}
-        <ContextAdvisoryCallout
+        {/* ── 7. INDUSTRY CTA (ExecutiveCTA with mobile labels) ── */}
+        <IndustryCTA
+          eyebrow="• TAKE THE NEXT STEP"
           title="Want to see how this applies to your industry?"
           description="We'll walk through relevant patterns, trade-offs, and decisions from comparable engagements — and design an approach that fits your sector's regulatory and operational reality."
-          buttonText="Speak to an Industry GCC Advisor"
-          buttonHref="/contact"
+          primaryCta={{
+            label: "Speak to an Industry GCC Advisor",
+            mobileLabel: "Speak to an Advisor",
+            href: "/contact",
+          }}
+          secondaryCta={{
+            label: "Explore Cost Calculator",
+            mobileLabel: "Cost calculator",
+            href: "/gcc-cost-calculator",
+          }}
         />
 
         {/* ── 8. LET'S BUILD TOGETHER (Home Consultation with Wave Divider) ── */}

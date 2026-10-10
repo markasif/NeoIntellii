@@ -1601,7 +1601,7 @@ export default function GCCCapabilitiesMosaic() {
                           {/* Primary Button */}
                           <Link
                             to={activeCap.primaryCta.href}
-                            className="inline-flex items-center justify-center rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs sm:text-sm font-bold tracking-tight px-4 sm:px-5 py-2.5 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer shrink-0 whitespace-nowrap"
+                            className="btn-navy shrink-0"
                           >
                             <span>{activeCap.primaryCta.label}</span>
                             <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
@@ -1754,7 +1754,7 @@ export default function GCCCapabilitiesMosaic() {
                 <div className="relative z-10 flex flex-col gap-2 pt-1">
                   <Link
                     to={cap.primaryCta.href}
-                    className="inline-flex items-center justify-center rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs font-bold tracking-tight px-4 py-2.5 transition-all duration-200 shadow-sm"
+                    className="btn-navy w-full"
                   >
                     <span>{cap.primaryCta.mobileLabel ?? cap.primaryCta.label}</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />

@@ -151,6 +151,7 @@ export default function SetupOperations() {
         width="wide"
         align="center"
         lead="An AI team without the right development, training and inference environment is a hiring cost with no output. Compute is scoped with the mandate, not after the engineers arrive."
+        wavesOnMobile
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto text-left mt-6 sm:mt-8">
           {/* Left Side: Pill tags with white border */}

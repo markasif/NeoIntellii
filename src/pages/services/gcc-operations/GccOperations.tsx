@@ -26,7 +26,6 @@ import {
   TrendingUp,
   ScanEye,
   Infinity as InfinityIcon,
-  Calculator,
   IndianRupee,
   BarChart3,
   Briefcase,
@@ -390,6 +389,7 @@ export default function GccOperations() {
       <OpsSection
         id="why-the-operating-layer-matters"
         theme="navy"
+        wavesOnMobile
         eyebrow="OPERATIONAL REALITY"
         title="Building the center is only the beginning."
         intro="The launch programme ends on go-live. The operating load begins the same day, and it grows with every hire, every new system and every new mandate. Most of it is invisible to headquarters until something breaks."
@@ -418,6 +418,7 @@ export default function GccOperations() {
         align="center"
         width="wide"
         theme="navy"
+        wavesOnMobile
       >
         <OperatingArchitecture />
       </OpsSection>
@@ -461,6 +462,7 @@ export default function GccOperations() {
       <OpsSection
         id="managed-bot-captive"
         theme="navy"
+        wavesOnMobile
         eyebrow="BOT TRANSITION"
         title={
           <>
@@ -873,16 +875,10 @@ export default function GccOperations() {
             <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-1">
               <Link
                 to={PILLAR_LINKS.costCalculator}
-                className="inline-flex items-center gap-3.5 bg-[#09224E] hover:bg-[#0C2B60] text-white px-5 sm:px-6 py-3.5 rounded-2xl font-medium text-sm sm:text-[15px] shadow-[0_8px_20px_rgba(9,34,78,0.18)] hover:shadow-[0_10px_24px_rgba(9,34,78,0.25)] transition-all group shrink-0"
+                className="btn-navy group shrink-0"
               >
-                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white/90 shrink-0">
-                  <Calculator className="w-5 h-5 stroke-[1.75]" />
-                </div>
-                <div className="text-left leading-tight">
-                  <div>Estimate the operating cost</div>
-                  <div className="text-white/80 text-xs sm:text-sm">of an India GCC</div>
-                </div>
-                <ArrowRight className="w-4 h-4 ml-2 text-[#00A3E0] transition-transform group-hover:translate-x-1 shrink-0" />
+                <span>Estimate the operating cost of an India GCC</span>
+                <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0 transition-transform group-hover:translate-x-0.5" />
               </Link>
 
               <Link

@@ -96,7 +96,7 @@ function renderButton(btn: ExecutiveCtaButton, isPrimary: boolean) {
  * Canonical Dark Executive CTA Component.
  *
  * Matches the flagship NeoIntelli closing banner:
- * - Rounded 3xl dark navy card (from-[#0C3262]/85 via-[#08234B]/90 to-[#051836])
+ * - Rounded 3xl dark navy card (from-[#081B3E] via-[#0A224E] to-[#061530])
  * - Subtle technical blueprint grid
  * - Atmospheric cyan and blue radial glows
  * - Distinctive monospaced eyebrow tag
@@ -114,7 +114,6 @@ export default function ExecutiveCTA({
   className = "",
   cardClassName = "",
   id,
-  ambientGlowColor = "bg-[#169DC8]/20",
 }: ExecutiveCTAProps) {
   const headingId = id ? `${id}-heading` : undefined;
   const footerNote = footnote ?? bottomText;
@@ -125,8 +124,6 @@ export default function ExecutiveCTA({
       aria-labelledby={headingId}
       className={`relative px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-14 lg:py-16 bg-transparent overflow-hidden select-none ${className}`}
     >
-      <AmbientGlow position="center" color={ambientGlowColor} />
-
       <div
         className={`relative max-w-5xl mx-auto overflow-hidden rounded-3xl bg-gradient-to-b from-[#081B3E] via-[#0A224E] to-[#061530] border border-[#16427D]/60 px-6 sm:px-12 md:px-16 py-12 sm:py-16 md:py-20 text-center text-white ${cardClassName}`}
       >

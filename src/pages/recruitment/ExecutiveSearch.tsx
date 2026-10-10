@@ -205,6 +205,7 @@ export default function ExecutiveSearch() {
         theme="navy"
         width="wide"
         align="center"
+        wavesOnMobile
       >
         <IndustryChallengesGrid items={rolesSearched} />
       </Section>

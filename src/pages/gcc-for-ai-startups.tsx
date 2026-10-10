@@ -191,7 +191,7 @@ export default function GCCForAIStartups() {
                     href={CAL_BOOKING_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs sm:text-[13px] font-bold tracking-tight px-4 sm:px-5 py-2 sm:py-2.5 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer shrink-0"
+                    className="btn-navy shrink-0"
                   >
                     <span>Extend Your Runway — Book Call</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />

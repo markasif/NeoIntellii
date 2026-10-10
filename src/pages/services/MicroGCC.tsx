@@ -181,7 +181,7 @@ export default function MicroGCC() {
                 <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-left">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center rounded-full bg-[#0D244D] hover:bg-[#008EC4] text-white text-xs sm:text-[13px] font-bold tracking-tight px-4 sm:px-5 py-2 sm:py-2.5 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer shrink-0"
+                    className="btn-navy shrink-0"
                   >
                     <span>Book a 30-min scoping call</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
@@ -395,7 +395,7 @@ export default function MicroGCC() {
           </div>
 
           {/* Architectural Transition Banner */}
-          <div className="mt-10 sm:mt-12 p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-[#001844] text-white border border-[#20528E]/40 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 shadow-md text-left">
+          <div className="mt-10 sm:mt-12 p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-[#001844] text-white border border-[#16427D]/40 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 shadow-md text-left">
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-xl bg-[#008EC4]/20 border border-[#008EC4]/40 flex items-center justify-center text-[#38BDF8] shrink-0 mt-0.5">
                 <Layers className="w-5 h-5" />
@@ -641,6 +641,7 @@ export default function MicroGCC() {
           theme="navy"
           width="wide"
           align="center"
+          wavesOnMobile
         >
           <AlternatingStepList items={phases} className="mt-6 sm:mt-10" />
         </Section>
@@ -913,7 +914,7 @@ export default function MicroGCC() {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="group relative flex flex-col justify-between w-full h-full min-h-[175px] sm:min-h-[190px] p-5 rounded-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8] focus-visible:ring-offset-2 bg-gradient-to-b from-[#0C3262] via-[#08234B] to-[#051836] border border-[#20528E]/70 hover:border-[#38BDF8]/70 backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.14),0_8px_24px_rgba(4,18,43,0.32)] hover:shadow-[0_14px_36px_rgba(22,157,200,0.28)]"
+                  className="group relative flex flex-col justify-between w-full h-full min-h-[175px] sm:min-h-[190px] p-5 rounded-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8] focus-visible:ring-offset-2 bg-gradient-to-b from-[#081B3E] via-[#0A224E] to-[#061530] border border-[#16427D]/70 hover:border-[#38BDF8]/70 backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.14),0_8px_24px_rgba(4,18,43,0.32)] hover:shadow-[0_14px_36px_rgba(22,157,200,0.28)]"
                   style={{
                     clipPath: "polygon(0 0, 100% 0, 100% 100%, 22px 100%, 0 calc(100% - 22px))",
                   }}
@@ -929,7 +930,7 @@ export default function MicroGCC() {
                       y1="2"
                       x2="22"
                       y2="24"
-                      stroke="#20528E"
+                      stroke="#16427D"
                       strokeOpacity={0.75}
                       strokeWidth="1.5"
                       className="group-hover:stroke-[#38BDF8] transition-colors"

@@ -114,7 +114,7 @@ export default function InteractiveNumberCards({
                   </>
                 ) : (
                   <>
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#0C3262] via-[#08234B] to-[#051836]" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#081B3E] via-[#0A224E] to-[#061530]" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#031926] via-[#083D5C]/40 to-[#0E7490]/25" />
                   </>
                 )}

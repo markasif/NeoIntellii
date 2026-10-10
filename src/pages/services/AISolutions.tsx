@@ -532,6 +532,7 @@ export default function AISolutions() {
         width="wide"
         align="center"
         lead="Four layers have to work together. Hiring fills one of them."
+        wavesOnMobile
       >
         <AiGccArchitecture />
       </Section>
@@ -570,6 +571,7 @@ export default function AISolutions() {
         width="wide"
         align="center"
         lead="AI talent is scarce. Poor screening makes that scarcity even more expensive. Every AI GCC hire runs through one calibrated flow."
+        wavesOnMobile
       >
         <UniversalLifecycle
           theme="navy"

@@ -434,7 +434,7 @@ export default function PillFeatureCardGrid({
         );
 
         const cardStyle = isNavy
-          ? "rounded-[28px] sm:rounded-[32px] bg-gradient-to-b from-[#0C3262]/85 via-[#08234B]/90 to-[#051836] border border-[#20528E]/70 hover:border-[#38BDF8]/70 backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.12),0_8px_24px_rgba(4,18,43,0.32)] hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8]"
+          ? "rounded-[28px] sm:rounded-[32px] bg-gradient-to-b from-[#081B3E]/85 via-[#0A224E]/90 to-[#061530] border border-[#16427D]/70 hover:border-[#38BDF8]/70 backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.12),0_8px_24px_rgba(4,18,43,0.32)] hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8]"
           : "rounded-[28px] sm:rounded-[32px] border border-[#CFE4F6] bg-gradient-to-b from-[#F8FBFE] via-white to-[#F2F8FE] shadow-[0_4px_24px_rgba(13,48,108,0.06)] hover:border-[#99CCF0] hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#008EC4]";
 
         return (

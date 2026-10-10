@@ -45,7 +45,7 @@ export default function MarqueePillButton({
 
   const variantStyles =
     variant === "navy"
-      ? "border-[#20528E]/80 bg-[#0C3262]/70 text-[#38BDF8] hover:bg-[#008EC4] hover:border-[#008EC4] hover:text-white"
+      ? "border-[#16427D]/80 bg-[#081B3E]/70 text-[#38BDF8] hover:bg-[#008EC4] hover:border-[#008EC4] hover:text-white"
       : variant === "solid"
       ? "border-[#008EC4] bg-[#008EC4] text-white hover:bg-[#0D306C] hover:border-[#0D306C]"
       : "border-[#00A3E0] bg-white/95 text-[#0D306C] hover:bg-[#008EC4] hover:border-[#008EC4] hover:text-white";

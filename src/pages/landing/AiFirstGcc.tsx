@@ -25,9 +25,6 @@ import { ScrollReveal, StaggerContainer, staggerItem } from "@/components/animat
 import { CAL_BOOKING_URL } from "@/lib/constants";
 import CapabilityMarquee from "@/components/landing/ai-first-gcc/CapabilityMarquee";
 import PodsCarousel from "@/components/landing/ai-first-gcc/PodsCarousel";
-import cardAi from "@/assets/landing/ai-first-gcc/card-ai.jpg";
-import cardSetup from "@/assets/landing/ai-first-gcc/card-setup.jpg";
-import cardMicro from "@/assets/landing/ai-first-gcc/card-micro.jpg";
 
 const NAV_LINKS = [
   { label: "What we do", href: "#what-we-do" },
@@ -48,7 +45,7 @@ const TRUST = [
 
 const CARDS = [
   {
-    image: cardAi,
+    image: "/images/landing/ai-first-gcc/card-ai.jpg",
     chip: "AI-FIRST GCC",
     title: "AI built into the operating model",
     body:
@@ -62,7 +59,7 @@ const CARDS = [
     linkLabel: "Explore AI-First GCC",
   },
   {
-    image: cardSetup,
+    image: "/images/landing/ai-first-gcc/card-setup.jpg",
     chip: "GCC SETUP",
     title: "Launch your entity in 12 weeks",
     body:
@@ -76,7 +73,7 @@ const CARDS = [
     linkLabel: "Explore GCC Setup",
   },
   {
-    image: cardMicro,
+    image: "/images/landing/ai-first-gcc/card-micro.jpg",
     chip: "MICRO GCC",
     title: "Start small, prove value fast",
     body:

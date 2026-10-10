@@ -511,6 +511,7 @@ export default function BotTransition() {
         theme="navy"
         align="center"
         width="wide"
+        wavesOnMobile
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 lg:gap-x-12 gap-y-1 sm:gap-y-2 max-w-5xl mx-auto" aria-label="Employee transition areas">
           {employeeAreas.map((item) => (

@@ -201,6 +201,7 @@ export default function Rpo() {
         theme="navy"
         width="wide"
         align="center"
+        wavesOnMobile
       >
         <IndustryChallengesGrid items={engagementModels} />
       </Section>

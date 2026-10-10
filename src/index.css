@@ -420,7 +420,38 @@
     color: #ffffff !important;
   }
 
-  /* Uniform compact pill sizing on mobile so every CTA (gradient, white, cyan)
+  /* Primary navy pill CTA button (matches hero section navy blue button) */
+  .btn-navy,
+  .btn-navy-primary,
+  .btn-navy-blue {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    padding: 0.55rem 1.25rem;
+    border-radius: 9999px;
+    background: #0D244D;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    letter-spacing: -0.01em;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    box-shadow: 0 1px 2px rgba(13, 36, 77, 0.15);
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .btn-navy:hover,
+  .btn-navy-primary:hover,
+  .btn-navy-blue:hover {
+    background: #008EC4;
+    transform: translateY(-1px);
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0, 142, 196, 0.25);
+  }
+
+  /* Uniform compact pill sizing on mobile so every CTA (gradient, white, cyan, navy)
      and the card button (btn-cyan-compact) shares the same size and padding. */
   @media (max-width: 767px) {
     .btn-gradient,
@@ -429,7 +460,10 @@
     .btn-white-primary,
     .btn-cyan,
     .btn-cyan-primary,
-    .btn-cyan-compact {
+    .btn-cyan-compact,
+    .btn-navy,
+    .btn-navy-primary,
+    .btn-navy-blue {
       padding: 0.45rem 0.9rem !important;
       font-size: 0.75rem !important;
       line-height: 1.1rem !important;
