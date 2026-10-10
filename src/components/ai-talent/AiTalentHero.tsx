@@ -121,7 +121,7 @@ export default function AiTalentHero({
             {/* CTAs - Locked on ONE LINE on mobile */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-3 text-left w-full">
               {/* Primary & Secondary Buttons: strictly ONE LINE on mobile */}
-              <div className="flex flex-nowrap items-center gap-2 sm:gap-3 max-w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden py-0.5 shrink-0">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 shrink-0 py-0.5">
                 {primaryCta.href.startsWith("http") ? (
                   <a
                     href={primaryCta.href}

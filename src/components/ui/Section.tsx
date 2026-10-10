@@ -94,7 +94,7 @@ export default function Section({
     >
       {/* ── TOP ORGANIC WAVE SECTION DIVIDER (Light -> Navy) ─────────── */}
       {isNavy && (
-        <div className="absolute -top-[2px] sm:-top-[3px] inset-x-0 z-20 pointer-events-none leading-none w-full overflow-hidden select-none">
+        <div className="absolute -top-[2px] sm:-top-[3px] inset-x-0 z-20 pointer-events-none leading-none w-full overflow-hidden select-none hidden sm:block">
           <svg
             viewBox="0 0 1440 140"
             fill="none"
@@ -150,7 +150,7 @@ export default function Section({
 
       {/* ── BOTTOM ORGANIC WAVE SECTION DIVIDER (Navy -> Light) ──────── */}
       {isNavy && (
-        <div className="absolute -bottom-[2px] sm:-bottom-[3px] inset-x-0 z-20 pointer-events-none leading-none w-full overflow-hidden select-none">
+        <div className="absolute -bottom-[2px] sm:-bottom-[3px] inset-x-0 z-20 pointer-events-none leading-none w-full overflow-hidden select-none hidden sm:block">
           <svg
             viewBox="0 0 1440 120"
             fill="none"

@@ -127,7 +127,7 @@ export default function GccOperationsHero({
 
           {/* Action CTAs: Locked on ONE LINE across mobile, tablet & desktop */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-start gap-2.5 sm:gap-3 lg:gap-3.5 w-full mb-1">
-            <div className="flex flex-nowrap items-center gap-2 sm:gap-3 max-w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden py-0.5 shrink-0">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 shrink-0 py-0.5">
               {/* Primary Button: Discuss My GCC Operations */}
               <a
                 href={gccOpsBookingHref("hero")}

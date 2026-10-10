@@ -420,9 +420,15 @@
     color: #ffffff !important;
   }
 
-  /* Compact cyan pill for card CTAs — smaller on mobile where the full-size
-     pill reads too large (used by the home Industries card buttons). */
+  /* Uniform compact pill sizing on mobile so every CTA (gradient, white, cyan)
+     and the card button (btn-cyan-compact) shares the same size and padding. */
   @media (max-width: 767px) {
+    .btn-gradient,
+    .btn-gradient-primary,
+    .btn-white,
+    .btn-white-primary,
+    .btn-cyan,
+    .btn-cyan-primary,
     .btn-cyan-compact {
       padding: 0.45rem 0.9rem !important;
       font-size: 0.75rem !important;
