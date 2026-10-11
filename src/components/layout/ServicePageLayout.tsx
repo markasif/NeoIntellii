@@ -58,7 +58,7 @@ export default function ServicePageLayout({
     <div
       className={`min-h-screen bg-[#E7EDF9] text-[#2B3D66] font-sans antialiased selection:bg-[#00A3E0]/20 selection:text-[#0D306C] ${className}`.trim()}
     >
-      <Navbar />
+      <Navbar appearance="dark" />
       {children}
       {!hideConsultation && (
         <Consultation

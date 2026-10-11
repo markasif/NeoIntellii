@@ -2176,8 +2176,6 @@ function CardIllustration({ index, variant }: { index: number; variant: Capabili
  */
 function CapabilityCard({
   item,
-  index,
-  variant,
 }: {
   item: CapabilityItem;
   index: number;
@@ -2187,29 +2185,38 @@ function CapabilityCard({
   const description = item.desc || item.body || "";
 
   return (
-    <div className="rounded-2xl border border-[#DCE8F4] bg-white p-3.5 sm:p-4 pb-1 sm:pb-1.5 flex flex-col justify-between text-left hover:border-[#008EC4]/50 hover:-translate-y-1 transition-all duration-300 group overflow-hidden relative">
-      <div>
-        {/* Header: Upgraded Premium Logo Badge and Title */}
-        <div className="flex items-center gap-2.5 sm:gap-3 mb-2.5">
-          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl relative flex items-center justify-center shrink-0 bg-gradient-to-br from-[#0B2554] via-[#081E44] to-[#04122C] border border-[#38BDF8]/40 group-hover:border-[#00E5FF] group-hover:scale-105 group-hover:bg-gradient-to-br group-hover:from-[#0D306C] group-hover:to-[#008EC4] transition-all duration-300">
-            {/* Ambient glass top sheen */}
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-white/15 to-transparent pointer-events-none" />
-            <Icon className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-[#38BDF8] stroke-[2] drop-shadow-[0_0_6px_rgba(56,189,248,0.6)] group-hover:text-white group-hover:scale-110 transition-all duration-300 relative z-10" />
-          </div>
+    <div className="rounded-2xl sm:rounded-[22px] border border-[#169DC8]/50 bg-gradient-to-b from-[#0F2E64] via-[#081F46] to-[#041126] p-5 sm:p-6 flex flex-col justify-between text-center shadow-[0_12px_32px_rgba(4,18,44,0.5)] hover:shadow-[0_16px_44px_rgba(0,194,255,0.25)] hover:border-[#00E5FF] hover:-translate-y-1 transition-all duration-300 group overflow-hidden relative min-h-[190px] sm:min-h-[210px]">
+      {/* Top ambient cyan-blue radial sheen */}
+      <div className="absolute inset-x-0 top-0 h-32 bg-[radial-gradient(ellipse_85%_55%_at_50%_0%,rgba(0,194,255,0.22),transparent_70%)] pointer-events-none" />
 
-          <h3 className="text-[#0D244D] font-extrabold text-[12.5px] sm:text-[13.5px] leading-snug tracking-tight line-clamp-2 flex-1 min-w-0">
-            {item.title}
-          </h3>
+      {/* Diagonal striped texture in bottom-left corner */}
+      <div className="absolute bottom-0 left-0 w-24 h-24 pointer-events-none opacity-20 overflow-hidden select-none">
+        <svg viewBox="0 0 100 100" className="w-full h-full" fill="none">
+          <path
+            d="M-20 60 L60 -20 M-10 70 L70 -10 M0 80 L80 0 M10 90 L90 10 M20 100 L100 20 M30 110 L110 30"
+            stroke="#38BDF8"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+        </svg>
+      </div>
+
+      <div className="relative z-10 flex flex-col items-center flex-1 justify-center my-auto">
+        {/* Top Center Icon */}
+        <div className="flex justify-center items-center mb-3">
+          <Icon className="w-8 h-8 sm:w-9 sm:h-9 text-white stroke-[1.8] drop-shadow-[0_2px_12px_rgba(0,194,255,0.5)] group-hover:scale-110 transition-transform duration-300" />
         </div>
 
-        {/* Text */}
-        <p className="text-[#505D74] text-[11px] sm:text-[11.5px] leading-relaxed font-normal line-clamp-3">
+        {/* Heading below icon */}
+        <h3 className="text-white font-extrabold text-[14px] sm:text-[15px] md:text-base leading-snug tracking-tight text-center mb-2.5 font-manrope">
+          {item.title}
+        </h3>
+
+        {/* Description below heading */}
+        <p className="text-slate-200 text-[11.5px] sm:text-[12px] md:text-[12.5px] leading-relaxed font-normal text-center px-1 sm:px-2 max-w-sm mx-auto">
           {description}
         </p>
       </div>
-
-      {/* Bespoke contextual vector illustration at card bottom */}
-      <CardIllustration index={index} variant={variant} />
     </div>
   );
 }
@@ -2228,16 +2235,24 @@ export default function CapabilityGrid({
   // If variant is workstreams and items has 11, use hub illustrations seamlessly
   const effectiveVariant = (variant === "workstreams" && items.length === 11) ? "hub" : variant;
 
-  // Determine row pattern
+  // Determine row pattern (respects explicitly passed rowPattern, otherwise uses instance/count-specific pattern)
   const pattern = rowPattern ?? (
     (effectiveVariant === "hub" || items.length === 11)
       ? [4, 4, 3]
-      : effectiveVariant === "workstreams" && items.length === 10
+      : (effectiveVariant === "workstreams" && items.length === 10) || items.length === 10
       ? [4, 3, 3]
       : effectiveVariant === "governance" && items.length === 16
       ? [4, 4, 4, 4]
       : (effectiveVariant === "scale" || effectiveVariant === "performance") && items.length === 17
       ? [4, 4, 4, 5]
+      : items.length === 8
+      ? [4, 4]
+      : items.length === 12
+      ? [4, 4, 4]
+      : items.length === 14
+      ? [5, 4, 5]
+      : items.length === 6
+      ? [3, 3]
       : [5, 4, 5]
   );
 

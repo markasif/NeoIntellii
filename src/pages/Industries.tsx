@@ -1,11 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  ChevronRight,
   ChevronDown,
 } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
@@ -14,6 +12,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import HiringPathCards from "@/components/ai-talent/HiringPathCards";
 import IndustryCTA from "@/components/shared/IndustryCTA";
 import Consultation from "@/features/home/components/Consultation";
+import NeoIntelliHero from "@/components/shared/NeoIntelliHero";
 
 const sectorPaths = [
   {
@@ -183,78 +182,24 @@ export default function Industries() {
 
   return (
     <div className="min-h-screen bg-[#F0F5FA] text-[#2B3D66] font-sans antialiased selection:bg-[#00A3E0]/20 selection:text-[#0D306C] flex flex-col">
-      <Navbar />
+      <Navbar appearance="dark" />
 
       <main className="relative flex-grow">
         {/* ── 1. SIGNATURE EXECUTIVE HERO SECTION ────────────────────────── */}
-        <section
+        <NeoIntelliHero
           id="industries-hero"
-          className="relative w-full hero-viewport-fit flex flex-col justify-center overflow-hidden bg-[#F0F5FA] select-none"
-          aria-label="Industries Executive Hero"
-        >
-          {/* Executive Environment Background */}
-          <div className="absolute inset-0 w-full h-full z-0">
-            <Image
-              src="/images/gcc-operations/hero-bg.jpg"
-              alt="Industries Command Center"
-              fill
-              priority
-              unoptimized
-              sizes="100vw"
-              className="object-cover object-[78%_center] sm:object-[72%_center] lg:object-center"
-            />
-            {/* Soft responsive overlay for mobile readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-transparent lg:hidden pointer-events-none" />
-          </div>
-
-          {/* Top spacer for fixed navbar */}
-          <div className="h-12 sm:h-14 lg:h-16 shrink-0" />
-
-          {/* Hero Content */}
-          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center">
-            {/* Breadcrumbs */}
-            <nav aria-label="Breadcrumb" className="mb-2.5 sm:mb-3 shrink-0">
-              <ol className="flex flex-wrap items-center gap-1.5 text-xs text-[#505D74]">
-                <li className="flex items-center gap-1.5">
-                  <Link to="/" className="hover:text-[#00A3E0] transition-colors">
-                    Home
-                  </Link>
-                  <ChevronRight className="w-3.5 h-3.5 text-[#7B8B9E]" aria-hidden="true" />
-                </li>
-                <li className="flex items-center gap-1.5">
-                  <span aria-current="page" className="font-semibold text-[#0D306C]">
-                    Industries
-                  </span>
-                </li>
-              </ol>
-            </nav>
-
-            {/* Editorial Content Area */}
-            <div className="text-left shrink-0 w-full max-w-5xl">
-              <div className="max-w-xl lg:max-w-2xl">
-
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold font-manrope text-[#0D1B2A] tracking-[-0.035em] leading-[1.12] sm:leading-[1.1] mb-2.5 sm:mb-3 text-left">
-                  Built for enterprises with complex operating realities.
-                </h1>
-
-                <p className="text-xs sm:text-sm md:text-[15px] lg:text-base text-[#415A77] font-normal leading-relaxed mb-4 sm:mb-5 max-w-xl text-left font-sans">
-                  NeoIntelli supports companies across regulated, technology-intensive, and transformation-heavy sectors.
-                </p>
-
-                {/* Primary CTA */}
-                <div className="flex flex-wrap items-center gap-3 text-left">
-                  <Link
-                    to="/contact"
-                    className="btn-navy shrink-0"
-                  >
-                    <span>Discuss Your Industry Context</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+          ariaLabel="Industries Executive Hero"
+          breadcrumbs={[
+            { name: "Home", href: "/" },
+            { name: "Industries" },
+          ]}
+          title="Built for enterprises with complex operating realities."
+          description="NeoIntelli supports companies across regulated, technology-intensive, and transformation-heavy sectors."
+          desktopImage="/hero/industry.webp"
+          mobileImage="/hero/industry-mobile.webp"
+          imageAlt="Industries Command Center"
+          primaryCta={{ label: "Discuss Your Industry Context", href: "/contact" }}
+        />
 
         {/* ── 2. EDITORIAL STATEMENT ──────────────────────────────────── */}
         <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-transparent">

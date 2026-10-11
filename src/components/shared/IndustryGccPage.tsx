@@ -28,11 +28,13 @@ import ConnectedEcosystem from "@/components/shared/ConnectedEcosystem";
 import RelatedLinks from "@/components/shared/RelatedLinks";
 import Consultation from "@/features/home/components/Consultation";
 import StatementSection from "@/components/shared/StatementSection";
+import HeroTrustMarquee from "@/components/shared/HeroTrustMarquee";
 import SlottedStepNumber from "@/components/gcc-operations/SlottedStepNumber";
 import { OperatingRealityCard } from "@/components/gcc-operations/OperatingRealitySection";
 import IndustryChallengesGrid from "@/components/shared/IndustryChallengesGrid";
 import IndustriesSubnav from "@/components/industries/IndustriesSubnav";
 import IndustryCTA from "@/components/shared/IndustryCTA";
+import NeoIntelliHero from "@/components/shared/NeoIntelliHero";
 import { getPageMeta } from "@/lib/pageMeta";
 
 const roleImages = [
@@ -133,84 +135,34 @@ export default function IndustryGccPage({
 
   return (
     <div className="min-h-screen bg-[#F0F5FA] text-[#2B3D66] font-sans antialiased selection:bg-[#00A3E0]/20 selection:text-[#0D306C]">
-      <Navbar />
+      <Navbar appearance="dark" />
 
       <main className="relative">
         {/* ── 1. SIGNATURE EXECUTIVE HERO SECTION ────────────────────────── */}
-        <section
+        <NeoIntelliHero
           id="industry-hero"
-          className="relative w-full hero-viewport-fit flex flex-col justify-center overflow-hidden bg-[#F0F5FA] select-none"
-          aria-label={`${h1} Executive Hero`}
-        >
-          {/* Executive Environment Background */}
-          <div className="absolute inset-0 w-full h-full z-0">
-            <Image
-              src="/images/gcc-operations/hero-bg.jpg"
-              alt={`${h1} Executive View`}
-              fill
-              priority
-              unoptimized
-              sizes="100vw"
-              className="object-cover object-[78%_center] sm:object-[72%_center] lg:object-center"
-            />
-            {/* Soft responsive overlay for mobile readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-transparent lg:hidden pointer-events-none" />
-          </div>
-
-          {/* Top spacer for fixed navbar */}
-          <div className="h-12 sm:h-14 lg:h-16 shrink-0" />
-
-          {/* Hero Content */}
-          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center">
-            {/* Breadcrumbs */}
-            <nav aria-label="Breadcrumb" className="mb-2.5 sm:mb-3 shrink-0">
-              <ol className="flex flex-wrap items-center gap-1.5 text-xs text-[#505D74]">
-                <li className="flex items-center gap-1.5">
-                  <Link to="/" className="hover:text-[#00A3E0] transition-colors">
-                    Home
-                  </Link>
-                  <ChevronRight className="w-3.5 h-3.5 text-[#7B8B9E]" aria-hidden="true" />
-                </li>
-                <li className="flex items-center gap-1.5">
-                  <Link to="/industries" className="hover:text-[#00A3E0] transition-colors">
-                    Industries
-                  </Link>
-                  <ChevronRight className="w-3.5 h-3.5 text-[#7B8B9E]" aria-hidden="true" />
-                </li>
-                <li className="flex items-center gap-1.5">
-                  <span aria-current="page" className="font-semibold text-[#0D306C]">
-                    {breadcrumbLabel}
-                  </span>
-                </li>
-              </ol>
-            </nav>
-
-            {/* Editorial Content Area */}
-            <div className="text-left shrink-0 w-full max-w-5xl">
-              <div className="max-w-xl lg:max-w-2xl">
-
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold font-manrope text-[#0D1B2A] tracking-[-0.035em] leading-[1.12] sm:leading-[1.1] mb-2.5 sm:mb-3 text-left">
-                  {h1}
-                </h1>
-
-                <p className="text-xs sm:text-sm md:text-[15px] lg:text-base text-[#415A77] font-normal leading-relaxed mb-4 sm:mb-5 max-w-xl text-left">
-                  {subheadline}
-                </p>
-
-                {/* CTA Row */}
-                <div className="flex flex-wrap items-center gap-3 text-left">
-                  <Link
-                    to="/contact"
-                    className="btn-navy shrink-0"
-                  >
-                    <span>{ctaText}</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+          ariaLabel={`${h1} Executive Hero`}
+          breadcrumbs={[
+            { name: "Home", href: "/" },
+            { name: "Industries", href: "/industries" },
+            { name: breadcrumbLabel },
+          ]}
+          title={h1}
+          description={subheadline}
+          desktopImage="/hero/industry.webp"
+          mobileImage="/hero/industry-mobile.webp"
+          imageAlt={`${h1} Executive View`}
+          primaryCta={{ label: ctaText, href: "/contact" }}
+          secondaryCta={{ label: "Explore GCC Services", href: "/services/gcc" }}
+          trustStrip={[
+            "Senior-led operations",
+            "Transparent operating model",
+            "Managed → BOT → Captive path",
+            "AI/Data-ready talent engine",
+            "Bengaluru operating capability",
+            "NeoHireX-enabled hiring",
+          ]}
+        />
 
         <IndustriesSubnav />
 
@@ -305,6 +257,7 @@ export default function IndustryGccPage({
           width="wide"
           waveFill="#F0F5FA"
           wavesOnMobile
+          hideTopWave
         >
           <SectionHeader
             title={darkSectionTitle}

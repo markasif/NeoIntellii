@@ -229,14 +229,14 @@ export default function AiDeliveryPod() {
         >
           {/* Comparative Breakdown: Best Suited for a Pod vs. a Dedicated Team */}
           <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto text-left">
-            {/* Card 1: Best suited to an AI Delivery Pod */}
-            <div className="rounded-2xl p-6 sm:p-8 bg-white/95 border border-[#CBD5E1]/70 shadow-xs flex flex-col justify-between">
+            {/* Card 1: Best suited to an AI Delivery Pod (transparent, navy text) */}
+            <div className="flex flex-col justify-between">
               <div>
-                <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#008EC4] mb-3">
-                  <Target className="w-4 h-4 text-[#008EC4]" />
+                <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#169DC8] mb-3">
+                  <Target className="w-4 h-4 text-[#169DC8]" />
                   When an AI Pod is Best Suited
                 </div>
-                <h3 className="text-xl sm:text-2xl font-display font-bold text-[#0D244D] mb-3">
+                <h3 className="text-xl sm:text-2xl font-display font-bold text-[#0D306C] mb-3">
                   Best Suited for: Defined Production Outcomes
                 </h3>
                 <p className="text-sm sm:text-base text-[#505D74] leading-relaxed mb-4">
@@ -244,46 +244,46 @@ export default function AiDeliveryPod() {
                 </p>
                 <ul className="space-y-2.5 text-sm sm:text-[15px] text-[#2B3D66]">
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#008EC4] mt-1 shrink-0" />
-                    <span><strong>Bounded Enterprise Deliverables:</strong> Single autonomous agent workflow, RAG pipeline, or predictive model deployment.</span>
+                    <CheckCircle2 className="w-4 h-4 text-[#169DC8] mt-1 shrink-0" />
+                    <span><strong className="text-[#0D306C]">Bounded Enterprise Deliverables:</strong> Single autonomous agent workflow, RAG pipeline, or predictive model deployment.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#008EC4] mt-1 shrink-0" />
-                    <span><strong>Pre-Agreed Acceptance:</strong> Explicit metrics for latency, accuracy, cost per task, and evaluation regression gates.</span>
+                    <CheckCircle2 className="w-4 h-4 text-[#169DC8] mt-1 shrink-0" />
+                    <span><strong className="text-[#0D306C]">Pre-Agreed Acceptance:</strong> Explicit metrics for latency, accuracy, cost per task, and evaluation regression gates.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#008EC4] mt-1 shrink-0" />
-                    <span><strong>Rapid Ramp & Handover:</strong> 12 to 24 week delivery sprint followed by seamless knowledge transfer or team transfer.</span>
+                    <CheckCircle2 className="w-4 h-4 text-[#169DC8] mt-1 shrink-0" />
+                    <span><strong className="text-[#0D306C]">Rapid Ramp &amp; Handover:</strong> 12 to 24 week delivery sprint followed by seamless knowledge transfer or team transfer.</span>
                   </li>
                 </ul>
               </div>
             </div>
 
-            {/* Card 2: When a Dedicated AI Team fits better */}
-            <div className="rounded-2xl p-6 sm:p-8 bg-white/95 border border-[#CBD5E1]/70 shadow-xs flex flex-col justify-between">
+            {/* Card 2: When a Dedicated AI Team fits better (navy card) */}
+            <div className="rounded-2xl p-6 sm:p-8 bg-gradient-to-b from-[#081B3E] via-[#0A224E] to-[#061530] border border-[#16427D] shadow-[0_16px_40px_rgba(4,18,43,0.35)] flex flex-col justify-between">
               <div>
-                <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#D97706] mb-3">
-                  <RefreshCw className="w-4 h-4 text-[#D97706]" />
+                <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#38BDF8] mb-3">
+                  <RefreshCw className="w-4 h-4 text-[#38BDF8]" />
                   When a Dedicated Team Fits Better
                 </div>
-                <h3 className="text-xl sm:text-2xl font-display font-bold text-[#0D244D] mb-3">
+                <h3 className="text-xl sm:text-2xl font-display font-bold text-white mb-3">
                   Best Suited for: Ongoing Multi-Quarter Roadmaps
                 </h3>
-                <p className="text-sm sm:text-base text-[#505D74] leading-relaxed mb-4">
+                <p className="text-sm sm:text-base text-[#C5D7F0] leading-relaxed mb-4">
                   Choose a Dedicated AI Engineering Team when work is continuous and architectural context must persist:
                 </p>
-                <ul className="space-y-2.5 text-sm sm:text-[15px] text-[#2B3D66]">
+                <ul className="space-y-2.5 text-sm sm:text-[15px] text-[#E7EDF9]">
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#F59E0B] mt-1 shrink-0" />
-                    <span><strong>Continuous Product Roadmap:</strong> Multiple releases queued sequentially where context handover costs would be high.</span>
+                    <CheckCircle2 className="w-4 h-4 text-[#38BDF8] mt-1 shrink-0" />
+                    <span><strong className="text-white">Continuous Product Roadmap:</strong> Multiple releases queued sequentially where context handover costs would be high.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#F59E0B] mt-1 shrink-0" />
-                    <span><strong>Living Agent Systems:</strong> Autonomous agents and tools that evolve continuously based on production telemetry.</span>
+                    <CheckCircle2 className="w-4 h-4 text-[#38BDF8] mt-1 shrink-0" />
+                    <span><strong className="text-white">Living Agent Systems:</strong> Autonomous agents and tools that evolve continuously based on production telemetry.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#F59E0B] mt-1 shrink-0" />
-                    <span><strong>Deep System Retention:</strong> Retaining the engineers who know how the underlying platform and data pipelines were tuned.</span>
+                    <CheckCircle2 className="w-4 h-4 text-[#38BDF8] mt-1 shrink-0" />
+                    <span><strong className="text-white">Deep System Retention:</strong> Retaining the engineers who know how the underlying platform and data pipelines were tuned.</span>
                   </li>
                 </ul>
               </div>

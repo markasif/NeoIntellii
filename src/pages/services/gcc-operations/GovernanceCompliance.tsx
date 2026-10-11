@@ -609,7 +609,7 @@ export default function GovernanceCompliance() {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto">
           {/* Left Column: GCC Operating Governance */}
-          <div className="pb-8 md:pb-0 md:pr-10 lg:pr-14 border-b md:border-b-0 md:border-r border-[#0D306C]/15 flex flex-col justify-between">
+          <div className="pb-8 md:pb-0 md:pr-10 lg:pr-14 flex flex-col justify-between">
             <div>
               <h3 className="text-[#0D306C] font-extrabold text-xl sm:text-2xl mb-3">
                 GCC operating governance

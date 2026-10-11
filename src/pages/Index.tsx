@@ -21,7 +21,7 @@ export default function Index() {
     <main className="min-h-screen bg-[#E7EDF9] text-[#2B3D66] font-sans antialiased selection:bg-[#169DC8]/20 selection:text-[#2B3D66] overflow-x-clip">
 
       {/* 1. Sticky Header & Navigation */}
-      <Navbar />
+      <Navbar appearance="dark" />
 
       {/* 2. Hero Section (3-Pillar Presentation & GCC Architecture) */}
       <Hero />

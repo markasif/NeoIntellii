@@ -37,6 +37,7 @@ import GccOperationsLayout from "@/components/gcc-operations/GccOperationsLayout
 import OpsSection from "@/components/gcc-operations/OpsSection";
 import CapabilityGrid from "@/components/gcc-operations/CapabilityGrid";
 import InBriefCard from "@/components/gcc-operations/InBriefCard";
+import { OperatingRealityCard } from "@/components/gcc-operations/OperatingRealitySection";
 import AnswerList from "@/components/gcc-operations/AnswerList";
 import SourceNote from "@/components/gcc-operations/SourceNote";
 import VerifiedBadge from "@/components/ui/VerifiedBadge";
@@ -254,8 +255,8 @@ function ExpansionPathLifecycle() {
 
 
 
-{/* 3D Isometric Corner Illustrations for AI Transformation Bridge Cards      */}
-{/* ========================================================================= */}
+{/* 3D Isometric Corner Illustrations for AI Transformation Bridge Cards      */ }
+{/* ========================================================================= */ }
 function BotAssistantGraphic() {
   return (
     <div className="absolute right-0 bottom-0 w-24 sm:w-28 h-24 sm:h-28 pointer-events-none select-none overflow-hidden">
@@ -738,169 +739,24 @@ export default function ScaleExpansion() {
         width="wide"
         wavesOnMobile
       >
-        {/* 3x3 Modular Editorial Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 max-w-7xl mx-auto">
-          {/* Card 1: AI-enabled productivity */}
-          <div className="rounded-none border border-[#BBD6EE] bg-white p-5 sm:p-5.5 relative overflow-hidden flex flex-col justify-between shadow-[0_4px_16px_rgba(5,19,41,0.18)] hover:border-[#008EC4] hover:shadow-[0_8px_24px_rgba(0,142,196,0.15)] hover:-translate-y-0.5 transition-all duration-300">
-            <div>
-              <div className="flex items-center gap-2.5 sm:gap-3 mb-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#EDF6FD] border border-[#D5E8F8] flex items-center justify-center text-[#008EC4] shrink-0">
-                  <Zap className="w-4 h-4 stroke-[1.8]" />
-                </div>
-                <h3 className="text-base sm:text-[16.5px] font-bold text-[#0D244D] leading-snug">
-                  AI-enabled productivity
-                </h3>
-              </div>
-              <p className="text-xs sm:text-[13px] text-[#505D74] leading-relaxed">
-                Engineering, support and operations teams working with AI tools, measured on cycle time and quality.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 2: Workflow redesign and automation */}
-          <div className="rounded-none border border-[#BBD6EE] bg-white p-5 sm:p-5.5 relative overflow-hidden flex flex-col justify-between shadow-[0_4px_16px_rgba(5,19,41,0.18)] hover:border-[#008EC4] hover:shadow-[0_8px_24px_rgba(0,142,196,0.15)] hover:-translate-y-0.5 transition-all duration-300">
-            <div>
-              <div className="flex items-center gap-2.5 sm:gap-3 mb-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#EDF6FD] border border-[#D5E8F8] flex items-center justify-center text-[#008EC4] shrink-0">
-                  <Workflow className="w-4 h-4 stroke-[1.8]" />
-                </div>
-                <h3 className="text-base sm:text-[16.5px] font-bold text-[#0D244D] leading-snug">
-                  Workflow redesign and automation
-                </h3>
-              </div>
-              <p className="text-xs sm:text-[13px] text-[#505D74] leading-relaxed">
-                Eliminate, standardize and automate before adding people to a process.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 3: GenAI and agentic AI */}
-          <div className="rounded-none border border-[#BBD6EE] bg-white p-5 sm:p-5.5 relative overflow-hidden flex flex-col justify-between shadow-[0_4px_16px_rgba(5,19,41,0.18)] hover:border-[#008EC4] hover:shadow-[0_8px_24px_rgba(0,142,196,0.15)] hover:-translate-y-0.5 transition-all duration-300">
-            <div>
-              <div className="flex items-center gap-2.5 sm:gap-3 mb-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#EDF6FD] border border-[#D5E8F8] flex items-center justify-center text-[#008EC4] shrink-0">
-                  <Bot className="w-4 h-4 stroke-[1.8]" />
-                </div>
-                <h3 className="text-base sm:text-[16.5px] font-bold text-[#0D244D] leading-snug">
-                  GenAI and agentic AI
-                </h3>
-              </div>
-              <p className="text-xs sm:text-[13px] text-[#505D74] leading-relaxed">
-                Copilots, assistants and controlled agents built into the center&apos;s own products and operations.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 4: Data capability */}
-          <div className="rounded-none border border-[#BBD6EE] bg-white p-5 sm:p-5.5 relative overflow-hidden flex flex-col justify-between shadow-[0_4px_16px_rgba(5,19,41,0.18)] hover:border-[#008EC4] hover:shadow-[0_8px_24px_rgba(0,142,196,0.15)] hover:-translate-y-0.5 transition-all duration-300">
-            <div>
-              <div className="flex items-center gap-2.5 sm:gap-3 mb-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#EDF6FD] border border-[#D5E8F8] flex items-center justify-center text-[#008EC4] shrink-0">
-                  <Database className="w-4 h-4 stroke-[1.8]" />
-                </div>
-                <h3 className="text-base sm:text-[16.5px] font-bold text-[#0D244D] leading-snug">
-                  Data capability
-                </h3>
-              </div>
-              <p className="text-xs sm:text-[13px] text-[#505D74] leading-relaxed">
-                Data engineering and platform ownership that makes AI and analytics work possible.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 5: Platform ownership */}
-          <div className="rounded-none border border-[#BBD6EE] bg-white p-5 sm:p-5.5 relative overflow-hidden flex flex-col justify-between shadow-[0_4px_16px_rgba(5,19,41,0.18)] hover:border-[#008EC4] hover:shadow-[0_8px_24px_rgba(0,142,196,0.15)] hover:-translate-y-0.5 transition-all duration-300">
-            <div>
-              <div className="flex items-center gap-2.5 sm:gap-3 mb-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#EDF6FD] border border-[#D5E8F8] flex items-center justify-center text-[#008EC4] shrink-0">
-                  <Building2 className="w-4 h-4 stroke-[1.8]" />
-                </div>
-                <h3 className="text-base sm:text-[16.5px] font-bold text-[#0D244D] leading-snug">
-                  Platform ownership
-                </h3>
-              </div>
-              <p className="text-xs sm:text-[13px] text-[#505D74] leading-relaxed">
-                Owning a platform end to end rather than delivering tickets on it.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 6: Upskilling and new operating roles */}
-          <div className="rounded-none border border-[#BBD6EE] bg-white p-5 sm:p-5.5 relative overflow-hidden flex flex-col justify-between shadow-[0_4px_16px_rgba(5,19,41,0.18)] hover:border-[#008EC4] hover:shadow-[0_8px_24px_rgba(0,142,196,0.15)] hover:-translate-y-0.5 transition-all duration-300">
-            <div>
-              <div className="flex items-center gap-2.5 sm:gap-3 mb-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#EDF6FD] border border-[#D5E8F8] flex items-center justify-center text-[#008EC4] shrink-0">
-                  <Users className="w-4 h-4 stroke-[1.8]" />
-                </div>
-                <h3 className="text-base sm:text-[16.5px] font-bold text-[#0D244D] leading-snug">
-                  Upskilling and new operating roles
-                </h3>
-              </div>
-              <p className="text-xs sm:text-[13px] text-[#505D74] leading-relaxed">
-                Reskilling paths for existing teams and a small number of anchors in AI engineering, evaluation and AI governance.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 7: AI Engineering */}
-          <Link
-            to={PILLAR_LINKS.aiEngineering}
-            className="rounded-none border border-[#BBD6EE] bg-white p-5 sm:p-5.5 relative overflow-hidden flex flex-col justify-between shadow-[0_4px_16px_rgba(5,19,41,0.18)] hover:border-[#008EC4] hover:shadow-[0_8px_24px_rgba(0,142,196,0.15)] hover:-translate-y-0.5 transition-all duration-300 group"
-          >
-            <div>
-              <div className="flex items-center gap-2.5 sm:gap-3 mb-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#EDF6FD] border border-[#D5E8F8] flex items-center justify-center text-[#008EC4] shrink-0 group-hover:bg-[#E2F2FC] group-hover:border-[#008EC4]/60 transition-all">
-                  <Code2 className="w-4 h-4 stroke-[1.8]" />
-                </div>
-                <h3 className="text-base sm:text-[16.5px] font-bold text-[#0D244D] leading-snug group-hover:text-[#008EC4] transition-colors">
-                  AI Engineering
-                </h3>
-              </div>
-              <p className="text-xs sm:text-[13px] text-[#505D74] leading-relaxed">
-                Build the AI capability and automate operating processes.
-              </p>
-            </div>
-          </Link>
-
-          {/* Card 8: AI Talent */}
-          <Link
-            to={PILLAR_LINKS.aiTalent}
-            className="rounded-none border border-[#BBD6EE] bg-white p-5 sm:p-5.5 relative overflow-hidden flex flex-col justify-between shadow-[0_4px_16px_rgba(5,19,41,0.18)] hover:border-[#008EC4] hover:shadow-[0_8px_24px_rgba(0,142,196,0.15)] hover:-translate-y-0.5 transition-all duration-300 group"
-          >
-            <div>
-              <div className="flex items-center gap-2.5 sm:gap-3 mb-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#EDF6FD] border border-[#D5E8F8] flex items-center justify-center text-[#008EC4] shrink-0 group-hover:bg-[#E2F2FC] group-hover:border-[#008EC4]/60 transition-all">
-                  <Users className="w-4 h-4 stroke-[1.8]" />
-                </div>
-                <h3 className="text-base sm:text-[16.5px] font-bold text-[#0D244D] leading-snug group-hover:text-[#008EC4] transition-colors">
-                  AI Talent
-                </h3>
-              </div>
-              <p className="text-xs sm:text-[13px] text-[#505D74] leading-relaxed">
-                Find and technically validate the AI, data and platform roles.
-              </p>
-            </div>
-          </Link>
-
-          {/* Card 9: AI GCC */}
-          <Link
-            to={PILLAR_LINKS.aiGcc}
-            className="rounded-none border border-[#BBD6EE] bg-white p-5 sm:p-5.5 relative overflow-hidden flex flex-col justify-between shadow-[0_4px_16px_rgba(5,19,41,0.18)] hover:border-[#008EC4] hover:shadow-[0_8px_24px_rgba(0,142,196,0.15)] hover:-translate-y-0.5 transition-all duration-300 group"
-          >
-            <div>
-              <div className="flex items-center gap-2.5 sm:gap-3 mb-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#EDF6FD] border border-[#D5E8F8] flex items-center justify-center text-[#008EC4] shrink-0 group-hover:bg-[#E2F2FC] group-hover:border-[#008EC4]/60 transition-all">
-                  <Globe className="w-4 h-4 stroke-[1.8]" />
-                </div>
-                <h3 className="text-base sm:text-[16.5px] font-bold text-[#0D244D] leading-snug group-hover:text-[#008EC4] transition-colors">
-                  AI GCC
-                </h3>
-              </div>
-              <p className="text-xs sm:text-[13px] text-[#505D74] leading-relaxed">
-                Build an AI-focused capability center, or turn the existing one into one.
-              </p>
-            </div>
-          </Link>
+        {/* Modular "business card" grid — OperatingRealityCard design (no numbers) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 max-w-7xl mx-auto items-stretch">
+          {[
+            { title: "AI-enabled productivity", desc: "Engineering, support and operations teams working with AI tools, measured on cycle time and quality.", icon: Zap, href: undefined },
+            { title: "Workflow redesign and automation", desc: "Eliminate, standardize and automate before adding people to a process.", icon: Workflow, href: undefined },
+            { title: "GenAI and agentic AI", desc: "Copilots, assistants and controlled agents built into the center's own products and operations.", icon: Bot, href: undefined },
+            { title: "Data capability", desc: "Data engineering and platform ownership that makes AI and analytics work possible.", icon: Database, href: undefined },
+            { title: "Platform ownership", desc: "Owning a platform end to end rather than delivering tickets on it.", icon: Building2, href: undefined },
+            { title: "Upskilling and new operating roles", desc: "Reskilling paths for existing teams and a small number of anchors in AI engineering, evaluation and AI governance.", icon: Users, href: undefined },
+            { title: "AI Engineering", desc: "Build the AI capability and automate operating processes.", icon: Code2, href: PILLAR_LINKS.aiEngineering },
+            { title: "AI Talent", desc: "Find and technically validate the AI, data and platform roles.", icon: Users, href: PILLAR_LINKS.aiTalent },
+            { title: "AI GCC", desc: "Build an AI-focused capability center, or turn the existing one into one.", icon: Globe, href: PILLAR_LINKS.aiGcc },
+          ].map((c) => (
+            <OperatingRealityCard
+              key={c.title}
+              item={{ title: c.title, desc: c.desc, icon: c.icon, href: c.href }}
+            />
+          ))}
         </div>
       </OpsSection>
 

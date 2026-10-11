@@ -156,11 +156,11 @@ export default function CapabilitiesSection({
                 delay: (index % columns) * 0.08,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="group relative overflow-hidden rounded-none bg-white border border-[#D5E1F2] p-6 sm:p-7 shadow-[0_2px_12px_rgba(13,48,108,0.03)] hover:shadow-[0_12px_32px_rgba(13,48,108,0.08)] hover:border-[#1351D8]/40 transition-all duration-300 flex flex-col justify-between text-left"
+              className="group relative overflow-hidden rounded-none bg-white border border-[#D5E1F2] p-6 sm:p-7 shadow-[0_2px_12px_rgba(13,48,108,0.03)] hover:shadow-[0_12px_32px_rgba(13,48,108,0.08)] hover:border-[#1351D8]/40 transition-all duration-300 flex flex-col justify-between text-center md:text-left"
             >
               <div>
-                {/* Icon */}
-                <div className="mb-4">
+                {/* Icon - centered on mobile, left on desktop */}
+                <div className="mb-4 flex items-center justify-center md:justify-start">
                   <Icon className="w-8 h-8 sm:w-9 sm:h-9 text-[#0D306C] stroke-[1.8] transition-transform duration-300 group-hover:scale-105" />
                 </div>
 

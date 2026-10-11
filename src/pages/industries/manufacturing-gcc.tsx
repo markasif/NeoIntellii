@@ -20,6 +20,7 @@ import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import IndustryCTA from "@/components/shared/IndustryCTA";
 import Consultation from "@/features/home/components/Consultation";
+import NeoIntelliHero from "@/components/shared/NeoIntelliHero";
 import StatementSection from "@/components/shared/StatementSection";
 import CapabilitiesSection from "@/components/ai-gcc/CapabilitiesSection";
 import { OperatingRealityCard } from "@/components/gcc-operations/OperatingRealitySection";
@@ -156,85 +157,34 @@ export default function ManufacturingGCC() {
 
   return (
     <div className="min-h-screen bg-[#F0F5FA] text-[#2B3D66] font-sans antialiased selection:bg-[#00A3E0]/20 selection:text-[#0D306C]">
-      <Navbar />
+      <Navbar appearance="dark" />
 
       <main className="relative">
         {/* ── 1. SIGNATURE EXECUTIVE HERO SECTION ────────────────────────── */}
-        <section
+        <NeoIntelliHero
           id="manufacturing-hero"
-          className="relative w-full hero-viewport-fit flex flex-col justify-center overflow-hidden bg-[#F0F5FA] select-none"
-          aria-label="Manufacturing GCC Executive Hero"
-        >
-          {/* Executive Environment Background */}
-          <div className="absolute inset-0 w-full h-full z-0">
-            <Image
-              src="/images/gcc-operations/hero-bg.jpg"
-              alt="Manufacturing Command Center"
-              fill
-              priority
-              unoptimized
-              sizes="100vw"
-              className="object-cover object-[78%_center] sm:object-[72%_center] lg:object-center"
-            />
-            {/* Soft responsive overlay for mobile readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-transparent lg:hidden pointer-events-none" />
-          </div>
-
-          {/* Top spacer for fixed navbar */}
-          <div className="h-12 sm:h-14 lg:h-16 shrink-0" />
-
-          {/* Hero Content */}
-          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center">
-            {/* Breadcrumbs */}
-            <nav aria-label="Breadcrumb" className="mb-2.5 sm:mb-3 shrink-0">
-              <ol className="flex flex-wrap items-center gap-1.5 text-xs text-[#505D74]">
-                <li className="flex items-center gap-1.5">
-                  <Link to="/" className="hover:text-[#00A3E0] transition-colors">
-                    Home
-                  </Link>
-                  <ChevronRight className="w-3.5 h-3.5 text-[#7B8B9E]" aria-hidden="true" />
-                </li>
-                <li className="flex items-center gap-1.5">
-                  <Link to="/industries" className="hover:text-[#00A3E0] transition-colors">
-                    Industries
-                  </Link>
-                  <ChevronRight className="w-3.5 h-3.5 text-[#7B8B9E]" aria-hidden="true" />
-                </li>
-                <li className="flex items-center gap-1.5">
-                  <span aria-current="page" className="font-semibold text-[#0D306C]">
-                    Manufacturing GCC
-                  </span>
-                </li>
-              </ol>
-            </nav>
-
-            {/* Editorial Content Area */}
-            <div className="text-left shrink-0 w-full max-w-5xl">
-              <div className="max-w-xl lg:max-w-2xl">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold font-manrope text-[#0D1B2A] tracking-[-0.035em] leading-[1.12] sm:leading-[1.1] mb-2.5 sm:mb-3 text-left">
-                  Build Your Manufacturing & Industrial GCC in India
-                </h1>
-
-                <p className="text-xs sm:text-sm md:text-[15px] lg:text-base text-[#415A77] font-normal leading-relaxed mb-4 sm:mb-5 max-w-xl text-left">
-                  Build a Manufacturing GCC in India for Industry 4.0, predictive maintenance, supply chain AI, digital twins, and smart factory technology.
-                </p>
-
-                {/* Primary CTA */}
-                <div className="flex flex-wrap items-center gap-3 text-left">
-                  <a
-                    href={CAL_BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-navy shrink-0"
-                  >
-                    <span>Book a consultation</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+          ariaLabel="Manufacturing GCC Executive Hero"
+          breadcrumbs={[
+            { name: "Home", href: "/" },
+            { name: "Industries", href: "/industries" },
+            { name: "Manufacturing GCC" },
+          ]}
+          title="Build Your Manufacturing & Industrial GCC in India"
+          description="Build a Manufacturing GCC in India for Industry 4.0, predictive maintenance, supply chain AI, digital twins, and smart factory technology."
+          desktopImage="/hero/industry.webp"
+          mobileImage="/hero/industry-mobile.webp"
+          imageAlt="Manufacturing Command Center"
+          primaryCta={{ label: "Book a consultation", href: CAL_BOOKING_URL, isExternal: true }}
+          secondaryCta={{ label: "Explore GCC Services", href: "/services/gcc" }}
+          trustStrip={[
+            "Senior-led operations",
+            "Transparent operating model",
+            "Managed → BOT → Captive path",
+            "AI/Data-ready talent engine",
+            "Bengaluru operating capability",
+            "NeoHireX-enabled hiring",
+          ]}
+        />
 
         <IndustriesSubnav />
 
@@ -291,6 +241,7 @@ export default function ManufacturingGCC() {
           width="wide"
           waveFill="#F0F5FA"
           wavesOnMobile
+          hideTopWave
         >
           <SectionHeader
             title="Compliance & Standards Built In"
@@ -354,7 +305,7 @@ export default function ManufacturingGCC() {
                   <div className="pt-2">
                     <Link
                       to="/contact"
-                      className="inline-flex items-center justify-center gap-2.5 rounded-lg px-6 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-medium shadow-md transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 w-full sm:w-auto bg-white text-[#0A1222] hover:bg-slate-100"
+                      className="btn-white"
                     >
                       <span>Discuss a similar engagement</span>
                       <ArrowRight className="h-4 w-4" />

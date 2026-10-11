@@ -132,10 +132,10 @@ export default function ManagedModelComparison() {
               onTouchStart={() => setActivePhase(index)}
               onTouchMove={() => setActivePhase(index)}
               onClick={() => setActivePhase(index)}
-              className={`relative p-5 sm:p-7 lg:p-8 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] lg:min-h-[480px] transition-all duration-500 ease-out cursor-pointer rounded-2xl ${
+              className={`relative p-5 sm:p-7 lg:p-8 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] lg:min-h-[480px] transition-all duration-500 ease-out cursor-pointer rounded-2xl border ${
                 isActive
-                  ? "lg:-my-6 lg:py-11 scale-[1.01] lg:scale-[1.02] shadow-xl text-white z-20 overflow-hidden"
-                  : "bg-white/50 sm:bg-transparent text-slate-900 z-10 shadow-none border border-[#D2DCF0]/40 sm:border-transparent"
+                  ? "lg:-my-6 lg:py-11 scale-[1.01] lg:scale-[1.02] shadow-[0_24px_60px_rgba(4,18,43,0.4)] text-white z-20 overflow-hidden bg-gradient-to-b from-[#0C2A5E]/95 via-[#0A224E] to-[#061530] border-[#16427D]"
+                  : "bg-white text-[#0D306C] shadow-xs border-[#D2DCF0] hover:border-[#169DC8]/50 hover:shadow-md z-10"
               }`}
             >
               {/* ACTIVE STATE BACKGROUND IMAGE & CYAN DUOTONE ARCHITECTURAL WASH */}
@@ -160,8 +160,10 @@ export default function ManagedModelComparison() {
                 {/* Big Numerals 01, 02, 03, 04 in website's typography */}
                 <div className="flex items-center justify-between leading-none">
                   <span
-                    className={`text-6xl sm:text-7xl lg:text-8xl font-sans font-bold tracking-tighter leading-none transition-colors duration-300 select-none ${
-                      isActive ? "text-white" : "text-black"
+                    className={`text-6xl sm:text-7xl lg:text-8xl font-sans font-bold tracking-tighter leading-none transition-all duration-300 select-none ${
+                      isActive
+                        ? "text-white"
+                        : "bg-gradient-to-br from-[#169DC8] via-[#169DC8] to-[#0D306C] bg-clip-text text-transparent"
                     }`}
                   >
                     {mode.number}
@@ -171,14 +173,14 @@ export default function ManagedModelComparison() {
                 {/* Vertical Dotted Track Line under the number matching reference image */}
                 <div
                   className={`w-px h-8 border-l border-dashed my-4 transition-colors duration-300 ${
-                    isActive ? "border-white/60" : "border-slate-300"
+                    isActive ? "border-white/60" : "border-[#169DC8]/60"
                   }`}
                 />
 
                 {/* Phase Title */}
                 <h3
                   className={`text-2xl sm:text-[28px] font-bold tracking-tight mb-3 transition-colors duration-300 ${
-                    isActive ? "text-white" : "text-black"
+                    isActive ? "text-white" : "text-[#0D306C]"
                   }`}
                 >
                   {mode.title}
@@ -187,7 +189,7 @@ export default function ManagedModelComparison() {
                 {/* Lead Description */}
                 <p
                   className={`text-xs sm:text-[13px] leading-relaxed mb-6 font-normal transition-colors duration-300 ${
-                    isActive ? "text-slate-100" : "text-slate-600"
+                    isActive ? "text-slate-100" : "text-[#505D74]"
                   }`}
                 >
                   {mode.desc}
@@ -196,14 +198,14 @@ export default function ManagedModelComparison() {
                 {/* Deliverable Milestones with Arrow Icons matching button icon */}
                 <ul
                   className={`space-y-2.5 pt-4 border-t transition-colors duration-300 ${
-                    isActive ? "border-white/20" : "border-slate-200"
+                    isActive ? "border-white/20" : "border-[#D2DCF0]"
                   }`}
                 >
                   {mode.points.map((pt) => (
                     <li
                       key={pt.label}
                       className={`flex items-start gap-2.5 text-xs sm:text-[13px] font-medium transition-colors duration-300 group/item ${
-                        isActive ? "text-white/95" : "text-slate-700"
+                        isActive ? "text-white/95" : "text-[#2B3D66]"
                       }`}
                     >
                       <ArrowRight
@@ -212,10 +214,10 @@ export default function ManagedModelComparison() {
                         }`}
                       />
                       <div>
-                        <span className={`font-bold ${isActive ? "text-white" : "text-black"}`}>
+                        <span className={`font-bold ${isActive ? "text-white" : "text-[#0D244D]"}`}>
                           {pt.label}:{" "}
                         </span>
-                        <span className={isActive ? "text-white/90" : "text-slate-600"}>{pt.value}</span>
+                        <span className={isActive ? "text-white/90" : "text-[#505D74]"}>{pt.value}</span>
                       </div>
                     </li>
                   ))}

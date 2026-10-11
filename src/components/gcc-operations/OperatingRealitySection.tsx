@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   UserPlus,
@@ -22,12 +23,14 @@ import {
 } from "lucide-react";
 
 export interface OperatingRealityItem {
-  number: string;
+  number?: string;
   title: string;
-  image: string;
+  image?: string;
   icon: LucideIcon;
   /** Optional supporting line. Omitted on the original operating-reality cards. */
   desc?: string;
+  /** Optional route — renders the whole card as a link. */
+  href?: string;
 }
 
 export const operatingRealityItems: OperatingRealityItem[] = [
@@ -171,30 +174,35 @@ export function OperatingRealityIcon({ icon: Icon }: { icon: LucideIcon }) {
 }
 
 export function OperatingRealityCard({ item }: { item: OperatingRealityItem }) {
-  return (
+  const card = (
     <motion.div
       variants={cardVariants}
-      className={`group relative rounded-2xl overflow-hidden border border-[#38BDF8]/25 hover:border-[#38BDF8]/55 bg-[#051329] p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_8px_30px_rgba(22,157,200,0.12)] ${
-        item.desc ? "h-full" : "h-[140px] sm:h-[150px] lg:h-[155px]"
-      }`}
+      className={`group relative rounded-2xl overflow-hidden border border-[#38BDF8]/25 hover:border-[#38BDF8]/55 bg-[#051329] p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_8px_30px_rgba(22,157,200,0.12)] ${item.desc ? "h-full" : "h-[140px] sm:h-[150px] lg:h-[155px]"
+        }`}
     >
-      <OperatingRealityImage src={item.image} alt={item.title} />
+      {item.image && <OperatingRealityImage src={item.image} alt={item.title} />}
 
       {/* Card Content (Relative z-10 to stay crisp above overlay) */}
       <div className="relative z-10 select-none flex flex-col items-start">
-        <span
-          className="font-mono text-2xl sm:text-3xl lg:text-[32px] tracking-tight block leading-none font-bold"
-          style={{
-            WebkitTextStroke: "1.5px #38BDF8",
-            color: "transparent",
-          }}
-        >
-          {item.number}
-        </span>
-        <div className="w-6 sm:w-7 h-[2px] bg-[#38BDF8]/65 mt-1.5 mb-2 rounded-full" />
+        {item.number ? (
+          <>
+            <span
+              className="font-mono text-2xl sm:text-3xl lg:text-[32px] tracking-tight block leading-none font-bold"
+              style={{
+                WebkitTextStroke: "1.5px #38BDF8",
+                color: "transparent",
+              }}
+            >
+              {item.number}
+            </span>
+            <div className="w-6 sm:w-7 h-[2px] bg-[#38BDF8]/65 mt-1.5 mb-2 rounded-full" />
+          </>
+        ) : (
+          <div className="w-6 sm:w-7 h-[2px] bg-[#38BDF8]/65 mb-2 rounded-full" />
+        )}
       </div>
 
-      <div className="relative z-10 max-w-[72%]">
+      <div className="relative z-10 max-w-[80%]">
         <h4 className="text-white font-bold text-sm sm:text-[15px] lg:text-[16px] leading-snug tracking-tight group-hover:text-white transition-colors">
           {item.title}
         </h4>
@@ -208,6 +216,19 @@ export function OperatingRealityCard({ item }: { item: OperatingRealityItem }) {
       <OperatingRealityIcon icon={item.icon} />
     </motion.div>
   );
+
+  if (item.href) {
+    return (
+      <Link
+        to={item.href}
+        className="block h-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#081B3E]"
+      >
+        {card}
+      </Link>
+    );
+  }
+
+  return card;
 }
 
 export function OperatingRealityStatement({

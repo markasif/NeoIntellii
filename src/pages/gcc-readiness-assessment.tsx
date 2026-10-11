@@ -421,7 +421,7 @@ export default function GCCReadinessAssessment() {
               {/* ============================================================ */}
               {/* LEFT COLUMN: Assessment Steps Tracker (Same length as right div) */}
               {/* ============================================================ */}
-              <aside className="lg:col-span-4 xl:col-span-4 flex flex-col h-full">
+              <aside className="hidden lg:flex lg:col-span-4 xl:col-span-4 flex-col h-full">
                 <div className="h-full p-6 sm:p-7 shadow-xs flex flex-col justify-between relative overflow-hidden">
                   {/* Top Milestones Header */}
                   <div className="mb-4 pb-3.5 border-b border-[#E2E8F0] shrink-0">
@@ -531,6 +531,76 @@ export default function GCCReadinessAssessment() {
               {/* RIGHT COLUMN: Executive Navy Console (Rectangle Shape) */}
               {/* ============================================================ */}
               <div className="lg:col-span-8 xl:col-span-8 min-w-0 flex flex-col">
+                {/* MOBILE TOP STEPPER CARD: Clean, compact horizontal progress */}
+                <div className="block lg:hidden bg-white rounded-2xl border border-[#D2DCF0] p-4 sm:p-5 shadow-xs mb-6">
+                  {/* Top row with Question indicator & percent */}
+                  <div className="flex items-center justify-between gap-2 mb-2 pb-2.5 border-b border-[#E2E8F0]">
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xs sm:text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#008EC4]">
+                        {showResults ? "ASSESSMENT RESULTS" : `QUESTION 0${currentStep + 1} OF 08`}
+                      </span>
+                    </div>
+                    <span className="text-2xs font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#00A3E0]/15 text-[#008EC4] border border-[#00A3E0]/30 tabular-nums">
+                      {showResults
+                        ? "100% COMPLETE"
+                        : `${Math.round(((currentStep + (answers[QUESTION_STEPS[currentStep]?.id] !== undefined ? 1 : 0)) / 8) * 100)}% COMPLETE`}
+                    </span>
+                  </div>
+
+                  {/* Current Question Milestone Title */}
+                  <div className="mb-3">
+                    <h3 className="text-sm sm:text-base font-extrabold font-manrope text-[#0D306C] tracking-tight">
+                      {showResults ? "Readiness Milestones Completed" : QUESTION_STEPS[currentStep]?.title}
+                    </h3>
+                    <p className="text-2xs text-[#505D74] mt-0.5 font-sans">
+                      {showResults
+                        ? "Review your objective score and strategic feasibility report below."
+                        : QUESTION_STEPS[currentStep]?.short}
+                    </p>
+                  </div>
+
+                  {/* 8-segment horizontal progress bar */}
+                  <div className="space-y-2">
+                    <div className="grid grid-cols-8 gap-1.5 w-full">
+                      {QUESTION_STEPS.map((s, idx) => {
+                        const isAnswered = answers[s.id] !== undefined;
+                        const isCurrent = idx === currentStep && !showResults;
+                        return (
+                          <button
+                            key={s.id}
+                            type="button"
+                            disabled={!isAnswered && !isCurrent}
+                            onClick={() => {
+                              if (isAnswered) {
+                                setDirection(idx < currentStep ? -1 : 1);
+                                setCurrentStep(idx);
+                                setShowResults(false);
+                                scrollToAssessment();
+                              }
+                            }}
+                            title={`Step ${s.stepNum}: ${s.title}`}
+                            className={`h-2.5 rounded-full transition-all cursor-pointer ${
+                              isAnswered
+                                ? "bg-[#10B981] hover:bg-[#059669]"
+                                : isCurrent
+                                ? "bg-[#00A3E0] ring-2 ring-[#00A3E0]/30 shadow-xs"
+                                : "bg-[#E2E8F0]"
+                            }`}
+                          />
+                        );
+                      })}
+                    </div>
+
+                    <div className="flex items-center justify-between text-3xs font-mono font-semibold text-[#505D74]">
+                      <span>Q1: Revenue</span>
+                      <span className="text-[#008EC4] font-bold">
+                        {showResults ? "8/8 Done" : `Step ${currentStep + 1} of 8`}
+                      </span>
+                      <span>Q8: Sector</span>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="h-full bg-[#012048] p-6 sm:p-8 lg:p-10 text-white relative overflow-hidden border border-[#1E3A8A] flex flex-col justify-between">
                   {/* Faceted geometric watermark in the top-right corner */}
                   <div

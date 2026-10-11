@@ -57,6 +57,19 @@
   animation: ai-marquee 45s linear infinite;
 }
 
+@keyframes hero-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-hero-marquee {
+  animation: hero-marquee 24s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-marquee {
+    animation: none;
+  }
+}
+
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
@@ -395,6 +408,70 @@
     color: #0D244D !important;
   }
 
+  /* ==========================================================================
+     HERO SECTION BUTTON VISIBILITY RULES
+     - On mobile screens (< 640px): strictly hide secondary white buttons & tertiary links.
+     - On big screens (>= 640px): ALWAYS SHOW secondary white buttons & tertiary links.
+     ========================================================================== */
+  @media (max-width: 639px) {
+    /* Mobile hero sections: Strictly show ONLY the primary navy blue button */
+    [data-secondary-cta],
+    [data-tertiary-cta],
+    section[id*="hero"] [data-secondary-cta],
+    section[id*="hero"] [data-tertiary-cta],
+    section[aria-label*="Hero"] [data-secondary-cta],
+    section[aria-label*="Hero"] [data-tertiary-cta],
+    .hero-viewport-fit [data-secondary-cta],
+    .hero-viewport-fit [data-tertiary-cta],
+    #hero [data-secondary-cta],
+    #hero [data-tertiary-cta],
+    section[id*="hero"] .btn-white,
+    section[id*="hero"] .btn-white-primary,
+    section[aria-label*="Hero"] .btn-white,
+    section[aria-label*="Hero"] .btn-white-primary,
+    .hero-viewport-fit .btn-white,
+    .hero-viewport-fit .btn-white-primary,
+    #hero .btn-white,
+    #hero .btn-white-primary {
+      display: none !important;
+    }
+
+    /* Mobile hero exception: white button explicitly designated for mobile hero */
+    [data-mobile-cta],
+    .btn-white[data-mobile-cta],
+    section[id*="hero"] .btn-white[data-mobile-cta],
+    section[aria-label*="Hero"] .btn-white[data-mobile-cta] {
+      display: inline-flex !important;
+    }
+  }
+
+  @media (min-width: 640px) {
+    /* Big screens (desktop, laptop, tablet): NEVER remove the secondary white button */
+    [data-secondary-cta],
+    section[id*="hero"] [data-secondary-cta],
+    section[aria-label*="Hero"] [data-secondary-cta],
+    .hero-viewport-fit [data-secondary-cta],
+    #hero [data-secondary-cta],
+    section[id*="hero"] .btn-white,
+    section[id*="hero"] .btn-white-primary,
+    section[aria-label*="Hero"] .btn-white,
+    section[aria-label*="Hero"] .btn-white-primary,
+    .hero-viewport-fit .btn-white,
+    .hero-viewport-fit .btn-white-primary,
+    #hero .btn-white,
+    #hero .btn-white-primary {
+      display: inline-flex !important;
+    }
+
+    [data-tertiary-cta],
+    section[id*="hero"] [data-tertiary-cta],
+    section[aria-label*="Hero"] [data-tertiary-cta],
+    .hero-viewport-fit [data-tertiary-cta],
+    #hero [data-tertiary-cta] {
+      display: inline-flex !important;
+    }
+  }
+
   /* Primary cyan pill CTA button (like .btn-white, but cyan) */
   .btn-cyan,
   .btn-cyan-primary {
@@ -428,7 +505,7 @@
     align-items: center;
     justify-content: center;
     gap: 0.375rem;
-    padding: 0.55rem 1.25rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 9999px;
     background: #0D244D;
     color: #ffffff !important;

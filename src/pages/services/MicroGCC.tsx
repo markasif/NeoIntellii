@@ -16,15 +16,16 @@ import {
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Consultation from "@/features/home/components/Consultation";
+import NeoIntelliHero from "@/components/shared/NeoIntelliHero";
 import Section from "@/components/ai-gcc/Section";
 import ResponsiveTable from "@/components/ai-gcc/ResponsiveTable";
 import AnswerBlock from "@/components/ai-gcc/AnswerBlock";
 import RelatedLinks from "@/components/shared/RelatedLinks";
 import SectionHeader from "@/components/ui/SectionHeader";
 import TypewriterContextButton from "@/components/ui/TypewriterContextButton";
-import OutcomeCardGrid from "@/components/shared/OutcomeCardGrid";
 import IndustryImageCard from "@/components/shared/IndustryImageCard";
 import AlternatingStepList from "@/components/shared/AlternatingStepList";
+import HeroTrustMarquee from "@/components/shared/HeroTrustMarquee";
 
 import {
   tiers,
@@ -104,7 +105,7 @@ export default function MicroGCC() {
 
   return (
     <div className="min-h-screen bg-[#E7EDF9] text-[#2B3D66] font-sans antialiased selection:bg-[#00A3E0]/20 selection:text-[#0D306C]">
-      <Navbar />
+      <Navbar appearance="dark" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -112,145 +113,63 @@ export default function MicroGCC() {
 
       <main className="relative">
         {/* ── 1. SIGNATURE EXECUTIVE HERO SECTION ────────────────────────── */}
-        <section
+        <NeoIntelliHero
           id="micro-gcc-hero"
-          className="relative w-full hero-viewport-fit flex flex-col justify-between overflow-hidden bg-[#F0F5FA] select-none"
-          aria-label="Micro GCC India Executive Hero"
-        >
-          {/* ── FULL-BLEED EXECUTIVE BACKGROUND ───────── */}
-          <div className="absolute inset-0 w-full h-full z-0">
-            <Image
-              src="/images/gcc-operations/hero-bg.jpg"
-              alt="Micro GCC India Executive View"
-              fill
-              priority
-              unoptimized
-              sizes="100vw"
-              className="object-cover object-[78%_center] sm:object-[72%_center] lg:object-center"
-            />
-            {/* Soft responsive overlay for mobile readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-transparent lg:hidden pointer-events-none" />
-          </div>
-
-          {/* ── TOP SPACER FOR FIXED/STICKY NAVBAR ── */}
-          <div className="h-12 sm:h-14 lg:h-16 shrink-0" />
-
-          {/* ── HERO CONTENT ── */}
-          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center">
-            {/* Breadcrumbs */}
-            <nav aria-label="Breadcrumb" className="mb-2.5 sm:mb-3 shrink-0">
-              <ol className="flex flex-wrap items-center gap-1.5 text-xs text-[#505D74]">
-                <li className="flex items-center gap-1.5">
-                  <Link
-                    to="/"
-                    className="hover:text-[#00A3E0] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00A3E0]"
-                  >
-                    Home
-                  </Link>
-                  <ChevronRight className="w-3.5 h-3.5 text-[#7B8B9E]" aria-hidden="true" />
-                </li>
-                <li className="flex items-center gap-1.5">
-                  <Link
-                    to="/services/gcc"
-                    className="hover:text-[#00A3E0] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00A3E0]"
-                  >
-                    GCC Strategy
-                  </Link>
-                  <ChevronRight className="w-3.5 h-3.5 text-[#7B8B9E]" aria-hidden="true" />
-                </li>
-                <li className="flex items-center gap-1.5">
-                  <span aria-current="page" className="font-semibold text-[#0D306C]">
-                    Micro GCC
-                  </span>
-                </li>
-              </ol>
-            </nav>
-
-            {/* Editorial Content Area */}
-            <div className="text-left shrink-0 w-full max-w-5xl">
-              <div className="max-w-xl lg:max-w-2xl">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold text-[#0D1B2A] tracking-[-0.035em] leading-[1.12] sm:leading-[1.1] mb-2.5 sm:mb-3 text-left font-sans">
-                  Start with one squad. Scale to five.
-                </h1>
-
-                <p className="text-xs sm:text-sm md:text-[15px] lg:text-base text-[#415A77] font-normal leading-relaxed mb-4 sm:mb-5 max-w-xl text-left font-sans">
-                  A Micro GCC is a captive India team built squad by squad. Start with 8 people. Add a squad when you are ready. Choose how much you want to own: fully, jointly, or managed. Same talent depth. Same IP control. Without the enterprise overhead.
-                </p>
-
-                {/* CTAs Row matching GCC Strategy & GCC Operations hero */}
-                <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-left">
-                  <Link
-                    to="/contact"
-                    className="btn-navy shrink-0"
-                  >
-                    <span>Book a 30-min scoping call</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
-                  </Link>
-
-                  <a
-                    href="#tiers"
-                    className="btn-white cursor-pointer shrink-0"
-                  >
-                    <span>Explore Tiers</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0 text-[#169DC8]" />
-                  </a>
-
-                  <TypewriterContextButton
-                    href="/services/gcc"
-                    label="Planning a full-scale GCC instead? Start with GCC Strategy"
-                  />
+          ariaLabel="Micro GCC India Executive Hero"
+          breadcrumbs={[
+            { name: "Home", href: "/" },
+            { name: "GCC Strategy", href: "/services/gcc" },
+            { name: "Micro GCC" },
+          ]}
+          title="Start with one squad. Scale to five."
+          description="A Micro GCC is a captive India team built squad by squad. Start with 8 people. Add a squad when you are ready. Choose how much you want to own: fully, jointly, or managed. Same talent depth. Same IP control. Without the enterprise overhead."
+          desktopImage="/hero/micro-gcc.webp"
+          mobileImage="/hero/micro-gcc-mobile.webp"
+          imageAlt="Micro GCC India Executive View"
+          primaryCta={{ label: "Book a 30-min scoping call", href: "/contact" }}
+          secondaryCta={{ label: "Explore Tiers", href: "#tiers" }}
+          tertiaryCta={{ label: "Planning a full-scale GCC instead? Start with GCC Strategy", href: "/services/gcc" }}
+          bottomContent={
+            <div className="relative z-20 w-full bg-transparent pb-4 sm:pb-6 lg:pb-8 shrink-0">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-2 lg:grid-cols-4 divide-y divide-white/10 sm:divide-y-0 sm:divide-x sm:divide-white/15 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md p-1 sm:p-2">
+                  <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2.5">
+                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-white font-mono tracking-tight leading-none mb-1.5">
+                      <CountingNumber target={25} />
+                    </span>
+                    <p className="text-[10.5px] sm:text-[12.5px] text-[#C5D7F0] text-center leading-snug font-medium max-w-[220px]">
+                      Of India&apos;s 1,600+ GCCs are sub-50 captive centers
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2.5">
+                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-white font-mono tracking-tight leading-none mb-1.5">
+                      8 to 50
+                    </span>
+                    <p className="text-[10.5px] sm:text-[12.5px] text-[#C5D7F0] text-center leading-snug font-medium max-w-[220px]">
+                      Squad-based team sizing (1 to 5 squads)
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2.5">
+                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-white font-mono tracking-tight leading-none mb-1.5">
+                      6 to 12 wks
+                    </span>
+                    <p className="text-[10.5px] sm:text-[12.5px] text-[#C5D7F0] text-center leading-snug font-medium max-w-[220px]">
+                      Kickoff to first squad operational
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2.5">
+                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-white font-mono tracking-tight leading-none mb-1.5">
+                      60 to 70%
+                    </span>
+                    <p className="text-[10.5px] sm:text-[12.5px] text-[#C5D7F0] text-center leading-snug font-medium max-w-[220px]">
+                      Cost reduction vs US, UK, or Nordic team
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* ── BOTTOM DOCK: METRICS & CITATION STRIP ── */}
-          <div className="relative z-20 w-full bg-transparent border-none pb-4 sm:pb-6 lg:pb-8 shrink-0">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-2 lg:grid-cols-4 divide-y divide-[#0D306C]/10 sm:divide-y-0 sm:divide-x sm:divide-[#0D306C]/15 bg-transparent p-0">
-                {/* Metric 1 */}
-                <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2">
-                  <span className="text-3xl sm:text-4xl lg:text-[44px] xl:text-5xl font-extrabold text-[#0D306C] font-mono tracking-tight leading-none mb-1.5 sm:mb-2">
-                    <CountingNumber target={25} />
-                  </span>
-                  <p className="text-xs sm:text-[13px] text-[#505D74] text-center leading-snug font-medium max-w-[220px] sm:max-w-xs">
-                    Of India's 1,600+ GCCs are sub-50 captive centers
-                  </p>
-                </div>
-
-                {/* Metric 2 */}
-                <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2">
-                  <span className="text-3xl sm:text-4xl lg:text-[44px] xl:text-5xl font-extrabold text-[#0D306C] font-mono tracking-tight leading-none mb-1.5 sm:mb-2">
-                    8 to 50
-                  </span>
-                  <p className="text-xs sm:text-[13px] text-[#505D74] text-center leading-snug font-medium max-w-[220px] sm:max-w-xs">
-                    Squad-based team sizing (1 to 5 squads)
-                  </p>
-                </div>
-
-                {/* Metric 3 */}
-                <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2">
-                  <span className="text-3xl sm:text-4xl lg:text-[44px] xl:text-5xl font-extrabold text-[#0D306C] font-mono tracking-tight leading-none mb-1.5 sm:mb-2">
-                    6 to 12 wks
-                  </span>
-                  <p className="text-xs sm:text-[13px] text-[#505D74] text-center leading-snug font-medium max-w-[220px] sm:max-w-xs">
-                    Kickoff to first squad operational
-                  </p>
-                </div>
-
-                {/* Metric 4 */}
-                <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2">
-                  <span className="text-3xl sm:text-4xl lg:text-[44px] xl:text-5xl font-extrabold text-[#0D306C] font-mono tracking-tight leading-none mb-1.5 sm:mb-2">
-                    60 to 70%
-                  </span>
-                  <p className="text-xs sm:text-[13px] text-[#505D74] text-center leading-snug font-medium max-w-[220px] sm:max-w-xs">
-                    Cost reduction vs US, UK, or Nordic team
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+          }
+        />
 
         {/* ── 2. WHY MICRO GCC. WHY NOW. ───────────────────────────────────── */}
         <Section
@@ -728,23 +647,75 @@ export default function MicroGCC() {
           lead="Real deployment topologies proven with global clients across healthcare AI, fintech, and industrial sectors."
           width="wide"
           align="center"
+          theme="navy"
+          wavesOnMobile
         >
-          <OutcomeCardGrid
-            items={builds.map((b) => ({
-              title: b.t,
-              tag: b.tag,
-              badge: b.badge,
-              aspect: b.aspect,
-              image: b.image,
-              alt: b.alt,
-              summary: b.d,
-              lists: [{ label: "Architecture Highlights", items: b.metrics }],
-              cta: b.cta,
-            }))}
-            columns={3}
-            titleSize="md"
-            maxWidthClassName="max-w-7xl mx-auto"
-          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 max-w-7xl mx-auto items-stretch">
+            {builds.map((b, idx) => (
+              <motion.div
+                key={b.t}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.7, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-sm shadow-[0_8px_30px_rgba(4,18,43,0.35)] hover:border-[#38BDF8]/50 hover:-translate-y-1 transition-all duration-300 h-full"
+              >
+                {/* Image header */}
+                <div className={`relative w-full ${b.aspect || "aspect-[4/3]"} overflow-hidden bg-[#0A1D42]`}>
+                  <img
+                    src={b.image}
+                    alt={b.alt || b.t}
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#071F4F]/70 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute top-3 left-3 bg-[#061530]/80 backdrop-blur-xs text-[#38BDF8] text-[10px] font-mono font-bold tracking-wider px-2.5 py-1 uppercase border border-[#38BDF8]/30 rounded-sm">
+                    {b.badge}
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="relative z-10 p-5 sm:p-6 flex flex-col flex-1 text-left">
+                  {b.tag && (
+                    <span className="text-[11px] font-mono font-bold text-[#38BDF8] tracking-wider uppercase block mb-2">
+                      {b.tag}
+                    </span>
+                  )}
+
+                  <h3 className="text-white font-extrabold text-lg sm:text-[21px] tracking-tight mb-2 leading-snug">
+                    {b.t}
+                  </h3>
+
+                  <p className="text-xs sm:text-[13px] text-[#C5D7F0]/90 leading-relaxed mb-4 font-normal">
+                    {b.d}
+                  </p>
+
+                  <div className="pt-3 border-t border-white/10 mt-auto">
+                    <span className="block text-[11px] font-bold uppercase tracking-[0.16em] mb-2.5 font-mono text-[#38BDF8]">
+                      Architecture Highlights
+                    </span>
+                    <ul className="space-y-2 list-none p-0 m-0 mb-4">
+                      {b.metrics.map((point) => (
+                        <li key={point} className="flex items-start gap-2 text-xs sm:text-[12.5px] text-[#E7EDF9] leading-relaxed">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#38BDF8] shrink-0 mt-1" aria-hidden="true" />
+                          <span className="font-medium">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="pt-1">
+                    <Link
+                      to={b.cta.href}
+                      className="btn-white whitespace-nowrap"
+                    >
+                      <span>{b.cta.label}</span>
+                      <ArrowRight className="w-4 h-4 text-[#0D306C] shrink-0" />
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </Section>
 
         {/* ── 12. WHY NEOINTELLI ───────────────────────────────────────────── */}

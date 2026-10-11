@@ -375,79 +375,43 @@ export default function WorkforceStrategy() {
         eyebrow="TALENT &amp; WORKFORCE INTEGRATION"
         title="AI Talent finds and validates people. Workforce Strategy decides what the center needs."
         intro="The two are deliberately separate services with a hard handover between them, so planning is not bent to whoever is easiest to hire."
-        theme="navy"
         align="center"
         width="wide"
-        wavesOnMobile
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-stretch max-w-6xl mx-auto text-left">
-          {/* Card 1: AI Talent */}
-          <div className="group flex flex-col">
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-white mb-5 sm:mb-6 shadow-lg">
-              <Image
-                src="/images/gcc-operations/workforce-ai-talent.jpg"
-                alt="AI Talent technical validation and candidate calibration"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
-              />
-            </div>
-            <div className="flex flex-col flex-1">
-              <h3 className="text-white font-extrabold text-xl sm:text-2xl mb-3 tracking-tight">AI Talent</h3>
-              <p className="text-[#C5D7F0] text-sm sm:text-base leading-relaxed flex-1">
-                Finds and technically validates people: role calibration, sourcing, NeoHireX screening and ranking, AI-led first-round evaluation, technical validation by practicing engineers, recruiter evaluation and offer coordination.
-              </p>
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <Link
-                  to={PILLAR_LINKS.aiTalent}
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-white hover:bg-[#38BDF8] text-[#0A224E] hover:text-white px-5 py-2.5 text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 group/btn"
-                >
-                  <span>Explore AI Talent</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#00A3E0] group-hover/btn:text-white transition-all duration-200 group-hover/btn:translate-x-0.5" />
-                </Link>
-                <Link
-                  to={PILLAR_LINKS.aiDataRecruitment}
-                  className="inline-flex items-center justify-center gap-1.5 px-2 py-2.5 text-xs sm:text-sm font-bold text-[#38BDF8] hover:text-[#7DD3FC] underline underline-offset-4 decoration-[#38BDF8]/60 hover:decoration-[#7DD3FC] transition-all duration-200 group/link"
-                >
-                  <span>AI &amp; Data recruitment</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#38BDF8] group-hover/link:text-[#7DD3FC] transition-transform duration-200 group-hover/link:translate-x-0.5" />
-                </Link>
-              </div>
+          {/* Left: AI Talent */}
+          <div className="flex flex-col">
+            <h3 className="text-[#0D306C] font-extrabold text-xl sm:text-2xl mb-3 tracking-tight">AI Talent</h3>
+            <p className="text-[#505D74] text-sm sm:text-base leading-relaxed flex-1">
+              Finds and technically validates people: role calibration, sourcing, NeoHireX screening and ranking, AI-led first-round evaluation, technical validation by practicing engineers, recruiter evaluation and offer coordination.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <Link to={PILLAR_LINKS.aiTalent} className="btn-gradient whitespace-nowrap">
+                <span>Explore AI Talent</span>
+                <ArrowRight className="w-4 h-4 text-white shrink-0" />
+              </Link>
+              <Link to={PILLAR_LINKS.aiDataRecruitment} className="btn-white whitespace-nowrap">
+                <span>AI &amp; Data recruitment</span>
+                <ArrowRight className="w-4 h-4 text-[#0D306C] shrink-0" />
+              </Link>
             </div>
           </div>
 
-          {/* Card 2: GCC Workforce Strategy */}
-          <div className="group flex flex-col">
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-white mb-5 sm:mb-6 shadow-lg">
-              <Image
-                src="/images/gcc-operations/workforce-strategy-planning.jpg"
-                alt="GCC Workforce Strategy & Leadership Planning"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
-              />
-            </div>
-            <div className="flex flex-col flex-1">
-              <h3 className="text-white font-extrabold text-xl sm:text-2xl mb-3 tracking-tight">GCC Workforce Strategy</h3>
-              <p className="text-[#C5D7F0] text-sm sm:text-base leading-relaxed flex-1">
-                Decides what the center needs: what roles are required, when they must be mobilized, where squads should sit, how career paths progress, how leadership should evolve, and how the workforce scales with the enterprise mandate.
-              </p>
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <Link
-                  to={PILLAR_LINKS.gccSetupLaunch}
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-white hover:bg-[#38BDF8] text-[#0A224E] hover:text-white px-5 py-2.5 text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 group/btn"
-                >
-                  <span>See Setup &amp; Launch</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#00A3E0] group-hover/btn:text-white transition-all duration-200 group-hover/btn:translate-x-0.5" />
-                </Link>
-                <a
-                  href="#capabilities"
-                  className="inline-flex items-center justify-center gap-1.5 px-2 py-2.5 text-xs sm:text-sm font-bold text-[#38BDF8] hover:text-[#7DD3FC] underline underline-offset-4 decoration-[#38BDF8]/60 hover:decoration-[#7DD3FC] transition-all duration-200 group/link"
-                >
-                  <span>View 14 Capabilities</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#38BDF8] group-hover/link:text-[#7DD3FC] transition-transform duration-200 group-hover/link:translate-x-0.5" />
-                </a>
-              </div>
+          {/* Right: GCC Workforce Strategy */}
+          <div className="flex flex-col">
+            <h3 className="text-[#0D306C] font-extrabold text-xl sm:text-2xl mb-3 tracking-tight">GCC Workforce Strategy</h3>
+            <p className="text-[#505D74] text-sm sm:text-base leading-relaxed flex-1">
+              Decides what the center needs: what roles are required, when they must be mobilized, where squads should sit, how career paths progress, how leadership should evolve, and how the workforce scales with the enterprise mandate.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <Link to={PILLAR_LINKS.gccSetupLaunch} className="btn-gradient whitespace-nowrap">
+                <span>See Setup &amp; Launch</span>
+                <ArrowRight className="w-4 h-4 text-white shrink-0" />
+              </Link>
+              <a href="#capabilities" className="btn-white whitespace-nowrap">
+                <span>View 14 Capabilities</span>
+                <ArrowRight className="w-4 h-4 text-[#0D306C] shrink-0" />
+              </a>
             </div>
           </div>
         </div>

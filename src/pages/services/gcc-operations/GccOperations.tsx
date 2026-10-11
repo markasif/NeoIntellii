@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -31,6 +30,10 @@ import {
   Briefcase,
   Layers,
   RefreshCw,
+  MapPin,
+  Rocket,
+  Building2,
+  Monitor,
 } from "lucide-react";
 import GccOperationsLayout from "@/components/gcc-operations/GccOperationsLayout";
 import OpsSection from "@/components/gcc-operations/OpsSection";
@@ -141,6 +144,28 @@ const ARCHETYPES = [
   { ...whoFor[3], icon: RefreshCw, isTall: true },
 ];
 
+const SETUP_ITEMS = [
+  { icon: Briefcase, label: "Business case" },
+  { icon: FileCheck, label: "Entity" },
+  { icon: MapPin, label: "Location" },
+  { icon: Layers, label: "Operating model" },
+  { icon: UserCheck, label: "Initial hiring" },
+  { icon: Wrench, label: "Infrastructure" },
+  { icon: Rocket, label: "Launch readiness" },
+];
+
+const OPS_ITEMS = [
+  { icon: Users, label: "People" },
+  { icon: Building2, label: "Workplace" },
+  { icon: Monitor, label: "IT" },
+  { icon: LineChart, label: "Performance" },
+  { icon: ShieldCheck, label: "Governance" },
+  { icon: Shield, label: "Risk" },
+  { icon: Handshake, label: "Vendors" },
+  { icon: TrendingUp, label: "Scale" },
+  { icon: RefreshCw, label: "Transition" },
+];
+
 export default function GccOperations() {
   const [hoveredArchetype, setHoveredArchetype] = useState<number | null>(null);
 
@@ -246,137 +271,122 @@ export default function GccOperations() {
         align="center"
         width="wide"
       >
-        <div className="group relative overflow-hidden rounded-2xl sm:rounded-3xl">
-          {/* Desktop Center Transition Circle Arrow - centered on the bottom image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.4, x: "-50%" }}
-            whileInView={{ opacity: 1, scale: 1, x: "-50%" }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden lg:flex absolute left-1/2 bottom-20 sm:bottom-24 z-30 w-11 h-11 rounded-full bg-white text-[#0D244D] shadow-xl items-center justify-center pointer-events-none group-hover:scale-110 transition-transform duration-300"
-          >
-            <ArrowRight className="w-4 h-4 text-[#008EC4]" />
-          </motion.div>
-
-          <div className="grid lg:grid-cols-2 items-stretch">
-            {/* 1. Before launch (White Panel - slides in from Left) */}
+        <div className="relative max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 items-stretch gap-4 sm:gap-5 lg:gap-8">
+            {/* 1. Before launch (White card - slides in from Left) */}
             <motion.div
               initial={{ opacity: 0, x: -70 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="relative bg-white flex flex-col overflow-hidden h-full"
+              className="relative flex flex-col h-full min-h-[360px] sm:min-h-[420px] group/setup"
             >
               <div className="p-5 sm:p-7 flex flex-col flex-1">
-                {/* Header */}
-                <span className="block text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#008EC4] mb-1.5">
-                  Before launch
-                </span>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-[#0D244D] tracking-tight leading-[1.2] mb-1">
+                {/* Header row */}
+                <div className="flex items-center gap-2 mb-2.5">
+                  <span className="w-6 h-[3px] bg-[#169DC8] rounded-full" />
+                  <span className="text-[10.5px] sm:text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#0D306C]">
+                    Before launch
+                  </span>
+                </div>
+
+                <h3 className="text-xl sm:text-2xl lg:text-[26px] font-extrabold text-[#0D306C] tracking-tight leading-[1.2] mb-2">
                   GCC setup
                 </h3>
-                {/* Amber Underline matching home page */}
-                <div className="w-8 h-[3px] bg-[#DE8017] rounded-full mb-3" />
-                <p className="text-[#505D74] text-xs sm:text-sm mb-4 leading-relaxed">Gets the center ready to operate.</p>
+                <p className="text-[#505D74] text-xs sm:text-sm mb-5 leading-relaxed">Gets the center ready to operate.</p>
 
-                {/* 3-column arrow bullet grid */}
-                <ul className="grid grid-cols-3 gap-x-2 gap-y-1.5 mb-5">
-                  {["Business case", "Entity", "Location", "Operating model", "Initial hiring", "Infrastructure", "Launch readiness"].map((item) => (
-                    <li key={item} className="flex items-start gap-1">
-                      <ArrowRight className="w-2.5 h-2.5 text-[#0D306C] shrink-0 mt-0.5" aria-hidden="true" />
-                      <span className="font-medium text-[10.5px] sm:text-xs text-[#2B3D66] leading-snug">{item}</span>
-                    </li>
-                  ))}
+                {/* Chips grid */}
+                <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 sm:gap-x-6 mb-6">
+                  {SETUP_ITEMS.map((item) => {
+                    const ItemIcon = item.icon;
+                    return (
+                      <li key={item.label} className="flex items-center gap-2">
+                        <ItemIcon className="w-3.5 h-3.5 text-[#169DC8] shrink-0" />
+                        <span className="text-xs sm:text-[13px] font-semibold text-[#0D306C]">{item.label}</span>
+                      </li>
+                    );
+                  })}
                 </ul>
 
-                {/* Home-page style CTA button */}
+                {/* Pill CTA */}
                 <div className="mt-auto">
                   <Link
                     to={PILLAR_LINKS.gccSetupLaunch}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#0D244D] text-white text-[11px] sm:text-xs font-semibold hover:bg-[#008EC4] transition-all duration-200 shadow-sm hover:-translate-y-0.5 group/btn"
+                    className="btn-navy whitespace-nowrap"
                   >
                     <span>Explore GCC Setup &amp; Launch</span>
-                    <ArrowRight className="w-3 h-3 transition-transform group-hover/btn:translate-x-0.5" />
+                    <ArrowRight className="w-4 h-4 text-white shrink-0" />
                   </Link>
                 </div>
               </div>
-
-              {/* Bottom Image */}
-              <div className="relative h-40 sm:h-48 overflow-hidden flex-shrink-0 bg-[#081B3E]">
-                <Image
-                  src="/images/gcc-operations/gcc-setup-card.jpg"
-                  alt="GCC Setup & Launch Phase Architecture"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="border-0 object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-              </div>
             </motion.div>
 
-            {/* Mobile Connecting Arrow between panels */}
+            {/* Mobile connector */}
             <motion.div
               initial={{ opacity: 0, scale: 0.4 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="flex lg:hidden justify-center items-center -my-4 z-30 relative"
+              className="flex md:hidden justify-center items-center -my-2 z-10 relative"
             >
-              <div className="w-10 h-10 rounded-full bg-white text-[#0D244D] shadow-lg flex items-center justify-center pointer-events-none">
-                <ArrowDown className="w-4 h-4 text-[#008EC4]" />
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#169DC8] to-[#0D306C] text-white shadow-lg flex items-center justify-center">
+                <ArrowDown className="w-4 h-4" />
               </div>
             </motion.div>
 
-            {/* 2. After launch (Navy Blue Panel - slides in from Right) */}
+            {/* 2. After launch (Navy card - slides in from Right) */}
             <motion.div
               initial={{ opacity: 0, x: 70 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative bg-gradient-to-br from-[#081B3E] via-[#0A224E] to-[#061530] text-white flex flex-col overflow-hidden h-full"
+              className="relative bg-gradient-to-b from-[#081B3E] via-[#0A224E] to-[#061530] border border-[#16427D] rounded-2xl sm:rounded-3xl shadow-[0_16px_40px_rgba(4,18,43,0.35)] text-white flex flex-col overflow-hidden h-full min-h-[360px] sm:min-h-[420px] group/ops"
             >
-              <div className="p-5 sm:p-7 flex flex-col flex-1">
-                {/* Header */}
-                <span className="block text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#38BDF8] mb-1.5">
-                  After launch
-                </span>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-white tracking-tight leading-[1.2] mb-1">
+              {/* Blueprint grid pattern (matches the site's navy sections) */}
+              <div
+                className="absolute inset-0 opacity-[0.05] pointer-events-none"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)`,
+                  backgroundSize: "44px 44px",
+                }}
+              />
+              <div className="relative z-10 p-5 sm:p-7 flex flex-col flex-1">
+                {/* Header row */}
+                <div className="flex items-center gap-2 mb-2.5">
+                  <span className="w-6 h-[3px] bg-[#DE8017] rounded-full" />
+                  <span className="text-[10.5px] sm:text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#38BDF8]">
+                    After launch
+                  </span>
+                </div>
+
+                <h3 className="text-xl sm:text-2xl lg:text-[26px] font-extrabold text-white tracking-tight leading-[1.2] mb-2">
                   GCC operations
                 </h3>
-                {/* Amber Underline matching home page */}
-                <div className="w-8 h-[3px] bg-[#DE8017] rounded-full mb-3" />
-                <p className="text-[#C5D7F0] text-xs sm:text-sm mb-4 leading-relaxed">Keeps the center functioning and improving.</p>
+                <p className="text-[#C5D7F0] text-xs sm:text-sm mb-5 leading-relaxed">Keeps the center functioning and improving.</p>
 
-                {/* 3-column arrow bullet grid */}
-                <ul className="grid grid-cols-3 gap-x-2 gap-y-1.5 mb-5">
-                  {["People", "Workplace", "IT", "Performance", "Governance", "Risk", "Vendors", "Scale", "Transition"].map((item) => (
-                    <li key={item} className="flex items-start gap-1">
-                      <ArrowRight className="w-2.5 h-2.5 text-[#38BDF8] shrink-0 mt-0.5" aria-hidden="true" />
-                      <span className="font-medium text-[10.5px] sm:text-xs text-white/85 leading-snug">{item}</span>
-                    </li>
-                  ))}
+                {/* Chips grid */}
+                <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 sm:gap-x-6 mb-6">
+                  {OPS_ITEMS.map((item) => {
+                    const ItemIcon = item.icon;
+                    return (
+                      <li key={item.label} className="flex items-center gap-2">
+                        <ItemIcon className="w-3.5 h-3.5 text-[#38BDF8] shrink-0" />
+                        <span className="text-xs sm:text-[13px] font-semibold text-[#C5D7F0]">{item.label}</span>
+                      </li>
+                    );
+                  })}
                 </ul>
 
-                {/* Home-page style CTA button */}
+                {/* Pill CTA */}
                 <div className="mt-auto">
                   <a
                     href="#operating-model"
-                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-white text-[#0D244D] text-[11px] sm:text-xs font-semibold hover:bg-[#38BDF8] hover:text-white transition-all duration-200 shadow-sm hover:-translate-y-0.5 group/btn"
+                    className="btn-white whitespace-nowrap"
                   >
                     <span>See the 7 operating functions</span>
-                    <ArrowRight className="w-3 h-3 transition-transform group-hover/btn:translate-x-0.5" />
+                    <ArrowRight className="w-4 h-4 text-[#0D306C] shrink-0" />
                   </a>
                 </div>
-              </div>
-
-              {/* Bottom Image */}
-              <div className="relative h-40 sm:h-48 overflow-hidden flex-shrink-0 bg-[#061530]">
-                <Image
-                  src="/images/gcc-operations/gcc-ops-card.jpg"
-                  alt="GCC Live Operations Command Center"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="border-0 object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                />
               </div>
             </motion.div>
           </div>

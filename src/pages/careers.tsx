@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Image from "next/image";
+import NeoIntelliHero from "@/components/shared/NeoIntelliHero";
 import {
   ArrowRight,
   MapPin,
@@ -125,130 +126,68 @@ export default function Careers() {
 
   return (
     <div className="min-h-screen bg-[#F0F5FA] text-[#2B3D66] font-sans antialiased selection:bg-[#00A3E0]/20 selection:text-[#0D306C]">
-      <Navbar />
+      <Navbar appearance="dark" />
 
       <main className="relative">
         {/* ============================================================ */}
-        {/* 1. SIGNATURE EXECUTIVE HERO SECTION */}
+        {/* 1. SIGNATURE WHAT-WE-DO FULL-VIEWPORT HERO SECTION */}
         {/* ============================================================ */}
-        <section
+        <NeoIntelliHero
           id="careers-hero"
-          className="relative w-full hero-viewport-fit flex flex-col justify-between overflow-hidden bg-[#F0F5FA] select-none"
-          aria-label="Careers at NeoIntelli Hero"
-        >
-          {/* Executive Background Overlay */}
-          <div className="absolute inset-0 w-full h-full z-0">
-            <Image
-              src="/images/gcc-operations/hero-bg.jpg"
-              alt="Careers at NeoIntelli"
-              fill
-              priority
-              unoptimized
-              sizes="100vw"
-              className="object-cover object-[78%_center] sm:object-[72%_center] lg:object-center"
-            />
-            {/* Soft responsive overlay for mobile readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-transparent lg:hidden pointer-events-none" />
-          </div>
-
-          {/* Top spacer for navbar */}
-          <div className="h-12 sm:h-14 lg:h-16 shrink-0" />
-
-          {/* Hero Content Area */}
-          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center">
-            {/* Breadcrumb Navigation */}
-            <nav aria-label="Breadcrumb" className="mb-2.5 sm:mb-3 shrink-0">
-              <ol className="flex flex-wrap items-center gap-1.5 text-xs text-[#505D74]">
-                <li className="flex items-center gap-1.5">
-                  <Link
-                    to="/"
-                    className="hover:text-[#00A3E0] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00A3E0]"
-                  >
-                    Home
-                  </Link>
-                  <ChevronRight className="w-3.5 h-3.5 text-[#7B8B9E]" aria-hidden="true" />
-                </li>
-                <li className="flex items-center gap-1.5">
-                  <span aria-current="page" className="font-semibold text-[#0D306C]">
-                    Careers
-                  </span>
-                </li>
-              </ol>
-            </nav>
-
-            {/* Editorial Content Area */}
-            <div className="text-left shrink-0 w-full max-w-5xl">
-              <div className="max-w-xl lg:max-w-2xl">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold text-[#0D1B2A] tracking-[-0.035em] leading-[1.12] sm:leading-[1.1] mb-2.5 sm:mb-3 text-left font-sans">
-                  Build the Future of Global Capability Centers.
-                </h1>
-
-                <p className="text-xs sm:text-sm md:text-[15px] lg:text-base text-[#415A77] font-normal leading-relaxed mb-4 sm:mb-5 max-w-xl text-left font-sans">
-                  Join NeoIntelli &mdash; India&apos;s AI-first GCC company. We&apos;re building the next generation of Global Capability Centers, powered by production AI and led by exceptional operators.
-                </p>
-
-                {/* CTAs Row */}
-                <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-left">
-                  <a
-                    href="#open-roles"
-                    className="btn-navy shrink-0"
-                  >
-                    <span>View Open Positions</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
-                  </a>
-
-                  <a
-                    href="#culture"
-                    className="btn-white cursor-pointer shrink-0"
-                  >
-                    <span>Life at NeoIntelli</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0 text-[#169DC8]" />
-                  </a>
+          ariaLabel="Careers at NeoIntelli Executive Hero"
+          breadcrumbs={[
+            { name: "Home", href: "/" },
+            { name: "Careers" },
+          ]}
+          titlePrefix="Build the Future of"
+          titleHighlight="Global Capability Centers."
+          description="Join NeoIntelli — India's AI-first GCC company. We're building the next generation of Global Capability Centers, powered by production AI and led by exceptional operators."
+          desktopImage="/hero/about.webp"
+          mobileImage="/hero/about-mobile.webp"
+          imageAlt="Careers at NeoIntelli Executive View"
+          primaryCta={{ label: "View Open Positions", href: "#open-roles" }}
+          secondaryCta={{ label: "Life at NeoIntelli", href: "#culture" }}
+          bottomContent={
+            <div className="relative z-20 w-full bg-transparent pb-4 sm:pb-6 lg:pb-8 shrink-0">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-2 lg:grid-cols-4 divide-y divide-white/10 sm:divide-y-0 sm:divide-x sm:divide-white/15 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md p-1 sm:p-2">
+                  <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2.5">
+                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-white font-mono tracking-tight leading-none mb-1.5">
+                      Bengaluru
+                    </span>
+                    <p className="text-[10.5px] sm:text-[12.5px] text-[#C5D7F0] text-center leading-snug font-medium max-w-[220px]">
+                      HSR Layout tech corridor campus & hub
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2.5">
+                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-white font-mono tracking-tight leading-none mb-1.5">
+                      6+
+                    </span>
+                    <p className="text-[10.5px] sm:text-[12.5px] text-[#C5D7F0] text-center leading-snug font-medium max-w-[220px]">
+                      High-impact open specialist roles
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2.5">
+                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-white font-mono tracking-tight leading-none mb-1.5">
+                      Hybrid
+                    </span>
+                    <p className="text-[10.5px] sm:text-[12.5px] text-[#C5D7F0] text-center leading-snug font-medium max-w-[220px]">
+                      Workplace flexibility & autonomous pods
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2.5">
+                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-white font-mono tracking-tight leading-none mb-1.5">
+                      100%
+                    </span>
+                    <p className="text-[10.5px] sm:text-[12.5px] text-[#C5D7F0] text-center leading-snug font-medium max-w-[220px]">
+                      Comprehensive health & wellness coverage
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Bottom Dock: Metrics Strip */}
-          <div className="relative z-20 w-full bg-transparent border-none pb-4 sm:pb-6 lg:pb-8 shrink-0">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-2 lg:grid-cols-4 divide-y divide-[#0D306C]/10 sm:divide-y-0 sm:divide-x sm:divide-[#0D306C]/15 bg-transparent p-0">
-                <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2">
-                  <span className="text-3xl sm:text-4xl lg:text-[44px] xl:text-5xl font-extrabold text-[#0D306C] font-mono tracking-tight leading-none mb-1.5 sm:mb-2">
-                    Bengaluru
-                  </span>
-                  <p className="text-xs sm:text-[13px] text-[#505D74] text-center leading-snug font-medium max-w-[220px] sm:max-w-xs">
-                    HSR Layout tech corridor campus & hub
-                  </p>
-                </div>
-                <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2">
-                  <span className="text-3xl sm:text-4xl lg:text-[44px] xl:text-5xl font-extrabold text-[#0D306C] font-mono tracking-tight leading-none mb-1.5 sm:mb-2">
-                    6+
-                  </span>
-                  <p className="text-xs sm:text-[13px] text-[#505D74] text-center leading-snug font-medium max-w-[220px] sm:max-w-xs">
-                    High-impact open specialist roles
-                  </p>
-                </div>
-                <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2">
-                  <span className="text-3xl sm:text-4xl lg:text-[44px] xl:text-5xl font-extrabold text-[#0D306C] font-mono tracking-tight leading-none mb-1.5 sm:mb-2">
-                    Hybrid
-                  </span>
-                  <p className="text-xs sm:text-[13px] text-[#505D74] text-center leading-snug font-medium max-w-[220px] sm:max-w-xs">
-                    Workplace flexibility & autonomous pods
-                  </p>
-                </div>
-                <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2">
-                  <span className="text-3xl sm:text-4xl lg:text-[44px] xl:text-5xl font-extrabold text-[#0D306C] font-mono tracking-tight leading-none mb-1.5 sm:mb-2">
-                    100%
-                  </span>
-                  <p className="text-xs sm:text-[13px] text-[#505D74] text-center leading-snug font-medium max-w-[220px] sm:max-w-xs">
-                    Comprehensive health & wellness coverage
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+          }
+        />
 
         {/* ============================================================ */}
         {/* 2. MISSION MANIFESTO STATEMENT (Blueprint Strategic Foundation Design) */}

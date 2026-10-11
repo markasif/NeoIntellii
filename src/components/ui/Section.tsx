@@ -25,6 +25,8 @@ export interface SectionProps {
   waveFill?: string;
   /** Keep the top/bottom wave dividers visible on mobile (<sm). Off by default. */
   wavesOnMobile?: boolean;
+  /** Hide only the top organic wave divider (e.g. when the section above shares the same fill). */
+  hideTopWave?: boolean;
 }
 
 const WIDTHS = {
@@ -63,6 +65,7 @@ export default function Section({
   paddingVariant = "default",
   waveFill,
   wavesOnMobile = false,
+  hideTopWave = false,
 }: SectionProps) {
   // Support both theme="navy" and legacy tone="dark"
   const isNavy = theme === "navy" || tone === "dark";
@@ -96,7 +99,7 @@ export default function Section({
       } ${className}`}
     >
       {/* ── TOP ORGANIC WAVE SECTION DIVIDER (Light -> Navy) ─────────── */}
-      {isNavy && (
+      {isNavy && !hideTopWave && (
         <div className={`absolute -top-[2px] sm:-top-[3px] inset-x-0 z-20 pointer-events-none leading-none w-full overflow-hidden select-none ${wavesOnMobile ? "" : "hidden sm:block"}`}>
           <svg
             viewBox="0 0 1440 140"

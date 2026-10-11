@@ -407,72 +407,43 @@ export default function PeopleHrOperations() {
         eyebrow="TALENT &amp; HIRING INTEGRATION"
         title="How hiring connects to people operations."
         intro="Recruitment finds and technically validates the people. People operations takes over the moment an offer is approved."
-        theme="navy"
         align="center"
         width="wide"
-        wavesOnMobile
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-stretch max-w-6xl mx-auto text-left">
-          {/* Card 1: Recruitment operations and NeoHireX */}
-          <div className="group flex flex-col">
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-white mb-5 sm:mb-6 shadow-lg">
-              <Image
-                src="/images/gcc-operations/neohirex-recruitment-white.jpg"
-                alt="Recruitment operations and NeoHireX"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
-              />
-            </div>
-            <div className="flex flex-col flex-1">
-              <h3 className="text-white font-extrabold text-xl sm:text-2xl mb-3 tracking-tight">Recruitment operations and NeoHireX</h3>
-              <p className="text-[#C5D7F0] text-sm sm:text-base leading-relaxed flex-1">
-                Recruitment operations can be supported by NeoHireX, NeoIntelli&apos;s Hiring OS for candidate screening, ranking, AI-led first-round evaluation and recruitment workflow management. NeoHireX does not make final hiring decisions. Sourcing, technical validation and offer coordination sit with NeoIntelli&apos;s AI Talent practice; people operations takes over at the offer.
-              </p>
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <Link
-                  to={PILLAR_LINKS.aiTalent}
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-white hover:bg-[#38BDF8] text-[#0A224E] hover:text-white px-5 py-2.5 text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 group/btn"
-                >
-                  <span>Explore AI Talent</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#00A3E0] group-hover/btn:text-white transition-all duration-200 group-hover/btn:translate-x-0.5" />
-                </Link>
-                <Link
-                  to={PILLAR_LINKS.aiDataRecruitment}
-                  className="inline-flex items-center justify-center gap-1.5 px-2 py-2.5 text-xs sm:text-sm font-bold text-[#38BDF8] hover:text-[#7DD3FC] underline underline-offset-4 decoration-[#38BDF8]/60 hover:decoration-[#7DD3FC] transition-all duration-200 group/link"
-                >
-                  <span>AI &amp; Data recruitment</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#38BDF8] group-hover/link:text-[#7DD3FC] transition-transform duration-200 group-hover/link:translate-x-0.5" />
-                </Link>
-              </div>
+          {/* Left: Recruitment operations and NeoHireX */}
+          <div className="flex flex-col">
+            <h3 className="text-[#0D306C] font-extrabold text-xl sm:text-2xl mb-3 tracking-tight">
+              Recruitment operations and NeoHireX
+            </h3>
+            <p className="text-[#505D74] text-sm sm:text-base leading-relaxed flex-1">
+              Recruitment operations can be supported by NeoHireX, NeoIntelli&apos;s Hiring OS for candidate screening, ranking, AI-led first-round evaluation and recruitment workflow management. NeoHireX does not make final hiring decisions. Sourcing, technical validation and offer coordination sit with NeoIntelli&apos;s AI Talent practice; people operations takes over at the offer.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <Link to={PILLAR_LINKS.aiTalent} className="btn-white whitespace-nowrap">
+                <span>Explore AI Talent</span>
+                <ArrowRight className="w-4 h-4 text-[#0D306C] shrink-0" />
+              </Link>
+              <Link to={PILLAR_LINKS.aiDataRecruitment} className="btn-navy whitespace-nowrap">
+                <span>AI &amp; Data recruitment</span>
+                <ArrowRight className="w-4 h-4 text-white shrink-0" />
+              </Link>
             </div>
           </div>
 
-          {/* Card 2: Where AI can help inside people operations */}
-          <div className="group flex flex-col">
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-white mb-5 sm:mb-6 shadow-lg">
-              <Image
-                src="/images/gcc-operations/ai-people-operations-white.jpg"
-                alt="Where AI can help inside people operations"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
-              />
-            </div>
-            <div className="flex flex-col flex-1">
-              <h3 className="text-white font-extrabold text-xl sm:text-2xl mb-3 tracking-tight">Where AI can help inside people operations</h3>
-              <p className="text-[#C5D7F0] text-sm sm:text-base leading-relaxed flex-1">
-                NeoIntelli can implement an onboarding assistant that answers first-week questions, an HR knowledge assistant grounded in the local policy set, document processing for employment records, and anomaly checks on payroll inputs before they reach the provider. Each is designed with a human owner and a clear fallback.
-              </p>
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <Link
-                  to={PILLAR_LINKS.aiEngineering}
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-white hover:bg-[#38BDF8] text-[#0A224E] hover:text-white px-5 py-2.5 text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 group/btn"
-                >
-                  <span>See AI Engineering</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#00A3E0] group-hover/btn:text-white transition-all duration-200 group-hover/btn:translate-x-0.5" />
-                </Link>
-              </div>
+          {/* Right: Where AI can help inside people operations */}
+          <div className="flex flex-col">
+            <h3 className="text-[#0D306C] font-extrabold text-xl sm:text-2xl mb-3 tracking-tight">
+              Where AI can help inside people operations
+            </h3>
+            <p className="text-[#505D74] text-sm sm:text-base leading-relaxed flex-1">
+              NeoIntelli can implement an onboarding assistant that answers first-week questions, an HR knowledge assistant grounded in the local policy set, document processing for employment records, and anomaly checks on payroll inputs before they reach the provider. Each is designed with a human owner and a clear fallback.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <Link to={PILLAR_LINKS.aiEngineering} className="btn-white whitespace-nowrap">
+                <span>See AI Engineering</span>
+                <ArrowRight className="w-4 h-4 text-[#0D306C] shrink-0" />
+              </Link>
             </div>
           </div>
         </div>

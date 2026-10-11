@@ -134,8 +134,17 @@ export default function GCCForAIStartups() {
           className="relative w-full hero-viewport-fit flex flex-col justify-between overflow-hidden bg-[#F0F5FA] select-none"
           aria-label="GCC for AI Startups Hero"
         >
-          {/* Executive Background Overlay */}
-          <div className="absolute inset-0 w-full h-full z-0">
+          {/* ── MOBILE BACKGROUND: FOOTER GRADIENT (HIDDEN ON DESKTOP) ── */}
+          <div
+            className="sm:hidden absolute inset-0 pointer-events-none z-0"
+            style={{
+              background:
+                "linear-gradient(180deg, #F8FAFD 0%, #EDF5FC 20%, #CDE3F7 50%, #ADD2F1 75%, #8EBDE4 100%)",
+            }}
+          />
+
+          {/* ── DESKTOP BACKGROUND: EXECUTIVE VIEW (HIDDEN ON MOBILE) ── */}
+          <div className="hidden sm:block absolute inset-0 w-full h-full z-0">
             <Image
               src="/images/gcc-operations/hero-bg.jpg"
               alt="GCC for AI Startups"
@@ -153,10 +162,10 @@ export default function GCCForAIStartups() {
           <div className="h-12 sm:h-14 lg:h-16 shrink-0" />
 
           {/* Hero Content Area */}
-          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center">
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center my-auto py-2 sm:py-4">
             {/* Breadcrumb Navigation */}
             <nav aria-label="Breadcrumb" className="mb-2.5 sm:mb-3 shrink-0">
-              <ol className="flex flex-wrap items-center gap-1.5 text-xs text-[#505D74]">
+              <ol className="flex flex-wrap items-center justify-center sm:justify-start gap-1.5 text-xs text-[#505D74]">
                 <li className="flex items-center gap-1.5">
                   <Link
                     to="/"
@@ -175,31 +184,34 @@ export default function GCCForAIStartups() {
             </nav>
 
             {/* Editorial Content Area */}
-            <div className="text-left shrink-0 w-full max-w-5xl">
-              <div className="max-w-xl lg:max-w-2xl">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold text-[#0D1B2A] tracking-[-0.035em] leading-[1.12] sm:leading-[1.1] mb-2.5 sm:mb-3 text-left font-sans">
+            <div className="text-center sm:text-left shrink-0 w-full max-w-5xl mx-auto sm:mx-0 flex flex-col items-center sm:items-start">
+              <div className="max-w-xl lg:max-w-2xl mx-auto sm:mx-0 text-center sm:text-left">
+                <h1 className="text-[28px] xs:text-[32px] sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold font-manrope text-[#0D1B2A] tracking-[-0.035em] leading-[1.16] sm:leading-[1.1] mb-2.5 sm:mb-3 text-center sm:text-left">
                   Build a World-Class Engineering Team for 60% Less.
                 </h1>
 
-                <p className="text-xs sm:text-sm md:text-[15px] lg:text-base text-[#415A77] font-normal leading-relaxed mb-4 sm:mb-5 max-w-xl text-left font-sans">
+                <p className="text-xs sm:text-sm md:text-[15px] lg:text-base text-[#1D3557] sm:text-[#415A77] font-normal leading-relaxed mb-4 sm:mb-5 max-w-xl text-center sm:text-left font-sans mx-auto sm:mx-0">
                   You raised funding to build AI, not to pay Bay Area rent. A GCC in India gives you 3x the engineering firepower for the same budget — and you own the team and the IP.
                 </p>
 
-                {/* CTAs Row */}
-                <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-left">
-                  <a
-                    href={CAL_BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-navy shrink-0"
-                  >
-                    <span>Extend Your Runway — Book Call</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
-                  </a>
+                {/* CTAs Row - In mobile: show ONLY the navy blue button in center */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-center sm:justify-start gap-2.5 sm:gap-3 w-full sm:w-auto">
+                  <div className="flex justify-center sm:justify-start w-full sm:w-auto">
+                    <a
+                      href={CAL_BOOKING_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-navy shrink-0 text-xs sm:text-[13px] px-4 sm:px-5 py-2.5 whitespace-nowrap"
+                    >
+                      <span>Extend Your Runway — Book Call</span>
+                      <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0" />
+                    </a>
+                  </div>
 
                   <a
                     href="#startup-models"
-                    className="btn-white cursor-pointer shrink-0"
+                    data-secondary-cta
+                    className="hidden sm:inline-flex btn-white cursor-pointer shrink-0 whitespace-nowrap text-xs sm:text-[13px] !py-2 sm:!py-2.5 !px-3.5 sm:!px-5"
                   >
                     <span>View Flexible Pod Models</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1.5 shrink-0 text-[#169DC8]" />
