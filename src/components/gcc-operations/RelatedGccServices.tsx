@@ -124,16 +124,7 @@ export default function RelatedGccServices({
       <div className="relative z-10 max-w-7xl mx-auto">
         <SectionHeader
           eyebrow="CONNECTED ECOSYSTEM"
-          title={
-            isNavy ? (
-              <>
-                How GCC Operations connects to the rest of NeoIntelli
-                <span className="text-[#38BDF8]">.</span>
-              </>
-            ) : (
-              "How GCC Operations connects to the rest of NeoIntelli"
-            )
-          }
+          title="How GCC Operations connects to the rest of NeoIntelli."
           description="A complete lifecycle model spanning strategy, initial setup, talent acquisition, AI engineering, and multi-year operations."
           align="center"
           variant={isNavy ? "white" : "cyan"}

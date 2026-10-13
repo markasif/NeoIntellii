@@ -1,0 +1,6 @@
+2026/10/13-18:24:43.291 4cc4 Reusing MANIFEST C:\Users\Mohammed Asif\Desktop\Neointelli-og\.temp_edge_profile\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
+2026/10/13-18:24:43.293 4cc4 Recovering log #7
+2026/10/13-18:24:43.293 4cc4 Reusing old log C:\Users\Mohammed Asif\Desktop\Neointelli-og\.temp_edge_profile\Default\EdgeCoupons/coupons_data.db/000007.log 
+2026/10/13-18:24:43.583 611c Level-0 table #11: started
+2026/10/13-18:24:43.587 611c Level-0 table #11: 683376 bytes OK
+2026/10/13-18:24:43.590 611c Delete type=0 #7

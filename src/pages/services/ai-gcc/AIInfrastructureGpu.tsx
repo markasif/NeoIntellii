@@ -98,7 +98,7 @@ export default function AIInfrastructureGpu() {
               for data residency boundaries.
             </>
           }
-          imageSrc="/images/decision_model.webp"
+          imageSrc="/images/services/ai-gcc/decision_model.webp"
           imageAlt="AI Infrastructure Decision Model"
           ourViewText="Dedicated GPUs are not automatically cheaper than cloud GPUs. Utilization determines the economics."
         />

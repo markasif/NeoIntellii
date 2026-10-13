@@ -68,7 +68,7 @@ const criteriaGroups: Array<{
   {
     title: "Talent",
     badge: "TALENT LENS",
-    image: "/images/gcc-operations/gcc-ops-people.webp",
+    image: "/images/services/gcc-operations/gcc-ops-people.webp",
     alt: "GCC talent availability and AI data talent depth",
     aspect: "aspect-[4/5]",
     items: [
@@ -84,7 +84,7 @@ const criteriaGroups: Array<{
   {
     title: "Market dynamics",
     badge: "MARKET LENS",
-    image: "/images/gcc-operations/gcc-ops-workforce.webp",
+    image: "/images/services/gcc-operations/gcc-ops-workforce.webp",
     alt: "GCC compensation levels and market dynamics",
     aspect: "aspect-[4/3]",
     items: [
@@ -97,7 +97,7 @@ const criteriaGroups: Array<{
   {
     title: "Ecosystem and infrastructure",
     badge: "ECOSYSTEM LENS",
-    image: "/images/gcc-operations/gcc-ops-workplace.webp",
+    image: "/images/services/gcc-operations/gcc-ops-workplace.webp",
     alt: "Indian GCC city ecosystem and infrastructure",
     aspect: "aspect-[4/5]",
     items: [
@@ -112,7 +112,7 @@ const criteriaGroups: Array<{
   {
     title: "Policy and resilience",
     badge: "POLICY LENS",
-    image: "/images/gcc-operations/gcc-ops-governance.webp",
+    image: "/images/services/gcc-operations/gcc-ops-governance.webp",
     alt: "State GCC incentives and regulatory compliance",
     aspect: "aspect-[4/3]",
     items: [
@@ -144,55 +144,55 @@ const aiRoles: Array<{ title: string; desc: string; icon: LucideIcon; image: str
     title: "AI leadership",
     desc: "Heads of AI, AI product leaders and principal scientists who can own a mandate, not only deliver against one.",
     icon: Award,
-    image: "/images/gcc-operations/operating-reality/11-leadership.webp",
+    image: "/images/services/gcc-operations/operating-reality/11-leadership.webp",
   },
   {
     title: "ML engineers",
     desc: "Production model builders with software engineering discipline.",
     icon: Cpu,
-    image: "/images/ai-mlops.webp",
+    image: "/images/services/ai-gcc/ai-mlops.webp",
   },
   {
     title: "GenAI engineers",
     desc: "LLM application, retrieval and evaluation engineers.",
     icon: Sparkles,
-    image: "/images/gcc-operations/operating-reality/04-access.webp",
+    image: "/images/services/gcc-operations/operating-reality/04-access.webp",
   },
   {
     title: "Agentic AI engineers",
     desc: "Engineers building tool-using, multi-step AI systems with guardrails.",
     icon: Bot,
-    image: "/images/gcc-operations/operating-reality/14-bot.webp",
+    image: "/images/services/gcc-operations/operating-reality/14-bot.webp",
   },
   {
     title: "Data engineers",
     desc: "Pipeline, lakehouse and data-product engineers the rest of the mandate depends on.",
     icon: Database,
-    image: "/images/gcc-operations/operating-reality/07-performance.webp",
+    image: "/images/services/gcc-operations/operating-reality/07-performance.webp",
   },
   {
     title: "MLOps engineers",
     desc: "The scarcest layer in most cities: deployment, monitoring and lifecycle.",
     icon: Activity,
-    image: "/images/gcc-operations/operating-reality/05-devices.webp",
+    image: "/images/services/gcc-operations/operating-reality/05-devices.webp",
   },
   {
     title: "AI platform engineers",
     desc: "Shared platform, feature store, model serving and cost control.",
     icon: Server,
-    image: "/images/gcc-operations/operating-reality/06-vendors.webp",
+    image: "/images/services/gcc-operations/operating-reality/06-vendors.webp",
   },
   {
     title: "Product engineers",
     desc: "Full-stack and backend engineers who ship AI features into real products.",
     icon: Code,
-    image: "/images/gcc-operations/operating-reality/08-reporting.webp",
+    image: "/images/services/gcc-operations/operating-reality/08-reporting.webp",
   },
   {
     title: "Cloud and platform talent",
     desc: "Cloud, security and infrastructure engineers who make the rest possible.",
     icon: Cloud,
-    image: "/images/gcc-operations/operating-reality/09-risk.webp",
+    image: "/images/services/gcc-operations/operating-reality/09-risk.webp",
   },
 ];
 
@@ -205,11 +205,11 @@ const incentiveCategories: Array<[string, string, string]> = [
 ];
 
 const statePolicyImages: Record<string, string> = {
-  Karnataka: "/images/gcc-operations/gcc-ops-workplace.webp",
-  Gujarat: "/images/gcc-operations/standards/continuity_building.webp",
-  "Uttar Pradesh": "/images/gcc-operations/scope-workspace.webp",
+  Karnataka: "/images/services/gcc-operations/gcc-ops-workplace.webp",
+  Gujarat: "/images/services/gcc-operations/standards/continuity_building.webp",
+  "Uttar Pradesh": "/images/services/gcc-operations/scope-workspace.webp",
   Maharashtra: "/images/how_we_work/phase_02_build.webp",
-  "Tamil Nadu": "/images/gcc-operations/gcc-setup-card.webp",
+  "Tamil Nadu": "/images/services/gcc-operations/gcc-setup-card.webp",
 };
 
 const locationFlow = [
@@ -443,7 +443,7 @@ export default function LocationStrategy() {
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4">
               {STATE_GCC_POLICIES.map((p) => {
-                const img = statePolicyImages[p.state] || "/images/gcc-operations/standards/continuity_building.webp";
+                const img = statePolicyImages[p.state] || "/images/services/gcc-operations/standards/continuity_building.webp";
                 return (
                   <motion.div
                     key={p.state}

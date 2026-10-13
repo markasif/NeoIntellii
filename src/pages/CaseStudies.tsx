@@ -58,7 +58,7 @@ const engagements = [
     id: "01",
     title: "GCC setup and launch",
     desc: "End-to-end design and stand-up of a new captive center — strategy, entity, location, talent, technology, and governance delivered as one connected program.",
-    image: "/images/gcc-setup.webp",
+    image: "/images/services/gcc/gcc-setup.webp",
     ctaText: "Explore Setup & Launch",
     href: "/services/gcc/setup-launch",
   },
@@ -66,7 +66,7 @@ const engagements = [
     id: "02",
     title: "AI-first GCC design",
     desc: "Architecting the data, MLOps, model governance, and responsible-AI layer that lets a center deliver AI outcomes, not just hire AI engineers.",
-    image: "/images/mosaic_ai_gcc.webp",
+    image: "/images/home/mosaic_ai_gcc.webp",
     ctaText: "Explore AI GCC Design",
     href: "/services/ai-gcc",
   },
@@ -74,7 +74,7 @@ const engagements = [
     id: "03",
     title: "Talent and leadership build",
     desc: "Hiring the leadership spine and specialist pods that define what the center actually delivers, with onboarding and retention designed in.",
-    image: "/images/gcc-talent.webp",
+    image: "/images/services/gcc/gcc-talent.webp",
     ctaText: "Explore Talent Build",
     href: "/services/ai-talent",
   },
@@ -82,7 +82,7 @@ const engagements = [
     id: "04",
     title: "Operations transformation",
     desc: "Repositioning an existing center from cost-arbitrage support into a higher-value strategic platform with new mandates, new capability, and a new operating rhythm.",
-    image: "/images/gcc_modernization.webp",
+    image: "/images/services/gcc/gcc_modernization.webp",
     ctaText: "Explore Transformation",
     href: "/services/gcc/modernization-transformation",
   },
@@ -90,7 +90,7 @@ const engagements = [
     id: "05",
     title: "Governance and compliance",
     desc: "Designing the decision-rights, risk, control, and reporting model so the center is audit-ready every day and the board sees a clean view at every review.",
-    image: "/images/ai-governance.webp",
+    image: "/images/services/ai-gcc/ai-governance.webp",
     ctaText: "Explore Governance",
     href: "/services/gcc-operations/governance-compliance",
   },
@@ -98,7 +98,7 @@ const engagements = [
     id: "06",
     title: "Technology and platform foundations",
     desc: "Cloud, identity, security, data, and developer-platform baseline that lets the center scale without re-architecting every 18 months.",
-    image: "/images/gcc-technology.webp",
+    image: "/images/services/gcc/gcc-technology.webp",
     ctaText: "Explore Technology Platforms",
     href: "/services/gcc-operations/workplace-it-security",
   },
@@ -171,7 +171,7 @@ export default function CaseStudies() {
             {/* Mobile artwork */}
             <div className="md:hidden absolute inset-0">
               <Image
-                src="/hero/hero-half-viewport-mobile.webp"
+                src="/images/hero/hero-half-viewport-mobile.webp"
                 alt="Mobile hero artwork"
                 fill
                 priority
@@ -183,7 +183,7 @@ export default function CaseStudies() {
             {/* Desktop artwork */}
             <div className="hidden md:block absolute inset-0">
               <Image
-                src="/hero/hero-half-viewport.webp"
+                src="/images/hero/hero-half-viewport.webp"
               alt="How We Design, Launch & Scale GCCs"
               fill
               priority

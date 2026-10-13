@@ -92,9 +92,9 @@ describe("navigation surfaces built from the taxonomy", () => {
     for (const link of links) expect(link.desc, link.label).toBeTruthy();
   });
 
-  it("renders Solutions as three groups of three, from the curated list", () => {
+  it("renders Solutions as four groups of three, from the curated list", () => {
     const solutions = item("Solutions");
-    expect(solutions.featured, "Solutions shows the nine destinations and nothing else").toBeUndefined();
+    expect(solutions.featured, "Solutions shows the twelve destinations and nothing else").toBeUndefined();
     expect(solutions.variant, "Solutions reuses the What We Do card layout").toBe("cards");
     expect(solutions.columnsPerRow, "three groups on one row").toBe(3);
     expect(solutions.wide, "three groups fit the standard 1240px panel").toBeUndefined();
@@ -103,9 +103,10 @@ describe("navigation surfaces built from the taxonomy", () => {
     expect(solutions.columns.map((column) => column.label)).toEqual([
       "Build your AI capability",
       "Solve an AI challenge",
+      "Plan Your Recruitment",
       "Plan your GCC",
     ]);
-    expect(solutions.columns.map((column) => column.links.length)).toEqual([3, 3, 3]);
+    expect(solutions.columns.map((column) => column.links.length)).toEqual([3, 3, 3, 3]);
     for (const column of solutions.columns) {
       for (const link of column.links) {
         expect(link.desc, link.label).toBeTruthy();
@@ -119,7 +120,7 @@ describe("navigation surfaces built from the taxonomy", () => {
     expect(item("What We Do").variant).toBe("cards");
   });
 
-  it("names the nine solutions exactly as agreed and points each at a live route", () => {
+  it("names the twelve solutions exactly as agreed and points each at a live route", () => {
     expect(solutionEntries().map((entry) => entry.label)).toEqual([
       "AI Micro GCC",
       "AI Delivery Pods",
@@ -127,6 +128,9 @@ describe("navigation surfaces built from the taxonomy", () => {
       "Expert-Validated AI Hiring",
       "AI Pilot to Production",
       "AI CoE for Existing GCCs",
+      "Recruitment & Staffing",
+      "Permanent Recruitment",
+      "Executive Search",
       "GCC Cost Calculator",
       "GCC Readiness Assessment",
       "GCC Blueprint",
@@ -157,7 +161,7 @@ describe("navigation surfaces built from the taxonomy", () => {
     for (const entry of solutionEntries()) {
       expect(pillarHrefs.has(entry.href), `${entry.label} repeats a What We Do pillar overview`).toBe(false);
     }
-    expect(SOLUTION_GROUPS).toHaveLength(3);
+    expect(SOLUTION_GROUPS).toHaveLength(4);
   });
 
   it("keeps every service sub-page reachable from the footer now that Solutions is curated", () => {
@@ -169,7 +173,7 @@ describe("navigation surfaces built from the taxonomy", () => {
 
   it("keeps the mega menu free of the retired recruitment entry points", () => {
     const hrefs = megaMenu.flatMap((entry) => entry.columns.flatMap((column) => column.links.map((link) => link.href)));
-    for (const retired of ["/recruitment", "/services/ai-data-recruitment", "/services/ai-talent-acquisition", "/services/technology"]) {
+    for (const retired of ["/services/ai-data-recruitment", "/services/ai-talent-acquisition", "/services/technology"]) {
       expect(hrefs, `${retired} should no longer be a mega menu entry point`).not.toContain(retired);
     }
   });

@@ -69,11 +69,7 @@ export default function DecisionTools() {
         {/* Standardized Section Header */}
         <SectionHeader
           eyebrow="GCC DECISION TOOLKIT"
-          title={
-            <>
-              Plan your GCC before you commit<span className="text-[#169DC8]">.</span>
-            </>
-          }
+          title="Plan your GCC before you commit."
           description="Three tools that answer the questions a business case has to survive: what it costs, when it pays back, and whether you are ready to build."
           className="mb-6 sm:mb-8"
         />

@@ -46,8 +46,8 @@ export default function AiGccHero({
       breadcrumbs={!isOverview ? crumbs : undefined}
       title={title}
       description={description}
-      desktopImage="/hero/ai-gcc.webp"
-      mobileImage="/hero/ai-gcc-mobile.webp"
+      desktopImage="/images/hero/ai-gcc.webp"
+      mobileImage="/images/hero/ai-gcc-mobile.webp"
       imageAlt="AI GCC India Executive Command Center"
       primaryCta={primaryCta}
       secondaryCta={secondaryCta}

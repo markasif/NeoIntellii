@@ -52,8 +52,8 @@ export default function AiEngineeringHero({
       breadcrumbs={!isOverview ? crumbs : undefined}
       title={title}
       description={description}
-      desktopImage="/hero/ai-engineering.webp"
-      mobileImage="/hero/ai-engineering-mbile.webp"
+      desktopImage="/images/hero/ai-engineering.webp"
+      mobileImage="/images/hero/ai-engineering-mbile.webp"
       imageAlt="Enterprise AI Engineering Command Center"
       primaryCta={primaryCta}
       secondaryCta={secondaryCta}

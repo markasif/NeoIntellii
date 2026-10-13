@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { MinimalFooter, MinimalHeader } from "@/components/shared/MinimalChrome";
 import { getAttribution } from "@/lib/attribution";
 import { track, type BookCallPlacement } from "@/lib/dataLayer";
@@ -95,7 +96,26 @@ export default function BookACall() {
           <h1 className="font-display text-heading text-2xl md:text-3xl text-center mb-8">
             {HEADINGS[eventType]}
           </h1>
-          <div ref={containerRef} className="min-h-[640px] rounded-2xl overflow-hidden" />
+          <div
+            ref={containerRef}
+            role="region"
+            aria-label="Interactive Strategy Consultation Scheduler"
+            className="min-h-[640px] rounded-2xl overflow-hidden"
+          >
+            <div className="flex flex-col items-center justify-center py-20 text-center text-slate-500 text-sm">
+              <p className="mb-2">Loading calendar scheduler…</p>
+              <p className="text-xs text-slate-400">
+                If the calendar does not load, please reach us directly at{" "}
+                <a href="mailto:reachus@neointelli.com" className="text-[#008EC4] font-semibold underline">
+                  reachus@neointelli.com
+                </a>
+                {" "}or via our{" "}
+                <Link href="/contact" className="text-[#008EC4] font-semibold underline">
+                  contact form
+                </Link>.
+              </p>
+            </div>
+          </div>
         </div>
       </main>
 

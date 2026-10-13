@@ -200,8 +200,8 @@ export default function PrivateEquityGCC() {
           ]}
           title="GCC Solutions for Private Equity Portfolio Companies"
           description="Private equity firms: accelerate portfolio company growth with India GCCs. Rapid engineering team build-outs, value creation through cost optimization, and AI-powered digital transformation."
-          desktopImage="/hero/industry.webp"
-          mobileImage="/hero/industry-mobile.webp"
+          desktopImage="/images/hero/industry.webp"
+          mobileImage="/images/hero/industry-mobile.webp"
           imageAlt="Private Equity Command Center"
           primaryCta={{ label: "Talk to Our PE Team", href: CAL_BOOKING_URL, isExternal: true }}
           secondaryCta={{ label: "Explore GCC Services", href: "/services/gcc" }}

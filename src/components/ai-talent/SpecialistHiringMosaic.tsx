@@ -2,10 +2,20 @@
 
 import React, { useState, useRef, useEffect, useCallback, type ReactNode } from "react";
 import { Link } from "react-router-dom";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, LucideIcon } from "lucide-react";
-import { AI_TALENT_PAGES, AiTalentPage } from "@/data/aiTalent";
+import {
+  ArrowRight,
+  Bot,
+  Boxes,
+  Brain,
+  Database,
+  GraduationCap,
+  Sparkles,
+  Users,
+  Workflow,
+  type LucideIcon,
+} from "lucide-react";
+import { AI_TALENT_PAGES } from "@/data/aiTalent";
 
 export interface SpecialistCardItem {
   key: string;
@@ -24,73 +34,85 @@ export interface SpecialistHiringMosaicProps {
   lead?: ReactNode;
   pages?: SpecialistCardItem[];
   className?: string;
+  /** Kept for API compatibility; cards now use the creative no-photo surface. */
   showBadge?: boolean;
   showGroup?: boolean;
   showButton?: boolean;
 }
 
-const SPECIALIST_IMAGES: Record<string, string> = {
-  aiml: "/images/ai-talent/aiml-recruitment.webp",
-  genai: "/images/ai-talent/genai-agentic.webp",
-  data: "/images/ai-talent/data-engineering.webp",
-  mlops: "/images/ai-talent/mlops-platform.webp",
-  leadership: "/images/ai-talent/ai-leadership.webp",
-  hub: "/images/ai-talent/recruitment-hub.webp",
-  academy: "/images/ai-talent/reskilling-academy.webp",
-};
+/** Maps a specialist role family to a crisp navy/cyan line icon for the card tile. */
+function resolveIcon(card: SpecialistCardItem): LucideIcon {
+  if (card.icon) return card.icon;
+  const k = (card.key || "").toLowerCase();
+  const t = (card.name || "").toLowerCase();
+  if (k.includes("aiml") || t.includes("ml engineer") || t.includes("ml ")) return Brain;
+  if (k.includes("genai") || t.includes("genai") || t.includes("agent")) return Sparkles;
+  if (k.includes("data") || k.includes("analyst") || t.includes("data")) return Database;
+  if (k.includes("mlops") || k.includes("platform") || t.includes("mlops")) return Workflow;
+  if (k.includes("leadership") || t.includes("leader") || t.includes("head")) return Users;
+  if (k.includes("hub") || k.includes("recruitment")) return Boxes;
+  if (k.includes("academy") || t.includes("reskill") || t.includes("academy")) return GraduationCap;
+  return Bot;
+}
 
 /**
- * Single-line action button with marquee shift on hover
- * ensuring the button NEVER wraps to two lines while revealing
- * the full text whenever the card/button is hovered.
+ * Home-Industries style underlined cyan link with arrow:
+ * single line, fade-truncated when it does not fit; on hover the full text
+ * slides in to reveal the remainder.
  */
-function SpecialistMarqueeButton({
+function SpecialistUnderlineLink({
   label,
   isCardHovered,
 }: {
   label: string;
   isCardHovered: boolean;
 }) {
-  const containerRef = useRef<HTMLSpanElement>(null);
-  const textRef = useRef<HTMLSpanElement>(null);
-  const [shift, setShift] = useState<number>(0);
+  const wrapRef = useRef<HTMLSpanElement>(null);
+  const labelRef = useRef<HTMLSpanElement>(null);
+  const [overflowShift, setOverflowShift] = useState(0);
 
   const measure = useCallback(() => {
-    if (containerRef.current && textRef.current) {
-      const extra = textRef.current.scrollWidth - containerRef.current.clientWidth;
-      setShift(extra > 2 ? extra : 0);
+    const label = labelRef.current;
+    const wrap = wrapRef.current;
+    if (label && wrap) {
+      const extra = label.scrollWidth - wrap.clientWidth;
+      setOverflowShift(extra > 2 ? extra : 0);
     }
   }, []);
 
   useEffect(() => {
-    if (isCardHovered) {
-      measure();
-    }
-  }, [isCardHovered, measure]);
+    measure();
+    window.addEventListener("resize", measure, { passive: true });
+    return () => window.removeEventListener("resize", measure);
+  }, [measure]);
+
+  const truncated = overflowShift > 0;
+  const revealed = isCardHovered && truncated;
 
   return (
-    <span
-      className="btn-cyan max-w-full inline-flex items-center justify-between gap-1.5 px-3 sm:px-3.5 py-1.5 sm:py-2 text-xs font-bold rounded-full whitespace-nowrap overflow-hidden transition-all duration-300 shadow-sm group-hover:shadow-[0_0_22px_rgba(22,157,200,0.55),0_4px_16px_rgba(13,48,108,0.3)] group-hover:bg-[#0D306C]"
-      title={label}
-    >
+    <span className="max-w-full min-w-0 inline-flex items-center gap-2 text-[10px] sm:text-[11px] font-bold text-[#38BDF8] uppercase tracking-wide pb-0.5 border-b border-[#38BDF8]/80 transition-colors">
       <span
-        ref={containerRef}
-        className="relative block min-w-0 flex-1 overflow-hidden whitespace-nowrap text-left"
+        ref={wrapRef}
+        className={`relative block min-w-0 flex-1 overflow-hidden whitespace-nowrap ${
+          truncated && !revealed
+            ? "[mask-image:linear-gradient(to_right,black_calc(100%-16px),transparent_100%)]"
+            : ""
+        }`}
       >
         <span
-          ref={textRef}
-          className="inline-block whitespace-nowrap will-change-transform"
+          ref={labelRef}
+          className="inline-block will-change-transform"
           style={{
-            transform: isCardHovered && shift > 0 ? `translateX(-${shift + 6}px)` : "translateX(0px)",
-            transition: isCardHovered && shift > 0
-              ? `transform ${Math.max(0.8, shift * 0.02)}s cubic-bezier(0.2, 0.8, 0.4, 1)`
-              : "transform 0.35s ease-out",
+            transform: revealed ? `translateX(-${overflowShift + 6}px)` : "translateX(0px)",
+            transition: revealed
+              ? `transform ${Math.max(0.5, overflowShift * 0.012)}s cubic-bezier(0.2, 0.8, 0.4, 1)`
+              : "transform 0.3s ease-out",
           }}
         >
           {label}
         </span>
       </span>
-      <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 ml-1.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+      <ArrowRight className="w-3.5 h-3.5 shrink-0 transition-transform duration-200" />
     </span>
   );
 }
@@ -98,72 +120,67 @@ function SpecialistMarqueeButton({
 function SpecialistCard({
   card,
   idx,
-  showBadge,
-  showGroup,
   showButton,
 }: {
   card: SpecialistCardItem;
   idx: number;
-  showBadge: boolean;
-  showGroup: boolean;
   showButton: boolean;
 }) {
   const [isHovered, setIsHovered] = useState(false);
-  const imgSrc = card.image || SPECIALIST_IMAGES[card.key] || "/images/ai-talent/aiml-recruitment.webp";
+  const Icon = resolveIcon(card);
 
   return (
     <motion.div
       key={card.key}
-      initial={{ opacity: 0, y: 22 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
+      initial={{ opacity: 0, y: 40, scale: 0.96, filter: "blur(6px)" }}
+      whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+      viewport={{ once: true, margin: "-60px" }}
       transition={{
-        duration: 0.5,
-        delay: idx * 0.06,
-        ease: [0.16, 1, 0.3, 1],
+        duration: 0.6,
+        delay: Math.min(idx * 0.09, 0.6),
+        ease: [0.22, 1, 0.36, 1],
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative overflow-hidden rounded-none shadow-md group min-h-[260px] sm:min-h-[280px] flex flex-col justify-end p-5 sm:p-6 border border-[#CBD7E8] bg-[#051329] transition-all duration-500 hover:shadow-xl text-left"
+      className="relative overflow-hidden rounded-none shadow-md group min-h-[210px] sm:min-h-[220px] flex flex-col justify-start p-5 sm:p-6 border border-[#CBD7E8] bg-[#0D244D] transition-all duration-500 hover:shadow-xl hover:-translate-y-1 text-left"
     >
-      {/* Background Image with hover zoom */}
-      <Image
-        src={imgSrc}
-        alt={card.name}
-        fill
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 rounded-none"
-      />
-
-      {/* Dark Gradient Overlay for contrast and readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#051329] via-[#051329]/85 to-[#051329]/20" />
-
-      {/* Top Category Tag matching home page GCCCapabilitiesMosaic design */}
-      {showBadge && (
-        <div className="absolute top-2.5 sm:top-3 left-3.5 sm:left-4 z-10 pointer-events-none">
-          <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-[#169DC8] text-white text-[9px] sm:text-[9.5px] font-mono font-bold uppercase tracking-wider shadow-xs">
-            {showGroup && card.group && (
-              <>
-                <span>{card.group}</span>
-                <span className="text-white/60">·</span>
-              </>
-            )}
-            <span>{String(idx + 1).padStart(2, "0")}</span>
-          </span>
-        </div>
-      )}
+      {/* ── Creative surface (brand navy + amber accents, no photos) ── */}
+      {/* Top cyan hairline accent, brightens and grows on hover */}
+      <span className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#169DC8] via-[#38BDF8] to-transparent opacity-70 transition-all duration-500 group-hover:opacity-100 group-hover:h-[4px]" />
+      {/* Corner glow */}
+      <div className="absolute -top-14 -right-14 w-40 h-40 rounded-full bg-[#169DC8]/25 blur-3xl transition-all duration-500 group-hover:bg-[#38BDF8]/40" />
+      {/* Soft amber glow (top-right) */}
+      <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#F19326]/15 blur-3xl transition-all duration-500 group-hover:bg-[#F19326]/25" />
+      {/* Faint engineering grid texture */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.05] [background-image:linear-gradient(to_right,#FFFFFF_1px,transparent_1px),linear-gradient(to_bottom,#FFFFFF_1px,transparent_1px)] [background-size:30px_30px]" />
+      {/* Amber corner brackets (top-right, open inward) */}
+      <div className="absolute top-0 right-0 w-7 h-7 pointer-events-none">
+        <span className="absolute top-0 left-0 w-7 h-[2px] bg-[#F19326]/70 transition-all duration-500 group-hover:w-9 group-hover:bg-[#F19326]" />
+        <span className="absolute top-0 right-0 w-[2px] h-7 bg-[#F19326]/70 transition-all duration-500 group-hover:h-9 group-hover:bg-[#F19326]" />
+      </div>
 
       {/* Entire card link wrapper (if path exists) */}
       {card.path && (
         <Link
           to={card.path}
-          className="absolute inset-0 z-20 focus:outline-none focus:ring-2 focus:ring-[#169DC8]"
+          className="absolute inset-0 z-20 focus:outline-none focus:ring-2 focus:ring-[#38BDF8]"
           aria-label={card.anchor || card.name}
         />
       )}
 
+      {/* Icon tile */}
+      <div className="relative z-10 mb-3 w-11 h-11 flex items-center justify-center border border-[#38BDF8]/35 bg-[#061530]/45 transition-all duration-500 group-hover:border-[#38BDF8]/70 group-hover:bg-[#061530]/70">
+        <Icon
+          className="w-5 h-5 text-[#67D5F7] transition-transform duration-500 group-hover:scale-110"
+          strokeWidth={1.8}
+        />
+      </div>
+
       {/* Card Content */}
-      <div className="relative z-10 space-y-2 text-left pointer-events-none w-full">
+      <div className="relative z-10 space-y-1.5 text-left pointer-events-none w-full flex-1">
+        {/* Amber bar slides in above the title on hover */}
+        <span className="block h-[3px] w-0 bg-[#F19326] transition-all duration-500 group-hover:w-10 mb-2" />
+
         <h3 className="text-base sm:text-lg font-bold text-white tracking-tight leading-snug group-hover:text-[#67D5F7] transition-colors">
           {card.name}
         </h3>
@@ -172,10 +189,10 @@ function SpecialistCard({
           {card.summary}
         </p>
 
-        {/* Bottom Action Button - strictly ONE LINE with marquee reveal on hover */}
+        {/* Bottom Action Link - home-Industries underlined cyan style */}
         {showButton && card.anchor && (
-          <div className="pt-2 w-full max-w-full">
-            <SpecialistMarqueeButton label={card.anchor} isCardHovered={isHovered} />
+          <div className="pt-3 w-full max-w-full">
+            <SpecialistUnderlineLink label={card.anchor} isCardHovered={isHovered} />
           </div>
         )}
       </div>
@@ -188,10 +205,9 @@ function SpecialistCard({
  * Balanced editorial 3-column mosaic grid matching the exact visual style
  * of GenAiCapabilitiesMosaic in Generative AI:
  * - Top Left (Spans 2 columns on desktop): Eyebrow, Title & Lead text
- * - Top Right & Rows 2-3: 7 standard uniform-height cards filling all columns evenly
- * - Full-bleed photographic background with hover scale
- * - Dark architectural gradient overlay
- * - Role family badge, title, summary, and action link
+ * - Top Right & Rows 2-3: 7 uniform-height cards filling all columns evenly
+ * - Photography-free creative navy surface with cyan + amber accents
+ * - Line-icon tile, role family title + summary, and an underlined cyan link
  */
 export default function SpecialistHiringMosaic({
   eyebrow = "Specialist hiring",
@@ -212,7 +228,6 @@ export default function SpecialistHiringMosaic({
       path: p.path,
       anchor: p.anchor,
       summary: p.summary,
-      image: SPECIALIST_IMAGES[p.key] || "/images/ai-talent/aiml-recruitment.webp",
     }));
 
   return (
@@ -222,10 +237,10 @@ export default function SpecialistHiringMosaic({
         {/* TOP LEFT: Section Heading & Lead (Spans 2 columns on desktop)    */}
         {/* ================================================================= */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="md:col-span-2 lg:col-span-2 flex flex-col justify-center text-left py-4 sm:py-6 pr-0 lg:pr-8"
         >
           {eyebrow && (
@@ -249,14 +264,7 @@ export default function SpecialistHiringMosaic({
         {/* 7 SPECIALIST CARDS: Uniform height cards matching GenAiMosaic    */}
         {/* ================================================================= */}
         {items.map((card, idx) => (
-          <SpecialistCard
-            key={card.key}
-            card={card}
-            idx={idx}
-            showBadge={showBadge}
-            showGroup={showGroup}
-            showButton={showButton}
-          />
+          <SpecialistCard key={card.key} card={card} idx={idx} showButton={showButton} />
         ))}
       </div>
     </div>

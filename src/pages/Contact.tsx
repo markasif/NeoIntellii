@@ -160,7 +160,7 @@ export default function Contact() {
             {/* Mobile artwork */}
             <div className="md:hidden absolute inset-0">
               <Image
-                src="/hero/hero-half-viewport-mobile.webp"
+                src="/images/hero/hero-half-viewport-mobile.webp"
                 alt="Mobile hero artwork"
                 fill
                 priority
@@ -172,7 +172,7 @@ export default function Contact() {
             {/* Desktop artwork */}
             <div className="hidden md:block absolute inset-0">
               <Image
-                src="/hero/hero-half-viewport.webp"
+                src="/images/hero/hero-half-viewport.webp"
               alt="Contact NeoIntelli"
               fill
               priority
@@ -307,7 +307,7 @@ export default function Contact() {
                     <div className="relative flex-1 h-full rounded-[22px] sm:rounded-[28px] overflow-hidden border border-[#D2DCF0] shadow-md group bg-[#0A224E]">
                       <div className="absolute inset-0 w-[200%] h-full left-0">
                         <img
-                          src="/images/blueprint_advisory_workspace.webp"
+                          src="/images/services/ai-gcc/blueprint_advisory_workspace.webp"
                           alt="NeoIntelli advisory session"
                           className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                           loading="lazy"
@@ -318,7 +318,7 @@ export default function Contact() {
                     <div className="relative flex-1 h-full rounded-[22px] sm:rounded-[28px] overflow-hidden border border-[#D2DCF0] shadow-md group bg-[#0A224E]">
                       <div className="absolute inset-0 w-[200%] h-full -left-[100%]">
                         <img
-                          src="/images/blueprint_advisory_workspace.webp"
+                          src="/images/services/ai-gcc/blueprint_advisory_workspace.webp"
                           alt="NeoIntelli advisory session"
                           className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                           loading="lazy"
@@ -409,10 +409,11 @@ export default function Contact() {
 
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-200 mb-1.5">
+                          <label htmlFor="contact-name" className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-200 mb-1.5">
                             Your Name <span className="text-[#38BDF8]">*</span>
                           </label>
                           <input
+                            id="contact-name"
                             name="name"
                             required
                             placeholder="e.g. Sarah Jenkins"
@@ -420,10 +421,11 @@ export default function Contact() {
                           />
                         </div>
                         <div>
-                          <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-200 mb-1.5">
+                          <label htmlFor="contact-email" className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-200 mb-1.5">
                             Work Email <span className="text-[#38BDF8]">*</span>
                           </label>
                           <input
+                            id="contact-email"
                             name="email"
                             type="email"
                             required
@@ -434,10 +436,11 @@ export default function Contact() {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-200 mb-1.5">
+                        <label htmlFor="contact-company" className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-200 mb-1.5">
                           Company / Organization <span className="text-slate-400 font-normal lowercase">(optional)</span>
                         </label>
                         <input
+                          id="contact-company"
                           name="company"
                           placeholder="e.g. Acme Health Technologies"
                           className="w-full px-4 py-3 rounded-xl border border-[#1E3A8A] bg-[#021838] text-white placeholder:text-slate-400 text-sm focus:outline-none focus:border-[#00A3E0] focus:ring-2 focus:ring-[#00A3E0]/30 transition-all font-sans"
@@ -445,10 +448,11 @@ export default function Contact() {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-200 mb-1.5">
+                        <label htmlFor="contact-topic" className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-200 mb-1.5">
                           Topic of Exploration <span className="text-[#38BDF8]">*</span>
                         </label>
                         <select
+                          id="contact-topic"
                           name="topic"
                           required
                           value={topic}
@@ -465,10 +469,11 @@ export default function Contact() {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-200 mb-1.5">
+                        <label htmlFor="contact-message" className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-200 mb-1.5">
                           Message / Project Context <span className="text-slate-400 font-normal lowercase">(optional)</span>
                         </label>
                         <textarea
+                          id="contact-message"
                           name="message"
                           rows={4}
                           placeholder="Briefly describe what you're exploring — timing, scale, sector, or specific questions."

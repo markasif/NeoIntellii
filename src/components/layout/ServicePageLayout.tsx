@@ -47,7 +47,7 @@ export default function ServicePageLayout({
         if (target) {
           const topOffset = 125;
           const targetPos = target.getBoundingClientRect().top + window.pageYOffset - topOffset;
-          window.scrollTo({ top: Math.max(0, targetPos), behavior: "smooth" });
+          window.scrollTo({ top: Math.max(0, targetPos), left: 0, behavior: "smooth" });
         }
       }, 50);
       return () => clearTimeout(timer);
@@ -56,7 +56,7 @@ export default function ServicePageLayout({
 
   return (
     <div
-      className={`min-h-screen bg-[#E7EDF9] text-[#2B3D66] font-sans antialiased selection:bg-[#00A3E0]/20 selection:text-[#0D306C] ${className}`.trim()}
+      className={`min-h-screen w-full bg-[#E7EDF9] text-[#2B3D66] font-sans antialiased selection:bg-[#00A3E0]/20 selection:text-[#0D306C] ${className}`.trim()}
     >
       <Navbar appearance="dark" />
       {children}

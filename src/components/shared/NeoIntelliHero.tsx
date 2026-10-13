@@ -198,11 +198,11 @@ export default function NeoIntelliHero({
     <section
       id={id}
       aria-label={ariaLabel}
-      className="relative w-full min-h-[100svh] lg:min-h-[640px] xl:min-h-[720px] flex flex-col justify-between overflow-hidden bg-[#071F4F] select-none"
+      className="relative w-full max-w-full min-h-[100svh] lg:min-h-[640px] xl:min-h-[720px] flex flex-col justify-between overflow-hidden bg-[#071F4F] select-none"
     >
       {/* ── BACKGROUND ARTWORK ── */}
       {/* Mobile Background Artwork (< 1024px) */}
-      <div className="lg:hidden absolute inset-0 w-full h-full z-0 pointer-events-none">
+      <div className="lg:hidden absolute inset-0 w-full h-full z-0 pointer-events-none overflow-hidden">
         <Image
           src={mobileImage}
           alt={imageAlt}
@@ -216,7 +216,7 @@ export default function NeoIntelliHero({
       </div>
 
       {/* Desktop Background Artwork (>= 1024px) */}
-      <div className="hidden lg:block absolute inset-0 w-full h-full z-0 pointer-events-none">
+      <div className="hidden lg:block absolute inset-0 w-full h-full z-0 pointer-events-none overflow-hidden">
         <Image
           src={desktopImage}
           alt={imageAlt}

@@ -338,7 +338,7 @@ export default function GCCReadinessAssessment() {
             {/* Mobile artwork */}
             <div className="md:hidden absolute inset-0">
               <Image
-                src="/hero/hero-half-viewport-mobile.webp"
+                src="/images/hero/hero-half-viewport-mobile.webp"
                 alt="Mobile hero artwork"
                 fill
                 priority
@@ -350,7 +350,7 @@ export default function GCCReadinessAssessment() {
             {/* Desktop artwork */}
             <div className="hidden md:block absolute inset-0">
               <Image
-                src="/hero/hero-half-viewport.webp"
+                src="/images/hero/hero-half-viewport.webp"
               alt="India GCC Readiness Assessment"
               fill
               priority

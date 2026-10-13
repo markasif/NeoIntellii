@@ -268,7 +268,7 @@ export default function Footer() {
                 </ul>
 
                 {category.sub && (
-                  <div className="pt-5 mt-3 border-t border-[#0D306C]/10">
+                  <div className="pt-5 mt-3">
                     <h4 className="text-[13px] sm:text-[14px] font-bold text-[#0D306C] tracking-tight mb-2 sm:mb-2.5">
                       {category.sub.title}
                     </h4>

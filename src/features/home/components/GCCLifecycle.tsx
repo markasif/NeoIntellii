@@ -150,7 +150,7 @@ export default function GCCLifecycle() {
               isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            Build the AI GCC end to end<span className="text-[#169DC8]">.</span>
+            Build the AI GCC end to end.
           </h2>
 
           {/* Supporting description */}

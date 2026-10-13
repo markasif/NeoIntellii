@@ -137,7 +137,7 @@ export default function SetupOperations() {
               Hiring runs through the dedicated specialist desk on <Link to={AI_GCC_CONTEXT_LINKS.aiDataRecruitment.path} className="text-[#008EC4] hover:text-[#0D306C] font-semibold underline underline-offset-2 transition-colors">{AI_GCC_CONTEXT_LINKS.aiDataRecruitment.anchor}</Link> and <Link to={AI_GCC_CONTEXT_LINKS.talentAcquisition.path} className="text-[#008EC4] hover:text-[#0D306C] font-semibold underline underline-offset-2 transition-colors">{AI_GCC_CONTEXT_LINKS.talentAcquisition.anchor}</Link>.
             </>
           }
-          imageSrc="/images/ai-gcc/advisory/talent-architecture.webp"
+          imageSrc="/images/services/ai-gcc/advisory/talent-architecture.webp"
           imageAlt="AI Team Topology & Talent Architecture"
           ourViewText="A 10-person AI GCC should not copy the operating model of a 1,000-person GCC. It should be built around calibrated pods that own delivery."
         />
@@ -190,19 +190,19 @@ export default function SetupOperations() {
             {
               title: "Employment and onboarding",
               body: "Employment support under the chosen model, structured onboarding, equipment, access and the first-90-day plan.",
-              image: "/images/gcc-operations/gcc-ops-workplace.webp",
+              image: "/images/services/gcc-operations/gcc-ops-workplace.webp",
               imageAlt: "Employment support and structured onboarding operations",
             },
             {
               title: "Payroll, benefits and HR operations",
               body: "Payroll coordination, statutory benefits, HR policy and the day-to-day queries that otherwise land on your engineering lead.",
-              image: "/images/gcc-operations/gcc-ops-performance.webp",
+              image: "/images/services/gcc-operations/gcc-ops-performance.webp",
               imageAlt: "Payroll coordination and statutory HR operations",
             },
             {
               title: "Engagement, learning and retention",
               body: "Performance support, learning pathways, engagement measurement, retention planning and clean offboarding when it happens.",
-              image: "/images/gcc-operations/gcc-real-bot-handover.webp",
+              image: "/images/services/gcc-operations/gcc-real-bot-handover.webp",
               imageAlt: "Employee engagement, learning pathways, and retention planning",
             },
           ].map((item, idx) => (

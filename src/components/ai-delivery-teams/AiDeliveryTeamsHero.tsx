@@ -56,8 +56,8 @@ export default function AiDeliveryTeamsHero({
       breadcrumbs={!isOverview ? breadcrumbs : undefined}
       title={title}
       description={description}
-      desktopImage="/hero/delivery-team.webp"
-      mobileImage="/hero/delivery-team-mobile.webp"
+      desktopImage="/images/hero/delivery-team.webp"
+      mobileImage="/images/hero/delivery-team-mobile.webp"
       imageAlt="AI Delivery Teams Executive Command Center"
       primaryCta={primaryCta}
       secondaryCta={secondaryCta}

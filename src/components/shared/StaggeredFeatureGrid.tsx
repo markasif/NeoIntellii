@@ -85,8 +85,8 @@ export default function StaggeredFeatureGrid({
             onMouseLeave={() => setHoveredIdx(initialIdx)}
             className={`relative overflow-hidden rounded-2xl sm:rounded-3xl transition-all duration-300 flex flex-col justify-center items-center text-center group cursor-pointer ${tallCls} ${
               isHovered
-                ? "border border-[#16427D]/60 -translate-y-1 shadow-md"
-                : "bg-white/95 backdrop-blur-sm border border-[#0D306C]/10 hover:-translate-y-1 hover:border-[#16427D]/60"
+                ? "border border-[#169DC8]/70 -translate-y-1 shadow-md"
+                : "bg-white/95 backdrop-blur-sm border border-[#169DC8]/35 hover:-translate-y-1 hover:border-[#169DC8]/70"
             }`}
           >
             {/* Subtle background circles default state */}

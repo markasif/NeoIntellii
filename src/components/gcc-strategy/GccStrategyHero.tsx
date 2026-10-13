@@ -52,8 +52,8 @@ export default function GccStrategyHero({
       breadcrumbs={breadcrumbs}
       title={title}
       description={description}
-      desktopImage="/hero/gcc.webp"
-      mobileImage="/hero/gcc-mobile.webp"
+      desktopImage="/images/hero/gcc.webp"
+      mobileImage="/images/hero/gcc-mobile.webp"
       imageAlt="GCC Strategy & Setup Executive Command Center"
       primaryCta={{
         label: primaryCta.label,

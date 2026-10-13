@@ -181,12 +181,7 @@ export default function RelatedAiDeliveryServices({
         <div className="mb-10 sm:mb-12">
           <SectionHeader
             eyebrow="CONNECTED ECOSYSTEM"
-            title={
-              <>
-                {title}
-                <span className="text-[#38BDF8]">.</span>
-              </>
-            }
+            title={`${title.replace(/\.?$/, "")}.`}
             description={description}
             align="center"
             variant="white"

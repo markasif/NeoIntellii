@@ -9,7 +9,7 @@ const specializedSquads: OutcomeGroup[] = [
   {
     title: "Dedicated AI Team",
     badge: "SQUAD 01",
-    image: "/images/delivery-teams/squad-dedicated-ai.webp",
+    image: "/images/services/ai-delivery-teams/squad-dedicated-ai.webp",
     alt: "Dedicated AI engineering team collaborating in high-tech Bangalore GCC office",
     aspect: "aspect-[4/5]",
     summary: "A stable AI engineering team working your ongoing product roadmap.",
@@ -25,7 +25,7 @@ const specializedSquads: OutcomeGroup[] = [
   {
     title: "AI Delivery Pod",
     badge: "SQUAD 02",
-    image: "/images/delivery-teams/squad-delivery-pod.webp",
+    image: "/images/services/ai-delivery-teams/squad-delivery-pod.webp",
     alt: "AI Delivery Pod team reviewing production deployment metrics on dashboard",
     aspect: "aspect-[4/3]",
     summary: "A cross-functional squad built around one defined production outcome.",
@@ -41,7 +41,7 @@ const specializedSquads: OutcomeGroup[] = [
   {
     title: "Forward-Deployed AI Engineers",
     badge: "SQUAD 03",
-    image: "/images/delivery-teams/squad-forward-deployed.webp",
+    image: "/images/services/ai-delivery-teams/squad-forward-deployed.webp",
     alt: "Forward-Deployed AI Engineers deeply embedded in codebase and repositories",
     aspect: "aspect-[4/5]",
     summary: "Engineers embedded in your repositories, systems and workflows.",
@@ -57,7 +57,7 @@ const specializedSquads: OutcomeGroup[] = [
   {
     title: "AI Team Transfer",
     badge: "SQUAD 04",
-    image: "/images/delivery-teams/squad-team-transfer.webp",
+    image: "/images/services/ai-delivery-teams/squad-team-transfer.webp",
     alt: "Engineering leaders conducting structured handover transition meeting",
     aspect: "aspect-[4/3]",
     summary: "Deliver now, then transfer ownership to your own engineers.",

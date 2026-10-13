@@ -131,7 +131,7 @@ export default function UniversalSubnav({
           const subnavH = navRef.current ? navRef.current.offsetHeight : 50;
           const topOffset = navH + subnavH;
           const targetPos = target.getBoundingClientRect().top + window.pageYOffset - topOffset;
-          window.scrollTo({ top: Math.max(0, targetPos), behavior: "smooth" });
+          window.scrollTo({ top: Math.max(0, targetPos), left: 0, behavior: "smooth" });
         }
       }
     }
@@ -143,7 +143,7 @@ export default function UniversalSubnav({
       id={id}
       aria-label={ariaLabel}
       style={{ top: "var(--site-navbar-height, 75px)" }}
-      className={`sticky top-[69px] sm:top-[74px] lg:top-[75px] z-40 bg-[#081B3E]/95 backdrop-blur-md border-b border-white/[0.08] select-none transition-shadow duration-300 ${
+      className={`sticky top-[69px] sm:top-[74px] lg:top-[75px] z-40 w-full max-w-full overflow-hidden bg-[#081B3E]/95 backdrop-blur-md border-b border-white/[0.08] select-none transition-shadow duration-300 ${
         isSticky
           ? "shadow-[0_12px_32px_rgba(4,14,35,0.7)]"
           : "shadow-lg shadow-[#081B3E]/20"

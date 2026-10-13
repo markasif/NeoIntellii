@@ -45,7 +45,7 @@ function scrollToContent(behavior: "smooth" | "instant" = "smooth") {
           immediate: behavior === "instant",
         });
       } else {
-        window.scrollTo({ top: Math.max(0, top), behavior });
+        window.scrollTo({ top: Math.max(0, top), left: 0, behavior });
       }
       return;
     }
@@ -55,7 +55,7 @@ function scrollToContent(behavior: "smooth" | "instant" = "smooth") {
   if (activeLenis) {
     activeLenis.scrollTo(0, { immediate: behavior === "instant" });
   } else {
-    window.scrollTo({ top: 0, behavior });
+    window.scrollTo({ top: 0, left: 0, behavior });
   }
 }
 
@@ -93,7 +93,11 @@ const ScrollToTop = () => {
     if (activeLenis) {
       activeLenis.scrollTo(0, { immediate: true });
     } else {
-      window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+    }
+    if (typeof document !== "undefined") {
+      document.documentElement.scrollLeft = 0;
+      document.body.scrollLeft = 0;
     }
   }, [pathname, hash]);
 

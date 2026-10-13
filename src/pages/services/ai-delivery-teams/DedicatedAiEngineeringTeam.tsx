@@ -272,7 +272,7 @@ export default function DedicatedAiEngineeringTeam() {
                 BEST SUITED TO
               </span>
               <h2 className="text-2xl sm:text-4xl lg:text-[44px] font-extrabold tracking-[-0.03em] text-[#0D306C] leading-[1.14]">
-                Best suited to<span className="text-[#169DC8]">.</span>
+                Best suited to.
               </h2>
               <p className="mt-3 sm:mt-4 text-xs sm:text-base text-[#505D74] leading-relaxed max-w-2xl mx-auto">
                 The common thread is a roadmap that keeps producing work, and a cost to losing context between pieces of it.
@@ -327,7 +327,7 @@ export default function DedicatedAiEngineeringTeam() {
                     style={{ width: "74%", height: "72%" }}
                   >
                     <img
-                      src="/images/product_roadmap.webp"
+                      src="/images/services/ai-delivery-teams/product_roadmap.webp"
                       alt={bestFor[0].title}
                       className="w-full h-full object-contain object-right-bottom scale-105 sm:scale-[1.08] origin-bottom-right drop-shadow-sm transition-transform duration-500 group-hover:scale-110"
                     />
@@ -377,7 +377,7 @@ export default function DedicatedAiEngineeringTeam() {
                     style={{ width: "66%", height: "65%" }}
                   >
                     <img
-                      src="/images/Agentic_workflow.webp"
+                      src="/images/services/ai-engineering/Agentic_workflow.webp"
                       alt={bestFor[1].title}
                       className="w-full h-full object-contain object-right-bottom scale-100 origin-bottom-right drop-shadow-sm transition-transform duration-500 group-hover:scale-105"
                     />
@@ -475,8 +475,10 @@ export default function DedicatedAiEngineeringTeam() {
                       }}
                     >
                       <img
-                        src="/images/gcc_skyscraper_cutout-removebg-preview.png"
+                        src="/images/services/gcc/gcc_skyscraper_cutout-removebg-preview.png"
                         alt="Dedicated AI Engineering Team"
+                        width={432}
+                        height={578}
                         className="w-full h-full object-contain object-right-bottom scale-105 origin-bottom-right"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#E98D1C]/25 via-transparent to-transparent pointer-events-none" />
@@ -563,7 +565,7 @@ export default function DedicatedAiEngineeringTeam() {
                     style={{ width: "63%", height: "62%" }}
                   >
                     <img
-                      src="/images/Saas_Ai.webp"
+                      src="/images/services/ai-engineering/Saas_Ai.webp"
                       alt={bestFor[3].title}
                       className="w-full h-full object-contain object-right-bottom scale-100 origin-bottom-right drop-shadow-sm transition-transform duration-500 group-hover:scale-105"
                     />
@@ -613,7 +615,7 @@ export default function DedicatedAiEngineeringTeam() {
                     style={{ width: "74%", height: "72%" }}
                   >
                     <img
-                      src="/images/enterprise_modern.webp"
+                      src="/images/services/gcc/enterprise_modern.webp"
                       alt={bestFor[4].title}
                       className="w-full h-full object-contain object-right-bottom scale-105 sm:scale-[1.08] origin-bottom-right drop-shadow-sm transition-transform duration-500 group-hover:scale-110"
                     />

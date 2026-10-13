@@ -24,13 +24,41 @@ const FLOW = [
 ];
 
 const CAPABILITIES = [
-  { title: "Enterprise RAG", body: "Retrieval pipelines over governed enterprise data: chunking, embedding, hybrid search, re-ranking, citation and access control that follows the source system." },
-  { title: "AI copilots", body: "Knowledge and workflow copilots for engineering, operations, customer and back-office teams, designed around the task and the escalation path, not the chat box." },
-  { title: "Agentic AI", body: "Multi-step agents that plan, call tools and complete work inside defined permissions, with tracing and human escalation built in from the first version." },
-  { title: "Model adaptation", body: "Prompt engineering, structured outputs, fine-tuning and distillation chosen by evidence from evaluation rather than by default." },
-  { title: "Evaluation", body: "Task-level evaluation sets, LLM-as-judge with human calibration, regression suites for prompts and retrieval, and red-teaming for the risks that matter to the use case." },
-  { title: "Production engineering", body: "Gateways, caching, rate limiting, fallbacks, observability and rollout patterns so a GenAI feature behaves like software, not a demo." },
-  { title: "AI economics", body: "Cost per task, model routing across tiers, caching and batch strategies, and the unit economics the business case depends on." },
+  {
+    title: "Enterprise RAG",
+    body: "Retrieval pipelines over governed enterprise data: chunking, embedding, hybrid search, re-ranking, citation and access control that follows the source system.",
+    image: "/images/services/ai-gcc/genai/enterprise-rag.webp",
+  },
+  {
+    title: "AI copilots",
+    body: "Knowledge and workflow copilots for engineering, operations, customer and back-office teams, designed around the task and the escalation path, not the chat box.",
+    image: "/images/services/ai-gcc/genai/ai-copilots.webp",
+  },
+  {
+    title: "Agentic AI",
+    body: "Multi-step agents that plan, call tools and complete work inside defined permissions, with tracing and human escalation built in from the first version.",
+    image: "/images/services/ai-gcc/genai/agentic-ai.webp",
+  },
+  {
+    title: "Model adaptation",
+    body: "Prompt engineering, structured outputs, fine-tuning and distillation chosen by evidence from evaluation rather than by default.",
+    image: "/images/services/ai-gcc/genai/model-adaptation.webp",
+  },
+  {
+    title: "Evaluation",
+    body: "Task-level evaluation sets, LLM-as-judge with human calibration, regression suites for prompts and retrieval, and red-teaming for the risks that matter to the use case.",
+    image: "/images/services/ai-gcc/genai/evaluation.webp",
+  },
+  {
+    title: "Production engineering",
+    body: "Gateways, caching, rate limiting, fallbacks, observability and rollout patterns so a GenAI feature behaves like software, not a demo.",
+    image: "/images/services/ai-gcc/genai/production-engineering.webp",
+  },
+  {
+    title: "AI economics",
+    body: "Cost per task, model routing across tiers, caching and batch strategies, and the unit economics the business case depends on.",
+    image: "/images/services/ai-gcc/genai/ai-economics.webp",
+  },
 ];
 
 const AGENT_OPERATING_MODEL = ["Agent registry", "Versioning", "Tool permissions", "Tracing", "Evaluation", "Human escalation", "Cost per task", "Incident handling", "Governance"];
@@ -105,7 +133,7 @@ export default function GenerativeAI() {
       <Section id="genai-capabilities" width="wide">
         <GenAiCapabilitiesMosaic
           eyebrow="CAPABILITIES"
-          title={<>What the GCC builds and runs<span className="text-[#00A3E0]">.</span></>}
+          title="What the GCC builds and runs."
           lead="Enterprise RAG, copilots, tool-using agents, model adaptation, evaluation, production engineering and the cost controls that keep a use case fundable."
           items={CAPABILITIES}
         />
@@ -121,7 +149,7 @@ export default function GenerativeAI() {
               This layer is run by <Link to={AI_GCC_PAGE_BY_KEY.mlops.path} className="text-[#008EC4] hover:text-[#0D306C] font-semibold underline underline-offset-2 transition-colors">{AI_GCC_PAGE_BY_KEY.mlops.name}</Link> and governed under <Link to={AI_GCC_PAGE_BY_KEY.governance.path} className="text-[#008EC4] hover:text-[#0D306C] font-semibold underline underline-offset-2 transition-colors">{AI_GCC_PAGE_BY_KEY.governance.name}</Link>.
             </>
           }
-          imageSrc="/images/ai-genai.webp"
+          imageSrc="/images/services/ai-gcc/Futuristic AI Governance Command Center.webp"
           imageAlt="AgentOps & Autonomous Workflows"
           ourViewText="An AI agent without evaluation, permissions and observability is a prototype, not an enterprise capability."
         />

@@ -238,9 +238,9 @@ describe("GCC Operations section: legacy route migration", () => {
     // 3-column responsive grid
     expect(text).toContain("grid-cols-1 md:grid-cols-2 lg:grid-cols-3");
     // Right artwork generated images
-    expect(text).toContain("/images/gcc-operations/scope-workspace.webp");
-    expect(text).toContain("/images/gcc-operations/scope-devices.webp");
-    expect(text).toContain("/images/gcc-operations/scope-identity.webp");
+    expect(text).toContain("/images/services/gcc-operations/scope-workspace.webp");
+    expect(text).toContain("/images/services/gcc-operations/scope-devices.webp");
+    expect(text).toContain("/images/services/gcc-operations/scope-identity.webp");
     // Arrow bullet points
     expect(text).toContain("group.items.map");
     // Out of scope card

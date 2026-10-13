@@ -18,19 +18,19 @@ export interface BuyerPath {
 
 const DEFAULT_METAS = [
   {
-    image: "/images/solution_micro_gcc.webp",
+    image: "/images/home/solution_micro_gcc.webp",
     alt: "AI Micro GCC team collaborating in India tech hub",
     badge: "WAY 01",
     aspect: "aspect-[4/3]",
   },
   {
-    image: "/images/mosaic_ai_gcc.webp",
+    image: "/images/home/mosaic_ai_gcc.webp",
     alt: "Global AI Capability Center enterprise launch",
     badge: "WAY 02",
     aspect: "aspect-[16/10]",
   },
   {
-    image: "/images/gcc_modernization.webp",
+    image: "/images/services/gcc/gcc_modernization.webp",
     alt: "Enterprise AI GCC transformation and modernization",
     badge: "WAY 03",
     aspect: "aspect-[4/3]",

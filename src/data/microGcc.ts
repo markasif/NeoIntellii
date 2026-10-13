@@ -111,7 +111,7 @@ export const tiers: MicroGccTier[] = [
     size: "8 to 10 people",
     squadPods: 1,
     squadLabel: "1 Dedicated Squad",
-    image: "/images/micro-gcc/tier-01-single-squad.webp",
+    image: "/images/services/micro-gcc/tier-01-single-squad.webp",
     imageAlt: "Single agile squad collaborating in high-tech workspace",
     best: "Startups extending engineering capacity. First India team. Pilot mandates.",
     desc: "A working squad with one lead and 7 to 9 specialists. Engineering, AI and data, product, or cross-functional. Operational in 6 to 8 weeks. Designed to ship outcomes, not absorb tickets.",
@@ -126,7 +126,7 @@ export const tiers: MicroGccTier[] = [
     size: "15 to 20 people",
     squadPods: 2,
     squadLabel: "2 Coordinated Squads",
-    image: "/images/micro-gcc/tier-02-twin-squads.webp",
+    image: "/images/services/micro-gcc/tier-02-twin-squads.webp",
     imageAlt: "Twin engineering squads working across collaborative bays",
     best: "SMEs and mid-market companies running two parallel mandates. Product plus platform. Or engineering plus data.",
     desc: "Two coordinated squads with shared leadership and a common operating model. Each squad owns its own delivery. India lead role typically introduced at this tier.",
@@ -141,7 +141,7 @@ export const tiers: MicroGccTier[] = [
     size: "25 to 30 people",
     squadPods: 3,
     squadLabel: "3 Parallel Squads",
-    image: "/images/micro-gcc/tier-03-triple-squad.webp",
+    image: "/images/services/micro-gcc/tier-03-triple-squad.webp",
     imageAlt: "Triple squad delivery floor with India technical leadership",
     best: "Companies treating India as a real capability hub. Multi-function mandates. Series C and mid-market scale-ups.",
     desc: "Three squads working in parallel, with shared platform, governance, and reporting. India lead becomes a full-time leadership role. Reporting cadence formalised at this tier.",
@@ -156,7 +156,7 @@ export const tiers: MicroGccTier[] = [
     size: "40 to 50 people",
     squadPods: 4,
     squadLabel: "4 to 5 Multi-Function Squads",
-    image: "/images/micro-gcc/tier-04-full-micro-gcc.webp",
+    image: "/images/services/micro-gcc/tier-04-full-micro-gcc.webp",
     imageAlt: "Full Micro GCC delivery floor with executive leadership",
     best: "Companies graduating from Micro GCC into a full GCC. Mid-market firms scaling India as a core delivery hub.",
     desc: "Four to five squads, mature governance, dedicated India leadership, full operational independence. Ready to graduate to a traditional GCC operating model when scale demands it.",
@@ -173,7 +173,7 @@ export const models: MicroGccModel[] = [
     fit: "Tier 3 and Tier 4 squads. Companies with India experience or mature global ops.",
     neo: "Entity setup, hiring, workspace, technology baseline, governance setup, leadership onboarding, handover.",
     you: "Payroll, compliance, operations, India entity governance (post-handover).",
-    image: "/images/micro-gcc/model-01-owned.webp",
+    image: "/images/services/micro-gcc/model-01-owned.webp",
     imageAlt: "Fully owned Micro GCC corporate entity setup and governance",
   },
   {
@@ -182,7 +182,7 @@ export const models: MicroGccModel[] = [
     fit: "Tier 1, Tier 2, and Tier 3 squads. SMEs and mid-market firms that want to focus on the work, not the paperwork.",
     neo: "Entity, payroll, compliance, workspace, infrastructure, statutory operations.",
     you: "Team, roadmap, IP, performance management, growth plan.",
-    image: "/images/micro-gcc/model-02-coowned.webp",
+    image: "/images/services/micro-gcc/model-02-coowned.webp",
     imageAlt: "Co-owned Micro GCC operational collaboration and shared governance",
   },
   {
@@ -191,7 +191,7 @@ export const models: MicroGccModel[] = [
     fit: "Tier 1 squads. Pilot mandates. Companies validating India before committing to ownership.",
     neo: "Everything operational and entity-related.",
     you: "Squad charter, roadmap, performance reviews, strategic direction.",
-    image: "/images/micro-gcc/model-03-managed.webp",
+    image: "/images/services/micro-gcc/model-03-managed.webp",
     imageAlt: "Managed dedicated squad operational environment and delivery team",
   },
 ];
@@ -219,7 +219,7 @@ export const blocks: FoundationBlock[] = [
     t: "Block 1. Entity and compliance",
     d: "Private limited setup, FEMA, GST, PF, PT, ESI registrations, statutory compliance. Or run on our entity until yours is live.",
     lead: "Coordinated, not improvised.",
-    image: "/images/micro-gcc/foundation-01-entity.webp",
+    image: "/images/services/micro-gcc/foundation-01-entity.webp",
     icon: Landmark,
     items: [
       "Private limited setup & legal entity registration",
@@ -232,7 +232,7 @@ export const blocks: FoundationBlock[] = [
     t: "Block 2. Talent sourcing and hiring",
     d: "Senior-led recruitment for engineering, AI and data, product, design, finance, compliance, and operations roles. 21-day median time-to-offer.",
     lead: "21-day median time-to-offer.",
-    image: "/images/micro-gcc/foundation-02-talent.webp",
+    image: "/images/services/micro-gcc/foundation-02-talent.webp",
     icon: Users,
     items: [
       "Engineering, AI, data, and product specialists",
@@ -246,7 +246,7 @@ export const blocks: FoundationBlock[] = [
     t: "Block 3. Workspace and infrastructure",
     d: "Co-working, managed office, or independent space depending on tier. Hardware, network, security baseline included.",
     lead: "Sized for the squad tier.",
-    image: "/images/micro-gcc/foundation-03-workspace.webp",
+    image: "/images/services/micro-gcc/foundation-03-workspace.webp",
     icon: Building2,
     items: [
       "Co-working, managed office, or independent space",
@@ -259,7 +259,7 @@ export const blocks: FoundationBlock[] = [
     t: "Block 4. Payroll and statutory operations",
     d: "End-to-end payroll, benefits, statutory filings, audit support. Run through your entity or ours.",
     lead: "Complete back-office coverage.",
-    image: "/images/micro-gcc/foundation-04-payroll.webp",
+    image: "/images/services/micro-gcc/foundation-04-payroll.webp",
     icon: Calculator,
     items: [
       "End-to-end monthly payroll and tax withholdings",
@@ -272,7 +272,7 @@ export const blocks: FoundationBlock[] = [
     t: "Block 5. Technology foundation",
     d: "Identity, access, security posture, productivity tooling, and integration into your home systems.",
     lead: "Seamless home integration.",
-    image: "/images/micro-gcc/foundation-05-tech.webp",
+    image: "/images/services/micro-gcc/foundation-05-tech.webp",
     icon: ShieldCheck,
     items: [
       "Cloud IAM, single sign-on, and directory sync",
@@ -285,7 +285,7 @@ export const blocks: FoundationBlock[] = [
     t: "Block 6. Governance and reporting",
     d: "Weekly squad delivery reviews, monthly operational reviews, quarterly business reviews. KPI dashboards built around your reporting cadence.",
     lead: "Radical delivery transparency.",
-    image: "/images/micro-gcc/foundation-06-governance.webp",
+    image: "/images/services/micro-gcc/foundation-06-governance.webp",
     icon: LineChart,
     items: [
       "Weekly squad delivery reviews and sprint updates",
@@ -298,7 +298,7 @@ export const blocks: FoundationBlock[] = [
     t: "Block 7. Leadership and account ownership",
     d: "Senior NeoIntelli partner assigned to your account. India lead introduced at Tier 2 and above. One named point of contact throughout.",
     lead: "One named accountable point.",
-    image: "/images/micro-gcc/foundation-07-leadership.webp",
+    image: "/images/services/micro-gcc/foundation-07-leadership.webp",
     icon: Award,
     items: [
       "Senior NeoIntelli partner assigned to account",
@@ -311,7 +311,7 @@ export const blocks: FoundationBlock[] = [
     t: "Block 8. Scale and graduate path",
     d: "Built-in growth plan. Move squads up tiers. Graduate the Micro GCC to a full GCC when scale demands it. No rebuilds.",
     lead: "Zero-rebuild graduation.",
-    image: "/images/micro-gcc/foundation-08-graduate.webp",
+    image: "/images/services/micro-gcc/foundation-08-graduate.webp",
     icon: TrendingUp,
     items: [
       "Built-in structured growth and headcount plan",
@@ -330,7 +330,7 @@ export const phases: DeploymentPhase[] = [
     timeline: "Week 0 to 1.",
     desc: "30 minute discovery call. Define squad count, function, location, ownership model, and timeline. Output: a scoping brief.",
     accent: "#F19326",
-    image: "/images/micro-gcc/phase-01.webp",
+    image: "/images/services/micro-gcc/phase-01.webp",
     icon: PhoneCall,
   },
   {
@@ -339,7 +339,7 @@ export const phases: DeploymentPhase[] = [
     timeline: "Week 1 to 3.",
     desc: "Engagement model selection (Fully Owned, Co-Owned, or Managed), city, workspace, compliance setup, and squad composition. Output: a Micro GCC build plan.",
     accent: "#00A3E0",
-    image: "/images/micro-gcc/phase-02.webp",
+    image: "/images/services/micro-gcc/phase-02.webp",
     icon: Compass,
   },
   {
@@ -348,7 +348,7 @@ export const phases: DeploymentPhase[] = [
     timeline: "Week 3 to 6.",
     desc: "Entity registration kicked off in parallel with first leadership hire. Workspace secured. Identity and security baseline configured.",
     accent: "#F19326",
-    image: "/images/micro-gcc/phase-03.webp",
+    image: "/images/services/micro-gcc/phase-03.webp",
     icon: Building2,
   },
   {
@@ -357,7 +357,7 @@ export const phases: DeploymentPhase[] = [
     timeline: "Week 4 to 10.",
     desc: "First squad onboarded. Toolchain, reporting, delivery cadence in place. Squad begins working with home team.",
     accent: "#00A3E0",
-    image: "/images/micro-gcc/phase-04.webp",
+    image: "/images/services/micro-gcc/phase-04.webp",
     icon: Users,
   },
   {
@@ -366,7 +366,7 @@ export const phases: DeploymentPhase[] = [
     timeline: "Month 3 onwards.",
     desc: "Continued hiring against agreed headcount plan. Monthly governance reviews. Add the next squad when ready.",
     accent: "#F19326",
-    image: "/images/micro-gcc/phase-05.webp",
+    image: "/images/services/micro-gcc/phase-05.webp",
     icon: TrendingUp,
   },
 ];
@@ -454,7 +454,7 @@ export const whyNeo: WhyNeoItem[] = [
     d: "Most providers treat lean GCCs as a downsized enterprise build. We start with the squad as the unit. Then scale tier by tier.",
     ctaText: "Explore squad tiers",
     href: "#tiers",
-    image: "/images/micro-gcc/why-01-squad.webp",
+    image: "/images/services/micro-gcc/why-01-squad.webp",
     icon: Boxes,
   },
   {
@@ -463,7 +463,7 @@ export const whyNeo: WhyNeoItem[] = [
     d: "Fully Owned, Co-Owned, or Managed. Pick the level of operational involvement you want. Change it later without rebuilding.",
     ctaText: "Compare ownership models",
     href: "#models",
-    image: "/images/micro-gcc/why-02-models.webp",
+    image: "/images/services/micro-gcc/why-02-models.webp",
     icon: Layers,
   },
   {
@@ -472,7 +472,7 @@ export const whyNeo: WhyNeoItem[] = [
     d: "Most Micro GCC providers ignore AI capability. We embed AI, ML, and data foundations from the first squad. Because that is where the leverage is.",
     ctaText: "Explore AI capability",
     href: "/services/ai-gcc",
-    image: "/images/micro-gcc/why-03-aifirst.webp",
+    image: "/images/services/micro-gcc/why-03-aifirst.webp",
     icon: Bot,
   },
   {
@@ -481,7 +481,7 @@ export const whyNeo: WhyNeoItem[] = [
     d: "A senior NeoIntelli partner owns your account from day one, with the India lead introduced at Tier 2. One named point of contact, start to finish.",
     ctaText: "Explore leadership model",
     href: "#phases",
-    image: "/images/micro-gcc/why-04-leadership.webp",
+    image: "/images/services/micro-gcc/why-04-leadership.webp",
     icon: Award,
   },
   {
@@ -490,7 +490,7 @@ export const whyNeo: WhyNeoItem[] = [
     d: "Active hiring and operations in six cities. We pick the city your function demands, not where we happen to be.",
     ctaText: "View city footprint",
     href: "#cities",
-    image: "/images/micro-gcc/why-05-cities.webp",
+    image: "/images/services/micro-gcc/why-05-cities.webp",
     icon: MapPin,
   },
   {
@@ -499,7 +499,7 @@ export const whyNeo: WhyNeoItem[] = [
     d: "A Micro GCC is a starting point. Our playbook moves you tier by tier to a full GCC operating model when scale demands it.",
     ctaText: "Graduation roadmap",
     href: "/services/gcc-operations",
-    image: "/images/micro-gcc/why-06-graduate.webp",
+    image: "/images/services/micro-gcc/why-06-graduate.webp",
     icon: TrendingUp,
   },
 ];

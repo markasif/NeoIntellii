@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -66,6 +66,7 @@ const companyLinks = [
 export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
   const router = useRouter();
   const currentPath = router?.asPath?.split("?")[0] || "";
+  const navigatingRef = useRef(false);
 
   // Main menu accordion state — all sections closed by default
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
@@ -86,9 +87,20 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
     }
   }, [isOpen]);
 
+  const handleNavClick = () => {
+    navigatingRef.current = true;
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+      document.documentElement.scrollLeft = 0;
+      document.body.scrollLeft = 0;
+    }
+    onClose();
+  };
+
   // Lock body & document scroll completely when sidebar is open so background cannot scroll on mobile or desktop
   useEffect(() => {
     if (isOpen) {
+      navigatingRef.current = false;
       const scrollY = window.scrollY;
       const initialPath = window.location.pathname + window.location.search;
       let routeChanged = false;
@@ -139,15 +151,34 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
         document.body.style.overscrollBehavior = originalOverscroll;
 
         const currentWindowPath = window.location.pathname + window.location.search;
-        if (routeChanged || currentWindowPath !== initialPath) {
-          window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+        if (navigatingRef.current || routeChanged || currentWindowPath !== initialPath) {
+          window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
         } else {
-          window.scrollTo({ top: scrollY, behavior: "instant" as ScrollBehavior });
+          window.scrollTo({ top: scrollY, left: 0, behavior: "instant" as ScrollBehavior });
         }
+        document.documentElement.style.overflowX = "hidden";
+        document.body.style.overflowX = "hidden";
+        document.documentElement.scrollLeft = 0;
+        document.body.scrollLeft = 0;
         document.documentElement.style.scrollBehavior = originalHtmlScrollBehavior;
       };
     }
   }, [isOpen, router]);
+
+  // Ensure scroll is at top and left 0 when route change completes
+  useEffect(() => {
+    const handleComplete = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+      document.documentElement.scrollLeft = 0;
+      document.body.scrollLeft = 0;
+    };
+    if (router?.events) {
+      router.events.on("routeChangeComplete", handleComplete);
+      return () => {
+        router.events.off("routeChangeComplete", handleComplete);
+      };
+    }
+  }, [router]);
 
   // Close on Escape key
   useEffect(() => {
@@ -183,7 +214,10 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[999] lg:hidden">
+        <div
+          className="fixed inset-0 z-[999] lg:hidden overflow-hidden pointer-events-auto"
+          style={{ contain: "paint" }}
+        >
           {/* Backdrop overlay */}
           <motion.div
             key="mobile-backdrop"
@@ -206,7 +240,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 320 }}
-            className="fixed top-0 right-0 bottom-0 w-full sm:w-[420px] max-w-full sm:max-w-[420px] flex flex-col shadow-[-16px_0_40px_rgba(13,48,108,0.22)] border-l border-white/70 overflow-hidden font-[family-name:var(--font-manrope)] select-none"
+            className="absolute top-0 right-0 bottom-0 w-full sm:w-[420px] max-w-full sm:max-w-[420px] flex flex-col shadow-[-16px_0_40px_rgba(13,48,108,0.22)] border-l border-white/70 overflow-hidden font-[family-name:var(--font-manrope)] select-none"
             style={{
               background:
                 "linear-gradient(180deg, #F8FAFD 0%, #EDF5FC 20%, #CDE3F7 50%, #ADD2F1 75%, #8EBDE4 100%)",
@@ -286,7 +320,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                             <Link
                               key={tool.href}
                               href={tool.href}
-                              onClick={onClose}
+                              onClick={handleNavClick}
                               className="group/btn relative inline-flex items-center justify-center gap-2.5 w-full rounded-xl bg-gradient-to-r from-[#169DC8] via-[#1288B0] to-[#0D6EA8] text-white text-[13px] font-semibold py-2.5 px-4 transition-all duration-200 shadow-[0_4px_16px_rgba(22,157,200,0.35)] hover:shadow-[0_6px_22px_rgba(22,157,200,0.5)] hover:-translate-y-0.5 active:translate-y-0"
                             >
                               <span>{tool.label}</span>
@@ -346,7 +380,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                                         <span className="absolute -left-[14px] top-1/2 -translate-y-1/2 w-2 h-[1px] bg-[#169DC8]/30 rounded-full" />
                                         <Link
                                           href={pillar.href}
-                                          onClick={onClose}
+                                          onClick={handleNavClick}
                                           className={`group relative flex items-center justify-between py-1 px-2.5 rounded-md text-[12px] transition-all ${
                                             isLinkActive(pillar.href) &&
                                             currentPath === pillar.href
@@ -374,7 +408,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                                             <span className="absolute -left-[14px] top-1/2 -translate-y-1/2 w-2 h-[1px] bg-[#169DC8]/30 rounded-full" />
                                             <Link
                                               href={link.href}
-                                              onClick={onClose}
+                                              onClick={handleNavClick}
                                               className={`group relative flex items-center justify-between py-1 px-2.5 rounded-md text-[12px] transition-all ${
                                                 active
                                                   ? "bg-white/95 text-[#0D306C] font-bold shadow-2xs border border-white/80"
@@ -455,7 +489,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                                   <Link
                                     key={link.label}
                                     href={link.href}
-                                    onClick={onClose}
+                                    onClick={handleNavClick}
                                     className={`group flex items-center justify-between py-1.5 px-2.5 rounded-lg text-[12.5px] transition-all ${
                                       active
                                         ? "bg-white/95 text-[#0D306C] font-bold shadow-2xs border border-white/80"
@@ -539,7 +573,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                             href="https://neohirex.ai/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={onClose}
+                            onClick={handleNavClick}
                             className="inline-flex items-center gap-1.5 text-[12px] font-bold text-[#169DC8] hover:text-[#0D306C] transition-colors pt-1"
                           >
                             <span>Explore Platform</span>
@@ -563,7 +597,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                                   href={item.href}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  onClick={onClose}
+                                  onClick={handleNavClick}
                                   className="group flex items-center justify-between py-1.5 px-2.5 rounded-lg text-[12.5px] text-[#2B3D66] hover:text-[#0D306C] hover:bg-white/80 font-medium transition-all"
                                 >
                                   <span>{item.label}</span>
@@ -572,7 +606,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                               ) : (
                                 <Link
                                   href={item.href}
-                                  onClick={onClose}
+                                  onClick={handleNavClick}
                                   className="group flex items-center justify-between py-1.5 px-2.5 rounded-lg text-[12.5px] text-[#2B3D66] hover:text-[#0D306C] hover:bg-white/80 font-medium transition-all"
                                 >
                                   <span>{item.label}</span>
@@ -626,7 +660,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                           {/* All Industries on top, styled like the What We Do planning-tool buttons */}
                           <Link
                             href="/industries"
-                            onClick={onClose}
+                            onClick={handleNavClick}
                             className="group/btn relative inline-flex items-center justify-center gap-2.5 w-full rounded-xl bg-gradient-to-r from-[#169DC8] via-[#1288B0] to-[#0D6EA8] text-white text-[12.5px] font-semibold py-2.5 px-4 transition-all duration-200 shadow-[0_4px_16px_rgba(22,157,200,0.35)] hover:shadow-[0_6px_22px_rgba(22,157,200,0.5)] hover:-translate-y-0.5 active:translate-y-0"
                           >
                             <span>All Industries</span>
@@ -640,7 +674,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                               <span className="absolute -left-[18px] top-1/2 -translate-y-1/2 w-2.5 h-[1.5px] bg-[#169DC8]/35 rounded-full" />
                               <Link
                                 href={item.href}
-                                onClick={onClose}
+                                onClick={handleNavClick}
                                 className={`group flex items-center justify-between py-1.5 px-2.5 rounded-lg text-[12.5px] transition-all ${
                                   active
                                     ? "text-[#169DC8] font-bold"
@@ -707,7 +741,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                               <span className="absolute -left-[18px] top-1/2 -translate-y-1/2 w-2.5 h-[1.5px] bg-[#169DC8]/35 rounded-full" />
                               <Link
                                 href={item.href}
-                                onClick={onClose}
+                                onClick={handleNavClick}
                                 className={`group flex items-center justify-between py-1.5 px-2.5 rounded-lg text-[12.5px] transition-all ${
                                   active
                                     ? "bg-white/95 text-[#0D306C] font-bold shadow-2xs border border-white/80"
@@ -739,7 +773,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
               {/* Book Consultation Button — pinned above the logo, never scrolls with the menu */}
               <Link
                 href="/book-a-call"
-                onClick={onClose}
+                onClick={handleNavClick}
                 className="btn-navy self-center"
               >
                 <span className="text-[11px]">Book a Consultation</span>
@@ -748,7 +782,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
 
               {/* NeoIntelli Logo — bottom-most element */}
               <div className="flex items-center justify-center">
-                <Link href="/" onClick={onClose} aria-label="NeoIntelli Home">
+                <Link href="/" onClick={handleNavClick} aria-label="NeoIntelli Home">
                   <Image
                     src="/logo/neointelli_logo.webp"
                     alt="NeoIntelli"

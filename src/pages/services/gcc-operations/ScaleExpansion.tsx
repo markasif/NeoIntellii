@@ -52,7 +52,7 @@ const startingPoints = [
     title: "A first team that needs to become a function",
     desc: "The pilot worked. Now it needs leadership, structure and a hiring engine that can sustain growth.",
     badge: "STARTING POINT 01",
-    image: "/images/gcc-operations/gcc-ops-workforce.webp",
+    image: "/images/services/gcc-operations/gcc-ops-workforce.webp",
     aspect: "aspect-[4/3]",
     points: [
       "Successful pilot validation",
@@ -65,7 +65,7 @@ const startingPoints = [
     title: "One function that needs to become several",
     desc: "Engineering is stable, and product, data or operations want to follow. Each needs its own mandate and shared operations.",
     badge: "STARTING POINT 02",
-    image: "/images/gcc-operations/gcc-arch-teams.webp",
+    image: "/images/services/gcc-operations/gcc-arch-teams.webp",
     aspect: "aspect-[16/10]",
     points: [
       "Stable engineering foundation",
@@ -78,7 +78,7 @@ const startingPoints = [
     title: "One city considering a second",
     desc: "Talent, resilience or cost point to another location. The operating model has to run two sites without doubling itself.",
     badge: "STARTING POINT 03",
-    image: "/images/gcc-operations/gcc-positioning-tower.webp",
+    image: "/images/services/gcc-operations/gcc-positioning-tower.webp",
     aspect: "aspect-[4/3]",
     points: [
       "Specialized regional talent pool",
@@ -91,7 +91,7 @@ const startingPoints = [
     title: "Engineering that wants AI and data",
     desc: "The next mandate needs AI engineering, data and platform capability the center does not yet have.",
     badge: "STARTING POINT 04",
-    image: "/images/gcc-operations/gcc-ops-performance.webp",
+    image: "/images/services/gcc-operations/gcc-ops-performance.webp",
     aspect: "aspect-[16/10]",
     points: [
       "High-value AI platform scope",
@@ -104,7 +104,7 @@ const startingPoints = [
     title: "Delivery that wants product ownership",
     desc: "Moving from executing tickets to owning a product, platform or service end to end.",
     badge: "STARTING POINT 05",
-    image: "/images/gcc-operations/gcc-hq-leadership.webp",
+    image: "/images/services/gcc-operations/gcc-hq-leadership.webp",
     aspect: "aspect-[4/3]",
     points: [
       "Shift from task execution to roadmap",
@@ -117,7 +117,7 @@ const startingPoints = [
     title: "A center professionalizing its operations",
     desc: "Growth has outrun the informal processes, and headquarters wants evidence before the next mandate.",
     badge: "STARTING POINT 06",
-    image: "/images/gcc-operations/gcc-ops-scale.webp",
+    image: "/images/services/gcc-operations/gcc-ops-scale.webp",
     aspect: "aspect-[16/10]",
     points: [
       "Replacing informal workflows",
@@ -612,7 +612,7 @@ export default function ScaleExpansion() {
               SCALE &amp; EXPANSION
             </span>
             <h2 className="text-2xl sm:text-4xl lg:text-[44px] font-extrabold text-[#0D244D] tracking-[-0.03em] leading-[1.14] mb-4">
-              Growth exposes every shortcut taken at launch<span className="text-[#008EC4]">.</span>
+              Growth exposes every shortcut taken at launch.
             </h2>
             <p className="text-[#505D74] font-normal text-sm sm:text-base lg:text-lg leading-relaxed mb-4">
               A center that works at one size does not automatically work at three times that size. Informal processes become inconsistent, controls fray, and leadership becomes the constraint.
@@ -634,7 +634,7 @@ export default function ScaleExpansion() {
             className="lg:col-span-6 xl:col-span-6 flex flex-col h-full"
           >
             <InBriefCard
-              imageSrc="/images/gcc-operations/gcc-ops-scale.webp"
+              imageSrc="/images/services/gcc-operations/gcc-ops-scale.webp"
               imageAlt="GCC Scale & Expansion Operations"
             >
               Scale &amp; Expansion is the part of NeoIntelli&apos;s GCC operating layer for centers that already exist and need to grow: more people, more functions, a larger mandate, a second location, AI and data capability, or a move from delivery to product and platform ownership. It is for GCC heads and headquarters sponsors who want the expansion to strengthen operations, governance and workforce planning rather than dilute them. NeoIntelli assesses readiness, redesigns the operating model where needed, plans the workforce and leadership changes, and operates the expanded layer.
@@ -739,7 +739,7 @@ export default function ScaleExpansion() {
         width="wide"
         wavesOnMobile
       >
-        {/* Modular "business card" grid — OperatingRealityCard design (no numbers) */}
+        {/* Modular "business card" grid - OperatingRealityCard design (no numbers) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 max-w-7xl mx-auto items-stretch">
           {[
             { title: "AI-enabled productivity", desc: "Engineering, support and operations teams working with AI tools, measured on cycle time and quality.", icon: Zap, href: undefined },

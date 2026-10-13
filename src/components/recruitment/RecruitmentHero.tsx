@@ -52,8 +52,8 @@ export default function RecruitmentHero({
       }
       title={title}
       description={description}
-      desktopImage="/hero/recruitment.webp"
-      mobileImage="/hero/recruitment-mobile.webp"
+      desktopImage="/images/hero/recruitment.webp"
+      mobileImage="/images/hero/recruitment-mobile.webp"
       imageAlt={`${title} - NeoIntelli India`}
       primaryCta={{ label: primaryCta.label, href: primaryCta.href }}
       secondaryCta={

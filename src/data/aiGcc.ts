@@ -177,18 +177,12 @@ export const OPERATING_ENGINES: OperatingEngine[] = [
   {
     title: "Recruitment Hub + NeoHireX Hiring OS",
     body: "Specialist AI and Data recruiting, AI screening and first-round interviews, senior technical validation, executive hiring and offer support.",
-    links: [
-      { path: AI_GCC_CONTEXT_LINKS.aiDataRecruitment.path, anchor: AI_GCC_CONTEXT_LINKS.aiDataRecruitment.anchor },
-      { path: AI_GCC_CONTEXT_LINKS.talentAcquisition.path, anchor: AI_GCC_CONTEXT_LINKS.talentAcquisition.anchor },
-    ],
+    links: [{ path: AI_GCC_CONTEXT_LINKS.talentAcquisition.path, anchor: AI_GCC_CONTEXT_LINKS.talentAcquisition.anchor }],
   },
   {
     title: "People & HR Operations",
     body: "Employment support, onboarding, payroll coordination, benefits, HR operations, engagement, learning, performance support and retention after the hire.",
-    links: [
-      { path: AI_GCC_CONTEXT_LINKS.talentManagement.path, anchor: AI_GCC_CONTEXT_LINKS.talentManagement.anchor },
-      { path: AI_GCC_CONTEXT_LINKS.operationsExcellence.path, anchor: AI_GCC_CONTEXT_LINKS.operationsExcellence.anchor },
-    ],
+    links: [{ path: AI_GCC_CONTEXT_LINKS.talentManagement.path, anchor: AI_GCC_CONTEXT_LINKS.talentManagement.anchor }],
   },
   {
     title: "Workspace, IT & Security",
@@ -203,26 +197,17 @@ export const OPERATING_ENGINES: OperatingEngine[] = [
   {
     title: "Data, GenAI & AI Engineering",
     body: "Data platforms and products, enterprise RAG, copilots, AI agents and AI applications built for production.",
-    links: [
-      { path: AI_GCC_PAGE_BY_KEY.data.path, anchor: AI_GCC_PAGE_BY_KEY.data.anchor },
-      { path: AI_GCC_PAGE_BY_KEY.genai.path, anchor: AI_GCC_PAGE_BY_KEY.genai.anchor },
-    ],
+    links: [{ path: AI_GCC_PAGE_BY_KEY.data.path, anchor: AI_GCC_PAGE_BY_KEY.data.anchor }],
   },
   {
     title: "MLOps, AgentOps & Governance",
     body: "Model, prompt and agent lifecycle, continuous evaluation, observability, AI inventory, risk classification and audit evidence.",
-    links: [
-      { path: AI_GCC_PAGE_BY_KEY.mlops.path, anchor: AI_GCC_PAGE_BY_KEY.mlops.anchor },
-      { path: AI_GCC_PAGE_BY_KEY.governance.path, anchor: AI_GCC_PAGE_BY_KEY.governance.anchor },
-    ],
+    links: [{ path: AI_GCC_PAGE_BY_KEY.mlops.path, anchor: AI_GCC_PAGE_BY_KEY.mlops.anchor }],
   },
   {
     title: "Scale, BOT & Ownership",
     body: "Managed GCC, EOR-first launch, Build-Operate-Transfer and captive ownership, with expansion from one squad into multiple capabilities.",
-    links: [
-      { path: AI_GCC_CONTEXT_LINKS.gccAsAService.path, anchor: AI_GCC_CONTEXT_LINKS.gccAsAService.anchor },
-      { path: AI_GCC_CONTEXT_LINKS.microGcc.path, anchor: AI_GCC_CONTEXT_LINKS.microGcc.anchor },
-    ],
+    links: [{ path: AI_GCC_CONTEXT_LINKS.gccAsAService.path, anchor: AI_GCC_CONTEXT_LINKS.gccAsAService.anchor }],
   },
 ];
 

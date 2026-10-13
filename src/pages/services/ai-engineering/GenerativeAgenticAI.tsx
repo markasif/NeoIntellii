@@ -35,7 +35,7 @@ const STALL_POINTS: NeoHireXMatrixItem[] = [
     category: "UNGROUNDED RETRIEVAL",
     title: "The answer is fluent but ungrounded",
     body: "The model writes confidently about a policy it never retrieved. Without retrieval that is measured, citations that are checked and evaluation sets that cover the real questions, fluency is mistaken for correctness.",
-    image: "/images/ai-engineering/genai-capability.webp",
+    image: "/images/services/ai-engineering/genai-capability.webp",
     imageAlt: "Enterprise Generative AI ungrounded retrieval vs factuality verification",
   },
   {
@@ -43,7 +43,7 @@ const STALL_POINTS: NeoHireXMatrixItem[] = [
     category: "TOOL EXECUTION FAILURE",
     title: "The agent works until a tool fails",
     body: "A demo agent handles the happy path. A production agent meets timeouts, partial results, permission errors and ambiguous instructions, and needs a defined behaviour for each of them.",
-    image: "/images/ai-engineering/agentic-systems-capability.webp",
+    image: "/images/services/ai-engineering/agentic-systems-capability.webp",
     imageAlt: "Autonomous AI agent tool calling and exception recovery architecture",
   },
   {
@@ -51,7 +51,7 @@ const STALL_POINTS: NeoHireXMatrixItem[] = [
     category: "INFERENCE ECONOMICS",
     title: "The unit economics break at volume",
     body: "Per-request cost, latency at the busiest hour and the share of tasks escalated to a human decide whether the system is affordable. None of these are visible in a prototype.",
-    image: "/images/ai-engineering/compute-economics-gap.webp",
+    image: "/images/services/ai-engineering/compute-economics-gap.webp",
     imageAlt: "AI token compute economics and high-volume cost modeling dashboard",
   },
 ];
@@ -69,25 +69,25 @@ const CAPABILITIES: HiringPath[] = [
   {
     title: "Retrieval and knowledge",
     items: ["Enterprise RAG", "Knowledge assistants", "Context engineering", "Memory and state"],
-    image: "/images/ai-engineering/genai-capability.webp",
+    image: "/images/services/ai-engineering/genai-capability.webp",
     imageAlt: "Enterprise RAG and retrieval knowledge engineering",
   },
   {
     title: "Models",
     items: ["Model routing", "Model adaptation", "Fine-tuning where justified", "Multimodal AI"],
-    image: "/images/ai-engineering/applied-ml-capability.webp",
+    image: "/images/services/ai-engineering/applied-ml-capability.webp",
     imageAlt: "Model routing, adaptation, fine-tuning and multimodal AI",
   },
   {
     title: "Agents and integration",
     items: ["AI copilots", "AI agents", "Multi-agent systems where justified", "Tool calling", "MCP integrations where relevant", "Enterprise integrations"],
-    image: "/images/ai-engineering/agentic-systems-capability.webp",
+    image: "/images/services/ai-engineering/agentic-systems-capability.webp",
     imageAlt: "AI copilots, agents and enterprise integrations",
   },
   {
     title: "Production controls",
     items: ["Evaluation", "Guardrails", "Human escalation", "Observability"],
-    image: "/images/ai-engineering/evaluation-assurance-capability.webp",
+    image: "/images/services/ai-engineering/evaluation-assurance-capability.webp",
     imageAlt: "Production controls, evaluation, guardrails and observability",
   },
 ];

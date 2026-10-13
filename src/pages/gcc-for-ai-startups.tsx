@@ -146,7 +146,7 @@ export default function GCCForAIStartups() {
           {/* ── DESKTOP BACKGROUND: EXECUTIVE VIEW (HIDDEN ON MOBILE) ── */}
           <div className="hidden sm:block absolute inset-0 w-full h-full z-0">
             <Image
-              src="/images/gcc-operations/hero-bg.webp"
+              src="/images/services/gcc-operations/hero-bg.webp"
               alt="GCC for AI Startups"
               fill
               priority

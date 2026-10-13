@@ -30,6 +30,53 @@ const DEFAULT_FROM = "NeoIntelli <noreply@neointelli.com>";
 /** Caps what a single submission can carry into a template. */
 const MAX_FIELDS = 40;
 const MAX_VALUE_LENGTH = 500;
+const MAX_PAYLOAD_BYTES = 10000;
+const MAX_EMAIL_LENGTH = 254;
+
+/** Rate limiter configuration: max 5 sends per IP per 60 seconds */
+const RATE_LIMIT_WINDOW_MS = 60 * 1000;
+const MAX_REQUESTS_PER_WINDOW = 5;
+const ipRequestHistory = new Map<string, number[]>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const history = ipRequestHistory.get(ip) ?? [];
+  const validHistory = history.filter((ts) => now - ts < RATE_LIMIT_WINDOW_MS);
+
+  if (validHistory.length >= MAX_REQUESTS_PER_WINDOW) {
+    ipRequestHistory.set(ip, validHistory);
+    return true;
+  }
+
+  validHistory.push(now);
+  ipRequestHistory.set(ip, validHistory);
+
+  // Housekeeping: prevent memory growth if thousands of distinct IPs hit endpoint
+  if (ipRequestHistory.size > 500) {
+    for (const [key, timestamps] of ipRequestHistory.entries()) {
+      const active = timestamps.filter((ts) => now - ts < RATE_LIMIT_WINDOW_MS);
+      if (active.length === 0) ipRequestHistory.delete(key);
+      else ipRequestHistory.set(key, active);
+    }
+  }
+
+  return false;
+}
+
+function getClientIp(req: NextApiRequest): string {
+  const forwarded = req.headers["x-forwarded-for"];
+  if (typeof forwarded === "string") {
+    return forwarded.split(",")[0].trim();
+  }
+  if (Array.isArray(forwarded) && forwarded[0]) {
+    return forwarded[0].split(",")[0].trim();
+  }
+  return req.socket.remoteAddress || "127.0.0.1";
+}
+
+function hasHeaderInjection(str?: string): boolean {
+  return typeof str === "string" && /[\r\n]/.test(str);
+}
 
 /**
  * Keeps the tool data to flat, short, printable values. The templates escape
@@ -57,17 +104,45 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ error: "Method not allowed" });
   }
 
+  // 1. IP Rate Limiting Check
+  const clientIp = getClientIp(req);
+  if (isRateLimited(clientIp)) {
+    res.setHeader("Retry-After", "60");
+    return res.status(429).json({ error: "Too many requests. Please wait a minute before requesting another report." });
+  }
+
+  // 2. Payload size check
+  const rawBodyString = typeof req.body === "string" ? req.body : JSON.stringify(req.body ?? {});
+  if (rawBodyString.length > MAX_PAYLOAD_BYTES) {
+    return res.status(413).json({ error: "Payload too large" });
+  }
+
   // Validate before checking configuration: a malformed request is a 400
   // whether or not this deploy can send mail.
-  const body = (typeof req.body === "string" ? safeJson(req.body) : req.body) as Partial<ToolEmailRequest> | null;
+  const body = (typeof req.body === "string" ? safeJson(req.body) : req.body) as (Partial<ToolEmailRequest> & Record<string, unknown>) | null;
   if (!body || typeof body !== "object") {
     return res.status(400).json({ error: "Invalid body" });
   }
+
+  // 3. Honeypot Check: silently pretend success if a bot filled the trap fields
+  if (
+    (typeof body["bot-field"] === "string" && body["bot-field"].trim() !== "") ||
+    (typeof body.website === "string" && body.website.trim() !== "") ||
+    (typeof body.honeypot === "string" && body.honeypot.trim() !== "")
+  ) {
+    return res.status(200).json({ ok: true, id: null });
+  }
+
   if (!isToolKind(body.tool)) {
     return res.status(400).json({ error: "Unknown tool" });
   }
-  if (!isEmailAddress(body.email)) {
+  if (!isEmailAddress(body.email) || body.email.length > MAX_EMAIL_LENGTH) {
     return res.status(400).json({ error: "Invalid email" });
+  }
+
+  // 4. Header Injection Protection
+  if (hasHeaderInjection(body.email) || hasHeaderInjection(typeof body.name === "string" ? body.name : undefined) || hasHeaderInjection(typeof body.company === "string" ? body.company : undefined)) {
+    return res.status(400).json({ error: "Malformed input characters" });
   }
 
   const apiKey = process.env.RESEND_API_KEY;

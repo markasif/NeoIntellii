@@ -151,6 +151,21 @@ const nextConfig = {
           { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), interest-cohort=(), browsing-topics=()' },
           { key: 'X-XSS-Protection', value: '1; mode=block' },
           { key: 'Cross-Origin-Opener-Policy', value: 'same-origin-allow-popups' },
+          /* Report-only CSP: start by collecting violations without breaking any
+             script, style, analytics, image or form behavior. Promote to an
+             enforced Content-Security-Policy once the report-only logs are clean. */
+          {
+            key: 'Content-Security-Policy-Report-Only',
+            value:
+              "default-src 'self'; " +
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://app.splitsense.ai https://rankai.ai; " +
+              "style-src 'self' 'unsafe-inline'; " +
+              "img-src 'self' data: blob: https:; " +
+              "font-src 'self' data:; " +
+              "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://googleads.g.doubleclick.net https://app.splitsense.ai https://rankai.ai https://www.googletagmanager.com; " +
+              "frame-src 'self' https://www.googletagmanager.com; " +
+              "object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'",
+          },
         ],
       },
       { source: '/images/:path*', headers: [{ key: 'Cache-Control', value: 'public, max-age=2592000, stale-while-revalidate=86400' }] },

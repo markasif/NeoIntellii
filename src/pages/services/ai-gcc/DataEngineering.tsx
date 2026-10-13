@@ -186,7 +186,7 @@ export default function DataEngineering() {
             {/* Top: 3D AI Workloads Image (Rectangular without rounded corners) */}
             <div className="relative w-full aspect-[16/9] overflow-hidden border border-[#CBD7E8] shadow-[0_4px_20px_rgba(13,48,108,0.06)] rounded-none bg-[#071D42]">
               <img
-                src="/images/ai-data-workloads.webp"
+                src="/images/services/ai-gcc/ai-data-workloads.webp"
                 alt="AI Data Foundation Workloads"
                 className="w-full h-full object-cover"
                 loading="lazy"

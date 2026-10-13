@@ -106,11 +106,7 @@ export default function Industries() {
         {/* Standardized Section Header */}
         <SectionHeader
           eyebrow="INDUSTRIES"
-          title={
-            <>
-              AI GCCs built around the industry mandate<span className="text-[#169DC8]">.</span>
-            </>
-          }
+          title="AI GCCs built around the industry mandate."
           description="Specialized domain capability centers aligned with industry-specific governance, data platforms, and regulatory compliance."
           align="center"
           titleClassName="text-center"

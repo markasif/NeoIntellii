@@ -47,12 +47,7 @@ export default function EngagementModel() {
         {/* Standardized Section Header */}
         <SectionHeader
           eyebrow="HOW WE WORK"
-          title={
-            <>
-              Design, build, operate, then scale or transfer
-              <span className="text-[#169DC8]">.</span>
-            </>
-          }
+          title="Design, build, operate, then scale or transfer."
           description="A defined 4-stage engagement model, so you always know which phase you are in, what it produces, and what comes next."
           className="!mb-8 sm:!mb-14 lg:!mb-20"
         />

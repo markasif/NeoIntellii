@@ -140,9 +140,9 @@ describe("AI Engineering SEO wiring", () => {
 
   it("uses the section social image", () => {
     for (const path of AI_ENGINEERING_PATHS) {
-      expect(getOgImage(path).url).toBe("https://neointelli.com/images/og/og-ai-engineering.png");
+      expect(getOgImage(path).url).toBe("https://neointelli.com/images/og/og-ai-engineering.webp");
     }
-    expect(() => read("public/images/og/og-ai-engineering.png")).not.toThrow();
+    expect(() => read("public/images/og/og-ai-engineering.webp")).not.toThrow();
   });
 });
 

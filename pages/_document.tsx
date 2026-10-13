@@ -7,7 +7,7 @@ export default function Document() {
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="/images/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
 
         {/* GTM preconnect */}
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />

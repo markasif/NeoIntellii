@@ -123,7 +123,7 @@ export default function WhyNeoIntelliLifecycle() {
       title: "Senior Architectural Design",
       badge: "ARCHITECTURE",
       icon: Layers,
-      image: "/images/pillar_card1_arch_v2-removebg-preview.png",
+      image: "/images/home/pillar_card1_arch_v2-removebg-preview.png",
       points: [
         "Senior involvement in the decisions that set the model, not only at the pitch",
         "AI and data specialization rather than general offshore delivery",
@@ -143,7 +143,7 @@ export default function WhyNeoIntelliLifecycle() {
       title: "Deep Technical Validation",
       badge: "VALIDATION",
       icon: Users,
-      image: "/images/pillar_card2_valid_v3-removebg-preview.png",
+      image: "/images/home/pillar_card2_valid_v3-removebg-preview.png",
       points: [
         "NeoHireX-supported hiring with practitioner-led technical validation",
         "Production AI engineering capability, not advisory alone",
@@ -163,7 +163,7 @@ export default function WhyNeoIntelliLifecycle() {
       title: "Autonomous Outcome Squads",
       badge: "DELIVERY",
       icon: Zap,
-      image: "/images/pillar_card3_deliver_v3-removebg-preview.png",
+      image: "/images/home/pillar_card3_deliver_v3-removebg-preview.png",
       points: [
         "AI delivery teams that own outcomes inside your cadence",
         "The option to start with an AI Micro GCC and grow from there",
@@ -183,7 +183,7 @@ export default function WhyNeoIntelliLifecycle() {
       title: "Integrated Transfer Roadmap",
       badge: "TRANSFER",
       icon: ShieldCheck,
-      image: "/images/pillar_card4_transfer_v2-removebg-preview.png",
+      image: "/images/home/pillar_card4_transfer_v2-removebg-preview.png",
       points: [
         "Integrated GCC operations rather than a hand-off to a third party",
         "Capability transfer designed in, including a BOT path to captive ownership",
@@ -242,7 +242,7 @@ export default function WhyNeoIntelliLifecycle() {
               WHY NEOINTELLI
             </span>
             <h2 className="text-2xl sm:text-4xl lg:text-[44px] font-extrabold text-white tracking-[-0.03em] leading-[1.14] mb-4">
-              One operating partner across the AI GCC lifecycle<span className="text-[#38BDF8]">.</span>
+              One operating partner across the AI GCC lifecycle.
             </h2>
             <p className="text-sm sm:text-base lg:text-lg text-[#C5D7F0] leading-relaxed font-normal max-w-2xl mx-auto">
               Unified accountability across all six lifecycle layers — eliminating the friction, latency, and hand-off gaps between traditional advisors, recruiters, and staffing vendors.
@@ -305,7 +305,7 @@ export default function WhyNeoIntelliLifecycle() {
               TRANSFORMATION IMPACT
             </span>
             <h3 className="text-2xl sm:text-4xl lg:text-[44px] font-extrabold tracking-[-0.03em] text-[#0D306C] leading-[1.14]">
-              What connecting those layers actually changes<span className="text-[#169DC8]">.</span>
+              What connecting those layers actually changes.
             </h3>
             <p className="mt-3 sm:mt-4 text-xs sm:text-base text-[#505D74] leading-relaxed max-w-2xl mx-auto">
               A unified operating architecture eliminates the fragmentation, hand-off friction, and advisory disconnects of traditional offshore setups.
@@ -499,7 +499,7 @@ export default function WhyNeoIntelliLifecycle() {
                       }}
                     >
                       <Image
-                        src="/images/gcc_skyscraper_cutout-removebg-preview.png"
+                        src="/images/services/gcc/gcc_skyscraper_cutout-removebg-preview.png"
                         alt="Modern GCC Corporate Tower"
                         fill
                         sizes="(max-width: 640px) 76vw, 40vw"

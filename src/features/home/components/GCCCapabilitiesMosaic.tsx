@@ -116,7 +116,7 @@ export const CAPABILITIES: CapabilityItem[] = [
         "It combines specialist talent, data and AI platforms, production engineering, model and agent operations, governance and enterprise ownership inside a dedicated capability center rather than treating AI as a separate innovation project.",
       ],
     },
-    image: "/images/ai_gcc_cubes.webp",
+    image: "/images/home/ai_gcc_cubes.webp",
   },
 
   // 02 — BUILD THE TEAM
@@ -192,7 +192,7 @@ export const CAPABILITIES: CapabilityItem[] = [
         "What separates the two is rarely the model. It is the data it runs on, the systems it integrates with, the evaluation that proves it works, the observability that catches it when it stops, the security and governance around it, and the cost per outcome once real traffic arrives.",
       ],
     },
-    image: "/images/mosaic_ai_eng.webp",
+    image: "/images/home/mosaic_ai_eng.webp",
   },
 
   // 04 — DEPLOY THE TEAM
@@ -269,7 +269,7 @@ export const CAPABILITIES: CapabilityItem[] = [
         "Deciding what the center owns settles almost everything downstream: which roles you hire, which city can supply them, how the work is governed, and whether the end state is a managed center or a captive one.",
       ],
     },
-    image: "/images/mosaic_gcc_strat.webp",
+    image: "/images/home/mosaic_gcc_strat.webp",
   },
 
   // 06 — RUN & SCALE
@@ -352,8 +352,10 @@ function AiGccSkyscraperVisual() {
           className="relative flex items-end justify-center w-full"
         >
           <img
-            src="/images/skyscraper.webp"
+            src="/images/home/skyscraper.webp"
             alt="AI GCC Enterprise Campus Skyscraper"
+            width={500}
+            height={500}
             className="w-auto h-[180px] sm:h-[210px] md:h-[220px] max-w-full object-contain object-bottom drop-shadow-[0_12px_28px_rgba(0,194,255,0.4)]"
             loading="eager"
           />
@@ -1065,12 +1067,7 @@ export default function GCCCapabilitiesMosaic() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10 sm:mb-14">
         <SectionHeader
           eyebrow="The Capabilities Behind the Lifecycle"
-          title={
-            <>
-              What&apos;s required to build, operate and scale an AI-first GCC
-              <span className="text-[#169DC8]">.</span>
-            </>
-          }
+          title="What's required to build, operate and scale an AI-first GCC."
           description="From specialist talent and AI engineering to GCC setup and local operations, NeoIntelli connects the six essential capabilities behind the complete India GCC lifecycle."
           align="center"
           className="mb-0"
@@ -1136,7 +1133,7 @@ export default function GCCCapabilitiesMosaic() {
                           <div className="flex flex-col justify-between text-left">
                             <div>
                               {/* Eyebrow badge */}
-                              <div className="inline-flex items-center gap-1.5 text-[11px] font-mono font-bold tracking-wider uppercase bg-[#E5F2FC] text-[#008EC4] mb-3">
+                              <div className="inline-flex items-center gap-1.5 text-[11px] font-mono font-bold tracking-wider uppercase text-[#008EC4] mb-3">
                                 <span>{cap.eyebrowLabel}</span>
                               </div>
 

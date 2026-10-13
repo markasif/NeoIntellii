@@ -32,7 +32,7 @@ const DATA_PROBLEMS: NeoHireXMatrixItem[] = [
     category: "UNSTRUCTURED CONTEXT",
     title: "The documents exist. The context does not.",
     body: "Ten years of contracts, tickets and manuals sit in shared drives with no structure, no access model and no way to chunk, index and retrieve them in a form a model can use safely.",
-    image: "/images/ai-engineering/data-engineering-capability.webp",
+    image: "/images/services/ai-engineering/data-engineering-capability.webp",
     imageAlt: "Unstructured document context extraction and vector indexing",
   },
   {
@@ -40,7 +40,7 @@ const DATA_PROBLEMS: NeoHireXMatrixItem[] = [
     category: "BROKEN LINEAGE",
     title: "The pipeline runs. The lineage does not.",
     body: "A number reaches the model and nobody can say which source, which transformation or which version produced it. When the answer is wrong, the investigation starts from zero.",
-    image: "/images/tech-data-platform.webp",
+    image: "/images/industries/tech-data-platform.webp",
     imageAlt: "Data engineering pipeline lineage and governance tracking",
   },
   {
@@ -48,7 +48,7 @@ const DATA_PROBLEMS: NeoHireXMatrixItem[] = [
     category: "FEATURE STALENESS",
     title: "The model is fine. The features are stale.",
     body: "Training used a clean, complete snapshot. Serving gets a feed that is hours late and missing fields. The model is accurate on paper and wrong in production.",
-    image: "/images/pillar_card1_arch_v2-removebg-preview.png",
+    image: "/images/home/pillar_card1_arch_v2-removebg-preview.png",
     imageAlt: "Real-time feature store and streaming pipeline synchronization",
   },
 ];
@@ -65,25 +65,25 @@ const CAPABILITIES: HiringPath[] = [
   {
     title: "Platform",
     items: ["Data platform architecture", "Lakehouse", "Batch pipelines", "Streaming pipelines"],
-    image: "/images/ai-engineering/data-engineering-capability.webp",
+    image: "/images/services/ai-engineering/data-engineering-capability.webp",
     imageAlt: "Data platform architecture and batch streaming pipelines",
   },
   {
     title: "Governance",
     items: ["Data quality", "Lineage", "Cataloguing", "Data governance"],
-    image: "/images/tech-data-platform.webp",
+    image: "/images/industries/tech-data-platform.webp",
     imageAlt: "Data governance, quality, lineage and cataloguing",
   },
   {
     title: "AI-ready data",
     items: ["Unstructured document pipelines", "Vector databases", "Hybrid retrieval", "Knowledge graph where justified"],
-    image: "/images/ai-engineering/genai-capability.webp",
+    image: "/images/services/ai-engineering/genai-capability.webp",
     imageAlt: "AI-ready data, unstructured document pipelines and vector databases",
   },
   {
     title: "Serving AI",
     items: ["Feature infrastructure", "Evaluation datasets", "AI-ready data", "Retrieval quality measurement"],
-    image: "/images/ai-engineering/evaluation-assurance-capability.webp",
+    image: "/images/services/ai-engineering/evaluation-assurance-capability.webp",
     imageAlt: "Feature infrastructure, evaluation datasets and retrieval quality",
   },
 ];

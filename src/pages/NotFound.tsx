@@ -33,8 +33,8 @@ export default function NotFound() {
           titleHighlight="404"
           titleSuffix="Page not found"
           description="The page you're looking for doesn't exist or has been moved. Head back to a page that works."
-          desktopImage="/hero/404.webp.webp"
-          mobileImage="/hero/404-mobile.webp.webp"
+          desktopImage="/images/hero/404.webp.webp"
+          mobileImage="/images/hero/404-mobile.webp.webp"
           imageAlt="404 page not found"
           primaryCta={{ label: "Back to Homepage", href: "/" }}
           secondaryCta={{ label: "Explore GCC Services", href: "/services/gcc" }}

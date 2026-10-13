@@ -36,14 +36,14 @@ import NeoIntelliHero from "@/components/shared/NeoIntelliHero";
 import { CAL_BOOKING_URL } from "@/lib/constants";
 
 const roleImages = [
-  "/images/ai-data-workloads.webp",
-  "/images/ai-governance.webp",
-  "/images/tech-process-automation.webp",
-  "/images/tech-data-platform.webp",
-  "/images/tech-product-engineering.webp",
-  "/images/tech-integration.webp",
-  "/images/gcc-operations/operating-reality/04-access.webp",
-  "/images/ai-mlops.webp",
+  "/images/services/ai-gcc/ai-data-workloads.webp",
+  "/images/services/ai-gcc/ai-governance.webp",
+  "/images/industries/tech-process-automation.webp",
+  "/images/industries/tech-data-platform.webp",
+  "/images/industries/tech-product-engineering.webp",
+  "/images/industries/tech-integration.webp",
+  "/images/services/gcc-operations/operating-reality/04-access.webp",
+  "/images/services/ai-gcc/ai-mlops.webp",
 ];
 
 /* ------------------------------------------------------------------ */
@@ -192,8 +192,8 @@ export default function RetailGCC() {
           ]}
           title="Build Your Retail & E-commerce GCC in India"
           description="Build a Retail GCC in India for AI-powered personalization, demand forecasting, supply chain optimization, and omnichannel platform engineering."
-          desktopImage="/hero/industry.webp"
-          mobileImage="/hero/industry-mobile.webp"
+          desktopImage="/images/hero/industry.webp"
+          mobileImage="/images/hero/industry-mobile.webp"
           imageAlt="Retail GCC Command Center"
           primaryCta={{ label: "Book a Strategy Call", href: CAL_BOOKING_URL, isExternal: true }}
           secondaryCta={{ label: "Explore GCC Services", href: "/services/gcc" }}

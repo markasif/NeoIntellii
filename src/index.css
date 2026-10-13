@@ -9,9 +9,24 @@
    element triggers a dev-only "non-static position" warning. `position: relative`
    on the root elements is layout-neutral and silences it without any visual
    or animation change. */
-html,
+html {
+  position: relative;
+  width: 100%;
+  background-color: #071F4F;
+}
+
 body {
   position: relative;
+  overflow-x: clip;
+  width: 100%;
+  background-color: #071F4F;
+  -webkit-overflow-scrolling: touch;
+}
+
+#__next,
+#root {
+  width: 100%;
+  min-height: 100vh;
 }
 
 /* ============ AI-First GCC landing utilities ============ */
@@ -23,76 +38,111 @@ body {
 
 .btn-shadow-primary {
   box-shadow:
-    0 1px 2px 0 rgba(5,26,36,0.10),
-    0 4px 4px 0 rgba(5,26,36,0.09),
-    0 9px 6px 0 rgba(5,26,36,0.05),
-    0 17px 7px 0 rgba(5,26,36,0.01),
-    0 26px 7px 0 rgba(5,26,36,0),
-    inset 0 2px 8px 0 rgba(255,255,255,0.30);
+    0 1px 2px 0 rgba(5, 26, 36, 0.10),
+    0 4px 4px 0 rgba(5, 26, 36, 0.09),
+    0 9px 6px 0 rgba(5, 26, 36, 0.05),
+    0 17px 7px 0 rgba(5, 26, 36, 0.01),
+    0 26px 7px 0 rgba(5, 26, 36, 0),
+    inset 0 2px 8px 0 rgba(255, 255, 255, 0.30);
 }
 
 .btn-shadow-secondary {
   box-shadow:
-    0 0 0 0.5px rgba(0,0,0,0.05),
-    0 4px 30px rgba(0,0,0,0.08);
+    0 0 0 0.5px rgba(0, 0, 0, 0.05),
+    0 4px 30px rgba(0, 0, 0, 0.08);
 }
 
 .card-shadow-soft {
   box-shadow:
-    0 1px 2px rgba(0,0,0,0.04),
-    0 4px 16px rgba(0,0,0,0.06);
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
 @keyframes ai-marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
+
 /* CapabilityGrid particle wave — GPU-friendly CSS transform instead of SMIL */
 @keyframes cap-wave-shift {
-  from { transform: translate3d(-200px, 0, 0); }
-  to   { transform: translate3d(0, 0, 0); }
+  from {
+    transform: translate3d(-200px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }
+
 .cap-wave-layer {
   animation-name: cap-wave-shift;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   will-change: transform;
 }
-.cap-wave-paused { animation-play-state: paused; will-change: auto; }
-@media (prefers-reduced-motion: reduce) {
-  .cap-wave-layer { animation: none; }
+
+.cap-wave-paused {
+  animation-play-state: paused;
+  will-change: auto;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .cap-wave-layer {
+    animation: none;
+  }
+}
+
 .animate-ai-marquee {
   animation: ai-marquee 45s linear infinite;
 }
 
 @keyframes hero-marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
+
 .animate-hero-marquee {
   animation: hero-marquee 24s linear infinite;
 }
+
 @media (prefers-reduced-motion: reduce) {
   .animate-hero-marquee {
     animation: none;
   }
 }
 
-.scrollbar-hide::-webkit-scrollbar { display: none; }
-.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
 /* GCC Starting Point Stacking Cards Deck */
 .gcc-stack-deck {
   --stack-top: 64px;
   --stack-stagger: 8px;
 }
+
 @media (min-width: 640px) {
   .gcc-stack-deck {
     --stack-top: 80px;
     --stack-stagger: 12px;
   }
 }
+
 @media (min-width: 1024px) {
   .gcc-stack-deck {
     --stack-top: 92px;
@@ -124,7 +174,7 @@ body {
 /* AI-GCC Editorial Amber Drop Cap (#F19326) matching Core Architecture editorial styling */
 .drop-cap-amber-f19326::first-letter,
 .ai-gcc-drop-cap::first-letter,
-.ai-gcc-drop-cap > p:first-of-type::first-letter {
+.ai-gcc-drop-cap>p:first-of-type::first-letter {
   float: left;
   font-size: 3.5rem;
   line-height: 0.8;
@@ -136,9 +186,10 @@ body {
 }
 
 @media (min-width: 640px) {
+
   .drop-cap-amber-f19326::first-letter,
   .ai-gcc-drop-cap::first-letter,
-  .ai-gcc-drop-cap > p:first-of-type::first-letter {
+  .ai-gcc-drop-cap>p:first-of-type::first-letter {
     font-size: 4.25rem;
     line-height: 0.8;
     margin-right: 1rem;
@@ -155,13 +206,16 @@ body {
     --card-foreground: 0 0% 7%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 7%;
-    --primary: 244 36% 31%; /* #36326a navy heading / primary CTA */
+    --primary: 244 36% 31%;
+    /* #36326a navy heading / primary CTA */
     --primary-foreground: 0 0% 100%;
-    --secondary: 193 89% 39%; /* #0a93bd teal accent / secondary CTA */
+    --secondary: 193 89% 39%;
+    /* #0a93bd teal accent / secondary CTA */
     --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
-    --accent: 193 89% 39%; /* teal accent */
+    --accent: 193 89% 39%;
+    /* teal accent */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -174,17 +228,23 @@ body {
        One card shape for the whole site. Every card surface (service,
        feature, process, blog, team, CTA, pricing, inner page) resolves to
        these four values, so no page can drift into its own card style. */
-    --card-radius: 1rem;          /* 16px - matches rounded-2xl */
-    --card-radius-sm: 0.75rem;    /* nested chips / inner tiles */
+    --card-radius: 1rem;
+    /* 16px - matches rounded-2xl */
+    --card-radius-sm: 0.75rem;
+    /* nested chips / inner tiles */
     --card-border: rgba(14, 19, 32, 0.07);
     --card-border-strong: rgba(14, 19, 32, 0.12);
     --card-shadow: 0 1px 2px rgba(14, 19, 32, 0.04);
-    --card-pad: 1.5rem;           /* 24px */
-    --card-pad-lg: 1.75rem;       /* 28px from md up */
+    --card-pad: 1.5rem;
+    /* 24px */
+    --card-pad-lg: 1.75rem;
+    /* 28px from md up */
 
     /* ---- Vertical rhythm ---------------------------------------------- */
-    --section-y: 5rem;            /* 80px  mobile  */
-    --section-y-lg: 7rem;         /* 112px desktop */
+    --section-y: 5rem;
+    /* 80px  mobile  */
+    --section-y-lg: 7rem;
+    /* 112px desktop */
 
     --navy: 193 89% 39%;
     --navy-mid: 193 89% 35%;
@@ -201,9 +261,12 @@ body {
        untouched and no existing page changes. */
     --accent-strong: 193 89% 32%;
 
-    --heading: 244 36% 31%; /* #36326a navy heading */
-    --body: 228 16% 35%; /* muted navy-gray body text */
-    --body-muted: 228 12% 46%; /* >=4.5:1 on white and #f5f5f7 (was 50%, which measured 4.48:1 on white) */
+    --heading: 244 36% 31%;
+    /* #36326a navy heading */
+    --body: 228 16% 35%;
+    /* muted navy-gray body text */
+    --body-muted: 228 12% 46%;
+    /* >=4.5:1 on white and #f5f5f7 (was 50%, which measured 4.48:1 on white) */
 
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -215,12 +278,16 @@ body {
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  * { @apply border-border; }
+  * {
+    @apply border-border;
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-inter, 'Inter'), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, sans-serif;
@@ -232,23 +299,33 @@ body {
     color: hsl(var(--body));
     font-weight: 400;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-inter, 'Inter'), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, sans-serif;
     font-weight: 400;
     letter-spacing: -0.03em;
     color: hsl(var(--heading));
     line-height: 1.08;
   }
+
   h1 {
     font-weight: 700;
     color: hsl(var(--heading));
   }
+
   /* Site-wide weight normalization: everything except h1 renders at 400. */
   :where(:not(h1)).font-medium,
   :where(:not(h1)).font-semibold,
   :where(:not(h1)).font-bold,
   :where(:not(h1)).font-extrabold,
-  :where(:not(h1)).font-black { font-weight: 400; }
+  :where(:not(h1)).font-black {
+    font-weight: 400;
+  }
 
   ::selection {
     background: hsl(221 83% 53% / 0.15);
@@ -257,48 +334,109 @@ body {
 }
 
 @layer utilities {
-  .text-heading { color: hsl(var(--heading)); }
-  .text-body { color: hsl(var(--body)); }
-  .text-body-muted { color: hsl(var(--body-muted)); }
-  .text-accent-strong { color: hsl(var(--accent-strong)); }
-  .bg-accent-strong { background-color: hsl(var(--accent-strong)); }
-  .hover\:bg-accent-strong-dark:hover { background-color: hsl(193 89% 27%); }
-  .text-section-label { color: #0a93bd; }
-  .dark-section .text-section-label { color: #ffffff; }
-  .text-accent-teal { color: #0e92b8; }
+  .text-heading {
+    color: hsl(var(--heading));
+  }
+
+  .text-body {
+    color: hsl(var(--body));
+  }
+
+  .text-body-muted {
+    color: hsl(var(--body-muted));
+  }
+
+  .text-accent-strong {
+    color: hsl(var(--accent-strong));
+  }
+
+  .bg-accent-strong {
+    background-color: hsl(var(--accent-strong));
+  }
+
+  .hover\:bg-accent-strong-dark:hover {
+    background-color: hsl(193 89% 27%);
+  }
+
+  .text-section-label {
+    color: #0a93bd;
+  }
+
+  .dark-section .text-section-label {
+    color: #ffffff;
+  }
+
+  .text-accent-teal {
+    color: #0e92b8;
+  }
+
   .link-teal {
-    display: inline-flex; align-items: center; gap: 0.35rem;
-    color: #0a93bd; font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: #0a93bd;
+    font-weight: 500;
     border-bottom: 1px solid transparent;
   }
-  .bg-navy { background-color: hsl(var(--navy)); }
-  .bg-navy-mid { background-color: hsl(var(--navy-mid)); }
+
+  .bg-navy {
+    background-color: hsl(var(--navy));
+  }
+
+  .bg-navy-mid {
+    background-color: hsl(var(--navy-mid));
+  }
+
   /* Was a teal gradient; converted to a light surface so inner pages match the homepage. */
-  .bg-footer-cta { background: #f5f5f7; }
+  .bg-footer-cta {
+    background: #f5f5f7;
+  }
 
   /* Apple-style gradients */
-  .gradient-primary { background: linear-gradient(135deg, #2563eb, #7c3aed); }
-  .gradient-gold { background: linear-gradient(135deg, #f59e0b, #f97316); }
-  .gradient-ai { background: linear-gradient(135deg, #7c3aed, #ec4899); }
-  .gradient-cyan { background: linear-gradient(135deg, #06b6d4, #0d9488); }
+  .gradient-primary {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+  }
+
+  .gradient-ai {
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+  }
+
+  .gradient-cyan {
+    background: linear-gradient(135deg, #06b6d4, #0d9488);
+  }
 
   .gradient-text {
     background: linear-gradient(135deg, #2563eb, #7c3aed);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
+
   .gradient-text-gold {
     background: linear-gradient(90deg, #f59e0b, #f97316, #ef4444);
     background-size: 200% auto;
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
+
   .gradient-text-ai {
     background: linear-gradient(90deg, #7c3aed, #ec4899, #f97316);
     background-size: 200% auto;
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
+
   .gradient-text-blue {
     background: linear-gradient(90deg, #3b82f6, #06b6d4);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   /* Legacy class kept for backward compatibility. The original dark teal treatment
@@ -311,31 +449,58 @@ body {
      force all white text to dark navy via !important and make text invisible.
      For truly dark sections, omit `dark-section` and use native `text-white*`
      and `bg-white/*` opacities directly. */
-  .dark-section { background: #f5f5f7; }
-  .dark-section [class*="text-white"] { color: hsl(var(--body)) !important; }
+  .dark-section {
+    background: #f5f5f7;
+  }
+
+  .dark-section [class*="text-white"] {
+    color: hsl(var(--body)) !important;
+  }
+
   .dark-section h1[class*="text-white"],
   .dark-section h2[class*="text-white"],
   .dark-section h3[class*="text-white"],
-  .dark-section h4[class*="text-white"] { color: hsl(var(--heading)) !important; }
-  .dark-section [class*="bg-white/"] { background-color: #ffffff !important; }
-  .dark-section [class*="border-white/"] { border-color: rgba(0,0,0,0.06) !important; }
-  .dark-section .text-primary { color: #0e92b8 !important; }
+  .dark-section h4[class*="text-white"] {
+    color: hsl(var(--heading)) !important;
+  }
 
-  .shadow-card { box-shadow: 0 2px 8px rgb(0 0 0/.04), 0 12px 40px -8px rgb(0 0 0/.08); }
-  .shadow-card-hover { box-shadow: 0 8px 30px rgb(0 0 0/.08), 0 30px 60px -12px rgb(0 0 0/.15); }
-  .shadow-premium { box-shadow: 0 20px 60px -12px hsl(221 83% 53%/.35); }
+  .dark-section [class*="bg-white/"] {
+    background-color: #ffffff !important;
+  }
+
+  .dark-section [class*="border-white/"] {
+    border-color: rgba(0, 0, 0, 0.06) !important;
+  }
+
+  .dark-section .text-primary {
+    color: #0e92b8 !important;
+  }
+
+  .shadow-card {
+    box-shadow: 0 2px 8px rgb(0 0 0/.04), 0 12px 40px -8px rgb(0 0 0/.08);
+  }
+
+  .shadow-card-hover {
+    box-shadow: 0 8px 30px rgb(0 0 0/.08), 0 30px 60px -12px rgb(0 0 0/.15);
+  }
+
+  .shadow-premium {
+    box-shadow: 0 20px 60px -12px hsl(221 83% 53%/.35);
+  }
 
   .glass-nav {
     background: hsl(0 0% 100% / 0.72);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
   }
+
   .glass-dark {
     background: hsl(0 0% 100% / 0.06);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid hsl(0 0% 100% / 0.1);
   }
+
   .glass-card {
     background: hsl(0 0% 100% / 0.5);
     backdrop-filter: blur(40px) saturate(150%);
@@ -343,17 +508,40 @@ body {
     border: 1px solid hsl(0 0% 100% / 0.6);
   }
 
-  .glow-orb { border-radius: 50%; filter: blur(80px); pointer-events: none; }
+  .glow-orb {
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
 
-  .badge { @apply inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-2xs font-medium tracking-[0.06em]; }
-  .badge-blue { @apply badge bg-blue-50 text-blue-600; }
-  .badge-gold { @apply badge bg-amber-50 text-amber-600; }
-  .badge-purple { @apply badge bg-purple-50 text-purple-600; }
-  .badge-white { @apply badge bg-white/10 text-white/80 border border-white/15; }
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-2xs font-medium tracking-[0.06em];
+  }
+
+  .badge-blue {
+    @apply badge bg-blue-50 text-blue-600;
+  }
+
+  .badge-gold {
+    @apply badge bg-amber-50 text-amber-600;
+  }
+
+  .badge-purple {
+    @apply badge bg-purple-50 text-purple-600;
+  }
+
+  .badge-white {
+    @apply badge bg-white/10 text-white/80 border border-white/15;
+  }
 
   /* Pattern removed Apple doesn't use grid patterns */
-  .pattern-grid { background: none; }
-  .pattern-grid-dark { background: none; }
+  .pattern-grid {
+    background: none;
+  }
+
+  .pattern-grid-dark {
+    background: none;
+  }
 
   /* Top nav hover handled per-link in Navbar.tsx */
   .nav-link-gradient {
@@ -363,6 +551,7 @@ body {
     color: transparent;
     -webkit-text-fill-color: transparent;
   }
+
   .nav-link-gradient.is-active {
     background-image: linear-gradient(90deg, #0a6f8e 0%, #0e92b8 50%, #36326a 100%);
     filter: brightness(0.9) saturate(1.1);
@@ -385,6 +574,7 @@ body {
     transition: all 0.3s ease;
     text-decoration: none;
   }
+
   .btn-gradient:hover,
   .btn-gradient-primary:hover {
     transform: translateY(-1px);
@@ -410,6 +600,7 @@ body {
     text-decoration: none;
     box-shadow: 0 1px 2px rgba(13, 36, 77, 0.1);
   }
+
   .btn-white:hover,
   .btn-white-primary:hover {
     transform: translateY(-1px);
@@ -423,6 +614,7 @@ body {
      - On big screens (>= 640px): ALWAYS SHOW secondary white buttons & tertiary links.
      ========================================================================== */
   @media (max-width: 639px) {
+
     /* Mobile hero sections: Strictly show ONLY the primary navy blue button */
     [data-secondary-cta],
     [data-tertiary-cta],
@@ -455,6 +647,7 @@ body {
   }
 
   @media (min-width: 640px) {
+
     /* Big screens (desktop, laptop, tablet): NEVER remove the secondary white button */
     [data-secondary-cta],
     section[id*="hero"] [data-secondary-cta],
@@ -499,6 +692,7 @@ body {
     text-decoration: none;
     box-shadow: 0 1px 2px rgba(22, 157, 200, 0.25);
   }
+
   .btn-cyan:hover,
   .btn-cyan-primary:hover {
     background: #0D306C;
@@ -528,6 +722,7 @@ body {
     white-space: nowrap;
     cursor: pointer;
   }
+
   .btn-navy:hover,
   .btn-navy-primary:hover,
   .btn-navy-blue:hover {
@@ -540,6 +735,7 @@ body {
   /* Uniform compact pill sizing on mobile so every CTA (gradient, white, cyan, navy)
      and the card button (btn-cyan-compact) shares the same size and padding. */
   @media (max-width: 767px) {
+
     .btn-gradient,
     .btn-gradient-primary,
     .btn-white,
@@ -559,8 +755,13 @@ body {
 }
 
 @layer components {
-  .container-custom { @apply max-w-6xl mx-auto; }
-  .container-wide { @apply max-w-7xl mx-auto; }
+  .container-custom {
+    @apply max-w-6xl mx-auto;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto;
+  }
 
   /* ====================================================================
      TYPOGRAPHY SYSTEM
@@ -572,26 +773,58 @@ body {
      ==================================================================== */
 
   /* H1 - one per page, page title only. 36px -> 72px, fluid. */
-  .type-h1 { @apply text-hero-sm md:text-hero; }
+  .type-h1 {
+    @apply text-hero-sm md:text-hero;
+  }
+
   /* H2 - section title. 28px -> 46px, fluid. */
-  .type-h2 { @apply text-display-sm md:text-display; }
+  .type-h2 {
+    @apply text-display-sm md:text-display;
+  }
+
   /* H3 - sub-section title. 24px -> 28px. */
-  .type-h3 { @apply text-2xl md:text-3xl; }
+  .type-h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
   /* H4 / card title. 19px -> 21px. */
-  .type-h4 { @apply text-lg md:text-xl; }
+  .type-h4 {
+    @apply text-lg md:text-xl;
+  }
+
   /* Lede - the intro paragraph under an H1/H2. */
-  .type-lede { @apply text-lg md:text-xl leading-relaxed; }
+  .type-lede {
+    @apply text-lg md:text-xl leading-relaxed;
+  }
+
   /* Body - default running text. Same size as <body>. */
-  .type-body { @apply text-base leading-relaxed; }
+  .type-body {
+    @apply text-base leading-relaxed;
+  }
+
   /* Small - card body, dense UI, secondary copy. */
-  .type-small { @apply text-sm leading-relaxed; }
+  .type-small {
+    @apply text-sm leading-relaxed;
+  }
+
   /* Caption - table cells, source notes, meta. */
-  .type-caption { @apply text-xs; }
+  .type-caption {
+    @apply text-xs;
+  }
+
   /* Label - uppercase micro label. See also .eyebrow for the teal variant. */
-  .type-label { @apply text-2xs uppercase tracking-[0.16em]; }
+  .type-label {
+    @apply text-2xs uppercase tracking-[0.16em];
+  }
+
   /* Button and nav share the small step so controls never drift. */
-  .type-button { @apply text-sm; }
-  .type-nav { @apply text-sm; }
+  .type-button {
+    @apply text-sm;
+  }
+
+  .type-nav {
+    @apply text-sm;
+  }
 
   /* ====================================================================
      CARD SYSTEM
@@ -608,25 +841,49 @@ body {
     padding: var(--card-pad);
     transition: border-color .3s ease, box-shadow .3s ease;
   }
+
   @media (min-width: 768px) {
-    .card { padding: var(--card-pad-lg); }
+    .card {
+      padding: var(--card-pad-lg);
+    }
   }
+
   /* Dense variant - list tiles, stat tiles, chips-with-copy. */
-  .card-compact { padding: 1.25rem; }
-  @media (min-width: 768px) {
-    .card-compact { padding: 1.5rem; }
+  .card-compact {
+    padding: 1.25rem;
   }
+
+  @media (min-width: 768px) {
+    .card-compact {
+      padding: 1.5rem;
+    }
+  }
+
   /* Feature / CTA variant - the one card allowed to breathe more. */
-  .card-lg { padding: 2rem; }
-  @media (min-width: 768px) {
-    .card-lg { padding: 2.5rem; }
+  .card-lg {
+    padding: 2rem;
   }
+
+  @media (min-width: 768px) {
+    .card-lg {
+      padding: 2.5rem;
+    }
+  }
+
   /* Card with its own media/edge-to-edge content: keep the shape, drop the pad. */
-  .card-flush { padding: 0; overflow: hidden; }
+  .card-flush {
+    padding: 0;
+    overflow: hidden;
+  }
 
   /* Card interior rhythm, so text never sits against the border. */
-  .card-title { @apply text-lg md:text-xl text-heading; }
-  .card-body  { @apply text-sm leading-relaxed text-body; }
+  .card-title {
+    @apply text-lg md:text-xl text-heading;
+  }
+
+  .card-body {
+    @apply text-sm leading-relaxed text-body;
+  }
 
   /* Cards on a dark surface. Same geometry, inverted hairline. */
   .card-on-dark {
@@ -636,8 +893,11 @@ body {
     box-shadow: none;
     padding: var(--card-pad);
   }
+
   @media (min-width: 768px) {
-    .card-on-dark { padding: var(--card-pad-lg); }
+    .card-on-dark {
+      padding: var(--card-pad-lg);
+    }
   }
 
   /* Global text links: no weight/size/scale/color change on hover.
@@ -645,11 +905,13 @@ body {
   a:not(.btn-primary):not(.btn-secondary):not(.btn-outline):not(.btn-ghost-white) {
     transition: none;
   }
+
   a:not(.btn-primary):not(.btn-secondary):not(.btn-outline):not(.btn-ghost-white):hover {
     transform: none !important;
     scale: none !important;
     text-shadow: none !important;
   }
+
   /* Keep layout stable on group hover, but NEVER strip an element's own font
      weight: bold card titles and nav CTAs must stay bold while hovered.
      (The previous `font-weight: inherit !important` here was what made bold
@@ -672,11 +934,13 @@ body {
   .round-arrow-btn {
     color: #0D306C;
   }
+
   .group:hover .round-arrow-btn,
   .round-arrow-btn:hover {
     background-color: #0D306C !important;
     color: #FFFFFF !important;
   }
+
   .group:hover .round-arrow-btn svg,
   .round-arrow-btn:hover svg {
     color: #FFFFFF !important;
@@ -689,11 +953,13 @@ body {
   .discuss-gcc-card * {
     color: #FFFFFF !important;
   }
+
   .discuss-gcc-card .discuss-gcc-desc,
   .discuss-gcc-card:hover .discuss-gcc-desc {
     color: rgba(255, 255, 255, 0.9) !important;
     font-weight: 400 !important;
   }
+
   .discuss-gcc-card .discuss-gcc-title,
   .discuss-gcc-card:hover .discuss-gcc-title {
     color: #FFFFFF !important;
@@ -711,16 +977,28 @@ body {
 
   /* Two section rhythms only: standard and tight. The site previously mixed
      py-16/20/24 with md:py-24/28/32/36 across pages. */
-  .section { @apply px-6 sm:px-8 lg:px-12 py-20 md:py-28; }
-  .section-sm { @apply px-6 sm:px-8 lg:px-12 py-14 md:py-20; }
-  .section-padding { @apply px-6 sm:px-8 lg:px-12 py-20 md:py-28; }
-  .bg-section-alt { background-color: hsl(0 0% 97%); }
+  .section {
+    @apply px-6 sm:px-8 lg:px-12 py-20 md:py-28;
+  }
+
+  .section-sm {
+    @apply px-6 sm:px-8 lg:px-12 py-14 md:py-20;
+  }
+
+  .section-padding {
+    @apply px-6 sm:px-8 lg:px-12 py-20 md:py-28;
+  }
+
+  .bg-section-alt {
+    background-color: hsl(0 0% 97%);
+  }
 
   /* Buttons - Apple-like pills */
   .btn-primary {
     @apply inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-medium text-sm text-white transition-colors duration-300;
     background: hsl(var(--primary));
   }
+
   /* .btn-primary hover intentionally removed: cursor change only */
 
   .btn-secondary {
@@ -728,12 +1006,14 @@ body {
     background: #0a93bd;
     color: #ffffff;
   }
+
   /* .btn-secondary hover intentionally removed */
 
   .btn-outline {
     @apply inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-medium text-sm transition-colors duration-300 border text-heading bg-transparent;
     border-color: hsl(var(--border));
   }
+
   /* .btn-outline hover intentionally removed */
 
   .btn-ghost-white {
@@ -741,6 +1021,7 @@ body {
     color: hsl(0 0% 100% / 0.85);
     border: 1px solid hsl(0 0% 100% / 0.2);
   }
+
   /* .btn-ghost-white hover intentionally removed */
 
   /* Top menu: keep size fixed; color handled in component.
@@ -759,30 +1040,114 @@ body {
   .link-arrow {
     @apply inline-flex items-center gap-1.5 text-primary font-medium text-base transition-colors duration-300;
   }
+
   /* .link-arrow hover intentionally removed */
 
-  .divider { @apply h-px w-full bg-border; }
+  .divider {
+    @apply h-px w-full bg-border;
+  }
 
   /* Keyframes */
-  @keyframes accordion-down { from { height: 0; } to { height: var(--radix-accordion-content-height); } }
-  @keyframes accordion-up { from { height: var(--radix-accordion-content-height); } to { height: 0; } }
-  @keyframes fade-up { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-  @keyframes float { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-10px); } }
-  @keyframes shimmer { from{ background-position:-200% center; } to{ background-position:200% center; } }
-  @keyframes pulse-glow { 0%,100%{ opacity:.5; } 50%{ opacity:.85; } }
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
 
-  .animate-fade-up { animation: fade-up 0.55s cubic-bezier(.16,1,.3,1) forwards; }
-  .animate-fade-up-1 { animation: fade-up 0.55s 0.1s cubic-bezier(.16,1,.3,1) both; }
-  .animate-fade-up-2 { animation: fade-up 0.55s 0.2s cubic-bezier(.16,1,.3,1) both; }
-  .animate-fade-up-3 { animation: fade-up 0.55s 0.3s cubic-bezier(.16,1,.3,1) both; }
-  .animate-fade-up-4 { animation: fade-up 0.55s 0.4s cubic-bezier(.16,1,.3,1) both; }
-  .animate-float { animation: float 4s ease-in-out infinite; }
-  .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes shimmer {
+    from {
+      background-position: -200% center;
+    }
+
+    to {
+      background-position: 200% center;
+    }
+  }
+
+  @keyframes pulse-glow {
+
+    0%,
+    100% {
+      opacity: .5;
+    }
+
+    50% {
+      opacity: .85;
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.55s cubic-bezier(.16, 1, .3, 1) forwards;
+  }
+
+  .animate-fade-up-1 {
+    animation: fade-up 0.55s 0.1s cubic-bezier(.16, 1, .3, 1) both;
+  }
+
+  .animate-fade-up-2 {
+    animation: fade-up 0.55s 0.2s cubic-bezier(.16, 1, .3, 1) both;
+  }
+
+  .animate-fade-up-3 {
+    animation: fade-up 0.55s 0.3s cubic-bezier(.16, 1, .3, 1) both;
+  }
+
+  .animate-fade-up-4 {
+    animation: fade-up 0.55s 0.4s cubic-bezier(.16, 1, .3, 1) both;
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
 
   .shimmer-text {
     background: linear-gradient(90deg, #2563eb, #7c3aed, #2563eb);
     background-size: 200% auto;
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     animation: shimmer 3s linear infinite;
   }
 
@@ -792,15 +1157,19 @@ body {
     initial-value: 0deg;
     inherits: false;
   }
-  .text-balance { text-wrap: balance; }
+
+  .text-balance {
+    text-wrap: balance;
+  }
 
   /* Hairline grid backdrop used in cinematic dark sections */
   .bg-grid-cyan {
     background-image:
-      linear-gradient(rgba(10,147,189,0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(10,147,189,0.08) 1px, transparent 1px);
+      linear-gradient(rgba(10, 147, 189, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(10, 147, 189, 0.08) 1px, transparent 1px);
     background-size: 56px 56px;
   }
+
   .bg-grid-fade {
     -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
     mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
@@ -809,9 +1178,9 @@ body {
   /* Conic shimmer used behind hero headlines */
   .aurora {
     background:
-      radial-gradient(60% 60% at 30% 40%, rgba(10,147,189,0.35), transparent 60%),
-      radial-gradient(40% 40% at 70% 60%, rgba(124,58,237,0.30), transparent 65%),
-      radial-gradient(80% 80% at 50% 100%, rgba(54,50,106,0.40), transparent 70%);
+      radial-gradient(60% 60% at 30% 40%, rgba(10, 147, 189, 0.35), transparent 60%),
+      radial-gradient(40% 40% at 70% 60%, rgba(124, 58, 237, 0.30), transparent 65%),
+      radial-gradient(80% 80% at 50% 100%, rgba(54, 50, 106, 0.40), transparent 70%);
     filter: blur(40px);
   }
 
@@ -829,49 +1198,67 @@ body {
   .btn-glow {
     position: relative;
     isolation: isolate;
-    transition: transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease;
+    transition: transform .35s cubic-bezier(.16, 1, .3, 1), box-shadow .35s ease;
   }
+
   .btn-glow::before {
     content: "";
-    position: absolute; inset: -1px;
+    position: absolute;
+    inset: -1px;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, rgba(10,147,189,.9), rgba(124,58,237,.9), rgba(10,147,189,0));
+    background: linear-gradient(135deg, rgba(10, 147, 189, .9), rgba(124, 58, 237, .9), rgba(10, 147, 189, 0));
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor; mask-composite: exclude;
-    opacity: 0; transition: opacity .35s ease;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity .35s ease;
     z-index: -1;
   }
+
   /* .btn-glow hover intentionally removed */
 
   /* Soft hairline separator that fades at the edges */
   .hairline {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(10,147,189,.35), transparent);
+    background: linear-gradient(90deg, transparent, rgba(10, 147, 189, .35), transparent);
   }
 
   /* ── Paper / sculpture surfaces ───────────────────────────────────── */
-  .surface-paper { background-color: #fbfaf7; color: #0e1320; }
-  .surface-paper-2 { background-color: #f3f1ec; color: #0e1320; }
-  .ink { color: #0e1320; }
-  .ink-muted { color: #5b6273; }
+  .surface-paper {
+    background-color: #fbfaf7;
+    color: #0e1320;
+  }
+
+  .surface-paper-2 {
+    background-color: #f3f1ec;
+    color: #0e1320;
+  }
+
+  .ink {
+    color: #0e1320;
+  }
+
+  .ink-muted {
+    color: #5b6273;
+  }
 
   .hairline-rule {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(14,19,32,0.18), transparent);
+    background: linear-gradient(90deg, transparent, rgba(14, 19, 32, 0.18), transparent);
   }
 
   .bg-grid-ink {
     background-image:
-      linear-gradient(rgba(14,19,32,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(14,19,32,0.05) 1px, transparent 1px);
+      linear-gradient(rgba(14, 19, 32, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(14, 19, 32, 0.05) 1px, transparent 1px);
     background-size: 56px 56px;
   }
 
   .aurora-paper {
     background:
-      radial-gradient(60% 60% at 30% 40%, rgba(10,147,189,0.18), transparent 60%),
-      radial-gradient(45% 45% at 70% 60%, rgba(124,58,237,0.14), transparent 65%);
+      radial-gradient(60% 60% at 30% 40%, rgba(10, 147, 189, 0.18), transparent 60%),
+      radial-gradient(45% 45% at 70% 60%, rgba(124, 58, 237, 0.14), transparent 65%);
     filter: blur(40px);
   }
 
@@ -885,7 +1272,8 @@ body {
   /* One eyebrow spec site-wide. Previously 9-14px with tracking anywhere
      between 0.08em and 0.3em depending on the page. */
   .eyebrow {
-    font-size: 0.75rem;      /* 12px - the 2xs step */
+    font-size: 0.75rem;
+    /* 12px - the 2xs step */
     line-height: 1.45;
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -901,6 +1289,7 @@ body {
     box-shadow: var(--card-shadow);
     transition: border-color .3s ease, box-shadow .3s ease;
   }
+
   /* .specimen-card hover intentionally removed */
 
   .btn-ink {
@@ -908,14 +1297,16 @@ body {
     background: #0e1320;
     color: #fbfaf7;
   }
+
   /* .btn-ink hover intentionally removed */
 
   .btn-ghost-ink {
     @apply inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-medium text-sm transition-colors duration-300;
     color: #0e1320;
-    border: 1px solid rgba(14,19,32,0.18);
+    border: 1px solid rgba(14, 19, 32, 0.18);
     background: transparent;
   }
+
   /* .btn-ghost-ink hover intentionally removed */
 }
 
@@ -925,6 +1316,7 @@ button svg.lucide-arrow-right {
   transition: transform 200ms ease-out;
   will-change: transform;
 }
+
 a:hover svg.lucide-arrow-right,
 a:focus-visible svg.lucide-arrow-right,
 button:hover svg.lucide-arrow-right,
@@ -944,6 +1336,7 @@ button:focus-visible svg.lucide-arrow-right {
    removing link underline noise and page-breaking inside cards.
 --------------------------------------------------------------------------- */
 @media print {
+
   .no-print,
   .no-print * {
     display: none !important;
@@ -1024,6 +1417,7 @@ button:focus-visible svg.lucide-arrow-right {
   position: relative;
   overflow: hidden;
 }
+
 .liquid-glass::before {
   content: '';
   position: absolute;
@@ -1031,9 +1425,9 @@ button:focus-visible svg.lucide-arrow-right {
   border-radius: inherit;
   padding: 1.4px;
   background: linear-gradient(180deg,
-    rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 20%,
-    rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%,
-    rgba(255,255,255,0.1) 80%, rgba(255,255,255,0.3) 100%);
+      rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 20%,
+      rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0.1) 80%, rgba(255, 255, 255, 0.3) 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -1071,7 +1465,7 @@ button:focus-visible svg.lucide-arrow-right {
 /* Subtle Technical Grid & Line Accents */
 .tech-grid-pattern {
   background-size: 32px 32px;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(22, 157, 200, 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(22, 157, 200, 0.04) 1px, transparent 1px);
 }
@@ -1145,4 +1539,3 @@ button:focus-visible svg.lucide-arrow-right {
   scrollbar-width: none !important;
   overflow-y: hidden !important;
 }
-

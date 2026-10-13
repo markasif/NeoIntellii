@@ -92,7 +92,7 @@ export default function Section({
     <section
       id={id}
       aria-labelledby={title ? headingId : undefined}
-      className={`relative scroll-mt-28 overflow-x-clip select-none px-4 sm:px-6 lg:px-8 ${
+      className={`relative scroll-mt-28 overflow-x-hidden max-w-[100vw] w-full select-none px-4 sm:px-6 lg:px-8 ${
         isNavy
           ? `bg-gradient-to-b from-[#081B3E] via-[#0A224E] to-[#061530] text-white ${paddingClasses}`
           : `bg-transparent text-[#2B3D66] ${paddingClasses}`
@@ -123,8 +123,8 @@ export default function Section({
       {/* ── AMBIENT BACKGROUND GLOW (Navy Theme) ─────────────────────── */}
       {isNavy && (
         <>
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[850px] h-[600px] bg-[#169DC8]/12 rounded-full blur-3xl pointer-events-none z-0" />
-          <div className="absolute bottom-1/3 right-10 w-[600px] h-[450px] bg-[#0D306C]/50 rounded-full blur-3xl pointer-events-none z-0" />
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[850px] max-w-[100vw] h-[600px] bg-[#169DC8]/12 rounded-full blur-3xl pointer-events-none z-0" />
+          <div className="absolute bottom-1/3 right-10 w-[600px] max-w-[100vw] h-[450px] bg-[#0D306C]/50 rounded-full blur-3xl pointer-events-none z-0" />
         </>
       )}
 

@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export interface IndustryImageCardProps {
   title: string;
@@ -68,30 +68,33 @@ export default function IndustryImageCard({
   const handleMouseLeave = () => setIsHovered(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      if (isHovered && labelRef.current && wrapRef.current) {
-        const extra = labelRef.current.scrollWidth - wrapRef.current.clientWidth;
+    // Measure label overflow on mount and on resize so the fade mask shows
+    // immediately (not only after the first hover).
+    const measure = () => {
+      const label = labelRef.current;
+      const wrap = wrapRef.current;
+      if (label && wrap) {
+        const extra = label.scrollWidth - wrap.clientWidth;
         setOverflowShift(extra > 2 ? extra : 0);
       }
     };
-    window.addEventListener("resize", handleResize, { passive: true });
-    return () => window.removeEventListener("resize", handleResize);
-  }, [isHovered]);
+    measure();
+    window.addEventListener("resize", measure, { passive: true });
+    return () => window.removeEventListener("resize", measure);
+  }, []);
 
   const truncated = isButton && overflowShift > 0;
 
-  const arrow = isButton ? (
-    <ArrowRight className="w-3.5 h-3.5 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5" />
-  ) : (
-    <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 transition-transform duration-200 group-hover/link:translate-x-1" />
-  );
-
-  /** Single line, fade-truncated by default; slides to reveal the rest on hover. */
+  /**
+ * Underlined cyan "Explore" link (NeoHireXMatrix solution-card style).
+ * If the label is too long for one line it fades to a mask edge; on hover the
+ * full text slides in to reveal the remainder.
+ */
   const buttonLabel = isButton ? (
     <>
       <span
         ref={wrapRef}
-        className={`relative block min-w-0 flex-1 overflow-hidden whitespace-nowrap text-left ${
+        className={`relative block min-w-0 flex-1 overflow-hidden whitespace-nowrap ${
           truncated && !isHovered
             ? "[mask-image:linear-gradient(to_right,black_calc(100%-16px),transparent_100%)]"
             : ""
@@ -112,12 +115,12 @@ export default function IndustryImageCard({
           {linkLabel}
         </span>
       </span>
-      {arrow}
+      <ArrowRight className="w-3.5 h-3.5 shrink-0 transition-transform duration-200 group-hover/link:translate-x-1" />
     </>
   ) : null;
 
   const linkClasses = isButton
-    ? `btn-cyan btn-cyan-compact group/btn w-full justify-start overflow-hidden`
+    ? "max-w-full min-w-0 inline-flex items-center gap-2 text-[10px] sm:text-[11px] font-bold text-[#008EC4] uppercase tracking-wide pb-0.5 border-b border-[#008EC4] hover:text-[#0D244D] hover:border-[#0D244D] transition-colors group/link"
     : "inline-flex items-center gap-1.5 text-xs sm:text-[13px] lg:text-sm font-bold text-[#169DC8] group-hover:text-[#0D306C] transition-colors group/link leading-snug";
 
   const colWidthClass = isButton

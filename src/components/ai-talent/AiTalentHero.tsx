@@ -46,8 +46,8 @@ export default function AiTalentHero({
       breadcrumbs={!isOverview ? crumbs : undefined}
       title={title}
       description={description}
-      desktopImage="/hero/ai-talent.webp"
-      mobileImage="/hero/ai-talent-mobile.webp"
+      desktopImage="/images/hero/ai-talent.webp"
+      mobileImage="/images/hero/ai-talent-mobile.webp"
       imageAlt="AI Talent Acquisition Command Center"
       primaryCta={primaryCta}
       secondaryCta={secondaryCta}

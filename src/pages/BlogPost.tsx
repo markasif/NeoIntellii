@@ -193,7 +193,7 @@ export default function BlogPost() {
             {/* Mobile artwork */}
             <div className="md:hidden absolute inset-0">
               <Image
-                src="/hero/hero-half-viewport-mobile.webp"
+                src="/images/hero/hero-half-viewport-mobile.webp"
                 alt="Mobile hero artwork"
                 fill
                 priority
@@ -205,7 +205,7 @@ export default function BlogPost() {
             {/* Desktop artwork */}
             <div className="hidden md:block absolute inset-0">
               <Image
-                src="/hero/hero-half-viewport.webp"
+                src="/images/hero/hero-half-viewport.webp"
               alt={post.title}
               fill
               priority

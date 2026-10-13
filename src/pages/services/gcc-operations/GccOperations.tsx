@@ -209,7 +209,7 @@ export default function GccOperations() {
 
             <h2 className="text-2xl sm:text-4xl lg:text-[44px] font-extrabold text-[#0D244D] tracking-[-0.03em] leading-[1.14] mb-4">
               One center.<br />
-              One operating layer<span className="text-[#008EC4]">.</span>
+              One operating layer.
             </h2>
 
             <p className="text-[#505D74] font-normal text-sm sm:text-base lg:text-lg leading-relaxed mb-4">
@@ -234,7 +234,7 @@ export default function GccOperations() {
             className="lg:col-span-6 xl:col-span-6 flex flex-col h-full"
           >
             <InBriefCard
-              imageSrc="/images/gcc-operations/gcc-in-brief-overview.webp"
+              imageSrc="/images/services/gcc-operations/gcc-in-brief-overview.webp"
               imageAlt="GCC Operations &amp; Managed Services Overview"
             >
               GCC Operations &amp; Managed Services is NeoIntelli&apos;s operating layer for companies that run a Global Capability Center in India and do not want to build every local support function themselves. It serves new centers, AI Micro GCCs, scaling centers and existing GCCs professionalizing their operations. It covers people and HR operations, workforce strategy, workplace and IT, service management and performance, governance and compliance coordination, and Build-Operate-Transfer. NeoIntelli operates the agreed functions under a documented responsibility matrix, measures the center on outcomes, and designs every process to transfer to the client when the client is ready.
@@ -439,11 +439,7 @@ export default function GccOperations() {
       <OpsSection
         id="what-we-operate"
         eyebrow="OPERATING BOUNDARIES"
-        title={
-          <>
-            What NeoIntelli operates and what you control<span className="text-[#008EC4]">.</span>
-          </>
-        }
+        title="What NeoIntelli operates and what you control."
         intro="The split is explicit, written down, and agreed before the first function is handed over. NeoIntelli does not take ownership of the roadmap, the IP, the data, the architecture, the hiring decisions or the executive governance unless an engagement explicitly agrees it."
         align="center"
         width="wide"
@@ -456,12 +452,7 @@ export default function GccOperations() {
       <OpsSection
         id="operating-modes"
         eyebrow="ENGAGEMENT MODES"
-        title={
-          <>
-            Start with the operating model that fits today
-            <span className="text-[#169DC8]">.</span>
-          </>
-        }
+        title="Start with the operating model that fits today."
         intro="The right mode depends on entity status, how much local operating capacity you already have, and whether you intend to run the center yourself eventually. You can change mode without rebuilding the center."
         align="center"
         width="wide"
@@ -474,12 +465,7 @@ export default function GccOperations() {
         theme="navy"
         wavesOnMobile
         eyebrow="BOT TRANSITION"
-        title={
-          <>
-            Designed to transfer, if and when you want it
-            <span className="text-[#38BDF8]">.</span>
-          </>
-        }
+        title="Designed to transfer, if and when you want it."
         intro="The objective is not permanent dependency unless you want managed operations long term. Systems, documentation, ownership and records are designed to be transferable from the beginning."
         align="center"
         width="wide"
@@ -666,12 +652,7 @@ export default function GccOperations() {
       <OpsSection
         id="ai-enabled-operations"
         eyebrow="AI ACCELERATION"
-        title={
-          <>
-            Where AI can improve GCC operations
-            <span className="text-[#169DC8]">.</span>
-          </>
-        }
+        title="Where AI can improve GCC operations."
         intro="NeoIntelli is an AI company that also runs operating layers. The operating functions around a GCC are full of repetitive, document-heavy and knowledge-intensive work, which is exactly where AI earns its place. Where a capability below is not an existing platform, NeoIntelli can design and implement it through its AI Engineering practice."
         align="center"
         width="wide"
@@ -870,11 +851,7 @@ export default function GccOperations() {
           <div className="lg:col-span-6 xl:col-span-7 space-y-7 sm:space-y-8">
             <SectionHeader
               eyebrow="COMMERCIAL TRANSPARENCY"
-              title={
-                <>
-                  Transparent operating economics<span className="text-[#008EC4]">.</span>
-                </>
-              }
+              title="Transparent operating economics."
               description="NeoIntelli separates people cost, operating services and project-specific infrastructure so clients can understand what they are paying for as the GCC scales. Operating reports show the same split, so the cost conversation with headquarters is about what the center delivers, not about untangling a blended fee."
               align="left"
               variant="cyan"
@@ -938,7 +915,7 @@ export default function GccOperations() {
           <div className="lg:col-span-6 xl:col-span-5 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[480px]">
               <img
-                src="/images/gcc-operations/commercial-transparency-stack-transparent.webp"
+                src="/images/services/gcc-operations/commercial-transparency-stack-transparent.webp"
                 alt="Commercial transparency: separated people cost, operating services, and project infrastructure"
                 className="w-full h-auto object-contain select-none pointer-events-none drop-shadow-md"
                 width={499}
@@ -952,12 +929,7 @@ export default function GccOperations() {
       <AnswerList
         id="buyer-questions"
         eyebrow="COMMON INQUIRIES & ANSWERS"
-        title={
-          <>
-            Frequently Asked Questions
-            <span className="text-[#169DC8]">.</span>
-          </>
-        }
+        title="Frequently Asked Questions."
         intro="Clear answers to the key operational, legal, and strategic questions enterprise leaders ask about GCC operations and managed services."
         items={faqs}
       />

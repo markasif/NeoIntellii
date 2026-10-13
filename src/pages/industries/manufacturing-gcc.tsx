@@ -29,14 +29,14 @@ import IndustriesSubnav from "@/components/industries/IndustriesSubnav";
 import { CAL_BOOKING_URL } from "@/lib/constants";
 
 const roleImages = [
-  "/images/ai-data-workloads.webp",
-  "/images/ai-governance.webp",
-  "/images/tech-process-automation.webp",
-  "/images/tech-data-platform.webp",
-  "/images/tech-product-engineering.webp",
-  "/images/tech-integration.webp",
-  "/images/gcc-operations/operating-reality/04-access.webp",
-  "/images/ai-mlops.webp",
+  "/images/services/ai-gcc/ai-data-workloads.webp",
+  "/images/services/ai-gcc/ai-governance.webp",
+  "/images/industries/tech-process-automation.webp",
+  "/images/industries/tech-data-platform.webp",
+  "/images/industries/tech-product-engineering.webp",
+  "/images/industries/tech-integration.webp",
+  "/images/services/gcc-operations/operating-reality/04-access.webp",
+  "/images/services/ai-gcc/ai-mlops.webp",
 ];
 
 const roleIcons = [
@@ -171,8 +171,8 @@ export default function ManufacturingGCC() {
           ]}
           title="Build Your Manufacturing & Industrial GCC in India"
           description="Build a Manufacturing GCC in India for Industry 4.0, predictive maintenance, supply chain AI, digital twins, and smart factory technology."
-          desktopImage="/hero/industry.webp"
-          mobileImage="/hero/industry-mobile.webp"
+          desktopImage="/images/hero/industry.webp"
+          mobileImage="/images/hero/industry-mobile.webp"
           imageAlt="Manufacturing Command Center"
           primaryCta={{ label: "Book a consultation", href: CAL_BOOKING_URL, isExternal: true }}
           secondaryCta={{ label: "Explore GCC Services", href: "/services/gcc" }}
@@ -315,7 +315,7 @@ export default function ManufacturingGCC() {
                 {/* PHOTOGRAPHY COLUMN */}
                 <div className="lg:col-span-5 relative min-h-[220px] sm:min-h-[300px] lg:min-h-full overflow-hidden bg-[#071836]">
                   <Image
-                    src="/images/tech-process-automation.webp"
+                    src="/images/industries/tech-process-automation.webp"
                     alt="Manufacturing GCC digital transformation"
                     fill
                     sizes="(max-width: 1024px) 100vw, 42vw"

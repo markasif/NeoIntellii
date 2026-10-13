@@ -31,7 +31,7 @@ export default function RealGccBuilding() {
       >
         <div className="absolute inset-[2%] overflow-hidden rounded-[2.5rem] bg-white shadow-[0_32px_65px_-40px_rgba(16,150,191,0.48)]">
           <Image
-            src="/images/gcc-campus-hero-b.webp"
+            src="/images/services/gcc/gcc-campus-hero-b.webp"
             alt=""
             fill
             sizes="(max-width: 1024px) 92vw, 650px"

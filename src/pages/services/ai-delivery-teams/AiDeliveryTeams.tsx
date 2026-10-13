@@ -69,7 +69,7 @@ const deliveryModels = [
   {
     name: "Dedicated AI Engineering Team",
     href: AI_DELIVERY_TEAMS.dedicated,
-    image: "/images/gcc-operations/gcc-arch-teams.webp",
+    image: "/images/services/gcc-operations/gcc-arch-teams.webp",
     alt: "Dedicated AI engineering team working in production environment",
     aspect: "aspect-[4/5]", // Big / Tall
     lead: "A stable team on your ongoing roadmap.",
@@ -83,7 +83,7 @@ const deliveryModels = [
   {
     name: "AI Delivery Pod",
     href: AI_DELIVERY_TEAMS.pod,
-    image: "/images/gcc-operations/perf-ai-impl.webp",
+    image: "/images/services/gcc-operations/perf-ai-impl.webp",
     alt: "AI delivery pod architecting production models and pipelines",
     aspect: "aspect-[4/3]", // Short
     lead: "A cross-functional squad for one defined outcome.",
@@ -97,7 +97,7 @@ const deliveryModels = [
   {
     name: "Forward-Deployed AI Engineers",
     href: AI_DELIVERY_TEAMS.fde,
-    image: "/images/contact_engineer_blue_lounge.webp",
+    image: "/images/home/contact_engineer_blue_lounge.webp",
     alt: "Forward-deployed AI engineer embedded directly with product and operations",
     aspect: "aspect-[4/5]", // Big / Tall
     lead: "Engineers embedded where the production problem lives.",
@@ -111,7 +111,7 @@ const deliveryModels = [
   {
     name: "AI Team Build & Transfer",
     href: AI_DELIVERY_TEAMS.transfer,
-    image: "/images/gcc-operations/gcc-real-bot-handover.webp",
+    image: "/images/services/gcc-operations/gcc-real-bot-handover.webp",
     alt: "Build-operate-transfer team handover session and knowledge transfer",
     aspect: "aspect-[4/3]", // Short
     lead: "Execution now, permanent ownership later.",
@@ -295,42 +295,42 @@ const journey = [
 const insideYourSystem = [
   {
     title: "Git repositories and branching model",
-    image: "/images/tech-product-engineering.webp",
+    image: "/images/industries/tech-product-engineering.webp",
     icon: GitBranch,
   },
   {
     title: "CI/CD pipelines and release process",
-    image: "/images/ai-mlops.webp",
+    image: "/images/services/ai-gcc/ai-mlops.webp",
     icon: Workflow,
   },
   {
     title: "Issue tracker and sprint cadence",
-    image: "/images/gcc-operations/operating-reality/13-mandates.webp",
+    image: "/images/services/gcc-operations/operating-reality/13-mandates.webp",
     icon: ListTodo,
   },
   {
     title: "Cloud accounts and environments",
-    image: "/images/gcc-operations/operating-reality/05-devices.webp",
+    image: "/images/services/gcc-operations/operating-reality/05-devices.webp",
     icon: Cloud,
   },
   {
     title: "Documentation and architecture records",
-    image: "/images/ai-architecture.webp",
+    image: "/images/services/ai-gcc/ai-architecture.webp",
     icon: FileCode2,
   },
   {
     title: "Standups and architecture reviews",
-    image: "/images/gcc-operations/operating-reality/11-leadership.webp",
+    image: "/images/services/gcc-operations/operating-reality/11-leadership.webp",
     icon: Users,
   },
   {
     title: "Observability and alerting",
-    image: "/images/gcc-operations/operating-reality/07-performance.webp",
+    image: "/images/services/gcc-operations/operating-reality/07-performance.webp",
     icon: Activity,
   },
   {
     title: "Security review and approval workflows",
-    image: "/images/gcc-operations/operating-reality/09-risk.webp",
+    image: "/images/services/gcc-operations/operating-reality/09-risk.webp",
     icon: ShieldCheck,
   },
 ];
@@ -338,72 +338,72 @@ const insideYourSystem = [
 const productionChallenges = [
   {
     title: "Data integration",
-    image: "/images/ai-data-workloads.webp",
+    image: "/images/services/ai-gcc/ai-data-workloads.webp",
     icon: Database,
   },
   {
     title: "Identity",
-    image: "/images/gcc-operations/operating-reality/04-access.webp",
+    image: "/images/services/gcc-operations/operating-reality/04-access.webp",
     icon: UserCheck,
   },
   {
     title: "Permissions",
-    image: "/images/gcc-operations/operating-reality/04-access.webp",
+    image: "/images/services/gcc-operations/operating-reality/04-access.webp",
     icon: Lock,
   },
   {
     title: "APIs",
-    image: "/images/tech-integration.webp",
+    image: "/images/industries/tech-integration.webp",
     icon: Webhook,
   },
   {
     title: "Legacy systems",
-    image: "/images/gcc-operations/operating-reality/05-devices.webp",
+    image: "/images/services/gcc-operations/operating-reality/05-devices.webp",
     icon: Server,
   },
   {
     title: "Workflow redesign",
-    image: "/images/tech-process-automation.webp",
+    image: "/images/industries/tech-process-automation.webp",
     icon: RefreshCw,
   },
   {
     title: "Evaluation",
-    image: "/images/ai-assessment.webp",
+    image: "/images/home/ai-assessment.webp",
     icon: CheckCircle2,
   },
   {
     title: "Observability",
-    image: "/images/ai-mlops.webp",
+    image: "/images/services/ai-gcc/ai-mlops.webp",
     icon: Activity,
   },
   {
     title: "Reliability",
-    image: "/images/gcc-operations/operating-reality/09-risk.webp",
+    image: "/images/services/gcc-operations/operating-reality/09-risk.webp",
     icon: ShieldAlert,
   },
   {
     title: "Security",
-    image: "/images/ai-governance.webp",
+    image: "/images/services/ai-gcc/ai-governance.webp",
     icon: Shield,
   },
   {
     title: "Latency",
-    image: "/images/ai-architecture.webp",
+    image: "/images/services/ai-gcc/ai-architecture.webp",
     icon: Zap,
   },
   {
     title: "Cost",
-    image: "/images/gcc-operations/operating-reality/02-payroll.webp",
+    image: "/images/services/gcc-operations/operating-reality/02-payroll.webp",
     icon: Coins,
   },
   {
     title: "Human escalation",
-    image: "/images/gcc-operations/operating-reality/11-leadership.webp",
+    image: "/images/services/gcc-operations/operating-reality/11-leadership.webp",
     icon: Users,
   },
   {
     title: "Adoption",
-    image: "/images/gcc-operations/operating-reality/01-employees.webp",
+    image: "/images/services/gcc-operations/operating-reality/01-employees.webp",
     icon: TrendingUp,
   },
 ];
@@ -411,17 +411,17 @@ const productionChallenges = [
 const transferPractices = [
   {
     title: "Documentation kept current",
-    image: "/images/gcc-operations/operating-reality/08-reporting.webp",
+    image: "/images/services/gcc-operations/operating-reality/08-reporting.webp",
     icon: FileText,
   },
   {
     title: "Architecture decision records",
-    image: "/images/ai-architecture.webp",
+    image: "/images/services/ai-gcc/ai-architecture.webp",
     icon: FileCode2,
   },
   {
     title: "Runbooks for operating the system",
-    image: "/images/gcc-operations/operating-reality/13-mandates.webp",
+    image: "/images/services/gcc-operations/operating-reality/13-mandates.webp",
     icon: BookOpen,
   },
   {
@@ -431,17 +431,17 @@ const transferPractices = [
   },
   {
     title: "Your team inside delivery, not observing it",
-    image: "/images/gcc-operations/operating-reality/11-leadership.webp",
+    image: "/images/services/gcc-operations/operating-reality/11-leadership.webp",
     icon: UserCheck,
   },
   {
     title: "Shared code and design reviews",
-    image: "/images/tech-product-engineering.webp",
+    image: "/images/industries/tech-product-engineering.webp",
     icon: Code2,
   },
   {
     title: "Shadowing",
-    image: "/images/gcc-operations/operating-reality/01-employees.webp",
+    image: "/images/services/gcc-operations/operating-reality/01-employees.webp",
     icon: Eye,
   },
   {
@@ -472,37 +472,37 @@ const measures = [
   {
     title: "Lead time to change",
     desc: "How long an agreed change takes to reach production.",
-    image: "/images/ai-delivery-teams/metrics/01-lead-time.webp",
+    image: "/images/services/ai-delivery-teams/metrics/01-lead-time.webp",
   },
   {
     title: "Accepted releases",
     desc: "Releases that pass business acceptance, not just code review.",
-    image: "/images/ai-delivery-teams/metrics/02-accepted-releases.webp",
+    image: "/images/services/ai-delivery-teams/metrics/02-accepted-releases.webp",
   },
   {
     title: "Deployment frequency",
     desc: "How often the team can safely ship.",
-    image: "/images/ai-delivery-teams/metrics/03-deployment-frequency.webp",
+    image: "/images/services/ai-delivery-teams/metrics/03-deployment-frequency.webp",
   },
   {
     title: "Evaluation pass rate",
     desc: "Performance against the agreed evaluation set, tracked over time.",
-    image: "/images/ai-assessment.webp",
+    image: "/images/home/ai-assessment.webp",
   },
   {
     title: "Task success rate",
     desc: "For agents and assistants, whether the task actually completed.",
-    image: "/images/gcc-operations/operating-reality/14-bot.webp",
+    image: "/images/services/gcc-operations/operating-reality/14-bot.webp",
   },
   {
     title: "Retrieval quality",
     desc: "For retrieval systems, whether the right context was found.",
-    image: "/images/ai-data-workloads.webp",
+    image: "/images/services/ai-gcc/ai-data-workloads.webp",
   },
   {
     title: "Latency",
     desc: "End to end response time under realistic load.",
-    image: "/images/gcc-operations/operating-reality/07-performance.webp",
+    image: "/images/services/gcc-operations/operating-reality/07-performance.webp",
   },
   {
     title: "Cost per request or task",
@@ -512,12 +512,12 @@ const measures = [
   {
     title: "Production incidents",
     desc: "Frequency, severity and time to recover.",
-    image: "/images/gcc-operations/operating-reality/09-risk.webp",
+    image: "/images/services/gcc-operations/operating-reality/09-risk.webp",
   },
   {
     title: "Defect escape rate",
     desc: "Issues found in production that evaluation should have caught.",
-    image: "/images/ai-mlops.webp",
+    image: "/images/services/ai-gcc/ai-mlops.webp",
   },
   {
     title: "Adoption",

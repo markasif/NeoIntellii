@@ -182,12 +182,7 @@ export default function RelatedAiTalentServices({
         <div className="mb-10 sm:mb-12">
           <SectionHeader
             eyebrow="CONNECTED ECOSYSTEM"
-            title={
-              <>
-                {title}
-                <span className="text-[#38BDF8]">.</span>
-              </>
-            }
+            title={`${title.replace(/\.?$/, "")}.`}
             description="Explore related talent practices, scaling options, and capability pillars across the NeoIntelli platform."
             align="center"
             variant="white"

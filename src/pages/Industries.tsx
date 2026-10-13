@@ -67,7 +67,7 @@ const operatingArchitecture = [
     title: "GCC-as-a-Service",
     desc: "End-to-end managed GCC setup and operations. From entity creation to talent acquisition to steady-state management.",
     badge: "ARCHITECTURE 01",
-    image: "/images/gcc-operations/gcc-ops-workforce.webp",
+    image: "/images/services/gcc-operations/gcc-ops-workforce.webp",
     alt: "GCC-as-a-Service operating architecture",
     aspect: "aspect-[4/3]",
     points: [
@@ -83,7 +83,7 @@ const operatingArchitecture = [
     title: "GCC Operations",
     desc: "The operating layer around your GCC: people operations, workplace and IT, service management, and governance.",
     badge: "ARCHITECTURE 02",
-    image: "/images/gcc-operations/gcc-hq-leadership.webp",
+    image: "/images/services/gcc-operations/gcc-hq-leadership.webp",
     alt: "GCC operations and managed services",
     aspect: "aspect-[4/3]",
     points: [
@@ -99,7 +99,7 @@ const operatingArchitecture = [
     title: "GCC vs Outsourcing",
     desc: "A structured comparison across cost, control, IP ownership, talent retention, and long-term strategic value.",
     badge: "ARCHITECTURE 03",
-    image: "/images/gcc-operations/gcc-arch-leadership.webp",
+    image: "/images/services/gcc-operations/gcc-arch-leadership.webp",
     alt: "GCC versus outsourcing comparison framework",
     aspect: "aspect-[4/3]",
     points: [
@@ -195,8 +195,8 @@ export default function Industries() {
           ]}
           title="Built for enterprises with complex operating realities."
           description="NeoIntelli supports companies across regulated, technology-intensive, and transformation-heavy sectors."
-          desktopImage="/hero/industry.webp"
-          mobileImage="/hero/industry-mobile.webp"
+          desktopImage="/images/hero/industry.webp"
+          mobileImage="/images/hero/industry-mobile.webp"
           imageAlt="Industries Command Center"
           primaryCta={{ label: "Discuss Your Industry Context", href: "/contact" }}
         />

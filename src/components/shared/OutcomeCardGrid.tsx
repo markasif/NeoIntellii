@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import SourceNote from "@/components/gcc-operations/SourceNote";
-import { accentActionButtonClass } from "@/components/shared/actionButtonStyles";
 
 /**
  * Universal editorial card grid.
@@ -77,7 +76,7 @@ export interface OutcomeCardGridProps {
   maxWidthClassName?: string;
   /** "lg" (default) matches Outcome Framework headings; "md" the smaller variant. */
   titleSize?: "md" | "lg";
-  /** "accent" (default) uses the solid cyan button; "gradient" the .btn-gradient pill; "cyan" the .btn-cyan pill. */
+  /** "accent" (legacy default) / "gradient" / "cyan" — the card button is now always the cyan pill. */
   ctaButtonVariant?: "accent" | "gradient" | "cyan";
   /** Place the CTA directly after the list content instead of pinning it to the card bottom. */
   ctaAfterContent?: boolean;
@@ -105,12 +104,9 @@ export default function OutcomeCardGrid({
   ctaButtonVariant = "accent",
   ctaAfterContent = false,
 }: OutcomeCardGridProps) {
-  const ctaClass =
-    ctaButtonVariant === "gradient"
-      ? "inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-gradient-to-br from-[#169DC8] to-[#0D306C] text-white text-[12px] font-bold tracking-wide whitespace-nowrap transition-all duration-200 shadow-xs hover:gap-2.5 hover:shadow-[0_0_22px_rgba(22,157,200,0.55),0_4px_16px_rgba(13,48,108,0.3)]"
-      : ctaButtonVariant === "cyan"
-        ? "btn-cyan whitespace-nowrap"
-        : accentActionButtonClass;
+  // The card action button is always the cyan pill (btn-cyan) regardless of
+  // any legacy ctaButtonVariant passed by callers.
+  const ctaClass = "btn-cyan whitespace-nowrap";
   const effectiveColumns: 2 | 3 | 4 =
     columns || (items.length === 3 ? 3 : items.length === 2 ? 2 : 4);
   const gridColsClass = GRID_COLS[effectiveColumns] || GRID_COLS[4];

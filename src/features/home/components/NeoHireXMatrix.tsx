@@ -47,7 +47,7 @@ const DEFAULT_SOLUTIONS: NeoHireXMatrixItem[] = [
       "Build a dedicated AI engineering capability in India without starting with the overhead of a large traditional GCC. Begin with one focused team and expand as the business grows.",
     cta: "Explore AI Micro GCC",
     href: "/services/micro-gcc",
-    image: "/images/solution_micro_gcc.webp",
+    image: "/images/home/solution_micro_gcc.webp",
     imageAlt:
       "AI Micro GCC engineering team collaborating in India on neural architectures and ML pipelines",
     direction: "right",
@@ -60,7 +60,7 @@ const DEFAULT_SOLUTIONS: NeoHireXMatrixItem[] = [
       "Build your team across GenAI, Agentic AI, machine learning, data engineering, MLOps and AI leadership through specialist sourcing, NeoHireX screening and practitioner-led technical validation.",
     cta: "Explore AI Talent",
     href: "/services/ai-talent",
-    image: "/images/solution_ai_talent.webp",
+    image: "/images/home/solution_ai_talent.webp",
     imageAlt:
       "Senior AI engineering practitioner conducting technical evaluation with code and scorecard metrics",
     direction: "left",
@@ -73,7 +73,7 @@ const DEFAULT_SOLUTIONS: NeoHireXMatrixItem[] = [
       "Model roles, seniority, headcount and city to estimate the fully loaded monthly and annual operating cost of your India team.",
     cta: "Calculate My GCC Cost",
     href: "/gcc-cost-calculator",
-    image: "/images/solution_gcc_calculator.webp",
+    image: "/images/home/solution_gcc_calculator.webp",
     imageAlt:
       "India GCC strategic cost and talent headcount modeling dashboard interface",
     direction: "right",
@@ -85,11 +85,7 @@ export default function NeoHireXMatrix({
   items,
   showHeader = true,
   eyebrow = "NEOINTELLI SOLUTIONS",
-  title = (
-    <>
-      Start where your need is today<span className="text-[#008EC4]">.</span>
-    </>
-  ),
+  title = "Start where your need is today.",
   description = "Build the first team, solve an immediate talent gap or model the full GCC before committing.",
   variant = "cyan",
   className = "",
@@ -214,7 +210,7 @@ export default function NeoHireXMatrix({
                 {/* Main Visual: Photorealistic Solution Image */}
                 <div className="relative w-full flex-1 min-h-[220px] sm:min-h-[260px] lg:min-h-[280px] overflow-hidden group/img">
                   <Image
-                    src={item.image || "/images/solutions_illustration.webp"}
+                    src={item.image || "/images/home/solutions_illustration.webp"}
                     alt={item.imageAlt || item.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 45vw, 500px"
@@ -222,25 +218,6 @@ export default function NeoHireXMatrix({
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#061530]/80 via-transparent to-transparent pointer-events-none" />
                 </div>
-
-                {/* Bottom Bar: Action Strip (rendered only if CTA provided) */}
-                {hasCta && (
-                  <div className="flex items-center justify-between py-3 sm:py-3.5 px-5 sm:px-6 lg:px-8 border-t border-white/15 bg-[#061530]/90">
-                    <Link
-                      href={item.href || "#"}
-                      className="text-xs sm:text-[13px] font-mono font-bold text-white hover:text-[#38BDF8] transition-colors tracking-wide uppercase truncate mr-3"
-                    >
-                      {item.cta}
-                    </Link>
-                    <Link
-                      href={item.href || "#"}
-                      className="w-7 h-7 sm:w-8 sm:h-8 border border-white/40 flex items-center justify-center text-white hover:bg-[#008EC4] hover:border-[#008EC4] transition-all shrink-0"
-                      aria-label={item.cta}
-                    >
-                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                    </Link>
-                  </div>
-                )}
               </div>
             </div>
           </motion.div>

@@ -43,7 +43,7 @@ const PRODUCT_PROBLEMS: NeoHireXMatrixItem[] = [
     category: "FEATURE ADOPTION",
     title: "Impressive in the demo, unused in the product",
     body: "The feature was designed around what the model can do rather than the job the user is doing. It sits in a side panel, answers questions nobody asked and is quietly ignored.",
-    image: "/images/ai-engineering/product-engineering-capability.webp",
+    image: "/images/services/ai-engineering/product-engineering-capability.webp",
     imageAlt: "User-centric AI product integration and workflow UX design",
   },
   {
@@ -51,7 +51,7 @@ const PRODUCT_PROBLEMS: NeoHireXMatrixItem[] = [
     category: "UNIT ECONOMICS",
     title: "The margin disappears at scale",
     body: "Cost per interaction was never a design constraint. At real usage the AI feature costs more to serve than the plan it is bundled into earns.",
-    image: "/images/ai-engineering/compute-economics-gap.webp",
+    image: "/images/services/ai-engineering/compute-economics-gap.webp",
     imageAlt: "Production inference unit economics, routing and caching architecture",
   },
   {
@@ -59,7 +59,7 @@ const PRODUCT_PROBLEMS: NeoHireXMatrixItem[] = [
     category: "CONFIDENCE & FALLBACK",
     title: "Trust breaks on the first wrong answer",
     body: "No confidence signal, no citation, no graceful failure state. One visible mistake and users stop relying on the feature, whatever its average accuracy.",
-    image: "/images/ai-engineering/workflow-integration-gap.webp",
+    image: "/images/services/ai-engineering/workflow-integration-gap.webp",
     imageAlt: "Trust verification, citation grounding and graceful fallback UX",
   },
 ];
@@ -79,7 +79,7 @@ const CAPABILITIES: ImageFeatureCardItem[] = [
     title: "Product and architecture",
     desc: "AI feature architecture, AI-native applications, AI SaaS and API surfaces designed for probabilistic behaviour and unit economics.",
     items: ["AI feature architecture", "AI-native applications", "AI SaaS", "AI APIs"],
-    image: "/images/ai-engineering/product-engineering-capability.webp",
+    image: "/images/services/ai-engineering/product-engineering-capability.webp",
     imageAlt: "AI feature architecture, AI-native applications and AI SaaS",
   },
   {
@@ -87,7 +87,7 @@ const CAPABILITIES: ImageFeatureCardItem[] = [
     title: "Experiences",
     desc: "User-facing copilots, semantic search, intelligent recommendations and designed human-in-the-loop interaction patterns.",
     items: ["Copilots", "Semantic search", "Recommendations", "Agentic functionality", "Frontend AI experiences", "Human-in-the-loop UX"],
-    image: "/images/ai-engineering/genai-capability.webp",
+    image: "/images/services/ai-engineering/genai-capability.webp",
     imageAlt: "Copilots, semantic search, recommendations and AI experiences",
   },
   {
@@ -95,7 +95,7 @@ const CAPABILITIES: ImageFeatureCardItem[] = [
     title: "Engineering and operations",
     desc: "Robust backend engineering, automated evaluation release gates, production telemetry and real-time observability.",
     items: ["Backend engineering", "Evaluation", "Analytics", "Production integration"],
-    image: "/images/ai-engineering/evaluation-assurance-capability.webp",
+    image: "/images/services/ai-engineering/evaluation-assurance-capability.webp",
     imageAlt: "Backend engineering, evaluation, analytics and production integration",
   },
 ];

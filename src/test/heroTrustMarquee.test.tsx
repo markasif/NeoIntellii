@@ -17,8 +17,8 @@ describe("HeroTrustMarquee Component", () => {
     expect(screen.getAllByText("Transparent operating model").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Managed → BOT → Captive").length).toBeGreaterThan(0);
 
-    // Verify SVG Lucide icons are present with text-[#0D306C]
-    const icons = container.querySelectorAll("svg.text-\\[\\#0D306C\\]");
+    // Verify SVG Lucide icons are present with text-[#38BDF8]
+    const icons = container.querySelectorAll("svg.text-\\[\\#38BDF8\\]");
     expect(icons.length).toBeGreaterThan(0);
 
     // Verify no circular badge wrapper div exists (e.g. rounded-full bg-white/95)

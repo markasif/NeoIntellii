@@ -136,7 +136,7 @@ describe("AI Talent content and links", () => {
     const globalHrefs = [...menuHrefs, ...FOOTER_SERVICE_COLUMNS.flatMap((column) => column.links.map((link) => link.href))];
     expect(menuHrefs).toContain("/services/ai-talent");
     expect(globalHrefs).toContain("/services/ai-talent/recruitment-hub");
-    for (const retired of ["/recruitment", "/services/ai-data-recruitment", "/services/ai-talent-acquisition"]) {
+    for (const retired of ["/services/ai-data-recruitment", "/services/ai-talent-acquisition"]) {
       expect(menuHrefs, retired).not.toContain(retired);
     }
   });

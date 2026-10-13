@@ -4,28 +4,28 @@ import type { IllustrationKey } from "./ServiceIllustrations";
 
 // Mapping from illustrationKey to image paths
 const imageMap: Record<IllustrationKey, string> = {
-"gcc-setup-launch":"/images/gcc-setup.webp",
-"talent-leadership":"/images/gcc-talent.webp",
-"talent-management":"/images/gcc-talent.webp",
-"technology-foundation":"/images/gcc-technology.webp",
-"technology-infrastructure":"/images/gcc-technology.webp",
-"ai-first-gcc":"/images/home-ai-gcc.webp",
-"operations-excellence":"/images/gcc-operations.webp",
-"compliance-governance":"/images/ai-governance.webp",
-"ai-advisory-strategy":"/images/ai-assessment.webp",
-"ai-gcc-setup-operations":"/images/ai-coe.webp",
-"enterprise-generative-ai":"/images/ai-genai.webp",
-"data-engineering":"/images/ai-architecture.webp",
-"mlops-llmops":"/images/ai-mlops.webp",
-"responsible-ai":"/images/ai-governance.webp",
-"product-engineering":"/images/tech-product-engineering.webp",
-"data-platform":"/images/tech-data-platform.webp",
-"process-automation":"/images/tech-process-automation.webp",
-"integration-programs":"/images/tech-integration.webp",
-"ai-data-pod":"/images/talent-ai-data-pod.webp",
-"engineering-pod":"/images/talent-engineering-pod.webp",
-"transformation-pod":"/images/talent-transformation-pod.webp",
-"architecture-pod":"/images/talent-architecture-pod.webp",
+"gcc-setup-launch":"/images/services/gcc/gcc-setup.webp",
+"talent-leadership":"/images/services/gcc/gcc-talent.webp",
+"talent-management":"/images/services/gcc/gcc-talent.webp",
+"technology-foundation":"/images/services/gcc/gcc-technology.webp",
+"technology-infrastructure":"/images/services/gcc/gcc-technology.webp",
+"ai-first-gcc":"/images/home/home-ai-gcc.webp",
+"operations-excellence":"/images/services/gcc-operations/gcc-operations.webp",
+"compliance-governance":"/images/services/ai-gcc/ai-governance.webp",
+"ai-advisory-strategy":"/images/home/ai-assessment.webp",
+"ai-gcc-setup-operations":"/images/home/ai-coe.webp",
+"enterprise-generative-ai":"/images/services/ai-gcc/Futuristic AI Governance Command Center.webp",
+"data-engineering":"/images/services/ai-gcc/ai-architecture.webp",
+"mlops-llmops":"/images/services/ai-gcc/ai-mlops.webp",
+"responsible-ai":"/images/services/ai-gcc/ai-governance.webp",
+"product-engineering":"/images/industries/tech-product-engineering.webp",
+"data-platform":"/images/industries/tech-data-platform.webp",
+"process-automation":"/images/industries/tech-process-automation.webp",
+"integration-programs":"/images/industries/tech-integration.webp",
+"ai-data-pod":"/images/services/ai-talent/talent-ai-data-pod.webp",
+"engineering-pod":"/images/services/ai-talent/talent-engineering-pod.webp",
+"transformation-pod":"/images/services/ai-talent/talent-transformation-pod.webp",
+"architecture-pod":"/images/services/ai-talent/talent-architecture-pod.webp",
 };
 
 interface IllustratedServiceCardProps {
@@ -43,7 +43,7 @@ export default function IllustratedServiceCard({
  href,
  ctaText,
 }: IllustratedServiceCardProps) {
- const imagePath = imageMap[illustrationKey] ||"/images/gcc-setup.webp";
+ const imagePath = imageMap[illustrationKey] ||"/images/services/gcc/gcc-setup.webp";
 
  return (
  <Link to={href} className="group flex h-full flex-col">

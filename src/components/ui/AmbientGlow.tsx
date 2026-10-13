@@ -22,7 +22,7 @@ export default function AmbientGlow({
   return (
     <div
       aria-hidden="true"
-      className={`absolute w-[700px] sm:w-[900px] h-[350px] sm:h-[450px] ${positionClasses[position]} ${color} rounded-full blur-3xl pointer-events-none ${className}`}
+      className={`absolute w-[700px] sm:w-[900px] max-w-[100vw] h-[350px] sm:h-[450px] ${positionClasses[position]} ${color} rounded-full blur-3xl pointer-events-none ${className}`}
     />
   );
 }

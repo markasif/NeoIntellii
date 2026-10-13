@@ -226,7 +226,7 @@ export default function ResponsibleAI() {
               The result is that <Link to={AI_GCC_PAGE_BY_KEY.mlops.path} className="text-[#008EC4] hover:text-[#0D306C] font-semibold underline underline-offset-2 transition-colors">{AI_GCC_PAGE_BY_KEY.mlops.name}</Link> and AI governance are two views of the same system, and board reports are generated automatically.
             </>
           }
-          imageSrc="/images/ai-gcc/advisory/responsible-ai.webp"
+          imageSrc="/images/services/ai-gcc/advisory/responsible-ai.webp"
           imageAlt="AI Governance Operating Model"
           ourViewText="A control that lives in a meeting is applied once. A control that lives in the pipeline is applied every release."
         />

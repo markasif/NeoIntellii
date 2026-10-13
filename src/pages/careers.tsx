@@ -91,12 +91,12 @@ const openRoles = [
 
 /** Decorative artwork for the open-role cards, in role order. */
 const roleImages = [
-  "/images/gcc-operations/gcc-ops-workforce.webp",
-  "/images/ai-engineering/genai-capability.webp",
-  "/images/gcc-operations/gcc-ops-people.webp",
-  "/images/mosaic_ai_gcc.webp",
-  "/images/gcc-operations/gcc-ops-performance.webp",
-  "/images/gcc-operations/gcc-ops-governance.webp",
+  "/images/services/gcc-operations/gcc-ops-workforce.webp",
+  "/images/services/ai-engineering/genai-capability.webp",
+  "/images/services/gcc-operations/gcc-ops-people.webp",
+  "/images/home/mosaic_ai_gcc.webp",
+  "/images/services/gcc-operations/gcc-ops-performance.webp",
+  "/images/services/gcc-operations/gcc-ops-governance.webp",
 ];
 
 const cultureHighlights = [
@@ -142,8 +142,8 @@ export default function Careers() {
           titlePrefix="Build the Future of"
           titleHighlight="Global Capability Centers."
           description="Join NeoIntelli — India's AI-first GCC company. We're building the next generation of Global Capability Centers, powered by production AI and led by exceptional operators."
-          desktopImage="/hero/about.webp"
-          mobileImage="/hero/about-mobile.webp"
+          desktopImage="/images/hero/about.webp"
+          mobileImage="/images/hero/about-mobile.webp"
           imageAlt="Careers at NeoIntelli Executive View"
           primaryCta={{ label: "View Open Positions", href: "#open-roles" }}
           secondaryCta={{ label: "Life at NeoIntelli", href: "#culture" }}

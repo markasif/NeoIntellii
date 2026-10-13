@@ -50,13 +50,13 @@ import {
 
 /** Images for the seven operating-model stages, in lifecycle order. */
 const LIFECYCLE_IMAGES = [
-  "/images/connected_operating_model_diagram.webp",
-  "/images/gcc-talent.webp",
-  "/images/agentic_realistic.webp",
-  "/images/dedicated_ai_team_realistic.webp",
-  "/images/gcc-setup.webp",
-  "/images/gcc-operations/gcc-ops-workforce.webp",
-  "/images/gcc_modernization.webp",
+  "/images/home/connected_operating_model_diagram.webp",
+  "/images/services/gcc/gcc-talent.webp",
+  "/images/services/ai-engineering/agentic_realistic.webp",
+  "/images/services/ai-delivery-teams/dedicated_ai_team_realistic.webp",
+  "/images/services/gcc/gcc-setup.webp",
+  "/images/services/gcc-operations/gcc-ops-workforce.webp",
+  "/images/services/gcc/gcc_modernization.webp",
 ] as const;
 
 /** Icons for the "what stays with you" list, in the order of ABOUT_CLIENT_CONTROL. */
@@ -150,8 +150,8 @@ export default function About() {
           ]}
           title="Build the capability in India. Keep control of what matters."
           description="NeoIntelli helps global companies build, operate and scale AI-led capability in India: GCC strategy, specialist talent, AI engineering, delivery teams, technology foundations, workplace, operations and governance, through one operating partner."
-          desktopImage="/hero/about.webp"
-          mobileImage="/hero/about-mobile.webp"
+          desktopImage="/images/hero/about.webp"
+          mobileImage="/images/hero/about-mobile.webp"
           imageAlt="About NeoIntelli Executive View"
           primaryCta={{ label: "Build an AI GCC", href: "/services/ai-gcc" }}
           secondaryCta={{ label: "Speak with NeoIntelli", href: "/contact" }}
@@ -260,7 +260,7 @@ export default function About() {
                 {
                   title: ABOUT_PILLARS[0].title,
                   summary: ABOUT_PILLARS[0].desc,
-                  image: "/images/gcc-technology.webp",
+                  image: "/images/services/gcc/gcc-technology.webp",
                   alt: ABOUT_PILLARS[0].title,
                   aspect: "aspect-[4/3.5]",
                   link: ABOUT_PILLARS[0].href,
@@ -269,7 +269,7 @@ export default function About() {
                 {
                   title: ABOUT_PILLARS[1].title,
                   summary: ABOUT_PILLARS[1].desc,
-                  image: "/images/gcc-talent.webp",
+                  image: "/images/services/gcc/gcc-talent.webp",
                   alt: ABOUT_PILLARS[1].title,
                   aspect: "aspect-[4/3]",
                   link: ABOUT_PILLARS[1].href,
@@ -278,7 +278,7 @@ export default function About() {
                 {
                   title: ABOUT_PILLARS[2].title,
                   summary: ABOUT_PILLARS[2].desc,
-                  image: "/images/gcc_modernization.webp",
+                  image: "/images/services/gcc/gcc_modernization.webp",
                   alt: ABOUT_PILLARS[2].title,
                   aspect: "aspect-[4/3.5]",
                   link: ABOUT_PILLARS[2].href,
@@ -360,10 +360,10 @@ export default function About() {
               {ABOUT_DIFFERENTIATORS.map((d, index) => {
                 const isActive = activeDiff === index;
                 const images = [
-                  "/images/gcc-operations/gcc-ops-workforce.webp",
-                  "/images/mosaic_ai_gcc.webp",
-                  "/images/contact_engineer_blue_lounge.webp",
-                  "/images/tech-process-automation.webp",
+                  "/images/services/gcc-operations/gcc-ops-workforce.webp",
+                  "/images/home/mosaic_ai_gcc.webp",
+                  "/images/home/contact_engineer_blue_lounge.webp",
+                  "/images/industries/tech-process-automation.webp",
                 ];
 
                 return (

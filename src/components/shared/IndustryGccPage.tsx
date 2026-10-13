@@ -38,14 +38,14 @@ import NeoIntelliHero from "@/components/shared/NeoIntelliHero";
 import { getPageMeta } from "@/lib/pageMeta";
 
 const roleImages = [
-  "/images/ai-data-workloads.webp",
-  "/images/ai-governance.webp",
-  "/images/tech-process-automation.webp",
-  "/images/tech-data-platform.webp",
-  "/images/tech-product-engineering.webp",
-  "/images/tech-integration.webp",
-  "/images/gcc-operations/operating-reality/04-access.webp",
-  "/images/ai-mlops.webp",
+  "/images/services/ai-gcc/ai-data-workloads.webp",
+  "/images/services/ai-gcc/ai-governance.webp",
+  "/images/industries/tech-process-automation.webp",
+  "/images/industries/tech-data-platform.webp",
+  "/images/industries/tech-product-engineering.webp",
+  "/images/industries/tech-integration.webp",
+  "/images/services/gcc-operations/operating-reality/04-access.webp",
+  "/images/services/ai-gcc/ai-mlops.webp",
 ];
 
 const defaultRoleIcons = [
@@ -149,8 +149,8 @@ export default function IndustryGccPage({
           ]}
           title={h1}
           description={subheadline}
-          desktopImage="/hero/industry.webp"
-          mobileImage="/hero/industry-mobile.webp"
+          desktopImage="/images/hero/industry.webp"
+          mobileImage="/images/hero/industry-mobile.webp"
           imageAlt={`${h1} Executive View`}
           primaryCta={{ label: ctaText, href: "/contact" }}
           secondaryCta={{ label: "Explore GCC Services", href: "/services/gcc" }}

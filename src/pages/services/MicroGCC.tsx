@@ -123,8 +123,8 @@ export default function MicroGCC() {
           ]}
           title="Start with one squad. Scale to five."
           description="A Micro GCC is a captive India team built squad by squad. Start with 8 people. Add a squad when you are ready. Choose how much you want to own: fully, jointly, or managed. Same talent depth. Same IP control. Without the enterprise overhead."
-          desktopImage="/hero/micro-gcc.webp"
-          mobileImage="/hero/micro-gcc-mobile.webp"
+          desktopImage="/images/hero/micro-gcc.webp"
+          mobileImage="/images/hero/micro-gcc-mobile.webp"
           imageAlt="Micro GCC India Executive View"
           primaryCta={{ label: "Book a 30-min scoping call", href: "/contact" }}
           secondaryCta={{ label: "Explore Tiers", href: "#tiers" }}
@@ -866,12 +866,7 @@ export default function MicroGCC() {
           <div className="mb-10 sm:mb-12">
             <SectionHeader
               eyebrow="CONNECTED ECOSYSTEM"
-              title={
-                <>
-                  Related Services &amp; Tools
-                  <span className="text-[#38BDF8]">.</span>
-                </>
-              }
+              title="Related Services & Tools."
               description="Explore related GCC practices, scaling options, and capability pillars across the NeoIntelli platform."
               align="center"
               variant="white"

@@ -180,12 +180,7 @@ export default function RelatedGccServices({
           <div className="mb-10 sm:mb-12">
             <SectionHeader
               eyebrow="CONTINUE THE JOURNEY"
-              title={
-                <>
-                  {title}
-                  <span className="text-[#38BDF8]">.</span>
-                </>
-              }
+              title={`${title.replace(/\.?$/, "")}.`}
               description={intro}
               align="center"
               variant="white"

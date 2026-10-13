@@ -67,7 +67,7 @@ export default function Insights() {
               Insights &amp; Perspectives
             </span>
             <h2 className="text-2xl sm:text-4xl lg:text-[44px] font-extrabold text-[#0D306C] tracking-[-0.03em] leading-[1.14]">
-              Latest from the GCC frontier<span className="text-[#169DC8]">.</span>
+              Latest from the GCC frontier.
             </h2>
             <p className="mt-3 text-sm sm:text-base lg:text-lg text-[#505D74] max-w-2xl leading-relaxed font-normal">
               Actionable frameworks, cost structures, and operating models for enterprise builders.

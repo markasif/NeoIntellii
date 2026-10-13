@@ -58,79 +58,79 @@ const transformationSignals = [
   {
     title: "Stagnant mandate",
     desc: "A mandate that has not grown or expanded in years.",
-    image: "/images/gcc-operations/operating-reality/13-mandates.webp",
+    image: "/images/services/gcc-operations/operating-reality/13-mandates.webp",
     icon: Clock,
   },
   {
     title: "Cost center view",
     desc: "Headquarters sees a cost center, not an enterprise capability.",
-    image: "/images/gcc-operations/operating-reality/08-reporting.webp",
+    image: "/images/services/gcc-operations/operating-reality/08-reporting.webp",
     icon: Building2,
   },
   {
     title: "Weak HQ trust",
     desc: "Weak trust and misalignment between headquarters and India leadership.",
-    image: "/images/gcc-operations/operating-reality/11-leadership.webp",
+    image: "/images/services/gcc-operations/operating-reality/11-leadership.webp",
     icon: Handshake,
   },
   {
     title: "High attrition",
     desc: "High attrition, especially in senior and critical technical roles.",
-    image: "/images/gcc-operations/operating-reality/01-employees.webp",
+    image: "/images/services/gcc-operations/operating-reality/01-employees.webp",
     icon: UserX,
   },
   {
     title: "Fragmented AI",
     desc: "Fragmented AI pilots that stall out and never reach production.",
-    image: "/images/ai-architecture.webp",
+    image: "/images/services/ai-gcc/ai-architecture.webp",
     icon: Bot,
   },
   {
     title: "Ticket-volume model",
     desc: "A legacy operating model configured purely for ticket volume.",
-    image: "/images/gcc-operations/operating-reality/05-devices.webp",
+    image: "/images/services/gcc-operations/operating-reality/05-devices.webp",
     icon: Layers,
   },
   {
     title: "Limited product role",
     desc: "Limited product ownership without roadmap influence or design authority.",
-    image: "/images/gcc-operations/workforce-strategy-planning.webp",
+    image: "/images/services/gcc-operations/workforce-strategy-planning.webp",
     icon: Target,
   },
   {
     title: "Limited platform role",
     desc: "Routine maintenance tasks rather than core platform and architecture ownership.",
-    image: "/images/tech-integration.webp",
+    image: "/images/industries/tech-integration.webp",
     icon: Database,
   },
   {
     title: "Weak governance",
     desc: "Weak or ceremonial governance without operational rigor.",
-    image: "/images/gcc-operations/standards/evidence-audit.webp",
+    image: "/images/services/gcc-operations/standards/evidence-audit.webp",
     icon: Shield,
   },
   {
     title: "Mismatched talent",
     desc: "Talent that matches the old mandate, not the next one.",
-    image: "/images/gcc-operations/operating-reality/10-hiring.webp",
+    image: "/images/services/gcc-operations/operating-reality/10-hiring.webp",
     icon: Users,
   },
   {
     title: "Excess manual work",
     desc: "Too much manual work that automation should have removed.",
-    image: "/images/tech-process-automation.webp",
+    image: "/images/industries/tech-process-automation.webp",
     icon: Workflow,
   },
   {
     title: "Slow decision rights",
     desc: "Slow decision rights where even minor operational choices escalate.",
-    image: "/images/gcc-operations/standards/itsm-monitoring.webp",
+    image: "/images/services/gcc-operations/standards/itsm-monitoring.webp",
     icon: AlertTriangle,
   },
   {
     title: "Unclear value story",
     desc: "A value story nobody at headquarters can articulate.",
-    image: "/images/gcc-operations/gcc-hq-leadership.webp",
+    image: "/images/services/gcc-operations/gcc-hq-leadership.webp",
     icon: HelpCircle,
   },
 ];
@@ -256,7 +256,7 @@ export default function ModernizationTransformation() {
               <div className="absolute right-0 top-0 bottom-0 w-2/5 sm:w-1/2 pointer-events-none overflow-hidden flex items-center justify-end">
                 <div className="relative w-full h-full opacity-60 mix-blend-screen transition-transform duration-700 ease-out group-hover:scale-105">
                   <img
-                    src="/images/gcc-operations/operating-reality/globe.webp"
+                    src="/images/services/gcc-operations/operating-reality/globe.webp"
                     alt="Transformation Diagnostic Global Scale"
                     className="w-full h-full object-contain object-right"
                     loading="lazy"

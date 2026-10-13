@@ -266,7 +266,7 @@ export default function GovernanceCompliance() {
               GOVERNANCE &amp; COMPLIANCE
             </span>
             <h2 className="text-2xl sm:text-4xl lg:text-[44px] font-extrabold text-[#0D244D] tracking-[-0.03em] leading-[1.14] mb-4">
-              Governance is what makes a center trusted with more<span className="text-[#008EC4]">.</span>
+              Governance is what makes a center trusted with more.
             </h2>
             <p className="text-[#505D74] font-normal text-sm sm:text-base lg:text-lg leading-relaxed mb-4">
               A quarterly steering committee and an annual audit used to be enough. They are not any more. Regulatory frameworks, control obligations, and board visibility converge at once.
@@ -288,7 +288,7 @@ export default function GovernanceCompliance() {
             className="lg:col-span-6 xl:col-span-6 flex flex-col h-full"
           >
             <InBriefCard
-              imageSrc="/images/gcc-operations/gcc-ops-governance.webp"
+              imageSrc="/images/services/gcc-operations/gcc-ops-governance.webp"
               imageAlt="GCC Governance, Risk & Compliance Operations"
             >
               Governance &amp; Compliance is the part of NeoIntelli&apos;s GCC operating layer that keeps control, risk and decision rights visible as an India center grows: decision rights between headquarters and the center, committee cadence, escalation, a risk register with owners, a control framework mapped to agreed policies and regulations, vendor and third-party risk, audit readiness, evidence coordination and board reporting. It is for leaders who must answer to a board, a regulator or an auditor for a center in another country. NeoIntelli operates the governance cadence and coordinates compliance workflows. Legal interpretation stays with qualified advisers.

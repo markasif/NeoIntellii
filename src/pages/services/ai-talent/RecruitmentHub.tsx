@@ -108,7 +108,7 @@ export default function RecruitmentHub() {
               </Link>.
             </>
           }
-          imageSrc="/images/ai-talent/neohirex-hiring-os.webp"
+          imageSrc="/images/services/ai-talent/neohirex-hiring-os.webp"
           imageAlt="NeoHireX AI Hiring OS Workflow"
           ourViewText="Powered by our own Hiring OS. Validated by AI practitioners. That combination is the difference between a faster resume pipeline and a better shortlist. It does not make the final hiring decision — your hiring managers decide."
         />

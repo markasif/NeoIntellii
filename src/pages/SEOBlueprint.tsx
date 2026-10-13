@@ -127,7 +127,7 @@ export default function SEOBlueprint() {
           {/* ── DESKTOP BACKGROUND: EXECUTIVE VIEW (HIDDEN ON MOBILE) ── */}
           <div className="hidden sm:block absolute inset-0 w-full h-full z-0">
             <Image
-              src="/images/gcc-operations/hero-bg.webp"
+              src="/images/services/gcc-operations/hero-bg.webp"
               alt="India GCC Blueprint Strategic Planning"
               fill
               priority
@@ -283,7 +283,7 @@ export default function SEOBlueprint() {
                     <div className="relative flex-1 h-full rounded-[22px] sm:rounded-[28px] overflow-hidden border border-[#D2DCF0] shadow-md group bg-[#0A224E]">
                       <div className="absolute inset-0 w-[200%] h-full left-0">
                         <img
-                          src="/images/blueprint_advisory_workspace.webp"
+                          src="/images/services/ai-gcc/blueprint_advisory_workspace.webp"
                           alt="NeoIntelli GCC Strategy & Architecture Session"
                           className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                           loading="lazy"
@@ -295,7 +295,7 @@ export default function SEOBlueprint() {
                     <div className="relative flex-1 h-full rounded-[22px] sm:rounded-[28px] overflow-hidden border border-[#D2DCF0] shadow-md group bg-[#0A224E]">
                       <div className="absolute inset-0 w-[200%] h-full -left-[100%]">
                         <img
-                          src="/images/blueprint_advisory_workspace.webp"
+                          src="/images/services/ai-gcc/blueprint_advisory_workspace.webp"
                           alt="NeoIntelli GCC Strategy & Architecture Session"
                           className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                           loading="lazy"

@@ -75,15 +75,24 @@ export default function SectionHeader({
         </div>
       )}
 
-      {/* 2. TITLE: Reveals with staggered slide-up */}
+      {/* 2. TITLE: Reveals with staggered slide-up. Any inner coloured span
+        (e.g. a trailing cyan period) is neutralized to inherit the heading
+        colour; a trailing "?" is tinted amber. */}
       <h2
         className={`text-2xl sm:text-4xl lg:text-[44px] font-extrabold ${
           isWhite ? "text-white" : isNavy ? "text-[#0D306C]" : variant === "cyan" ? "text-[#0D244D]" : "text-[#1E2560]"
-        } tracking-[-0.03em] leading-[1.14] transition-all duration-700 delay-150 ease-out ${
+        } tracking-[-0.03em] leading-[1.14] transition-all duration-700 delay-150 ease-out [&_span]:!text-inherit ${
           isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
         } ${titleClassName}`}
       >
-        {title}
+        {typeof title === "string" && title.endsWith("?") ? (
+          <>
+            {title.slice(0, -1)}
+            <span className="text-[#F19326]">?</span>
+          </>
+        ) : (
+          title
+        )}
       </h2>
 
       {/* 3. DESCRIPTION: Reveals smoothly below title */}

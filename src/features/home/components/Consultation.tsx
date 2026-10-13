@@ -145,7 +145,7 @@ export default function Consultation({ hideUpperCta = false, hideWaveDivider = f
               BUILD YOUR INDIA AI CAPABILITY
             </span>
             <h2 className="text-2xl sm:text-4xl lg:text-[44px] font-extrabold text-white tracking-[-0.03em] leading-[1.14] mb-4 font-[family-name:var(--font-plus-jakarta)]">
-              Start with one team<span className="text-[#169DC8]">.</span> Scale into an AI GCC<span className="text-[#169DC8]">.</span>
+              Start with one team. Scale into an AI GCC.
             </h2>
             <p className="text-xs sm:text-base text-[#C5D7F0] leading-relaxed max-w-2xl mx-auto font-normal">
               Whether you are testing the India model with an initial AI squad or designing a full capability center, NeoIntelli can help define the right starting model and build the operating path around it.
@@ -198,7 +198,7 @@ export default function Consultation({ hideUpperCta = false, hideWaveDivider = f
                 LET&apos;S BUILD TOGETHER
               </span>
               <h3 className="text-2xl sm:text-4xl lg:text-[44px] font-extrabold text-white tracking-[-0.03em] leading-[1.14] mb-4 font-[family-name:var(--font-plus-jakarta)]">
-                Design your next AI-first Global Capability Center<span className="text-[#169DC8]">.</span>
+                Design your next AI-first Global Capability Center.
               </h3>
               <p className="text-xs sm:text-base text-[#C5D7F0] leading-relaxed max-w-xl font-normal">
                 Whether you are setting up a new GCC, scaling engineering capability, or building an AI-enabled operating model &mdash; NeoIntelli helps you move with clarity, speed, and enterprise-grade execution.
@@ -213,7 +213,7 @@ export default function Consultation({ hideUpperCta = false, hideWaveDivider = f
                 <div className="relative flex-1 h-full rounded-[24px] sm:rounded-[36px] overflow-hidden border border-white/20 shadow-2xl group bg-[#0A224E]">
                   <div className="absolute inset-0 w-[200%] h-full left-0">
                     <Image
-                      src="/images/contact_engineer_blue_lounge.webp"
+                      src="/images/home/contact_engineer_blue_lounge.webp"
                       alt="NeoIntelli AI Engineering Lounge Workspace in Bengaluru"
                       fill
                       loading="lazy"
@@ -228,7 +228,7 @@ export default function Consultation({ hideUpperCta = false, hideWaveDivider = f
                 <div className="relative flex-1 h-full rounded-[24px] sm:rounded-[36px] overflow-hidden border border-white/20 shadow-2xl group bg-[#0A224E]">
                   <div className="absolute inset-0 w-[200%] h-full -left-[100%]">
                     <Image
-                      src="/images/contact_engineer_blue_lounge.webp"
+                      src="/images/home/contact_engineer_blue_lounge.webp"
                       alt="NeoIntelli AI Engineering Lounge Workspace in Bengaluru"
                       fill
                       loading="lazy"

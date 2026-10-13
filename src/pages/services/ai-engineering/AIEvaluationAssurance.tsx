@@ -39,7 +39,7 @@ const WHAT_TESTING_REQUIRES = [
     path: "",
     anchor: "",
     summary: "Realistic inputs with known good outcomes, covering the common cases and the rare ones that matter.",
-    image: "/images/ai-engineering/evaluation/datasets.webp",
+    image: "/images/services/ai-engineering/evaluation/datasets.webp",
   },
   {
     key: "rubrics",
@@ -47,7 +47,7 @@ const WHAT_TESTING_REQUIRES = [
     path: "",
     anchor: "",
     summary: "Written criteria for what a good output is, so two reviewers and an automated judge score the same way.",
-    image: "/images/ai-engineering/evaluation/rubrics.webp",
+    image: "/images/services/ai-engineering/evaluation/rubrics.webp",
   },
   {
     key: "business-criteria",
@@ -55,7 +55,7 @@ const WHAT_TESTING_REQUIRES = [
     path: "",
     anchor: "",
     summary: "The thresholds the sponsor will accept, agreed before the build rather than negotiated after the demo.",
-    image: "/images/ai-engineering/evaluation/business-criteria.webp",
+    image: "/images/services/ai-engineering/evaluation/business-criteria.webp",
   },
   {
     key: "human-baselines",
@@ -63,7 +63,7 @@ const WHAT_TESTING_REQUIRES = [
     path: "",
     anchor: "",
     summary: "How well people do the task today, so the system is compared with reality rather than perfection.",
-    image: "/images/ai-engineering/evaluation/human-baselines.webp",
+    image: "/images/services/ai-engineering/evaluation/human-baselines.webp",
   },
   {
     key: "automated-eval",
@@ -71,7 +71,7 @@ const WHAT_TESTING_REQUIRES = [
     path: "",
     anchor: "",
     summary: "Scoring that runs on every change, fast enough to be a release gate.",
-    image: "/images/ai-engineering/evaluation/automated-eval.webp",
+    image: "/images/services/ai-engineering/evaluation/automated-eval.webp",
   },
   {
     key: "production-feedback",
@@ -79,7 +79,7 @@ const WHAT_TESTING_REQUIRES = [
     path: "",
     anchor: "",
     summary: "Sampled real traffic, user corrections and escalations flowing back into the datasets.",
-    image: "/images/ai-engineering/evaluation/production-feedback.webp",
+    image: "/images/services/ai-engineering/evaluation/production-feedback.webp",
   },
   {
     key: "continuous-eval",
@@ -87,7 +87,7 @@ const WHAT_TESTING_REQUIRES = [
     path: "",
     anchor: "",
     summary: "The same checks running after launch, because the data, the model provider and the users all change.",
-    image: "/images/ai-engineering/evaluation/continuous-eval.webp",
+    image: "/images/services/ai-engineering/evaluation/continuous-eval.webp",
   },
 ];
 
@@ -104,25 +104,25 @@ const CAPABILITIES: HiringPath[] = [
   {
     title: "What we evaluate",
     items: ["LLM evaluation", "RAG evaluation", "Agent evaluation", "Retrieval evaluation"],
-    image: "/images/ai-engineering/evaluation-assurance-capability.webp",
+    image: "/images/services/ai-engineering/evaluation-assurance-capability.webp",
     imageAlt: "LLM, RAG and agent evaluation systems",
   },
   {
     title: "How we evaluate",
     items: ["Golden datasets", "Task-success evaluation", "Factuality", "Groundedness", "Tool-call correctness", "Prompt regression"],
-    image: "/images/ai-engineering/genai-capability.webp",
+    image: "/images/services/ai-engineering/genai-capability.webp",
     imageAlt: "Golden datasets, task-success and groundedness checks",
   },
   {
     title: "Risk and safety",
     items: ["Safety testing", "Red teaming", "Prompt-injection testing", "Data-boundary checks"],
-    image: "/images/ai-engineering/applied-ml-capability.webp",
+    image: "/images/services/ai-engineering/applied-ml-capability.webp",
     imageAlt: "Safety testing, red teaming and data boundary checks",
   },
   {
     title: "Production",
     items: ["Latency", "Cost", "Human escalation", "Production monitoring"],
-    image: "/images/ai-engineering/compute-economics-gap.webp",
+    image: "/images/services/ai-engineering/compute-economics-gap.webp",
     imageAlt: "Production telemetry, latency, cost and monitoring",
   },
 ];
@@ -263,8 +263,7 @@ export default function AIEvaluationAssurance() {
             Our position
           </span>
           <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0D306C] tracking-[-0.03em] leading-[1.14]">
-            AI systems need acceptance criteria just like software systems
-            <span className="text-[#169DC8]">.</span>
+            AI systems need acceptance criteria just like software systems.
           </h2>
           <p className="mt-3 sm:mt-4 text-xs sm:text-base text-[#505D74] leading-relaxed">
             AI output is probabilistic. The same input can produce a different answer, and a correct answer on Monday can be wrong after a model update on Friday. That does not make AI untestable. It means testing needs a different apparatus from unit tests.

@@ -142,7 +142,7 @@ export default function GenAIAgenticHiring() {
           description="Senior practitioner technical interviews test hands-on architectural depth, failure mode mitigation, and enterprise integration ownership across live production workloads."
           pillsTitle="Core Evaluation Competencies"
           pills={WHAT_WE_TEST}
-          imageSrc="/images/ai-talent/genai-agentic.webp"
+          imageSrc="/images/services/ai-talent/genai-agentic.webp"
           imageAlt="Production GenAI and Agentic Systems Assessment"
           ourViewText="Listing LangChain, CrewAI, AutoGen or MCP on a resume does not prove the candidate has built a production agentic system. Resume signal is not enough."
         />

@@ -18,8 +18,8 @@ interface GccOperationsHeroProps {
 /**
  * High-Performance Executive Hero Section for GCC Operations:
  * Integrates directly with the reusable NeoIntelliHero system.
- * - Mobile: Centered text, single white CTA, portrait mobile artwork (/hero/gcc-operations-mobile.webp).
- * - Desktop: Left-aligned content block, 3 CTAs in horizontal row, widescreen desktop artwork (/hero/gcc-operations.webp).
+ * - Mobile: Centered text, single white CTA, portrait mobile artwork (/images/hero/gcc-operations-mobile.webp).
+ * - Desktop: Left-aligned content block, 3 CTAs in horizontal row, widescreen desktop artwork (/images/hero/gcc-operations.webp).
  */
 export default function GccOperationsHero({
   page,
@@ -45,9 +45,9 @@ export default function GccOperationsHero({
       titleSuffix={isOverview ? "in India." : undefined}
       title={!isOverview ? page.h1 : undefined}
       description={description}
-      desktopImage="/hero/gcc-operations.webp"
-      mobileImage="/hero/gcc-operations-mobile.webp"
-      imageAlt="GCC Operations India Executive Command View"
+      desktopImage="/images/hero/home page.webp"
+      mobileImage="/images/hero/home-mobile.webp"
+      imageAlt="NeoIntelli AI GCC Architecture Futuristic City Skyline"
       primaryCta={{
         label: page.ctaLabel,
         href: gccOpsBookingHref("hero"),
