@@ -123,7 +123,7 @@ export default function WhyNeoIntelliLifecycle() {
       title: "Senior Architectural Design",
       badge: "ARCHITECTURE",
       icon: Layers,
-      image: "/images/pillar_card1_arch_v2.png",
+      image: "/images/pillar_card1_arch_v2-removebg-preview.png",
       points: [
         "Senior involvement in the decisions that set the model, not only at the pitch",
         "AI and data specialization rather than general offshore delivery",
@@ -143,7 +143,7 @@ export default function WhyNeoIntelliLifecycle() {
       title: "Deep Technical Validation",
       badge: "VALIDATION",
       icon: Users,
-      image: "/images/pillar_card2_valid_v3.png",
+      image: "/images/pillar_card2_valid_v3-removebg-preview.png",
       points: [
         "NeoHireX-supported hiring with practitioner-led technical validation",
         "Production AI engineering capability, not advisory alone",
@@ -163,7 +163,7 @@ export default function WhyNeoIntelliLifecycle() {
       title: "Autonomous Outcome Squads",
       badge: "DELIVERY",
       icon: Zap,
-      image: "/images/pillar_card3_deliver_v3.png",
+      image: "/images/pillar_card3_deliver_v3-removebg-preview.png",
       points: [
         "AI delivery teams that own outcomes inside your cadence",
         "The option to start with an AI Micro GCC and grow from there",
@@ -183,7 +183,7 @@ export default function WhyNeoIntelliLifecycle() {
       title: "Integrated Transfer Roadmap",
       badge: "TRANSFER",
       icon: ShieldCheck,
-      image: "/images/pillar_card4_transfer_v2.png",
+      image: "/images/pillar_card4_transfer_v2-removebg-preview.png",
       points: [
         "Integrated GCC operations rather than a hand-off to a third party",
         "Capability transfer designed in, including a BOT path to captive ownership",
@@ -499,7 +499,7 @@ export default function WhyNeoIntelliLifecycle() {
                       }}
                     >
                       <Image
-                        src="/images/gcc_skyscraper_cutout.png"
+                        src="/images/gcc_skyscraper_cutout-removebg-preview.png"
                         alt="Modern GCC Corporate Tower"
                         fill
                         sizes="(max-width: 640px) 76vw, 40vw"

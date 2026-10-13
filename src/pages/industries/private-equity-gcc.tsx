@@ -328,7 +328,6 @@ export default function PrivateEquityGCC() {
           width="wide"
           waveFill="#F0F5FA"
           wavesOnMobile
-          hideTopWave
         >
           <div className="max-w-4xl mx-auto text-center">
             {/* 3 Metrics */}

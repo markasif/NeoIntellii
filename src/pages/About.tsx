@@ -50,13 +50,13 @@ import {
 
 /** Images for the seven operating-model stages, in lifecycle order. */
 const LIFECYCLE_IMAGES = [
-  "/images/connected_operating_model_diagram.jpg",
+  "/images/connected_operating_model_diagram.webp",
   "/images/gcc-talent.webp",
-  "/images/agentic_realistic.jpg",
-  "/images/dedicated_ai_team_realistic.jpg",
+  "/images/agentic_realistic.webp",
+  "/images/dedicated_ai_team_realistic.webp",
   "/images/gcc-setup.webp",
-  "/images/gcc-operations/gcc-ops-workforce.jpg",
-  "/images/gcc_modernization.jpg",
+  "/images/gcc-operations/gcc-ops-workforce.webp",
+  "/images/gcc_modernization.webp",
 ] as const;
 
 /** Icons for the "what stays with you" list, in the order of ABOUT_CLIENT_CONTROL. */
@@ -278,7 +278,7 @@ export default function About() {
                 {
                   title: ABOUT_PILLARS[2].title,
                   summary: ABOUT_PILLARS[2].desc,
-                  image: "/images/gcc_modernization.jpg",
+                  image: "/images/gcc_modernization.webp",
                   alt: ABOUT_PILLARS[2].title,
                   aspect: "aspect-[4/3.5]",
                   link: ABOUT_PILLARS[2].href,
@@ -360,10 +360,10 @@ export default function About() {
               {ABOUT_DIFFERENTIATORS.map((d, index) => {
                 const isActive = activeDiff === index;
                 const images = [
-                  "/images/gcc-operations/gcc-ops-workforce.jpg",
-                  "/images/mosaic_ai_gcc.jpg",
-                  "/images/contact_engineer_blue_lounge.jpg",
-                  "/images/tech-process-automation.png",
+                  "/images/gcc-operations/gcc-ops-workforce.webp",
+                  "/images/mosaic_ai_gcc.webp",
+                  "/images/contact_engineer_blue_lounge.webp",
+                  "/images/tech-process-automation.webp",
                 ];
 
                 return (

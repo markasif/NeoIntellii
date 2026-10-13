@@ -288,7 +288,7 @@ export default function GovernanceCompliance() {
             className="lg:col-span-6 xl:col-span-6 flex flex-col h-full"
           >
             <InBriefCard
-              imageSrc="/images/gcc-operations/gcc-ops-governance.jpg"
+              imageSrc="/images/gcc-operations/gcc-ops-governance.webp"
               imageAlt="GCC Governance, Risk & Compliance Operations"
             >
               Governance &amp; Compliance is the part of NeoIntelli&apos;s GCC operating layer that keeps control, risk and decision rights visible as an India center grows: decision rights between headquarters and the center, committee cadence, escalation, a risk register with owners, a control framework mapped to agreed policies and regulations, vendor and third-party risk, audit readiness, evidence coordination and board reporting. It is for leaders who must answer to a board, a regulator or an auditor for a center in another country. NeoIntelli operates the governance cadence and coordinates compliance workflows. Legal interpretation stays with qualified advisers.

@@ -27,7 +27,7 @@ const MODES: ModeItem[] = [
       { label: "Employment structure", value: "Client's India entity." },
       { label: "Typical next step", value: "Stay managed, or take functions in-house progressively." },
     ],
-    image: "/images/how_we_work/phase_01_design.jpg",
+    image: "/images/how_we_work/phase_01_design.webp",
     imageAlt: "Managed Operating Layer executive operations",
   },
   {
@@ -40,7 +40,7 @@ const MODES: ModeItem[] = [
       { label: "Employment structure", value: "Agreed interim structure, chosen with legal and tax advice." },
       { label: "Typical next step", value: "Move to the permanent structure on a planned date." },
     ],
-    image: "/images/how_we_work/phase_02_build.jpg",
+    image: "/images/how_we_work/phase_02_build.webp",
     imageAlt: "EOR and interim operating infrastructure",
   },
   {
@@ -53,7 +53,7 @@ const MODES: ModeItem[] = [
       { label: "Employment structure", value: "Per the contract and entity structure, with a planned transfer." },
       { label: "Typical next step", value: "Transfer by readiness criteria, staged by function or team." },
     ],
-    image: "/images/how_we_work/phase_03_operate.jpg",
+    image: "/images/how_we_work/phase_03_operate.webp",
     imageAlt: "Build-Operate-Transfer command operations",
   },
   {
@@ -66,7 +66,7 @@ const MODES: ModeItem[] = [
       { label: "Employment structure", value: "Client's India entity." },
       { label: "Typical next step", value: "Scale, expand the mandate, add AI capability." },
     ],
-    image: "/images/how_we_work/phase_04_scale.jpg",
+    image: "/images/how_we_work/phase_04_scale.webp",
     imageAlt: "Captive ownership corporate enterprise",
   },
 ];

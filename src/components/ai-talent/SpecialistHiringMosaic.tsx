@@ -30,13 +30,13 @@ export interface SpecialistHiringMosaicProps {
 }
 
 const SPECIALIST_IMAGES: Record<string, string> = {
-  aiml: "/images/ai-talent/aiml-recruitment.jpg",
-  genai: "/images/ai-talent/genai-agentic.jpg",
-  data: "/images/ai-talent/data-engineering.jpg",
-  mlops: "/images/ai-talent/mlops-platform.jpg",
-  leadership: "/images/ai-talent/ai-leadership.jpg",
-  hub: "/images/ai-talent/recruitment-hub.jpg",
-  academy: "/images/ai-talent/reskilling-academy.jpg",
+  aiml: "/images/ai-talent/aiml-recruitment.webp",
+  genai: "/images/ai-talent/genai-agentic.webp",
+  data: "/images/ai-talent/data-engineering.webp",
+  mlops: "/images/ai-talent/mlops-platform.webp",
+  leadership: "/images/ai-talent/ai-leadership.webp",
+  hub: "/images/ai-talent/recruitment-hub.webp",
+  academy: "/images/ai-talent/reskilling-academy.webp",
 };
 
 /**
@@ -109,7 +109,7 @@ function SpecialistCard({
   showButton: boolean;
 }) {
   const [isHovered, setIsHovered] = useState(false);
-  const imgSrc = card.image || SPECIALIST_IMAGES[card.key] || "/images/ai-talent/aiml-recruitment.jpg";
+  const imgSrc = card.image || SPECIALIST_IMAGES[card.key] || "/images/ai-talent/aiml-recruitment.webp";
 
   return (
     <motion.div
@@ -212,7 +212,7 @@ export default function SpecialistHiringMosaic({
       path: p.path,
       anchor: p.anchor,
       summary: p.summary,
-      image: SPECIALIST_IMAGES[p.key] || "/images/ai-talent/aiml-recruitment.jpg",
+      image: SPECIALIST_IMAGES[p.key] || "/images/ai-talent/aiml-recruitment.webp",
     }));
 
   return (

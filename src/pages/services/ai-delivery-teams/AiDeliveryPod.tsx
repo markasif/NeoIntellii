@@ -61,22 +61,22 @@ const PATH = AI_DELIVERY_TEAMS.pod;
 const primaryCta = ctaHref({ service: SERVICE_INTEREST.pod, cta: "Scope My AI Delivery Pod", source: PATH });
 
 const charter = [
-  { field: "Business objective", prompt: "What changes for the business if this works. Stated as an outcome, not a feature list.", icon: Target, image: "/images/ai-architecture.jpg" },
-  { field: "Users and workflow", prompt: "Who uses it, inside which workflow, and what they do today instead.", icon: Users, image: "/images/gcc-operations/operating-reality/01-employees.jpg" },
-  { field: "Scope", prompt: "What the pod will build, integrate and operate.", icon: Boxes, image: "/images/gcc-operations/operating-reality/13-mandates.jpg" },
-  { field: "Non-scope", prompt: "What it will explicitly not do. The most useful line in the charter.", icon: Ban, image: "/images/gcc-operations/operating-reality/09-risk.jpg" },
-  { field: "Architecture boundary", prompt: "What the pod may change on its own, and what needs your architects.", icon: GitBranch, image: "/images/tech-integration.png" },
-  { field: "Dependencies", prompt: "Teams, vendors, approvals and systems the pod cannot proceed without.", icon: Link2, image: "/images/tech-process-automation.png" },
-  { field: "Data access", prompt: "Which data, at what sensitivity, through which route, approved by whom.", icon: Database, image: "/images/ai-data-workloads.jpg" },
-  { field: "Systems and integrations", prompt: "The enterprise systems in scope and the interfaces available.", icon: Webhook, image: "/images/gcc-operations/operating-reality/05-devices.jpg" },
-  { field: "Security constraints", prompt: "Environments, access model, residency and review gates that apply.", icon: Shield, image: "/images/ai-governance.jpg" },
-  { field: "Risks", prompt: "What is most likely to stop this, and what would be done about it.", icon: AlertTriangle, image: "/images/gcc-operations/operating-reality/04-access.jpg" },
-  { field: "Evaluation criteria", prompt: "How quality is measured, on what dataset, at what threshold.", icon: CheckCircle2, image: "/images/ai-assessment.jpg" },
-  { field: "Acceptance criteria", prompt: "What the business must see to call it done.", icon: FileCheck, image: "/images/gcc-operations/operating-reality/07-performance.jpg" },
-  { field: "Production target", prompt: "What running in production actually means here: users, volume, environment.", icon: Rocket, image: "/images/ai-mlops.jpg" },
-  { field: "Operations", prompt: "Who watches it, who is paged, and what the response looks like.", icon: Activity, image: "/images/how_we_work/phase_03_operate.jpg" },
-  { field: "Ownership", prompt: "Who owns the code, the model configuration and the operating runbook after go-live.", icon: UserCheck, image: "/images/gcc-operations/operating-reality/11-leadership.jpg" },
-  { field: "Handover", prompt: "What is documented and transferred, to whom, and when.", icon: Handshake, image: "/images/gcc-operations/gcc-real-bot-handover.jpg" },
+  { field: "Business objective", prompt: "What changes for the business if this works. Stated as an outcome, not a feature list.", icon: Target, image: "/images/ai-architecture.webp" },
+  { field: "Users and workflow", prompt: "Who uses it, inside which workflow, and what they do today instead.", icon: Users, image: "/images/gcc-operations/operating-reality/01-employees.webp" },
+  { field: "Scope", prompt: "What the pod will build, integrate and operate.", icon: Boxes, image: "/images/gcc-operations/operating-reality/13-mandates.webp" },
+  { field: "Non-scope", prompt: "What it will explicitly not do. The most useful line in the charter.", icon: Ban, image: "/images/gcc-operations/operating-reality/09-risk.webp" },
+  { field: "Architecture boundary", prompt: "What the pod may change on its own, and what needs your architects.", icon: GitBranch, image: "/images/tech-integration.webp" },
+  { field: "Dependencies", prompt: "Teams, vendors, approvals and systems the pod cannot proceed without.", icon: Link2, image: "/images/tech-process-automation.webp" },
+  { field: "Data access", prompt: "Which data, at what sensitivity, through which route, approved by whom.", icon: Database, image: "/images/ai-data-workloads.webp" },
+  { field: "Systems and integrations", prompt: "The enterprise systems in scope and the interfaces available.", icon: Webhook, image: "/images/gcc-operations/operating-reality/05-devices.webp" },
+  { field: "Security constraints", prompt: "Environments, access model, residency and review gates that apply.", icon: Shield, image: "/images/ai-governance.webp" },
+  { field: "Risks", prompt: "What is most likely to stop this, and what would be done about it.", icon: AlertTriangle, image: "/images/gcc-operations/operating-reality/04-access.webp" },
+  { field: "Evaluation criteria", prompt: "How quality is measured, on what dataset, at what threshold.", icon: CheckCircle2, image: "/images/ai-assessment.webp" },
+  { field: "Acceptance criteria", prompt: "What the business must see to call it done.", icon: FileCheck, image: "/images/gcc-operations/operating-reality/07-performance.webp" },
+  { field: "Production target", prompt: "What running in production actually means here: users, volume, environment.", icon: Rocket, image: "/images/ai-mlops.webp" },
+  { field: "Operations", prompt: "Who watches it, who is paged, and what the response looks like.", icon: Activity, image: "/images/how_we_work/phase_03_operate.webp" },
+  { field: "Ownership", prompt: "Who owns the code, the model configuration and the operating runbook after go-live.", icon: UserCheck, image: "/images/gcc-operations/operating-reality/11-leadership.webp" },
+  { field: "Handover", prompt: "What is documented and transferred, to whom, and when.", icon: Handshake, image: "/images/gcc-operations/gcc-real-bot-handover.webp" },
 ];
 
 const configurations = [

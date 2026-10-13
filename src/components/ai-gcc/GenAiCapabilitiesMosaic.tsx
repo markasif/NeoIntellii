@@ -22,37 +22,37 @@ const DEFAULT_ITEMS: CapabilityItem[] = [
   {
     title: "Enterprise RAG",
     body: "Retrieval pipelines over governed enterprise data: chunking, embedding, hybrid search, re-ranking, citation and access control that follows the source system.",
-    image: "/images/mosaic_ai_eng.jpg",
+    image: "/images/mosaic_ai_eng.webp",
   },
   {
     title: "AI copilots",
     body: "Knowledge and workflow copilots for engineering, operations, customer and back-office teams, designed around the task and the escalation path, not the chat box.",
-    image: "/images/ai-genai.jpg",
+    image: "/images/ai-genai.webp",
   },
   {
     title: "Agentic AI",
     body: "Multi-step agents that plan, call tools and complete work inside defined permissions, with tracing and human escalation built in from the first version.",
-    image: "/images/ai-gcc/advisory/target-operating-model.jpg",
+    image: "/images/ai-gcc/advisory/target-operating-model.webp",
   },
   {
     title: "Model adaptation",
     body: "Prompt engineering, structured outputs, fine-tuning and distillation chosen by evidence from evaluation rather than by default.",
-    image: "/images/ai-architecture.jpg",
+    image: "/images/ai-architecture.webp",
   },
   {
     title: "Evaluation",
     body: "Task-level evaluation sets, LLM-as-judge with human calibration, regression suites for prompts and retrieval, and red-teaming for the risks that matter to the use case.",
-    image: "/images/ai-gcc/advisory/responsible-ai.jpg",
+    image: "/images/ai-gcc/advisory/responsible-ai.webp",
   },
   {
     title: "Production engineering",
     body: "Gateways, caching, rate limiting, fallbacks, observability and rollout patterns so a GenAI feature behaves like software, not a demo.",
-    image: "/images/ai-mlops.jpg",
+    image: "/images/ai-mlops.webp",
   },
   {
     title: "AI economics",
     body: "Cost per task, model routing across tiers, caching and batch strategies, and unit economics.",
-    image: "/images/ai-gcc/advisory/value-roadmap.jpg",
+    image: "/images/ai-gcc/advisory/value-roadmap.webp",
   },
 ];
 

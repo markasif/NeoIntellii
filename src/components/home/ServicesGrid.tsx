@@ -20,13 +20,13 @@ const services = [
  title:"AI Engineering",
  description:"Engineer production AI across Generative AI, Agentic AI, machine learning and data, from proof of value to permanent capability.",
  href:"/services/ai-engineering",
- image:"/images/tech-data-platform.png",
+ image:"/images/tech-data-platform.webp",
  },
  {
  title:"AI Delivery Teams",
  description:"Deploy dedicated AI engineering teams, delivery pods and forward-deployed engineers that own production outcomes.",
  href:"/services/ai-delivery-teams",
- image:"/images/tech-product-engineering.png",
+ image:"/images/tech-product-engineering.webp",
  },
 ];
 

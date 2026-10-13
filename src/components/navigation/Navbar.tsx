@@ -332,7 +332,7 @@ export default function Navbar({ appearance }: NavbarProps = {}) {
                     {/* NeoHireX Logo */}
                     <div className="mb-5">
                       <Image
-                        src="/logo/neohirex_logo.png"
+                        src="/logo/neohirex_logo.webp"
                         alt="NeoHireX - Every hire is human"
                         width={130}
                         height={42}

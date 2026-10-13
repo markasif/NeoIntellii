@@ -126,12 +126,8 @@ export default function OutcomeCardGrid({
         const action = item.cta || (item.link ? { label: item.actionText || "Explore", href: item.link } : undefined);
 
         return (
-          <motion.div
+          <div
             key={item.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.7, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col group bg-transparent border-0 shadow-none text-left h-full"
           >
             {/* Image header */}
@@ -152,8 +148,14 @@ export default function OutcomeCardGrid({
               </div>
             )}
 
-            {/* Editorial content */}
-            <div className="pt-4 sm:pt-5 flex flex-col flex-1 text-left">
+            {/* Editorial content — flows in while the image stays put */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.55, delay: idx * 0.06, ease: [0.16, 1, 0.3, 1] }}
+              className="pt-4 sm:pt-5 flex flex-col flex-1 text-left"
+            >
               {item.tag && (
                 <span className="text-[11px] font-mono font-bold text-[#008EC4] tracking-wider uppercase block mb-1.5">
                   {item.tag}
@@ -278,8 +280,8 @@ export default function OutcomeCardGrid({
                   )}
                 </div>
               )}
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         );
       })}
     </div>

@@ -28,7 +28,7 @@ const BRIDGE_STAGES = [
     stage: "STAGE 01",
     title: "AI Talent",
     desc: "Hire technically validated specialists, one at a time or as a team.",
-    image: "/images/solution_ai_talent.jpg",
+    image: "/images/solution_ai_talent.webp",
     imageAlt: "AI Talent Technical Assessment and Validation",
     items: [
       "Role-calibrated specialist sourcing",
@@ -41,7 +41,7 @@ const BRIDGE_STAGES = [
     stage: "STAGE 02",
     title: "AI Micro GCC",
     desc: "Turn the first team into a dedicated India capability with people operations, workspace, IT and infrastructure.",
-    image: "/images/solution_micro_gcc.jpg",
+    image: "/images/solution_micro_gcc.webp",
     imageAlt: "AI Micro GCC Dedicated Delivery Pod",
     items: [
       "Dedicated 5-to-30 person AI squad",
@@ -54,7 +54,7 @@ const BRIDGE_STAGES = [
     stage: "STAGE 03",
     title: "AI GCC",
     desc: "Scale into a capability center with AI engineering, AgentOps, governance and a path to ownership.",
-    image: "/images/mosaic_ai_gcc.jpg",
+    image: "/images/mosaic_ai_gcc.webp",
     imageAlt: "Enterprise AI Global Capability Center",
     items: [
       "Autonomous enterprise AI delivery",
@@ -160,7 +160,7 @@ export default function AITalentOverview() {
               </Link>.
             </>
           }
-          imageSrc="/images/ai-talent/neohirex-hiring-os.jpg"
+          imageSrc="/images/ai-talent/neohirex-hiring-os.webp"
           imageAlt="NeoHireX AI Hiring OS Workflow"
           ourViewText="AI talent is scarce. Poor screening makes that scarcity even more expensive. A larger database does not fix a weak evaluation."
         />

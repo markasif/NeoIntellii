@@ -232,7 +232,7 @@ export default function PeopleHrOperations() {
             className="lg:col-span-6 xl:col-span-6 flex flex-col h-full"
           >
             <InBriefCard
-              imageSrc="/images/gcc-operations/gcc-in-brief-people.jpg"
+              imageSrc="/images/gcc-operations/gcc-in-brief-people.webp"
               imageAlt="GCC People & HR Operations"
             >
               People &amp; HR Operations is the part of NeoIntelli&apos;s GCC operating layer that runs the employee lifecycle in your India center: onboarding administration, documentation, payroll coordination, benefits and leave administration, HR helpdesk, policy administration, engagement, performance-cycle coordination, learning administration, retention programs and offboarding. It is for companies whose India GCC has employees to support but no local HR function to support them. NeoIntelli operates the agreed processes under your global people frameworks, keeps records in transferable systems, and routes decisions to your HR leadership.
@@ -329,7 +329,7 @@ export default function PeopleHrOperations() {
               {/* Bottom Image */}
               <div className="relative h-44 sm:h-52 overflow-hidden flex-shrink-0 bg-[#081B3E]">
                 <Image
-                  src="/images/gcc-operations/gcc-hq-leadership.jpg"
+                  src="/images/gcc-operations/gcc-hq-leadership.webp"
                   alt="Global People Leadership & Headquarters Executive Governance"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -384,7 +384,7 @@ export default function PeopleHrOperations() {
               {/* Bottom Image */}
               <div className="relative h-44 sm:h-52 overflow-hidden flex-shrink-0 bg-[#061530]">
                 <Image
-                  src="/images/gcc-operations/gcc-local-operations.jpg"
+                  src="/images/gcc-operations/gcc-local-operations.webp"
                   alt="Local People & HR Operations Team Execution"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"

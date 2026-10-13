@@ -1,0 +1,3540 @@
+{
+  "total": 317,
+  "used_count": 221,
+  "unused_count": 96,
+  "used": [
+    {
+      "rel_path": "favicon.ico",
+      "filename": "favicon.ico",
+      "stem": "favicon",
+      "ext": ".ico",
+      "size_kb": 62.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\favicon.ico",
+      "matched_in": [
+        "index.html"
+      ]
+    },
+    {
+      "rel_path": "hero/404-mobile.webp",
+      "filename": "404-mobile.webp",
+      "stem": "404-mobile",
+      "ext": ".webp",
+      "size_kb": 173.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\404-mobile.webp",
+      "matched_in": [
+        "src/pages/NotFound.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/404-mobile.webp.webp",
+      "filename": "404-mobile.webp.webp",
+      "stem": "404-mobile.webp",
+      "ext": ".webp",
+      "size_kb": 173.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\404-mobile.webp.webp",
+      "matched_in": [
+        "src/pages/NotFound.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/404.webp",
+      "filename": "404.webp",
+      "stem": "404",
+      "ext": ".webp",
+      "size_kb": 181.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\404.webp",
+      "matched_in": [
+        "src/pages/NotFound.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/404.webp.webp",
+      "filename": "404.webp.webp",
+      "stem": "404.webp",
+      "ext": ".webp",
+      "size_kb": 181.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\404.webp.webp",
+      "matched_in": [
+        "src/pages/NotFound.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/about-mobile.webp",
+      "filename": "about-mobile.webp",
+      "stem": "about-mobile",
+      "ext": ".webp",
+      "size_kb": 176.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\about-mobile.webp",
+      "matched_in": [
+        "src/pages/About.tsx",
+        "src/pages/careers.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/about.webp",
+      "filename": "about.webp",
+      "stem": "about",
+      "ext": ".webp",
+      "size_kb": 216.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\about.webp",
+      "matched_in": [
+        "src/pages/About.tsx",
+        "src/pages/careers.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/ai-engineering-mbile.webp",
+      "filename": "ai-engineering-mbile.webp",
+      "stem": "ai-engineering-mbile",
+      "ext": ".webp",
+      "size_kb": 233.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\ai-engineering-mbile.webp",
+      "matched_in": [
+        "src/components/ai-engineering/AiEngineeringHero.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/ai-engineering.webp",
+      "filename": "ai-engineering.webp",
+      "stem": "ai-engineering",
+      "ext": ".webp",
+      "size_kb": 200.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\ai-engineering.webp",
+      "matched_in": [
+        "src/components/ai-engineering/AiEngineeringHero.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/ai-gcc-mobile.webp",
+      "filename": "ai-gcc-mobile.webp",
+      "stem": "ai-gcc-mobile",
+      "ext": ".webp",
+      "size_kb": 212.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\ai-gcc-mobile.webp",
+      "matched_in": [
+        "src/components/ai-gcc/AiGccHero.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/ai-gcc.webp",
+      "filename": "ai-gcc.webp",
+      "stem": "ai-gcc",
+      "ext": ".webp",
+      "size_kb": 158.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\ai-gcc.webp",
+      "matched_in": [
+        "src/components/ai-gcc/AiGccHero.tsx",
+        "src/components/home/ServicesGrid.tsx",
+        "src/components/shared/IllustratedServiceCard.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/ai-talent-mobile.webp",
+      "filename": "ai-talent-mobile.webp",
+      "stem": "ai-talent-mobile",
+      "ext": ".webp",
+      "size_kb": 184.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\ai-talent-mobile.webp",
+      "matched_in": [
+        "src/components/ai-talent/AiTalentHero.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/ai-talent.webp",
+      "filename": "ai-talent.webp",
+      "stem": "ai-talent",
+      "ext": ".webp",
+      "size_kb": 170.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\ai-talent.webp",
+      "matched_in": [
+        "src/components/ai-talent/AiTalentHero.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/delivery-team-mobile.webp",
+      "filename": "delivery-team-mobile.webp",
+      "stem": "delivery-team-mobile",
+      "ext": ".webp",
+      "size_kb": 161.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\delivery-team-mobile.webp",
+      "matched_in": [
+        "src/components/ai-delivery-teams/AiDeliveryTeamsHero.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/delivery-team.webp",
+      "filename": "delivery-team.webp",
+      "stem": "delivery-team",
+      "ext": ".webp",
+      "size_kb": 145.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\delivery-team.webp",
+      "matched_in": [
+        "src/components/ai-delivery-teams/AiDeliveryTeamsHero.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/gcc-mobile.webp",
+      "filename": "gcc-mobile.webp",
+      "stem": "gcc-mobile",
+      "ext": ".webp",
+      "size_kb": 201.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\gcc-mobile.webp",
+      "matched_in": [
+        "src/components/ai-gcc/AiGccHero.tsx",
+        "src/components/gcc-strategy/GccStrategyHero.tsx",
+        "src/pages/services/MicroGCC.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/gcc-operations-mobile.webp",
+      "filename": "gcc-operations-mobile.webp",
+      "stem": "gcc-operations-mobile",
+      "ext": ".webp",
+      "size_kb": 268.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\gcc-operations-mobile.webp",
+      "matched_in": [
+        "src/components/gcc-operations/GccOperationsHero.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/gcc-operations.webp",
+      "filename": "gcc-operations.webp",
+      "stem": "gcc-operations",
+      "ext": ".webp",
+      "size_kb": 302.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\gcc-operations.webp",
+      "matched_in": [
+        "src/components/gcc-operations/GccOperationsHero.tsx",
+        "src/components/shared/IllustratedServiceCard.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/gcc.webp",
+      "filename": "gcc.webp",
+      "stem": "gcc",
+      "ext": ".webp",
+      "size_kb": 200.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\gcc.webp",
+      "matched_in": [
+        "src/components/ai-gcc/AiGccHero.tsx",
+        "src/components/gcc-strategy/GccStrategyHero.tsx",
+        "src/components/home/ServicesGrid.tsx",
+        "src/components/shared/IllustratedServiceCard.tsx",
+        "src/pages/services/MicroGCC.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/hero-half-viewport-mobile.webp",
+      "filename": "hero-half-viewport-mobile.webp",
+      "stem": "hero-half-viewport-mobile",
+      "ext": ".webp",
+      "size_kb": 111.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\hero-half-viewport-mobile.webp",
+      "matched_in": [
+        "src/pages/Blog.tsx",
+        "src/pages/BlogPost.tsx",
+        "src/pages/CaseStudies.tsx",
+        "src/pages/Contact.tsx",
+        "src/pages/gcc-faq.tsx",
+        "src/pages/gcc-readiness-assessment.tsx",
+        "src/pages/gcc-roi-estimator.tsx",
+        "src/pages/GccCostCalculator.tsx",
+        "src/pages/GCCIndiaCost.tsx",
+        "src/pages/GccVsOutsourcing.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/hero-half-viewport.webp",
+      "filename": "hero-half-viewport.webp",
+      "stem": "hero-half-viewport",
+      "ext": ".webp",
+      "size_kb": 94.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\hero-half-viewport.webp",
+      "matched_in": [
+        "src/pages/Blog.tsx",
+        "src/pages/BlogPost.tsx",
+        "src/pages/CaseStudies.tsx",
+        "src/pages/Contact.tsx",
+        "src/pages/gcc-faq.tsx",
+        "src/pages/gcc-readiness-assessment.tsx",
+        "src/pages/gcc-roi-estimator.tsx",
+        "src/pages/GccCostCalculator.tsx",
+        "src/pages/GCCIndiaCost.tsx",
+        "src/pages/GccVsOutsourcing.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/home page.webp",
+      "filename": "home page.webp",
+      "stem": "home page",
+      "ext": ".webp",
+      "size_kb": 193.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\home page.webp",
+      "matched_in": [
+        "src/features/home/components/Hero.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/home-mobile.webp",
+      "filename": "home-mobile.webp",
+      "stem": "home-mobile",
+      "ext": ".webp",
+      "size_kb": 167.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\home-mobile.webp",
+      "matched_in": [
+        "src/features/home/components/Hero.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/industry-mobile.webp",
+      "filename": "industry-mobile.webp",
+      "stem": "industry-mobile",
+      "ext": ".webp",
+      "size_kb": 258.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\industry-mobile.webp",
+      "matched_in": [
+        "src/components/shared/IndustryGccPage.tsx",
+        "src/pages/Industries.tsx",
+        "src/pages/industries/BfsiGcc.tsx",
+        "src/pages/industries/manufacturing-gcc.tsx",
+        "src/pages/industries/private-equity-gcc.tsx",
+        "src/pages/industries/retail-gcc.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/industry.webp",
+      "filename": "industry.webp",
+      "stem": "industry",
+      "ext": ".webp",
+      "size_kb": 255.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\industry.webp",
+      "matched_in": [
+        "src/components/shared/IndustryGccPage.tsx",
+        "src/pages/Industries.tsx",
+        "src/pages/industries/BfsiGcc.tsx",
+        "src/pages/industries/manufacturing-gcc.tsx",
+        "src/pages/industries/private-equity-gcc.tsx",
+        "src/pages/industries/retail-gcc.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/micro-gcc-mobile.webp",
+      "filename": "micro-gcc-mobile.webp",
+      "stem": "micro-gcc-mobile",
+      "ext": ".webp",
+      "size_kb": 136.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\micro-gcc-mobile.webp",
+      "matched_in": [
+        "src/pages/services/MicroGCC.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/micro-gcc.webp",
+      "filename": "micro-gcc.webp",
+      "stem": "micro-gcc",
+      "ext": ".webp",
+      "size_kb": 170.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\micro-gcc.webp",
+      "matched_in": [
+        "src/pages/services/MicroGCC.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/recruitment-mobile.webp",
+      "filename": "recruitment-mobile.webp",
+      "stem": "recruitment-mobile",
+      "ext": ".webp",
+      "size_kb": 144.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\recruitment-mobile.webp",
+      "matched_in": [
+        "src/components/recruitment/RecruitmentHero.tsx"
+      ]
+    },
+    {
+      "rel_path": "hero/recruitment.webp",
+      "filename": "recruitment.webp",
+      "stem": "recruitment",
+      "ext": ".webp",
+      "size_kb": 148.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\recruitment.webp",
+      "matched_in": [
+        "src/components/recruitment/RecruitmentHero.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/agentic_realistic.jpg",
+      "filename": "agentic_realistic.jpg",
+      "stem": "agentic_realistic",
+      "ext": ".jpg",
+      "size_kb": 848.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\agentic_realistic.jpg",
+      "matched_in": [
+        "src/pages/About.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/Agentic_workflow.png",
+      "filename": "Agentic_workflow.png",
+      "stem": "Agentic_workflow",
+      "ext": ".png",
+      "size_kb": 950.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\Agentic_workflow.png",
+      "matched_in": [
+        "src/pages/services/ai-delivery-teams/DedicatedAiEngineeringTeam.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/ai-architecture.jpg",
+      "filename": "ai-architecture.jpg",
+      "stem": "ai-architecture",
+      "ext": ".jpg",
+      "size_kb": 48.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-architecture.jpg",
+      "matched_in": [
+        "src/components/ai-gcc/GenAiCapabilitiesMosaic.tsx",
+        "src/components/shared/IllustratedServiceCard.tsx",
+        "src/pages/services/AIEngineering.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryPod.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/gcc/ModernizationTransformation.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/ai-assessment.jpg",
+      "filename": "ai-assessment.jpg",
+      "stem": "ai-assessment",
+      "ext": ".jpg",
+      "size_kb": 52.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-assessment.jpg",
+      "matched_in": [
+        "src/components/shared/IllustratedServiceCard.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryPod.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/ai-coe.jpg",
+      "filename": "ai-coe.jpg",
+      "stem": "ai-coe",
+      "ext": ".jpg",
+      "size_kb": 50.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-coe.jpg",
+      "matched_in": [
+        "src/components/shared/IllustratedServiceCard.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/ai-data-workloads.jpg",
+      "filename": "ai-data-workloads.jpg",
+      "stem": "ai-data-workloads",
+      "ext": ".jpg",
+      "size_kb": 29.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-data-workloads.jpg",
+      "matched_in": [
+        "src/components/shared/IndustryGccPage.tsx",
+        "src/pages/industries/BfsiGcc.tsx",
+        "src/pages/industries/manufacturing-gcc.tsx",
+        "src/pages/industries/retail-gcc.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryPod.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/ai-gcc/DataEngineering.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/ai-genai.jpg",
+      "filename": "ai-genai.jpg",
+      "stem": "ai-genai",
+      "ext": ".jpg",
+      "size_kb": 68.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-genai.jpg",
+      "matched_in": [
+        "src/components/ai-gcc/GenAiCapabilitiesMosaic.tsx",
+        "src/components/shared/IllustratedServiceCard.tsx",
+        "src/pages/services/ai-gcc/GenerativeAI.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/ai-governance.jpg",
+      "filename": "ai-governance.jpg",
+      "stem": "ai-governance",
+      "ext": ".jpg",
+      "size_kb": 35.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-governance.jpg",
+      "matched_in": [
+        "src/components/shared/IllustratedServiceCard.tsx",
+        "src/components/shared/IndustryGccPage.tsx",
+        "src/pages/CaseStudies.tsx",
+        "src/pages/industries/BfsiGcc.tsx",
+        "src/pages/industries/manufacturing-gcc.tsx",
+        "src/pages/industries/retail-gcc.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryPod.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/ai-mlops.jpg",
+      "filename": "ai-mlops.jpg",
+      "stem": "ai-mlops",
+      "ext": ".jpg",
+      "size_kb": 35.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-mlops.jpg",
+      "matched_in": [
+        "src/components/ai-gcc/GenAiCapabilitiesMosaic.tsx",
+        "src/components/shared/IllustratedServiceCard.tsx",
+        "src/components/shared/IndustryGccPage.tsx",
+        "src/pages/industries/BfsiGcc.tsx",
+        "src/pages/industries/manufacturing-gcc.tsx",
+        "src/pages/industries/retail-gcc.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryPod.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/ai-gcc/MLOps.tsx",
+        "src/pages/services/gcc/LocationStrategy.tsx",
+        "src/pages/services/gcc/StrategyBusinessCase.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/ai_delivery_team_realistic.png",
+      "filename": "ai_delivery_team_realistic.png",
+      "stem": "ai_delivery_team_realistic",
+      "ext": ".png",
+      "size_kb": 144.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai_delivery_team_realistic.png",
+      "matched_in": [
+        "src/components/ai-delivery-teams/AiDeliveryTeamSvg.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/ai_gcc_cubes.jpg",
+      "filename": "ai_gcc_cubes.jpg",
+      "stem": "ai_gcc_cubes",
+      "ext": ".jpg",
+      "size_kb": 555.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai_gcc_cubes.jpg",
+      "matched_in": [
+        "src/features/home/components/GCCCapabilitiesMosaic.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/ai_micro_gcc_process.jpg",
+      "filename": "ai_micro_gcc_process.jpg",
+      "stem": "ai_micro_gcc_process",
+      "ext": ".jpg",
+      "size_kb": 738.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai_micro_gcc_process.jpg",
+      "matched_in": [
+        "src/features/home/components/GCCStartingPoint.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/blueprint_advisory_workspace.jpg",
+      "filename": "blueprint_advisory_workspace.jpg",
+      "stem": "blueprint_advisory_workspace",
+      "ext": ".jpg",
+      "size_kb": 808.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\blueprint_advisory_workspace.jpg",
+      "matched_in": [
+        "src/components/recruitment/RecruitmentRealityCardGrid.tsx",
+        "src/pages/Contact.tsx",
+        "src/pages/SEOBlueprint.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/connected_operating_model_diagram.jpg",
+      "filename": "connected_operating_model_diagram.jpg",
+      "stem": "connected_operating_model_diagram",
+      "ext": ".jpg",
+      "size_kb": 1092.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\connected_operating_model_diagram.jpg",
+      "matched_in": [
+        "src/pages/About.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/contact_engineer_blue_lounge.jpg",
+      "filename": "contact_engineer_blue_lounge.jpg",
+      "stem": "contact_engineer_blue_lounge",
+      "ext": ".jpg",
+      "size_kb": 695.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\contact_engineer_blue_lounge.jpg",
+      "matched_in": [
+        "src/pages/About.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/contact_engineer_blue_lounge.webp",
+      "filename": "contact_engineer_blue_lounge.webp",
+      "stem": "contact_engineer_blue_lounge",
+      "ext": ".webp",
+      "size_kb": 27.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\contact_engineer_blue_lounge.webp",
+      "matched_in": [
+        "src/features/home/components/Consultation.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/dedicated_ai_team_realistic.jpg",
+      "filename": "dedicated_ai_team_realistic.jpg",
+      "stem": "dedicated_ai_team_realistic",
+      "ext": ".jpg",
+      "size_kb": 824.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\dedicated_ai_team_realistic.jpg",
+      "matched_in": [
+        "src/pages/About.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/enterprise_modern.png",
+      "filename": "enterprise_modern.png",
+      "stem": "enterprise_modern",
+      "ext": ".png",
+      "size_kb": 1787.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\enterprise_modern.png",
+      "matched_in": [
+        "src/pages/services/ai-delivery-teams/DedicatedAiEngineeringTeam.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/favicon.ico",
+      "filename": "favicon.ico",
+      "stem": "favicon",
+      "ext": ".ico",
+      "size_kb": 15.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\favicon.ico",
+      "matched_in": [
+        "index.html"
+      ]
+    },
+    {
+      "rel_path": "images/female_ai_leader.jpg",
+      "filename": "female_ai_leader.jpg",
+      "stem": "female_ai_leader",
+      "ext": ".jpg",
+      "size_kb": 606.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\female_ai_leader.jpg",
+      "matched_in": [
+        "src/features/home/components/GCCStartingPoint.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-campus-hero-b.png",
+      "filename": "gcc-campus-hero-b.png",
+      "stem": "gcc-campus-hero-b",
+      "ext": ".png",
+      "size_kb": 4937.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-campus-hero-b.png",
+      "matched_in": [
+        "src/components/landing/RealGccBuilding.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations.png",
+      "filename": "gcc-operations.png",
+      "stem": "gcc-operations",
+      "ext": ".png",
+      "size_kb": 116.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations.png",
+      "matched_in": [
+        "src/lib/seo.ts"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations.webp",
+      "filename": "gcc-operations.webp",
+      "stem": "gcc-operations",
+      "ext": ".webp",
+      "size_kb": 82.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations.webp",
+      "matched_in": [
+        "src/components/gcc-operations/GccOperationsHero.tsx",
+        "src/components/shared/IllustratedServiceCard.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-setup.webp",
+      "filename": "gcc-setup.webp",
+      "stem": "gcc-setup",
+      "ext": ".webp",
+      "size_kb": 181.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-setup.webp",
+      "matched_in": [
+        "src/components/shared/IllustratedServiceCard.tsx",
+        "src/pages/About.tsx",
+        "src/pages/CaseStudies.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-talent.webp",
+      "filename": "gcc-talent.webp",
+      "stem": "gcc-talent",
+      "ext": ".webp",
+      "size_kb": 54.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-talent.webp",
+      "matched_in": [
+        "src/components/shared/IllustratedServiceCard.tsx",
+        "src/pages/About.tsx",
+        "src/pages/CaseStudies.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-technology.webp",
+      "filename": "gcc-technology.webp",
+      "stem": "gcc-technology",
+      "ext": ".webp",
+      "size_kb": 66.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-technology.webp",
+      "matched_in": [
+        "src/components/shared/IllustratedServiceCard.tsx",
+        "src/pages/About.tsx",
+        "src/pages/CaseStudies.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc_cta_skyscraper.jpg",
+      "filename": "gcc_cta_skyscraper.jpg",
+      "stem": "gcc_cta_skyscraper",
+      "ext": ".jpg",
+      "size_kb": 871.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc_cta_skyscraper.jpg",
+      "matched_in": [
+        "src/components/recruitment/RecruitmentRealityCardGrid.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc_modernization.jpg",
+      "filename": "gcc_modernization.jpg",
+      "stem": "gcc_modernization",
+      "ext": ".jpg",
+      "size_kb": 866.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc_modernization.jpg",
+      "matched_in": [
+        "src/components/ai-gcc/BuyerPathCards.tsx",
+        "src/features/home/components/GCCStartingPoint.tsx",
+        "src/pages/About.tsx",
+        "src/pages/CaseStudies.tsx",
+        "src/pages/services/AISolutions.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc_skyscraper_cutout.png",
+      "filename": "gcc_skyscraper_cutout.png",
+      "stem": "gcc_skyscraper_cutout",
+      "ext": ".png",
+      "size_kb": 1319.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc_skyscraper_cutout.png",
+      "matched_in": [
+        "src/features/home/components/WhyNeoIntelliLifecycle.tsx",
+        "src/pages/services/ai-delivery-teams/DedicatedAiEngineeringTeam.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/hero-illustration.png",
+      "filename": "hero-illustration.png",
+      "stem": "hero-illustration",
+      "ext": ".png",
+      "size_kb": 107.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\hero-illustration.png",
+      "matched_in": [
+        "src/entry-server.tsx",
+        "index.html"
+      ]
+    },
+    {
+      "rel_path": "images/home-ai-gcc.webp",
+      "filename": "home-ai-gcc.webp",
+      "stem": "home-ai-gcc",
+      "ext": ".webp",
+      "size_kb": 49.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\home-ai-gcc.webp",
+      "matched_in": [
+        "src/components/home/ServicesGrid.tsx",
+        "src/components/shared/IllustratedServiceCard.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/mosaic_ai_eng.jpg",
+      "filename": "mosaic_ai_eng.jpg",
+      "stem": "mosaic_ai_eng",
+      "ext": ".jpg",
+      "size_kb": 1017.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\mosaic_ai_eng.jpg",
+      "matched_in": [
+        "src/components/ai-gcc/GenAiCapabilitiesMosaic.tsx",
+        "src/features/home/components/GCCCapabilitiesMosaic.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/mosaic_ai_gcc.jpg",
+      "filename": "mosaic_ai_gcc.jpg",
+      "stem": "mosaic_ai_gcc",
+      "ext": ".jpg",
+      "size_kb": 995.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\mosaic_ai_gcc.jpg",
+      "matched_in": [
+        "src/components/ai-gcc/BuyerPathCards.tsx",
+        "src/pages/About.tsx",
+        "src/pages/careers.tsx",
+        "src/pages/CaseStudies.tsx",
+        "src/pages/services/AIEngineering.tsx",
+        "src/pages/services/AISolutions.tsx",
+        "src/pages/services/ai-talent/AITalentOverview.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/mosaic_gcc_strat.jpg",
+      "filename": "mosaic_gcc_strat.jpg",
+      "stem": "mosaic_gcc_strat",
+      "ext": ".jpg",
+      "size_kb": 833.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\mosaic_gcc_strat.jpg",
+      "matched_in": [
+        "src/features/home/components/GCCCapabilitiesMosaic.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/neohirex-logo.png",
+      "filename": "neohirex-logo.png",
+      "stem": "neohirex-logo",
+      "ext": ".png",
+      "size_kb": 86.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\neohirex-logo.png",
+      "matched_in": [
+        "src/components/layout/megaMenu.ts",
+        "src/pages/services/AISolutions.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/neohirex-logo.svg",
+      "filename": "neohirex-logo.svg",
+      "stem": "neohirex-logo",
+      "ext": ".svg",
+      "size_kb": 0.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\neohirex-logo.svg",
+      "matched_in": [
+        "src/pages/landing/IndiaEngineeringSquad.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/neointelli-logo-white.png",
+      "filename": "neointelli-logo-white.png",
+      "stem": "neointelli-logo-white",
+      "ext": ".png",
+      "size_kb": 5.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\neointelli-logo-white.png",
+      "matched_in": [
+        "src/lib/toolEmail.ts",
+        "src/test/toolEmail.test.ts"
+      ]
+    },
+    {
+      "rel_path": "images/neointelli-white.webp",
+      "filename": "neointelli-white.webp",
+      "stem": "neointelli-white",
+      "ext": ".webp",
+      "size_kb": 5.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\neointelli-white.webp",
+      "matched_in": [
+        "src/components/landing/LandingNav.tsx",
+        "src/pages/landing/HireAiMlEngineers.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/neointelli.png",
+      "filename": "neointelli.png",
+      "stem": "neointelli",
+      "ext": ".png",
+      "size_kb": 41.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\neointelli.png",
+      "matched_in": [
+        "src/lib/seo.ts"
+      ]
+    },
+    {
+      "rel_path": "images/neointelli_logo.webp",
+      "filename": "neointelli_logo.webp",
+      "stem": "neointelli_logo",
+      "ext": ".webp",
+      "size_kb": 10.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\neointelli_logo.webp",
+      "matched_in": [
+        "src/components/landing/LandingNav.tsx",
+        "src/components/landing/india-engineering-squad/LandingHeader.tsx",
+        "src/components/layout/Footer.tsx",
+        "src/components/navigation/MobileSidebar.tsx",
+        "src/components/navigation/Navbar.tsx",
+        "src/components/shared/MinimalChrome.tsx",
+        "src/pages/landing/FinanceProcurementSharedServicesIndia.tsx",
+        "src/pages/landing/HireAiEngineers.tsx",
+        "src/pages/landing/MicroGccIndia.tsx",
+        "src/pages/landing/NewHome.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/pillar_card1_arch_v2.png",
+      "filename": "pillar_card1_arch_v2.png",
+      "stem": "pillar_card1_arch_v2",
+      "ext": ".png",
+      "size_kb": 813.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\pillar_card1_arch_v2.png",
+      "matched_in": [
+        "src/features/home/components/WhyNeoIntelliLifecycle.tsx",
+        "src/pages/services/ai-engineering/DataEngineering.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/pillar_card2_valid_v3.png",
+      "filename": "pillar_card2_valid_v3.png",
+      "stem": "pillar_card2_valid_v3",
+      "ext": ".png",
+      "size_kb": 786.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\pillar_card2_valid_v3.png",
+      "matched_in": [
+        "src/features/home/components/WhyNeoIntelliLifecycle.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/pillar_card3_deliver_v3.png",
+      "filename": "pillar_card3_deliver_v3.png",
+      "stem": "pillar_card3_deliver_v3",
+      "ext": ".png",
+      "size_kb": 1044.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\pillar_card3_deliver_v3.png",
+      "matched_in": [
+        "src/features/home/components/WhyNeoIntelliLifecycle.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/pillar_card4_transfer_v2.png",
+      "filename": "pillar_card4_transfer_v2.png",
+      "stem": "pillar_card4_transfer_v2",
+      "ext": ".png",
+      "size_kb": 908.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\pillar_card4_transfer_v2.png",
+      "matched_in": [
+        "src/features/home/components/WhyNeoIntelliLifecycle.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/production_capability.png",
+      "filename": "production_capability.png",
+      "stem": "production_capability",
+      "ext": ".png",
+      "size_kb": 2035.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\production_capability.png",
+      "matched_in": [
+        "src/pages/services/ai-engineering/AppliedAIML.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/product_roadmap.png",
+      "filename": "product_roadmap.png",
+      "stem": "product_roadmap",
+      "ext": ".png",
+      "size_kb": 1423.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\product_roadmap.png",
+      "matched_in": [
+        "src/pages/services/ai-delivery-teams/DedicatedAiEngineeringTeam.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/Saas_Ai.png",
+      "filename": "Saas_Ai.png",
+      "stem": "Saas_Ai",
+      "ext": ".png",
+      "size_kb": 1149.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\Saas_Ai.png",
+      "matched_in": [
+        "src/pages/services/ai-delivery-teams/DedicatedAiEngineeringTeam.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/saas_realistic.jpg",
+      "filename": "saas_realistic.jpg",
+      "stem": "saas_realistic",
+      "ext": ".jpg",
+      "size_kb": 811.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\saas_realistic.jpg",
+      "matched_in": [
+        "src/components/recruitment/RecruitmentRealityCardGrid.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/skyscraper.png",
+      "filename": "skyscraper.png",
+      "stem": "skyscraper",
+      "ext": ".png",
+      "size_kb": 1055.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\skyscraper.png",
+      "matched_in": [
+        "src/features/home/components/GCCCapabilitiesMosaic.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/solutions_illustration.jpg",
+      "filename": "solutions_illustration.jpg",
+      "stem": "solutions_illustration",
+      "ext": ".jpg",
+      "size_kb": 529.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\solutions_illustration.jpg",
+      "matched_in": [
+        "src/features/home/components/NeoHireXMatrix.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/solution_ai_talent.jpg",
+      "filename": "solution_ai_talent.jpg",
+      "stem": "solution_ai_talent",
+      "ext": ".jpg",
+      "size_kb": 719.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\solution_ai_talent.jpg",
+      "matched_in": [
+        "src/features/home/components/NeoHireXMatrix.tsx",
+        "src/pages/services/AIEngineering.tsx",
+        "src/pages/services/ai-engineering/AIAgentsAutomation.tsx",
+        "src/pages/services/ai-talent/AITalentOverview.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/solution_gcc_calculator.jpg",
+      "filename": "solution_gcc_calculator.jpg",
+      "stem": "solution_gcc_calculator",
+      "ext": ".jpg",
+      "size_kb": 681.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\solution_gcc_calculator.jpg",
+      "matched_in": [
+        "src/features/home/components/NeoHireXMatrix.tsx",
+        "src/pages/services/ai-engineering/AppliedAIML.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/solution_micro_gcc.jpg",
+      "filename": "solution_micro_gcc.jpg",
+      "stem": "solution_micro_gcc",
+      "ext": ".jpg",
+      "size_kb": 790.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\solution_micro_gcc.jpg",
+      "matched_in": [
+        "src/components/ai-gcc/BuyerPathCards.tsx",
+        "src/components/ai-talent/HiringPathCards.tsx",
+        "src/features/home/components/NeoHireXMatrix.tsx",
+        "src/pages/services/AIEngineering.tsx",
+        "src/pages/services/AISolutions.tsx",
+        "src/pages/services/ai-talent/AITalentOverview.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/talent-ai-data-pod.webp",
+      "filename": "talent-ai-data-pod.webp",
+      "stem": "talent-ai-data-pod",
+      "ext": ".webp",
+      "size_kb": 87.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\talent-ai-data-pod.webp",
+      "matched_in": [
+        "src/components/shared/IllustratedServiceCard.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/talent-architecture-pod.webp",
+      "filename": "talent-architecture-pod.webp",
+      "stem": "talent-architecture-pod",
+      "ext": ".webp",
+      "size_kb": 89.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\talent-architecture-pod.webp",
+      "matched_in": [
+        "src/components/shared/IllustratedServiceCard.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/talent-engineering-pod.webp",
+      "filename": "talent-engineering-pod.webp",
+      "stem": "talent-engineering-pod",
+      "ext": ".webp",
+      "size_kb": 49.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\talent-engineering-pod.webp",
+      "matched_in": [
+        "src/components/shared/IllustratedServiceCard.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/talent-transformation-pod.webp",
+      "filename": "talent-transformation-pod.webp",
+      "stem": "talent-transformation-pod",
+      "ext": ".webp",
+      "size_kb": 38.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\talent-transformation-pod.webp",
+      "matched_in": [
+        "src/components/shared/IllustratedServiceCard.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/tech-data-platform.png",
+      "filename": "tech-data-platform.png",
+      "stem": "tech-data-platform",
+      "ext": ".png",
+      "size_kb": 58.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\tech-data-platform.png",
+      "matched_in": [
+        "src/components/home/ServicesGrid.tsx",
+        "src/components/shared/IllustratedServiceCard.tsx",
+        "src/components/shared/IndustryGccPage.tsx",
+        "src/pages/industries/BfsiGcc.tsx",
+        "src/pages/industries/manufacturing-gcc.tsx",
+        "src/pages/industries/retail-gcc.tsx",
+        "src/pages/services/ai-engineering/DataEngineering.tsx",
+        "src/pages/services/gcc-operations/WorkplaceItSecurity.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/tech-integration.png",
+      "filename": "tech-integration.png",
+      "stem": "tech-integration",
+      "ext": ".png",
+      "size_kb": 47.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\tech-integration.png",
+      "matched_in": [
+        "src/components/shared/IllustratedServiceCard.tsx",
+        "src/components/shared/IndustryGccPage.tsx",
+        "src/pages/industries/BfsiGcc.tsx",
+        "src/pages/industries/manufacturing-gcc.tsx",
+        "src/pages/industries/retail-gcc.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryPod.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/gcc/ModernizationTransformation.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/tech-process-automation.png",
+      "filename": "tech-process-automation.png",
+      "stem": "tech-process-automation",
+      "ext": ".png",
+      "size_kb": 99.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\tech-process-automation.png",
+      "matched_in": [
+        "src/components/shared/IllustratedServiceCard.tsx",
+        "src/components/shared/IndustryGccPage.tsx",
+        "src/pages/About.tsx",
+        "src/pages/industries/BfsiGcc.tsx",
+        "src/pages/industries/manufacturing-gcc.tsx",
+        "src/pages/industries/retail-gcc.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryPod.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/ai-engineering/AIAgentsAutomation.tsx",
+        "src/pages/services/gcc/ModernizationTransformation.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/tech-product-engineering.png",
+      "filename": "tech-product-engineering.png",
+      "stem": "tech-product-engineering",
+      "ext": ".png",
+      "size_kb": 38.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\tech-product-engineering.png",
+      "matched_in": [
+        "src/components/home/ServicesGrid.tsx",
+        "src/components/shared/IllustratedServiceCard.tsx",
+        "src/components/shared/IndustryGccPage.tsx",
+        "src/pages/industries/BfsiGcc.tsx",
+        "src/pages/industries/manufacturing-gcc.tsx",
+        "src/pages/industries/retail-gcc.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/ai-talent/ai-leadership.jpg",
+      "filename": "ai-leadership.jpg",
+      "stem": "ai-leadership",
+      "ext": ".jpg",
+      "size_kb": 777.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-talent\\ai-leadership.jpg",
+      "matched_in": [
+        "src/components/ai-talent/SpecialistHiringMosaic.tsx",
+        "src/pages/services/ai-talent/AILeadershipSearch.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/ai-talent/aiml-recruitment.jpg",
+      "filename": "aiml-recruitment.jpg",
+      "stem": "aiml-recruitment",
+      "ext": ".jpg",
+      "size_kb": 777.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-talent\\aiml-recruitment.jpg",
+      "matched_in": [
+        "src/components/ai-talent/SpecialistHiringMosaic.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/ai-talent/data-engineering.jpg",
+      "filename": "data-engineering.jpg",
+      "stem": "data-engineering",
+      "ext": ".jpg",
+      "size_kb": 828.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-talent\\data-engineering.jpg",
+      "matched_in": [
+        "src/components/ai-talent/SpecialistHiringMosaic.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/ai-talent/genai-agentic.jpg",
+      "filename": "genai-agentic.jpg",
+      "stem": "genai-agentic",
+      "ext": ".jpg",
+      "size_kb": 852.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-talent\\genai-agentic.jpg",
+      "matched_in": [
+        "src/components/ai-talent/SpecialistHiringMosaic.tsx",
+        "src/pages/services/ai-talent/GenAIAgenticHiring.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/ai-talent/mlops-platform.jpg",
+      "filename": "mlops-platform.jpg",
+      "stem": "mlops-platform",
+      "ext": ".jpg",
+      "size_kb": 1090.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-talent\\mlops-platform.jpg",
+      "matched_in": [
+        "src/components/ai-talent/SpecialistHiringMosaic.tsx",
+        "src/pages/services/ai-talent/AILeadershipSearch.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/ai-talent/neohirex-hiring-os.jpg",
+      "filename": "neohirex-hiring-os.jpg",
+      "stem": "neohirex-hiring-os",
+      "ext": ".jpg",
+      "size_kb": 778.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-talent\\neohirex-hiring-os.jpg",
+      "matched_in": [
+        "src/pages/services/ai-talent/AITalentOverview.tsx",
+        "src/pages/services/ai-talent/RecruitmentHub.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/ai-talent/recruitment-hub.jpg",
+      "filename": "recruitment-hub.jpg",
+      "stem": "recruitment-hub",
+      "ext": ".jpg",
+      "size_kb": 423.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-talent\\recruitment-hub.jpg",
+      "matched_in": [
+        "src/components/ai-talent/SpecialistHiringMosaic.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/ai-talent/reskilling-academy.jpg",
+      "filename": "reskilling-academy.jpg",
+      "stem": "reskilling-academy",
+      "ext": ".jpg",
+      "size_kb": 778.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-talent\\reskilling-academy.jpg",
+      "matched_in": [
+        "src/components/ai-talent/SpecialistHiringMosaic.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/delivery-teams/squad-dedicated-ai.jpg",
+      "filename": "squad-dedicated-ai.jpg",
+      "stem": "squad-dedicated-ai",
+      "ext": ".jpg",
+      "size_kb": 831.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\delivery-teams\\squad-dedicated-ai.jpg",
+      "matched_in": [
+        "src/pages/industries/TechnologyGcc.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/delivery-teams/squad-delivery-pod.jpg",
+      "filename": "squad-delivery-pod.jpg",
+      "stem": "squad-delivery-pod",
+      "ext": ".jpg",
+      "size_kb": 822.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\delivery-teams\\squad-delivery-pod.jpg",
+      "matched_in": [
+        "src/pages/industries/TechnologyGcc.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/delivery-teams/squad-forward-deployed.jpg",
+      "filename": "squad-forward-deployed.jpg",
+      "stem": "squad-forward-deployed",
+      "ext": ".jpg",
+      "size_kb": 757.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\delivery-teams\\squad-forward-deployed.jpg",
+      "matched_in": [
+        "src/pages/industries/TechnologyGcc.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/delivery-teams/squad-team-transfer.jpg",
+      "filename": "squad-team-transfer.jpg",
+      "stem": "squad-team-transfer",
+      "ext": ".jpg",
+      "size_kb": 800.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\delivery-teams\\squad-team-transfer.jpg",
+      "matched_in": [
+        "src/pages/industries/TechnologyGcc.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/commercial-transparency-stack-transparent.png",
+      "filename": "commercial-transparency-stack-transparent.png",
+      "stem": "commercial-transparency-stack-transparent",
+      "ext": ".png",
+      "size_kb": 675.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\commercial-transparency-stack-transparent.png",
+      "matched_in": [
+        "src/pages/services/gcc-operations/GccOperations.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/gcc-arch-leadership.jpg",
+      "filename": "gcc-arch-leadership.jpg",
+      "stem": "gcc-arch-leadership",
+      "ext": ".jpg",
+      "size_kb": 797.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\gcc-arch-leadership.jpg",
+      "matched_in": [
+        "src/pages/Industries.tsx",
+        "src/pages/services/gcc-operations/WorkforceStrategy.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/gcc-arch-teams.jpg",
+      "filename": "gcc-arch-teams.jpg",
+      "stem": "gcc-arch-teams",
+      "ext": ".jpg",
+      "size_kb": 788.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\gcc-arch-teams.jpg",
+      "matched_in": [
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/gcc-operations/ScaleExpansion.tsx",
+        "src/pages/services/gcc-operations/ServiceManagementPerformance.tsx",
+        "src/pages/services/gcc-operations/WorkforceStrategy.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/gcc-bot-journey.jpg",
+      "filename": "gcc-bot-journey.jpg",
+      "stem": "gcc-bot-journey",
+      "ext": ".jpg",
+      "size_kb": 776.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\gcc-bot-journey.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingLayerGrid.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/gcc-hq-leadership.jpg",
+      "filename": "gcc-hq-leadership.jpg",
+      "stem": "gcc-hq-leadership",
+      "ext": ".jpg",
+      "size_kb": 777.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\gcc-hq-leadership.jpg",
+      "matched_in": [
+        "src/pages/Industries.tsx",
+        "src/pages/services/gcc/ModernizationTransformation.tsx",
+        "src/pages/services/gcc-operations/PeopleHrOperations.tsx",
+        "src/pages/services/gcc-operations/ScaleExpansion.tsx",
+        "src/pages/services/gcc-operations/ServiceManagementPerformance.tsx",
+        "src/pages/services/gcc-operations/WorkforceStrategy.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/gcc-in-brief-overview.jpg",
+      "filename": "gcc-in-brief-overview.jpg",
+      "stem": "gcc-in-brief-overview",
+      "ext": ".jpg",
+      "size_kb": 773.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\gcc-in-brief-overview.jpg",
+      "matched_in": [
+        "src/pages/services/gcc-operations/GccOperations.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/gcc-in-brief-people.jpg",
+      "filename": "gcc-in-brief-people.jpg",
+      "stem": "gcc-in-brief-people",
+      "ext": ".jpg",
+      "size_kb": 711.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\gcc-in-brief-people.jpg",
+      "matched_in": [
+        "src/pages/services/gcc-operations/PeopleHrOperations.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/gcc-local-operations.jpg",
+      "filename": "gcc-local-operations.jpg",
+      "stem": "gcc-local-operations",
+      "ext": ".jpg",
+      "size_kb": 855.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\gcc-local-operations.jpg",
+      "matched_in": [
+        "src/pages/services/gcc-operations/PeopleHrOperations.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/gcc-ops-card.jpg",
+      "filename": "gcc-ops-card.jpg",
+      "stem": "gcc-ops-card",
+      "ext": ".jpg",
+      "size_kb": 1080.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\gcc-ops-card.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingLayerGrid.tsx",
+        "src/pages/services/AISolutions.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/gcc-ops-governance.jpg",
+      "filename": "gcc-ops-governance.jpg",
+      "stem": "gcc-ops-governance",
+      "ext": ".jpg",
+      "size_kb": 741.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\gcc-ops-governance.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/GccPerformanceFramework.tsx",
+        "src/components/gcc-operations/OperatingLayerGrid.tsx",
+        "src/pages/careers.tsx",
+        "src/pages/services/gcc/LocationStrategy.tsx",
+        "src/pages/services/gcc-operations/GovernanceCompliance.tsx",
+        "src/pages/services/gcc-operations/ServiceManagementPerformance.tsx",
+        "src/pages/services/gcc-operations/WorkforceStrategy.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/gcc-ops-people.jpg",
+      "filename": "gcc-ops-people.jpg",
+      "stem": "gcc-ops-people",
+      "ext": ".jpg",
+      "size_kb": 750.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\gcc-ops-people.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/GccPerformanceFramework.tsx",
+        "src/components/gcc-operations/OperatingLayerGrid.tsx",
+        "src/pages/careers.tsx",
+        "src/pages/services/gcc/LocationStrategy.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/gcc-ops-performance.jpg",
+      "filename": "gcc-ops-performance.jpg",
+      "stem": "gcc-ops-performance",
+      "ext": ".jpg",
+      "size_kb": 713.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\gcc-ops-performance.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/GccPerformanceFramework.tsx",
+        "src/components/gcc-operations/OperatingLayerGrid.tsx",
+        "src/pages/careers.tsx",
+        "src/pages/services/AISolutions.tsx",
+        "src/pages/services/ai-gcc/SetupOperations.tsx",
+        "src/pages/services/gcc-operations/BotTransition.tsx",
+        "src/pages/services/gcc-operations/ScaleExpansion.tsx",
+        "src/pages/services/gcc-operations/ServiceManagementPerformance.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/gcc-ops-scale.jpg",
+      "filename": "gcc-ops-scale.jpg",
+      "stem": "gcc-ops-scale",
+      "ext": ".jpg",
+      "size_kb": 900.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\gcc-ops-scale.jpg",
+      "matched_in": [
+        "src/pages/services/gcc-operations/ScaleExpansion.tsx",
+        "src/pages/services/gcc-operations/ServiceManagementPerformance.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/gcc-ops-workforce.jpg",
+      "filename": "gcc-ops-workforce.jpg",
+      "stem": "gcc-ops-workforce",
+      "ext": ".jpg",
+      "size_kb": 823.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\gcc-ops-workforce.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/GccPerformanceFramework.tsx",
+        "src/components/gcc-operations/OperatingLayerGrid.tsx",
+        "src/pages/About.tsx",
+        "src/pages/careers.tsx",
+        "src/pages/Industries.tsx",
+        "src/pages/services/gcc/LocationStrategy.tsx",
+        "src/pages/services/gcc-operations/ScaleExpansion.tsx",
+        "src/pages/services/gcc-operations/WorkforceStrategy.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/gcc-ops-workplace.jpg",
+      "filename": "gcc-ops-workplace.jpg",
+      "stem": "gcc-ops-workplace",
+      "ext": ".jpg",
+      "size_kb": 825.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\gcc-ops-workplace.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingLayerGrid.tsx",
+        "src/pages/services/AISolutions.tsx",
+        "src/pages/services/ai-gcc/SetupOperations.tsx",
+        "src/pages/services/gcc/LocationStrategy.tsx",
+        "src/pages/services/gcc-operations/BotTransition.tsx",
+        "src/pages/services/gcc-operations/WorkplaceItSecurity.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/gcc-positioning-tower.jpg",
+      "filename": "gcc-positioning-tower.jpg",
+      "stem": "gcc-positioning-tower",
+      "ext": ".jpg",
+      "size_kb": 935.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\gcc-positioning-tower.jpg",
+      "matched_in": [
+        "src/pages/services/gcc-operations/ScaleExpansion.tsx",
+        "src/pages/services/gcc-operations/ServiceManagementPerformance.tsx",
+        "src/pages/services/gcc-operations/WorkforceStrategy.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/gcc-real-bot-handover.jpg",
+      "filename": "gcc-real-bot-handover.jpg",
+      "stem": "gcc-real-bot-handover",
+      "ext": ".jpg",
+      "size_kb": 759.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\gcc-real-bot-handover.jpg",
+      "matched_in": [
+        "src/pages/services/ai-delivery-teams/AiDeliveryPod.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/ai-gcc/SetupOperations.tsx",
+        "src/pages/services/gcc-operations/BotTransition.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/gcc-setup-card.jpg",
+      "filename": "gcc-setup-card.jpg",
+      "stem": "gcc-setup-card",
+      "ext": ".jpg",
+      "size_kb": 729.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\gcc-setup-card.jpg",
+      "matched_in": [
+        "src/pages/services/gcc/LocationStrategy.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/gcc-setup-vs-ops.jpg",
+      "filename": "gcc-setup-vs-ops.jpg",
+      "stem": "gcc-setup-vs-ops",
+      "ext": ".jpg",
+      "size_kb": 927.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\gcc-setup-vs-ops.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingLayerGrid.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/hero-bg.jpg",
+      "filename": "hero-bg.jpg",
+      "stem": "hero-bg",
+      "ext": ".jpg",
+      "size_kb": 506.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\hero-bg.jpg",
+      "matched_in": [
+        "src/pages/gcc-for-ai-startups.tsx",
+        "src/pages/GccAsAService.tsx",
+        "src/pages/SEOBlueprint.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/perf-ai-impl.jpg",
+      "filename": "perf-ai-impl.jpg",
+      "stem": "perf-ai-impl",
+      "ext": ".jpg",
+      "size_kb": 900.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\perf-ai-impl.jpg",
+      "matched_in": [
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/scope-devices.jpg",
+      "filename": "scope-devices.jpg",
+      "stem": "scope-devices",
+      "ext": ".jpg",
+      "size_kb": 612.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\scope-devices.jpg",
+      "matched_in": [
+        "src/pages/services/gcc-operations/WorkplaceItSecurity.tsx",
+        "src/test/gccOperationsSection.test.ts"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/scope-identity.jpg",
+      "filename": "scope-identity.jpg",
+      "stem": "scope-identity",
+      "ext": ".jpg",
+      "size_kb": 770.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\scope-identity.jpg",
+      "matched_in": [
+        "src/pages/services/gcc-operations/WorkplaceItSecurity.tsx",
+        "src/test/gccOperationsSection.test.ts"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/scope-security.jpg",
+      "filename": "scope-security.jpg",
+      "stem": "scope-security",
+      "ext": ".jpg",
+      "size_kb": 830.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\scope-security.jpg",
+      "matched_in": [
+        "src/pages/services/gcc-operations/WorkplaceItSecurity.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/scope-support.jpg",
+      "filename": "scope-support.jpg",
+      "stem": "scope-support",
+      "ext": ".jpg",
+      "size_kb": 802.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\scope-support.jpg",
+      "matched_in": [
+        "src/pages/services/gcc/SetupLaunch.tsx",
+        "src/pages/services/gcc-operations/WorkplaceItSecurity.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/scope-workspace.jpg",
+      "filename": "scope-workspace.jpg",
+      "stem": "scope-workspace",
+      "ext": ".jpg",
+      "size_kb": 862.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\scope-workspace.jpg",
+      "matched_in": [
+        "src/pages/services/gcc/LocationStrategy.tsx",
+        "src/pages/services/gcc-operations/WorkplaceItSecurity.tsx",
+        "src/test/gccOperationsSection.test.ts"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/workforce-strategy-planning.jpg",
+      "filename": "workforce-strategy-planning.jpg",
+      "stem": "workforce-strategy-planning",
+      "ext": ".jpg",
+      "size_kb": 416.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\workforce-strategy-planning.jpg",
+      "matched_in": [
+        "src/pages/services/ai-talent/AILeadershipSearch.tsx",
+        "src/pages/services/gcc/ModernizationTransformation.tsx",
+        "src/pages/services/gcc/SetupLaunch.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/operating-reality/01-employees.jpg",
+      "filename": "01-employees.jpg",
+      "stem": "01-employees",
+      "ext": ".jpg",
+      "size_kb": 752.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\operating-reality\\01-employees.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingRealitySection.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryPod.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/gcc/ModernizationTransformation.tsx",
+        "src/pages/services/gcc/SetupLaunch.tsx",
+        "src/pages/services/gcc/StrategyBusinessCase.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/operating-reality/02-payroll.jpg",
+      "filename": "02-payroll.jpg",
+      "stem": "02-payroll",
+      "ext": ".jpg",
+      "size_kb": 668.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\operating-reality\\02-payroll.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingRealitySection.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/gcc/SetupLaunch.tsx",
+        "src/pages/services/gcc/StrategyBusinessCase.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/operating-reality/03-benefits.jpg",
+      "filename": "03-benefits.jpg",
+      "stem": "03-benefits",
+      "ext": ".jpg",
+      "size_kb": 606.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\operating-reality\\03-benefits.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingRealitySection.tsx",
+        "src/pages/services/gcc/StrategyBusinessCase.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/operating-reality/04-access.jpg",
+      "filename": "04-access.jpg",
+      "stem": "04-access",
+      "ext": ".jpg",
+      "size_kb": 714.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\operating-reality\\04-access.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingRealitySection.tsx",
+        "src/components/shared/IndustryGccPage.tsx",
+        "src/pages/industries/BfsiGcc.tsx",
+        "src/pages/industries/manufacturing-gcc.tsx",
+        "src/pages/industries/retail-gcc.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryPod.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/gcc/LocationStrategy.tsx",
+        "src/pages/services/gcc/SetupLaunch.tsx",
+        "src/pages/services/gcc/StrategyBusinessCase.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/operating-reality/05-devices.jpg",
+      "filename": "05-devices.jpg",
+      "stem": "05-devices",
+      "ext": ".jpg",
+      "size_kb": 664.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\operating-reality\\05-devices.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingRealitySection.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryPod.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/gcc/LocationStrategy.tsx",
+        "src/pages/services/gcc/ModernizationTransformation.tsx",
+        "src/pages/services/gcc/SetupLaunch.tsx",
+        "src/pages/services/gcc/StrategyBusinessCase.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/operating-reality/06-vendors.jpg",
+      "filename": "06-vendors.jpg",
+      "stem": "06-vendors",
+      "ext": ".jpg",
+      "size_kb": 656.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\operating-reality\\06-vendors.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingRealitySection.tsx",
+        "src/pages/services/gcc/LocationStrategy.tsx",
+        "src/pages/services/gcc/StrategyBusinessCase.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/operating-reality/07-performance.jpg",
+      "filename": "07-performance.jpg",
+      "stem": "07-performance",
+      "ext": ".jpg",
+      "size_kb": 694.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\operating-reality\\07-performance.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingRealitySection.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryPod.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/gcc/LocationStrategy.tsx",
+        "src/pages/services/gcc/StrategyBusinessCase.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/operating-reality/08-reporting.jpg",
+      "filename": "08-reporting.jpg",
+      "stem": "08-reporting",
+      "ext": ".jpg",
+      "size_kb": 654.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\operating-reality\\08-reporting.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingRealitySection.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/ai-talent/AILeadershipSearch.tsx",
+        "src/pages/services/gcc/LocationStrategy.tsx",
+        "src/pages/services/gcc/ModernizationTransformation.tsx",
+        "src/pages/services/gcc/StrategyBusinessCase.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/operating-reality/09-risk.jpg",
+      "filename": "09-risk.jpg",
+      "stem": "09-risk",
+      "ext": ".jpg",
+      "size_kb": 653.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\operating-reality\\09-risk.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingRealitySection.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryPod.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/gcc/LocationStrategy.tsx",
+        "src/pages/services/gcc/SetupLaunch.tsx",
+        "src/pages/services/gcc/StrategyBusinessCase.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/operating-reality/10-hiring.jpg",
+      "filename": "10-hiring.jpg",
+      "stem": "10-hiring",
+      "ext": ".jpg",
+      "size_kb": 752.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\operating-reality\\10-hiring.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingRealitySection.tsx",
+        "src/pages/services/gcc/ModernizationTransformation.tsx",
+        "src/pages/services/gcc/StrategyBusinessCase.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/operating-reality/11-leadership.jpg",
+      "filename": "11-leadership.jpg",
+      "stem": "11-leadership",
+      "ext": ".jpg",
+      "size_kb": 757.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\operating-reality\\11-leadership.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingRealitySection.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryPod.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/ai-talent/AILeadershipSearch.tsx",
+        "src/pages/services/gcc/LocationStrategy.tsx",
+        "src/pages/services/gcc/ModernizationTransformation.tsx",
+        "src/pages/services/gcc/SetupLaunch.tsx",
+        "src/pages/services/gcc/StrategyBusinessCase.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/operating-reality/12-headcount.jpg",
+      "filename": "12-headcount.jpg",
+      "stem": "12-headcount",
+      "ext": ".jpg",
+      "size_kb": 769.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\operating-reality\\12-headcount.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingRealitySection.tsx",
+        "src/pages/services/gcc/StrategyBusinessCase.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/operating-reality/13-mandates.jpg",
+      "filename": "13-mandates.jpg",
+      "stem": "13-mandates",
+      "ext": ".jpg",
+      "size_kb": 705.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\operating-reality\\13-mandates.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingRealitySection.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryPod.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/ai-talent/AILeadershipSearch.tsx",
+        "src/pages/services/gcc/ModernizationTransformation.tsx",
+        "src/pages/services/gcc/SetupLaunch.tsx",
+        "src/pages/services/gcc/StrategyBusinessCase.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/operating-reality/14-bot.jpg",
+      "filename": "14-bot.jpg",
+      "stem": "14-bot",
+      "ext": ".jpg",
+      "size_kb": 736.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\operating-reality\\14-bot.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingRealitySection.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/gcc/LocationStrategy.tsx",
+        "src/pages/services/gcc/StrategyBusinessCase.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/operating-reality/globe.png",
+      "filename": "globe.png",
+      "stem": "globe",
+      "ext": ".png",
+      "size_kb": 1509.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\operating-reality\\globe.png",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingRealitySection.tsx",
+        "src/pages/services/gcc/ModernizationTransformation.tsx",
+        "src/pages/services/gcc/SetupLaunch.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/standards/continuity_building.jpg",
+      "filename": "continuity_building.jpg",
+      "stem": "continuity_building",
+      "ext": ".jpg",
+      "size_kb": 63.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\standards\\continuity_building.jpg",
+      "matched_in": [
+        "src/components/recruitment/RecruitmentRealityCardGrid.tsx",
+        "src/pages/services/gcc/LocationStrategy.tsx",
+        "src/pages/services/gcc/SetupLaunch.tsx",
+        "src/pages/services/gcc-operations/WorkplaceItSecurity.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/standards/data-flows.jpg",
+      "filename": "data-flows.jpg",
+      "stem": "data-flows",
+      "ext": ".jpg",
+      "size_kb": 500.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\standards\\data-flows.jpg",
+      "matched_in": [
+        "src/pages/services/gcc/SetupLaunch.tsx",
+        "src/pages/services/gcc-operations/WorkplaceItSecurity.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/standards/devices.jpg",
+      "filename": "devices.jpg",
+      "stem": "devices",
+      "ext": ".jpg",
+      "size_kb": 521.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\standards\\devices.jpg",
+      "matched_in": [
+        "src/components/gcc-operations/OperatingRealitySection.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryPod.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/gcc/LocationStrategy.tsx",
+        "src/pages/services/gcc/ModernizationTransformation.tsx",
+        "src/pages/services/gcc/SetupLaunch.tsx",
+        "src/pages/services/gcc/StrategyBusinessCase.tsx",
+        "src/pages/services/gcc-operations/WorkplaceItSecurity.tsx",
+        "src/test/gccOperationsSection.test.ts"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/standards/enterprise-network.jpg",
+      "filename": "enterprise-network.jpg",
+      "stem": "enterprise-network",
+      "ext": ".jpg",
+      "size_kb": 629.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\standards\\enterprise-network.jpg",
+      "matched_in": [
+        "src/components/recruitment/RecruitmentRealityCardGrid.tsx",
+        "src/pages/services/gcc-operations/WorkplaceItSecurity.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/standards/evidence-audit.jpg",
+      "filename": "evidence-audit.jpg",
+      "stem": "evidence-audit",
+      "ext": ".jpg",
+      "size_kb": 440.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\standards\\evidence-audit.jpg",
+      "matched_in": [
+        "src/pages/services/ai-talent/AILeadershipSearch.tsx",
+        "src/pages/services/gcc/ModernizationTransformation.tsx",
+        "src/pages/services/gcc/SetupLaunch.tsx",
+        "src/pages/services/gcc-operations/WorkplaceItSecurity.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/standards/identity.jpg",
+      "filename": "identity.jpg",
+      "stem": "identity",
+      "ext": ".jpg",
+      "size_kb": 432.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\standards\\identity.jpg",
+      "matched_in": [
+        "src/pages/services/ai-engineering/AIAgentsAutomation.tsx",
+        "src/pages/services/gcc/SetupLaunch.tsx",
+        "src/pages/services/gcc-operations/WorkplaceItSecurity.tsx",
+        "src/test/gccOperationsSection.test.ts"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-operations/standards/itsm-monitoring.jpg",
+      "filename": "itsm-monitoring.jpg",
+      "stem": "itsm-monitoring",
+      "ext": ".jpg",
+      "size_kb": 698.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\standards\\itsm-monitoring.jpg",
+      "matched_in": [
+        "src/pages/services/gcc/ModernizationTransformation.tsx",
+        "src/pages/services/gcc/SetupLaunch.tsx",
+        "src/pages/services/gcc-operations/WorkplaceItSecurity.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-setup/01-program-management.jpg",
+      "filename": "01-program-management.jpg",
+      "stem": "01-program-management",
+      "ext": ".jpg",
+      "size_kb": 789.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-setup\\01-program-management.jpg",
+      "matched_in": [
+        "src/pages/services/gcc/SetupLaunch.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-setup/02-entity-compliance.jpg",
+      "filename": "02-entity-compliance.jpg",
+      "stem": "02-entity-compliance",
+      "ext": ".jpg",
+      "size_kb": 726.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-setup\\02-entity-compliance.jpg",
+      "matched_in": [
+        "src/components/recruitment/RecruitmentRealityCardGrid.tsx",
+        "src/pages/services/gcc/SetupLaunch.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-setup/03-leadership-talent.jpg",
+      "filename": "03-leadership-talent.jpg",
+      "stem": "03-leadership-talent",
+      "ext": ".jpg",
+      "size_kb": 870.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-setup\\03-leadership-talent.jpg",
+      "matched_in": [
+        "src/pages/services/gcc/SetupLaunch.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-setup/04-workplace.jpg",
+      "filename": "04-workplace.jpg",
+      "stem": "04-workplace",
+      "ext": ".jpg",
+      "size_kb": 862.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-setup\\04-workplace.jpg",
+      "matched_in": [
+        "src/pages/services/gcc/SetupLaunch.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-setup/05-it-security.jpg",
+      "filename": "05-it-security.jpg",
+      "stem": "05-it-security",
+      "ext": ".jpg",
+      "size_kb": 830.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-setup\\05-it-security.jpg",
+      "matched_in": [
+        "src/pages/services/gcc/SetupLaunch.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-setup/06-people-readiness.jpg",
+      "filename": "06-people-readiness.jpg",
+      "stem": "06-people-readiness",
+      "ext": ".jpg",
+      "size_kb": 416.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-setup\\06-people-readiness.jpg",
+      "matched_in": [
+        "src/pages/services/gcc/SetupLaunch.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-setup/07-governance.jpg",
+      "filename": "07-governance.jpg",
+      "stem": "07-governance",
+      "ext": ".jpg",
+      "size_kb": 654.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-setup\\07-governance.jpg",
+      "matched_in": [
+        "src/pages/services/gcc/SetupLaunch.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/gcc-setup/08-go-live.jpg",
+      "filename": "08-go-live.jpg",
+      "stem": "08-go-live",
+      "ext": ".jpg",
+      "size_kb": 729.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-setup\\08-go-live.jpg",
+      "matched_in": [
+        "src/pages/services/gcc/SetupLaunch.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/how_we_work/phase_01_design.jpg",
+      "filename": "phase_01_design.jpg",
+      "stem": "phase_01_design",
+      "ext": ".jpg",
+      "size_kb": 776.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\how_we_work\\phase_01_design.jpg",
+      "matched_in": [
+        "src/components/ai-talent/HiringPathCards.tsx",
+        "src/components/gcc-operations/ManagedModelComparison.tsx",
+        "src/components/gcc-strategy/GccModernizationFramework.tsx",
+        "src/pages/services/AISolutions.tsx",
+        "src/pages/services/gcc/SetupLaunch.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/how_we_work/phase_02_build.jpg",
+      "filename": "phase_02_build.jpg",
+      "stem": "phase_02_build",
+      "ext": ".jpg",
+      "size_kb": 893.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\how_we_work\\phase_02_build.jpg",
+      "matched_in": [
+        "src/components/ai-talent/HiringPathCards.tsx",
+        "src/components/gcc-operations/ManagedModelComparison.tsx",
+        "src/components/gcc-strategy/GccModernizationFramework.tsx",
+        "src/pages/services/AISolutions.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/gcc/LocationStrategy.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/how_we_work/phase_03_operate.jpg",
+      "filename": "phase_03_operate.jpg",
+      "stem": "phase_03_operate",
+      "ext": ".jpg",
+      "size_kb": 946.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\how_we_work\\phase_03_operate.jpg",
+      "matched_in": [
+        "src/components/ai-talent/HiringPathCards.tsx",
+        "src/components/gcc-operations/ManagedModelComparison.tsx",
+        "src/components/gcc-strategy/GccModernizationFramework.tsx",
+        "src/pages/services/AIEngineering.tsx",
+        "src/pages/services/AISolutions.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryPod.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx",
+        "src/pages/services/gcc/StrategyBusinessCase.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/how_we_work/phase_04_scale.jpg",
+      "filename": "phase_04_scale.jpg",
+      "stem": "phase_04_scale",
+      "ext": ".jpg",
+      "size_kb": 957.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\how_we_work\\phase_04_scale.jpg",
+      "matched_in": [
+        "src/components/ai-talent/HiringPathCards.tsx",
+        "src/components/gcc-operations/ManagedModelComparison.tsx",
+        "src/components/gcc-strategy/GccModernizationFramework.tsx",
+        "src/pages/services/AISolutions.tsx",
+        "src/pages/services/ai-delivery-teams/AiDeliveryTeams.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/industries/crisp_fin.png",
+      "filename": "crisp_fin.png",
+      "stem": "crisp_fin",
+      "ext": ".png",
+      "size_kb": 1051.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\industries\\crisp_fin.png",
+      "matched_in": [
+        "src/components/recruitment/RecruitmentRealityCardGrid.tsx",
+        "src/data/microGcc.ts",
+        "src/features/home/components/Industries.tsx",
+        "src/pages/Industries.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/industries/crisp_health.png",
+      "filename": "crisp_health.png",
+      "stem": "crisp_health",
+      "ext": ".png",
+      "size_kb": 1072.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\industries\\crisp_health.png",
+      "matched_in": [
+        "src/components/recruitment/RecruitmentRealityCardGrid.tsx",
+        "src/data/microGcc.ts",
+        "src/features/home/components/Industries.tsx",
+        "src/pages/Industries.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/industries/crisp_mfg.png",
+      "filename": "crisp_mfg.png",
+      "stem": "crisp_mfg",
+      "ext": ".png",
+      "size_kb": 974.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\industries\\crisp_mfg.png",
+      "matched_in": [
+        "src/components/recruitment/RecruitmentRealityCardGrid.tsx",
+        "src/data/microGcc.ts",
+        "src/features/home/components/Industries.tsx",
+        "src/pages/Industries.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/industries/crisp_pe.png",
+      "filename": "crisp_pe.png",
+      "stem": "crisp_pe",
+      "ext": ".png",
+      "size_kb": 210.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\industries\\crisp_pe.png",
+      "matched_in": [
+        "src/components/recruitment/RecruitmentRealityCardGrid.tsx",
+        "src/features/home/components/Industries.tsx",
+        "src/pages/Industries.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/industries/crisp_retail.png",
+      "filename": "crisp_retail.png",
+      "stem": "crisp_retail",
+      "ext": ".png",
+      "size_kb": 1024.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\industries\\crisp_retail.png",
+      "matched_in": [
+        "src/components/recruitment/RecruitmentRealityCardGrid.tsx",
+        "src/features/home/components/Industries.tsx",
+        "src/pages/Industries.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/industries/crisp_saas.png",
+      "filename": "crisp_saas.png",
+      "stem": "crisp_saas",
+      "ext": ".png",
+      "size_kb": 572.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\industries\\crisp_saas.png",
+      "matched_in": [
+        "src/components/recruitment/RecruitmentRealityCardGrid.tsx",
+        "src/features/home/components/Industries.tsx",
+        "src/pages/Industries.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/insights/insight_ai_agents_dev.jpg",
+      "filename": "insight_ai_agents_dev.jpg",
+      "stem": "insight_ai_agents_dev",
+      "ext": ".jpg",
+      "size_kb": 866.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\insights\\insight_ai_agents_dev.jpg",
+      "matched_in": [
+        "src/features/home/components/Insights.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/insights/insight_ai_talent_engine.jpg",
+      "filename": "insight_ai_talent_engine.jpg",
+      "stem": "insight_ai_talent_engine",
+      "ext": ".jpg",
+      "size_kb": 961.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\insights\\insight_ai_talent_engine.jpg",
+      "matched_in": [
+        "src/features/home/components/Insights.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/insights/insight_enterprise_ai.jpg",
+      "filename": "insight_enterprise_ai.jpg",
+      "stem": "insight_enterprise_ai",
+      "ext": ".jpg",
+      "size_kb": 1053.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\insights\\insight_enterprise_ai.jpg",
+      "matched_in": [
+        "src/features/home/components/Insights.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/landing/ai-first-gcc/card-ai.jpg",
+      "filename": "card-ai.jpg",
+      "stem": "card-ai",
+      "ext": ".jpg",
+      "size_kb": 46.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\landing\\ai-first-gcc\\card-ai.jpg",
+      "matched_in": [
+        "src/pages/landing/AiFirstGcc.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/landing/ai-first-gcc/card-micro.jpg",
+      "filename": "card-micro.jpg",
+      "stem": "card-micro",
+      "ext": ".jpg",
+      "size_kb": 85.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\landing\\ai-first-gcc\\card-micro.jpg",
+      "matched_in": [
+        "src/pages/landing/AiFirstGcc.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/landing/ai-first-gcc/card-setup.jpg",
+      "filename": "card-setup.jpg",
+      "stem": "card-setup",
+      "ext": ".jpg",
+      "size_kb": 32.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\landing\\ai-first-gcc\\card-setup.jpg",
+      "matched_in": [
+        "src/pages/landing/AiFirstGcc.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/leadership/karthick-raju.webp",
+      "filename": "karthick-raju.webp",
+      "stem": "karthick-raju",
+      "ext": ".webp",
+      "size_kb": 49.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\leadership\\karthick-raju.webp",
+      "matched_in": [
+        "src/components/landing/india-engineering-squad/leadership.ts"
+      ]
+    },
+    {
+      "rel_path": "images/leadership/muzamil.webp",
+      "filename": "muzamil.webp",
+      "stem": "muzamil",
+      "ext": ".webp",
+      "size_kb": 26.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\leadership\\muzamil.webp",
+      "matched_in": [
+        "src/components/landing/india-engineering-squad/leadership.ts"
+      ]
+    },
+    {
+      "rel_path": "images/leadership/ravi-kiran-v2.webp",
+      "filename": "ravi-kiran-v2.webp",
+      "stem": "ravi-kiran-v2",
+      "ext": ".webp",
+      "size_kb": 59.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\leadership\\ravi-kiran-v2.webp",
+      "matched_in": [
+        "src/components/landing/india-engineering-squad/leadership.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/foundation-01-entity.jpg",
+      "filename": "foundation-01-entity.jpg",
+      "stem": "foundation-01-entity",
+      "ext": ".jpg",
+      "size_kb": 735.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\foundation-01-entity.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/foundation-02-talent.jpg",
+      "filename": "foundation-02-talent.jpg",
+      "stem": "foundation-02-talent",
+      "ext": ".jpg",
+      "size_kb": 682.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\foundation-02-talent.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/foundation-03-workspace.jpg",
+      "filename": "foundation-03-workspace.jpg",
+      "stem": "foundation-03-workspace",
+      "ext": ".jpg",
+      "size_kb": 844.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\foundation-03-workspace.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/foundation-04-payroll.jpg",
+      "filename": "foundation-04-payroll.jpg",
+      "stem": "foundation-04-payroll",
+      "ext": ".jpg",
+      "size_kb": 737.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\foundation-04-payroll.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/foundation-05-tech.jpg",
+      "filename": "foundation-05-tech.jpg",
+      "stem": "foundation-05-tech",
+      "ext": ".jpg",
+      "size_kb": 829.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\foundation-05-tech.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/foundation-06-governance.jpg",
+      "filename": "foundation-06-governance.jpg",
+      "stem": "foundation-06-governance",
+      "ext": ".jpg",
+      "size_kb": 654.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\foundation-06-governance.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/foundation-07-leadership.jpg",
+      "filename": "foundation-07-leadership.jpg",
+      "stem": "foundation-07-leadership",
+      "ext": ".jpg",
+      "size_kb": 737.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\foundation-07-leadership.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/foundation-08-graduate.jpg",
+      "filename": "foundation-08-graduate.jpg",
+      "stem": "foundation-08-graduate",
+      "ext": ".jpg",
+      "size_kb": 1000.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\foundation-08-graduate.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/model-01-owned.jpg",
+      "filename": "model-01-owned.jpg",
+      "stem": "model-01-owned",
+      "ext": ".jpg",
+      "size_kb": 726.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\model-01-owned.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/model-02-coowned.jpg",
+      "filename": "model-02-coowned.jpg",
+      "stem": "model-02-coowned",
+      "ext": ".jpg",
+      "size_kb": 893.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\model-02-coowned.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/model-03-managed.jpg",
+      "filename": "model-03-managed.jpg",
+      "stem": "model-03-managed",
+      "ext": ".jpg",
+      "size_kb": 807.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\model-03-managed.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/phase-01.jpg",
+      "filename": "phase-01.jpg",
+      "stem": "phase-01",
+      "ext": ".jpg",
+      "size_kb": 719.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\phase-01.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/phase-02.jpg",
+      "filename": "phase-02.jpg",
+      "stem": "phase-02",
+      "ext": ".jpg",
+      "size_kb": 807.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\phase-02.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/phase-03.jpg",
+      "filename": "phase-03.jpg",
+      "stem": "phase-03",
+      "ext": ".jpg",
+      "size_kb": 1000.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\phase-03.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/phase-04.jpg",
+      "filename": "phase-04.jpg",
+      "stem": "phase-04",
+      "ext": ".jpg",
+      "size_kb": 844.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\phase-04.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/phase-05.jpg",
+      "filename": "phase-05.jpg",
+      "stem": "phase-05",
+      "ext": ".jpg",
+      "size_kb": 1116.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\phase-05.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/tier-01-single-squad.jpg",
+      "filename": "tier-01-single-squad.jpg",
+      "stem": "tier-01-single-squad",
+      "ext": ".jpg",
+      "size_kb": 852.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\tier-01-single-squad.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/tier-02-twin-squads.jpg",
+      "filename": "tier-02-twin-squads.jpg",
+      "stem": "tier-02-twin-squads",
+      "ext": ".jpg",
+      "size_kb": 828.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\tier-02-twin-squads.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/tier-03-triple-squad.jpg",
+      "filename": "tier-03-triple-squad.jpg",
+      "stem": "tier-03-triple-squad",
+      "ext": ".jpg",
+      "size_kb": 777.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\tier-03-triple-squad.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/tier-04-full-micro-gcc.jpg",
+      "filename": "tier-04-full-micro-gcc.jpg",
+      "stem": "tier-04-full-micro-gcc",
+      "ext": ".jpg",
+      "size_kb": 777.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\tier-04-full-micro-gcc.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/why-01-squad.jpg",
+      "filename": "why-01-squad.jpg",
+      "stem": "why-01-squad",
+      "ext": ".jpg",
+      "size_kb": 807.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\why-01-squad.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/why-02-models.jpg",
+      "filename": "why-02-models.jpg",
+      "stem": "why-02-models",
+      "ext": ".jpg",
+      "size_kb": 743.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\why-02-models.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/why-03-aifirst.jpg",
+      "filename": "why-03-aifirst.jpg",
+      "stem": "why-03-aifirst",
+      "ext": ".jpg",
+      "size_kb": 703.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\why-03-aifirst.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/why-04-leadership.jpg",
+      "filename": "why-04-leadership.jpg",
+      "stem": "why-04-leadership",
+      "ext": ".jpg",
+      "size_kb": 737.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\why-04-leadership.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/why-05-cities.jpg",
+      "filename": "why-05-cities.jpg",
+      "stem": "why-05-cities",
+      "ext": ".jpg",
+      "size_kb": 1116.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\why-05-cities.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/micro-gcc/why-06-graduate.jpg",
+      "filename": "why-06-graduate.jpg",
+      "stem": "why-06-graduate",
+      "ext": ".jpg",
+      "size_kb": 1000.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\micro-gcc\\why-06-graduate.jpg",
+      "matched_in": [
+        "src/data/microGcc.ts"
+      ]
+    },
+    {
+      "rel_path": "images/og/og-about.png",
+      "filename": "og-about.png",
+      "stem": "og-about",
+      "ext": ".png",
+      "size_kb": 77.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\og\\og-about.png",
+      "matched_in": [
+        "src/lib/seo.ts"
+      ]
+    },
+    {
+      "rel_path": "images/og/og-ai-engineering.png",
+      "filename": "og-ai-engineering.png",
+      "stem": "og-ai-engineering",
+      "ext": ".png",
+      "size_kb": 79.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\og\\og-ai-engineering.png",
+      "matched_in": [
+        "src/lib/seo.ts",
+        "src/test/aiEngineeringSection.test.ts"
+      ]
+    },
+    {
+      "rel_path": "images/og/og-ai-gcc.png",
+      "filename": "og-ai-gcc.png",
+      "stem": "og-ai-gcc",
+      "ext": ".png",
+      "size_kb": 78.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\og\\og-ai-gcc.png",
+      "matched_in": [
+        "src/lib/seo.ts"
+      ]
+    },
+    {
+      "rel_path": "images/og/og-blog.png",
+      "filename": "og-blog.png",
+      "stem": "og-blog",
+      "ext": ".png",
+      "size_kb": 79.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\og\\og-blog.png",
+      "matched_in": [
+        "src/lib/seo.ts"
+      ]
+    },
+    {
+      "rel_path": "images/og/og-contact.png",
+      "filename": "og-contact.png",
+      "stem": "og-contact",
+      "ext": ".png",
+      "size_kb": 81.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\og\\og-contact.png",
+      "matched_in": [
+        "src/lib/seo.ts"
+      ]
+    },
+    {
+      "rel_path": "images/og/og-default.png",
+      "filename": "og-default.png",
+      "stem": "og-default",
+      "ext": ".png",
+      "size_kb": 78.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\og\\og-default.png",
+      "matched_in": [
+        "src/lib/seo.ts"
+      ]
+    },
+    {
+      "rel_path": "images/og/og-gcc-operations.png",
+      "filename": "og-gcc-operations.png",
+      "stem": "og-gcc-operations",
+      "ext": ".png",
+      "size_kb": 81.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\og\\og-gcc-operations.png",
+      "matched_in": [
+        "src/lib/seo.ts"
+      ]
+    },
+    {
+      "rel_path": "images/og/og-gcc.png",
+      "filename": "og-gcc.png",
+      "stem": "og-gcc",
+      "ext": ".png",
+      "size_kb": 80.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\og\\og-gcc.png",
+      "matched_in": [
+        "src/lib/seo.ts"
+      ]
+    },
+    {
+      "rel_path": "images/og/og-industries.png",
+      "filename": "og-industries.png",
+      "stem": "og-industries",
+      "ext": ".png",
+      "size_kb": 79.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\og\\og-industries.png",
+      "matched_in": [
+        "src/lib/seo.ts"
+      ]
+    },
+    {
+      "rel_path": "images/og/og-recruitment.png",
+      "filename": "og-recruitment.png",
+      "stem": "og-recruitment",
+      "ext": ".png",
+      "size_kb": 77.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\og\\og-recruitment.png",
+      "matched_in": [
+        "src/lib/seo.ts"
+      ]
+    },
+    {
+      "rel_path": "images/og/og-talent.png",
+      "filename": "og-talent.png",
+      "stem": "og-talent",
+      "ext": ".png",
+      "size_kb": 79.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\og\\og-talent.png",
+      "matched_in": [
+        "src/lib/seo.ts"
+      ]
+    },
+    {
+      "rel_path": "images/tools/decision_cost_calculator.jpg",
+      "filename": "decision_cost_calculator.jpg",
+      "stem": "decision_cost_calculator",
+      "ext": ".jpg",
+      "size_kb": 693.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\tools\\decision_cost_calculator.jpg",
+      "matched_in": [
+        "src/features/home/components/DecisionTools.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/tools/decision_readiness_assessment.jpg",
+      "filename": "decision_readiness_assessment.jpg",
+      "stem": "decision_readiness_assessment",
+      "ext": ".jpg",
+      "size_kb": 718.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\tools\\decision_readiness_assessment.jpg",
+      "matched_in": [
+        "src/features/home/components/DecisionTools.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/tools/decision_roi_estimator.jpg",
+      "filename": "decision_roi_estimator.jpg",
+      "stem": "decision_roi_estimator",
+      "ext": ".jpg",
+      "size_kb": 679.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\tools\\decision_roi_estimator.jpg",
+      "matched_in": [
+        "src/features/home/components/DecisionTools.tsx"
+      ]
+    },
+    {
+      "rel_path": "images/tools/hero_tools_bg.webp",
+      "filename": "hero_tools_bg.webp",
+      "stem": "hero_tools_bg",
+      "ext": ".webp",
+      "size_kb": 414.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\tools\\hero_tools_bg.webp",
+      "matched_in": [
+        "src/pages/Industries.tsx"
+      ]
+    },
+    {
+      "rel_path": "logo/neohirex_logo.png",
+      "filename": "neohirex_logo.png",
+      "stem": "neohirex_logo",
+      "ext": ".png",
+      "size_kb": 42.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\logo\\neohirex_logo.png",
+      "matched_in": [
+        "src/components/navigation/MobileSidebar.tsx",
+        "src/components/navigation/Navbar.tsx"
+      ]
+    },
+    {
+      "rel_path": "logo/neointelli_logo.webp",
+      "filename": "neointelli_logo.webp",
+      "stem": "neointelli_logo",
+      "ext": ".webp",
+      "size_kb": 10.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\logo\\neointelli_logo.webp",
+      "matched_in": [
+        "src/components/landing/LandingNav.tsx",
+        "src/components/landing/india-engineering-squad/LandingHeader.tsx",
+        "src/components/layout/Footer.tsx",
+        "src/components/navigation/MobileSidebar.tsx",
+        "src/components/navigation/Navbar.tsx",
+        "src/components/shared/MinimalChrome.tsx",
+        "src/pages/landing/FinanceProcurementSharedServicesIndia.tsx",
+        "src/pages/landing/HireAiEngineers.tsx",
+        "src/pages/landing/MicroGccIndia.tsx",
+        "src/pages/landing/NewHome.tsx"
+      ]
+    }
+  ],
+  "unused": [
+    {
+      "rel_path": "placeholder.svg",
+      "filename": "placeholder.svg",
+      "stem": "placeholder",
+      "ext": ".svg",
+      "size_kb": 3.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\placeholder.svg"
+    },
+    {
+      "rel_path": "hero/ai-engineering-mobile.webp",
+      "filename": "ai-engineering-mobile.webp",
+      "stem": "ai-engineering-mobile",
+      "ext": ".webp",
+      "size_kb": 233.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\ai-engineering-mobile.webp"
+    },
+    {
+      "rel_path": "hero/Futuristic AI Cityscape Banner.webp",
+      "filename": "Futuristic AI Cityscape Banner.webp",
+      "stem": "Futuristic AI Cityscape Banner",
+      "ext": ".webp",
+      "size_kb": 235.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\Futuristic AI Cityscape Banner.webp"
+    },
+    {
+      "rel_path": "hero/home.webp",
+      "filename": "home.webp",
+      "stem": "home",
+      "ext": ".webp",
+      "size_kb": 193.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\hero\\home.webp"
+    },
+    {
+      "rel_path": "images/cap_ai_delivery_teams.png",
+      "filename": "cap_ai_delivery_teams.png",
+      "stem": "cap_ai_delivery_teams",
+      "ext": ".png",
+      "size_kb": 49.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\cap_ai_delivery_teams.png"
+    },
+    {
+      "rel_path": "images/cap_ai_delivery_teams_2x.png",
+      "filename": "cap_ai_delivery_teams_2x.png",
+      "stem": "cap_ai_delivery_teams_2x",
+      "ext": ".png",
+      "size_kb": 153.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\cap_ai_delivery_teams_2x.png"
+    },
+    {
+      "rel_path": "images/cap_ai_delivery_teams_raw.png",
+      "filename": "cap_ai_delivery_teams_raw.png",
+      "stem": "cap_ai_delivery_teams_raw",
+      "ext": ".png",
+      "size_kb": 59.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\cap_ai_delivery_teams_raw.png"
+    },
+    {
+      "rel_path": "images/cap_ai_engineering.png",
+      "filename": "cap_ai_engineering.png",
+      "stem": "cap_ai_engineering",
+      "ext": ".png",
+      "size_kb": 18.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\cap_ai_engineering.png"
+    },
+    {
+      "rel_path": "images/cap_ai_engineering_2x.png",
+      "filename": "cap_ai_engineering_2x.png",
+      "stem": "cap_ai_engineering_2x",
+      "ext": ".png",
+      "size_kb": 59.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\cap_ai_engineering_2x.png"
+    },
+    {
+      "rel_path": "images/cap_ai_engineering_raw.png",
+      "filename": "cap_ai_engineering_raw.png",
+      "stem": "cap_ai_engineering_raw",
+      "ext": ".png",
+      "size_kb": 54.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\cap_ai_engineering_raw.png"
+    },
+    {
+      "rel_path": "images/cap_ai_gcc.png",
+      "filename": "cap_ai_gcc.png",
+      "stem": "cap_ai_gcc",
+      "ext": ".png",
+      "size_kb": 48.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\cap_ai_gcc.png"
+    },
+    {
+      "rel_path": "images/cap_ai_gcc_2x.png",
+      "filename": "cap_ai_gcc_2x.png",
+      "stem": "cap_ai_gcc_2x",
+      "ext": ".png",
+      "size_kb": 156.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\cap_ai_gcc_2x.png"
+    },
+    {
+      "rel_path": "images/cap_ai_gcc_raw.png",
+      "filename": "cap_ai_gcc_raw.png",
+      "stem": "cap_ai_gcc_raw",
+      "ext": ".png",
+      "size_kb": 59.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\cap_ai_gcc_raw.png"
+    },
+    {
+      "rel_path": "images/cap_ai_talent.png",
+      "filename": "cap_ai_talent.png",
+      "stem": "cap_ai_talent",
+      "ext": ".png",
+      "size_kb": 41.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\cap_ai_talent.png"
+    },
+    {
+      "rel_path": "images/cap_ai_talent_2x.png",
+      "filename": "cap_ai_talent_2x.png",
+      "stem": "cap_ai_talent_2x",
+      "ext": ".png",
+      "size_kb": 133.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\cap_ai_talent_2x.png"
+    },
+    {
+      "rel_path": "images/cap_ai_talent_raw.png",
+      "filename": "cap_ai_talent_raw.png",
+      "stem": "cap_ai_talent_raw",
+      "ext": ".png",
+      "size_kb": 55.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\cap_ai_talent_raw.png"
+    },
+    {
+      "rel_path": "images/cap_gcc_operations.png",
+      "filename": "cap_gcc_operations.png",
+      "stem": "cap_gcc_operations",
+      "ext": ".png",
+      "size_kb": 51.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\cap_gcc_operations.png"
+    },
+    {
+      "rel_path": "images/cap_gcc_operations_2x.png",
+      "filename": "cap_gcc_operations_2x.png",
+      "stem": "cap_gcc_operations_2x",
+      "ext": ".png",
+      "size_kb": 158.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\cap_gcc_operations_2x.png"
+    },
+    {
+      "rel_path": "images/cap_gcc_operations_raw.png",
+      "filename": "cap_gcc_operations_raw.png",
+      "stem": "cap_gcc_operations_raw",
+      "ext": ".png",
+      "size_kb": 55.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\cap_gcc_operations_raw.png"
+    },
+    {
+      "rel_path": "images/cap_gcc_strategy_setup.png",
+      "filename": "cap_gcc_strategy_setup.png",
+      "stem": "cap_gcc_strategy_setup",
+      "ext": ".png",
+      "size_kb": 53.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\cap_gcc_strategy_setup.png"
+    },
+    {
+      "rel_path": "images/cap_gcc_strategy_setup_2x.png",
+      "filename": "cap_gcc_strategy_setup_2x.png",
+      "stem": "cap_gcc_strategy_setup_2x",
+      "ext": ".png",
+      "size_kb": 170.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\cap_gcc_strategy_setup_2x.png"
+    },
+    {
+      "rel_path": "images/cap_gcc_strategy_setup_raw.png",
+      "filename": "cap_gcc_strategy_setup_raw.png",
+      "stem": "cap_gcc_strategy_setup_raw",
+      "ext": ".png",
+      "size_kb": 58.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\cap_gcc_strategy_setup_raw.png"
+    },
+    {
+      "rel_path": "images/engagement_wave_bg.png",
+      "filename": "engagement_wave_bg.png",
+      "stem": "engagement_wave_bg",
+      "ext": ".png",
+      "size_kb": 41.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\engagement_wave_bg.png"
+    },
+    {
+      "rel_path": "images/enterprise_modern.jpg",
+      "filename": "enterprise_modern.jpg",
+      "stem": "enterprise_modern",
+      "ext": ".jpg",
+      "size_kb": 240.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\enterprise_modern.jpg"
+    },
+    {
+      "rel_path": "images/neointelli-logo-white.svg",
+      "filename": "neointelli-logo-white.svg",
+      "stem": "neointelli-logo-white",
+      "ext": ".svg",
+      "size_kb": 1.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\neointelli-logo-white.svg"
+    },
+    {
+      "rel_path": "images/product_roadmap.jpg",
+      "filename": "product_roadmap.jpg",
+      "stem": "product_roadmap",
+      "ext": ".jpg",
+      "size_kb": 183.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\product_roadmap.jpg"
+    },
+    {
+      "rel_path": "images/Saas_Ai.jpg",
+      "filename": "Saas_Ai.jpg",
+      "stem": "Saas_Ai",
+      "ext": ".jpg",
+      "size_kb": 136.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\Saas_Ai.jpg"
+    },
+    {
+      "rel_path": "images/test_alpha_row0.png",
+      "filename": "test_alpha_row0.png",
+      "stem": "test_alpha_row0",
+      "ext": ".png",
+      "size_kb": 62.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\test_alpha_row0.png"
+    },
+    {
+      "rel_path": "images/test_alpha_row2.png",
+      "filename": "test_alpha_row2.png",
+      "stem": "test_alpha_row2",
+      "ext": ".png",
+      "size_kb": 51.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\test_alpha_row2.png"
+    },
+    {
+      "rel_path": "images/test_crop_0.png",
+      "filename": "test_crop_0.png",
+      "stem": "test_crop_0",
+      "ext": ".png",
+      "size_kb": 57.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\test_crop_0.png"
+    },
+    {
+      "rel_path": "images/test_crop_0_rembg.png",
+      "filename": "test_crop_0_rembg.png",
+      "stem": "test_crop_0_rembg",
+      "ext": ".png",
+      "size_kb": 48.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\test_crop_0_rembg.png"
+    },
+    {
+      "rel_path": "images/test_crop_1.png",
+      "filename": "test_crop_1.png",
+      "stem": "test_crop_1",
+      "ext": ".png",
+      "size_kb": 53.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\test_crop_1.png"
+    },
+    {
+      "rel_path": "images/test_crop_2.png",
+      "filename": "test_crop_2.png",
+      "stem": "test_crop_2",
+      "ext": ".png",
+      "size_kb": 52.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\test_crop_2.png"
+    },
+    {
+      "rel_path": "images/test_crop_3.png",
+      "filename": "test_crop_3.png",
+      "stem": "test_crop_3",
+      "ext": ".png",
+      "size_kb": 56.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\test_crop_3.png"
+    },
+    {
+      "rel_path": "images/test_crop_4.png",
+      "filename": "test_crop_4.png",
+      "stem": "test_crop_4",
+      "ext": ".png",
+      "size_kb": 56.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\test_crop_4.png"
+    },
+    {
+      "rel_path": "images/test_crop_5.png",
+      "filename": "test_crop_5.png",
+      "stem": "test_crop_5",
+      "ext": ".png",
+      "size_kb": 53.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\test_crop_5.png"
+    },
+    {
+      "rel_path": "images/ai-delivery-teams/metrics/01-lead-time.webp",
+      "filename": "01-lead-time.webp",
+      "stem": "01-lead-time",
+      "ext": ".webp",
+      "size_kb": 97.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-delivery-teams\\metrics\\01-lead-time.webp"
+    },
+    {
+      "rel_path": "images/ai-delivery-teams/metrics/02-accepted-releases.webp",
+      "filename": "02-accepted-releases.webp",
+      "stem": "02-accepted-releases",
+      "ext": ".webp",
+      "size_kb": 85.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-delivery-teams\\metrics\\02-accepted-releases.webp"
+    },
+    {
+      "rel_path": "images/ai-delivery-teams/metrics/03-deployment-frequency.webp",
+      "filename": "03-deployment-frequency.webp",
+      "stem": "03-deployment-frequency",
+      "ext": ".webp",
+      "size_kb": 135.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-delivery-teams\\metrics\\03-deployment-frequency.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/agentic-systems-capability.webp",
+      "filename": "agentic-systems-capability.webp",
+      "stem": "agentic-systems-capability",
+      "ext": ".webp",
+      "size_kb": 147.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\agentic-systems-capability.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/applied-ml-capability.webp",
+      "filename": "applied-ml-capability.webp",
+      "stem": "applied-ml-capability",
+      "ext": ".webp",
+      "size_kb": 121.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\applied-ml-capability.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/compute-economics-gap.webp",
+      "filename": "compute-economics-gap.webp",
+      "stem": "compute-economics-gap",
+      "ext": ".webp",
+      "size_kb": 86.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\compute-economics-gap.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/data-engineering-capability.webp",
+      "filename": "data-engineering-capability.webp",
+      "stem": "data-engineering-capability",
+      "ext": ".webp",
+      "size_kb": 109.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\data-engineering-capability.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/evaluation-assurance-capability.webp",
+      "filename": "evaluation-assurance-capability.webp",
+      "stem": "evaluation-assurance-capability",
+      "ext": ".webp",
+      "size_kb": 106.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\evaluation-assurance-capability.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/genai-capability.webp",
+      "filename": "genai-capability.webp",
+      "stem": "genai-capability",
+      "ext": ".webp",
+      "size_kb": 169.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\genai-capability.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/journey-start-idea.webp",
+      "filename": "journey-start-idea.webp",
+      "stem": "journey-start-idea",
+      "ext": ".webp",
+      "size_kb": 73.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\journey-start-idea.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/journey-start-prototype.webp",
+      "filename": "journey-start-prototype.webp",
+      "stem": "journey-start-prototype",
+      "ext": ".webp",
+      "size_kb": 114.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\journey-start-prototype.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/mlops-platform-capability.webp",
+      "filename": "mlops-platform-capability.webp",
+      "stem": "mlops-platform-capability",
+      "ext": ".webp",
+      "size_kb": 121.4,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\mlops-platform-capability.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/product-engineering-capability.webp",
+      "filename": "product-engineering-capability.webp",
+      "stem": "product-engineering-capability",
+      "ext": ".webp",
+      "size_kb": 55.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\product-engineering-capability.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/production-observability-gap.webp",
+      "filename": "production-observability-gap.webp",
+      "stem": "production-observability-gap",
+      "ext": ".webp",
+      "size_kb": 87.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\production-observability-gap.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/workflow-integration-gap.webp",
+      "filename": "workflow-integration-gap.webp",
+      "stem": "workflow-integration-gap",
+      "ext": ".webp",
+      "size_kb": 83.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\workflow-integration-gap.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/agents/agent-architecture.webp",
+      "filename": "agent-architecture.webp",
+      "stem": "agent-architecture",
+      "ext": ".webp",
+      "size_kb": 151.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\agents\\agent-architecture.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/agents/evaluation-simulation.webp",
+      "filename": "evaluation-simulation.webp",
+      "stem": "evaluation-simulation",
+      "ext": ".webp",
+      "size_kb": 99.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\agents\\evaluation-simulation.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/agents/human-in-the-loop.webp",
+      "filename": "human-in-the-loop.webp",
+      "stem": "human-in-the-loop",
+      "ext": ".webp",
+      "size_kb": 93.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\agents\\human-in-the-loop.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/agents/monitoring-agentops.webp",
+      "filename": "monitoring-agentops.webp",
+      "stem": "monitoring-agentops",
+      "ext": ".webp",
+      "size_kb": 117.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\agents\\monitoring-agentops.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/agents/permission-identity.webp",
+      "filename": "permission-identity.webp",
+      "stem": "permission-identity",
+      "ext": ".webp",
+      "size_kb": 114.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\agents\\permission-identity.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/agents/rpa-migration.webp",
+      "filename": "rpa-migration.webp",
+      "stem": "rpa-migration",
+      "ext": ".webp",
+      "size_kb": 94.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\agents\\rpa-migration.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/agents/tool-integration.webp",
+      "filename": "tool-integration.webp",
+      "stem": "tool-integration",
+      "ext": ".webp",
+      "size_kb": 115.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\agents\\tool-integration.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/agents/workflow-discovery.webp",
+      "filename": "workflow-discovery.webp",
+      "stem": "workflow-discovery",
+      "ext": ".webp",
+      "size_kb": 89.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\agents\\workflow-discovery.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/evaluation/automated-eval.webp",
+      "filename": "automated-eval.webp",
+      "stem": "automated-eval",
+      "ext": ".webp",
+      "size_kb": 106.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\evaluation\\automated-eval.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/evaluation/business-criteria.webp",
+      "filename": "business-criteria.webp",
+      "stem": "business-criteria",
+      "ext": ".webp",
+      "size_kb": 84.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\evaluation\\business-criteria.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/evaluation/continuous-eval.webp",
+      "filename": "continuous-eval.webp",
+      "stem": "continuous-eval",
+      "ext": ".webp",
+      "size_kb": 83.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\evaluation\\continuous-eval.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/evaluation/datasets.webp",
+      "filename": "datasets.webp",
+      "stem": "datasets",
+      "ext": ".webp",
+      "size_kb": 35.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\evaluation\\datasets.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/evaluation/human-baselines.webp",
+      "filename": "human-baselines.webp",
+      "stem": "human-baselines",
+      "ext": ".webp",
+      "size_kb": 73.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\evaluation\\human-baselines.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/evaluation/production-feedback.webp",
+      "filename": "production-feedback.webp",
+      "stem": "production-feedback",
+      "ext": ".webp",
+      "size_kb": 87.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\evaluation\\production-feedback.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/evaluation/rubrics.webp",
+      "filename": "rubrics.webp",
+      "stem": "rubrics",
+      "ext": ".webp",
+      "size_kb": 23.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\evaluation\\rubrics.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/ops/model-drift.webp",
+      "filename": "model-drift.webp",
+      "stem": "model-drift",
+      "ext": ".webp",
+      "size_kb": 158.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\ops\\model-drift.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/ops/prompt-regression.webp",
+      "filename": "prompt-regression.webp",
+      "stem": "prompt-regression",
+      "ext": ".webp",
+      "size_kb": 131.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\ops\\prompt-regression.webp"
+    },
+    {
+      "rel_path": "images/ai-engineering/ops/untraceable-agent.webp",
+      "filename": "untraceable-agent.webp",
+      "stem": "untraceable-agent",
+      "ext": ".webp",
+      "size_kb": 110.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-engineering\\ops\\untraceable-agent.webp"
+    },
+    {
+      "rel_path": "images/ai-gcc/advisory/ai-maturity-assessment.webp",
+      "filename": "ai-maturity-assessment.webp",
+      "stem": "ai-maturity-assessment",
+      "ext": ".webp",
+      "size_kb": 91.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-gcc\\advisory\\ai-maturity-assessment.webp"
+    },
+    {
+      "rel_path": "images/ai-gcc/advisory/gcc-mandate.webp",
+      "filename": "gcc-mandate.webp",
+      "stem": "gcc-mandate",
+      "ext": ".webp",
+      "size_kb": 101.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-gcc\\advisory\\gcc-mandate.webp"
+    },
+    {
+      "rel_path": "images/ai-gcc/advisory/platform-compute-direction.webp",
+      "filename": "platform-compute-direction.webp",
+      "stem": "platform-compute-direction",
+      "ext": ".webp",
+      "size_kb": 246.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-gcc\\advisory\\platform-compute-direction.webp"
+    },
+    {
+      "rel_path": "images/ai-gcc/advisory/responsible-ai.webp",
+      "filename": "responsible-ai.webp",
+      "stem": "responsible-ai",
+      "ext": ".webp",
+      "size_kb": 97.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-gcc\\advisory\\responsible-ai.webp"
+    },
+    {
+      "rel_path": "images/ai-gcc/advisory/talent-architecture.webp",
+      "filename": "talent-architecture.webp",
+      "stem": "talent-architecture",
+      "ext": ".webp",
+      "size_kb": 107.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-gcc\\advisory\\talent-architecture.webp"
+    },
+    {
+      "rel_path": "images/ai-gcc/advisory/target-operating-model.webp",
+      "filename": "target-operating-model.webp",
+      "stem": "target-operating-model",
+      "ext": ".webp",
+      "size_kb": 136.5,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-gcc\\advisory\\target-operating-model.webp"
+    },
+    {
+      "rel_path": "images/ai-gcc/advisory/use-case-portfolio.webp",
+      "filename": "use-case-portfolio.webp",
+      "stem": "use-case-portfolio",
+      "ext": ".webp",
+      "size_kb": 127.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-gcc\\advisory\\use-case-portfolio.webp"
+    },
+    {
+      "rel_path": "images/ai-gcc/advisory/value-roadmap.webp",
+      "filename": "value-roadmap.webp",
+      "stem": "value-roadmap",
+      "ext": ".webp",
+      "size_kb": 155.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-gcc\\advisory\\value-roadmap.webp"
+    },
+    {
+      "rel_path": "images/ai-talent/shortlist-review-desk.jpg",
+      "filename": "shortlist-review-desk.jpg",
+      "stem": "shortlist-review-desk",
+      "ext": ".jpg",
+      "size_kb": 678.1,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\ai-talent\\shortlist-review-desk.jpg"
+    },
+    {
+      "rel_path": "images/capabilities/cap_row_ai_delivery_teams.png",
+      "filename": "cap_row_ai_delivery_teams.png",
+      "stem": "cap_row_ai_delivery_teams",
+      "ext": ".png",
+      "size_kb": 59.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\capabilities\\cap_row_ai_delivery_teams.png"
+    },
+    {
+      "rel_path": "images/capabilities/cap_row_ai_delivery_teams_2x.png",
+      "filename": "cap_row_ai_delivery_teams_2x.png",
+      "stem": "cap_row_ai_delivery_teams_2x",
+      "ext": ".png",
+      "size_kb": 174.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\capabilities\\cap_row_ai_delivery_teams_2x.png"
+    },
+    {
+      "rel_path": "images/capabilities/cap_row_ai_engineering.png",
+      "filename": "cap_row_ai_engineering.png",
+      "stem": "cap_row_ai_engineering",
+      "ext": ".png",
+      "size_kb": 51.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\capabilities\\cap_row_ai_engineering.png"
+    },
+    {
+      "rel_path": "images/capabilities/cap_row_ai_engineering_2x.png",
+      "filename": "cap_row_ai_engineering_2x.png",
+      "stem": "cap_row_ai_engineering_2x",
+      "ext": ".png",
+      "size_kb": 151.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\capabilities\\cap_row_ai_engineering_2x.png"
+    },
+    {
+      "rel_path": "images/capabilities/cap_row_ai_gcc.png",
+      "filename": "cap_row_ai_gcc.png",
+      "stem": "cap_row_ai_gcc",
+      "ext": ".png",
+      "size_kb": 61.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\capabilities\\cap_row_ai_gcc.png"
+    },
+    {
+      "rel_path": "images/capabilities/cap_row_ai_gcc_2x.png",
+      "filename": "cap_row_ai_gcc_2x.png",
+      "stem": "cap_row_ai_gcc_2x",
+      "ext": ".png",
+      "size_kb": 178.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\capabilities\\cap_row_ai_gcc_2x.png"
+    },
+    {
+      "rel_path": "images/capabilities/cap_row_ai_talent.png",
+      "filename": "cap_row_ai_talent.png",
+      "stem": "cap_row_ai_talent",
+      "ext": ".png",
+      "size_kb": 54.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\capabilities\\cap_row_ai_talent.png"
+    },
+    {
+      "rel_path": "images/capabilities/cap_row_ai_talent_2x.png",
+      "filename": "cap_row_ai_talent_2x.png",
+      "stem": "cap_row_ai_talent_2x",
+      "ext": ".png",
+      "size_kb": 161.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\capabilities\\cap_row_ai_talent_2x.png"
+    },
+    {
+      "rel_path": "images/capabilities/cap_row_gcc_operations.png",
+      "filename": "cap_row_gcc_operations.png",
+      "stem": "cap_row_gcc_operations",
+      "ext": ".png",
+      "size_kb": 69.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\capabilities\\cap_row_gcc_operations.png"
+    },
+    {
+      "rel_path": "images/capabilities/cap_row_gcc_operations_2x.png",
+      "filename": "cap_row_gcc_operations_2x.png",
+      "stem": "cap_row_gcc_operations_2x",
+      "ext": ".png",
+      "size_kb": 214.9,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\capabilities\\cap_row_gcc_operations_2x.png"
+    },
+    {
+      "rel_path": "images/capabilities/cap_row_gcc_strategy_setup.png",
+      "filename": "cap_row_gcc_strategy_setup.png",
+      "stem": "cap_row_gcc_strategy_setup",
+      "ext": ".png",
+      "size_kb": 60.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\capabilities\\cap_row_gcc_strategy_setup.png"
+    },
+    {
+      "rel_path": "images/capabilities/cap_row_gcc_strategy_setup_2x.png",
+      "filename": "cap_row_gcc_strategy_setup_2x.png",
+      "stem": "cap_row_gcc_strategy_setup_2x",
+      "ext": ".png",
+      "size_kb": 184.2,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\capabilities\\cap_row_gcc_strategy_setup_2x.png"
+    },
+    {
+      "rel_path": "images/gcc-operations/ai-people-operations-white.jpg",
+      "filename": "ai-people-operations-white.jpg",
+      "stem": "ai-people-operations-white",
+      "ext": ".jpg",
+      "size_kb": 496.0,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\ai-people-operations-white.jpg"
+    },
+    {
+      "rel_path": "images/gcc-operations/hero-mobile-bg.jpg",
+      "filename": "hero-mobile-bg.jpg",
+      "stem": "hero-mobile-bg",
+      "ext": ".jpg",
+      "size_kb": 726.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\hero-mobile-bg.jpg"
+    },
+    {
+      "rel_path": "images/gcc-operations/neohirex-recruitment-white.jpg",
+      "filename": "neohirex-recruitment-white.jpg",
+      "stem": "neohirex-recruitment-white",
+      "ext": ".jpg",
+      "size_kb": 423.7,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\neohirex-recruitment-white.jpg"
+    },
+    {
+      "rel_path": "images/gcc-operations/workforce-ai-talent.jpg",
+      "filename": "workforce-ai-talent.jpg",
+      "stem": "workforce-ai-talent",
+      "ext": ".jpg",
+      "size_kb": 457.3,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\images\\gcc-operations\\workforce-ai-talent.jpg"
+    },
+    {
+      "rel_path": "logo/neohirex-logo.86a77699.webp",
+      "filename": "neohirex-logo.86a77699.webp",
+      "stem": "neohirex-logo.86a77699",
+      "ext": ".webp",
+      "size_kb": 14.8,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\logo\\neohirex-logo.86a77699.webp"
+    },
+    {
+      "rel_path": "logo/neohirex_logo.webp",
+      "filename": "neohirex_logo.webp",
+      "stem": "neohirex_logo",
+      "ext": ".webp",
+      "size_kb": 13.6,
+      "full_path": "c:\\Users\\Mohammed Asif\\Desktop\\Neointelli-og\\public\\logo\\neohirex_logo.webp"
+    }
+  ]
+}

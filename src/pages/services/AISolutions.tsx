@@ -125,7 +125,7 @@ const BUYER_PATHS = [
     includes: ["First AI squad", "Managed or co-owned launch", "Hiring + HR + infrastructure", "Path to captive"],
     cta: { label: "Explore AI Micro GCC", href: AI_GCC_CONTEXT_LINKS.microGcc.path },
     highlight: true,
-    image: "/images/solution_micro_gcc.jpg",
+    image: "/images/solution_micro_gcc.webp",
     alt: "AI Micro GCC engineering squad collaborating in modern tech office",
     badge: "WAY 01",
     aspect: "aspect-[4/3]",
@@ -136,7 +136,7 @@ const BUYER_PATHS = [
     bestFor: ["Enterprises launching a first India center", "Groups adding an AI capability center to an existing footprint"],
     includes: ["Business case", "Mandate", "Entity", "Leadership", "Talent", "AI/data platform", "Governance", "Scale"],
     cta: { label: "Plan a New AI GCC", href: booking("Plan a New AI GCC") },
-    image: "/images/mosaic_ai_gcc.jpg",
+    image: "/images/mosaic_ai_gcc.webp",
     alt: "Global AI Capability Center enterprise strategic setup",
     badge: "WAY 02",
     aspect: "aspect-[16/10]",
@@ -147,7 +147,7 @@ const BUYER_PATHS = [
     bestFor: ["GCCs with pilots that never reached production", "Centers asked to own an enterprise AI mandate"],
     includes: ["AI maturity", "AI value realization", "Process redesign", "Talent transformation", "Platform modernization", "AgentOps", "Governance"],
     cta: { label: "Transform My Existing GCC", href: booking("Transform My Existing GCC", "AI GCC Transformation") },
-    image: "/images/gcc_modernization.jpg",
+    image: "/images/gcc_modernization.webp",
     alt: "Transforming an existing GCC for enterprise AI operations",
     badge: "WAY 03",
     aspect: "aspect-[4/3]",
@@ -182,21 +182,21 @@ const INFRA = [
     title: "Development",
     desc: "AI developer environments, model and API access, vector infrastructure and experiment tracking.",
     items: ["AI developer environments", "Model and API access", "Vector infrastructure", "Experiment tracking"],
-    image: "/images/gcc-operations/gcc-ops-workplace.jpg",
+    image: "/images/gcc-operations/gcc-ops-workplace.webp",
     imageAlt: "AI development infrastructure and developer environments",
   },
   {
     title: "Training",
     desc: "GPU capacity planning, fine-tuning infrastructure, storage pipelines and model checkpoint management.",
     items: ["GPU capacity planning", "Training and fine-tuning", "Storage", "Pipelines", "Model and checkpoint management"],
-    image: "/images/gcc-operations/gcc-ops-performance.jpg",
+    image: "/images/gcc-operations/gcc-ops-performance.webp",
     imageAlt: "GPU compute cluster training and fine-tuning infrastructure",
   },
   {
     title: "Production",
     desc: "Inference pipelines, autoscaling, model gateways, production observability, security and AI FinOps.",
     items: ["Inference", "Autoscaling", "Model gateways", "Observability", "Security", "AI FinOps"],
-    image: "/images/gcc-operations/gcc-ops-card.jpg",
+    image: "/images/gcc-operations/gcc-ops-card.webp",
     imageAlt: "Production AI inference and MLOps deployment command center",
   },
 ];
@@ -212,7 +212,7 @@ const OWNERSHIP = [
       "Work Product Stays Yours",
       "Zero Local Admin Overhead",
     ],
-    image: "/images/how_we_work/phase_03_operate.jpg",
+    image: "/images/how_we_work/phase_03_operate.webp",
     imageAlt: "Managed GCC operations and dedicated India engineering workspace",
   },
   {
@@ -225,7 +225,7 @@ const OWNERSHIP = [
       "Coordinated EOR Framework",
       "Seamless Transition Later",
     ],
-    image: "/images/how_we_work/phase_01_design.jpg",
+    image: "/images/how_we_work/phase_01_design.webp",
     imageAlt: "EOR-first employment and onboarding setup session",
   },
   {
@@ -238,7 +238,7 @@ const OWNERSHIP = [
       "Staged Asset & Process Transfer",
       "Zero Proprietary Lock-In",
     ],
-    image: "/images/how_we_work/phase_02_build.jpg",
+    image: "/images/how_we_work/phase_02_build.webp",
     imageAlt: "Build-Operate-Transfer engineering and milestone transition",
   },
   {
@@ -251,7 +251,7 @@ const OWNERSHIP = [
       "Client Leadership Driven",
       "Full Strategic Autonomy",
     ],
-    image: "/images/how_we_work/phase_04_scale.jpg",
+    image: "/images/how_we_work/phase_04_scale.webp",
     imageAlt: "100% Captive enterprise headquarters and global capability expansion",
   },
 ];
@@ -587,7 +587,7 @@ export default function AISolutions() {
               <div className="flex items-center gap-3 mb-4">
                 <div className="inline-flex items-center px-3.5 py-1.5 rounded-xl bg-white shadow-md border border-white/90 transition-all">
                   <img
-                    src="/images/neohirex-logo.png"
+                    src="/images/neohirex-logo.webp"
                     alt="NeoHireX"
                     className="h-7 sm:h-8 w-auto object-contain"
                   />

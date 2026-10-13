@@ -39,7 +39,7 @@ const workstreams: Array<{ id?: string; title: string; lead: string; image: stri
   {
     title: "Program management",
     lead: "One plan, one owner.",
-    image: "/images/gcc-setup/01-program-management.jpg",
+    image: "/images/gcc-setup/01-program-management.webp",
     items: [
       "Integrated plan across every workstream",
       "Dependencies mapped and re-checked weekly",
@@ -51,7 +51,7 @@ const workstreams: Array<{ id?: string; title: string; lead: string; image: stri
   {
     title: "Entity & compliance coordination",
     lead: "Coordinated, not improvised.",
-    image: "/images/gcc-setup/02-entity-compliance.jpg",
+    image: "/images/gcc-setup/02-entity-compliance.webp",
     items: [
       "Entity route and setup coordination",
       "Statutory registrations and the compliance calendar",
@@ -64,7 +64,7 @@ const workstreams: Array<{ id?: string; title: string; lead: string; image: stri
     id: "leadership-talent",
     title: "Leadership & talent mobilization",
     lead: "Leaders first, then the cohort.",
-    image: "/images/gcc-setup/03-leadership-talent.jpg",
+    image: "/images/gcc-setup/03-leadership-talent.webp",
     items: [
       "Center head and function-lead search",
       "Role design for the initial workforce",
@@ -76,7 +76,7 @@ const workstreams: Array<{ id?: string; title: string; lead: string; image: stri
   {
     title: "Workplace",
     lead: "Space that fits the year, not the decade.",
-    image: "/images/gcc-setup/04-workplace.jpg",
+    image: "/images/gcc-setup/04-workplace.webp",
     items: [
       "Office strategy: managed space first, longer commitments later",
       "Workspace selection and contracting",
@@ -87,7 +87,7 @@ const workstreams: Array<{ id?: string; title: string; lead: string; image: stri
   {
     title: "IT & security",
     lead: "Same standards as headquarters.",
-    image: "/images/gcc-setup/05-it-security.jpg",
+    image: "/images/gcc-setup/05-it-security.webp",
     items: [
       "Identity and access",
       "Devices and endpoint management",
@@ -99,7 +99,7 @@ const workstreams: Array<{ id?: string; title: string; lead: string; image: stri
   {
     title: "People readiness",
     lead: "Ready before the first offer.",
-    image: "/images/gcc-setup/06-people-readiness.jpg",
+    image: "/images/gcc-setup/06-people-readiness.webp",
     items: [
       "Employment workflows",
       "Payroll readiness",
@@ -111,7 +111,7 @@ const workstreams: Array<{ id?: string; title: string; lead: string; image: stri
   {
     title: "Governance",
     lead: "Decided, written, practised.",
-    image: "/images/gcc-setup/07-governance.jpg",
+    image: "/images/gcc-setup/07-governance.webp",
     items: [
       "Decision rights between headquarters and India",
       "Reporting lines and dashboards",
@@ -122,7 +122,7 @@ const workstreams: Array<{ id?: string; title: string; lead: string; image: stri
   {
     title: "Go-live",
     lead: "First employees, first mandate.",
-    image: "/images/gcc-setup/08-go-live.jpg",
+    image: "/images/gcc-setup/08-go-live.webp",
     items: [
       "Readiness checklist signed off",
       "First employees start against a defined objective",
@@ -137,79 +137,79 @@ const dayOne = [
   {
     title: "Employment setup",
     desc: "Contract signed, statutory enrolments in motion.",
-    image: "/images/gcc-operations/operating-reality/01-employees.jpg",
+    image: "/images/gcc-operations/operating-reality/01-employees.webp",
     icon: FileText,
   },
   {
     title: "Payroll process",
     desc: "The first pay run is scheduled and tested, not assumed.",
-    image: "/images/gcc-operations/operating-reality/02-payroll.jpg",
+    image: "/images/gcc-operations/operating-reality/02-payroll.webp",
     icon: CreditCard,
   },
   {
     title: "Workspace and access",
     desc: "A desk, a badge and a way in on day one.",
-    image: "/images/gcc-operations/operating-reality/04-access.jpg",
+    image: "/images/gcc-operations/operating-reality/04-access.webp",
     icon: Building2,
   },
   {
     title: "Device",
     desc: "Configured, enrolled and shipped before the start date.",
-    image: "/images/gcc-operations/operating-reality/05-devices.jpg",
+    image: "/images/gcc-operations/operating-reality/05-devices.webp",
     icon: Laptop,
   },
   {
     title: "Identity",
     desc: "Accounts, groups and licences provisioned.",
-    image: "/images/gcc-operations/standards/identity.jpg",
+    image: "/images/gcc-operations/standards/identity.webp",
     icon: UserCheck,
   },
   {
     title: "Security",
     desc: "Baseline applied; exceptions approved in advance.",
-    image: "/images/gcc-operations/operating-reality/09-risk.jpg",
+    image: "/images/gcc-operations/operating-reality/09-risk.webp",
     icon: ShieldCheck,
   },
   {
     title: "Policies",
     desc: "Acknowledged in onboarding, not discovered later.",
-    image: "/images/gcc-operations/standards/evidence-audit.jpg",
+    image: "/images/gcc-operations/standards/evidence-audit.webp",
     icon: BookOpen,
   },
   {
     title: "Manager",
     desc: "Named, briefed and available in the first week.",
-    image: "/images/gcc-operations/operating-reality/11-leadership.jpg",
+    image: "/images/gcc-operations/operating-reality/11-leadership.webp",
     icon: Briefcase,
   },
   {
     title: "Role",
     desc: "A written role with a scope the manager agrees with.",
-    image: "/images/gcc-operations/workforce-strategy-planning.jpg",
+    image: "/images/gcc-operations/workforce-strategy-planning.webp",
     icon: Target,
   },
   {
     title: "Data and system access",
     desc: "Requested and approved against the role, not after the first blocker.",
-    image: "/images/gcc-operations/standards/data-flows.jpg",
+    image: "/images/gcc-operations/standards/data-flows.webp",
     icon: Database,
   },
   {
     title: "Support route",
     desc: "Who to ask about IT, HR, facilities and payroll.",
-    image: "/images/gcc-operations/scope-support.jpg",
+    image: "/images/gcc-operations/scope-support.webp",
     icon: LifeBuoy,
   },
   {
     title: "Escalation path",
     desc: "What to do when the support route is not enough.",
-    image: "/images/gcc-operations/standards/itsm-monitoring.jpg",
+    image: "/images/gcc-operations/standards/itsm-monitoring.webp",
     icon: AlertCircle,
   },
   {
     title: "Initial objective",
     desc: "Something real to deliver in the first weeks.",
-    image: "/images/gcc-operations/operating-reality/13-mandates.jpg",
+    image: "/images/gcc-operations/operating-reality/13-mandates.webp",
     icon: Sparkles,
   },
 ];
@@ -341,7 +341,7 @@ export default function SetupLaunch() {
               {/* Background Image with Editorial Navy Overlay */}
               <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                 <img
-                  src="/images/how_we_work/phase_01_design.jpg"
+                  src="/images/how_we_work/phase_01_design.webp"
                   alt="Strategy and business case"
                   className="w-full h-full object-cover object-center opacity-40 transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
@@ -383,7 +383,7 @@ export default function SetupLaunch() {
               {/* Background Image with Editorial Navy Overlay */}
               <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                 <img
-                  src="/images/gcc-operations/standards/continuity_building.jpg"
+                  src="/images/gcc-operations/standards/continuity_building.webp"
                   alt="Location strategy"
                   className="w-full h-full object-cover object-center opacity-40 transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
@@ -560,7 +560,7 @@ export default function SetupLaunch() {
               <div className="absolute right-0 top-0 bottom-0 w-2/5 sm:w-1/2 pointer-events-none overflow-hidden flex items-center justify-end">
                 <div className="relative w-full h-full opacity-60 mix-blend-screen transition-transform duration-700 ease-out group-hover:scale-105">
                   <img
-                    src="/images/gcc-operations/operating-reality/globe.png"
+                    src="/images/gcc-operations/operating-reality/globe.webp"
                     alt="Day-One Readiness Global Scale"
                     className="w-full h-full object-contain object-right"
                     loading="lazy"

@@ -384,52 +384,52 @@ export const OG_IMAGE_HEIGHT = 630;
 type OgImage = { url: string; alt: string; width: number; height: number };
 
 const OG_IMAGE_BY_PREFIX: Array<[string, string, string]> = [
- ["/services/gcc-operations","og-gcc-operations.png","NeoIntelli GCC operations and managed services in India"],
- ["/services/ai-gcc","og-ai-gcc.png","NeoIntelli AI GCC in India: build, operate and scale"],
- ["/services/gcc","og-gcc.png","NeoIntelli GCC setup and advisory services in India"],
- ["/services/ai-engineering","og-ai-engineering.png","NeoIntelli Enterprise AI Engineering: production GenAI, agents, ML and data"],
- ["/services/ai-delivery-teams","og-talent.png","NeoIntelli AI delivery teams, pods and forward-deployed AI engineers"],
- ["/services/ai-talent","og-talent.png","NeoIntelli AI, ML and Data talent services in India"],
- ["/services/micro-gcc","og-gcc.png","NeoIntelli Micro GCC services in India"],
- ["/services/ai-talent-acquisition","og-talent.png","NeoIntelli AI talent acquisition services"],
- ["/services/ai-data-recruitment","og-talent.png","NeoIntelli AI and data recruitment services"],
- ["/recruitment","og-recruitment.png","NeoIntelli recruitment and staffing services in India"],
- ["/industries","og-industries.png","NeoIntelli industry GCC solutions"],
- ["/about","og-about.png","About NeoIntelli"],
- ["/careers","og-about.png","Careers at NeoIntelli"],
- ["/contact","og-contact.png","Contact NeoIntelli"],
- ["/case-studies","og-industries.png","NeoIntelli GCC case studies"],
- ["/blog","og-blog.png","NeoIntelli insights on India GCCs and AI"],
+  ["/services/gcc-operations", "og-gcc-operations.webp", "NeoIntelli GCC operations and managed services in India"],
+  ["/services/ai-gcc", "og-ai-gcc.webp", "NeoIntelli AI GCC in India: build, operate and scale"],
+  ["/services/gcc", "og-gcc.webp", "NeoIntelli GCC setup and advisory services in India"],
+  ["/services/ai-engineering", "og-ai-engineering.webp", "NeoIntelli Enterprise AI Engineering: production GenAI, agents, ML and data"],
+  ["/services/ai-delivery-teams", "og-talent.webp", "NeoIntelli AI delivery teams, pods and forward-deployed AI engineers"],
+  ["/services/ai-talent", "og-talent.webp", "NeoIntelli AI, ML and Data talent services in India"],
+  ["/services/micro-gcc", "og-gcc.webp", "NeoIntelli Micro GCC services in India"],
+  ["/services/ai-talent-acquisition", "og-talent.webp", "NeoIntelli AI talent acquisition services"],
+  ["/services/ai-data-recruitment", "og-talent.webp", "NeoIntelli AI and data recruitment services"],
+  ["/recruitment", "og-recruitment.webp", "NeoIntelli recruitment and staffing services in India"],
+  ["/industries", "og-industries.webp", "NeoIntelli industry GCC solutions"],
+  ["/about", "og-about.webp", "About NeoIntelli"],
+  ["/careers", "og-about.webp", "Careers at NeoIntelli"],
+  ["/contact", "og-contact.webp", "Contact NeoIntelli"],
+  ["/case-studies", "og-industries.webp", "NeoIntelli GCC case studies"],
+  ["/blog", "og-blog.webp", "NeoIntelli insights on India GCCs and AI"],
 ];
 
 const OG_IMAGE_BY_BLOG_CATEGORY: Record<string, [string, string]> = {
-"AI GCC": ["og-ai-gcc.png","NeoIntelli insights on AI-first GCCs"],
-"GCC Setup": ["og-gcc.png","NeoIntelli insights on GCC setup in India"],
-"GCC Strategy": ["og-gcc.png","NeoIntelli insights on GCC strategy"],
-"GCC Talent": ["og-talent.png","NeoIntelli insights on GCC talent in India"],
+  "AI GCC": ["og-ai-gcc.webp", "NeoIntelli insights on AI-first GCCs"],
+  "GCC Setup": ["og-gcc.webp", "NeoIntelli insights on GCC setup in India"],
+  "GCC Strategy": ["og-gcc.webp", "NeoIntelli insights on GCC strategy"],
+  "GCC Talent": ["og-talent.webp", "NeoIntelli insights on GCC talent in India"],
 };
 
 export const getOgImage = (pathname: string): OgImage => {
- const normalizedPath = normalizePath(pathname);
- const asImage = (file: string, alt: string): OgImage => ({
- url: `${SITE_URL}/images/og/${file}`,
- alt,
- width: OG_IMAGE_WIDTH,
- height: OG_IMAGE_HEIGHT,
- });
+  const normalizedPath = normalizePath(pathname);
+  const asImage = (file: string, alt: string): OgImage => ({
+    url: `${SITE_URL}/images/og/${file}`,
+    alt,
+    width: OG_IMAGE_WIDTH,
+    height: OG_IMAGE_HEIGHT,
+  });
 
- if (normalizedPath.startsWith("/blog/")) {
- const post = blogPosts.find((entry) => entry.slug === normalizedPath.slice("/blog/".length));
- const mapped = post ? OG_IMAGE_BY_BLOG_CATEGORY[post.category] : undefined;
- if (mapped) return asImage(mapped[0], `${post!.title} - NeoIntelli`);
- return asImage("og-blog.png","NeoIntelli insights on India GCCs and AI");
- }
+  if (normalizedPath.startsWith("/blog/")) {
+    const post = blogPosts.find((entry) => entry.slug === normalizedPath.slice("/blog/".length));
+    const mapped = post ? OG_IMAGE_BY_BLOG_CATEGORY[post.category] : undefined;
+    if (mapped) return asImage(mapped[0], `${post!.title} - NeoIntelli`);
+    return asImage("og-blog.webp", "NeoIntelli insights on India GCCs and AI");
+  }
 
- const match = OG_IMAGE_BY_PREFIX.find(([prefix]) =>
- normalizedPath === prefix || normalizedPath.startsWith(`${prefix}/`));
- if (match) return asImage(match[1], match[2]);
+  const match = OG_IMAGE_BY_PREFIX.find(([prefix]) =>
+    normalizedPath === prefix || normalizedPath.startsWith(`${prefix}/`));
+  if (match) return asImage(match[1], match[2]);
 
- return asImage("og-default.png","NeoIntelli - AI-first GCC services in India");
+  return asImage("og-default.webp", "NeoIntelli - AI-first GCC services in India");
 };
 
 // schema.org has no "ArticlePage" type; the previous value was invalid markup

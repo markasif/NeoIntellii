@@ -19,7 +19,7 @@ const stages: FrameworkStage[] = [
     title: "Diagnose",
     lead: "Where the center actually is.",
     focus: "Mandate perception, delivery maturity, and value baseline.",
-    image: "/images/how_we_work/phase_01_design.jpg",
+    image: "/images/how_we_work/phase_01_design.webp",
     items: [
       "Mandate perception at headquarters",
       "Maturity of delivery & decision rights",
@@ -34,7 +34,7 @@ const stages: FrameworkStage[] = [
     title: "Redesign",
     lead: "What the center should own next.",
     focus: "Target operating model, leadership depth, and recognized metrics.",
-    image: "/images/how_we_work/phase_02_build.jpg",
+    image: "/images/how_we_work/phase_02_build.webp",
     items: [
       "Target operating model & decision rights",
       "Ownership: services, products, platforms",
@@ -49,7 +49,7 @@ const stages: FrameworkStage[] = [
     title: "Transform",
     lead: "Build the new capability.",
     focus: "Production AI systems, workflow automation, and capability transfer.",
-    image: "/images/how_we_work/phase_03_operate.jpg",
+    image: "/images/how_we_work/phase_03_operate.webp",
     items: [
       "AI & data capability to production",
       "Automation of manual workflows",
@@ -63,7 +63,7 @@ const stages: FrameworkStage[] = [
     title: "Institutionalize",
     lead: "Make it the way the center runs.",
     focus: "Executive operating rhythm, quarterly ROI, and expansion roadmaps.",
-    image: "/images/how_we_work/phase_04_scale.jpg",
+    image: "/images/how_we_work/phase_04_scale.webp",
     items: [
       "Executive governance cadence",
       "Talent & leadership pipeline",

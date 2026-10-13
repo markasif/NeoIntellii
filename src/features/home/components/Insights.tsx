@@ -17,7 +17,7 @@ export default function Insights() {
       description:
         "Learn the Benefits of Building a GCC in India for Enterprise AI, cut costs, own IP and data, and speed MLOps governance. Start your GCC plan today.",
       href: "/blog/benefits-of-building-a-gcc-in-india-for-enterprise-ai",
-      image: "/images/insights/insight_enterprise_ai.jpg",
+      image: "/images/insights/GCC India Campus at Dusk.webp",
       imageAlt: "Benefits of Building a GCC in India for Enterprise AI – 2026",
     },
     {
@@ -28,7 +28,7 @@ export default function Insights() {
       description:
         "Planning an AI GCC in India? Compare Bengaluru, Hyderabad, Pune and Chennai for AI-agent developers, MLOps, data science, data engineering and GenAI talent availability.",
       href: "/blog/ai-gcc-india-talent-availability-2026",
-      image: "/images/insights/insight_ai_talent_engine.jpg",
+      image: "/images/insights/insight_ai_talent_engine.webp",
       imageAlt: "Where to Build Your AI Talent Engine in 2026",
     },
     {
@@ -39,7 +39,7 @@ export default function Insights() {
       description:
         "As enterprises shift to autonomous AI agents, the hunt for specialized developers has intensified. Discover why traditional recruitment fails and how to vet for true agentic expertise.",
       href: "/blog/hire-ai-agent-developers-india-gcc",
-      image: "/images/insights/insight_ai_agents_dev.jpg",
+      image: "/images/insights/AI Agents in a Modern Workspace.webp",
       imageAlt: "The Hunt for AI Agent Developers in India GCC",
     },
   ];

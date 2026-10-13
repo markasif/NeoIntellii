@@ -109,7 +109,7 @@ export default function MLOps() {
               The compute layer runs under <Link to={AI_GCC_PAGE_BY_KEY.infrastructure.path} className="text-[#008EC4] hover:text-[#0D306C] font-semibold underline underline-offset-2 transition-colors">{AI_GCC_PAGE_BY_KEY.infrastructure.name}</Link> and evidence is governed under <Link to={AI_GCC_PAGE_BY_KEY.governance.path} className="text-[#008EC4] hover:text-[#0D306C] font-semibold underline underline-offset-2 transition-colors">{AI_GCC_PAGE_BY_KEY.governance.name}</Link>.
             </>
           }
-          imageSrc="/images/ai-mlops.jpg"
+          imageSrc="/images/ai-mlops.webp"
           imageAlt="MLOps, LLMOps & AgentOps Pipeline"
           ourViewText="MLOps in a GCC is not an internal dev tool. It is the production governance pipeline that keeps AI systems reliable and auditable."
         />

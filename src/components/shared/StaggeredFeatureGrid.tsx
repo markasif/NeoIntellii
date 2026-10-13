@@ -47,41 +47,43 @@ export default function StaggeredFeatureGrid({
 
   return (
     <div
-      className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-end gap-5 lg:gap-6 pt-2 sm:pt-4 overflow-hidden py-2 max-w-7xl mx-auto ${className}`}
+      className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-end gap-5 lg:gap-6 pt-2 sm:pt-4 py-2 max-w-7xl mx-auto ${className}`}
     >
       {items.map((item, idx) => {
         const title = item.title || item.who || "";
         const body = item.body || item.does || item.desc || "";
         const Icon = item.icon || ShieldCheck;
         const isHovered = hoveredIdx === idx;
-        const isTall = item.isTall ?? (idx === 0 || idx === items.length - 1);
+        const isOuter = idx === 0 || idx === items.length - 1;
+        const isSmBig = idx % 2 === 0;
+        const isTall = item.isTall ?? isOuter;
 
-        // Directional entrance: Card 0 from left, Card 3 from right, Cards 1 & 2 from down
+        // Tablet rows alternate big + small; desktop keeps the outer framing.
+        const tallCls = `min-h-[250px] p-6 ${
+          isSmBig ? "sm:p-8 sm:min-h-[400px]" : "sm:p-7 sm:min-h-[250px]"
+        } ${isOuter ? "lg:p-9 lg:min-h-[440px]" : "lg:p-6 lg:min-h-[235px]"}`;
+
+        // Directional entrance: first two cards slide in from the left,
+        // last two from the right.
         const initialMotion =
-          idx === 0
-            ? { opacity: 0, x: -80, y: 0 }
-            : idx === items.length - 1
-            ? { opacity: 0, x: 80, y: 0 }
-            : { opacity: 0, x: 0, y: 55 };
+          idx < 2
+            ? { opacity: 0, x: -90, y: 0 }
+            : { opacity: 0, x: 90, y: 0 };
 
         return (
           <motion.div
             key={title}
             initial={initialMotion}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.15 }}
             transition={{
-              duration: 0.85,
-              delay: idx === 1 || idx === 2 ? 0.15 : 0.05,
+              duration: 0.45,
+              delay: idx * 0.05,
               ease: [0.16, 1, 0.3, 1],
             }}
             onMouseEnter={() => setHoveredIdx(idx)}
             onMouseLeave={() => setHoveredIdx(initialIdx)}
-            className={`relative overflow-hidden rounded-2xl sm:rounded-3xl p-6 transition-all duration-300 flex flex-col justify-center items-center text-center group cursor-pointer ${
-              isTall
-                ? "sm:p-8 lg:p-9 min-h-[380px] sm:min-h-[400px] lg:min-h-[420px]"
-                : "sm:p-7 min-h-[250px] sm:min-h-[260px]"
-            } ${
+            className={`relative overflow-hidden rounded-2xl sm:rounded-3xl transition-all duration-300 flex flex-col justify-center items-center text-center group cursor-pointer ${tallCls} ${
               isHovered
                 ? "border border-[#16427D]/60 -translate-y-1 shadow-md"
                 : "bg-white/95 backdrop-blur-sm border border-[#0D306C]/10 hover:-translate-y-1 hover:border-[#16427D]/60"

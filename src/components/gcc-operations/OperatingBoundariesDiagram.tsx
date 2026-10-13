@@ -366,16 +366,16 @@ export default function OperatingBoundariesDiagram() {
       {/* ========================================================================= */}
       {/* 3-COLUMN EDITORIAL RELATIONSHIP LAYOUT                                     */}
       {/* ========================================================================= */}
-      <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-0">
+      <div className="relative z-20 grid grid-cols-2 lg:grid-cols-12 items-start lg:items-center gap-x-4 sm:gap-x-6 gap-y-6 lg:gap-0">
         {/* ───────────────────────────────────────────────────────────────── */}
         {/* LEFT COLUMN: RETAINED / Client leadership owns                     */}
         {/* ───────────────────────────────────────────────────────────────── */}
-        <div className="lg:col-span-4 flex flex-col justify-between h-full pr-0 lg:pr-2">
+        <div className="lg:col-span-4 flex flex-col justify-between h-full pr-2 sm:pr-3 lg:pr-2">
           <div className="lg:text-right">
             <span className="block text-[11px] sm:text-xs font-extrabold uppercase tracking-[0.22em] text-[#008EC4] mb-1.5">
               RETAINED
             </span>
-            <h3 className="text-2xl sm:text-3xl font-black text-[#0D244D] tracking-tight mb-2.5">
+            <h3 className="text-lg sm:text-2xl lg:text-3xl font-black text-[#0D244D] tracking-tight mb-2.5">
               Client leadership owns
             </h3>
             <div className="w-10 h-[3px] bg-[#DE8017] rounded-full mb-5 sm:mb-6 lg:ml-auto" />
@@ -394,7 +394,7 @@ export default function OperatingBoundariesDiagram() {
                       setHoveredTarget({ side: "left", index: i })
                     }
                     onMouseLeave={() => setHoveredTarget(null)}
-                    className={`flex items-center lg:justify-end gap-3 group cursor-default transition-all w-full lg:w-auto rounded-xl border px-3 py-2.5 shadow-xs lg:rounded-none lg:border-0 lg:bg-transparent lg:px-0 lg:py-0 lg:shadow-none ${
+                    className={`flex items-center lg:justify-end gap-3 group cursor-default transition-all w-full lg:w-auto rounded-xl border px-2.5 py-2 shadow-xs lg:rounded-none lg:border-0 lg:bg-transparent lg:px-0 lg:py-0 lg:shadow-none ${
                       isHovered
                         ? "border-[#008EC4] bg-[#EAF5FE] lg:border-0 lg:bg-transparent"
                         : "border-[#D5E6F7] bg-white/90"
@@ -412,7 +412,7 @@ export default function OperatingBoundariesDiagram() {
                         <Icon className="w-4 h-4 stroke-[1.8]" />
                       </div>
                       <span
-                        className={`text-[13px] sm:text-[14px] font-semibold transition-colors duration-200 ${
+                        className={`text-[11.5px] sm:text-[13px] lg:text-[14px] font-semibold transition-colors duration-200 ${
                           isHovered ? "text-[#008EC4]" : "text-[#0D244D]"
                         }`}
                       >
@@ -422,7 +422,7 @@ export default function OperatingBoundariesDiagram() {
 
                     {/* Desktop: Mirrored toward center hub (text first, then icon right next to connector line) */}
                     <span
-                      className={`hidden lg:inline text-[13px] sm:text-[14px] font-semibold text-right transition-colors duration-200 ${
+                      className={`hidden lg:inline text-[11.5px] sm:text-[13px] lg:text-[14px] font-semibold text-right transition-colors duration-200 ${
                         isHovered ? "text-[#008EC4]" : "text-[#0D244D]"
                       }`}
                     >
@@ -463,7 +463,7 @@ export default function OperatingBoundariesDiagram() {
         {/* ───────────────────────────────────────────────────────────────── */}
         {/* CENTER COLUMN: Central GCC Hub Node                               */}
         {/* ───────────────────────────────────────────────────────────────── */}
-        <div className="lg:col-span-4 flex justify-center items-center py-8 lg:py-0 relative">
+        <div className="lg:col-span-4 hidden lg:flex justify-center items-center py-8 lg:py-0 relative">
           <div className="relative flex items-center justify-center">
             {/* Core Circular GCC Hub Node */}
             <div
@@ -489,12 +489,12 @@ export default function OperatingBoundariesDiagram() {
         {/* ───────────────────────────────────────────────────────────────── */}
         {/* RIGHT COLUMN: OPERATED OR SUPPORTED / NeoIntelli can operate       */}
         {/* ───────────────────────────────────────────────────────────────── */}
-        <div className="lg:col-span-4 flex flex-col justify-between h-full pl-0 lg:pl-2">
+        <div className="lg:col-span-4 flex flex-col justify-between h-full pl-2 sm:pl-3 lg:pl-2">
           <div>
             <span className="block text-[11px] sm:text-xs font-extrabold uppercase tracking-[0.22em] text-[#008EC4] mb-1.5">
               OPERATED OR SUPPORTED
             </span>
-            <h3 className="text-2xl sm:text-3xl font-black text-[#0D244D] tracking-tight mb-2.5">
+            <h3 className="text-lg sm:text-2xl lg:text-3xl font-black text-[#0D244D] tracking-tight mb-2.5">
               NeoIntelli can operate
             </h3>
             <div className="w-10 h-[3px] bg-[#DE8017] rounded-full mb-5 sm:mb-6" />
@@ -514,7 +514,7 @@ export default function OperatingBoundariesDiagram() {
                       setHoveredTarget({ side: "right", index: j })
                     }
                     onMouseLeave={() => setHoveredTarget(null)}
-                    className={`flex items-center gap-3 group cursor-default transition-all w-full lg:w-auto rounded-xl px-3 py-2.5 shadow-xs lg:rounded-none lg:bg-transparent lg:px-0 lg:py-0 lg:shadow-none ${
+                    className={`flex items-center gap-3 group cursor-default transition-all w-full lg:w-auto rounded-xl px-2.5 py-2 shadow-xs lg:rounded-none lg:bg-transparent lg:px-0 lg:py-0 lg:shadow-none ${
                       isHovered
                         ? "bg-[#008EC4] lg:bg-transparent"
                         : "bg-[#0D244D]"
@@ -541,7 +541,7 @@ export default function OperatingBoundariesDiagram() {
 
                     {/* Text Label */}
                     <span
-                      className={`text-[13px] sm:text-[14px] font-medium transition-colors duration-200 ${
+                      className={`text-[11.5px] sm:text-[13px] lg:text-[14px] font-medium transition-colors duration-200 ${
                         isHovered ? "text-white lg:text-[#008EC4] font-semibold" : "text-white lg:text-[#0D244D]"
                       }`}
                     >

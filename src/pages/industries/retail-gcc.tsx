@@ -36,14 +36,14 @@ import NeoIntelliHero from "@/components/shared/NeoIntelliHero";
 import { CAL_BOOKING_URL } from "@/lib/constants";
 
 const roleImages = [
-  "/images/ai-data-workloads.jpg",
-  "/images/ai-governance.jpg",
-  "/images/tech-process-automation.png",
-  "/images/tech-data-platform.png",
-  "/images/tech-product-engineering.png",
-  "/images/tech-integration.png",
-  "/images/gcc-operations/operating-reality/04-access.jpg",
-  "/images/ai-mlops.jpg",
+  "/images/ai-data-workloads.webp",
+  "/images/ai-governance.webp",
+  "/images/tech-process-automation.webp",
+  "/images/tech-data-platform.webp",
+  "/images/tech-product-engineering.webp",
+  "/images/tech-integration.webp",
+  "/images/gcc-operations/operating-reality/04-access.webp",
+  "/images/ai-mlops.webp",
 ];
 
 /* ------------------------------------------------------------------ */
@@ -265,7 +265,6 @@ export default function RetailGCC() {
           width="wide"
           waveFill="#F0F5FA"
           wavesOnMobile
-          hideTopWave
         >
           <SectionHeader
             title="What Your Retail GCC Can Own"

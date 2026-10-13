@@ -45,7 +45,7 @@ const TRUST = [
 
 const CARDS = [
   {
-    image: "/images/landing/ai-first-gcc/card-ai.jpg",
+    image: "/images/mosaic_ai_gcc.webp",
     chip: "AI-FIRST GCC",
     title: "AI built into the operating model",
     body:
@@ -59,7 +59,7 @@ const CARDS = [
     linkLabel: "Explore AI-First GCC",
   },
   {
-    image: "/images/landing/ai-first-gcc/card-setup.jpg",
+    image: "/images/gcc-operations/gcc-setup-card.webp",
     chip: "GCC SETUP",
     title: "Launch your entity in 12 weeks",
     body:
@@ -73,7 +73,7 @@ const CARDS = [
     linkLabel: "Explore GCC Setup",
   },
   {
-    image: "/images/landing/ai-first-gcc/card-micro.jpg",
+    image: "/images/solution_micro_gcc.webp",
     chip: "MICRO GCC",
     title: "Start small, prove value fast",
     body:

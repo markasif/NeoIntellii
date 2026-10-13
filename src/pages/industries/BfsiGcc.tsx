@@ -73,56 +73,56 @@ const talentRoles = [
     number: "01",
     title: "Quantitative Analysts & Financial Engineers",
     desc: "Portfolio risk models, algorithmic pricing systems, derivative valuation engines, and backtesting pipelines.",
-    image: "/images/ai-data-workloads.jpg",
+    image: "/images/ai-data-workloads.webp",
     icon: LineChart,
   },
   {
     number: "02",
     title: "Risk & Regulatory Compliance Engineers",
     desc: "Automated compliance monitoring, regulatory reporting pipelines (Basel, Dodd-Frank, SOX), and audit log architecture.",
-    image: "/images/ai-governance.jpg",
+    image: "/images/ai-governance.webp",
     icon: ShieldCheck,
   },
   {
     number: "03",
     title: "Fraud Detection & AML Specialists",
     desc: "Real-time transaction scoring, graph analytics for anti-money laundering, anomaly detection, and alert triage models.",
-    image: "/images/tech-process-automation.png",
+    image: "/images/tech-process-automation.webp",
     icon: AlertTriangle,
   },
   {
     number: "04",
     title: "Credit Scoring & Pricing Data Scientists",
     desc: "Alternative data scoring, customer churn forecasting, risk-adjusted pricing algorithms, and lifetime value modeling.",
-    image: "/images/tech-data-platform.png",
+    image: "/images/tech-data-platform.webp",
     icon: Database,
   },
   {
     number: "05",
     title: "Banking Platform & Payment Engineers",
     desc: "Core banking integration, real-time payment rails (ISO 20022, UPI, SEPA), and microservices transaction backends.",
-    image: "/images/tech-product-engineering.png",
+    image: "/images/tech-product-engineering.webp",
     icon: Terminal,
   },
   {
     number: "06",
     title: "Regulatory Cloud & Infrastructure Engineers",
     desc: "Data residency zoning, cross-border privacy boundaries, enterprise VPC segmentation, and zero-trust access controls.",
-    image: "/images/tech-integration.png",
+    image: "/images/tech-integration.webp",
     icon: Server,
   },
   {
     number: "07",
     title: "QA & Security Clearance Specialists",
     desc: "Penetration testing, automated regression suites, PCI-DSS code validation, and continuous security vulnerability scans.",
-    image: "/images/gcc-operations/operating-reality/04-access.jpg",
+    image: "/images/gcc-operations/operating-reality/04-access.webp",
     icon: Lock,
   },
   {
     number: "08",
     title: "Applied AI / Document Intelligence Engineers",
     desc: "NLP for contract intelligence, LLM retrieval over regulatory filings, computer vision for KYC document triage, and AI agents.",
-    image: "/images/ai-mlops.jpg",
+    image: "/images/ai-mlops.webp",
     icon: Cpu,
   },
 ];
@@ -311,7 +311,6 @@ export default function BfsiGcc() {
           width="wide"
           waveFill="#F0F5FA"
           wavesOnMobile
-          hideTopWave
         >
           <SectionHeader
             title="BFSI-Specific Challenges NeoIntelli Addresses"

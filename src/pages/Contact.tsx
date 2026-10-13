@@ -157,8 +157,22 @@ export default function Contact() {
         >
           {/* Executive Background Overlay with 3D Cyan Fluid Ribbon */}
           <div className="absolute inset-0 w-full h-full z-0">
-            <Image
-              src="/images/tools/hero_tools_bg.webp"
+            {/* Mobile artwork */}
+            <div className="md:hidden absolute inset-0">
+              <Image
+                src="/hero/hero-half-viewport-mobile.webp"
+                alt="Mobile hero artwork"
+                fill
+                priority
+                unoptimized
+                sizes="100vw"
+                className="object-cover object-bottom"
+              />
+            </div>
+            {/* Desktop artwork */}
+            <div className="hidden md:block absolute inset-0">
+              <Image
+                src="/hero/hero-half-viewport.webp"
               alt="Contact NeoIntelli"
               fill
               priority
@@ -166,6 +180,7 @@ export default function Contact() {
               sizes="100vw"
               className="object-cover object-right"
             />
+            </div>
             {/* Soft responsive gradient overlay for mobile readability */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#012048]/95 via-[#012048]/85 to-transparent lg:hidden pointer-events-none" />
           </div>
@@ -292,7 +307,7 @@ export default function Contact() {
                     <div className="relative flex-1 h-full rounded-[22px] sm:rounded-[28px] overflow-hidden border border-[#D2DCF0] shadow-md group bg-[#0A224E]">
                       <div className="absolute inset-0 w-[200%] h-full left-0">
                         <img
-                          src="/images/blueprint_advisory_workspace.jpg"
+                          src="/images/blueprint_advisory_workspace.webp"
                           alt="NeoIntelli advisory session"
                           className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                           loading="lazy"
@@ -303,7 +318,7 @@ export default function Contact() {
                     <div className="relative flex-1 h-full rounded-[22px] sm:rounded-[28px] overflow-hidden border border-[#D2DCF0] shadow-md group bg-[#0A224E]">
                       <div className="absolute inset-0 w-[200%] h-full -left-[100%]">
                         <img
-                          src="/images/blueprint_advisory_workspace.jpg"
+                          src="/images/blueprint_advisory_workspace.webp"
                           alt="NeoIntelli advisory session"
                           className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                           loading="lazy"

@@ -37,85 +37,85 @@ export const operatingRealityItems: OperatingRealityItem[] = [
   {
     number: "01",
     title: "Employees join",
-    image: "/images/gcc-operations/operating-reality/01-employees.jpg",
+    image: "/images/gcc-operations/operating-reality/01-employees.webp",
     icon: UserPlus,
   },
   {
     number: "02",
     title: "Payroll starts",
-    image: "/images/gcc-operations/operating-reality/02-payroll.jpg",
+    image: "/images/gcc-operations/operating-reality/02-payroll.webp",
     icon: IndianRupee,
   },
   {
     number: "03",
     title: "Benefits need administration",
-    image: "/images/gcc-operations/operating-reality/03-benefits.jpg",
+    image: "/images/gcc-operations/operating-reality/03-benefits.webp",
     icon: Heart,
   },
   {
     number: "04",
     title: "Access needs control",
-    image: "/images/gcc-operations/operating-reality/04-access.jpg",
+    image: "/images/gcc-operations/operating-reality/04-access.webp",
     icon: Lock,
   },
   {
     number: "05",
     title: "Devices need support",
-    image: "/images/gcc-operations/operating-reality/05-devices.jpg",
+    image: "/images/gcc-operations/operating-reality/05-devices.webp",
     icon: Laptop,
   },
   {
     number: "06",
     title: "Vendors need management",
-    image: "/images/gcc-operations/operating-reality/06-vendors.jpg",
+    image: "/images/gcc-operations/operating-reality/06-vendors.webp",
     icon: Handshake,
   },
   {
     number: "07",
     title: "Performance needs measurement",
-    image: "/images/gcc-operations/operating-reality/07-performance.jpg",
+    image: "/images/gcc-operations/operating-reality/07-performance.webp",
     icon: BarChart3,
   },
   {
     number: "08",
     title: "HQ needs reporting",
-    image: "/images/gcc-operations/operating-reality/08-reporting.jpg",
+    image: "/images/gcc-operations/operating-reality/08-reporting.webp",
     icon: FileText,
   },
   {
     number: "09",
     title: "Risk needs monitoring",
-    image: "/images/gcc-operations/operating-reality/09-risk.jpg",
+    image: "/images/gcc-operations/operating-reality/09-risk.webp",
     icon: AlertTriangle,
   },
   {
     number: "10",
     title: "New roles need hiring",
-    image: "/images/gcc-operations/operating-reality/10-hiring.jpg",
+    image: "/images/gcc-operations/operating-reality/10-hiring.webp",
     icon: UserPlus,
   },
   {
     number: "11",
     title: "Leadership needs workforce data",
-    image: "/images/gcc-operations/operating-reality/11-leadership.jpg",
+    image: "/images/gcc-operations/operating-reality/11-leadership.webp",
     icon: Users,
   },
   {
     number: "12",
     title: "Headcount grows",
-    image: "/images/gcc-operations/operating-reality/12-headcount.jpg",
+    image: "/images/gcc-operations/operating-reality/12-headcount.webp",
     icon: TrendingUp,
   },
   {
     number: "13",
     title: "New mandates arrive",
-    image: "/images/gcc-operations/operating-reality/13-mandates.jpg",
+    image: "/images/gcc-operations/operating-reality/13-mandates.webp",
     icon: FileCheck,
   },
   {
     number: "14",
     title: "BOT may eventually occur",
-    image: "/images/gcc-operations/operating-reality/14-bot.jpg",
+    image: "/images/gcc-operations/operating-reality/14-bot.webp",
     icon: Puzzle,
   },
 ];
@@ -247,7 +247,7 @@ export function OperatingRealityStatement({
       <div className="absolute right-0 top-0 bottom-0 w-2/5 sm:w-1/2 pointer-events-none overflow-hidden flex items-center justify-end">
         <div className="relative w-full h-full opacity-65 mix-blend-screen transition-transform duration-700 ease-out group-hover:scale-105">
           <Image
-            src="/images/gcc-operations/operating-reality/globe.png"
+            src="/images/gcc-operations/operating-reality/globe.webp"
             alt="Operating Model Global Scale"
             fill
             className="object-contain object-right"

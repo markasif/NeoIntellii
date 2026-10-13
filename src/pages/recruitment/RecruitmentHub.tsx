@@ -16,6 +16,7 @@ import Section from "@/components/ui/Section";
 import CapabilitiesSection from "@/components/ai-gcc/CapabilitiesSection";
 import UniversalLifecycle from "@/components/shared/UniversalLifecycle";
 import OutcomeCardGrid from "@/components/shared/OutcomeCardGrid";
+import FiveCardHeroGrid from "@/components/shared/FiveCardHeroGrid";
 import ResponsiveTable from "@/components/ai-gcc/ResponsiveTable";
 import AnswerBlock from "@/components/ai-gcc/AnswerBlock";
 import RecruitmentRealityCardGrid, {
@@ -196,14 +197,14 @@ export default function RecruitmentHub() {
         width="wide"
         align="center"
       >
-        <OutcomeCardGrid
-          columns={3}
-          items={services.map((s) => ({
-            tag: s.tag,
+        <FiveCardHeroGrid
+          compact
+          items={services.map((s, i) => ({
+            n: String(i + 1).padStart(2, "0"),
             title: s.title,
-            summary: s.desc,
-            link: s.href,
-            actionText: `Explore ${s.title}`,
+            subtitle: s.tag,
+            body: s.desc,
+            cta: { label: `Explore ${s.title}`, href: s.href },
           }))}
         />
       </Section>

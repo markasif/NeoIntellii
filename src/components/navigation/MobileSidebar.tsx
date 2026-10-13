@@ -67,9 +67,9 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
   const router = useRouter();
   const currentPath = router?.asPath?.split("?")[0] || "";
 
-  // Main menu accordion state: What We Do is open by default as requested
+  // Main menu accordion state — all sections closed by default
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
-    "what-we-do": true,
+    "what-we-do": false,
     solutions: false,
     product: false,
     industries: false,
@@ -206,7 +206,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 320 }}
-            className="fixed top-0 right-0 bottom-0 w-[88vw] sm:w-[380px] max-w-[420px] flex flex-col shadow-[-16px_0_40px_rgba(13,48,108,0.22)] border-l border-white/70 overflow-hidden font-[family-name:var(--font-manrope)] select-none"
+            className="fixed top-0 right-0 bottom-0 w-full sm:w-[420px] max-w-full sm:max-w-[420px] flex flex-col shadow-[-16px_0_40px_rgba(13,48,108,0.22)] border-l border-white/70 overflow-hidden font-[family-name:var(--font-manrope)] select-none"
             style={{
               background:
                 "linear-gradient(180deg, #F8FAFD 0%, #EDF5FC 20%, #CDE3F7 50%, #ADD2F1 75%, #8EBDE4 100%)",
@@ -521,7 +521,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                         <div className="p-3 rounded-xl bg-white/80 border border-white/80 shadow-2xs space-y-2 mr-1">
                           <div className="flex items-center justify-between">
                             <Image
-                              src="/logo/neohirex_logo.png"
+                              src="/logo/neohirex_logo.webp"
                               alt="NeoHireX"
                               width={96}
                               height={26}
@@ -735,29 +735,29 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
             </div>
 
             {/* ── STICKY / FIXED BOTTOM FOOTER DOCK ── */}
-            <div className="p-4 pt-3.5 border-t border-white/70 bg-white/50 backdrop-blur-md shrink-0 flex flex-col gap-3">
-              {/* NeoIntelli Logo Nicely Placed */}
-              <div className="flex items-center justify-center py-0.5">
+            <div className="px-2.5 py-2 border-t border-white/70 bg-white/50 backdrop-blur-md shrink-0 flex flex-col gap-1.5">
+              {/* Book Consultation Button — pinned above the logo, never scrolls with the menu */}
+              <Link
+                href="/book-a-call"
+                onClick={onClose}
+                className="btn-navy self-center"
+              >
+                <span className="text-[11px]">Book a Consultation</span>
+                <ArrowRight className="h-3.5 w-3.5 text-white shrink-0" />
+              </Link>
+
+              {/* NeoIntelli Logo — bottom-most element */}
+              <div className="flex items-center justify-center">
                 <Link href="/" onClick={onClose} aria-label="NeoIntelli Home">
                   <Image
                     src="/logo/neointelli_logo.webp"
                     alt="NeoIntelli"
                     width={138}
                     height={32}
-                    className="h-7 w-auto object-contain hover:opacity-90 transition-opacity"
+                    className="h-5 w-auto object-contain hover:opacity-90 transition-opacity"
                   />
                 </Link>
               </div>
-
-              {/* Book Consultation Button */}
-              <Link
-                href="/book-a-call"
-                onClick={onClose}
-                className="btn-navy self-center"
-              >
-                <span>Book a Consultation</span>
-                <ArrowRight className="h-4 w-4 text-white shrink-0" />
-              </Link>
             </div>
           </motion.aside>
         </div>

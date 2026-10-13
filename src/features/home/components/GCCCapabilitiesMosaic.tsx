@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -116,7 +116,7 @@ export const CAPABILITIES: CapabilityItem[] = [
         "It combines specialist talent, data and AI platforms, production engineering, model and agent operations, governance and enterprise ownership inside a dedicated capability center rather than treating AI as a separate innovation project.",
       ],
     },
-    image: "/images/ai_gcc_cubes.jpg",
+    image: "/images/ai_gcc_cubes.webp",
   },
 
   // 02 — BUILD THE TEAM
@@ -192,7 +192,7 @@ export const CAPABILITIES: CapabilityItem[] = [
         "What separates the two is rarely the model. It is the data it runs on, the systems it integrates with, the evaluation that proves it works, the observability that catches it when it stops, the security and governance around it, and the cost per outcome once real traffic arrives.",
       ],
     },
-    image: "/images/mosaic_ai_eng.jpg",
+    image: "/images/mosaic_ai_eng.webp",
   },
 
   // 04 — DEPLOY THE TEAM
@@ -269,7 +269,7 @@ export const CAPABILITIES: CapabilityItem[] = [
         "Deciding what the center owns settles almost everything downstream: which roles you hire, which city can supply them, how the work is governed, and whether the end state is a managed center or a captive one.",
       ],
     },
-    image: "/images/mosaic_gcc_strat.jpg",
+    image: "/images/mosaic_gcc_strat.webp",
   },
 
   // 06 — RUN & SCALE
@@ -314,15 +314,16 @@ export const CAPABILITIES: CapabilityItem[] = [
 /** ── 01. AI GCC: Animated Growing Skyscraper Enterprise Campus ── */
 function AiGccSkyscraperVisual() {
   const [replayKey, setReplayKey] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { amount: 0.2, once: false });
 
   return (
     <div
+      ref={containerRef}
       onClick={() => setReplayKey((k) => k + 1)}
       className="mt-4 sm:mt-5 rounded-xl overflow-hidden relative min-h-[250px] sm:min-h-[280px] bg-gradient-to-b from-[#091E42] via-[#051430] to-[#030B1C] border border-[#169DC8]/40 flex flex-col justify-between p-3 sm:p-4 select-none cursor-pointer group shadow-inner"
       title="Click to replay growing skyscraper animation"
     >
- 
-
       {/* Radial Depth & Ambient Backlight Glow behind the skyscraper */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-56 h-56 rounded-full bg-gradient-to-t from-[#00C2FF]/20 via-[#169DC8]/15 to-transparent blur-2xl" />
@@ -338,7 +339,11 @@ function AiGccSkyscraperVisual() {
       >
         <motion.div
           initial={{ opacity: 0, y: 70, scaleY: 0.65, scaleX: 0.95 }}
-          animate={{ opacity: 1, y: 0, scaleY: 1, scaleX: 1 }}
+          animate={
+            isInView
+              ? { opacity: 1, y: 0, scaleY: 1, scaleX: 1 }
+              : { opacity: 0, y: 70, scaleY: 0.65, scaleX: 0.95 }
+          }
           transition={{
             duration: 1.25,
             ease: [0.16, 1, 0.3, 1],
@@ -347,7 +352,7 @@ function AiGccSkyscraperVisual() {
           className="relative flex items-end justify-center w-full"
         >
           <img
-            src="/images/skyscraper.png"
+            src="/images/skyscraper.webp"
             alt="AI GCC Enterprise Campus Skyscraper"
             className="w-auto h-[180px] sm:h-[210px] md:h-[220px] max-w-full object-contain object-bottom drop-shadow-[0_12px_28px_rgba(0,194,255,0.4)]"
             loading="eager"
@@ -357,13 +362,11 @@ function AiGccSkyscraperVisual() {
         {/* Foundation Horizon Glow Line */}
         <motion.div
           initial={{ scaleX: 0, opacity: 0 }}
-          animate={{ scaleX: 1, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          animate={isInView ? { scaleX: 1, opacity: 1 } : { scaleX: 0, opacity: 0 }}
+          transition={{ duration: 0.8, delay: isInView ? 0.2 : 0, ease: "easeOut" }}
           className="w-full h-[2px] bg-gradient-to-r from-transparent via-[#00C2FF] to-transparent shadow-[0_0_12px_#00C2FF] relative z-20"
         />
       </div>
-
-    
     </div>
   );
 }
@@ -375,16 +378,23 @@ function CountUpNumber({
   suffix = "",
   decimals = 0,
   duration = 1.3,
+  start = true,
 }: {
   value: number;
   prefix?: string;
   suffix?: string;
   decimals?: number;
   duration?: number;
+  start?: boolean;
 }) {
   const [display, setDisplay] = useState(0);
 
   useEffect(() => {
+    if (!start) {
+      setDisplay(0);
+      return;
+    }
+
     let startTimestamp: number | null = null;
     let animId: number;
 
@@ -401,7 +411,7 @@ function CountUpNumber({
 
     animId = requestAnimationFrame(step);
     return () => cancelAnimationFrame(animId);
-  }, [value, duration]);
+  }, [value, duration, start]);
 
   return (
     <span>
@@ -419,18 +429,19 @@ function AiTalentBarFlowVisual({
   aside: Extract<AsideVariant, { type: "flow" }>;
 }) {
   const [replayKey, setReplayKey] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { amount: 0.2, once: false });
   const heights = [42, 60, 78, 96, 116];
 
   return (
     <div
+      ref={containerRef}
       onClick={() => setReplayKey((k) => k + 1)}
       className="mt-4 sm:mt-5 rounded-xl overflow-hidden relative bg-[#06122C] border border-[#169DC8]/40 p-3 sm:p-3.5 select-none cursor-pointer group shadow-inner flex-1 flex flex-col"
       title="Click to replay talent screening animation"
     >
       {/* Top-Right Ambient Cyan Light Bloom */}
       <div className="absolute top-0 right-0 w-44 h-44 bg-[radial-gradient(circle_at_90%_15%,rgba(0,194,255,0.32)_0%,rgba(6,18,44,0)_70%)] pointer-events-none" />
-
-   
 
       {/* Bouncing bar chart, labels just below each bar */}
       <div
@@ -444,14 +455,18 @@ function AiTalentBarFlowVisual({
             <div key={sIdx} className="flex-1 min-w-0 flex flex-col items-center gap-1.5">
               <motion.div
                 initial={{ scaleY: 0, opacity: 0 }}
-                animate={{ scaleY: 1, opacity: 1 }}
-                transition={{ delay: sIdx * 0.12, type: "spring", stiffness: 250, damping: 14 }}
+                animate={isInView ? { scaleY: 1, opacity: 1 } : { scaleY: 0, opacity: 0 }}
+                transition={{
+                  delay: isInView ? sIdx * 0.12 : 0,
+                  type: "spring",
+                  stiffness: 250,
+                  damping: 14,
+                }}
                 style={{ height: heights[sIdx], transformOrigin: "bottom" }}
-                className={`w-full rounded-t-md ${
-                  isFinal
+                className={`w-full rounded-t-md ${isFinal
                     ? "bg-gradient-to-t from-[#0B4D88] to-[#38BDF8] shadow-[0_0_18px_rgba(56,189,248,0.55)]"
                     : "bg-gradient-to-t from-[#0B4D88] to-[#00C2FF]"
-                }`}
+                  }`}
               />
               <div className="flex flex-col items-center gap-0.5 w-full text-center">
                 <span className={`text-[9px] sm:text-[10px] font-mono font-bold ${isFinal ? "text-[#00E5FF]" : "text-[#38BDF8]"}`}>
@@ -475,10 +490,11 @@ function AiTalentBarFlowVisual({
     </div>
   );
 }
-
 /** ── 03. AI ENGINEERING: Production Readiness & Telemetry Matrix with Bigger Numbers and Counting Animation ── */
 function ProductionAiStackVisual() {
   const [replayKey, setReplayKey] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { amount: 0.15, once: false });
 
   const metrics = [
     {
@@ -515,6 +531,7 @@ function ProductionAiStackVisual() {
 
   return (
     <div
+      ref={containerRef}
       onClick={() => setReplayKey((k) => k + 1)}
       className="mt-4 sm:mt-5 rounded-xl overflow-hidden relative min-h-[280px] sm:min-h-[320px] bg-gradient-to-b from-[#081E44] via-[#051430] to-[#020A1A] border border-[#169DC8]/50 flex flex-col justify-between p-4 sm:p-5 select-none cursor-pointer group shadow-inner"
       title="Click to replay telemetry counting animation"
@@ -522,16 +539,14 @@ function ProductionAiStackVisual() {
       {/* Top-Right Ambient Cyan Light Bloom */}
       <div className="absolute top-0 right-0 w-52 h-52 bg-[radial-gradient(circle_at_90%_15%,rgba(0,194,255,0.35)_0%,rgba(6,18,44,0)_70%)] pointer-events-none" />
 
-
-
       {/* 2x2 Telemetry Metric Matrix with Bigger Numbers & Counting Animation */}
       <div key={replayKey} className="relative z-10 grid grid-cols-2 gap-2.5 sm:gap-3 my-auto pt-1">
         {metrics.map((m, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0, scale: 0.92, y: 10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ delay: idx * 0.1, duration: 0.4, ease: "easeOut" }}
+            animate={isInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.92, y: 10 }}
+            transition={{ delay: isInView ? idx * 0.1 : 0, duration: 0.4, ease: "easeOut" }}
             className="rounded-xl bg-white/[0.05] border border-white/12 hover:border-[#00C2FF]/50 p-3 sm:p-3.5 flex flex-col justify-between transition-all hover:bg-white/[0.08]"
           >
             <div className="flex items-center justify-between mb-1">
@@ -546,6 +561,7 @@ function ProductionAiStackVisual() {
                 prefix={m.prefix}
                 suffix={m.suffix}
                 decimals={m.decimals}
+                start={isInView}
               />
             </div>
             <div className="text-[10.5px] sm:text-[11px] text-slate-300 font-medium line-clamp-1">
@@ -554,8 +570,6 @@ function ProductionAiStackVisual() {
           </motion.div>
         ))}
       </div>
-
-     
     </div>
   );
 }
@@ -567,23 +581,24 @@ function DeliveryModelsMatrixVisual({
   aside: Extract<AsideVariant, { type: "models" }>;
 }) {
   const [replayKey, setReplayKey] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { amount: 0.2, once: false });
 
   return (
     <div
+      ref={containerRef}
       onClick={() => setReplayKey((k) => k + 1)}
       className="mt-4 sm:mt-5 rounded-xl overflow-hidden relative bg-[#06122C] border border-[#169DC8]/40 p-3 sm:p-3.5 select-none cursor-pointer group shadow-inner"
       title="Click to replay squad models"
     >
-
-
       {/* 2x2 Squad Matrix */}
       <div key={replayKey} className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         {aside.models.map((m, mIdx) => (
           <motion.div
             key={mIdx}
             initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: mIdx * 0.1, duration: 0.3, ease: "easeOut" }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 6 }}
+            transition={{ delay: isInView ? mIdx * 0.1 : 0, duration: 0.3, ease: "easeOut" }}
             className="rounded-lg border border-white/10 bg-white/[0.04] hover:border-[#00C2FF]/50 hover:bg-white/[0.07] p-2.5 flex flex-col justify-between transition-all"
           >
             <div>
@@ -610,6 +625,8 @@ function DeliveryModelsMatrixVisual({
 /** ── 05. GCC STRATEGY & SETUP: Exponential Business Growth Graph ── */
 function StrategyGrowthGraph() {
   const [replayKey, setReplayKey] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { amount: 0.2, once: false });
 
   // Growth curve matching user's image: dips, rises, and rockets exponentially to apex
   const pathD =
@@ -617,6 +634,7 @@ function StrategyGrowthGraph() {
 
   return (
     <div
+      ref={containerRef}
       onClick={() => setReplayKey((k) => k + 1)}
       className="mt-4 sm:mt-5 rounded-xl overflow-hidden relative min-h-[200px] sm:min-h-[220px] bg-[#06122C] border border-[#169DC8]/40 flex flex-col justify-between p-3.5 select-none cursor-pointer group shadow-inner"
       title="Click to replay growth animation"
@@ -643,9 +661,6 @@ function StrategyGrowthGraph() {
           <line x1="360" y1="90" x2="320" y2="0" stroke="#169DC8" strokeWidth="0.8" />
         </svg>
       </div>
-
-      {/* Top Header Pill Badge (Matching reference image top-left pill) */}
- 
 
       {/* Main Animated SVG Chart */}
       <div className="absolute inset-0 w-full h-full pointer-events-none">
@@ -680,7 +695,7 @@ function StrategyGrowthGraph() {
             strokeOpacity="0.32"
             filter="url(#cyanNeonGlow)"
             initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
+            animate={isInView ? { pathLength: 1 } : { pathLength: 0 }}
             transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
           />
 
@@ -692,7 +707,7 @@ function StrategyGrowthGraph() {
             strokeWidth="4.5"
             strokeLinecap="round"
             initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
+            animate={isInView ? { pathLength: 1 } : { pathLength: 0 }}
             transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
           />
 
@@ -704,15 +719,15 @@ function StrategyGrowthGraph() {
             strokeWidth="2"
             strokeLinecap="round"
             initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
+            animate={isInView ? { pathLength: 1 } : { pathLength: 0 }}
             transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
           />
 
           {/* Glowing Apex Circle Node at (375, 25) */}
           <motion.g
             initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 1.6, duration: 0.5, ease: "easeOut" }}
+            animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
+            transition={{ delay: isInView ? 1.6 : 0, duration: 0.5, ease: "easeOut" }}
           >
             {/* Outer halo */}
             <circle cx="375" cy="25" r="26" fill="#00C2FF" fillOpacity="0.25" />
@@ -726,67 +741,207 @@ function StrategyGrowthGraph() {
   );
 }
 
-/** ── 06. GCC OPERATIONS: 5-Stage BOT Ownership Trajectory ── */
+/** ── 06. GCC OPERATIONS: Upward Cyan Wave BOT Ownership Trajectory ── */
 function GccOwnershipPathVisual({
-  aside,
+  aside: _aside,
 }: {
   aside: Extract<AsideVariant, { type: "flow" }>;
 }) {
   const [replayKey, setReplayKey] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { amount: 0.15, once: false });
+
+  // 5 stage configurations matching the trajectory sequence
+  const nodes = [
+    { num: "01", label: "Managed", x: 10, y: 64, icon: Layers },
+    { num: "02", label: "Stabilize", x: 30, y: 55, icon: ShieldCheck },
+    { num: "03", label: "Scale", x: 50, y: 45, icon: TrendingUp },
+    { num: "04", label: "BOT", x: 70, y: 34, icon: Users },
+    { num: "05", label: "Captive", x: 90, y: 20, icon: Building2, isApex: true },
+  ];
 
   return (
     <div
+      ref={containerRef}
       onClick={() => setReplayKey((k) => k + 1)}
-      className="mt-4 sm:mt-5 rounded-xl overflow-hidden relative bg-[#06122C] border border-[#169DC8]/40 p-3.5 sm:p-4 select-none cursor-pointer group shadow-inner flex-1 flex flex-col"
+      className="mt-4 sm:mt-5 rounded-xl overflow-hidden relative bg-gradient-to-b from-[#071638] via-[#051329] to-[#020A18] border border-[#169DC8]/40 p-4 sm:p-5 select-none cursor-pointer group shadow-inner flex-1 flex flex-col justify-between min-h-[290px] sm:min-h-[330px]"
       title="Click to replay ownership trajectory"
     >
-     
-
-      {/* Trajectory path: horizontal stepper on sm+, compact grid on mobile (centered to fill the panel) */}
-      <div key={replayKey} className="relative z-10 flex-1 flex items-center py-2">
-        {/* Connecting line behind the nodes */}
-        <div className="hidden sm:block absolute top-[15px] left-[8%] right-[8%] h-[2px] bg-gradient-to-r from-[#169DC8]/50 via-[#00C2FF]/80 to-[#38BDF8]" />
-
-        <div className="grid grid-cols-5 gap-1 sm:gap-1.5">
-          {aside.steps.map((stepText, sIdx) => {
-            const StepIcon = aside.icons?.[sIdx] || Building2;
-            const isTarget = sIdx === aside.steps.length - 1;
-
-            return (
-              <motion.div
-                key={sIdx}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: sIdx * 0.1, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="relative flex flex-col items-center text-center gap-1.5"
-              >
-                <div
-                  className={`relative z-10 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-105 ${
-                    isTarget
-                      ? "bg-gradient-to-br from-[#00E5FF] to-[#00C2FF] text-[#06122C] shadow-[0_0_16px_rgba(0,194,255,0.6)]"
-                      : "bg-white/[0.06] border border-[#169DC8]/60 text-[#00C2FF]"
-                  }`}
-                >
-                  <StepIcon className="w-3.5 h-3.5" />
-                </div>
-                <span
-                  className={`text-[9.5px] sm:text-[11px] leading-tight font-semibold ${
-                    isTarget ? "text-[#38BDF8]" : "text-slate-200"
-                  }`}
-                >
-                  {stepText}
-                </span>
-              </motion.div>
-            );
-          })}
-        </div>
+      {/* Ambient background glow matching dark navy canvas */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-10 right-10 w-64 h-64 bg-[#00C2FF]/15 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-10 w-56 h-56 bg-[#169DC8]/12 rounded-full blur-2xl" />
       </div>
 
-      {aside.footerNote && (
-        <p className="mt-2.5 text-[10px] sm:text-[10.5px] text-slate-400 italic border-t border-white/10 pt-2 font-normal">
-          {aside.footerNote}
-        </p>
-      )}
+
+      {/* Upward Ascending Glowing Cyan Wave Line & Hexagon Nodes */}
+      <div key={replayKey} className="relative z-10 flex-1 w-full h-full min-h-[210px] sm:min-h-[240px]">
+        <svg
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+          className="w-full h-full absolute inset-0 pointer-events-none overflow-visible z-0"
+        >
+          <defs>
+            <linearGradient id="upwardGlowLine" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#0077B6" stopOpacity="0.4" />
+              <stop offset="25%" stopColor="#00B4D8" stopOpacity="0.8" />
+              <stop offset="65%" stopColor="#00C2FF" stopOpacity="0.95" />
+              <stop offset="100%" stopColor="#00E5FF" stopOpacity="1" />
+            </linearGradient>
+            <filter id="neonLineGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="1" result="blur" />
+            </filter>
+          </defs>
+
+          {/* Subtle neon halo line behind */}
+          <motion.path
+            d="M 0 68 C 5 66, 7 65, 10 64 C 18 61, 23 58, 30 55 C 38 51, 43 48, 50 45 C 58 41, 63 37, 70 34 C 78 30, 83 24, 90 20 C 94 18, 97 15, 100 13"
+            fill="none"
+            stroke="#00C2FF"
+            strokeWidth="1.8"
+            opacity="0.3"
+            filter="url(#neonLineGlow)"
+            initial={{ pathLength: 0 }}
+            animate={isInView ? { pathLength: 1 } : { pathLength: 0 }}
+            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+          />
+
+          {/* Slender, crisp foreground upward cyan line */}
+          <motion.path
+            d="M 0 68 C 5 66, 7 65, 10 64 C 18 61, 23 58, 30 55 C 38 51, 43 48, 50 45 C 58 41, 63 37, 70 34 C 78 30, 83 24, 90 20 C 94 18, 97 15, 100 13"
+            fill="none"
+            stroke="url(#upwardGlowLine)"
+            strokeWidth="0.8"
+            strokeLinecap="round"
+            initial={{ pathLength: 0 }}
+            animate={isInView ? { pathLength: 1 } : { pathLength: 0 }}
+            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+          />
+        </svg>
+
+        {/* 5 Hexagon Stage Nodes positioned along the ascending wave */}
+        {nodes.map((node, idx) => {
+          const NodeIcon = node.icon;
+          const isApex = node.isApex;
+
+          return (
+            <motion.div
+              key={node.num}
+              style={{
+                left: `${node.x}%`,
+                top: `${node.y}%`,
+              }}
+              initial={{ opacity: 0, scale: 0.6 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.6 }}
+              transition={{
+                delay: isInView ? 0.2 + idx * 0.12 : 0,
+                duration: 0.45,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="absolute -translate-x-1/2 -translate-y-1/2 group/node z-20 pointer-events-auto flex flex-col items-center"
+            >
+              {/* Shorter Hexagonal Node Badge Container */}
+              <div
+                className={`relative w-[44px] h-[50px] sm:w-[54px] sm:h-[62px] flex flex-col items-center justify-center p-1 select-none transition-all duration-300 group-hover/node:scale-108 ${
+                  isApex
+                    ? "filter drop-shadow-[0_0_18px_rgba(0,229,255,0.7)]"
+                    : "filter drop-shadow-[0_4px_12px_rgba(0,194,255,0.22)] group-hover/node:drop-shadow-[0_4px_18px_rgba(0,229,255,0.45)]"
+                }`}
+              >
+                {/* SVG Hexagon Shape with Gradients & Borders */}
+                <svg
+                  viewBox="0 0 68 78"
+                  className="absolute inset-0 w-full h-full pointer-events-none overflow-visible"
+                >
+                  <defs>
+                    <linearGradient id={`hexBg-${node.num}`} x1="0%" y1="0%" x2="0%" y2="100%">
+                      {isApex ? (
+                        <>
+                          <stop offset="0%" stopColor="#0E3D78" stopOpacity="0.98" />
+                          <stop offset="100%" stopColor="#051635" stopOpacity="1" />
+                        </>
+                      ) : (
+                        <>
+                          <stop offset="0%" stopColor="#0B234C" stopOpacity="0.94" />
+                          <stop offset="100%" stopColor="#041228" stopOpacity="0.97" />
+                        </>
+                      )}
+                    </linearGradient>
+
+                    <linearGradient id={`hexStroke-${node.num}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                      {isApex ? (
+                        <>
+                          <stop offset="0%" stopColor="#00E5FF" />
+                          <stop offset="50%" stopColor="#38BDF8" />
+                          <stop offset="100%" stopColor="#00C2FF" />
+                        </>
+                      ) : (
+                        <>
+                          <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.9" />
+                          <stop offset="50%" stopColor="#0099DD" stopOpacity="0.6" />
+                          <stop offset="100%" stopColor="#006699" stopOpacity="0.8" />
+                        </>
+                      )}
+                    </linearGradient>
+                  </defs>
+
+                  {/* Symmetrical Vertical Hexagon Polygon */}
+                  <polygon
+                    points="34,2 66,20 66,58 34,76 2,58 2,20"
+                    fill={`url(#hexBg-${node.num})`}
+                    stroke={`url(#hexStroke-${node.num})`}
+                    strokeWidth={isApex ? "2.2" : "1.4"}
+                    className="transition-colors duration-300"
+                  />
+
+                  {/* Subtle inner accent polygon for apex node */}
+                  {isApex && (
+                    <polygon
+                      points="34,6 61,22 61,56 34,72 7,56 7,22"
+                      fill="none"
+                      stroke="#00E5FF"
+                      strokeWidth="0.8"
+                      strokeOpacity="0.4"
+                    />
+                  )}
+                </svg>
+
+                {/* Content inside hexagon: Stage number & Shorter Logo/Icon */}
+                <div className="relative z-10 flex flex-col items-center justify-center text-center">
+                  {/* Stage Number (01, 02...) */}
+                  <span
+                    className={`text-[7.5px] sm:text-[9px] font-mono font-bold leading-none mb-0.5 tracking-wider ${
+                      isApex ? "text-[#00E5FF]" : "text-[#38BDF8]/90"
+                    }`}
+                  >
+                    {node.num}
+                  </span>
+
+                  {/* Shorter Icon / Logo */}
+                  <div
+                    className={`flex items-center justify-center transition-transform duration-300 group-hover/node:scale-110 ${
+                      isApex ? "text-[#00E5FF]" : "text-[#7DD3FC]"
+                    }`}
+                  >
+                    <NodeIcon className="w-3 h-3 sm:w-3.5 sm:h-3.5 stroke-[2.2]" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Text Label Moved BELOW the Hexagon Shape */}
+              <span
+                className={`absolute top-[calc(100%+6px)] sm:top-[calc(100%+8px)] left-1/2 -translate-x-1/2 text-[9.5px] sm:text-[11px] md:text-[11.5px] font-bold font-manrope leading-tight tracking-tight text-center drop-shadow-md whitespace-nowrap transition-colors ${
+                  isApex
+                    ? "text-[#38BDF8] font-extrabold"
+                    : "text-white group-hover/node:text-[#7DD3FC]"
+                }`}
+              >
+                {node.label}
+              </span>
+            </motion.div>
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -835,9 +990,70 @@ function AsidePanel({
 export default function GCCCapabilitiesMosaic() {
   // First section is opened by default as requested
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const handleToggle = (idx: number) => {
+    const isOpening = openIndex !== idx;
+    const currentOpen = openIndex;
+
     setOpenIndex((prev) => (prev === idx ? null : idx));
+
+    if (isOpening) {
+      const targetEl = itemRefs.current[idx];
+      if (targetEl) {
+        const navOffset = 85;
+        const rect = targetEl.getBoundingClientRect();
+        const currentItemAbsoluteY = window.pageYOffset + rect.top;
+
+        // If the currently open item is ABOVE the clicked item,
+        // its height will collapse to 0, shifting the clicked item upwards.
+        let heightToCollapseAbove = 0;
+        if (currentOpen !== null && currentOpen < idx) {
+          const prevPanel = document.getElementById(
+            `capability-panel-${CAPABILITIES[currentOpen].id}`
+          );
+          if (prevPanel) {
+            heightToCollapseAbove = prevPanel.offsetHeight;
+          }
+        }
+
+        // Calculate final resting position of the clicked item's header
+        const finalItemY = currentItemAbsoluteY - heightToCollapseAbove;
+        const targetScrollY = Math.max(0, finalItemY - navOffset);
+
+        // Smoothly scroll to the header so it remains right under the navbar
+        // and the section content expands downwards
+        window.scrollTo({
+          top: targetScrollY,
+          behavior: "smooth",
+        });
+
+        // Additional settling checks during and after the 350ms collapse animation
+        setTimeout(() => {
+          if (targetEl) {
+            const updatedRect = targetEl.getBoundingClientRect();
+            if (Math.abs(updatedRect.top - navOffset) > 12) {
+              window.scrollTo({
+                top: Math.max(0, window.pageYOffset + updatedRect.top - navOffset),
+                behavior: "smooth",
+              });
+            }
+          }
+        }, 150);
+
+        setTimeout(() => {
+          if (targetEl) {
+            const finalRect = targetEl.getBoundingClientRect();
+            if (Math.abs(finalRect.top - navOffset) > 8) {
+              window.scrollTo({
+                top: Math.max(0, window.pageYOffset + finalRect.top - navOffset),
+                behavior: "smooth",
+              });
+            }
+          }
+        }, 360);
+      }
+    }
   };
 
   return (
@@ -866,14 +1082,16 @@ export default function GCCCapabilitiesMosaic() {
         <div className="w-full">
           {CAPABILITIES.map((cap, idx) => {
             const isOpen = openIndex === idx;
-            const isLast = idx === CAPABILITIES.length - 1;
 
             return (
               <div
                 key={cap.id}
-                className={`transition-colors duration-200 border-t border-[#169DC8] ${
-                  isLast ? "border-b border-[#169DC8]" : ""
-                }`}
+                ref={(el) => {
+                  itemRefs.current[idx] = el;
+                }}
+                id={`capability-row-${cap.id}`}
+                className={`scroll-mt-24 sm:scroll-mt-28 transition-colors duration-200 ${idx !== 0 ? "border-t border-[#169DC8]" : ""
+                  }`}
               >
                 {/* ACCORDION ROW HEADER */}
                 <button
@@ -944,9 +1162,8 @@ export default function GCCCapabilitiesMosaic() {
                                     return (
                                       <div
                                         key={item.label}
-                                        className={`rounded-xl border border-[#DCE8F4] bg-white hover:border-[#169DC8]/50 p-3 flex items-center gap-3 transition-all duration-200 shadow-2xs ${
-                                          isSpanTwo ? "sm:col-span-2" : ""
-                                        }`}
+                                        className={`rounded-xl border border-[#DCE8F4] bg-white hover:border-[#169DC8]/50 p-3 flex items-center gap-3 transition-all duration-200 shadow-2xs ${isSpanTwo ? "sm:col-span-2" : ""
+                                          }`}
                                       >
                                         <div className="w-8 h-8 rounded-lg bg-[#E5F2FC] text-[#0D306C] flex items-center justify-center shrink-0">
                                           <TagIcon className="w-4 h-4" />
@@ -964,11 +1181,11 @@ export default function GCCCapabilitiesMosaic() {
                               </div>
                             </div>
 
-                            {/* Call To Action Buttons */}
-                            <div className="flex flex-wrap items-center gap-3 pt-2">
+                            {/* Call To Action Buttons — both on one line, even on mobile */}
+                            <div className="flex items-center gap-2 pt-2">
                               <Link
                                 to={cap.primaryCta.href}
-                                className="btn-navy cursor-pointer inline-flex items-center gap-2 font-bold text-xs sm:text-[13px] py-2.5 px-5 rounded-full shadow-sm hover:scale-[1.02] transition-transform"
+                                className="btn-navy cursor-pointer inline-flex items-center justify-center gap-2 font-bold text-xs sm:text-[13px] py-2.5 px-4 sm:px-5 rounded-full shadow-sm hover:scale-[1.02] transition-transform flex-1 min-w-0 whitespace-nowrap truncate"
                               >
                                 <span>{cap.primaryCta.mobileLabel ?? cap.primaryCta.label}</span>
                                 <ArrowRight className="w-3.5 h-3.5 shrink-0" />
@@ -976,7 +1193,7 @@ export default function GCCCapabilitiesMosaic() {
                               {cap.secondaryCta && (
                                 <Link
                                   to={cap.secondaryCta.href}
-                                  className="text-[#0D306C] hover:text-[#169DC8] text-xs sm:text-[13px] font-semibold inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-full border border-[#CBD5E1] bg-white hover:border-[#169DC8] transition-all"
+                                  className="text-[#0D306C] hover:text-[#169DC8] text-xs sm:text-[13px] font-semibold inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-full border border-[#CBD5E1] bg-white hover:border-[#169DC8] transition-all flex-1 min-w-0 whitespace-nowrap truncate"
                                 >
                                   <span>{cap.secondaryCta.mobileLabel ?? cap.secondaryCta.label}</span>
                                   <ArrowRight className="w-3.5 h-3.5 text-[#169DC8] shrink-0" />

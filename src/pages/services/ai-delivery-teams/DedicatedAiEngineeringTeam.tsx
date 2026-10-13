@@ -327,7 +327,7 @@ export default function DedicatedAiEngineeringTeam() {
                     style={{ width: "74%", height: "72%" }}
                   >
                     <img
-                      src="/images/pillar_card1_arch_v2.png"
+                      src="/images/product_roadmap.webp"
                       alt={bestFor[0].title}
                       className="w-full h-full object-contain object-right-bottom scale-105 sm:scale-[1.08] origin-bottom-right drop-shadow-sm transition-transform duration-500 group-hover:scale-110"
                     />
@@ -377,7 +377,7 @@ export default function DedicatedAiEngineeringTeam() {
                     style={{ width: "66%", height: "65%" }}
                   >
                     <img
-                      src="/images/pillar_card2_valid_v3.png"
+                      src="/images/Agentic_workflow.webp"
                       alt={bestFor[1].title}
                       className="w-full h-full object-contain object-right-bottom scale-100 origin-bottom-right drop-shadow-sm transition-transform duration-500 group-hover:scale-105"
                     />
@@ -475,7 +475,7 @@ export default function DedicatedAiEngineeringTeam() {
                       }}
                     >
                       <img
-                        src="/images/gcc_skyscraper_cutout.png"
+                        src="/images/gcc_skyscraper_cutout-removebg-preview.png"
                         alt="Dedicated AI Engineering Team"
                         className="w-full h-full object-contain object-right-bottom scale-105 origin-bottom-right"
                       />
@@ -563,7 +563,7 @@ export default function DedicatedAiEngineeringTeam() {
                     style={{ width: "63%", height: "62%" }}
                   >
                     <img
-                      src="/images/pillar_card3_deliver_v3.png"
+                      src="/images/Saas_Ai.webp"
                       alt={bestFor[3].title}
                       className="w-full h-full object-contain object-right-bottom scale-100 origin-bottom-right drop-shadow-sm transition-transform duration-500 group-hover:scale-105"
                     />
@@ -613,7 +613,7 @@ export default function DedicatedAiEngineeringTeam() {
                     style={{ width: "74%", height: "72%" }}
                   >
                     <img
-                      src="/images/pillar_card4_transfer_v2.png"
+                      src="/images/enterprise_modern.webp"
                       alt={bestFor[4].title}
                       className="w-full h-full object-contain object-right-bottom scale-105 sm:scale-[1.08] origin-bottom-right drop-shadow-sm transition-transform duration-500 group-hover:scale-110"
                     />

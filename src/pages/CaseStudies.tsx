@@ -66,7 +66,7 @@ const engagements = [
     id: "02",
     title: "AI-first GCC design",
     desc: "Architecting the data, MLOps, model governance, and responsible-AI layer that lets a center deliver AI outcomes, not just hire AI engineers.",
-    image: "/images/mosaic_ai_gcc.jpg",
+    image: "/images/mosaic_ai_gcc.webp",
     ctaText: "Explore AI GCC Design",
     href: "/services/ai-gcc",
   },
@@ -82,7 +82,7 @@ const engagements = [
     id: "04",
     title: "Operations transformation",
     desc: "Repositioning an existing center from cost-arbitrage support into a higher-value strategic platform with new mandates, new capability, and a new operating rhythm.",
-    image: "/images/gcc_modernization.jpg",
+    image: "/images/gcc_modernization.webp",
     ctaText: "Explore Transformation",
     href: "/services/gcc/modernization-transformation",
   },
@@ -90,7 +90,7 @@ const engagements = [
     id: "05",
     title: "Governance and compliance",
     desc: "Designing the decision-rights, risk, control, and reporting model so the center is audit-ready every day and the board sees a clean view at every review.",
-    image: "/images/ai-governance.jpg",
+    image: "/images/ai-governance.webp",
     ctaText: "Explore Governance",
     href: "/services/gcc-operations/governance-compliance",
   },
@@ -168,8 +168,22 @@ export default function CaseStudies() {
         >
           {/* Executive Background Overlay with 3D Cyan Fluid Ribbon */}
           <div className="absolute inset-0 w-full h-full z-0">
-            <Image
-              src="/images/tools/hero_tools_bg.webp"
+            {/* Mobile artwork */}
+            <div className="md:hidden absolute inset-0">
+              <Image
+                src="/hero/hero-half-viewport-mobile.webp"
+                alt="Mobile hero artwork"
+                fill
+                priority
+                unoptimized
+                sizes="100vw"
+                className="object-cover object-bottom"
+              />
+            </div>
+            {/* Desktop artwork */}
+            <div className="hidden md:block absolute inset-0">
+              <Image
+                src="/hero/hero-half-viewport.webp"
               alt="How We Design, Launch & Scale GCCs"
               fill
               priority
@@ -177,6 +191,7 @@ export default function CaseStudies() {
               sizes="100vw"
               className="object-cover object-right"
             />
+            </div>
             {/* Soft responsive gradient overlay for mobile readability */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#012048]/95 via-[#012048]/85 to-transparent lg:hidden pointer-events-none" />
           </div>

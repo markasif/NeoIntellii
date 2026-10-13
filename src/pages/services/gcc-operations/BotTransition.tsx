@@ -56,7 +56,7 @@ const stages = [
     desc: "Everything is built in the form it will be handed over in: documented, owned, on standard tooling.",
     items: ["Team", "Processes", "Systems", "Workspace", "Controls", "Operating model"],
     icon: Rocket,
-    image: "/images/gcc-operations/gcc-ops-workplace.jpg",
+    image: "/images/gcc-operations/gcc-ops-workplace.webp",
     imageAlt: "GCC Build Phase - Setting up workplace, infrastructure, engineering pods, and operational controls",
   },
   {
@@ -64,7 +64,7 @@ const stages = [
     desc: "NeoIntelli runs the agreed operating layer against service levels while the center's leadership and the client's receiving organization mature.",
     items: ["Stabilize", "Measure", "Improve", "Document", "Develop leadership"],
     icon: RefreshCw,
-    image: "/images/gcc-operations/gcc-ops-performance.jpg",
+    image: "/images/gcc-operations/gcc-ops-performance.webp",
     imageAlt: "GCC Operate Phase - Managing SLA adherence, service levels, and performance dashboards",
   },
   {
@@ -72,7 +72,7 @@ const stages = [
     desc: "Defined capability moves into the client's organization by readiness criteria, staged by function, team or location.",
     items: ["Employees where applicable", "Process ownership", "Vendors", "Systems", "Records", "Governance", "Knowledge", "Operational control"],
     icon: ArrowRightLeft,
-    image: "/images/gcc-operations/gcc-real-bot-handover.jpg",
+    image: "/images/gcc-operations/gcc-real-bot-handover.webp",
     imageAlt: "GCC Transfer Phase - Formal executive transfer and operational control handover ceremony",
   },
 ];
@@ -363,7 +363,7 @@ export default function BotTransition() {
             className="lg:col-span-6 xl:col-span-6 flex flex-col h-full"
           >
             <InBriefCard
-              imageSrc="/images/gcc-operations/gcc-real-bot-handover.jpg"
+              imageSrc="/images/gcc-operations/gcc-real-bot-handover.webp"
               imageAlt="GCC Build-Operate-Transfer Handover Operations"
             >
               BOT &amp; Transition is NeoIntelli&apos;s Build-Operate-Transfer service for companies that want to own their India GCC but do not want to build every local operating function before the first team is productive. NeoIntelli builds the team, processes, systems, workspace and controls, operates the agreed operating layer until readiness criteria are met, and then transfers employees where applicable, process ownership, vendors, systems, records, governance and operational control into the client&apos;s organization. Every process is documented for transfer from day one. Transfer mechanics depend on the contract and entity structure.

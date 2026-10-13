@@ -234,7 +234,7 @@ export default function GccOperations() {
             className="lg:col-span-6 xl:col-span-6 flex flex-col h-full"
           >
             <InBriefCard
-              imageSrc="/images/gcc-operations/gcc-in-brief-overview.jpg"
+              imageSrc="/images/gcc-operations/gcc-in-brief-overview.webp"
               imageAlt="GCC Operations &amp; Managed Services Overview"
             >
               GCC Operations &amp; Managed Services is NeoIntelli&apos;s operating layer for companies that run a Global Capability Center in India and do not want to build every local support function themselves. It serves new centers, AI Micro GCCs, scaling centers and existing GCCs professionalizing their operations. It covers people and HR operations, workforce strategy, workplace and IT, service management and performance, governance and compliance coordination, and Build-Operate-Transfer. NeoIntelli operates the agreed functions under a documented responsibility matrix, measures the center on outcomes, and designs every process to transfer to the client when the client is ready.
@@ -938,7 +938,7 @@ export default function GccOperations() {
           <div className="lg:col-span-6 xl:col-span-5 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[480px]">
               <img
-                src="/images/gcc-operations/commercial-transparency-stack-transparent.png"
+                src="/images/gcc-operations/commercial-transparency-stack-transparent.webp"
                 alt="Commercial transparency: separated people cost, operating services, and project infrastructure"
                 className="w-full h-auto object-contain select-none pointer-events-none drop-shadow-md"
                 width={499}

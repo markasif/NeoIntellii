@@ -208,7 +208,7 @@ export default function NeoIntelliHero({
           alt={imageAlt}
           fill
           priority
-          sizes="100vw"
+          sizes="(max-width: 1023px) 100vw"
           className="object-cover object-bottom"
         />
         {/* Soft top gradient to ensure crystal-clear text contrast on mobile */}
@@ -222,7 +222,7 @@ export default function NeoIntelliHero({
           alt={imageAlt}
           fill
           priority
-          sizes="100vw"
+          sizes="(min-width: 1024px) 100vw"
           className="object-cover object-center"
         />
         {/* Subtle left-side wash to keep typography high-contrast across all widescreen monitors */}
@@ -235,7 +235,7 @@ export default function NeoIntelliHero({
       {/* ── HERO CONTENT AREA ── */}
       {/* On mobile: aligned to top (below navbar), nicely positioned above the artwork.
           On desktop: vertically centered in the left column. */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-start lg:justify-center pt-2 xs:pt-3 sm:pt-4 lg:py-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-start lg:justify-center pt-[15vh] sm:pt-[13vh] lg:pt-0 lg:py-8">
         
         {/* Optional Breadcrumbs for inner pages */}
         {breadcrumbs && breadcrumbs.length > 0 && (
@@ -266,7 +266,9 @@ export default function NeoIntelliHero({
 
         {/* Editorial Content Block */}
         <div className="text-center lg:text-left shrink-0 w-full max-w-5xl mx-auto lg:mx-0 flex flex-col items-center lg:items-start">
-          <div className="max-w-xl lg:max-w-2xl mx-auto lg:mx-0 text-center lg:text-left">
+          <div
+              className="max-w-xl lg:max-w-2xl mx-auto lg:mx-0 text-center lg:text-left px-5 py-6 lg:px-0 lg:py-0"
+            >
             
             {/* Headline */}
             <h1 className="text-[30px] xs:text-[34px] sm:text-4xl md:text-[44px] lg:text-[48px] xl:text-[54px] font-extrabold font-manrope text-white tracking-[-0.035em] leading-[1.12] sm:leading-[1.1] mb-2.5 xs:mb-3 sm:mb-4 text-center lg:text-left">
@@ -335,30 +337,8 @@ export default function NeoIntelliHero({
       {bottomContent ? (
         bottomContent
       ) : trustStrip && trustStrip.length > 0 ? (
-        <div className="w-full shrink-0 z-20 pb-3 sm:pb-4 lg:pb-6">
-          <HeroTrustMarquee items={trustStrip} className="sm:hidden" />
-          <div className="hidden sm:block relative z-20 w-full bg-transparent border-none">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div
-                className={`grid grid-cols-2 ${
-                  trustStrip.length === 6
-                    ? "sm:grid-cols-3 lg:grid-cols-6"
-                    : trustStrip.length === 4
-                    ? "sm:grid-cols-4"
-                    : "sm:grid-cols-3"
-                } gap-2.5 sm:gap-3 lg:gap-4`}
-              >
-                {trustStrip.map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-center justify-center p-2.5 rounded-xl bg-white/10 backdrop-blur-xs border border-white/15 text-center text-xs font-semibold text-white/90"
-                  >
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+        <div className="w-full shrink-0 z-20">
+          <HeroTrustMarquee items={trustStrip} />
         </div>
       ) : null}
     </section>

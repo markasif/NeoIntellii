@@ -47,7 +47,7 @@ const LAYERS: NeoHireXMatrixItem[] = [
     what: "Rules, scripts, workflow engines and RPA.",
     when: "When the process is stable, the inputs are structured and every branch can be written down. It is the cheapest, most testable option and it should not be replaced by AI just because AI is available.",
     limits: "Breaks on unstructured input, exceptions and any judgment the rules did not anticipate.",
-    image: "/images/tech-process-automation.png",
+    image: "/images/tech-process-automation.webp",
     imageAlt: "Deterministic workflow automation and rules engine",
   },
   {
@@ -58,7 +58,7 @@ const LAYERS: NeoHireXMatrixItem[] = [
     what: "AI recommends. A human approves or acts.",
     when: "When the step needs interpretation of language or documents, when the cost of an error is high, or when the organisation is not yet ready to let a system act alone. Most enterprise workflows should start here.",
     limits: "Throughput is bounded by the people in the loop; the design must make review fast.",
-    image: "/images/solution_ai_talent.jpg",
+    image: "/images/solution_ai_talent.webp",
     imageAlt: "AI-assisted enterprise workflow with human in the loop approval",
   },
   {
@@ -69,7 +69,7 @@ const LAYERS: NeoHireXMatrixItem[] = [
     what: "AI plans and executes controlled actions using approved tools.",
     when: "When the task spans several systems, the actions are well defined and reversible or approved, and evaluation has shown task success at the required level. Human escalation remains for anything outside the agent's permissions.",
     limits: "Requires identity, permissions, state, traces and continuous evaluation, or it is a prototype.",
-    image: "/images/ai-engineering/agentic-systems-capability.jpg",
+    image: "/images/ai-engineering/agentic-systems-capability.webp",
     imageAlt: "Autonomous tool-calling AI agent workflow architecture",
   },
 ];
@@ -84,14 +84,54 @@ const FLOW = [
 ];
 
 const CAPABILITIES = [
-  { title: "Workflow discovery and automation design", body: "Mapping the process, the exceptions and the decision points, then choosing which layer each step belongs to." },
-  { title: "Agent architecture", body: "Planning patterns, state and memory, model routing and the boundaries between agent, tools and people." },
-  { title: "Tool and integration layer", body: "APIs, enterprise system connectors and MCP integrations where relevant, with versioning and ownership." },
-  { title: "Permission and identity model", body: "The agent as a known principal with scoped, auditable access per task." },
-  { title: "Human-in-the-loop design", body: "Approval points, review interfaces and escalation paths designed for speed and accountability." },
-  { title: "Evaluation and simulation", body: "Task-level test cases and simulated environments run before every change." },
-  { title: "Monitoring and AgentOps", body: "Traces, task success, cost per task, incident handling and policy enforcement in production." },
-  { title: "Migration from rules and RPA", body: "Replacing brittle automations step by step, keeping deterministic logic where it still wins." },
+  {
+    title: "Workflow discovery and automation design",
+    body: "Mapping the process, the exceptions and the decision points, then choosing which layer each step belongs to.",
+    image: "/images/ai-engineering/agents/workflow-discovery.webp",
+    imageAlt: "AI workflow discovery and automation process mapping",
+  },
+  {
+    title: "Agent architecture",
+    body: "Planning patterns, state and memory, model routing and the boundaries between agent, tools and people.",
+    image: "/images/ai-engineering/agents/agent-architecture.webp",
+    imageAlt: "Autonomous AI agent architecture and cognitive state engine",
+  },
+  {
+    title: "Tool and integration layer",
+    body: "APIs, enterprise system connectors and MCP integrations where relevant, with versioning and ownership.",
+    image: "/images/ai-engineering/agents/tool-integration.webp",
+    imageAlt: "Enterprise API integration layer and cloud tool bridge",
+  },
+  {
+    title: "Permission and identity model",
+    body: "The agent as a known principal with scoped, auditable access per task.",
+    image: "/images/ai-engineering/agents/permission-identity.webp",
+    imageAlt: "Agent identity and role-based cryptographic permission control",
+  },
+  {
+    title: "Human-in-the-loop design",
+    body: "Approval points, review interfaces and escalation paths designed for speed and accountability.",
+    image: "/images/ai-engineering/agents/human-in-the-loop.webp",
+    imageAlt: "Human-in-the-loop decision review and action approval interface",
+  },
+  {
+    title: "Evaluation and simulation",
+    body: "Task-level test cases and simulated environments run before every change.",
+    image: "/images/ai-engineering/agents/evaluation-simulation.webp",
+    imageAlt: "AI agent evaluation suite and simulated benchmark testing",
+  },
+  {
+    title: "Monitoring and AgentOps",
+    body: "Traces, task success, cost per task, incident handling and policy enforcement in production.",
+    image: "/images/ai-engineering/agents/monitoring-agentops.webp",
+    imageAlt: "AgentOps production telemetry and real-time execution trace monitoring",
+  },
+  {
+    title: "Migration from rules and RPA",
+    body: "Replacing brittle automations step by step, keeping deterministic logic where it still wins.",
+    image: "/images/ai-engineering/agents/rpa-migration.webp",
+    imageAlt: "Modernization from legacy RPA scripts to intelligent AI agent workflows",
+  },
 ];
 
 const USE_CASES: { title: string; body: string; icon: LucideIcon }[] = [

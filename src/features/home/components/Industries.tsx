@@ -45,7 +45,7 @@ export default function Industries() {
         "Risk, fraud and payments analytics, regulatory reporting and secure data platforms.",
       href: "/industries/bfsi-gcc",
       ctaText: "Financial Services GCC",
-      image: "/images/industries/crisp_fin.png",
+      image: "/images/industries/crisp_fin.webp",
     },
     {
       id: "02",
@@ -54,7 +54,7 @@ export default function Industries() {
         "Clinical, regulatory and R&D data work under stricter handling and audit requirements.",
       href: "/industries/healthcare-gcc",
       ctaText: "Healthcare & Life Sciences GCC",
-      image: "/images/industries/crisp_health.png",
+      image: "/images/industries/crisp_health.webp",
     },
     {
       id: "03",
@@ -63,7 +63,7 @@ export default function Industries() {
         "Industry 4.0, supply chain and digital engineering close to the production system.",
       href: "/industries/manufacturing-gcc",
       ctaText: "Manufacturing GCC",
-      image: "/images/industries/crisp_mfg.png",
+      image: "/images/industries/crisp_mfg.webp",
     },
     {
       id: "04",
@@ -72,7 +72,7 @@ export default function Industries() {
         "Demand forecasting, personalization and supply chain optimization at commerce scale.",
       href: "/industries/retail-gcc",
       ctaText: "Retail & Consumer GCC",
-      image: "/images/industries/crisp_retail.png",
+      image: "/images/industries/crisp_retail.webp",
     },
     {
       id: "05",
@@ -81,7 +81,7 @@ export default function Industries() {
         "Product, platform and AI engineering owned end to end by the center.",
       href: "/industries/technology-gcc",
       ctaText: "Software & SaaS GCC",
-      image: "/images/industries/crisp_saas.png",
+      image: "/images/industries/crisp_saas.webp",
     },
     {
       id: "06",
@@ -90,7 +90,7 @@ export default function Industries() {
         "Cross-portfolio capability platforms built once and reused across holdings.",
       href: "/industries/private-equity-gcc",
       ctaText: "Private Equity GCC",
-      image: "/images/industries/crisp_pe.png",
+      image: "/images/industries/crisp_pe.webp",
     },
   ];
 

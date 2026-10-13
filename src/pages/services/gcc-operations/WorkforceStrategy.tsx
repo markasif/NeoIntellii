@@ -194,7 +194,7 @@ const pitfalls: PitfallItem[] = [
     title: "Headcount before architecture",
     desc: "Hiring into vague job descriptions, then reorganizing six months later when the work does not match the titles.",
     badge: "FAILURE MODE 01",
-    image: "/images/gcc-operations/gcc-ops-workforce.jpg",
+    image: "/images/gcc-operations/gcc-ops-workforce.webp",
     alt: "Headcount before architecture in GCC workforce planning",
     aspect: "aspect-[4/3]",
     points: [
@@ -210,7 +210,7 @@ const pitfalls: PitfallItem[] = [
     title: "Copying the HQ structure",
     desc: "Mirroring an organization built over twenty years at headquarters instead of designing for what the center actually does.",
     badge: "FAILURE MODE 02",
-    image: "/images/gcc-operations/gcc-hq-leadership.jpg",
+    image: "/images/gcc-operations/gcc-hq-leadership.webp",
     alt: "Copying headquarters structure in India GCC setup",
     aspect: "aspect-[16/10]",
     points: [
@@ -226,7 +226,7 @@ const pitfalls: PitfallItem[] = [
     title: "Hiring leadership last",
     desc: "Building a team of 40 individual contributors with no local lead, then expecting a newly hired manager to align them retrospectively.",
     badge: "FAILURE MODE 03",
-    image: "/images/gcc-operations/gcc-arch-leadership.jpg",
+    image: "/images/gcc-operations/gcc-arch-leadership.webp",
     alt: "Hiring leadership last failure pattern in GCC operations",
     aspect: "aspect-[4/3]",
     points: [
@@ -242,7 +242,7 @@ const pitfalls: PitfallItem[] = [
     title: "Single-city assumption",
     desc: "Assuming one India location fits all disciplines, rather than placing AI, platform and operations where each market is deepest.",
     badge: "FAILURE MODE 04",
-    image: "/images/gcc-operations/gcc-positioning-tower.jpg",
+    image: "/images/gcc-operations/gcc-positioning-tower.webp",
     alt: "Single-city assumption in India GCC location strategy",
     aspect: "aspect-[16/10]",
     points: [
@@ -258,7 +258,7 @@ const pitfalls: PitfallItem[] = [
     title: "Over-indexing on junior talent",
     desc: "Building cost leverage by hiring 80% junior engineers, only to discover delivery requires senior technical direction the center does not have.",
     badge: "FAILURE MODE 05",
-    image: "/images/gcc-operations/gcc-arch-teams.jpg",
+    image: "/images/gcc-operations/gcc-arch-teams.webp",
     alt: "Over-indexing on junior engineers in GCC staffing",
     aspect: "aspect-[4/3]",
     points: [
@@ -274,7 +274,7 @@ const pitfalls: PitfallItem[] = [
     title: "Ignoring succession until someone leaves",
     desc: "Discovering at 30 days' notice that the technical lead is the only person who understands the deployment pipeline.",
     badge: "FAILURE MODE 06",
-    image: "/images/gcc-operations/gcc-ops-governance.jpg",
+    image: "/images/gcc-operations/gcc-ops-governance.webp",
     alt: "Ignoring succession and critical role planning",
     aspect: "aspect-[16/10]",
     points: [
@@ -361,7 +361,7 @@ export default function WorkforceStrategy() {
             className="lg:col-span-6 xl:col-span-6 flex flex-col h-full"
           >
             <InBriefCard
-              imageSrc="/images/gcc-operations/gcc-ops-workforce.jpg"
+              imageSrc="/images/gcc-operations/gcc-ops-workforce.webp"
               imageAlt="GCC Workforce Strategy & Leadership Planning"
             >
               Workforce Strategy is the planning function of NeoIntelli&apos;s GCC operating layer. It translates a GCC mandate into capabilities, roles, skills, headcount phasing, location choices, leadership architecture, succession and retention design. It is for leaders who need to scale an India center without hiring reactively or copying the headquarters organization chart. NeoIntelli designs the workforce model with the client&apos;s leadership, tests it against the India talent market, and hands the resulting roles to the hiring engine, where NeoIntelli&apos;s AI Talent practice finds and technically validates the people.

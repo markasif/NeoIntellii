@@ -91,12 +91,12 @@ const openRoles = [
 
 /** Decorative artwork for the open-role cards, in role order. */
 const roleImages = [
-  "/images/gcc-operations/gcc-ops-workforce.jpg",
-  "/images/ai-engineering/genai-capability.jpg",
-  "/images/gcc-operations/gcc-ops-people.jpg",
-  "/images/mosaic_ai_gcc.jpg",
-  "/images/gcc-operations/gcc-ops-performance.jpg",
-  "/images/gcc-operations/gcc-ops-governance.jpg",
+  "/images/gcc-operations/gcc-ops-workforce.webp",
+  "/images/ai-engineering/genai-capability.webp",
+  "/images/gcc-operations/gcc-ops-people.webp",
+  "/images/mosaic_ai_gcc.webp",
+  "/images/gcc-operations/gcc-ops-performance.webp",
+  "/images/gcc-operations/gcc-ops-governance.webp",
 ];
 
 const cultureHighlights = [

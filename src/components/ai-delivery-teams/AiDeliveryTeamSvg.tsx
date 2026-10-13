@@ -10,7 +10,7 @@ export default function AiDeliveryTeamSvg({
   return (
     <div className={`relative flex items-center justify-center select-none ${className}`}>
       <img
-        src="/images/ai_delivery_team_realistic.png"
+        src="/images/ai_delivery_team_realistic.webp"
         alt="AI Delivery Team"
         className="max-h-full max-w-full object-contain"
       />

@@ -190,8 +190,22 @@ export default function BlogPost() {
         >
           {/* Executive Background Overlay */}
           <div className="absolute inset-0 w-full h-full z-0">
-            <Image
-              src="/images/tools/hero_tools_bg.webp"
+            {/* Mobile artwork */}
+            <div className="md:hidden absolute inset-0">
+              <Image
+                src="/hero/hero-half-viewport-mobile.webp"
+                alt="Mobile hero artwork"
+                fill
+                priority
+                unoptimized
+                sizes="100vw"
+                className="object-cover object-bottom"
+              />
+            </div>
+            {/* Desktop artwork */}
+            <div className="hidden md:block absolute inset-0">
+              <Image
+                src="/hero/hero-half-viewport.webp"
               alt={post.title}
               fill
               priority
@@ -199,6 +213,7 @@ export default function BlogPost() {
               sizes="100vw"
               className="object-cover object-right"
             />
+            </div>
             {/* Soft responsive gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#012048]/95 via-[#012048]/85 to-transparent lg:hidden pointer-events-none" />
           </div>

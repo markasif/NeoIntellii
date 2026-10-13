@@ -19,7 +19,7 @@ const DEFAULT_GROUPS: OutcomeGroup[] = [
   {
     title: "Talent",
     badge: "TALENT METRICS",
-    image: "/images/gcc-operations/gcc-ops-people.jpg",
+    image: "/images/gcc-operations/gcc-ops-people.webp",
     alt: "GCC talent and recruitment operations dashboard",
     aspect: "aspect-[4/5]", // Big / Tall
     summary: "Time to productivity, offer-to-join ratios, and employee retention across cohorts.",
@@ -33,7 +33,7 @@ const DEFAULT_GROUPS: OutcomeGroup[] = [
   {
     title: "Service",
     badge: "SERVICE DELIVERY",
-    image: "/images/gcc-operations/gcc-ops-performance.jpg",
+    image: "/images/gcc-operations/gcc-ops-performance.webp",
     alt: "GCC service management and SLA performance dashboard",
     aspect: "aspect-[4/3]", // Short
     summary: "SLA achievement, incident resolution velocity, cycle time, and delivery quality.",
@@ -47,7 +47,7 @@ const DEFAULT_GROUPS: OutcomeGroup[] = [
   {
     title: "Value",
     badge: "VALUE REALIZATION",
-    image: "/images/gcc-operations/gcc-ops-workforce.jpg",
+    image: "/images/gcc-operations/gcc-ops-workforce.webp",
     alt: "GCC workforce planning and value realization command center",
     aspect: "aspect-[4/5]", // Big / Tall
     summary: "Unit service costs, stakeholder satisfaction, automation, and mandate expansion.",
@@ -61,7 +61,7 @@ const DEFAULT_GROUPS: OutcomeGroup[] = [
   {
     title: "Risk",
     badge: "GOVERNANCE & CONTROLS",
-    image: "/images/gcc-operations/gcc-ops-governance.jpg",
+    image: "/images/gcc-operations/gcc-ops-governance.webp",
     alt: "GCC compliance, risk register, and audit readiness dashboard",
     aspect: "aspect-[4/3]", // Short
     summary: "Proactive risk remediation, control evidence, vendor reviews, and closed findings.",

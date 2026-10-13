@@ -121,7 +121,7 @@ export default function GenerativeAI() {
               This layer is run by <Link to={AI_GCC_PAGE_BY_KEY.mlops.path} className="text-[#008EC4] hover:text-[#0D306C] font-semibold underline underline-offset-2 transition-colors">{AI_GCC_PAGE_BY_KEY.mlops.name}</Link> and governed under <Link to={AI_GCC_PAGE_BY_KEY.governance.path} className="text-[#008EC4] hover:text-[#0D306C] font-semibold underline underline-offset-2 transition-colors">{AI_GCC_PAGE_BY_KEY.governance.name}</Link>.
             </>
           }
-          imageSrc="/images/ai-genai.jpg"
+          imageSrc="/images/ai-genai.webp"
           imageAlt="AgentOps & Autonomous Workflows"
           ourViewText="An AI agent without evaluation, permissions and observability is a prototype, not an enterprise capability."
         />

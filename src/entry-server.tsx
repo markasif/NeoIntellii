@@ -70,12 +70,12 @@ export const render = (url: string) => {
  <meta property="og:description" content="${routeSeo.description}"/>
  <meta property="og:url" content="${canonical}"/>
  <meta property="og:site_name" content="${SITE_NAME}"/>
- <meta property="og:image" content="${SITE_URL}/images/hero-illustration.png"/>
+ <meta property="og:image" content="${SITE_URL}/images/hero-illustration.webp"/>
  <meta property="og:locale" content="en_US"/>
  <meta name="twitter:card" content="summary_large_image"/>
  <meta name="twitter:title" content="${routeSeo.title}"/>
  <meta name="twitter:description" content="${routeSeo.description}"/>
- <meta name="twitter:image" content="${SITE_URL}/images/hero-illustration.png"/>
+ <meta name="twitter:image" content="${SITE_URL}/images/hero-illustration.webp"/>
  <link rel="canonical" href="${canonical}"/>
  ${homepageSchemas}
  ${breadcrumbJsonLd}

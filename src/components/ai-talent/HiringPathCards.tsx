@@ -29,11 +29,11 @@ export interface HiringPathCardsProps {
 }
 
 const DEFAULT_IMAGES = [
-  { image: "/images/how_we_work/phase_01_design.jpg", alt: "One critical specialist hire" },
-  { image: "/images/how_we_work/phase_02_build.jpg", alt: "Build an AI team and engineering squad" },
-  { image: "/images/how_we_work/phase_03_operate.jpg", alt: "Run an AI Recruitment Hub" },
-  { image: "/images/how_we_work/phase_04_scale.jpg", alt: "Build an AI GCC operating model" },
-  { image: "/images/solution_micro_gcc.jpg", alt: "Build an AI Micro GCC capability center" },
+  { image: "/images/how_we_work/phase_01_design.webp", alt: "One critical specialist hire" },
+  { image: "/images/how_we_work/phase_02_build.webp", alt: "Build an AI team and engineering squad" },
+  { image: "/images/how_we_work/phase_03_operate.webp", alt: "Run an AI Recruitment Hub" },
+  { image: "/images/how_we_work/phase_04_scale.webp", alt: "Build an AI GCC operating model" },
+  { image: "/images/solution_micro_gcc.webp", alt: "Build an AI Micro GCC capability center" },
 ];
 
 /**

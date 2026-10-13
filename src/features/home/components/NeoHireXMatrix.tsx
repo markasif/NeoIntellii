@@ -47,7 +47,7 @@ const DEFAULT_SOLUTIONS: NeoHireXMatrixItem[] = [
       "Build a dedicated AI engineering capability in India without starting with the overhead of a large traditional GCC. Begin with one focused team and expand as the business grows.",
     cta: "Explore AI Micro GCC",
     href: "/services/micro-gcc",
-    image: "/images/solution_micro_gcc.jpg",
+    image: "/images/solution_micro_gcc.webp",
     imageAlt:
       "AI Micro GCC engineering team collaborating in India on neural architectures and ML pipelines",
     direction: "right",
@@ -60,7 +60,7 @@ const DEFAULT_SOLUTIONS: NeoHireXMatrixItem[] = [
       "Build your team across GenAI, Agentic AI, machine learning, data engineering, MLOps and AI leadership through specialist sourcing, NeoHireX screening and practitioner-led technical validation.",
     cta: "Explore AI Talent",
     href: "/services/ai-talent",
-    image: "/images/solution_ai_talent.jpg",
+    image: "/images/solution_ai_talent.webp",
     imageAlt:
       "Senior AI engineering practitioner conducting technical evaluation with code and scorecard metrics",
     direction: "left",
@@ -73,7 +73,7 @@ const DEFAULT_SOLUTIONS: NeoHireXMatrixItem[] = [
       "Model roles, seniority, headcount and city to estimate the fully loaded monthly and annual operating cost of your India team.",
     cta: "Calculate My GCC Cost",
     href: "/gcc-cost-calculator",
-    image: "/images/solution_gcc_calculator.jpg",
+    image: "/images/solution_gcc_calculator.webp",
     imageAlt:
       "India GCC strategic cost and talent headcount modeling dashboard interface",
     direction: "right",
@@ -214,7 +214,7 @@ export default function NeoHireXMatrix({
                 {/* Main Visual: Photorealistic Solution Image */}
                 <div className="relative w-full flex-1 min-h-[220px] sm:min-h-[260px] lg:min-h-[280px] overflow-hidden group/img">
                   <Image
-                    src={item.image || "/images/solutions_illustration.jpg"}
+                    src={item.image || "/images/solutions_illustration.webp"}
                     alt={item.imageAlt || item.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 45vw, 500px"

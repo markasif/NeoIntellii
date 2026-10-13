@@ -323,7 +323,7 @@ export default function AdvisoryProcessFlow({
                     <svg
                       viewBox="0 0 240 70"
                       preserveAspectRatio="none"
-                      className="w-full h-12 sm:h-14 block"
+                      className="w-full h-9 sm:h-12 block"
                       aria-hidden="true"
                     >
                       <path d="M 0,70 C 60,15 180,15 240,70 L 240,0 L 0,0 Z" fill="currentColor" />
@@ -345,23 +345,23 @@ export default function AdvisoryProcessFlow({
                 )}
 
                 {/* 3. Center content */}
-                <div className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-5 py-3">
-                  <div className="w-11 h-11 rounded-full flex items-center justify-center mb-3" style={{ color }}>
-                    <Icon className="w-5 h-5" strokeWidth={2.2} />
+                <div className="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-5 py-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center mb-3" style={{ color }}>
+                    <Icon className="w-6 h-6 sm:w-7 sm:h-7" strokeWidth={2.2} />
                   </div>
-                  <h3 className="text-xs sm:text-sm font-extrabold text-[#0D306C] uppercase tracking-wider mb-2 font-manrope">
+                  <h3 className="text-sm sm:text-base font-extrabold text-[#0D306C] uppercase tracking-wider mb-2 font-manrope">
                     {label}
                   </h3>
                   {detail && (
-                    <p className={detailClassName || "text-xs sm:text-[13px] text-[#505D74] leading-relaxed max-w-[240px] mx-auto font-normal"}>
+                    <p className={detailClassName || "text-xs sm:text-[13.5px] text-[#505D74] leading-relaxed max-w-sm mx-auto w-full font-normal"}>
                       {detail}
                     </p>
                   )}
                   {items && items.length > 0 && (
-                    <ul className="mt-3 w-full max-w-[240px] mx-auto space-y-1.5 text-left list-none p-0">
+                    <ul className="mt-3 w-full max-w-sm mx-auto space-y-1.5 list-none p-0">
                       {items.map((entry) => (
-                        <li key={entry} className="flex items-start gap-2 text-[11px] sm:text-xs text-[#505D74] leading-snug">
-                          <span className="mt-1.5 h-1.5 w-1.5 rounded-full shrink-0" style={{ backgroundColor: color }} />
+                        <li key={entry} className="flex items-center justify-center gap-2 text-[11px] sm:text-xs text-[#505D74] leading-snug">
+                          <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ backgroundColor: color }} />
                           <span>{entry}</span>
                         </li>
                       ))}
@@ -375,7 +375,7 @@ export default function AdvisoryProcessFlow({
                     <svg
                       viewBox="0 0 240 70"
                       preserveAspectRatio="none"
-                      className="w-full h-12 sm:h-14 block"
+                      className="w-full h-9 sm:h-12 block"
                       aria-hidden="true"
                     >
                       <path d="M 0,0 C 60,55 180,55 240,0 L 240,70 L 0,70 Z" fill="currentColor" />

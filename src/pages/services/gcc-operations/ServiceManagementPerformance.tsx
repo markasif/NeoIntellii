@@ -222,7 +222,7 @@ const pitfalls = [
     title: "Metric overload",
     desc: "A long list of KPIs is the same as none. Keep to a short set tied to enterprise value.",
     badge: "FAILURE MODE 01",
-    image: "/images/gcc-operations/gcc-ops-performance.jpg",
+    image: "/images/gcc-operations/gcc-ops-performance.webp",
     aspect: "aspect-[4/3]",
     points: [
       "Vanity metric accumulation",
@@ -235,7 +235,7 @@ const pitfalls = [
     title: "Process improvement without service design",
     desc: "Optimizing a process inside a badly designed service moves the bottleneck rather than removing it.",
     badge: "FAILURE MODE 02",
-    image: "/images/gcc-operations/gcc-arch-teams.jpg",
+    image: "/images/gcc-operations/gcc-arch-teams.webp",
     aspect: "aspect-[16/10]",
     points: [
       "Sub-optimized local silos",
@@ -248,7 +248,7 @@ const pitfalls = [
     title: "Automation as a one-off project",
     desc: "Automation needs a continuous backlog with owners, scoring and a delivery rhythm, not a one-quarter campaign.",
     badge: "FAILURE MODE 03",
-    image: "/images/gcc-operations/gcc-ops-scale.jpg",
+    image: "/images/gcc-operations/gcc-ops-scale.webp",
     aspect: "aspect-[4/3]",
     points: [
       "Abandoned workflow scripts",
@@ -261,7 +261,7 @@ const pitfalls = [
     title: "Maturity claimed, not evidenced",
     desc: "Self-rated maturity is rarely accepted by headquarters. Evidence is what unlocks scope expansion.",
     badge: "FAILURE MODE 04",
-    image: "/images/gcc-operations/gcc-ops-governance.jpg",
+    image: "/images/gcc-operations/gcc-ops-governance.webp",
     aspect: "aspect-[16/10]",
     points: [
       "Subjective internal scores",
@@ -274,7 +274,7 @@ const pitfalls = [
     title: "No manager enablement",
     desc: "New operating models fail when the managers who run them day to day were never trained on them.",
     badge: "FAILURE MODE 05",
-    image: "/images/gcc-operations/gcc-hq-leadership.jpg",
+    image: "/images/gcc-operations/gcc-hq-leadership.webp",
     aspect: "aspect-[4/3]",
     points: [
       "Superficial process adoption",
@@ -287,7 +287,7 @@ const pitfalls = [
     title: "No early visible wins",
     desc: "Without something visible early, the operating model loses sponsor patience before it compounds.",
     badge: "FAILURE MODE 06",
-    image: "/images/gcc-operations/gcc-positioning-tower.jpg",
+    image: "/images/gcc-operations/gcc-positioning-tower.webp",
     aspect: "aspect-[16/10]",
     points: [
       "Loss of headquarters patience",
@@ -349,7 +349,7 @@ export default function ServiceManagementPerformance() {
             className="lg:col-span-6 xl:col-span-6 flex flex-col h-full"
           >
             <InBriefCard
-              imageSrc="/images/gcc-operations/gcc-ops-performance.jpg"
+              imageSrc="/images/gcc-operations/gcc-ops-performance.webp"
               imageAlt="GCC Service Management & Performance Operations"
             >
               Service Management &amp; Performance is the part of NeoIntelli&apos;s GCC operating layer that defines the services the center provides, the levels it commits to, the outcome measures it is judged on and the cadence in which performance is reviewed and improved. It is for GCC leaders and headquarters sponsors who need evidence of value beyond headcount and cost, and for centers whose KPIs measure activity rather than outcomes. NeoIntelli designs the service catalogue, SLAs, KPI framework and operating rhythm, runs the reviews, maintains the automation backlog and reports to headquarters.

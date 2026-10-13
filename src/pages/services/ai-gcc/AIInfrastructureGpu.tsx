@@ -98,8 +98,8 @@ export default function AIInfrastructureGpu() {
               for data residency boundaries.
             </>
           }
-          imageSrc="/images/ai-gcc/advisory/platform-compute-direction.jpg"
-          imageAlt="AI Platform and Compute Direction"
+          imageSrc="/images/decision_model.webp"
+          imageAlt="AI Infrastructure Decision Model"
           ourViewText="Dedicated GPUs are not automatically cheaper than cloud GPUs. Utilization determines the economics."
         />
       </Section>

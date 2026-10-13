@@ -28,13 +28,13 @@ export interface OperatingLayerItem {
 }
 
 const CARD_IMAGES: Partial<Record<GccOpsPageKey, string>> = {
-  people:      "/images/gcc-operations/gcc-ops-people.jpg",
-  workforce:   "/images/gcc-operations/gcc-ops-workforce.jpg",
-  workplace:   "/images/gcc-operations/gcc-ops-workplace.jpg",
-  performance: "/images/gcc-operations/gcc-ops-performance.jpg",
-  governance:  "/images/gcc-operations/gcc-ops-governance.jpg",
-  bot:         "/images/gcc-operations/gcc-bot-journey.jpg",
-  scale:       "/images/gcc-operations/gcc-setup-vs-ops.jpg",
+  people:      "/images/gcc-operations/gcc-ops-people.webp",
+  workforce:   "/images/gcc-operations/gcc-ops-workforce.webp",
+  workplace:   "/images/gcc-operations/gcc-ops-workplace.webp",
+  performance: "/images/gcc-operations/gcc-ops-performance.webp",
+  governance:  "/images/gcc-operations/gcc-ops-governance.webp",
+  bot:         "/images/gcc-operations/gcc-bot-journey.webp",
+  scale:       "/images/gcc-operations/gcc-setup-vs-ops.webp",
 };
 
 const DEFAULT_ITEMS: OperatingLayerItem[] = GCC_OPERATIONS_CHILD_PAGES.map((page) => ({
@@ -76,7 +76,7 @@ function MosaicCard({
 }) {
   const num = String(index + 1).padStart(2, "0");
   const src =
-    item.image ?? CARD_IMAGES[item.key as GccOpsPageKey] ?? "/images/gcc-operations/gcc-ops-card.jpg";
+    item.image ?? CARD_IMAGES[item.key as GccOpsPageKey] ?? "/images/gcc-operations/gcc-ops-card.webp";
   const shouldReduceMotion = useReducedMotion();
 
   const getInitialProps = () => {

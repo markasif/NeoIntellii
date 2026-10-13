@@ -5,6 +5,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Framer-motion measures the scroll container's position; a static scrolling
+   element triggers a dev-only "non-static position" warning. `position: relative`
+   on the root elements is layout-neutral and silences it without any visual
+   or animation change. */
+html,
+body {
+  position: relative;
+}
+
 /* ============ AI-First GCC landing utilities ============ */
 .font-serif-display {
   font-family: var(--font-instrument-serif, 'Instrument Serif'), 'Cormorant Garamond', Georgia, 'Times New Roman', serif;

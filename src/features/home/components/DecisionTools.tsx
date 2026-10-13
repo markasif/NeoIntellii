@@ -18,7 +18,7 @@ export default function DecisionTools() {
         "Model roles, seniority, headcount and city for a fully loaded monthly and annual estimate.",
       ctaLabel: "Open Cost Calculator",
       href: "/gcc-cost-calculator",
-      image: "/images/tools/decision_cost_calculator.jpg",
+      image: "/images/tools/decision_cost_calculator.webp",
       imageAlt: "GCC Cost Calculator - Financial modeling dashboard with Bangalore tech corridor",
     },
     {
@@ -29,7 +29,7 @@ export default function DecisionTools() {
         "Compare current spend against an India model to see break-even and multi-year effect.",
       ctaLabel: "Open ROI Estimator",
       href: "/gcc-roi-estimator",
-      image: "/images/tools/decision_roi_estimator.jpg",
+      image: "/images/tools/decision_roi_estimator.webp",
       imageAlt: "GCC ROI Estimator - Executive multi-year break-even payback projection analysis",
     },
     {
@@ -40,7 +40,7 @@ export default function DecisionTools() {
         "A short structured assessment that returns a readiness view and a recommended next step.",
       ctaLabel: "Start Assessment",
       href: "/gcc-readiness-assessment",
-      image: "/images/tools/decision_readiness_assessment.jpg",
+      image: "/images/tools/decision_readiness_assessment.webp",
       imageAlt: "GCC Readiness Assessment - Strategic capability diagnostic framework and audit milestones",
     },
   ];

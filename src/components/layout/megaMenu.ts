@@ -134,7 +134,7 @@ export const megaMenu: MegaItem[] = [
     external: true,
     logo: {
       // Self-hosted, user-supplied NeoHireX brand logo.
-      src: "/images/neohirex-logo.png",
+      src: "/images/neohirex-logo.webp",
       alt: "NeoHireX",
       tagline: "AI Hiring Operating System",
       heading: "AI Hiring Operating System",

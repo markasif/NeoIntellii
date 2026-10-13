@@ -35,24 +35,24 @@ const QUIET_FAILURES: NeoHireXMatrixItem[] = [
     category: "SILENT DEGRADATION",
     title: "Drift nobody measured",
     body: "The model kept answering while the world it was trained on moved. Accuracy decayed for months and the business found out from the outcome.",
-    image: "/images/ai-engineering/mlops-platform-capability.jpg",
-    imageAlt: "Continuous drift monitoring and production accuracy telemetry",
+    image: "/images/ai-engineering/ops/model-drift.webp",
+    imageAlt: "Conceptual visualization of model accuracy drift and silent degradation",
   },
   {
     id: "02",
     category: "UNTESTED REGRESSION",
     title: "A prompt change nobody tested",
     body: "A one-line edit to fix one complaint regressed a hundred other cases. There was no evaluation set to run, so nobody knew until users did.",
-    image: "/images/ai-engineering/evaluation-assurance-capability.jpg",
-    imageAlt: "Automated regression testing and golden evaluation benchmark suites",
+    image: "/images/ai-engineering/ops/prompt-regression.webp",
+    imageAlt: "Conceptual visualization of prompt modification cascading regression risk",
   },
   {
     id: "03",
     category: "OPAQUE EXECUTION",
     title: "An agent nobody can trace",
     body: "A record was changed and the only evidence is that the agent was running. Without step-level traces there is no root cause and no fix.",
-    image: "/images/ai-engineering/production-observability-gap.jpg",
-    imageAlt: "Distributed agent execution tracing and root-cause incident telemetry",
+    image: "/images/ai-engineering/ops/untraceable-agent.webp",
+    imageAlt: "Conceptual visualization of opaque autonomous agent execution and missing trace audit",
   },
 ];
 
@@ -71,7 +71,7 @@ const AREAS: ImageFeatureCardItem[] = [
     title: "MLOps",
     desc: "The lifecycle of trained models: dataset versioning, training pipelines, model registries and safe rollback.",
     items: ["Model lifecycle", "Dataset versioning", "Training pipelines", "Model registry", "Deployment", "Monitoring", "Drift", "Retraining", "Rollback"],
-    image: "/images/ai-engineering/mlops-platform-capability.jpg",
+    image: "/images/ai-engineering/mlops-platform-capability.webp",
     imageAlt: "MLOps trained model lifecycle and training pipelines",
   },
   {
@@ -79,7 +79,7 @@ const AREAS: ImageFeatureCardItem[] = [
     title: "LLMOps",
     desc: "The lifecycle of LLM applications, where the prompt, the retrieval and the model can each change.",
     items: ["Prompt and version management", "RAG evaluation", "Model routing", "Quality monitoring", "Token economics", "Latency", "Prompt regression", "Safety controls"],
-    image: "/images/ai-engineering/genai-capability.jpg",
+    image: "/images/ai-engineering/genai-capability.webp",
     imageAlt: "LLMOps prompt versioning, RAG evaluation and token economics",
   },
   {
@@ -87,7 +87,7 @@ const AREAS: ImageFeatureCardItem[] = [
     title: "AgentOps",
     desc: "The lifecycle of agents, where the system takes actions and every step needs to be accountable.",
     items: ["Agent registry", "Agent versions", "Tool permissions", "Traces", "Task success", "Failure analysis", "Human escalation", "Cost per task", "Agent incidents", "Policy enforcement"],
-    image: "/images/ai-engineering/agentic-systems-capability.jpg",
+    image: "/images/ai-engineering/agentic-systems-capability.webp",
     imageAlt: "AgentOps registry, tool permissions, step traces and task success",
   },
 ];

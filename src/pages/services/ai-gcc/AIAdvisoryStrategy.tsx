@@ -37,42 +37,42 @@ const CAPABILITIES = [
   {
     title: "AI maturity assessment",
     body: "Where the enterprise and the GCC actually stand across data, talent, platform, delivery and governance, measured against what the mandate will require rather than against a generic maturity ladder.",
-    image: "/images/ai-gcc/advisory/ai-maturity-assessment.jpg",
+    image: "/images/ai-gcc/advisory/ai-maturity-assessment.webp",
   },
   {
     title: "GCC mandate",
     body: "A written statement of what the center owns, what it does not, which decisions it makes, and how HQ and the center share product ownership.",
-    image: "/images/ai-gcc/advisory/gcc-mandate.jpg",
+    image: "/images/ai-gcc/advisory/gcc-mandate.webp",
   },
   {
     title: "Process and use-case portfolio",
     body: "Workflows ranked by business value, data readiness, risk class and reuse potential. Pilots that cannot reach production are cut early.",
-    image: "/images/ai-gcc/advisory/use-case-portfolio.jpg",
+    image: "/images/ai-gcc/advisory/use-case-portfolio.webp",
   },
   {
     title: "Target operating model",
     body: "Team topology, delivery cadence, decision rights, platform ownership and the interfaces to HQ product, security and finance.",
-    image: "/images/ai-gcc/advisory/target-operating-model.jpg",
+    image: "/images/ai-gcc/advisory/target-operating-model.webp",
   },
   {
     title: "Talent architecture",
     body: "Leadership roles, the first squad, the hiring sequence and the Hiring OS flow needed to fill scarce AI and data roles at the right bar.",
-    image: "/images/ai-gcc/advisory/talent-architecture.jpg",
+    image: "/images/ai-gcc/advisory/talent-architecture.webp",
   },
   {
     title: "Platform and compute direction",
     body: "Data platform, model access, RAG and agent infrastructure, and the cloud, reserved or dedicated GPU posture the use cases justify.",
-    image: "/images/ai-gcc/advisory/platform-compute-direction.jpg",
+    image: "/images/ai-gcc/advisory/platform-compute-direction.webp",
   },
   {
     title: "Responsible AI",
     body: "The governance operating model: AI inventory, risk classification, controls, evaluation and the evidence trail regulators and auditors will ask for.",
-    image: "/images/ai-gcc/advisory/responsible-ai.jpg",
+    image: "/images/ai-gcc/advisory/responsible-ai.webp",
   },
   {
     title: "Value roadmap",
     body: "A sequenced plan with investment gates, value checkpoints and the metrics each phase must move before the next one is funded.",
-    image: "/images/ai-gcc/advisory/value-roadmap.jpg",
+    image: "/images/ai-gcc/advisory/ai advisory gcc.webp",
   },
 ];
 
@@ -190,7 +190,7 @@ export default function AIAdvisoryStrategy() {
               The same measures run through <Link to={AI_GCC_PAGE_BY_KEY.mlops.path} className="text-[#008EC4] hover:text-[#0D306C] font-semibold underline underline-offset-2 transition-colors">{AI_GCC_PAGE_BY_KEY.mlops.name}</Link> once the systems are live, so the value story is continuous from strategy to production.
             </>
           }
-          imageSrc="/images/ai-gcc/advisory/value-roadmap.jpg"
+          imageSrc="/images/ai-gcc/advisory/ai advisory gcc.webp"
           imageAlt="AI Value Realization Roadmap"
           ourViewText="A GCC should not measure AI maturity by the number of pilots running. It should measure processes transformed and business outcomes created."
         />

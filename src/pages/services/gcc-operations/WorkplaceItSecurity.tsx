@@ -50,27 +50,27 @@ const link = "text-[#008EC4] hover:text-[#0D306C] font-semibold underline underl
 const groups = [
   {
     title: "Workspace and connectivity",
-    image: "/images/gcc-operations/scope-workspace.jpg",
+    image: "/images/gcc-operations/scope-workspace.webp",
     items: ["Workspace coordination", "Connectivity", "Vendor coordination"],
   },
   {
     title: "Devices and applications",
-    image: "/images/gcc-operations/scope-devices.jpg",
+    image: "/images/gcc-operations/scope-devices.webp",
     items: ["Devices", "Endpoint management", "Collaboration tools", "Software and license coordination", "Asset lifecycle"],
   },
   {
     title: "Identity and access",
-    image: "/images/gcc-operations/scope-identity.jpg",
+    image: "/images/gcc-operations/scope-identity.webp",
     items: ["Identity", "SSO", "MFA", "Access provisioning", "Joiner, mover and leaver workflow"],
   },
   {
     title: "Support and ITSM",
-    image: "/images/gcc-operations/scope-support.jpg",
+    image: "/images/gcc-operations/scope-support.webp",
     items: ["IT helpdesk", "ITSM", "Incident handling"],
   },
   {
     title: "Security and continuity",
-    image: "/images/gcc-operations/scope-security.jpg",
+    image: "/images/gcc-operations/scope-security.webp",
     items: ["Security tooling coordination", "Monitoring", "Business continuity support"],
   },
 ];
@@ -426,7 +426,7 @@ function ContinuityVisual() {
     <div className="relative w-full h-full overflow-hidden flex items-end">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/gcc-operations/standards/continuity_building.jpg"
+          src="/images/gcc-operations/standards/continuity_building.webp"
           alt="Continuity arrangements"
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
@@ -519,7 +519,7 @@ export default function WorkplaceItSecurity() {
             className="lg:col-span-6 xl:col-span-6 flex flex-col h-full"
           >
             <InBriefCard
-              imageSrc="/images/gcc-operations/gcc-ops-workplace.jpg"
+              imageSrc="/images/gcc-operations/gcc-ops-workplace.webp"
               imageAlt="GCC Workplace IT & Security Operations"
             >
               Workplace, IT &amp; Security is the part of NeoIntelli&apos;s GCC operating layer that gives every employee in the India center a managed device, the right access, secure connectivity to headquarters systems, collaboration tools and local support, with joiner, mover and leaver controls that hold up in an audit. It is for companies whose enterprise IT sits in another country and who do not want to build a local IT function to support a growing team. NeoIntelli operates within the client&apos;s identity platform, security policies and ITSM process, and coordinates local vendors and security tooling.
@@ -597,7 +597,7 @@ export default function WorkplaceItSecurity() {
 
             <div className="absolute right-0 top-0 bottom-0 w-[42%] sm:w-[40%] h-full pointer-events-none overflow-hidden">
               <Image
-                src="/images/tech-data-platform.png"
+                src="/images/tech-data-platform.webp"
                 alt="Separate Layer - AI & Data Engineering"
                 fill
                 sizes="(max-width: 768px) 50vw, 33vw"
@@ -650,7 +650,7 @@ export default function WorkplaceItSecurity() {
             if (index === 0) {
               visualElement = (
                 <Image
-                  src="/images/gcc-operations/standards/identity.jpg"
+                  src="/images/gcc-operations/standards/identity.webp"
                   alt={item.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
@@ -660,7 +660,7 @@ export default function WorkplaceItSecurity() {
             } else if (index === 1) {
               visualElement = (
                 <Image
-                  src="/images/gcc-operations/standards/devices.jpg"
+                  src="/images/gcc-operations/standards/devices.webp"
                   alt={item.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
@@ -670,7 +670,7 @@ export default function WorkplaceItSecurity() {
             } else if (index === 2) {
               visualElement = (
                 <Image
-                  src="/images/gcc-operations/standards/data-flows.jpg"
+                  src="/images/gcc-operations/standards/data-flows.webp"
                   alt={item.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
@@ -680,7 +680,7 @@ export default function WorkplaceItSecurity() {
             } else if (index === 3) {
               visualElement = (
                 <Image
-                  src="/images/gcc-operations/standards/itsm-monitoring.jpg"
+                  src="/images/gcc-operations/standards/itsm-monitoring.webp"
                   alt={item.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
@@ -690,7 +690,7 @@ export default function WorkplaceItSecurity() {
             } else if (index === 4) {
               visualElement = (
                 <Image
-                  src="/images/gcc-operations/standards/enterprise-network.jpg"
+                  src="/images/gcc-operations/standards/enterprise-network.webp"
                   alt={item.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
@@ -700,7 +700,7 @@ export default function WorkplaceItSecurity() {
             } else if (index === 5) {
               visualElement = (
                 <Image
-                  src="/images/gcc-operations/standards/evidence-audit.jpg"
+                  src="/images/gcc-operations/standards/evidence-audit.webp"
                   alt={item.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"

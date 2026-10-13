@@ -42,7 +42,7 @@ const WHAT_A_HEAD_OF_AI_OWNS: LeadershipOwnershipItem[] = [
   {
     title: "The mandate",
     body: "Which workflows, products and decisions AI will change, ranked by business value, and which it will not.",
-    image: "/images/gcc-operations/operating-reality/13-mandates.jpg",
+    image: "/images/gcc-operations/operating-reality/13-mandates.webp",
     alt: "The mandate in executive AI leadership",
     action: "Explore Mandate Brief",
     href: "#roles",
@@ -50,7 +50,7 @@ const WHAT_A_HEAD_OF_AI_OWNS: LeadershipOwnershipItem[] = [
   {
     title: "The team",
     body: "Topology, hiring sequence, seniority bar and the evaluation standard every engineer is held to.",
-    image: "/images/gcc-operations/workforce-strategy-planning.jpg",
+    image: "/images/gcc-operations/workforce-strategy-planning.webp",
     alt: "AI team topology and hiring sequence",
     action: "See Search Process",
     href: "#search-process",
@@ -58,7 +58,7 @@ const WHAT_A_HEAD_OF_AI_OWNS: LeadershipOwnershipItem[] = [
   {
     title: "The platform",
     body: "Data, models, retrieval, agents, compute posture and the MLOps, LLMOps and AgentOps layer.",
-    image: "/images/ai-talent/mlops-platform.jpg",
+    image: "/images/ai-talent/mlops-platform.webp",
     alt: "AI platform architecture and operations",
     action: "Review Platform Stance",
     href: "#search-process",
@@ -66,7 +66,7 @@ const WHAT_A_HEAD_OF_AI_OWNS: LeadershipOwnershipItem[] = [
   {
     title: "Governance",
     body: "AI inventory, risk classification, controls and the evidence boards and regulators will ask for.",
-    image: "/images/gcc-operations/standards/evidence-audit.jpg",
+    image: "/images/gcc-operations/standards/evidence-audit.webp",
     alt: "AI governance and compliance controls",
     action: "Examine AI Governance",
     href: "#leadership-questions",
@@ -74,7 +74,7 @@ const WHAT_A_HEAD_OF_AI_OWNS: LeadershipOwnershipItem[] = [
   {
     title: "Value",
     body: "Metrics HQ already reads: cost, cycle time, quality, revenue, risk, adoption. Not model count.",
-    image: "/images/gcc-operations/operating-reality/08-reporting.jpg",
+    image: "/images/gcc-operations/operating-reality/08-reporting.webp",
     alt: "Executive AI business value metrics",
     action: "Calibrate Value Metrics",
     href: "#roles",
@@ -82,7 +82,7 @@ const WHAT_A_HEAD_OF_AI_OWNS: LeadershipOwnershipItem[] = [
   {
     title: "Relationships",
     body: "Product, security, finance, legal and HQ leadership. The role fails on this axis more often than on the technical one.",
-    image: "/images/gcc-operations/operating-reality/11-leadership.jpg",
+    image: "/images/gcc-operations/operating-reality/11-leadership.webp",
     alt: "Executive stakeholder and leadership relationships",
     action: "Discuss Leadership Search",
     href: "#cta",
@@ -136,7 +136,7 @@ export default function AILeadershipSearch() {
           description="Executive AI searches are senior-led and confidential. We map and validate candidates against the written mandate on technical judgment, organizational governance, and team ownership."
           pillsTitle="Executive Leadership Roles"
           pills={ROLES}
-          imageSrc="/images/ai-talent/ai-leadership.jpg"
+          imageSrc="/images/ai-talent/ai-leadership.webp"
           imageAlt="Executive AI Leadership & Advisory"
           ourViewText="Before you recruit twenty AI engineers, make sure you have the leader capable of defining what those twenty people should own."
         />

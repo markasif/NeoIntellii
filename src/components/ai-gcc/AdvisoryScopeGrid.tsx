@@ -36,7 +36,7 @@ export default function AdvisoryScopeGrid({
         const text = item.body ?? item.desc ?? "";
         const imageSrc =
           item.image ||
-          "/images/ai-gcc/advisory/ai-maturity-assessment.jpg";
+          "/images/ai-gcc/advisory/ai-maturity-assessment.webp";
 
         return (
           <motion.div
