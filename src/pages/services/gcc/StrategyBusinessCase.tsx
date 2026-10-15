@@ -325,7 +325,7 @@ export default function StrategyBusinessCase() {
               items={businessCaseComponents}
               columns={3}
             />
-            <p className="text-[#505D74] text-xs sm:text-sm mt-10 max-w-4xl mx-auto text-center leading-relaxed font-normal">
+            <p className="text-[#505D74] text-xs sm:text-sm mt-10 max-w-6xl mx-auto text-center leading-relaxed font-normal">
               The financial model is presented as three scenarios: a base case that assumes no government support, a validated incentive scenario shown separately, and a downside case. The case has to stand on the base scenario alone, so no advertised return depends on an incentive the company has not been confirmed eligible for. Eligibility itself is worked through in{" "}
               <Link to={R.location} className="text-[#008EC4] font-semibold underline underline-offset-2 hover:text-[#0D306C] transition-colors">
                 Location Strategy
@@ -433,7 +433,7 @@ export default function StrategyBusinessCase() {
               rows={entryModelRows}
               mobileGroupBy="column"
             />
-            <p className="text-[#505D74] text-xs sm:text-sm mt-6 max-w-4xl mx-auto text-center leading-relaxed font-normal">
+            <p className="text-[#505D74] text-xs sm:text-sm mt-6 max-w-6xl mx-auto text-center leading-relaxed font-normal">
               An AI Micro GCC is a way to start any of these paths with one senior-led squad and scale into the model you choose. The detailed mechanics of Build-Operate-Transfer, including transfer milestones and what moves, are described in{" "}
               <Link to={GCC_OPERATIONS_LINKS.botTransition.href} className="text-[#008EC4] font-semibold underline underline-offset-2 hover:text-[#0D306C] transition-colors">
                 BOT &amp; Transition under GCC Operations

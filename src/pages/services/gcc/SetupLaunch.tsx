@@ -612,7 +612,7 @@ export default function SetupLaunch() {
             <AdvisoryProcessFlow steps={regulatoryFlow} />
           </div>
 
-          <div className="max-w-4xl mx-auto text-center space-y-4">
+          <div className="max-w-6xl mx-auto text-center space-y-4">
             <p className="text-xs sm:text-sm text-[#505D74] leading-relaxed italic max-w-3xl mx-auto">
               {GCC_SETUP_DISCLAIMER}
             </p>
@@ -699,7 +699,7 @@ export default function SetupLaunch() {
               <Link
                 key={ind.href}
                 to={ind.href}
-                className="group inline-flex items-center gap-2 px-4.5 py-2 sm:px-5 sm:py-2.5 rounded-full border border-[#00A3E0] bg-transparent text-[#0D244D] text-xs sm:text-[13.5px] font-semibold hover:border-[#008EC4] hover:bg-[#008EC4] hover:text-white transition-all duration-200 select-none shadow-2xs hover:shadow-xs"
+                className="group inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full border border-[#00A3E0] bg-transparent text-[#0D244D] text-xs sm:text-[13.5px] font-semibold hover:border-[#008EC4] hover:bg-[#008EC4] hover:text-white transition-all duration-200 select-none shadow-2xs hover:shadow-xs"
               >
                 <span>{ind.name} GCC</span>
                 <ChevronRight className="w-3.5 h-3.5 text-[#008EC4] group-hover:text-white group-hover:translate-x-0.5 transition-all" />

@@ -286,7 +286,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                   }`}
                 >
                   <div className="flex items-center gap-2.5">
-                    <Layers className={`h-4.5 w-4.5 shrink-0 ${openSections["what-we-do"] ? "text-[#169DC8]" : "text-[#0D306C]"}`} />
+                    <Layers className={`h-4 w-4 shrink-0 ${openSections["what-we-do"] ? "text-[#169DC8]" : "text-[#0D306C]"}`} />
                     <span className="text-[14px] font-bold tracking-tight">What We Do</span>
                   </div>
 
@@ -454,7 +454,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                   }`}
                 >
                   <div className="flex items-center gap-2.5">
-                    <Zap className={`h-4.5 w-4.5 shrink-0 ${openSections["solutions"] ? "text-[#169DC8]" : "text-[#0D306C]"}`} />
+                    <Zap className={`h-4 w-4 shrink-0 ${openSections["solutions"] ? "text-[#169DC8]" : "text-[#0D306C]"}`} />
                     <span className="text-[14px] font-bold tracking-tight">Solutions</span>
                   </div>
 
@@ -530,7 +530,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                   }`}
                 >
                   <div className="flex items-center gap-2.5">
-                    <Cpu className={`h-4.5 w-4.5 shrink-0 ${openSections["product"] ? "text-[#169DC8]" : "text-[#0D306C]"}`} />
+                    <Cpu className={`h-4 w-4 shrink-0 ${openSections["product"] ? "text-[#169DC8]" : "text-[#0D306C]"}`} />
                     <span className="text-[14px] font-bold tracking-tight">Product</span>
                   </div>
 
@@ -636,7 +636,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                   }`}
                 >
                   <div className="flex items-center gap-2.5">
-                    <Building2 className={`h-4.5 w-4.5 shrink-0 ${openSections["industries"] ? "text-[#169DC8]" : "text-[#0D306C]"}`} />
+                    <Building2 className={`h-4 w-4 shrink-0 ${openSections["industries"] ? "text-[#169DC8]" : "text-[#0D306C]"}`} />
                     <span className="text-[14px] font-bold tracking-tight">Industries</span>
                   </div>
 
@@ -713,7 +713,7 @@ export default function MobileSidebar({ isOpen, onClose }: MobileSidebarProps) {
                   }`}
                 >
                   <div className="flex items-center gap-2.5">
-                    <Users className={`h-4.5 w-4.5 shrink-0 ${openSections["company"] ? "text-[#169DC8]" : "text-[#0D306C]"}`} />
+                    <Users className={`h-4 w-4 shrink-0 ${openSections["company"] ? "text-[#169DC8]" : "text-[#0D306C]"}`} />
                     <span className="text-[14px] font-bold tracking-tight">Company</span>
                   </div>
 

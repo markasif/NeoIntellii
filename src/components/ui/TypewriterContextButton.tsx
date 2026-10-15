@@ -63,8 +63,8 @@ export default function TypewriterContextButton({
 
   const buttonContent = (
     <>
-      <div className="flex items-center justify-center w-7 h-7 sm:w-7.5 sm:h-7.5 rounded-full bg-white shrink-0 text-[#0D306C] group-hover:text-[#169DC8] transition-colors">
-        <Sparkles className="w-4 h-4 sm:w-4.5 sm:h-4.5 transition-transform duration-300 group-hover:rotate-12" />
+      <div className="flex items-center justify-center w-7 h-7 sm:w-7 sm:h-7 rounded-full bg-white shrink-0 text-[#0D306C] group-hover:text-[#169DC8] transition-colors">
+        <Sparkles className="w-4 h-4 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:rotate-12" />
       </div>
       <div
         className={`flex items-center gap-1.5 whitespace-nowrap overflow-hidden transition-all duration-300 ease-out ${

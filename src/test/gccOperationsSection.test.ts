@@ -218,16 +218,18 @@ describe("GCC Operations section: legacy route migration", () => {
     expect(componentText).not.toContain("radial-gradient");
   });
 
-  it("styles How AI changes the workforce plan with centered header and center archetypes card layout (1 & 3 big, 2 small)", () => {
+  it("styles How AI changes the workforce plan with the shared pill feature card grid", () => {
     const text = readText("src/pages/services/gcc-operations/WorkforceStrategy.tsx");
     // Centered section header
     expect(text).toContain('id="ai-and-the-workforce"');
     expect(text).toContain('align="center"');
-    // Staggered layout: 1 and 3 big, 2 small, bottom aligned
-    expect(text).toContain("grid-cols-1 md:grid-cols-3 items-end");
-    // Center archetypes hover gradient and white text styling
-    expect(text).toContain("bg-gradient-to-b from-[#081B3E] via-[#0A224E] to-[#081B3E]");
-    expect(text).toContain('isHovered ? "!text-white" : "text-[#0D306C] group-hover:!text-white"');
+    // Feature cards render through the shared PillFeatureCardGrid component
+    expect(text).toContain("PillFeatureCardGrid");
+    expect(text).toContain("AI_WORKFORCE_CHANGES.map");
+    // Card content is unchanged
+    expect(text).toContain("New roles");
+    expect(text).toContain("Productivity assumptions");
+    expect(text).toContain("Reskilling paths");
   });
 
   it("styles Workplace and IT Scope section with left heading, arrow bullet points, and right matching artwork", () => {

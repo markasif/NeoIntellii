@@ -20,6 +20,8 @@
  * for Google Ads enhanced conversions (see D4 of the campaign brief).
  */
 
+import { hasMarketingConsent } from "./consent";
+
 declare global {
   interface Window {
     dataLayer?: Record<string, unknown>[];
@@ -64,7 +66,7 @@ const mirrorToGtag = (event: string, params: Record<string, unknown>) => {
 };
 
 export const track = (event: string, params: TrackParams = {}) => {
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined" || !hasMarketingConsent()) return;
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event, ...params });
   mirrorToGtag(event, params);

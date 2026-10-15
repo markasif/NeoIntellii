@@ -168,7 +168,7 @@ export default function ExecutiveSearch() {
       </StatementSection>
 
       <Section id="why-it-matters" eyebrow="Why it matters" title="Why retained executive search" width="regular" align="center">
-        <div className="space-y-6 text-[#505D74] text-sm sm:text-base leading-relaxed max-w-4xl mx-auto text-left">
+        <div className="space-y-6 text-[#505D74] text-sm sm:text-base leading-relaxed max-w-6xl mx-auto text-left">
           <p>
             Leadership roles - CEO, COO, CTO, CFO, country head, business head, function head - are rarely filled through job board postings alone. Top candidates are passive, well-compensated and only move for the right narrative.
           </p>

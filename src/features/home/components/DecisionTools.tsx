@@ -1,14 +1,19 @@
 "use client";
 
 import Image from "next/image";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
 import AmbientGlow from "@/components/ui/AmbientGlow";
 
 
 export default function DecisionTools() {
+  const bannerRef = useRef<HTMLDivElement>(null);
+  // Slow, once-only journey animation when the banner scrolls into view.
+  const bannerInView = useInView(bannerRef, { once: true, margin: "-80px" });
+
   const toolCards = [
     {
       id: "01",
@@ -48,10 +53,10 @@ export default function DecisionTools() {
   // benefits removed per user request
 
   const journeyPoints = [
-    { l: "4%", b: "12%", t: "Assess", s: "Readiness" },
-    { l: "33%", b: "38%", t: "Model", s: "Costs" },
-    { l: "57%", b: "62%", t: "Validate", s: "Returns" },
-    { l: "82%", b: "58%", t: "Build", s: "your GCC" },
+    { l: "3%", b: "26%", t: "Assess", s: "Readiness" },
+    { l: "28%", b: "57%", t: "Model", s: "Costs" },
+    { l: "55%", b: "81%", t: "Validate", s: "Returns" },
+    { l: "76%", b: "78%", t: "Build", s: "your GCC" },
   ];
 
   return (
@@ -111,7 +116,7 @@ export default function DecisionTools() {
                       title={tool.ctaLabel}
                       className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white shadow-md border border-slate-200/80 flex items-center justify-center text-[#0D306C] group-hover:bg-[#0D306C] group-hover:!text-white group-hover:scale-105 transition-all duration-300 shrink-0 mt-0.5 round-arrow-btn"
                     >
-                      <ArrowRight className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-inherit group-hover:!text-white transition-all duration-200 group-hover:translate-x-0.5" />
+                      <ArrowRight className="w-4 h-4 sm:w-4 sm:h-4 text-inherit group-hover:!text-white transition-all duration-200 group-hover:translate-x-0.5" />
                     </div>
                   </div>
 
@@ -143,6 +148,7 @@ export default function DecisionTools() {
         {/* BOTTOM BANNER — dark with journey path & smooth entrance         */}
         {/* ================================================================ */}
         <motion.div
+          ref={bannerRef}
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
@@ -188,7 +194,21 @@ export default function DecisionTools() {
                 strokeWidth="1.5"
                 strokeDasharray="4 3"
                 fill="none"
-                opacity="0.8"
+                opacity="0.45"
+              />
+              {/* Active line draws slowly from Assess toward the flag when scrolled into view */}
+              <path
+                d="M60 124 Q120 97, 180 77 Q240 57, 310 44 Q370 32, 440 50"
+                stroke="#67D5F7"
+                strokeWidth="2"
+                strokeLinecap="round"
+                fill="none"
+                pathLength={1}
+                style={{
+                  strokeDasharray: 1,
+                  strokeDashoffset: bannerInView ? 0 : 1,
+                  transition: "stroke-dashoffset 2.6s cubic-bezier(0.4, 0, 0.2, 1)",
+                }}
               />
               <circle cx="60" cy="124" r="4" fill="#169DC8" />
               <circle cx="60" cy="124" r="7" fill="#169DC8" fillOpacity="0.2" />
@@ -198,8 +218,18 @@ export default function DecisionTools() {
               <circle cx="310" cy="44" r="7" fill="#169DC8" fillOpacity="0.2" />
               <circle cx="440" cy="50" r="4" fill="#169DC8" />
               <circle cx="440" cy="50" r="7" fill="#169DC8" fillOpacity="0.2" />
-              <line x1="440" y1="50" x2="440" y2="24" stroke="#67D5F7" strokeWidth="1.5" />
-              <path d="M440 24 L456 30 L440 36 Z" fill="#F19326" />
+              {/* Flag pole + pennant at the destination, revealed after the line arrives */}
+              <g
+                style={{
+                  opacity: bannerInView ? 1 : 0,
+                  transform: bannerInView ? "scale(1)" : "scale(0.7)",
+                  transformOrigin: "440px 30px",
+                  transition: "opacity 0.6s ease 2.2s, transform 0.6s cubic-bezier(0.34,1.56,0.64,1) 2.2s",
+                }}
+              >
+                <line x1="440" y1="50" x2="440" y2="24" stroke="#67D5F7" strokeWidth="1.5" />
+                <path d="M440 24 L456 30 L440 36 Z" fill="#F19326" />
+              </g>
               <defs>
                 <linearGradient id="mGrad" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0%" stopColor="#169DC8" stopOpacity="0.15" />
@@ -209,16 +239,22 @@ export default function DecisionTools() {
             </svg>
             {/* Journey labels */}
             <div className="absolute inset-0">
-              {journeyPoints.map((pt) => (
+              {journeyPoints.map((pt, i) => (
                 <div
                   key={pt.t}
                   className="absolute"
-                  style={{ left: pt.l, bottom: pt.b }}
+                  style={{
+                    left: pt.l,
+                    bottom: pt.b,
+                    opacity: bannerInView ? 1 : 0,
+                    transform: bannerInView ? "translateY(0)" : "translateY(6px)",
+                    transition: `opacity 0.7s ease ${0.3 + i * 0.72}s, transform 0.7s ease ${0.3 + i * 0.72}s`,
+                  }}
                 >
-                  <div className="text-[10px] sm:text-[10px] font-bold text-white leading-none">
+                  <div className="text-[10px] font-bold text-white leading-none whitespace-nowrap drop-shadow-[0_1px_3px_rgba(8,27,62,0.9)]">
                     {pt.t}
                   </div>
-                  <div className="text-[10px] sm:text-[10px] text-[#A3BFDD] leading-none">
+                  <div className="mt-0.5 text-[10px] text-[#A3BFDD] leading-none whitespace-nowrap drop-shadow-[0_1px_3px_rgba(8,27,62,0.9)]">
                     {pt.s}
                   </div>
                 </div>

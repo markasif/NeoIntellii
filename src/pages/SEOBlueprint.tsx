@@ -352,7 +352,7 @@ export default function SEOBlueprint() {
                       data-netlify="true"
                       data-netlify-honeypot="bot-field"
                       onSubmit={handleSubmit}
-                      className="space-y-4 sm:space-y-4.5 relative z-10"
+                      className="space-y-4 sm:space-y-4 relative z-10"
                     >
                       <input type="hidden" name="form-name" value="blueprint" />
                       <input type="hidden" name="source_page" value={leadContext.source_page} />

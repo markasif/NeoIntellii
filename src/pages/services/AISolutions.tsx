@@ -22,7 +22,7 @@ import {
   Rocket,
 } from "lucide-react";
 import SlottedStepNumber from "@/components/gcc-operations/SlottedStepNumber";
-import UniversalLifecycle from "@/components/shared/UniversalLifecycle";
+import HexagonArcLifecycle, { type HexagonLifecycleStage } from "@/components/shared/HexagonArcLifecycle";
 import {
   AiGccPageLayout,
   Section,
@@ -41,6 +41,7 @@ import { AI_GCC_CONTEXT_LINKS, AI_GCC_PAGE_BY_KEY } from "@/data/aiGcc";
 import { getResearch } from "@/data/aiGccSources";
 import { aiGccBookingUrl } from "@/lib/aiGccCta";
 import SmoothLineReveal from "@/components/gcc-operations/SmoothLineReveal";
+import TypewriterParagraph from "@/components/gcc-operations/TypewriterParagraph";
 import PillTagList from "@/components/shared/PillTagList";
 
 function CountingNumber({ target, suffix = "%" }: { target: number; suffix?: string }) {
@@ -166,15 +167,63 @@ const JOURNEY = [
 
 const TIMELINE_DRIVERS = ["Team size", "Role complexity", "Entity model", "Location", "Leadership hiring", "Infrastructure", "Compliance", "Real-estate model"];
 
-const HIRING_FLOW = [
-  { id: "01", name: "Role calibration", icon: Sliders },
-  { id: "02", name: "Sourcing", icon: Search },
-  { id: "03", name: "NeoHireX screening", icon: Bot },
-  { id: "04", name: "AI first-round evaluation", icon: Sparkles },
-  { id: "05", name: "Senior technical validation", icon: ShieldCheck },
-  { id: "06", name: "Client interview", icon: UserCheck },
-  { id: "07", name: "Offer", icon: Award },
-  { id: "08", name: "Onboarding", icon: Rocket },
+const HIRING_FLOW: HexagonLifecycleStage[] = [
+  {
+    id: "01",
+    name: "Role calibration",
+    description: "Mandate & technical depth defined",
+    icon: Sliders,
+    href: "#hiring-engine",
+  },
+  {
+    id: "02",
+    name: "Sourcing",
+    description: "Specialist AI & data talent pipeline",
+    icon: Search,
+    href: "#hiring-engine",
+  },
+  {
+    id: "03",
+    name: "NeoHireX screening",
+    description: "AI parsing & evidence ranking",
+    icon: Bot,
+    href: "#hiring-engine",
+  },
+  {
+    id: "04",
+    name: "AI first-round",
+    description: "Automated technical evaluation",
+    icon: Sparkles,
+    href: "#hiring-engine",
+  },
+  {
+    id: "05",
+    name: "Senior validation",
+    description: "Practitioner technical depth check",
+    icon: ShieldCheck,
+    href: "#hiring-engine",
+  },
+  {
+    id: "06",
+    name: "Client interview",
+    description: "Team fit & final candidate selection",
+    icon: UserCheck,
+    href: "#hiring-engine",
+  },
+  {
+    id: "07",
+    name: "Offer",
+    description: "Benchmarked compensation & closing",
+    icon: Award,
+    href: "#hiring-engine",
+  },
+  {
+    id: "08",
+    name: "Onboarding",
+    description: "Security, tooling & day-1 readiness",
+    icon: Rocket,
+    href: "#hiring-engine",
+  },
 ];
 
 const INFRA = [
@@ -388,10 +437,10 @@ export default function AISolutions() {
 
       {/* ── WHAT IS AN AI GCC ──────────────────────────────────────────── */}
       <Section id="what-is-an-ai-gcc" eyebrow="DEFINITION" title="What is an AI GCC?" width="wide" align="center">
-        <SmoothLineReveal className="max-w-5xl mx-auto text-[#505D74] text-sm sm:text-base lg:text-lg leading-relaxed font-normal space-y-6 sm:space-y-7 text-left">
-          <p className="drop-cap-amber">
-            An AI GCC is a Global Capability Center designed to own and operate AI, data and AI-enabled engineering capabilities as part of the enterprise operating model. Unlike a traditional delivery center, an AI GCC combines specialist talent, data, compute, MLOps, AgentOps, governance and business ownership around measurable enterprise outcomes.
-          </p>
+        <SmoothLineReveal className="max-w-6xl mx-auto text-[#505D74] text-sm sm:text-base lg:text-lg leading-relaxed font-normal space-y-6 sm:space-y-7 text-left">
+          <TypewriterParagraph
+            text="An AI GCC is a Global Capability Center designed to own and operate AI, data and AI-enabled engineering capabilities as part of the enterprise operating model. Unlike a traditional delivery center, an AI GCC combines specialist talent, data, compute, MLOps, AgentOps, governance and business ownership around measurable enterprise outcomes."
+          />
           <p>
             The word &quot;AI&quot; describes what the center owns, not a marketing flavor. A traditional GCC is measured on delivery capacity and cost. An AI GCC is measured on workflows transformed, models and agents in production, and the business value they create. That changes who you hire, what infrastructure you run, how work is governed and how the center reports to HQ.
           </p>
@@ -428,7 +477,7 @@ export default function AISolutions() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch max-w-7xl mx-auto">
           {/* Left Column: Transparent points with clean arrows + PointOfView vertically centered */}
           <div className="flex flex-col justify-center text-left h-full gap-6 sm:gap-8">
-            <ul className="space-y-4 sm:space-y-4.5 list-none p-0 m-0">
+            <ul className="space-y-4 sm:space-y-4 list-none p-0 m-0">
               {HARD_PARTS.map((item) => (
                 <li
                   key={item}
@@ -573,11 +622,13 @@ export default function AISolutions() {
         lead="AI talent is scarce. Poor screening makes that scarcity even more expensive. Every AI GCC hire runs through one calibrated flow."
         wavesOnMobile
       >
-        <UniversalLifecycle
-          theme="navy"
-          stages={HIRING_FLOW}
-          id="ai-gcc-hiring-lifecycle"
-        />
+        <div className="mb-10 sm:mb-12">
+          <HexagonArcLifecycle
+            stages={HIRING_FLOW}
+            centerTitle="HIRING OS"
+            id="ai-gcc-hiring-lifecycle"
+          />
+        </div>
 
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mt-6 md:mt-8 text-left items-stretch">
           {/* Left Column: What is NeoHireX? (Directly on section background, no container box) */}

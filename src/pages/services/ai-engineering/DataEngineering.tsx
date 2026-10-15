@@ -48,8 +48,8 @@ const DATA_PROBLEMS: NeoHireXMatrixItem[] = [
     category: "FEATURE STALENESS",
     title: "The model is fine. The features are stale.",
     body: "Training used a clean, complete snapshot. Serving gets a feed that is hours late and missing fields. The model is accurate on paper and wrong in production.",
-    image: "/images/home/pillar_card1_arch_v2-removebg-preview.png",
-    imageAlt: "Real-time feature store and streaming pipeline synchronization",
+    image: "/images/services/ai-engineering/feature-staleness-streaming.webp",
+    imageAlt: "Data engineering team monitoring real-time streaming pipelines and feature freshness",
   },
 ];
 
@@ -248,7 +248,7 @@ export default function DataEngineering() {
           <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#0D306C] tracking-tight leading-tight font-sans mb-5">
             How this differs from data engineering inside an AI GCC
           </h2>
-          <p className="text-base sm:text-[16.5px] text-[#2B3D66] leading-relaxed font-normal max-w-4xl mx-auto">
+          <p className="text-base sm:text-[16.5px] text-[#2B3D66] leading-relaxed font-normal max-w-6xl mx-auto">
             This page is about implementation: architecture, pipelines, data products, retrieval infrastructure and production engineering, delivered by NeoIntelli for your system. Our AI GCC data engineering page is about ownership: which capabilities an India capability center should own, how the team is shaped, and how platform standards and governance are run over the long term.
           </p>
         </div>

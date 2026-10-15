@@ -1,22 +1,11 @@
 import type { AppProps } from 'next/app';
-import Script from 'next/script';
 import { Inter, Instrument_Serif, Plus_Jakarta_Sans, Manrope } from 'next/font/google';
+import CookieConsent from '@/components/analytics/CookieConsent';
 import '@/index.css';
 
-const GA_ID = 'G-C1G4RM3CN3';
-const GOOGLE_ADS_ID = 'AW-17602240384';
-
-/**
- * Google Tag Manager container, if one is configured.
- *
- * The site tags with gtag today, and every campaign event in
- * src/lib/dataLayer.ts is pushed to `window.dataLayer` as well as mirrored
- * into gtag - so a container can be switched on without renaming anything.
- * Set NEXT_PUBLIC_GTM_ID (Netlify → Site configuration → Environment
- * variables) to GTM-XXXXXXX and the container loads on every page; leave it
- * unset and nothing changes.
- */
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+// Google Analytics (GA4), Google Ads and GTM are no longer loaded here.
+// They boot from @/lib/consent only after the visitor grants consent —
+// see src/components/analytics/CookieConsent.tsx.
 
 // Self-hosted via next/font: no render-blocking request to fonts.googleapis.com,
 // font CSS is inlined and the woff2 files are served from our own origin.
@@ -59,31 +48,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         }
       `}</style>
 
-      {/* Google Analytics 4 + Google Ads — loads during idle time to prevent blocking hydration & main thread */}
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        strategy="lazyOnload"
-      />
-      <Script id="ga4-init" strategy="lazyOnload">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA_ID}', { send_page_view: false });
-          gtag('config', '${GOOGLE_ADS_ID}');
-        `}
-      </Script>
-
-      {GTM_ID && (
-        <Script id="gtm-init" strategy="lazyOnload">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-            var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-            j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','${GTM_ID}');
-          `}
-        </Script>
-      )}
+      {/* Consent-gated analytics: GA4, Google Ads, GTM, RankAI and SplitSense
+          only load after the visitor accepts (see @/lib/consent). */}
+      <CookieConsent />
 
       <Component {...pageProps} />
     </>

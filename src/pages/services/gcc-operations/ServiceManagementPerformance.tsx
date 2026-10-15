@@ -399,7 +399,7 @@ export default function ServiceManagementPerformance() {
             <div>
               <div className="flex items-center gap-3 mb-4 sm:mb-5">
                 <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#123164] border border-[#1E4D94] flex items-center justify-center text-[#38BDF8] shrink-0">
-                  <Check className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[2.5]" />
+                  <Check className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.5]" />
                 </div>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight">
                   Measure maturity through
@@ -425,7 +425,7 @@ export default function ServiceManagementPerformance() {
             <div>
               <div className="flex items-center gap-3 mb-4 sm:mb-5">
                 <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#EDF6FD] border border-[#D5E8F8] flex items-center justify-center text-[#008EC4] shrink-0">
-                  <Filter className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[2]" />
+                  <Filter className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2]" />
                 </div>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#0D244D] tracking-tight">
                   Do not measure success only by

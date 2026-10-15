@@ -35,6 +35,10 @@ import {
   BarChart3,
   GraduationCap,
   LayoutDashboard,
+  Wallet,
+  CalendarDays,
+  MessageSquare,
+  type LucideIcon,
 } from "lucide-react";
 import GccOperationsLayout from "@/components/gcc-operations/GccOperationsLayout";
 import OpsSection from "@/components/gcc-operations/OpsSection";
@@ -42,6 +46,7 @@ import InBriefCard from "@/components/gcc-operations/InBriefCard";
 import AnswerList from "@/components/gcc-operations/AnswerList";
 import SourceNote, { LEGAL_VALIDATION_NOTE } from "@/components/gcc-operations/SourceNote";
 import GccLifecycleWave from "@/components/gcc-operations/GccLifecycleWave";
+import { OperatingRealityCard } from "@/components/gcc-operations/OperatingRealitySection";
 import VerifiedBadge from "@/components/ui/VerifiedBadge";
 import TypewriterParagraph from "@/components/gcc-operations/TypewriterParagraph";
 import { gccOperationsPage, gccOperationsFaqs, PILLAR_LINKS, GCC_OPERATIONS_BASE } from "@/data/gccOperationsContent";
@@ -240,6 +245,19 @@ const employeeAreas = [
   "Manager continuity",
 ];
 
+/** Icon and background image matched to each employee-continuity area, aligned by index. */
+const employeeAreaVisuals: { icon: LucideIcon; image: string }[] = [
+  { icon: FileText, image: "/images/services/gcc-operations/operating-reality/01-employees.webp" },
+  { icon: Award, image: "/images/services/gcc-operations/gcc-ops-people.webp" },
+  { icon: Handshake, image: "/images/services/gcc-operations/operating-reality/03-benefits.webp" },
+  { icon: Wallet, image: "/images/services/gcc-operations/operating-reality/02-payroll.webp" },
+  { icon: CalendarDays, image: "/images/services/gcc-operations/gcc-ops-workforce.webp" },
+  { icon: FolderLock, image: "/images/services/gcc-operations/operating-reality/08-reporting.webp" },
+  { icon: Settings, image: "/images/services/gcc-operations/gcc-ops-governance.webp" },
+  { icon: MessageSquare, image: "/images/services/gcc-operations/gcc-in-brief-people.webp" },
+  { icon: Users, image: "/images/services/gcc-operations/operating-reality/11-leadership.webp" },
+];
+
 const comparison = [
   { row: "Who operates local functions", bot: "Partner, until transfer", captive: "Client, from day one", eor: "Employer of record, limited scope", managed: "Partner, for as long as agreed" },
   { row: "Employment vehicle", bot: "Per contract and entity structure, with planned transfer", captive: "Client's India entity", eor: "Third-party employer", managed: "Client's India entity" },
@@ -259,7 +277,7 @@ export default function BotTransition() {
       >
         {/* Left: Navy Outline Icon */}
         <div className="shrink-0 text-[#0D244D] group-hover:text-[#008EC4] transition-colors mt-0.5">
-          <IconComponent className="w-6 h-6 sm:w-6.5 sm:h-6.5 stroke-[1.8]" />
+          <IconComponent className="w-6 h-6 sm:w-6 sm:h-6 stroke-[1.8]" />
         </div>
 
         {/* Middle: Gate Badge, Title & Description */}
@@ -295,7 +313,7 @@ export default function BotTransition() {
       >
         {/* Left: Navy Outline Icon */}
         <div className="shrink-0 text-[#0D244D] group-hover:text-[#008EC4] transition-colors">
-          <IconComponent className="w-6 h-6 sm:w-6.5 sm:h-6.5 stroke-[1.8]" />
+          <IconComponent className="w-6 h-6 sm:w-6 sm:h-6 stroke-[1.8]" />
         </div>
 
         {/* Middle: Asset Text */}
@@ -513,17 +531,20 @@ export default function BotTransition() {
         width="wide"
         wavesOnMobile
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 lg:gap-x-12 gap-y-1 sm:gap-y-2 max-w-5xl mx-auto" aria-label="Employee transition areas">
-          {employeeAreas.map((item) => (
-            <div
-              key={item}
-              className="flex items-center gap-3 py-3 group select-none transition-colors border-b border-white/10"
-            >
-              <ArrowRight className="w-4 h-4 text-[#38BDF8] shrink-0 stroke-[2.5] group-hover:translate-x-0.5 transition-transform" />
-              <span className="text-sm sm:text-[14.5px] font-semibold text-white/90 leading-snug group-hover:text-[#38BDF8] transition-colors">
-                {item}
-              </span>
-            </div>
+        {/* Modular "business card" grid - OperatingRealityCard design (no numbers) */}
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 max-w-7xl mx-auto items-stretch"
+          aria-label="Employee transition areas"
+        >
+          {employeeAreas.map((area, idx) => (
+            <OperatingRealityCard
+              key={area}
+              item={{
+                title: area,
+                icon: employeeAreaVisuals[idx]?.icon ?? FileText,
+                image: employeeAreaVisuals[idx]?.image,
+              }}
+            />
           ))}
         </div>
 
@@ -547,7 +568,7 @@ export default function BotTransition() {
         align="center"
         width="wide"
       >
-        <div className="max-w-5xl mx-auto text-[#505D74] text-base sm:text-lg leading-relaxed space-y-4 font-normal text-left">
+        <div className="max-w-6xl mx-auto text-[#505D74] text-base sm:text-lg leading-relaxed space-y-4 font-normal text-left">
           <TypewriterParagraph
             text="The test of a BOT-ready operating model is simple: could the client's organization run it tomorrow with the documentation, systems and records it has access to today? If the answer depends on NeoIntelli-only processes, undocumented knowledge or partner-only tooling, the model is not ready, whatever the contract says."
           />
@@ -583,11 +604,11 @@ export default function BotTransition() {
             <tbody className="divide-y divide-[#DCE8F4]">
               {comparison.map((row) => (
                 <tr key={row.row} className="hover:bg-[#169DC8]/[0.03] transition-colors">
-                  <th scope="row" className="px-6 py-4.5 text-[#0D306C] font-extrabold text-sm whitespace-nowrap">{row.row}</th>
-                  <td className="px-6 py-4.5 text-[#0D244D] font-medium text-sm leading-relaxed">{row.bot}</td>
-                  <td className="px-6 py-4.5 text-[#505D74] text-sm leading-relaxed">{row.captive}</td>
-                  <td className="px-6 py-4.5 text-[#505D74] text-sm leading-relaxed">{row.eor}</td>
-                  <td className="px-6 py-4.5 text-[#505D74] text-sm leading-relaxed">{row.managed}</td>
+                  <th scope="row" className="px-6 py-4 text-[#0D306C] font-extrabold text-sm whitespace-nowrap">{row.row}</th>
+                  <td className="px-6 py-4 text-[#0D244D] font-medium text-sm leading-relaxed">{row.bot}</td>
+                  <td className="px-6 py-4 text-[#505D74] text-sm leading-relaxed">{row.captive}</td>
+                  <td className="px-6 py-4 text-[#505D74] text-sm leading-relaxed">{row.eor}</td>
+                  <td className="px-6 py-4 text-[#505D74] text-sm leading-relaxed">{row.managed}</td>
                 </tr>
               ))}
             </tbody>

@@ -1,12 +1,9 @@
 import {
- Rocket, Users, Server, Activity, ShieldCheck,
- Brain, Workflow, Sparkles, Database, GitBranch, ScrollText,
- Cpu, LayoutGrid, Zap, Link2,
- Building2, HeartPulse, MonitorSmartphone, Factory, Briefcase, ShoppingBag,
- Info, BookOpen, FileText, Award, GraduationCap, Mail,
- Cloud, RefreshCw, FileSearch, Plug, UserPlus, UserCog, Repeat, Bot, Settings2,
- MessageSquare, FileCheck, CalendarCheck, BarChart3, UserCheck, Target, Wand2,
- type LucideIcon,
+  ShieldCheck, ScrollText, LayoutGrid,
+  Building2, HeartPulse, MonitorSmartphone, Factory, Briefcase, ShoppingBag,
+  Info, BookOpen, Award, GraduationCap, Mail,
+  Bot, MessageSquare, FileCheck, CalendarCheck, BarChart3, UserCheck, Target, Wand2,
+  type LucideIcon,
 } from "lucide-react";
 import { SERVICE_PILLARS, RESOURCE_LINKS, SOLUTION_GROUPS } from "@/data/serviceNav";
 

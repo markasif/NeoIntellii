@@ -115,7 +115,7 @@ export default function GccSetupWorkstreams({ className = "" }: { className?: st
         })}
       </ol>
 
-      <p className="text-xs sm:text-[13px] text-[#505D74] mt-4 max-w-4xl leading-relaxed font-normal">
+      <p className="text-xs sm:text-[13px] text-[#505D74] mt-4 max-w-6xl leading-relaxed font-normal">
         Phases are illustrative program stages, not guaranteed dates. Their length depends on the operating model, the entity
         route, the leadership market for the roles required and the workplace strategy, and is scoped per program.
       </p>

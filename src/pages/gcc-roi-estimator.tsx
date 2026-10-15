@@ -236,6 +236,7 @@ export default function GCCROIEstimator() {
 
     const year1Savings = years[0].savings;
     const totalSavings = years.reduce((acc, y) => acc + y.savings, 0);
+    const fiveYearSavings = (currentAnnualCost - indiaAnnualTotal) * 5 - setupCost;
 
     /* Break-even month */
     const monthlySavings = (currentAnnualCost - indiaAnnualTotal) / 12;
@@ -260,6 +261,7 @@ export default function GCCROIEstimator() {
       indiaAnnualTotal,
       setupCost,
       year1Savings,
+      fiveYearSavings,
       breakEvenMonth,
       totalSavings,
       roiPct,
@@ -268,7 +270,7 @@ export default function GCCROIEstimator() {
   }, [location, role, teamSize, horizon]);
 
   return (
-    <div className="min-h-screen bg-[#F0F5FA] text-[#2B3D66] font-sans antialiased selection:bg-[#00A3E0]/20 selection:text-[#0D306C]">
+    <div className="min-h-screen bg-[#E7EDF9] text-[#2B3D66] font-sans antialiased selection:bg-[#00A3E0]/20 selection:text-[#0D306C]">
       <Navbar appearance="dark" />
 
       <main className="relative">
@@ -469,6 +471,45 @@ export default function GCCROIEstimator() {
                     </div>
                   </div>
 
+                  {/* Mobile Metrics above Graph: Break-Even & ROI % */}
+                  <div className="grid grid-cols-2 gap-2.5 lg:hidden">
+                    {/* Break-Even Month */}
+                    <div className="rounded-xl p-3 bg-white border border-[#D2DCF0] shadow-xs flex flex-col justify-between">
+                      <div className="flex items-center justify-between mb-1.5">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-600">
+                          Payback
+                        </span>
+                        <div className="w-5 h-5 rounded bg-amber-500/15 flex items-center justify-center shrink-0 text-amber-600">
+                          <Clock className="w-3 h-3" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-[11px] font-bold font-manrope text-[#505D74] mb-0.5">Break-Even</p>
+                        <p className="text-base sm:text-lg font-extrabold font-manrope text-[#0D306C] tracking-tight tabular-nums leading-none">
+                          {calc.breakEvenMonth > 0 ? `Mo. ${calc.breakEvenMonth}` : "Immediate"}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* ROI % */}
+                    <div className="rounded-xl p-3 bg-white border border-emerald-500/40 shadow-xs flex flex-col justify-between">
+                      <div className="flex items-center justify-between mb-1.5">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-600">
+                          Efficiency
+                        </span>
+                        <div className="w-5 h-5 rounded bg-emerald-500/15 flex items-center justify-center shrink-0 text-emerald-600">
+                          <Percent className="w-3 h-3" />
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-[11px] font-bold font-manrope text-[#505D74] mb-0.5">ROI</p>
+                        <p className="text-base sm:text-lg font-extrabold font-manrope text-emerald-600 tracking-tight tabular-nums leading-none">
+                          {fmtPct(calc.roiPct)}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
                   {/* 2. Bar Chart: Year-by-year comparison (Graph - Compact) */}
                   <div className="rounded-xl border border-[#D2DCF0] bg-white p-3.5 sm:p-4 shadow-xs">
                     <div className="flex items-center justify-between gap-2 mb-1">
@@ -625,79 +666,32 @@ export default function GCCROIEstimator() {
               {/* On mobile: placed first (order-1) so user can configure immediately */}
               {/* ============================================================ */}
               <div className="order-1 lg:order-2 lg:col-span-8 xl:col-span-8 flex flex-col min-w-0">
-                {/* MOBILE TOP SNAPSHOT CARD: Matching the Executive Mobile Design */}
-                <div className="block lg:hidden bg-white rounded-2xl border border-[#D2DCF0] p-4 sm:p-5 shadow-xs mb-6">
-                  {/* Top row with Eyebrow & Horizon pill */}
-                  <div className="flex items-center justify-between gap-2 mb-2 pb-2.5 border-b border-[#E2E8F0]">
-                    <div className="flex items-center gap-2">
-                      <span className="text-2xs sm:text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#008EC4]">
-                        LIVE ROI SNAPSHOT
+                {/* MOBILE TOP STICKY BAR: 1-Year & 5-Year Savings Snapshot */}
+                <div className="sticky top-16 z-30 lg:hidden mb-4 rounded-xl bg-white/95 backdrop-blur-md border border-[#D2DCF0] p-2.5 sm:p-3 shadow-md">
+                  <div className="flex items-center justify-between gap-2.5">
+                    {/* 1 Year Savings */}
+                    <div className="flex-1 min-w-0 bg-gradient-to-br from-[#008EC4] to-[#007AA8] rounded-lg p-2.5 text-white shadow-2xs">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-sky-100 block leading-tight">
+                        1-Year Savings
                       </span>
-                    </div>
-                    <span className="text-2xs font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#00A3E0]/15 text-[#008EC4] border border-[#00A3E0]/30 tabular-nums">
-                      {horizon}YR PROJECTION
-                    </span>
-                  </div>
-
-                  {/* Title & Description */}
-                  <div className="mb-3">
-                    <h3 className="text-sm sm:text-base font-extrabold font-manrope text-[#0D306C] tracking-tight">
-                      Estimated India GCC Impact
-                    </h3>
-                    <p className="text-2xs text-[#505D74] mt-0.5 font-sans">
-                      Real-time projected savings for {teamSize} engineers in India vs {location}.
-                    </p>
-                  </div>
-
-                  {/* 4 Key Metrics in Mobile 2x2 Grid */}
-                  <div className="grid grid-cols-2 gap-2">
-                    {/* Year 1 Savings */}
-                    <div className="rounded-xl p-2.5 bg-gradient-to-br from-[#008EC4] to-[#007AA8] text-white border border-[#00A3E0]/60 shadow-2xs">
-                      <span className="text-[10px] font-mono font-bold uppercase text-sky-100 block">Year 1 Savings</span>
-                      <p className="text-base font-extrabold font-manrope text-white tracking-tight tabular-nums mt-0.5">
+                      <p className="text-base sm:text-lg font-extrabold font-manrope text-white tracking-tight tabular-nums mt-0.5 leading-none truncate">
                         <AnimatedNumber value={calc.year1Savings} prefix="$" />
                       </p>
                     </div>
 
-                    {/* Break-Even */}
-                    <div className="rounded-xl p-2.5 bg-[#F8FAFC] border border-[#D2DCF0] shadow-2xs">
-                      <span className="text-[10px] font-mono font-bold uppercase text-amber-600 block">Break-Even</span>
-                      <p className="text-base font-extrabold font-manrope text-[#0D306C] tracking-tight tabular-nums mt-0.5">
-                        {calc.breakEvenMonth > 0 ? `Mo. ${calc.breakEvenMonth}` : "Immediate"}
+                    {/* 5 Year Savings */}
+                    <div className="flex-1 min-w-0 bg-gradient-to-br from-[#0D306C] via-[#0A2E63] to-[#012048] border border-[#00A3E0]/40 rounded-lg p-2.5 text-white shadow-2xs">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#38BDF8] block leading-tight">
+                        5-Year Savings
+                      </span>
+                      <p className="text-base sm:text-lg font-extrabold font-manrope text-[#00A3E0] tracking-tight tabular-nums mt-0.5 leading-none truncate">
+                        <AnimatedNumber value={calc.fiveYearSavings} prefix="$" />
                       </p>
                     </div>
-
-                    {/* Total Savings */}
-                    <div className="rounded-xl p-2.5 bg-gradient-to-br from-[#0D306C] via-[#0A2E63] to-[#012048] border border-[#00A3E0]/40 text-white shadow-2xs">
-                      <span className="text-[10px] font-mono font-bold uppercase text-[#38BDF8] block">{horizon}yr Total</span>
-                      <p className="text-base font-extrabold font-manrope text-[#00A3E0] tracking-tight tabular-nums mt-0.5">
-                        <AnimatedNumber value={calc.totalSavings} prefix="$" />
-                      </p>
-                    </div>
-
-                    {/* ROI % */}
-                    <div className="rounded-xl p-2.5 bg-[#F8FAFC] border border-emerald-500/40 shadow-2xs">
-                      <span className="text-[10px] font-mono font-bold uppercase text-emerald-600 block">ROI</span>
-                      <p className="text-base font-extrabold font-manrope text-emerald-600 tracking-tight tabular-nums mt-0.5">
-                        {fmtPct(calc.roiPct)}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Jump to Details hint */}
-                  <div className="mt-3 pt-2 border-t border-[#E2E8F0] flex items-center justify-between text-2xs font-manrope text-[#505D74]">
-                    <span>Adjust inputs below to update model</span>
-                    <a
-                      href="#roi-breakdown"
-                      className="font-bold text-[#008EC4] hover:underline flex items-center gap-1"
-                    >
-                      <span>See Charts</span>
-                      <ChevronRight className="w-3 h-3" />
-                    </a>
                   </div>
                 </div>
 
-                <div className="bg-[#012048] p-6 sm:p-7 lg:p-8 text-white relative overflow-hidden border border-[#1E3A8A] flex flex-col justify-between h-full">
+                <div className="bg-[#012048] p-6 sm:p-7 lg:p-8 text-white relative overflow-hidden border border-[#1E3A8A] flex flex-col justify-between h-full rounded-2xl">
                   {/* Faceted geometric watermark in the top-right corner */}
                   <div
                     className="absolute -top-6 -right-6 w-48 h-48 pointer-events-none opacity-20 select-none"
@@ -897,6 +891,66 @@ export default function GCCROIEstimator() {
 
                   </div>
                 </div>
+
+                {/* MOBILE LIVE ROI SNAPSHOT CARD: Placed directly below the form */}
+                <div className="block lg:hidden bg-white rounded-2xl border border-[#D2DCF0] p-4 sm:p-5 shadow-xs mt-6">
+                  {/* Top row with Eyebrow & Horizon pill */}
+                  <div className="flex items-center justify-between gap-2 mb-2 pb-2.5 border-b border-[#E2E8F0]">
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xs sm:text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#008EC4]">
+                        LIVE ROI SNAPSHOT
+                      </span>
+                    </div>
+                    <span className="text-2xs font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#00A3E0]/15 text-[#008EC4] border border-[#00A3E0]/30 tabular-nums">
+                      {horizon}YR PROJECTION
+                    </span>
+                  </div>
+
+                  {/* Title & Description */}
+                  <div className="mb-3">
+                    <h3 className="text-sm sm:text-base font-extrabold font-manrope text-[#0D306C] tracking-tight">
+                      Estimated India GCC Impact
+                    </h3>
+                    <p className="text-2xs text-[#505D74] mt-0.5 font-sans">
+                      Real-time projected savings for {teamSize} engineers in India vs {location}.
+                    </p>
+                  </div>
+
+                  {/* 4 Key Metrics in Mobile 2x2 Grid */}
+                  <div className="grid grid-cols-2 gap-2">
+                    {/* Year 1 Savings */}
+                    <div className="rounded-xl p-2.5 bg-gradient-to-br from-[#008EC4] to-[#007AA8] text-white border border-[#00A3E0]/60 shadow-2xs">
+                      <span className="text-[10px] font-mono font-bold uppercase text-sky-100 block">Year 1 Savings</span>
+                      <p className="text-base font-extrabold font-manrope text-white tracking-tight tabular-nums mt-0.5">
+                        <AnimatedNumber value={calc.year1Savings} prefix="$" />
+                      </p>
+                    </div>
+
+                    {/* Break-Even */}
+                    <div className="rounded-xl p-2.5 bg-[#F8FAFC] border border-[#D2DCF0] shadow-2xs">
+                      <span className="text-[10px] font-mono font-bold uppercase text-amber-600 block">Break-Even</span>
+                      <p className="text-base font-extrabold font-manrope text-[#0D306C] tracking-tight tabular-nums mt-0.5">
+                        {calc.breakEvenMonth > 0 ? `Mo. ${calc.breakEvenMonth}` : "Immediate"}
+                      </p>
+                    </div>
+
+                    {/* Total Savings */}
+                    <div className="rounded-xl p-2.5 bg-gradient-to-br from-[#0D306C] via-[#0A2E63] to-[#012048] border border-[#00A3E0]/40 text-white shadow-2xs">
+                      <span className="text-[10px] font-mono font-bold uppercase text-[#38BDF8] block">{horizon}yr Total</span>
+                      <p className="text-base font-extrabold font-manrope text-[#00A3E0] tracking-tight tabular-nums mt-0.5">
+                        <AnimatedNumber value={calc.totalSavings} prefix="$" />
+                      </p>
+                    </div>
+
+                    {/* ROI % */}
+                    <div className="rounded-xl p-2.5 bg-[#F8FAFC] border border-emerald-500/40 shadow-2xs">
+                      <span className="text-[10px] font-mono font-bold uppercase text-emerald-600 block">ROI</span>
+                      <p className="text-base font-extrabold font-manrope text-emerald-600 tracking-tight tabular-nums mt-0.5">
+                        {fmtPct(calc.roiPct)}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -915,7 +969,7 @@ export default function GCCROIEstimator() {
               viewBox="0 0 1440 140"
               fill="none"
               preserveAspectRatio="none"
-              className="w-full h-10 sm:h-14 lg:h-16 xl:h-18 block pointer-events-none"
+              className="w-full h-10 sm:h-14 lg:h-16 xl:h-16 block pointer-events-none"
             >
               <path
                 d="M0,-4 L1440,-4 L1440,30 C1300,32 1160,65 1000,82 C840,99 720,74 540,84 C360,94 200,136 0,136 Z"
@@ -924,7 +978,7 @@ export default function GCCROIEstimator() {
               />
               <path
                 d="M0,-4 L1440,-4 L1440,22 C1300,24 1160,58 1000,74 C840,90 720,66 540,76 C360,86 200,126 0,126 Z"
-                fill="#F0F5FA"
+                fill="#E7EDF9"
               />
             </svg>
           </div>

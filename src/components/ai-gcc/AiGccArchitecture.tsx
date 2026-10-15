@@ -122,7 +122,7 @@ export default function AiGccArchitecture({
                 onMouseEnter={() => setHoveredLayer(idx)}
                 onMouseLeave={() => setHoveredLayer(null)}
                 className={`relative rounded-2xl ${
-                  isFiveOrMore ? "p-4 xl:p-4.5" : "p-5 xl:p-6"
+                  isFiveOrMore ? "p-4 xl:p-4" : "p-5 xl:p-6"
                 } transition-all duration-300 cursor-pointer border ${
                   isActive && layer.highlight
                     ? "bg-[#0A2E66]/90 border-[#38BDF8] shadow-[0_0_30px_rgba(56,189,248,0.25)] ring-1 ring-[#38BDF8]/50"
@@ -335,7 +335,7 @@ export default function AiGccArchitecture({
                 onMouseEnter={() => setHoveredLayer(idx)}
                 onMouseLeave={() => setHoveredLayer(null)}
                 className={`relative rounded-2xl ${
-                  isFiveOrMore ? "p-4 xl:p-4.5" : "p-5 xl:p-6"
+                  isFiveOrMore ? "p-4 xl:p-4" : "p-5 xl:p-6"
                 } transition-all duration-300 cursor-pointer border flex flex-col justify-center ${
                   isActive && layer.highlight
                     ? "bg-[#0A2E66]/90 border-[#38BDF8] shadow-[0_0_30px_rgba(56,189,248,0.25)] ring-1 ring-[#38BDF8]/50"

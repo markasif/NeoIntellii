@@ -341,12 +341,7 @@ export default function CaseStudies() {
         </section>
 
         {/* ============================================================ */}
-        {/* 5. CONTEXT ADVISORY CALLOUT */}
-        {/* ============================================================ */}
-        <ContextAdvisoryCallout />
-
-        {/* ============================================================ */}
-        {/* 6. FREQUENTLY ASKED QUESTIONS */}
+        {/* 5. FREQUENTLY ASKED QUESTIONS */}
         {/* ============================================================ */}
         <section className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-4xl mx-auto">
@@ -401,7 +396,12 @@ export default function CaseStudies() {
         </section>
 
         {/* ============================================================ */}
-        {/* 6. LET'S BUILD TOGETHER (Home Consultation Section with Top Wave Divider) */}
+        {/* 6. CONTEXT ADVISORY CALLOUT (ExecutiveCTA Design) */}
+        {/* ============================================================ */}
+        <ContextAdvisoryCallout />
+
+        {/* ============================================================ */}
+        {/* 7. LET'S BUILD TOGETHER (Home Consultation Section with Top Wave Divider) */}
         {/* ============================================================ */}
         <Consultation hideUpperCta={true} waveFill="#F0F5FA" />
       </main>

@@ -3,13 +3,14 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Image from "next/image";
-import { ArrowRight, ChevronRight, Clock, Search, FileText, MessageSquare } from "lucide-react";
+import { ArrowRight, ChevronRight, Clock, Search, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Consultation from "@/features/home/components/Consultation";
 import FiveCardHeroGrid from "@/components/shared/FiveCardHeroGrid";
+import ExecutiveCTA from "@/components/shared/ExecutiveCTA";
 import { blogPosts, getCategoryColor } from "@/data/blogPosts";
 
 const categories = ["All", "GCC Strategy", "GCC Setup", "GCC Talent", "AI GCC"];
@@ -304,7 +305,7 @@ export default function Blog() {
         {/* 3. EDITORIAL PROMISE (Point of View Design - matches About) */}
         {/* ============================================================ */}
         <section className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-6 lg:px-8 bg-transparent">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-6xl mx-auto text-center">
             <span className="block text-xs sm:text-[13px] font-bold font-mono uppercase tracking-[0.22em] text-[#169DC8] mb-2.5">
               OUR EDITORIAL PROMISE
             </span>
@@ -469,38 +470,6 @@ export default function Blog() {
         </section>
 
         {/* ============================================================ */}
-        {/* 6b. LET'S START A CONVERSATION (Callout CTA design) */}
-        {/* ============================================================ */}
-        <section className="relative py-14 sm:py-18 lg:py-20 px-4 sm:px-6 lg:px-8 bg-transparent text-center select-none">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-3xl mx-auto"
-          >
-            <div className="flex justify-center mb-4 sm:mb-5">
-              <MessageSquare className="w-10 h-10 text-[#2B3D66] stroke-[1.8]" />
-            </div>
-
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0D306C] tracking-tight leading-[1.18] mb-4 sm:mb-5 font-manrope">
-              Let&apos;s start a conversation.
-            </h2>
-
-            <p className="text-[#505D74] text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10 font-normal font-sans">
-              If your leadership team is evaluating a GCC, AI strategy, or talent plan in India, we can help you move from concept to execution.
-            </p>
-
-            <Link
-              to="/book-a-call"
-              className="inline-flex items-center justify-center px-8 py-3.5 sm:py-4 rounded-full bg-[#2A2B68] hover:bg-[#1E1F4B] text-white text-sm sm:text-base font-bold font-manrope tracking-tight transition-all duration-200 shadow-md hover:shadow-lg cursor-pointer"
-            >
-              <span>Speak to a GCC Advisor</span>
-            </Link>
-          </motion.div>
-        </section>
-
-        {/* ============================================================ */}
         {/* 7. FREQUENTLY ASKED QUESTIONS */}
         {/* ============================================================ */}
         <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
@@ -533,7 +502,26 @@ export default function Blog() {
         </section>
 
         {/* ============================================================ */}
-        {/* 8. LET'S BUILD TOGETHER (AI GCC consultation section) */}
+        {/* 8. LET'S START A CONVERSATION (Canonical ExecutiveCTA Design) */}
+        {/* ============================================================ */}
+        <ExecutiveCTA
+          eyebrow="START A CONVERSATION"
+          title="Let's start a conversation."
+          description="If your leadership team is evaluating a GCC, AI strategy, or talent plan in India, we can help you move from concept to execution."
+          primaryCta={{
+            label: "Speak to a GCC Advisor",
+            href: "/book-a-call",
+          }}
+          secondaryCta={{
+            label: "Explore Case Studies",
+            mobileLabel: "Case Studies",
+            href: "/case-studies",
+          }}
+          footnote="A 30-minute diagnostic session with an experienced GCC practitioner."
+        />
+
+        {/* ============================================================ */}
+        {/* 9. LET'S BUILD TOGETHER (AI GCC consultation section) */}
         {/* ============================================================ */}
         <Consultation hideUpperCta={true} waveFill="#F0F5FA" />
 

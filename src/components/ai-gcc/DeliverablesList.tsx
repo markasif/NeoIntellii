@@ -59,7 +59,7 @@ export default function DeliverablesList({
             <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.8]" />
           </div>
         ) : (
-          <div className="relative shrink-0 flex items-center justify-center w-8 h-9 sm:w-8.5 sm:h-9.5">
+          <div className="relative shrink-0 flex items-center justify-center w-8 h-9 sm:w-8 sm:h-9">
             <svg viewBox="0 0 54 60" className="w-full h-full drop-shadow-sm transition-transform duration-200 group-hover:scale-105" aria-hidden="true">
               <polygon
                 points="27,3 50,16 50,44 27,57 4,44 4,16"

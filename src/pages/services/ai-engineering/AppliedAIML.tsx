@@ -20,7 +20,7 @@ import {
   type NeoHireXMatrixItem,
   CapabilitiesSection,
   type CapabilityItem,
-  ImageFeatureCardGrid,
+  PillFeatureCardGrid,
   type ImageFeatureCardItem,
 } from "@/components/ai-engineering";
 import { AI_ENGINEERING_PAGE_BY_KEY } from "@/data/aiEngineering";
@@ -36,7 +36,7 @@ const DECISION_PROBLEMS: NeoHireXMatrixItem[] = [
     category: "DISCONNECTED FORECASTING",
     title: "A forecast nobody acts on",
     body: "The model is accurate and the planning process still runs on last quarter's spreadsheet. A prediction only has value when a decision, a threshold and an owner are designed around it.",
-    image: "/images/services/ai-engineering/applied-ml-capability.webp",
+    image: "/images/services/ai-engineering/applied-forecasting-decision.jpg",
     imageAlt: "Applied AI forecasting and enterprise planning systems",
   },
   {
@@ -44,7 +44,7 @@ const DECISION_PROBLEMS: NeoHireXMatrixItem[] = [
     category: "UNMONITORED MODEL DRIFT",
     title: "A model that was right last year",
     body: "Customer behaviour, suppliers and sensors change. Without drift monitoring and a retraining path, accuracy decays quietly and the business finds out from the outcome.",
-    image: "/images/services/ai-engineering/production_capability.webp",
+    image: "/images/services/ai-engineering/ops/model-drift.webp",
     imageAlt: "Production machine learning model drift and degradation monitoring",
   },
   {
@@ -52,7 +52,7 @@ const DECISION_PROBLEMS: NeoHireXMatrixItem[] = [
     category: "ASYMMETRIC ERROR COSTS",
     title: "The right accuracy, the wrong error",
     body: "A fraud model tuned for overall accuracy can be cheap on false negatives and expensive on false positives, or the reverse. The metric has to reflect what each kind of error costs the business.",
-    image: "/images/home/solution_gcc_calculator.webp",
+    image: "/images/services/ai-gcc/advisory/Cinematic AI Operations Command Center.jpg",
     imageAlt: "Cost-sensitive error analysis and fraud risk confusion matrix modeling",
   },
 ];
@@ -80,16 +80,16 @@ const CAPABILITIES: ImageFeatureCardItem[] = [
     title: "Classify and detect",
     desc: "Classification, anomaly detection, NLP and computer vision tuned for business error cost and operational volume.",
     items: ["Classification", "Anomaly detection", "NLP", "Computer vision"],
-    image: "/images/services/ai-engineering/evaluation-assurance-capability.webp",
-    imageAlt: "Classification, anomaly detection, NLP and computer vision",
+    image: "/images/services/ai-engineering/production_capability.webp",
+    imageAlt: "Classification, anomaly detection, NLP and computer vision models running in production",
   },
   {
     eyebrow: "DECISION TYPE 03",
     title: "Optimize and decide",
     desc: "Optimization, recommendation systems and decision intelligence connecting analytical scores directly into business actions.",
     items: ["Optimization", "Recommendation systems", "Decision intelligence", "Advanced analytics"],
-    image: "/images/services/ai-engineering/compute-economics-gap.webp",
-    imageAlt: "Optimization, recommendation systems and decision intelligence",
+    image: "/images/services/ai-gcc/decision_model.webp",
+    imageAlt: "Optimization, recommendation and decision intelligence turning scores into decisions",
   },
 ];
 
@@ -240,7 +240,7 @@ export default function AppliedAIML() {
         tone="muted"
         width="wide"
       >
-        <ImageFeatureCardGrid items={CAPABILITIES} columns={3} />
+        <PillFeatureCardGrid items={CAPABILITIES} className="max-w-6xl mx-auto" />
       </Section>
 
       <Section

@@ -14,7 +14,7 @@ interface InBriefProps {
 export default function InBrief({ children, label = "In brief", id = "in-brief" }: InBriefProps) {
   return (
     <section id={id} aria-labelledby={`${id}-label`} className="px-6 sm:px-8 lg:px-12 py-14 md:py-20">
-      <div className="max-w-4xl mx-auto rounded-2xl border border-[#0a93bd]/25 bg-[#0a93bd]/[0.04] p-6 md:p-8">
+      <div className="max-w-6xl mx-auto rounded-2xl border border-[#0a93bd]/25 bg-[#0a93bd]/[0.04] p-6 md:p-8">
         <p id={`${id}-label`} className="text-2xs uppercase tracking-[0.16em] text-[#0a6f8e] mb-3">{label}</p>
         <p className="text-heading text-base md:text-lg leading-relaxed">{children}</p>
       </div>

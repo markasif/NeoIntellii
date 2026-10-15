@@ -25,7 +25,7 @@ import {
   type NeoHireXMatrixItem,
   CapabilitiesSection,
   type CapabilityItem,
-  ImageFeatureCardGrid,
+  PillFeatureCardGrid,
   type ImageFeatureCardItem,
 } from "@/components/ai-engineering";
 import PillTagList from "@/components/shared/PillTagList";
@@ -43,24 +43,24 @@ const PRODUCT_PROBLEMS: NeoHireXMatrixItem[] = [
     category: "FEATURE ADOPTION",
     title: "Impressive in the demo, unused in the product",
     body: "The feature was designed around what the model can do rather than the job the user is doing. It sits in a side panel, answers questions nobody asked and is quietly ignored.",
-    image: "/images/services/ai-engineering/product-engineering-capability.webp",
-    imageAlt: "User-centric AI product integration and workflow UX design",
+    image: "/images/services/ai-engineering/saas_realistic.webp",
+    imageAlt: "Product team analyzing customer adoption and AI feature retention",
   },
   {
     id: "02",
     category: "UNIT ECONOMICS",
     title: "The margin disappears at scale",
     body: "Cost per interaction was never a design constraint. At real usage the AI feature costs more to serve than the plan it is bundled into earns.",
-    image: "/images/services/ai-engineering/compute-economics-gap.webp",
-    imageAlt: "Production inference unit economics, routing and caching architecture",
+    image: "/images/services/ai-engineering/gpu-engineer-control.jpg",
+    imageAlt: "Production AI infrastructure engineer monitoring GPU cluster serving economics",
   },
   {
     id: "03",
     category: "CONFIDENCE & FALLBACK",
     title: "Trust breaks on the first wrong answer",
     body: "No confidence signal, no citation, no graceful failure state. One visible mistake and users stop relying on the feature, whatever its average accuracy.",
-    image: "/images/services/ai-engineering/workflow-integration-gap.webp",
-    imageAlt: "Trust verification, citation grounding and graceful fallback UX",
+    image: "/images/services/ai-engineering/agents/evaluation-simulation.webp",
+    imageAlt: "AI engineer running benchmark evaluation suite and failure-state stress tests",
   },
 ];
 
@@ -293,7 +293,7 @@ export default function AIProductEngineering() {
         tone="muted"
         width="wide"
       >
-        <ImageFeatureCardGrid items={CAPABILITIES} columns={3} />
+        <PillFeatureCardGrid items={CAPABILITIES} className="max-w-6xl mx-auto" />
       </Section>
 
       <Section

@@ -775,45 +775,23 @@ export default function CostCalculator({ pageVariant }: CostCalculatorProps) {
             {/* RIGHT COLUMN: Redesigned Executive Calculator Panel in Navy Blue */}
             {/* ============================================================ */}
             <div className="lg:col-span-8 xl:col-span-9 min-w-0">
-              {/* MOBILE TOP STEPPER CARD: Clean, compact horizontal progress */}
-              <div className="block lg:hidden bg-white rounded-2xl border border-[#D2DCF0] p-4 sm:p-5 shadow-xs mb-6">
-                {/* Top row with Step indicator & percent */}
-                <div className="flex items-center justify-between gap-2 mb-2 pb-2.5 border-b border-[#E2E8F0]">
-                  <div className="flex items-center gap-2">
-                    <span className="text-2xs sm:text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#008EC4]">
-                      STEP 0{currentStepIndex + 1} OF 03
-                    </span>
-                  </div>
-                  <span className="text-2xs font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#00A3E0]/15 text-[#008EC4] border border-[#00A3E0]/30 tabular-nums">
-                    {showResults ? "100% COMPLETE" : currentStepIndex === 0 ? "33% COMPLETE" : "66% COMPLETE"}
-                  </span>
-                </div>
-
-                {/* Current Step Title */}
-                <div className="mb-3.5">
-                  <h3 className="text-sm sm:text-base font-extrabold font-manrope text-[#0D306C] tracking-tight">
-                    {SIDEBAR_STEPS[currentStepIndex]?.title || "Cost & Savings Breakdown"}
-                  </h3>
-                  <p className="text-2xs text-[#505D74] mt-0.5 font-sans">
-                    {SIDEBAR_STEPS[currentStepIndex]?.description}
-                  </p>
-                </div>
-
-                {/* Horizontal Stepper Row */}
+              {/* MOBILE TOP STATUS BAR: Sleek status bar without bulky white container */}
+              <div className="block lg:hidden mb-6 px-2">
                 <div className="relative pt-1 pb-1">
                   {/* Connector Track */}
-                  <div className="absolute top-4 left-6 right-6 h-0.5 bg-[#E2E8F0] -z-0" />
-                  <div
-                    className="absolute top-4 left-6 h-0.5 bg-[#10B981] transition-all duration-300 -z-0"
-                    style={{
-                      width:
-                        currentStepIndex === 0
-                          ? "0%"
-                          : currentStepIndex === 1
-                          ? "50%"
-                          : "100%",
-                    }}
-                  />
+                  <div className="absolute top-[18px] left-7 right-7 h-[2.5px] bg-[#CBD5E1] rounded-full -z-0">
+                    <div
+                      className="h-full bg-[#10B981] rounded-full transition-all duration-300"
+                      style={{
+                        width:
+                          currentStepIndex === 0
+                            ? "0%"
+                            : currentStepIndex === 1
+                            ? "50%"
+                            : "100%",
+                      }}
+                    />
+                  </div>
 
                   <div className="flex items-center justify-between relative z-10">
                     {SIDEBAR_STEPS.map((s, idx) => {
@@ -842,30 +820,41 @@ export default function CostCalculator({ pageVariant }: CostCalculatorProps) {
                           }`}
                         >
                           <div
-                            className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${
+                            className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${
                               isCompleted
                                 ? "bg-[#10B981] text-white shadow-xs group-hover:scale-105"
                                 : isActive
-                                ? "ring-3 ring-[#008EC4]/25 bg-[#0D306C] border-2 border-[#00A3E0] text-white shadow-xs"
+                                ? "ring-4 ring-[#008EC4]/25 bg-[#0D306C] border-2 border-[#00A3E0] text-white shadow-xs"
                                 : "bg-white border-2 border-[#CBD5E1] text-[#94A3B8]"
                             }`}
                           >
                             {isCompleted ? (
-                              <Check className="w-3.5 h-3.5 stroke-[2.5]" aria-hidden="true" />
+                              <Check className="w-4 h-4 stroke-[2.5]" aria-hidden="true" />
                             ) : (
-                              <Icon className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-[#94A3B8]"}`} />
+                              <Icon className={`w-4 h-4 ${isActive ? "text-white" : "text-[#94A3B8]"}`} />
                             )}
                           </div>
                           <span
-                            className={`text-2xs font-manrope font-bold mt-1.5 transition-colors ${
+                            className={`text-xs font-manrope font-bold mt-1.5 transition-colors ${
                               isActive
                                 ? "text-[#0D306C]"
                                 : isCompleted
                                 ? "text-[#10B981]"
+                                : "text-[#64748B]"
+                            }`}
+                          >
+                            Step {idx + 1}
+                          </span>
+                          <span
+                            className={`text-2xs font-medium transition-colors ${
+                              isActive
+                                ? "text-[#008EC4] font-semibold"
+                                : isCompleted
+                                ? "text-[#505D74]"
                                 : "text-[#94A3B8]"
                             }`}
                           >
-                            {idx === 0 ? "Team" : idx === 1 ? "Location" : "Estimate"}
+                            {idx === 0 ? "Team" : idx === 1 ? "City" : "Estimate"}
                           </span>
                         </button>
                       );

@@ -67,7 +67,7 @@ const CAPABILITIES = [
   {
     title: "Responsible AI",
     body: "The governance operating model: AI inventory, risk classification, controls, evaluation and the evidence trail regulators and auditors will ask for.",
-    image: "/images/services/ai-gcc/advisory/responsible-ai.webp",
+    image: "/images/services/ai-gcc/advisory/governce.webp",
   },
   {
     title: "Value roadmap",

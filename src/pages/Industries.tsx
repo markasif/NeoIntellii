@@ -203,7 +203,7 @@ export default function Industries() {
 
         {/* ── 2. EDITORIAL STATEMENT ──────────────────────────────────── */}
         <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-transparent">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-6xl mx-auto text-center">
             <p className="text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-extrabold font-manrope text-[#0D306C] tracking-tight leading-snug">
               Each engagement is shaped around business criticality, compliance needs, talent depth,{" "}
               <span className="text-[#505D74] font-semibold">

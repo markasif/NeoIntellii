@@ -48,7 +48,7 @@ function AnimatedCounter({ value, duration = 1.2, trigger }: AnimatedCounterProp
  * Navy background with top organic wave divider, live animated counters,
  * and integrated dark pricing disclaimer footnote.
  */
-export default function TrustStrip() {
+export default function TrustStrip({ waveFill = "#F0F5FA" }: { waveFill?: string } = {}) {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: "100px" });
 
@@ -62,7 +62,7 @@ export default function TrustStrip() {
           viewBox="0 0 1440 140"
           fill="none"
           preserveAspectRatio="none"
-          className="w-full h-10 sm:h-14 lg:h-16 xl:h-18 block pointer-events-none"
+          className="w-full h-10 sm:h-14 lg:h-16 xl:h-16 block pointer-events-none"
         >
           <path
             d="M0,-4 L1440,-4 L1440,30 C1300,32 1160,65 1000,82 C840,99 720,74 540,84 C360,94 200,136 0,136 Z"
@@ -71,7 +71,7 @@ export default function TrustStrip() {
           />
           <path
             d="M0,-4 L1440,-4 L1440,22 C1300,24 1160,58 1000,74 C840,90 720,66 540,76 C360,86 200,126 0,126 Z"
-            fill="#F0F5FA"
+            fill={waveFill}
           />
         </svg>
       </div>

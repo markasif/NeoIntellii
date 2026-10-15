@@ -16,6 +16,9 @@ export * from "./components/GCCStartingPoint";
 export { default as WhyNeoIntelliLifecycle } from "./components/WhyNeoIntelliLifecycle";
 export * from "./components/WhyNeoIntelliLifecycle";
 
+export { default as HexagonArcLifecycle } from "@/components/shared/HexagonArcLifecycle";
+export * from "@/components/shared/HexagonArcLifecycle";
+
 export { default as Industries } from "./components/Industries";
 export * from "./components/Industries";
 

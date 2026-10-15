@@ -9,25 +9,8 @@ import {
   ChevronDown,
   ChevronRight,
   ArrowRight,
-  ExternalLink,
-  BookOpen,
   Menu,
   X,
-  Layers,
-  Cpu,
-  Globe,
-  Zap,
-  Building2,
-  RefreshCw,
-  Landmark,
-  HeartPulse,
-  Factory,
-  ShoppingCart,
-  Code2,
-  Briefcase,
-  Calculator,
-  Compass,
-  Users,
 } from "lucide-react";
 import MobileSidebar from "./MobileSidebar";
 
@@ -105,7 +88,7 @@ export default function Navbar({ appearance }: NavbarProps = {}) {
     if (/^\/(about|careers|contact|case-studies|blog|book-a-call|thank-you-call|privacy-policy|terms-of-service|cookie-policy|gcc-faq)/.test(pathname)) return "company";
     if (/^\/(gcc-cost-calculator|gcc-roi-estimator|gcc-readiness-assessment|gcc-india-cost|blueprint|gcc-as-a-service|gcc-for-ai-startups|gcc-vs-outsourcing)/.test(pathname)) return "solutions";
     if (pathname.startsWith("/services")) return "what-we-do";
-    if (pathname.startsWith("/recruitment")) return "company";
+    if (pathname.startsWith("/recruitment")) return "solutions";
     return null;
   })();
 
@@ -674,7 +657,7 @@ export default function Navbar({ appearance }: NavbarProps = {}) {
                         { label: "GCC Readiness Assessment", href: "/gcc-readiness-assessment" },
                       ].map((item) => (
                         <Link key={item.label} href={item.href} onClick={() => setActiveMenu(null)}
-                          className="group flex items-center justify-between py-2.5 text-[12px] font-semibold text-[#0D306C] hover:text-[#169DC8] transition-colors duration-200">
+                          className={`group flex items-center justify-between py-2.5 text-[12px] font-semibold transition-colors duration-200 ${isActiveHref(item.href) ? "text-[#169DC8]" : "text-[#0D306C] hover:text-[#169DC8]"}`}>
                           <span>{item.label}</span>
                           <ArrowRight className="w-3.5 h-3.5 shrink-0 text-[#169DC8] transition-transform duration-200 group-hover:translate-x-0.5" />
                         </Link>
@@ -792,6 +775,7 @@ export default function Navbar({ appearance }: NavbarProps = {}) {
                     </div>
                     {[
                       { title: "GCC Cost Calculator", desc: "Estimate the cost of your India team.", href: "/gcc-cost-calculator" },
+                      { title: "GCC ROI Estimator", desc: "Compare current spend against an India model to see break-even and multi-year effect.", href: "/gcc-roi-estimator" },
                       { title: "GCC Readiness Assessment", desc: "Find your best starting model.", href: "/gcc-readiness-assessment" },
                       { title: "GCC Blueprint", desc: "Define your team, economics and launch plan.", href: "/blueprint" },
                     ].map((item) => (

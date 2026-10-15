@@ -29,9 +29,9 @@ import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import DeliverablesList from "@/components/ai-gcc/DeliverablesList";
 import AdvisoryProcessFlow, { type AdvisoryStep } from "@/components/ai-gcc/AdvisoryProcessFlow";
-import GccPerformanceFramework, { type OutcomeGroup } from "@/components/gcc-operations/GccPerformanceFramework";
-import OperatingLayerGrid from "@/components/gcc-operations/OperatingLayerGrid";
+import GccPerformanceFramework from "@/components/gcc-operations/GccPerformanceFramework";
 import CapabilitiesSection from "@/components/ai-gcc/CapabilitiesSection";
+import SpecialistHiringMosaic from "@/components/shared/SpecialistHiringMosaic";
 import PillFeatureCardGrid from "@/components/shared/PillFeatureCardGrid";
 import ExecutiveCTA from "@/components/shared/ExecutiveCTA";
 import ConnectedEcosystem, { type ConnectedCardItem } from "@/components/shared/ConnectedEcosystem";
@@ -155,53 +155,19 @@ export default function About() {
           imageAlt="About NeoIntelli Executive View"
           primaryCta={{ label: "Build an AI GCC", href: "/services/ai-gcc" }}
           secondaryCta={{ label: "Speak with NeoIntelli", href: "/contact" }}
-          bottomContent={
-            <div className="relative z-20 w-full bg-transparent pb-4 sm:pb-6 lg:pb-8 shrink-0">
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-2 lg:grid-cols-4 divide-y divide-white/10 sm:divide-y-0 sm:divide-x sm:divide-white/15 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md p-1 sm:p-2">
-                  <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2.5">
-                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-white font-mono tracking-tight leading-none mb-1.5">
-                      1
-                    </span>
-                    <p className="text-[10.5px] sm:text-[12.5px] text-[#C5D7F0] text-center leading-snug font-medium max-w-[220px]">
-                      Unified partner from strategy to day-to-day operations
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2.5">
-                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-white font-mono tracking-tight leading-none mb-1.5">
-                      100%
-                    </span>
-                    <p className="text-[10.5px] sm:text-[12.5px] text-[#C5D7F0] text-center leading-snug font-medium max-w-[220px]">
-                      Client IP, codebase, and team ownership
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2.5">
-                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-white font-mono tracking-tight leading-none mb-1.5">
-                      12 wks
-                    </span>
-                    <p className="text-[10.5px] sm:text-[12.5px] text-[#C5D7F0] text-center leading-snug font-medium max-w-[220px]">
-                      Typical timeframe from kickoff to first operational pod
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2.5">
-                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-white font-mono tracking-tight leading-none mb-1.5">
-                      Bengaluru
-                    </span>
-                    <p className="text-[10.5px] sm:text-[12.5px] text-[#C5D7F0] text-center leading-snug font-medium max-w-[220px]">
-                      Headquartered at the center of India&apos;s AI talent ecosystem
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          }
+          trustStrip={[
+            "1 unified partner from strategy to day-to-day operations",
+            "100% client IP, codebase, and team ownership",
+            "12 wks typical timeframe from kickoff to first operational pod",
+            "Bengaluru headquartered at the center of India's AI talent ecosystem",
+          ]}
         />
 
         {/* ============================================================ */}
         {/* 2. POINT OF VIEW (Blueprint Strategic Foundation Design) */}
         {/* ============================================================ */}
         <section className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-6 lg:px-8 bg-transparent">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-6xl mx-auto text-center">
             <span className="block text-xs sm:text-[13px] font-bold font-mono uppercase tracking-[0.22em] text-[#169DC8] mb-2.5">
               POINT OF VIEW
             </span>
@@ -219,7 +185,7 @@ export default function About() {
         {/* 3. WHY NEOINTELLI EXISTS */}
         {/* ============================================================ */}
         <section className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-6 lg:px-8 bg-transparent">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <SectionHeader
               eyebrow="WHY NEOINTELLI EXISTS"
               title="The hard part is everything around the hiring."
@@ -293,33 +259,27 @@ export default function About() {
         </section>
 
         {/* ============================================================ */}
-        {/* 5. ONE CONNECTED OPERATING MODEL (Operating Model Mosaic Design) */}
+        {/* 5. ONE CONNECTED OPERATING MODEL (Specialist Mosaic Design)   */}
         {/* ============================================================ */}
         <section className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-6xl mx-auto">
-            <SectionHeader
+            <SpecialistHiringMosaic
               eyebrow="ONE CONNECTED OPERATING MODEL"
               title="From the first business case to a capability you own."
-              description="You should never have to rebuild the operating model simply because the center grows."
-              align="center"
-              variant="cyan"
-              className="mb-10 sm:mb-14"
-            />
-
-            <OperatingLayerGrid
-              items={ABOUT_LIFECYCLE.map((stage, idx) => ({
+              lead="You should never have to rebuild the operating model simply because the center grows."
+              pages={ABOUT_LIFECYCLE.map((stage, idx) => ({
                 key: stage.num,
-                cardTitle: stage.title,
+                name: stage.title,
                 summary: stage.desc,
-                shortName: stage.title,
                 path: stage.href,
-                image: LIFECYCLE_IMAGES[idx],
-                items: stage.items,
-                actionLabel:
+                anchor:
                   stage.title === "Scale or Transfer"
                     ? "Explore Scale & BOT"
                     : `Explore ${stage.title}`,
+                image: LIFECYCLE_IMAGES[idx],
+                icon: [Target, Users, Cpu, Zap, Building2, ShieldCheck, Route][idx],
               }))}
+              showButton={true}
             />
           </div>
         </section>

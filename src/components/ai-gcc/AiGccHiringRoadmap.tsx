@@ -274,7 +274,7 @@ export default function AiGccHiringRoadmap({
                     <div className="relative flex items-center justify-center w-14 h-16">
                       {isActive && (
                         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                          <svg viewBox="0 0 54 60" className="w-16 h-18 animate-ping opacity-30 text-[#169DC8]">
+                          <svg viewBox="0 0 54 60" className="w-16 h-16 animate-ping opacity-30 text-[#169DC8]">
                             <polygon points="27,3 50,16 50,44 27,57 4,44 4,16" fill="currentColor" />
                           </svg>
                         </div>
@@ -282,7 +282,7 @@ export default function AiGccHiringRoadmap({
 
                       <svg
                         viewBox="0 0 54 60"
-                        className={`w-13 h-15 transition-all duration-300 drop-shadow-md ${
+                        className={`w-12 h-14 transition-all duration-300 drop-shadow-md ${
                           isActive ? "scale-110 drop-shadow-lg" : "group-hover/row:scale-105"
                         }`}
                       >
@@ -346,7 +346,7 @@ export default function AiGccHiringRoadmap({
                     <div className="relative flex items-center justify-center w-14 h-16">
                       {isActive && (
                         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                          <svg viewBox="0 0 54 60" className="w-16 h-18 animate-ping opacity-30 text-[#169DC8]">
+                          <svg viewBox="0 0 54 60" className="w-16 h-16 animate-ping opacity-30 text-[#169DC8]">
                             <polygon points="27,3 50,16 50,44 27,57 4,44 4,16" fill="currentColor" />
                           </svg>
                         </div>
@@ -354,7 +354,7 @@ export default function AiGccHiringRoadmap({
 
                       <svg
                         viewBox="0 0 54 60"
-                        className={`w-13 h-15 transition-all duration-300 drop-shadow-md ${
+                        className={`w-12 h-14 transition-all duration-300 drop-shadow-md ${
                           isActive ? "scale-110 drop-shadow-lg" : "group-hover/row:scale-105"
                         }`}
                       >
@@ -408,7 +408,7 @@ export default function AiGccHiringRoadmap({
               className="relative flex items-center gap-4 sm:gap-6 group cursor-pointer text-left"
             >
               {/* Hexagon Node */}
-              <div className="relative z-10 -ml-6 sm:-ml-8 shrink-0 flex items-center justify-center w-12 h-13">
+              <div className="relative z-10 -ml-6 sm:-ml-8 shrink-0 flex items-center justify-center w-12 h-12">
                 <svg
                   viewBox="0 0 54 60"
                   className={`w-11 h-12 transition-all duration-300 drop-shadow-sm ${

@@ -128,7 +128,7 @@ export default function Consultation({ hideUpperCta = false, hideWaveDivider = f
         }}
       />
 
-      <div className={`relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${hideUpperCta ? 'pt-6 sm:pt-10' : 'pt-10 sm:pt-14 lg:pt-18'} pb-4 sm:pb-6`}>
+      <div className={`relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${hideUpperCta ? 'pt-6 sm:pt-10' : 'pt-10 sm:pt-14 lg:pt-16'} pb-4 sm:pb-6`}>
         
         {/* ========================================================================= */}
         {/* UPPER CALL TO ACTION HEADER (Start with one team. Scale into an AI GCC)   */}
@@ -288,7 +288,7 @@ export default function Consultation({ hideUpperCta = false, hideWaveDivider = f
               </div>
 
               {/* Horizontal Divider */}
-              <div className="pt-2 border-t border-white/15">
+              <div className="pt-2">
                 
                 {/* 3 Metric Cards Styled Like 'What Connecting Those Layers' with Chamfered Bottom-Left Cut & Animation - 2 Rows on Mobile */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-3">

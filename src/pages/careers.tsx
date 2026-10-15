@@ -193,7 +193,7 @@ export default function Careers() {
         {/* 2. MISSION MANIFESTO STATEMENT (Blueprint Strategic Foundation Design) */}
         {/* ============================================================ */}
         <section className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-6 lg:px-8 bg-transparent">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-6xl mx-auto text-center">
             <span className="block text-xs sm:text-[13px] font-bold font-mono uppercase tracking-[0.22em] text-[#169DC8] mb-2.5">
               OUR BELIEF
             </span>

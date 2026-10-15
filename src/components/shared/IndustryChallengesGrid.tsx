@@ -11,28 +11,32 @@ export type ChallengeItemType =
 interface IndustryChallengesGridProps {
   items: ChallengeItemType[];
   className?: string;
+  columns?: 2 | 3;
 }
 
 /**
- * Cyber/Navy numbered challenges grid matching executive reference design.
- * Features glowing cyan glassmorphism panels, diagonal tech accents,
- * and high-contrast bold gradient numeric indices (01, 02, etc.).
+ * Modern Glassmorphism Card Grid matching executive reference design:
+ * - 3-column responsive layout
+ * - Left column (Col 1): Luxurious dark amber glass with golden amber typography (#FBBF24)
+ * - Middle column (Col 2): Deep sapphire/navy frosted glass with crisp white typography
+ * - Right column (Col 3): Luminous vibrant cyan/blue frosted glass with bright glow
+ * - Clean bold title + description layout without symbols or corner clutter
  */
 export default function IndustryChallengesGrid({
   items,
   className = "",
+  columns = 3,
 }: IndustryChallengesGridProps) {
+  const gridColsClass =
+    columns === 2
+      ? "grid-cols-1 md:grid-cols-2"
+      : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
+
   return (
     <div
-      className={`grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 max-w-5xl mx-auto ${className}`}
+      className={`grid ${gridColsClass} gap-5 sm:gap-6 max-w-7xl mx-auto items-stretch ${className}`}
     >
       {items.map((item, index) => {
-        const isOddTotal = items.length % 2 !== 0;
-        const isLastItem = index === items.length - 1;
-        const spansTwoCols = isOddTotal && isLastItem;
-
-        const numberStr = String(index + 1).padStart(2, "0");
-
         let title: string | undefined;
         let description: string | undefined;
 
@@ -54,70 +58,73 @@ export default function IndustryChallengesGrid({
           description = item.desc || item.description;
         }
 
+        const displayTitle = title
+          ? title.endsWith(":") || title.endsWith("?")
+            ? title
+            : `${title}:`
+          : "";
+
+        // Determine column variant based on 3-column progression:
+        // 0 = Amber Glass (Left), 1 = Deep Blue Glass (Middle), 2 = Luminous Frosted Blue Glass (Right)
+        const colVariant = index % 3;
+
+        let cardTheme = "";
+        let hairlineTheme = "";
+        let titleColor = "";
+        let descColor = "";
+
+        if (colVariant === 0) {
+          // Left Column: Amber Glass
+          cardTheme =
+            "border-[#F59E0B]/35 bg-gradient-to-br from-[#B45309]/20 via-[#451A03]/25 to-[#050D1A]/95 hover:border-[#F59E0B]/75";
+          hairlineTheme =
+            "bg-gradient-to-r from-[#F59E0B]/80 via-[#F59E0B]/30 to-transparent";
+          titleColor = "text-[#FBBF24]";
+          descColor = "text-slate-200";
+        } else if (colVariant === 1) {
+          // Middle Column: Deep Navy / Blue Frosted Glass
+          cardTheme =
+            "border-white/15 bg-gradient-to-br from-white/[0.08] via-[#0D244D]/40 to-[#041024]/90 hover:border-white/35";
+          hairlineTheme =
+            "bg-gradient-to-r from-white/50 via-white/15 to-transparent";
+          titleColor = "text-white";
+          descColor = "text-slate-300";
+        } else {
+          // Right Column: Luminous Vibrant Cyan/Blue Frosted Glass
+          cardTheme =
+            "border-[#38BDF8]/45 bg-gradient-to-br from-[#38BDF8]/30 via-[#1E40AF]/25 to-[#06142B]/90 hover:border-[#38BDF8]/80";
+          hairlineTheme =
+            "bg-gradient-to-r from-[#38BDF8]/80 via-white/50 to-transparent";
+          titleColor = "text-white";
+          descColor = "text-[#E0F2FE]/90";
+        }
+
         return (
           <div
             key={index}
-            className={`group relative overflow-hidden rounded-xl border border-[#0099FF]/40 bg-[#041D40]/70 backdrop-blur-md transition-all duration-300 hover:border-[#00C2FF]/80 hover:shadow-[0_0_28px_rgba(0,194,255,0.22)] ${
-              spansTwoCols ? "md:col-span-2" : "col-span-1"
-            }`}
+            className={`group relative overflow-hidden rounded-2xl p-6 sm:p-7 md:p-8 flex flex-col justify-start text-left transition-all duration-300 hover:-translate-y-1 backdrop-blur-xl border shadow-none ${cardTheme}`}
           >
-            {/* Top Cyan Highlight Bar */}
-            <div className="absolute top-0 inset-x-0 h-[1.5px] bg-gradient-to-r from-[#00E5FF]/70 via-[#0099FF]/40 to-transparent pointer-events-none" />
-
-            {/* Left Edge Subtle Glow */}
-            <div className="absolute top-0 left-0 bottom-0 w-[1.5px] bg-gradient-to-b from-[#00E5FF]/70 via-[#0099FF]/20 to-transparent pointer-events-none" />
-
-            {/* Diagonal Tech Shard / Angle Accent in top-left */}
+            {/* Top Highlight Hairline */}
             <div
-              className="absolute top-0 left-0 w-36 sm:w-44 h-full pointer-events-none select-none opacity-40 transition-opacity duration-300 group-hover:opacity-60"
-              style={{
-                background:
-                  "linear-gradient(135deg, rgba(0, 194, 255, 0.35) 0%, rgba(0, 102, 204, 0.08) 70%, transparent 100%)",
-                clipPath: "polygon(0 0, 100% 0, 55% 100%, 0 100%)",
-              }}
+              className={`absolute top-0 inset-x-0 h-[2px] ${hairlineTheme} pointer-events-none`}
             />
 
-            {/* Subtle Diagonal Shard Edge Line */}
-            <div
-              className="absolute top-0 left-0 w-36 sm:w-44 h-full pointer-events-none select-none opacity-50"
-              style={{
-                clipPath: "polygon(98% 0, 100% 0, 56% 100%, 54% 100%)",
-                background:
-                  "linear-gradient(180deg, rgba(0, 229, 255, 0.75) 0%, rgba(0, 153, 255, 0.2) 100%)",
-              }}
-            />
-
-            {/* Ambient Corner Glow Flare */}
-            <div className="absolute -top-10 -left-10 w-24 h-24 bg-[#00C2FF]/15 rounded-full blur-xl pointer-events-none" />
-
-            {/* Card Content: Number + Text */}
-            <div className="relative z-10 flex items-center gap-5 sm:gap-7 md:gap-8 p-5 sm:p-6 md:p-7 min-h-[100px] sm:min-h-[110px]">
-              {/* Giant Cyan Gradient Number */}
-              <div className="shrink-0 select-none">
-                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-black font-manrope leading-none tracking-tight bg-gradient-to-b from-white via-[#70D6FF] to-[#0099FF] bg-clip-text text-transparent drop-shadow-[0_2px_14px_rgba(0,194,255,0.4)]">
-                  {numberStr}
-                </span>
-              </div>
-
-              {/* Text Description / Title */}
-              <div className="flex-1 pr-1">
-                {title && (
-                  <h3 className="text-sm sm:text-base md:text-[17px] font-bold font-manrope text-white mb-1 leading-snug tracking-tight">
-                    {title}
-                  </h3>
-                )}
-                {description && (
-                  <p
-                    className={`${
-                      title
-                        ? "text-xs sm:text-sm text-slate-200 leading-relaxed font-sans"
-                        : "text-sm sm:text-base md:text-[16.5px] text-white font-normal leading-relaxed font-sans"
-                    }`}
-                  >
-                    {description}
-                  </p>
-                )}
-              </div>
+            {/* Card Content: Title + Description */}
+            <div className="relative z-10 flex flex-col h-full">
+              {displayTitle && (
+                <h3
+                  className={`text-base sm:text-lg md:text-[19px] font-bold font-manrope leading-snug tracking-tight mb-2.5 sm:mb-3 ${titleColor}`}
+                >
+                  {displayTitle}
+                </h3>
+              )}
+              {description && (
+                <p
+                  className={`text-sm sm:text-[14.5px] leading-relaxed font-normal font-sans ${descColor}`}
+                >
+                  {description}
+                </p>
+              )}
             </div>
           </div>
         );
@@ -125,3 +132,5 @@ export default function IndustryChallengesGrid({
     </div>
   );
 }
+
+export { IndustryChallengesGrid as GlassCardsGrid };

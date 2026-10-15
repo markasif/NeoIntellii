@@ -397,7 +397,7 @@ export default function PillFeatureCardGrid({
                   title={cta}
                   className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white shadow-md border border-slate-200/80 flex items-center justify-center text-[#0D306C] group-hover:bg-[#0D306C] group-hover:!text-white group-hover:scale-105 transition-all duration-300 shrink-0 mt-0.5 round-arrow-btn"
                 >
-                  <ArrowRight className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-inherit group-hover:!text-white transition-all duration-200 group-hover:translate-x-0.5" />
+                  <ArrowRight className="w-4 h-4 sm:w-4 sm:h-4 text-inherit group-hover:!text-white transition-all duration-200 group-hover:translate-x-0.5" />
                 </div>
               )}
             </div>

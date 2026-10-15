@@ -35,7 +35,7 @@ const STALL_POINTS: NeoHireXMatrixItem[] = [
     category: "UNGROUNDED RETRIEVAL",
     title: "The answer is fluent but ungrounded",
     body: "The model writes confidently about a policy it never retrieved. Without retrieval that is measured, citations that are checked and evaluation sets that cover the real questions, fluency is mistaken for correctness.",
-    image: "/images/services/ai-engineering/genai-capability.webp",
+    image: "/images/services/ai-engineering/genai-ungrounded-retrieval.jpg",
     imageAlt: "Enterprise Generative AI ungrounded retrieval vs factuality verification",
   },
   {
@@ -43,15 +43,15 @@ const STALL_POINTS: NeoHireXMatrixItem[] = [
     category: "TOOL EXECUTION FAILURE",
     title: "The agent works until a tool fails",
     body: "A demo agent handles the happy path. A production agent meets timeouts, partial results, permission errors and ambiguous instructions, and needs a defined behaviour for each of them.",
-    image: "/images/services/ai-engineering/agentic-systems-capability.webp",
-    imageAlt: "Autonomous AI agent tool calling and exception recovery architecture",
+    image: "/images/services/ai-engineering/agents/monitoring-agentops.webp",
+    imageAlt: "Autonomous AI agent live execution trace, tool failure error 503 and incident monitoring",
   },
   {
     id: "03",
     category: "INFERENCE ECONOMICS",
     title: "The unit economics break at volume",
     body: "Per-request cost, latency at the busiest hour and the share of tasks escalated to a human decide whether the system is affordable. None of these are visible in a prototype.",
-    image: "/images/services/ai-engineering/compute-economics-gap.webp",
+    image: "/images/services/ai-engineering/inference-unit-economics.jpg",
     imageAlt: "AI token compute economics and high-volume cost modeling dashboard",
   },
 ];

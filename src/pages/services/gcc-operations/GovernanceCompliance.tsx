@@ -35,7 +35,7 @@ import OpsSection from "@/components/gcc-operations/OpsSection";
 import CapabilityGrid from "@/components/gcc-operations/CapabilityGrid";
 import InBriefCard from "@/components/gcc-operations/InBriefCard";
 import AnswerList from "@/components/gcc-operations/AnswerList";
-import SlottedStepNumber from "@/components/gcc-operations/SlottedStepNumber";
+import PillFeatureCardGrid from "@/components/shared/PillFeatureCardGrid";
 import SourceNote, { LEGAL_VALIDATION_NOTE } from "@/components/gcc-operations/SourceNote";
 import TypewriterParagraph from "@/components/gcc-operations/TypewriterParagraph";
 import { gccOperationsPage, gccOperationsFaqs, PILLAR_LINKS, GCC_OPERATIONS_BASE } from "@/data/gccOperationsContent";
@@ -236,7 +236,8 @@ const doesNotSay = [
 ];
 
 export default function GovernanceCompliance() {
-  const [hoveredCadenceCard, setHoveredCadenceCard] = useState<number | null>(null);
+  // Card hover state is no longer needed: the Operating Cadence cards now use
+  // PillFeatureCardGrid (hover handled inside the shared component).
 
   return (
     <GccOperationsLayout
@@ -332,133 +333,30 @@ export default function GovernanceCompliance() {
         align="center"
         width="wide"
       >
-        {/* 3 Review Cadences using Half-Sink Slot Count */}
-        <div className="grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-3 max-w-5xl mx-auto mb-16">
-          {reviews.map((item, index) => {
-            const ItemIcon = item.icon;
-            return (
-              <div
-                key={item.title}
-                className="flex flex-col items-center justify-between text-center bg-transparent border-0 shadow-none p-3 sm:p-4 group"
-              >
-                <div className="flex flex-col items-center w-full">
-                  {/* Slotted Step Number Design matching reference image */}
-                  <SlottedStepNumber index={index} />
-
-                  <h3 className="text-[#0D306C] font-extrabold text-sm sm:text-base uppercase tracking-wider mb-2.5 group-hover:text-[#008EC4] transition-colors">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-[#505D74] text-xs sm:text-sm leading-relaxed mb-6 flex-1 max-w-xs font-normal">
-                    {item.desc}
-                  </p>
-                </div>
-
-                <div className="mt-auto text-[#0D306C] group-hover:text-[#008EC4] group-hover:scale-110 transition-all duration-300">
-                  <ItemIcon className="w-6 h-6 stroke-[1.8]" />
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        {/* Pill feature cards (matches the AI Engineering / GCC Operations card language) */}
+        <PillFeatureCardGrid
+          items={reviews.map((item) => ({
+            title: item.title,
+            desc: item.desc,
+          }))}
+          className="max-w-6xl mx-auto mb-16"
+        />
 
         {/* Framework Review Frequency Subheading */}
         <h3 className="text-[#0D244D] font-extrabold text-xl sm:text-2xl text-center mb-8">
           How often the framework itself is reviewed
         </h3>
 
-        {/* 4 Cards: Layout matching overview center archetypes (Card 1 & 4 tall, Cards 2 & 3 short, bottom aligned) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-end gap-5 lg:gap-6 pt-4 sm:pt-6 max-w-6xl mx-auto">
-          {reviewCadence.map((item, idx) => {
-            const Icon = item.icon;
-            const isHovered = hoveredCadenceCard === idx;
-
-            return (
-              <div
-                key={item.title}
-                onMouseEnter={() => setHoveredCadenceCard(idx)}
-                onMouseLeave={() => setHoveredCadenceCard(null)}
-                className={`relative overflow-hidden rounded-2xl sm:rounded-3xl p-6 transition-all duration-300 flex flex-col justify-center items-center text-center group cursor-pointer ${
-                  item.isTall
-                    ? "sm:p-8 lg:p-9 min-h-[380px] sm:min-h-[400px] lg:min-h-[420px]"
-                    : "sm:p-7 min-h-[250px] sm:min-h-[260px]"
-                } ${
-                  isHovered
-                    ? "border border-[#16427D]/60 shadow-[0_16px_40px_rgba(8,27,62,0.35)] -translate-y-1"
-                    : "bg-white/95 backdrop-blur-sm border border-[#0D306C]/10 shadow-[0_8px_24px_rgba(13,48,108,0.06)] hover:-translate-y-1 hover:border-[#16427D]/60 hover:shadow-[0_16px_40px_rgba(8,27,62,0.35)]"
-                }`}
-              >
-                {/* Subtle background circles default state */}
-                <div
-                  className={`absolute -top-12 -right-12 w-48 h-48 rounded-full pointer-events-none transition-opacity duration-300 ${
-                    isHovered ? "opacity-0" : "border border-[#0D306C]/5 opacity-100 group-hover:opacity-0"
-                  }`}
-                />
-                <div
-                  className={`absolute -bottom-14 -left-14 w-52 h-52 rounded-full pointer-events-none transition-opacity duration-300 ${
-                    isHovered ? "opacity-0" : "border border-[#0D306C]/5 opacity-100 group-hover:opacity-0"
-                  }`}
-                />
-
-                {/* Hover Navy Blue Overlay */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-b from-[#081B3E] via-[#0A224E] to-[#081B3E] transition-opacity duration-300 pointer-events-none z-0 ${
-                    isHovered ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-                  }`}
-                >
-                  <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full border border-white/10 pointer-events-none" />
-                  <div className="absolute -bottom-14 -left-14 w-52 h-52 rounded-full border border-white/5 pointer-events-none" />
-                </div>
-
-                <div className="relative z-10 flex flex-col items-center">
-                  {/* Badge Pill */}
-                  <span
-                    className={`inline-block text-[10.5px] font-mono font-bold tracking-wider uppercase px-2.5 py-0.5 rounded-full ${
-                      item.isTall ? "mb-4 sm:mb-5" : "mb-3"
-                    } transition-colors duration-300 ${
-                      isHovered
-                        ? "bg-white/15 text-white border border-white/20"
-                        : "bg-[#EDF6FD] text-[#008EC4] border border-[#D5E8F8] group-hover:bg-white/15 group-hover:text-white group-hover:border-white/20"
-                    }`}
-                  >
-                    {item.badge}
-                  </span>
-
-                  {/* Icon Circle */}
-                  <div
-                    className={`w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 ${
-                      item.isTall ? "mb-6 sm:mb-8" : "mb-4 sm:mb-5"
-                    } ${
-                      isHovered
-                        ? "bg-white text-[#008EC4] border-2 border-white shadow-[0_8px_24px_rgba(0,0,0,0.35)] scale-105"
-                        : "bg-[#EDF3FB] border border-[#C5D7EE] text-[#008EC4] shadow-xs group-hover:bg-white group-hover:text-[#008EC4] group-hover:border-white group-hover:shadow-[0_8px_24px_rgba(0,0,0,0.35)] group-hover:scale-105"
-                    }`}
-                  >
-                    <Icon className="w-7 h-7 text-[#008EC4] stroke-[2.2] transition-colors duration-300" />
-                  </div>
-
-                  <h4
-                    style={{ color: isHovered ? "#ffffff" : undefined }}
-                    className={`font-bold tracking-tight mb-2 sm:mb-3 transition-colors duration-300 leading-snug ${
-                      item.isTall ? "text-lg sm:text-xl" : "text-base sm:text-lg"
-                    } ${isHovered ? "!text-white" : "text-[#0D306C] group-hover:!text-white"}`}
-                  >
-                    {item.title}
-                  </h4>
-
-                  <p
-                    style={{ color: isHovered ? "#ffffff" : undefined }}
-                    className={`leading-relaxed font-normal transition-colors duration-300 ${
-                      item.isTall ? "text-sm sm:text-base" : "text-xs sm:text-sm"
-                    } ${isHovered ? "!text-white" : "text-[#505D74] group-hover:!text-white"}`}
-                  >
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        {/* Pill feature cards (the frequency badge renders as a pill chip) */}
+        <PillFeatureCardGrid
+          columns={4}
+          items={reviewCadence.map((item) => ({
+            title: item.title,
+            desc: item.desc,
+            items: [item.badge],
+          }))}
+          className="max-w-6xl mx-auto"
+        />
       </OpsSection>
 
       {/* SECTION 5: How NeoIntelli Describes Compliance Work */}
@@ -558,7 +456,7 @@ export default function GovernanceCompliance() {
         align="center"
         width="wide"
       >
-        <div className="max-w-5xl mx-auto text-[#505D74] text-base sm:text-[17px] leading-relaxed font-normal space-y-6 sm:space-y-8 text-left">
+        <div className="max-w-6xl mx-auto text-[#505D74] text-base sm:text-[17px] leading-relaxed font-normal space-y-6 sm:space-y-8 text-left">
           <TypewriterParagraph
             text="India's Digital Personal Data Protection Act, 2023, and the rules and regulations made under it, set the framework for personal data processed in the center. Where the center processes personal data of people in other jurisdictions, other regimes may apply in parallel: the GDPR for personal data of people in the European Union, or sector-specific rules such as HIPAA for certain United States health information. Each of these frameworks has its own scope and its own obligations."
           />
@@ -569,7 +467,7 @@ export default function GovernanceCompliance() {
             The EU AI Act and comparable AI-specific regulation apply to certain AI systems rather than to the center as a whole. They are handled in AI governance, described below, and connected to the center&apos;s risk register.
           </p>
         </div>
-        <SourceNote className="mt-8 max-w-5xl mx-auto">{LEGAL_VALIDATION_NOTE}</SourceNote>
+        <SourceNote className="mt-8 max-w-6xl mx-auto">{LEGAL_VALIDATION_NOTE}</SourceNote>
       </OpsSection>
 
       {/* SECTION 7: Labour Codes Statutory Update */}
@@ -580,10 +478,10 @@ export default function GovernanceCompliance() {
         align="center"
         width="wide"
       >
-        <div className="max-w-5xl mx-auto text-[#505D74] text-base sm:text-[17px] leading-relaxed font-normal space-y-6 sm:space-y-8 text-left">
-          <TypewriterParagraph
-            text={LABOUR_CODES_STATEMENT}
-          />
+        <div className="max-w-6xl mx-auto text-[#505D74] text-base sm:text-[17px] leading-relaxed font-normal space-y-6 sm:space-y-8 text-left">
+          <p>
+            {LABOUR_CODES_STATEMENT}
+          </p>
           <p>
             What this means in practice varies. Central rules and several state rules under the Codes are still being notified,
             and state-specific requirements such as Shops and Establishments registration continue to apply alongside the central
@@ -591,7 +489,7 @@ export default function GovernanceCompliance() {
             relevant control owner; it does not interpret them.
           </p>
         </div>
-        <SourceNote className="mt-8 max-w-5xl mx-auto">
+        <SourceNote className="mt-8 max-w-6xl mx-auto">
           Source: Ministry of Labour &amp; Employment / Press Information Bureau, four Labour Codes brought into effect
           21 November 2025. Last checked Sep 2026. {LEGAL_VALIDATION_NOTE}
         </SourceNote>
@@ -603,41 +501,56 @@ export default function GovernanceCompliance() {
         eyebrow="DISTINCTION"
         title="GCC operating governance is not AI governance."
         intro="This page covers the governance of the center: decision rights, risk, controls, entity and operational responsibilities, board reporting, audit readiness and vendor risk. Governing models, GenAI applications and agents is a separate discipline with its own controls."
-        tone="muted"
         align="center"
         width="wide"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto">
-          {/* Left Column: GCC Operating Governance */}
-          <div className="pb-8 md:pb-0 md:pr-10 lg:pr-14 flex flex-col justify-between">
-            <div>
-              <h3 className="text-[#0D306C] font-extrabold text-xl sm:text-2xl mb-3">
-                GCC operating governance
-              </h3>
-              <p className="text-[#505D74] text-sm sm:text-base leading-relaxed">
-                Decision rights, risk register, control framework, vendor risk, audit readiness, board reporting. Applies to the whole center regardless of what it builds.
-              </p>
+        <div className="max-w-6xl mx-auto text-left space-y-10 sm:space-y-12">
+          {/* Block 1: GCC operating governance */}
+          <div>
+            <h3 className="text-xl sm:text-2xl lg:text-[26px] font-extrabold text-[#0D306C] tracking-tight leading-snug mb-3">
+              GCC operating governance
+            </h3>
+
+            <p className="text-[#505D74] text-sm sm:text-base lg:text-[16.5px] leading-relaxed mb-6 font-normal">
+              Decision rights, risk register, control framework, vendor risk, audit readiness and board reporting. Applies to the whole center regardless of what it builds, establishing the operational cadence and regulatory visibility the enterprise requires.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <a href="#capabilities" className="btn-white whitespace-nowrap">
+                <span>View 16 Capabilities</span>
+                <ArrowRight className="w-4 h-4 text-[#0D306C] shrink-0" />
+              </a>
+              <Link to={GCC_OPERATIONS_BASE} className="btn-navy whitespace-nowrap">
+                <span>See GCC Operations</span>
+                <ArrowRight className="w-4 h-4 text-white shrink-0" />
+              </Link>
             </div>
           </div>
 
-          {/* Right Column: AI Governance */}
-          <div className="pt-8 md:pt-0 md:pl-10 lg:pl-14 flex flex-col justify-between">
-            <div>
-              <h3 className="text-[#0D306C] font-extrabold text-xl sm:text-2xl mb-3">
-                AI governance
-              </h3>
-              <p className="text-[#505D74] text-sm sm:text-base leading-relaxed mb-5">
-                AI inventory, risk classification, model and agent controls, evaluation, monitoring, human oversight and audit evidence for specific AI systems. Connected to the center&apos;s risk register, owned in a separate service.
-              </p>
-            </div>
-            <div className="pt-4 border-t border-[#0D306C]/10 text-sm text-[#505D74]">
-              For model, GenAI and agent governance, explore{" "}
-              <Link to={PILLAR_LINKS.responsibleAi} className={link}>Responsible AI Governance</Link>.
+          {/* Block 2: AI governance */}
+          <div>
+            <h3 className="text-xl sm:text-2xl lg:text-[26px] font-extrabold text-[#0D306C] tracking-tight leading-snug mb-3">
+              AI governance
+            </h3>
+
+            <p className="text-[#505D74] text-sm sm:text-base lg:text-[16.5px] leading-relaxed mb-6 font-normal">
+              AI inventory, risk classification, model and agent controls, evaluation, monitoring, human oversight and audit evidence for specific AI systems. Connected to the center&apos;s risk register, owned in a separate service.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <Link to={PILLAR_LINKS.responsibleAi} className="btn-white whitespace-nowrap">
+                <span>Responsible AI Governance</span>
+                <ArrowRight className="w-4 h-4 text-[#0D306C] shrink-0" />
+              </Link>
+              <Link to={PILLAR_LINKS.aiEngineering} className="btn-navy whitespace-nowrap">
+                <span>See AI Engineering</span>
+                <ArrowRight className="w-4 h-4 text-white shrink-0" />
+              </Link>
             </div>
           </div>
         </div>
 
-        <p className="mt-10 text-sm text-[#505D74] text-center max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-10 sm:mt-12 text-xs sm:text-sm text-[#505D74] text-center max-w-3xl mx-auto leading-relaxed">
           Where AI can help inside governance operations: NeoIntelli can implement evidence collection against the control framework, regulatory change monitoring and document processing for vendor reviews, through{" "}
           <Link to={PILLAR_LINKS.aiEngineering} className={link}>AI Engineering</Link>.
         </p>

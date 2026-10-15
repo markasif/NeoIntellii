@@ -290,7 +290,7 @@ export default function OperatingRealitySection() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.15 }}
-      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 lg:gap-4.5 w-full max-w-7xl mx-auto overflow-hidden"
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 lg:gap-4 w-full max-w-7xl mx-auto overflow-hidden"
       aria-label="What arrives after launch"
     >
       {operatingRealityItems.map((item) => (

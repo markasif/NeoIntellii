@@ -110,7 +110,7 @@ export default function AITalentAcquisition() {
  </nav>
  </div>
  </div>
- <div className="max-w-4xl mx-auto relative z-10">
+ <div className="max-w-6xl mx-auto relative z-10">
  <motion.p
  initial={{ opacity: 0, y: 10 }}
  animate={{ opacity: 1, y: 0 }}
@@ -182,7 +182,7 @@ export default function AITalentAcquisition() {
  {/* Model pillars */}
  <section className="pb-24 md:pb-32 px-6 sm:px-8 lg:px-12">
  <div className="max-w-6xl mx-auto">
- <ScrollReveal className="max-w-4xl mb-12">
+ <ScrollReveal className="max-w-6xl mb-12">
  <h2 className="text-display-sm md:text-display font-display text-heading mb-6">Bring recruitment expertise and hiring technology together</h2>
  <p className="text-body text-base leading-relaxed mb-4">
  Enterprise recruitment often involves multiple disconnected systems and partners. A hiring team may need to coordinate recruiters, staffing vendors, an ATS, screening tools, interview tools, spreadsheets and candidate reports before a shortlist reaches the hiring manager.
@@ -229,7 +229,7 @@ export default function AITalentAcquisition() {
 
  {/* NeoHireX included */}
  <section className="py-20 md:py-28 px-6 sm:px-8 lg:px-12 bg-footer-cta dark-section">
- <div className="max-w-4xl mx-auto">
+ <div className="max-w-6xl mx-auto">
  <ScrollReveal className="text-center mb-12">
  <p className="text-cyan-200 text-sm tracking-[0.16em] uppercase mb-4">NeoHireX is built into the NeoIntelli recruitment model</p>
  <h2 className="text-display-sm md:text-display font-display text-white mb-6">Our proprietary ATS is included with applicable recruitment engagements</h2>

@@ -31,7 +31,7 @@ export default function GccDecisionFramework({ className = "" }: { className?: s
         rows={dimensions}
         mobileGroupBy="column"
       />
-      <p className="text-xs text-body-muted mt-4 max-w-4xl mx-auto leading-relaxed text-center">
+      <p className="text-xs text-body-muted mt-4 max-w-6xl mx-auto leading-relaxed text-center">
         How to read it: find the row that describes your situation most strongly, then read across. If most rows point
         to the right-hand columns, plan for ownership. If they point left, a partner-owned outcome may be the better
         decision. NeoIntelli's framework is deliberately qualitative; the weighting is a conversation, not a formula.

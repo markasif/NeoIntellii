@@ -12,7 +12,7 @@ export default function RecruitmentSubnav({ current }: { current: RecruitmentPag
   const items = RECRUITMENT_PAGES.map((page) => ({
     key: page.key,
     label: page.navLabel,
-    href: `${page.path}#recruitment-content`,
+    href: page.path,
     active: current === page.key,
   }));
 

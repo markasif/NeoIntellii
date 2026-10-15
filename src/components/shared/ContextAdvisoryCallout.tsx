@@ -1,53 +1,55 @@
 "use client";
 
-import React from "react";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import React, { type ReactNode } from "react";
+import ExecutiveCTA from "@/components/shared/ExecutiveCTA";
 
 export interface ContextAdvisoryCalloutProps {
+  eyebrow?: string;
   title?: string;
   description?: string;
   buttonText?: string;
   buttonHref?: string;
+  secondaryButtonText?: string;
+  secondaryButtonHref?: string;
+  footnote?: ReactNode;
   className?: string;
 }
 
 /**
  * Editorial contextual callout section matching Case Studies and GCC FAQ.
- * Features centered editorial layout, Manrope bold headline, lead text,
- * and standard .btn-gradient action button.
+ * Rebuilt on canonical ExecutiveCTA with 100% design fidelity.
  */
 export default function ContextAdvisoryCallout({
+  eyebrow = "START A CONVERSATION",
   title = "Want to see how this applies to your context?",
   description = "We'll walk through relevant patterns, trade-offs, and decisions from comparable engagements — and design an approach that fits your operating model.",
   buttonText = "Speak to a GCC Advisor",
   buttonHref = "/contact",
+  secondaryButtonText = "Book a Consultation",
+  secondaryButtonHref = "/book-a-call",
+  footnote = "A 30-minute working conversation. No generic GCC pitch: we start with your operating model.",
   className = "",
 }: ContextAdvisoryCalloutProps) {
   return (
-    <section className={`relative py-14 sm:py-18 lg:py-20 px-4 sm:px-6 lg:px-8 bg-transparent text-center select-none ${className}`}>
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-3xl mx-auto"
-      >
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0D306C] tracking-[-0.03em] leading-[1.18] mb-4 sm:mb-5 font-manrope">
-          {title}
-        </h2>
-        <p className="text-[#505D74] text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10 font-normal">
-          {description}
-        </p>
-        <Link
-          to={buttonHref}
-          className="btn-gradient px-8 py-3.5 sm:py-4 text-sm font-bold font-manrope shadow-md hover:shadow-lg inline-flex items-center gap-2.5"
-        >
-          <span>{buttonText}</span>
-          <ArrowRight className="w-4 h-4" />
-        </Link>
-      </motion.div>
-    </section>
+    <ExecutiveCTA
+      eyebrow={eyebrow}
+      title={title}
+      description={description}
+      primaryCta={{
+        label: buttonText,
+        href: buttonHref,
+      }}
+      secondaryCta={
+        secondaryButtonText && secondaryButtonHref
+          ? {
+              label: secondaryButtonText,
+              mobileLabel: "Book Consultation",
+              href: secondaryButtonHref,
+            }
+          : undefined
+      }
+      footnote={footnote}
+      className={className}
+    />
   );
 }

@@ -58,7 +58,7 @@ const LAYERS: NeoHireXMatrixItem[] = [
     what: "AI recommends. A human approves or acts.",
     when: "When the step needs interpretation of language or documents, when the cost of an error is high, or when the organisation is not yet ready to let a system act alone. Most enterprise workflows should start here.",
     limits: "Throughput is bounded by the people in the loop; the design must make review fast.",
-    image: "/images/home/solution_ai_talent.webp",
+    image: "/images/services/ai-engineering/agents/human-in-the-loop.webp",
     imageAlt: "AI-assisted enterprise workflow with human in the loop approval",
   },
   {
@@ -69,7 +69,7 @@ const LAYERS: NeoHireXMatrixItem[] = [
     what: "AI plans and executes controlled actions using approved tools.",
     when: "When the task spans several systems, the actions are well defined and reversible or approved, and evaluation has shown task success at the required level. Human escalation remains for anything outside the agent's permissions.",
     limits: "Requires identity, permissions, state, traces and continuous evaluation, or it is a prototype.",
-    image: "/images/services/ai-engineering/agentic-systems-capability.webp",
+    image: "/images/services/ai-engineering/agent-tool-execution-failure.jpg",
     imageAlt: "Autonomous tool-calling AI agent workflow architecture",
   },
 ];

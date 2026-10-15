@@ -50,7 +50,7 @@ const WHAT_A_HEAD_OF_AI_OWNS: LeadershipOwnershipItem[] = [
   {
     title: "The team",
     body: "Topology, hiring sequence, seniority bar and the evaluation standard every engineer is held to.",
-    image: "/images/services/gcc-operations/workforce-strategy-planning.webp",
+    image: "/images/services/gcc-operations/operating-reality/10-hiring.webp",
     alt: "AI team topology and hiring sequence",
     action: "See Search Process",
     href: "#search-process",
@@ -66,7 +66,7 @@ const WHAT_A_HEAD_OF_AI_OWNS: LeadershipOwnershipItem[] = [
   {
     title: "Governance",
     body: "AI inventory, risk classification, controls and the evidence boards and regulators will ask for.",
-    image: "/images/services/gcc-operations/standards/evidence-audit.webp",
+    image: "/images/services/gcc-operations/operating-reality/09-risk.webp",
     alt: "AI governance and compliance controls",
     action: "Examine AI Governance",
     href: "#leadership-questions",
@@ -160,6 +160,7 @@ export default function AILeadershipSearch() {
             alt: item.alt,
             summary: item.body,
             cta: { label: item.action, href: item.href },
+            linkVariant: "text",
           }))}
           columns={3}
           titleSize="md"

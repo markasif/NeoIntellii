@@ -466,8 +466,8 @@ function AiTalentBarFlowVisual({
                 }}
                 style={{ height: heights[sIdx], transformOrigin: "bottom" }}
                 className={`w-full rounded-t-md ${isFinal
-                    ? "bg-gradient-to-t from-[#0B4D88] to-[#38BDF8] shadow-[0_0_18px_rgba(56,189,248,0.55)]"
-                    : "bg-gradient-to-t from-[#0B4D88] to-[#00C2FF]"
+                  ? "bg-gradient-to-t from-[#0B4D88] to-[#38BDF8] shadow-[0_0_18px_rgba(56,189,248,0.55)]"
+                  : "bg-gradient-to-t from-[#0B4D88] to-[#00C2FF]"
                   }`}
               />
               <div className="flex flex-col items-center gap-0.5 w-full text-center">
@@ -844,11 +844,10 @@ function GccOwnershipPathVisual({
             >
               {/* Shorter Hexagonal Node Badge Container */}
               <div
-                className={`relative w-[44px] h-[50px] sm:w-[54px] sm:h-[62px] flex flex-col items-center justify-center p-1 select-none transition-all duration-300 group-hover/node:scale-108 ${
-                  isApex
+                className={`relative w-[44px] h-[50px] sm:w-[54px] sm:h-[62px] flex flex-col items-center justify-center p-1 select-none transition-all duration-300 group-hover/node:scale-108 ${isApex
                     ? "filter drop-shadow-[0_0_18px_rgba(0,229,255,0.7)]"
                     : "filter drop-shadow-[0_4px_12px_rgba(0,194,255,0.22)] group-hover/node:drop-shadow-[0_4px_18px_rgba(0,229,255,0.45)]"
-                }`}
+                  }`}
               >
                 {/* SVG Hexagon Shape with Gradients & Borders */}
                 <svg
@@ -912,18 +911,16 @@ function GccOwnershipPathVisual({
                 <div className="relative z-10 flex flex-col items-center justify-center text-center">
                   {/* Stage Number (01, 02...) */}
                   <span
-                    className={`text-[7.5px] sm:text-[9px] font-mono font-bold leading-none mb-0.5 tracking-wider ${
-                      isApex ? "text-[#00E5FF]" : "text-[#38BDF8]/90"
-                    }`}
+                    className={`text-[7.5px] sm:text-[9px] font-mono font-bold leading-none mb-0.5 tracking-wider ${isApex ? "text-[#00E5FF]" : "text-[#38BDF8]/90"
+                      }`}
                   >
                     {node.num}
                   </span>
 
                   {/* Shorter Icon / Logo */}
                   <div
-                    className={`flex items-center justify-center transition-transform duration-300 group-hover/node:scale-110 ${
-                      isApex ? "text-[#00E5FF]" : "text-[#7DD3FC]"
-                    }`}
+                    className={`flex items-center justify-center transition-transform duration-300 group-hover/node:scale-110 ${isApex ? "text-[#00E5FF]" : "text-[#7DD3FC]"
+                      }`}
                   >
                     <NodeIcon className="w-3 h-3 sm:w-3.5 sm:h-3.5 stroke-[2.2]" />
                   </div>
@@ -932,11 +929,10 @@ function GccOwnershipPathVisual({
 
               {/* Text Label Moved BELOW the Hexagon Shape */}
               <span
-                className={`absolute top-[calc(100%+6px)] sm:top-[calc(100%+8px)] left-1/2 -translate-x-1/2 text-[9.5px] sm:text-[11px] md:text-[11.5px] font-bold font-manrope leading-tight tracking-tight text-center drop-shadow-md whitespace-nowrap transition-colors ${
-                  isApex
+                className={`absolute top-[calc(100%+6px)] sm:top-[calc(100%+8px)] left-1/2 -translate-x-1/2 text-[9.5px] sm:text-[11px] md:text-[11.5px] font-bold font-manrope leading-tight tracking-tight text-center drop-shadow-md whitespace-nowrap transition-colors ${isApex
                     ? "text-[#38BDF8] font-extrabold"
                     : "text-white group-hover/node:text-[#7DD3FC]"
-                }`}
+                  }`}
               >
                 {node.label}
               </span>

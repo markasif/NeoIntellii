@@ -212,7 +212,7 @@ export default function AdvisoryProcessFlow({
                 >
                   {/* Icon */}
                   <div
-                    className={`${steps.length >= 5 ? "w-11 h-11 xl:w-13 xl:h-13" : "w-12 h-12 xl:w-14 xl:h-14"} rounded-full flex items-center justify-center mb-3`}
+                    className={`${steps.length >= 5 ? "w-11 h-11 xl:w-12 xl:h-12" : "w-12 h-12 xl:w-14 xl:h-14"} rounded-full flex items-center justify-center mb-3`}
                     style={{ color }}
                   >
                     <Icon className={`${steps.length >= 5 ? "w-5 h-5 xl:w-6 xl:h-6" : "w-6 h-6 xl:w-7 xl:h-7"}`} strokeWidth={2.2} />

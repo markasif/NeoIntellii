@@ -20,7 +20,7 @@ import {
   Section,
   NeoHireXMatrix,
   type NeoHireXMatrixItem,
-  ImageFeatureCardGrid,
+  PillFeatureCardGrid,
   type ImageFeatureCardItem,
 } from "@/components/ai-engineering";
 import { AI_ENGINEERING_CROSS_LINKS, AI_ENGINEERING_PAGE_BY_KEY } from "@/data/aiEngineering";
@@ -145,7 +145,14 @@ const METRICS: GccCapabilityItem[] = [
   },
 ];
 
-const QUESTIONS = [
+interface QuestionItem {
+  question: string;
+  answer: string;
+  detail?: string[];
+  link?: { label: string; href: string };
+}
+
+const QUESTIONS: QuestionItem[] = [
   {
     question: "What is MLOps?",
     answer: "MLOps is the set of engineering practices for taking trained machine learning models into production and keeping them there: versioning data and models, automating training and deployment, monitoring accuracy and drift, retraining on a defined trigger and rolling back when a release fails.",
@@ -241,7 +248,7 @@ export default function MLOpsLLMOpsAgentOps() {
         tone="muted"
         width="wide"
       >
-        <ImageFeatureCardGrid items={AREAS} columns={3} />
+        <PillFeatureCardGrid items={AREAS} className="max-w-6xl mx-auto" />
       </Section>
 
       <Section id="questions" eyebrow="Answer first" title="Definitions and decisions for the operating layer." width="regular">
@@ -254,7 +261,7 @@ export default function MLOpsLLMOpsAgentOps() {
               <p className="text-base sm:text-[16.5px] text-[#0D244D] font-medium leading-relaxed mb-3">
                 {item.answer}
               </p>
-              {"detail" in item && Array.isArray((item as any).detail) && (item as any).detail.map((paragraph: string, i: number) => (
+              {Array.isArray(item.detail) && item.detail.map((paragraph: string, i: number) => (
                 <p key={i} className="text-sm sm:text-[15px] text-[#505D74] leading-relaxed mb-2 font-normal">
                   {paragraph}
                 </p>

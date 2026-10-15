@@ -107,6 +107,10 @@ export default function OutcomeCardGrid({
   // The card action button is always the cyan pill (btn-cyan) regardless of
   // any legacy ctaButtonVariant passed by callers.
   const ctaClass = "btn-cyan whitespace-nowrap";
+  // Inline action link — matches the home-page Industries card button
+  // (cyan uppercase underlined link with arrow).
+  const textCtaClass =
+    "inline-flex items-center gap-2 text-[10px] sm:text-[11px] font-bold text-[#008EC4] uppercase tracking-wide pb-0.5 border-b border-[#008EC4] hover:text-[#0D244D] hover:border-[#0D244D] transition-colors group/link";
   const effectiveColumns: 2 | 3 | 4 =
     columns || (items.length === 3 ? 3 : items.length === 2 ? 2 : 4);
   const gridColsClass = GRID_COLS[effectiveColumns] || GRID_COLS[4];
@@ -241,7 +245,7 @@ export default function OutcomeCardGrid({
                     isPlainLink(action.href) ? (
                       <a
                         href={action.href}
-                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#008EC4] hover:text-[#0D306C] transition-colors group/link"
+                        className={textCtaClass}
                       >
                         <span>{action.label}</span>
                         <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" aria-hidden="true" />
@@ -249,7 +253,7 @@ export default function OutcomeCardGrid({
                     ) : (
                       <Link
                         to={action.href}
-                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#008EC4] hover:text-[#0D306C] transition-colors group/link"
+                        className={textCtaClass}
                       >
                         <span>{action.label}</span>
                         <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" aria-hidden="true" />

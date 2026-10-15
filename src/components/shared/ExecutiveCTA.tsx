@@ -38,8 +38,8 @@ function renderButton(btn: ExecutiveCtaButton, isPrimary: boolean) {
     btn.href.startsWith("mailto:");
 
   const defaultClasses = isPrimary
-    ? "w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-2.5 px-4.5 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#00A3E0] hover:bg-[#008EC4] text-white font-bold text-xs sm:text-sm tracking-wide transition-all duration-200 shadow-[0_4px_20px_rgba(0,163,224,0.4)] hover:shadow-[0_6px_24px_rgba(0,163,224,0.55)] hover:-translate-y-0.5 cursor-pointer font-manrope group whitespace-nowrap text-center"
-    : "w-full sm:w-auto inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4.5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/15 text-white border border-white/20 font-medium text-xs sm:text-sm transition-all duration-200 cursor-pointer backdrop-blur-xs font-manrope group whitespace-nowrap text-center";
+    ? "w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-2.5 px-4 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#00A3E0] hover:bg-[#008EC4] text-white font-bold text-xs sm:text-sm tracking-wide transition-all duration-200 shadow-[0_4px_20px_rgba(0,163,224,0.4)] hover:shadow-[0_6px_24px_rgba(0,163,224,0.55)] hover:-translate-y-0.5 cursor-pointer font-manrope group whitespace-nowrap text-center"
+    : "w-full sm:w-auto inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/15 text-white border border-white/20 font-medium text-xs sm:text-sm transition-all duration-200 cursor-pointer backdrop-blur-xs font-manrope group whitespace-nowrap text-center";
 
   const appliedClasses = btn.className
     ? `${btn.className} font-manrope group whitespace-nowrap`

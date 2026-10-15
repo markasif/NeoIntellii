@@ -1,4 +1,5 @@
 import type { Metric } from "web-vitals";
+import { hasAnalyticsConsent } from "./consent";
 
 /**
  * Reports Core Web Vitals to GA4 / dataLayer via the existing
@@ -11,6 +12,7 @@ export const reportWebVitals = async () => {
   try {
     const { onCLS, onINP, onLCP, onFCP, onTTFB } = await import("web-vitals");
     const send = (metric: Metric) => {
+      if (!hasAnalyticsConsent()) return;
       const params = {
         metric_name: metric.name,
         metric_value: Math.round(metric.name === "CLS" ? metric.value * 1000 : metric.value),

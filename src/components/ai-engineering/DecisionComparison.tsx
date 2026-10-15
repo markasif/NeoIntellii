@@ -33,7 +33,7 @@ export default function DecisionComparison({
         hideCaption={false}
       />
       {note && (
-        <figcaption className="mt-3.5 text-xs text-[#505D74] leading-relaxed max-w-4xl mx-auto text-left">
+        <figcaption className="mt-3.5 text-xs text-[#505D74] leading-relaxed max-w-6xl mx-auto text-left">
           {note}
         </figcaption>
       )}

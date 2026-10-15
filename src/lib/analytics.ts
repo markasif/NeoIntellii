@@ -1,4 +1,5 @@
 import { getAttribution } from "./attribution";
+import { hasAnalyticsConsent, hasMeasurementConsent } from "./consent";
 import { supabase } from "@/integrations/supabase/client";
 
 /**
@@ -6,6 +7,10 @@ import { supabase } from "@/integrations/supabase/client";
  * mirrors them into window.dataLayer for any future GTM container,
  * and forwards server-side conversions to the track-conversion
  * edge function for downstream Google Ads / GA4 Measurement Protocol.
+ *
+ * Everything here is consent-gated: no event is pushed, sent to gtag or
+ * forwarded server-side until the visitor has granted analytics/marketing
+ * consent (see @/lib/consent).
  */
 
 declare global {
@@ -57,18 +62,19 @@ const SERVER_FORWARDED_EVENTS = new Set<ConversionEvent>([
 ]);
 
 const pushDataLayer = (event: string, params: Record<string, unknown>) => {
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined" || !hasMeasurementConsent()) return;
   window.dataLayer = window.dataLayer ?? [];
   window.dataLayer.push({ event, ...params });
 };
 
 const sendGtag = (event: string, params: Record<string, unknown>) => {
-  if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+  if (typeof window === "undefined" || !hasMeasurementConsent()) return;
+  if (typeof window.gtag !== "function") return;
   window.gtag("event", event, params);
 };
 
 const forwardToServer = (event: ConversionEvent, params: Record<string, unknown>) => {
-  if (!supabase) return;
+  if (!supabase || !hasMeasurementConsent()) return;
   // Fire-and-forget; never block the UI on analytics.
   void supabase.functions
     .invoke("track-conversion", {
@@ -99,6 +105,7 @@ export const trackEvent = (
 };
 
 export const trackPageView = (path: string, title?: string) => {
+  if (!hasAnalyticsConsent()) return;
   pushDataLayer("page_view", { page_path: path, page_title: title });
   sendGtag("page_view", {
     page_path: path,

@@ -116,7 +116,7 @@ export default function GccModelComparison({ className = "" }: { className?: str
         columns={columns}
         rows={rows}
       />
-      <p className="text-xs text-body-muted mt-4 max-w-4xl leading-relaxed">
+      <p className="text-xs text-body-muted mt-4 max-w-6xl leading-relaxed">
         These are practical descriptions of how each model commonly works, not standardized legal definitions. Ownership,
         IP and transfer terms depend on the specific contract and on advice from qualified legal and tax advisers.
       </p>

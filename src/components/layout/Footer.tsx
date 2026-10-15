@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { openCookieSettings } from "@/lib/consent";
 
 function LinkedinIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
@@ -159,7 +160,7 @@ export default function Footer() {
               <a
                 href="https://www.linkedin.com/company/neointelli"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="hover:text-[#169DC8] transition-colors"
               >
@@ -305,6 +306,13 @@ export default function Footer() {
               {item.label}
             </Link>
           ))}
+          <button
+            type="button"
+            onClick={openCookieSettings}
+            className="hover:text-[#0D306C] transition-colors cursor-pointer"
+          >
+            Cookie settings
+          </button>
         </div>
         {/* Copyright */}
         <p className="text-center sm:text-right">

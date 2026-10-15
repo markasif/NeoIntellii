@@ -396,12 +396,12 @@ export default function PeopleHrOperations() {
         </div>
 
         {/* Note below card matching uploaded image */}
-        <p className="mt-5 text-center text-xs sm:text-[13px] text-[#505D74] leading-relaxed max-w-4xl mx-auto">
+        <p className="mt-5 text-center text-xs sm:text-[13px] text-[#505D74] leading-relaxed max-w-6xl mx-auto">
           <span className="font-bold text-[#0D244D]">Note:</span> Exact scope depends on the engagement. Where a local practice needs to differ from a global policy, the exception is documented and approved by the client.
         </p>
       </OpsSection>
 
-      {/* SECTION 5: HIRING CONNECTION (Navy Theme with Organic Wave Divider) */}
+      {/* SECTION 5: HIRING CONNECTION (Sentence Flow with NeoHireX Integration) */}
       <OpsSection
         id="hiring-connection"
         eyebrow="TALENT &amp; HIRING INTEGRATION"
@@ -410,16 +410,32 @@ export default function PeopleHrOperations() {
         align="center"
         width="wide"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-stretch max-w-6xl mx-auto text-left">
-          {/* Left: Recruitment operations and NeoHireX */}
-          <div className="flex flex-col">
-            <h3 className="text-[#0D306C] font-extrabold text-xl sm:text-2xl mb-3 tracking-tight">
+        <div className="max-w-6xl mx-auto text-left space-y-10 sm:space-y-12">
+          {/* Block 1: Recruitment operations and NeoHireX */}
+          <div>
+            {/* NeoHireX Logo Badge */}
+            <div className="flex items-center gap-3 mb-4">
+              <div className="inline-flex items-center px-3.5 py-1.5 rounded-xl bg-white shadow-2xs border border-[#D5E2F3]">
+                <img
+                  src="/logo/neohirex_logo.webp"
+                  alt="NeoHireX"
+                  className="h-6 sm:h-7 w-auto object-contain"
+                />
+              </div>
+              <span className="text-[11px] font-mono font-bold uppercase tracking-[0.18em] text-[#008EC4]">
+                HIRING OS
+              </span>
+            </div>
+
+            <h3 className="text-xl sm:text-2xl lg:text-[26px] font-extrabold text-[#0D306C] tracking-tight leading-snug mb-3">
               Recruitment operations and NeoHireX
             </h3>
-            <p className="text-[#505D74] text-sm sm:text-base leading-relaxed flex-1">
+
+            <p className="text-[#505D74] text-sm sm:text-base lg:text-[16.5px] leading-relaxed mb-6 font-normal">
               Recruitment operations can be supported by NeoHireX, NeoIntelli&apos;s Hiring OS for candidate screening, ranking, AI-led first-round evaluation and recruitment workflow management. NeoHireX does not make final hiring decisions. Sourcing, technical validation and offer coordination sit with NeoIntelli&apos;s AI Talent practice; people operations takes over at the offer.
             </p>
-            <div className="mt-6 flex flex-wrap items-center gap-3">
+
+            <div className="flex flex-wrap items-center gap-3">
               <Link to={PILLAR_LINKS.aiTalent} className="btn-white whitespace-nowrap">
                 <span>Explore AI Talent</span>
                 <ArrowRight className="w-4 h-4 text-[#0D306C] shrink-0" />
@@ -431,15 +447,19 @@ export default function PeopleHrOperations() {
             </div>
           </div>
 
-          {/* Right: Where AI can help inside people operations */}
-          <div className="flex flex-col">
-            <h3 className="text-[#0D306C] font-extrabold text-xl sm:text-2xl mb-3 tracking-tight">
+       
+
+          {/* Block 2: Where AI can help inside people operations */}
+          <div>
+            <h3 className="text-xl sm:text-2xl lg:text-[26px] font-extrabold text-[#0D306C] tracking-tight leading-snug mb-3">
               Where AI can help inside people operations
             </h3>
-            <p className="text-[#505D74] text-sm sm:text-base leading-relaxed flex-1">
+
+            <p className="text-[#505D74] text-sm sm:text-base lg:text-[16.5px] leading-relaxed mb-6 font-normal">
               NeoIntelli can implement an onboarding assistant that answers first-week questions, an HR knowledge assistant grounded in the local policy set, document processing for employment records, and anomaly checks on payroll inputs before they reach the provider. Each is designed with a human owner and a clear fallback.
             </p>
-            <div className="mt-6 flex flex-wrap items-center gap-3">
+
+            <div className="flex flex-wrap items-center gap-3">
               <Link to={PILLAR_LINKS.aiEngineering} className="btn-white whitespace-nowrap">
                 <span>See AI Engineering</span>
                 <ArrowRight className="w-4 h-4 text-[#0D306C] shrink-0" />

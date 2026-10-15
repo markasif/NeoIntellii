@@ -164,7 +164,7 @@ export default function ContractStaffing() {
         width="regular"
         align="center"
       >
-        <div className="space-y-6 text-[#505D74] text-sm sm:text-base leading-relaxed max-w-4xl mx-auto text-left">
+        <div className="space-y-6 text-[#505D74] text-sm sm:text-base leading-relaxed max-w-6xl mx-auto text-left">
           <p>
             Contract staffing at scale turns on three things: how quickly someone can actually start, whether the shortlist matches a genuinely niche skill, and whether statutory filings are visible and current. We build the service around those three.
           </p>

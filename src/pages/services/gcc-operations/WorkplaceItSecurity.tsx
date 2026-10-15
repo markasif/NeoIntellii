@@ -38,7 +38,7 @@ import GccOperationsLayout from "@/components/gcc-operations/GccOperationsLayout
 import OpsSection from "@/components/gcc-operations/OpsSection";
 import InBriefCard from "@/components/gcc-operations/InBriefCard";
 import AnswerList from "@/components/gcc-operations/AnswerList";
-import SlottedStepNumber from "@/components/gcc-operations/SlottedStepNumber";
+import PillFeatureCardGrid from "@/components/shared/PillFeatureCardGrid";
 import SourceNote from "@/components/gcc-operations/SourceNote";
 import VerifiedBadge from "@/components/ui/VerifiedBadge";
 import { gccOperationsPage, gccOperationsFaqs, PILLAR_LINKS, GCC_OPERATIONS_BASE } from "@/data/gccOperationsContent";
@@ -756,34 +756,14 @@ export default function WorkplaceItSecurity() {
         align="center"
         width="wide"
       >
-        <div className="grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-3 max-w-5xl mx-auto">
-          {aiInIt.map((item, index) => {
-            const ItemIcon = item.icon;
-            return (
-              <div
-                key={item.title}
-                className="flex flex-col items-center justify-between text-center bg-transparent border-0 shadow-none p-3 sm:p-4 group"
-              >
-                <div className="flex flex-col items-center w-full">
-                  {/* Slotted Step Number Design matching reference image */}
-                  <SlottedStepNumber index={index} />
-
-                  <h3 className="text-[#0D306C] font-extrabold text-base sm:text-lg uppercase tracking-wider mb-3 group-hover:text-[#008EC4] transition-colors">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-[#505D74] text-xs sm:text-sm leading-relaxed mb-6 flex-1 max-w-xs font-normal">
-                    {item.desc}
-                  </p>
-                </div>
-
-                <div className="mt-auto text-[#0D306C] group-hover:text-[#008EC4] group-hover:scale-110 transition-all duration-300">
-                  <ItemIcon className="w-6 h-6 stroke-[1.8]" />
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <PillFeatureCardGrid
+          items={aiInIt.map((item, index) => ({
+            eyebrow: String(index + 1).padStart(2, "0"),
+            title: item.title,
+            desc: item.desc,
+          }))}
+          className="max-w-6xl mx-auto"
+        />
 
         <p className="mt-10 text-sm text-[#505D74] text-center max-w-2xl mx-auto">
           Implementation sits with <Link to={PILLAR_LINKS.aiEngineering} className={link}>AI Engineering</Link>. Measuring the service desk on outcomes sits with{" "}

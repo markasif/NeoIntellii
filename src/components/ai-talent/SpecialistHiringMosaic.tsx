@@ -38,6 +38,7 @@ export interface SpecialistHiringMosaicProps {
   showBadge?: boolean;
   showGroup?: boolean;
   showButton?: boolean;
+  columns?: 2 | 3;
 }
 
 /** Maps a specialist role family to a crisp navy/cyan line icon for the card tile. */
@@ -185,7 +186,7 @@ function SpecialistCard({
           {card.name}
         </h3>
 
-        <p className="text-xs sm:text-[12.5px] text-[#D2DCF0]/85 leading-relaxed line-clamp-2 font-normal">
+        <p className="text-xs sm:text-[12.5px] text-[#D2DCF0]/85 leading-relaxed line-clamp-3 font-normal">
           {card.summary}
         </p>
 
@@ -218,6 +219,7 @@ export default function SpecialistHiringMosaic({
   showBadge = true,
   showGroup = true,
   showButton = true,
+  columns,
 }: SpecialistHiringMosaicProps) {
   const items: SpecialistCardItem[] =
     pages ||
@@ -230,18 +232,26 @@ export default function SpecialistHiringMosaic({
       summary: p.summary,
     }));
 
+  const isTwoCol = columns === 2 || (columns === undefined && items.length === 3);
+  const gridClass = isTwoCol
+    ? "grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-5 items-stretch"
+    : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4 items-stretch";
+  const headerSpanClass = isTwoCol
+    ? "md:col-span-1 lg:col-span-1 flex flex-col justify-center text-left py-4 sm:py-6 pr-0 lg:pr-8"
+    : "md:col-span-2 lg:col-span-2 flex flex-col justify-center text-left py-4 sm:py-6 pr-0 lg:pr-8";
+
   return (
     <div className={`w-full select-none ${className}`}>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4 items-stretch">
+      <div className={gridClass}>
         {/* ================================================================= */}
-        {/* TOP LEFT: Section Heading & Lead (Spans 2 columns on desktop)    */}
+        {/* TOP LEFT: Section Heading & Lead                                  */}
         {/* ================================================================= */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="md:col-span-2 lg:col-span-2 flex flex-col justify-center text-left py-4 sm:py-6 pr-0 lg:pr-8"
+          className={headerSpanClass}
         >
           {eyebrow && (
             <span className="text-xs uppercase font-extrabold tracking-widest text-[#008EC4] mb-3 block font-mono">

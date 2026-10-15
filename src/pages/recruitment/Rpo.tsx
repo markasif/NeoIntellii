@@ -164,7 +164,7 @@ export default function Rpo() {
       </StatementSection>
 
       <Section id="why-it-matters" eyebrow="Why it matters" title="When RPO is the right model" width="regular" align="center">
-        <div className="space-y-6 text-[#505D74] text-sm sm:text-base leading-relaxed max-w-4xl mx-auto text-left">
+        <div className="space-y-6 text-[#505D74] text-sm sm:text-base leading-relaxed max-w-6xl mx-auto text-left">
           <p>
             When hiring volume is high, skills are scarce, or you need to scale and de-scale quickly, in-house TA capacity is usually the constraint. RPO gives you embedded recruiters who behave like your team but flex with demand.
           </p>

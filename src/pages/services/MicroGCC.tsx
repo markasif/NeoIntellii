@@ -24,8 +24,10 @@ import RelatedLinks from "@/components/shared/RelatedLinks";
 import SectionHeader from "@/components/ui/SectionHeader";
 import TypewriterContextButton from "@/components/ui/TypewriterContextButton";
 import IndustryImageCard from "@/components/shared/IndustryImageCard";
-import AlternatingStepList from "@/components/shared/AlternatingStepList";
+import UniversalLifecycle from "@/components/shared/UniversalLifecycle";
 import HeroTrustMarquee from "@/components/shared/HeroTrustMarquee";
+import CapabilitiesSection from "@/components/ai-gcc/CapabilitiesSection";
+import TypewriterParagraph from "@/components/gcc-operations/TypewriterParagraph";
 
 import {
   tiers,
@@ -129,46 +131,15 @@ export default function MicroGCC() {
           primaryCta={{ label: "Book a 30-min scoping call", href: "/contact" }}
           secondaryCta={{ label: "Explore Tiers", href: "#tiers" }}
           tertiaryCta={{ label: "Planning a full-scale GCC instead? Start with GCC Strategy", href: "/services/gcc" }}
-          bottomContent={
-            <div className="relative z-20 w-full bg-transparent pb-4 sm:pb-6 lg:pb-8 shrink-0">
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-2 lg:grid-cols-4 divide-y divide-white/10 sm:divide-y-0 sm:divide-x sm:divide-white/15 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md p-1 sm:p-2">
-                  <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2.5">
-                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-white font-mono tracking-tight leading-none mb-1.5">
-                      <CountingNumber target={25} />
-                    </span>
-                    <p className="text-[10.5px] sm:text-[12.5px] text-[#C5D7F0] text-center leading-snug font-medium max-w-[220px]">
-                      Of India&apos;s 1,600+ GCCs are sub-50 captive centers
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2.5">
-                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-white font-mono tracking-tight leading-none mb-1.5">
-                      8 to 50
-                    </span>
-                    <p className="text-[10.5px] sm:text-[12.5px] text-[#C5D7F0] text-center leading-snug font-medium max-w-[220px]">
-                      Squad-based team sizing (1 to 5 squads)
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2.5">
-                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-white font-mono tracking-tight leading-none mb-1.5">
-                      6 to 12 wks
-                    </span>
-                    <p className="text-[10.5px] sm:text-[12.5px] text-[#C5D7F0] text-center leading-snug font-medium max-w-[220px]">
-                      Kickoff to first squad operational
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center justify-center text-center px-3 sm:px-4 py-3 sm:py-2.5">
-                    <span className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-white font-mono tracking-tight leading-none mb-1.5">
-                      60 to 70%
-                    </span>
-                    <p className="text-[10.5px] sm:text-[12.5px] text-[#C5D7F0] text-center leading-snug font-medium max-w-[220px]">
-                      Cost reduction vs US, UK, or Nordic team
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          }
+          trustStrip={[
+            "25% of India's 1,600+ GCCs are sub-50 captive centers",
+            "8 to 50 squad-based team sizing (1 to 5 squads)",
+            "6 to 12 weeks from kickoff to first squad operational",
+            "60 to 70% cost reduction vs US, UK, or Nordic teams",
+            "Managed → Co-owned → Captive transition path",
+            "100% IP and talent ownership retained",
+            "Bengaluru & Tier-1 tech ecosystem access",
+          ]}
         />
 
         {/* ── 2. WHY MICRO GCC. WHY NOW. ───────────────────────────────────── */}
@@ -176,13 +147,14 @@ export default function MicroGCC() {
           id="why-now"
           eyebrow="WHY MICRO GCC · WHY NOW"
           title="The captive model is no longer enterprise-only."
-          width="regular"
+          width="wide"
           align="center"
         >
-          <div className="max-w-5xl mx-auto space-y-6 text-left">
-            <p className="drop-cap-amber-f19326 text-base sm:text-lg text-[#505D74] leading-relaxed font-normal">
-              For two decades, setting up a GCC in India meant a large-enterprise budget, a 12 to 18 month build, and a 200-plus seat office. That bar shut out everyone else.
-            </p>
+          <div className="max-w-6xl mx-auto space-y-6 text-left">
+            <TypewriterParagraph
+              text="For two decades, setting up a GCC in India meant a large-enterprise budget, a 12 to 18 month build, and a 200-plus seat office. That bar shut out everyone else."
+              className="drop-cap-amber-f19326 text-base sm:text-lg text-[#505D74] leading-relaxed font-normal"
+            />
 
             <p className="text-lg sm:text-xl font-bold text-[#0D306C] tracking-tight leading-snug">
               That bar is gone.
@@ -210,111 +182,13 @@ export default function MicroGCC() {
           {/* Top Progression Track: Architectural Horizon */}
       
 
-          {/* 4-Tier Scaling Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto items-stretch">
-            {tiers.map((t, idx) => (
-              <motion.div
-                key={t.name}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  duration: 0.55,
-                  delay: idx * 0.1,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-                className="group relative bg-white rounded-2xl sm:rounded-3xl border border-[#D2DCF0]/80 shadow-xs hover:border-[#008EC4] hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden hover:-translate-y-1.5 text-left"
-              >
-                {/* Visual Header Image with floating badges */}
-                <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#0A1D42]">
-                  <img
-                    src={t.image}
-                    alt={t.imageAlt}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F]/80 via-[#0A192F]/20 to-transparent pointer-events-none" />
+          {/* Squad Scaling Architecture — sentence description */}
+          <p className="max-w-6xl mx-auto text-base sm:text-lg text-[#505D74] leading-relaxed font-normal">
+            A Micro GCC scales tier by tier, starting with a single 8–10 person squad operational in 6 to 8 weeks and growing to a full 40–50 person capability in 6 to 9 months. <br/> <strong className="text-[#0D306C] font-medium">Tier 1: Single Squad</strong> — 8 to 10 people with one squad lead, designed to ship outcomes in 6 to 8 weeks, best for startups extending engineering capacity and pilot mandates. A working squad with one lead and 7 to 9 specialists in engineering, AI and data, product, or cross‑functional roles. <br/> <strong className="text-[#0D306C] font-medium">Tier 2: Twin Squads</strong> — 15 to 20 people with two coordinated squads and shared leadership, operational in 8 to 12 weeks, best for SMEs and mid‑market companies running parallel mandates such as product plus platform. Two coordinated squads with shared leadership and a common operating model; each squad owns its own delivery, with the India lead role typically introduced at this tier. <br/> <strong className="text-[#0D306C] font-medium">Tier 3: Triple Squad</strong> — 25 to 30 people with three parallel squads and shared platform governance, scaling in 3 to 4 months, best for companies treating India as a capability hub and Series C scale‑ups. Three squads working in parallel with shared platform, governance, and reporting, with the India lead becoming a full‑time leadership role and reporting cadence formalized at this tier. <br/> <strong className="text-[#0D306C] font-medium">Tier 4: Full Micro GCC</strong> — 40 to 50 people across 4 to 5 multi‑function squads with mature governance, reaching steady state in 6 to 9 months, best for mid‑market firms scaling India as a core delivery hub. Four to five squads with mature governance, dedicated India leadership, and full operational independence, ready to graduate to a traditional GCC operating model when scale demands it.
+          </p>
 
-                  {/* Top-left Tier Badge */}
-                  <div className="absolute top-3 left-3 bg-[#06152B]/85 backdrop-blur-xs text-[#00A3E0] text-[10px] font-mono font-bold tracking-wider px-2.5 py-1 rounded-md border border-[#00A3E0]/30 uppercase">
-                    {t.tierTag}
-                  </div>
-
-                  {/* Top-right Headcount Pill */}
-                  <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-xs text-[#0D306C] text-[11px] font-bold tracking-tight px-2.5 py-1 rounded-full shadow-xs flex items-center gap-1 border border-white">
-                    <Users className="w-3 h-3 text-[#008EC4]" />
-                    <span>{t.size}</span>
-                  </div>
-
-                  {/* Bottom-left Squad Capacity Indicator */}
-                  <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white/90">
-                    <div className="flex items-center gap-1">
-                      {Array.from({ length: 4 }).map((_, i) => (
-                        <div
-                          key={i}
-                          className={`h-1.5 rounded-full transition-all ${
-                            i < t.squadPods
-                              ? "w-4 bg-[#00A3E0]"
-                              : "w-2 bg-white/30"
-                          }`}
-                        />
-                      ))}
-                    </div>
-                    <span className="text-[10px] font-mono font-medium text-white/80">
-                      {t.squadLabel}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Card Content */}
-                <div className="p-5 sm:p-6 flex flex-col flex-1 bg-white">
-                  {/* Timeline / Stage Eyebrow */}
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#169DC8] font-mono">
-                      {t.growthStage}
-                    </span>
-                    <span className="text-[11px] font-medium text-[#505D74] flex items-center gap-1">
-                      <Clock className="w-3 h-3 text-[#008EC4]" />
-                      {t.timeline}
-                    </span>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-xl sm:text-[22px] font-extrabold font-manrope text-[#0D306C] tracking-tight leading-snug mb-3 group-hover:text-[#008EC4] transition-colors">
-                    {t.tierName}
-                  </h3>
-
-                  {/* Best for Callout */}
-                  <div className="mb-4 rounded-xl bg-[#F0F6FC] p-3 border border-[#D2DCF0]/70">
-                    <span className="text-[10px] font-mono font-bold text-[#008EC4] uppercase tracking-wider block mb-1">
-                      Best suited for
-                    </span>
-                    <p className="text-xs text-[#0D306C] font-semibold leading-relaxed">
-                      {t.best}
-                    </p>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-xs sm:text-[13px] text-[#505D74] leading-relaxed mb-5 font-normal flex-1">
-                    {t.desc}
-                  </p>
-
-                  {/* Typical Roles Section */}
-                  <div className="pt-3.5 border-t border-[#E7EDF9] mt-auto">
-                    <div className="text-[11px] font-bold text-[#0D306C] uppercase tracking-wider mb-1.5 flex items-center gap-1.5 font-manrope">
-                      <Users className="w-3.5 h-3.5 text-[#008EC4]" />
-                      <span>Typical roles</span>
-                    </div>
-                    <p className="text-xs text-[#505D74] leading-relaxed font-normal">
-                      {t.roles}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Architectural Transition Banner */}
-          <div className="mt-10 sm:mt-12 p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-[#001844] text-white border border-[#16427D]/40 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 shadow-md text-left">
+          {/* Architectural Transition Banner — 6xl width, with margin space */}
+          <div className="max-w-6xl mx-auto mt-8 sm:mt-10 p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-[#001844] text-white border border-[#16427D]/40 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md text-left">
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-xl bg-[#008EC4]/20 border border-[#008EC4]/40 flex items-center justify-center text-[#38BDF8] shrink-0 mt-0.5">
                 <Layers className="w-5 h-5" />
@@ -502,54 +376,20 @@ export default function MicroGCC() {
           </div>
         </Section>
 
-        {/* ── 7. BUILDING BLOCKS ──────────────────────────────────────────── */}
-        <Section
-          id="building-blocks"
+        {/* ── 7. OPERATING FOUNDATION (CapabilitiesSection design) ──────────── */}
+        <CapabilitiesSection
+          id="foundation"
           eyebrow="OPERATING FOUNDATION"
           title="Everything you need to operate. None of what you do not."
           lead="Eight building blocks. Configured by tier and engagement model."
-          width="wide"
-          align="center"
-        >
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 max-w-7xl mx-auto">
-            {blocks.map((b) => (
-              <div
-                key={b.t}
-                className="group flex flex-col justify-between text-left select-none transition-all duration-300"
-              >
-                <div>
-                  {/* Visual Frame on Top (16:10 ratio like Parallel Execution in Setup & Launch) */}
-                  <div className="relative w-full aspect-[16/10] overflow-hidden mb-3.5 border border-[#CBD5E1]/80 bg-slate-100 shadow-[0_2px_12px_rgba(13,48,108,0.06)] group-hover:border-[#008EC4]/60 group-hover:shadow-[0_8px_25px_rgba(22,157,200,0.18)] transition-all duration-300">
-                    <img
-                      src={b.image}
-                      alt={b.t}
-                      className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-
-                  <h3 className="font-extrabold text-[16px] sm:text-[17.5px] leading-snug tracking-tight text-[#0D306C] group-hover:text-[#008EC4] transition-colors mb-1.5 font-manrope">
-                    {b.t}
-                  </h3>
-                  <p className="text-xs sm:text-[13px] text-[#505D74] leading-relaxed font-normal">
-                    {b.d}
-                  </p>
-                </div>
-                {b.link && (
-                  <div className="mt-auto pt-2.5 border-t border-[#D2DCF0]/60">
-                    <Link
-                      to={b.link.href}
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#008EC4] hover:text-[#0D306C] transition-colors group-hover:translate-x-0.5"
-                    >
-                      <span>{b.link.label}</span>
-                      <ArrowRight aria-hidden className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-                    </Link>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </Section>
+          columns={4}
+          items={blocks.map((b) => ({
+            title: b.t,
+            desc: b.d,
+            icon: b.icon,
+            links: b.link ? [{ path: b.link.href, anchor: b.link.label }] : undefined,
+          }))}
+        />
 
         {/* ── 8. FIVE PHASES LIFECYCLE (NAVY WITH ORGANIC WAVES) ───────────── */}
         <Section
@@ -562,7 +402,19 @@ export default function MicroGCC() {
           align="center"
           wavesOnMobile
         >
-          <AlternatingStepList items={phases} className="mt-6 sm:mt-10" />
+          <UniversalLifecycle
+            theme="navy"
+            id="micro-gcc-deployment-sequence"
+            ariaLabel="Micro GCC five-phase deployment sequence from scoping call to first operational squad"
+            tagStyle="status"
+            steps={phases.map((p) => ({
+              id: p.step,
+              title: p.headline,
+              desc: p.desc,
+              tag: p.timeline,
+              icon: p.icon,
+            }))}
+          />
         </Section>
 
         {/* ── 9. INVESTMENT & ECONOMICS ───────────────────────────────────── */}
@@ -835,7 +687,7 @@ export default function MicroGCC() {
             viewBox="0 0 1440 140"
             fill="none"
             preserveAspectRatio="none"
-            className="w-full h-10 sm:h-14 lg:h-16 xl:h-18 block pointer-events-none"
+            className="w-full h-10 sm:h-14 lg:h-16 xl:h-16 block pointer-events-none"
           >
             <path
               d="M0,-4 L1440,-4 L1440,30 C1300,32 1160,65 1000,82 C840,99 720,74 540,84 C360,94 200,136 0,136 Z"

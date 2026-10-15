@@ -184,7 +184,7 @@ export default function AIDataRecruitment() {
                         </nav>
                     </div>
                 </div>
-                <div className="max-w-4xl mx-auto relative z-10">
+                <div className="max-w-6xl mx-auto relative z-10">
                     <motion.p
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -269,7 +269,7 @@ export default function AIDataRecruitment() {
 
             {/* Beyond keyword matching */}
             <section className="py-20 md:py-28 px-6 sm:px-8 lg:px-12 bg-[#f5f5f7]">
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-6xl mx-auto">
                     <ScrollReveal className="mb-10">
                         <h2 className="text-display-sm md:text-display font-display text-heading mb-6">AI hiring requires more than matching keywords on a resume</h2>
                         <p className="text-body text-base leading-relaxed mb-4">
@@ -419,7 +419,7 @@ export default function AIDataRecruitment() {
 
             {/* Team building */}
             <section className="py-20 md:py-28 px-6 sm:px-8 lg:px-12 bg-[#f5f5f7]">
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-6xl mx-auto">
                     <ScrollReveal className="mb-10">
                         <h2 className="text-display-sm md:text-display font-display text-heading mb-5">Building an AI team, not just filling one position?</h2>
                         <p className="text-body text-base leading-relaxed">

@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Image from "next/image";
-import { ArrowRight, ChevronRight, ChevronDown, Search } from "lucide-react";
+import { ArrowRight, ChevronRight, ChevronLeft, ChevronDown, Search } from "lucide-react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -495,9 +495,78 @@ export default function GCCFaq() {
   const [isSticky, setIsSticky] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
 
+  const categoryScrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  const checkCategoryScroll = () => {
+    const el = categoryScrollRef.current;
+    if (!el) return;
+    const { scrollLeft, scrollWidth, clientWidth } = el;
+    setCanScrollLeft(scrollLeft > 4);
+    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 4);
+  };
+
   useEffect(() => {
     document.title = "GCC FAQ 2026 | Top GCC Questions Answered — NeoIntelli";
   }, []);
+
+  useEffect(() => {
+    checkCategoryScroll();
+    const timer = setTimeout(checkCategoryScroll, 150);
+    const handleResize = () => checkCategoryScroll();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const scrollCategories = (direction: "left" | "right") => {
+    const el = categoryScrollRef.current;
+    if (!el) return;
+    const amount = direction === "left" ? -180 : 180;
+    el.scrollBy({ left: amount, behavior: "smooth" });
+    setTimeout(checkCategoryScroll, 250);
+  };
+
+  const scrollToFaqList = () => {
+    const faqSection = document.getElementById("faq-list");
+    if (faqSection) {
+      const bar = document.getElementById("main-navbar-bar") || document.querySelector("header");
+      const navH = bar ? bar.offsetHeight : 75;
+      const subnavH = navRef.current ? navRef.current.offsetHeight : 60;
+      const targetPos = faqSection.getBoundingClientRect().top + window.scrollY - (navH + subnavH + 16);
+      window.scrollTo({
+        top: Math.max(0, targetPos),
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleSelectCategory = (cat: Category) => {
+    setActiveCategory(cat);
+    scrollToFaqList();
+  };
+
+  const handleSearchChange = (val: string) => {
+    setSearchQuery(val);
+    if (val.trim()) {
+      const faqSection = document.getElementById("faq-list");
+      if (faqSection) {
+        const bar = document.getElementById("main-navbar-bar") || document.querySelector("header");
+        const navH = bar ? bar.offsetHeight : 75;
+        const subnavH = navRef.current ? navRef.current.offsetHeight : 60;
+        const targetPos = faqSection.getBoundingClientRect().top + window.scrollY - (navH + subnavH + 16);
+        if (window.scrollY > targetPos + 100) {
+          window.scrollTo({
+            top: Math.max(0, targetPos),
+            behavior: "smooth",
+          });
+        }
+      }
+    }
+  };
 
   useEffect(() => {
     const handleScrollAndResize = () => {
@@ -655,7 +724,7 @@ export default function GCCFaq() {
                 type="text"
                 placeholder="Search questions..."
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e) => handleSearchChange(e.target.value)}
                 className="w-full pl-10 pr-9 py-1.5 sm:py-2 rounded-full bg-white/[0.08] hover:bg-white/[0.12] focus:bg-white/[0.15] border border-white/15 focus:border-[#00A3E0] text-xs sm:text-sm text-white placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-[#00A3E0] transition-all font-sans"
               />
               {searchQuery && (
@@ -669,33 +738,67 @@ export default function GCCFaq() {
               )}
             </div>
 
-            {/* Category Filter Pills on the Right (Aligned in One Line) */}
-            <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto w-full md:w-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden py-0.5 justify-start md:justify-end">
-              {categories.map((cat) => {
-                const isActive = activeCategory === cat;
-                return (
-                  <button
-                    key={cat}
-                    onClick={() => setActiveCategory(cat)}
-                    className={`inline-flex items-center rounded-full px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-[13px] whitespace-nowrap transition-all duration-200 cursor-pointer shrink-0 font-manrope ${
-                      isActive
-                        ? "bg-[#008EC4] text-white shadow-sm shadow-[#008EC4]/30 font-semibold"
-                        : "text-slate-300 hover:text-white hover:bg-white/[0.08] font-medium"
-                    }`}
-                  >
-                    <span>{cat}</span>
-                    {cat === "All" && (
-                      <span
-                        className={`ml-1.5 px-1.5 py-0.5 rounded-full text-[11px] font-bold ${
-                          isActive ? "bg-white/20 text-white" : "bg-white/10 text-slate-300"
-                        }`}
-                      >
-                        {faqs.length}
-                      </span>
-                    )}
-                  </button>
-                );
-              })}
+            {/* Category Filter Pills on the Right (with Mobile Arrows) */}
+            <div className="relative flex items-center w-full md:w-auto overflow-hidden">
+              {/* Left Arrow Button for Mobile */}
+              {canScrollLeft && (
+                <button
+                  type="button"
+                  onClick={() => scrollCategories("left")}
+                  aria-label="Scroll categories left"
+                  className="md:hidden absolute left-0 z-20 w-7 h-7 rounded-full bg-[#0D244D]/95 hover:bg-[#008EC4] text-white flex items-center justify-center shadow-lg border border-white/20 transition-all duration-200 cursor-pointer shrink-0"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+              )}
+
+              {/* Horizontal Scroll Track */}
+              <div
+                ref={categoryScrollRef}
+                onScroll={checkCategoryScroll}
+                className={`flex items-center gap-1.5 sm:gap-2 overflow-x-auto w-full md:w-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden py-0.5 scroll-smooth justify-start md:justify-end ${
+                  canScrollLeft ? "pl-8" : "pl-0"
+                } ${canScrollRight ? "pr-8" : "pr-0"} md:px-0 transition-all duration-200`}
+              >
+                {categories.map((cat) => {
+                  const isActive = activeCategory === cat;
+                  return (
+                    <button
+                      key={cat}
+                      type="button"
+                      onClick={() => handleSelectCategory(cat)}
+                      className={`inline-flex items-center rounded-full px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-[13px] whitespace-nowrap transition-all duration-200 cursor-pointer shrink-0 font-manrope ${
+                        isActive
+                          ? "bg-[#008EC4] text-white shadow-sm shadow-[#008EC4]/30 font-semibold"
+                          : "text-slate-300 hover:text-white hover:bg-white/[0.08] font-medium"
+                      }`}
+                    >
+                      <span>{cat}</span>
+                      {cat === "All" && (
+                        <span
+                          className={`ml-1.5 px-1.5 py-0.5 rounded-full text-[11px] font-bold ${
+                            isActive ? "bg-white/20 text-white" : "bg-white/10 text-slate-300"
+                          }`}
+                        >
+                          {faqs.length}
+                        </span>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Right Arrow Button for Mobile */}
+              {canScrollRight && (
+                <button
+                  type="button"
+                  onClick={() => scrollCategories("right")}
+                  aria-label="Scroll categories right"
+                  className="md:hidden absolute right-0 z-20 w-7 h-7 rounded-full bg-[#0D244D]/95 hover:bg-[#008EC4] text-white flex items-center justify-center shadow-lg border border-white/20 transition-all duration-200 cursor-pointer shrink-0"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              )}
             </div>
           </div>
         </nav>
@@ -703,7 +806,7 @@ export default function GCCFaq() {
         {/* ============================================================ */}
         {/* 3. FAQ ACCORDION SECTION (Matching Typography of Other Pages) */}
         {/* ============================================================ */}
-        <section className="relative pt-10 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-6 lg:px-8">
+        <section id="faq-list" className="relative pt-10 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-6 lg:px-8 scroll-mt-36">
           <div className="max-w-4xl mx-auto">
             {activeCategory !== "All" && (
               <div className="mb-6 flex items-center justify-between border-b border-[#D2DCF0]/80 pb-3">
@@ -760,7 +863,7 @@ export default function GCCFaq() {
                 <button
                   onClick={() => {
                     setSearchQuery("");
-                    setActiveCategory("All");
+                    handleSelectCategory("All");
                   }}
                   className="text-sm font-semibold text-[#008EC4] hover:underline cursor-pointer"
                 >

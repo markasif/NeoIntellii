@@ -30,7 +30,8 @@ import OpsSection from "@/components/gcc-operations/OpsSection";
 import CapabilityGrid from "@/components/gcc-operations/CapabilityGrid";
 import InBriefCard from "@/components/gcc-operations/InBriefCard";
 import AnswerList from "@/components/gcc-operations/AnswerList";
-import SlottedStepNumber from "@/components/gcc-operations/SlottedStepNumber";
+import FiveCardHeroGrid from "@/components/shared/FiveCardHeroGrid";
+import PillFeatureCardGrid from "@/components/shared/PillFeatureCardGrid";
 import SourceNote from "@/components/gcc-operations/SourceNote";
 import { gccOperationsPage, gccOperationsFaqs, PILLAR_LINKS, GCC_OPERATIONS_BASE } from "@/data/gccOperationsContent";
 
@@ -170,11 +171,51 @@ function WorkforceModelLifecycle() {
 }
 
 const system = [
-  { title: "Role and skill architecture", desc: "Levels, definitions, progression criteria and required skills, calibrated to the India market and aligned to headquarters bands.", icon: Layers },
-  { title: "Compensation and reward framework", desc: "Market-referenced bands, variable design, retention mechanisms and annual review cadence.", icon: Scale },
-  { title: "Leadership architecture", desc: "Center leadership, function heads, engineering managers and technical leads: profiles, hiring triggers and reporting.", icon: Crown },
-  { title: "Workforce plan", desc: "Rolling 12-month headcount, cost and capability plan by function and level, updated quarterly against delivery.", icon: CalendarRange },
-  { title: "Retention and succession system", desc: "Flight-risk identification, key-person cover, promotion paths and internal mobility before attrition forces external replacement.", icon: ShieldCheck },
+  {
+    n: "01",
+    title: "PART 1: ROLE & SKILL",
+    q: "How do India levels calibrate to HQ bands?",
+    body: "Levels, definitions, progression criteria and required skills, calibrated to the India market and aligned to headquarters bands.",
+    href: "#capabilities",
+    anchor: "Explore Role Taxonomy",
+    tone: "blue" as const,
+  },
+  {
+    n: "02",
+    title: "PART 2: COMPENSATION",
+    q: "What structure attracts and holds top talent?",
+    body: "Market-referenced bands, variable design, retention mechanisms and annual review cadence.",
+    href: "#capabilities",
+    anchor: "See Compensation Benchmarks",
+    tone: "amber" as const,
+  },
+  {
+    n: "03",
+    title: "PART 3: LEADERSHIP",
+    q: "Which leaders anchor the center first?",
+    body: "Center leadership, function heads, engineering managers and technical leads: profiles, hiring triggers and reporting.",
+    href: "#capabilities",
+    anchor: "View Leadership Architecture",
+    tone: "navy" as const,
+  },
+  {
+    n: "04",
+    title: "PART 4: WORKFORCE PLAN",
+    q: "How does headcount phase across 12 months?",
+    body: "Rolling 12-month headcount, cost and capability plan by function and level, updated quarterly against delivery.",
+    href: "#workforce-model",
+    anchor: "See the Workforce Model",
+    tone: "blue" as const,
+  },
+  {
+    n: "05",
+    title: "PART 5: RETENTION & SUCCESSION",
+    q: "How do you protect critical capabilities?",
+    body: "Flight-risk identification, key-person cover, promotion paths and internal mobility before attrition forces external replacement.",
+    href: "#pitfalls",
+    anchor: "Review Succession & Risks",
+    tone: "amber" as const,
+  },
 ];
 
 interface PitfallItem {
@@ -378,39 +419,49 @@ export default function WorkforceStrategy() {
         align="center"
         width="wide"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-stretch max-w-6xl mx-auto text-left">
-          {/* Left: AI Talent */}
-          <div className="flex flex-col">
-            <h3 className="text-[#0D306C] font-extrabold text-xl sm:text-2xl mb-3 tracking-tight">AI Talent</h3>
-            <p className="text-[#505D74] text-sm sm:text-base leading-relaxed flex-1">
+        <div className="max-w-6xl mx-auto text-left space-y-10 sm:space-y-12">
+          {/* Block 1: AI Talent */}
+          <div>
+            <h3 className="text-xl sm:text-2xl lg:text-[26px] font-extrabold text-[#0D306C] tracking-tight leading-snug mb-3">
+              AI Talent
+            </h3>
+
+            <p className="text-[#505D74] text-sm sm:text-base lg:text-[16.5px] leading-relaxed mb-6 font-normal">
               Finds and technically validates people: role calibration, sourcing, NeoHireX screening and ranking, AI-led first-round evaluation, technical validation by practicing engineers, recruiter evaluation and offer coordination.
             </p>
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <Link to={PILLAR_LINKS.aiTalent} className="btn-gradient whitespace-nowrap">
+
+            <div className="flex flex-wrap items-center gap-3">
+              <Link to={PILLAR_LINKS.aiTalent} className="btn-white whitespace-nowrap">
                 <span>Explore AI Talent</span>
-                <ArrowRight className="w-4 h-4 text-white shrink-0" />
-              </Link>
-              <Link to={PILLAR_LINKS.aiDataRecruitment} className="btn-white whitespace-nowrap">
-                <span>AI &amp; Data recruitment</span>
                 <ArrowRight className="w-4 h-4 text-[#0D306C] shrink-0" />
+              </Link>
+              <Link to={PILLAR_LINKS.aiDataRecruitment} className="btn-navy whitespace-nowrap">
+                <span>AI &amp; Data recruitment</span>
+                <ArrowRight className="w-4 h-4 text-white shrink-0" />
               </Link>
             </div>
           </div>
 
-          {/* Right: GCC Workforce Strategy */}
-          <div className="flex flex-col">
-            <h3 className="text-[#0D306C] font-extrabold text-xl sm:text-2xl mb-3 tracking-tight">GCC Workforce Strategy</h3>
-            <p className="text-[#505D74] text-sm sm:text-base leading-relaxed flex-1">
+  
+
+          {/* Block 2: GCC Workforce Strategy */}
+          <div>
+            <h3 className="text-xl sm:text-2xl lg:text-[26px] font-extrabold text-[#0D306C] tracking-tight leading-snug mb-3">
+              GCC Workforce Strategy
+            </h3>
+
+            <p className="text-[#505D74] text-sm sm:text-base lg:text-[16.5px] leading-relaxed mb-6 font-normal">
               Decides what the center needs: what roles are required, when they must be mobilized, where squads should sit, how career paths progress, how leadership should evolve, and how the workforce scales with the enterprise mandate.
             </p>
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <Link to={PILLAR_LINKS.gccSetupLaunch} className="btn-gradient whitespace-nowrap">
+
+            <div className="flex flex-wrap items-center gap-3">
+              <Link to={PILLAR_LINKS.gccSetupLaunch} className="btn-white whitespace-nowrap">
                 <span>See Setup &amp; Launch</span>
-                <ArrowRight className="w-4 h-4 text-white shrink-0" />
-              </Link>
-              <a href="#capabilities" className="btn-white whitespace-nowrap">
-                <span>View 14 Capabilities</span>
                 <ArrowRight className="w-4 h-4 text-[#0D306C] shrink-0" />
+              </Link>
+              <a href="#capabilities" className="btn-navy whitespace-nowrap">
+                <span>View 14 Capabilities</span>
+                <ArrowRight className="w-4 h-4 text-white shrink-0" />
               </a>
             </div>
           </div>
@@ -442,48 +493,28 @@ export default function WorkforceStrategy() {
         <WorkforceModelLifecycle />
       </OpsSection>
 
-      {/* SECTION 5: THE WORKFORCE SYSTEM (5-Part Half-Sink Count Design matching How the engagement runs) */}
+      {/* SECTION 5: THE WORKFORCE SYSTEM (FiveCardHeroGrid design matching services/gcc Decision Milestones) */}
       <OpsSection
         id="workforce-system"
         eyebrow="THE WORKFORCE SYSTEM"
         title="The workforce system, in five parts."
         intro="These are the components NeoIntelli designs and, where agreed, operates. They are the durable content of what was previously described as GCC talent management, without the recruitment execution, which belongs to AI Talent."
-        tone="muted"
         width="wide"
         align="center"
       >
-        <ol className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 text-center max-w-7xl mx-auto">
-          {system.map((step, index) => {
-            const StepIcon = step.icon;
-
-            return (
-              <li
-                key={step.title}
-                className="flex flex-col items-center justify-between text-center bg-transparent border-0 shadow-none p-3 sm:p-4 group"
-              >
-                <div className="flex flex-col items-center w-full">
-                  {/* Slotted Step Number Design matching reference image */}
-                  <SlottedStepNumber index={index} />
-
-                  {/* Step Title in Uppercase */}
-                  <h3 className="text-[#0D306C] font-extrabold text-sm sm:text-[14.5px] uppercase tracking-wider mb-3 group-hover:text-[#008EC4] transition-colors">
-                    {step.title}
-                  </h3>
-
-                  {/* Step Description */}
-                  <p className="text-[#505D74] text-xs sm:text-[13px] leading-relaxed mb-6 flex-1 max-w-xs font-normal">
-                    {step.desc}
-                  </p>
-                </div>
-
-                {/* Bottom Icon */}
-                <div className="mt-auto text-[#0D306C] group-hover:text-[#008EC4] group-hover:scale-110 transition-all duration-300">
-                  <StepIcon className="w-6 h-6 stroke-[1.8]" />
-                </div>
-              </li>
-            );
-          })}
-        </ol>
+        <FiveCardHeroGrid
+          items={system.map((step) => ({
+            n: step.n,
+            title: step.title,
+            subtitle: step.q,
+            body: step.body,
+            cta: {
+              label: step.anchor,
+              href: step.href,
+            },
+            tone: step.tone,
+          }))}
+        />
       </OpsSection>
 
       {/* SECTION 6: WHERE WORKFORCE PLANS GO WRONG (Outcome Framework Editorial Grid Style) */}
@@ -523,82 +554,14 @@ export default function WorkforceStrategy() {
         align="center"
         width="wide"
       >
-        {/* 3 Cards: Layout matching overview Center Archetypes design (1 & 3 big, 2 small, bottom-aligned) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 items-end gap-5 lg:gap-6 pt-4 sm:pt-6 max-w-5xl mx-auto">
-          {AI_WORKFORCE_CHANGES.map((item, idx) => {
-            const Icon = item.icon;
-            const isHovered = hoveredAiCard === idx;
-
-            return (
-              <div
-                key={item.title}
-                onMouseEnter={() => setHoveredAiCard(idx)}
-                onMouseLeave={() => setHoveredAiCard(null)}
-                className={`relative overflow-hidden rounded-2xl sm:rounded-3xl p-6 transition-all duration-300 flex flex-col justify-center items-center text-center group cursor-pointer ${
-                  item.isTall
-                    ? "sm:p-8 lg:p-9 min-h-[380px] sm:min-h-[400px] lg:min-h-[420px]"
-                    : "sm:p-7 min-h-[250px] sm:min-h-[260px]"
-                } ${
-                  isHovered
-                    ? "border border-[#16427D]/60 shadow-[0_16px_40px_rgba(8,27,62,0.35)] -translate-y-1"
-                    : "bg-white/95 backdrop-blur-sm border border-[#0D306C]/10 shadow-[0_8px_24px_rgba(13,48,108,0.06)] hover:-translate-y-1 hover:border-[#16427D]/60 hover:shadow-[0_16px_40px_rgba(8,27,62,0.35)]"
-                }`}
-              >
-                {/* Subtle background circles default state */}
-                <div
-                  className={`absolute -top-12 -right-12 w-48 h-48 rounded-full pointer-events-none transition-opacity duration-300 ${
-                    isHovered ? "opacity-0" : "border border-[#0D306C]/5 opacity-100 group-hover:opacity-0"
-                  }`}
-                />
-                <div
-                  className={`absolute -bottom-14 -left-14 w-52 h-52 rounded-full pointer-events-none transition-opacity duration-300 ${
-                    isHovered ? "opacity-0" : "border border-[#0D306C]/5 opacity-100 group-hover:opacity-0"
-                  }`}
-                />
-
-                {/* Hover Navy Blue Overlay ("the first look") */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-b from-[#081B3E] via-[#0A224E] to-[#081B3E] transition-opacity duration-300 pointer-events-none z-0 ${
-                    isHovered ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-                  }`}
-                >
-                  <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full border border-white/10 pointer-events-none" />
-                  <div className="absolute -bottom-14 -left-14 w-52 h-52 rounded-full border border-white/5 pointer-events-none" />
-                </div>
-
-                <div className="relative z-10 flex flex-col items-center">
-                  <div
-                    className={`w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 ${
-                      item.isTall ? "mb-6 sm:mb-8" : "mb-4 sm:mb-5"
-                    } ${
-                      isHovered
-                        ? "bg-white text-[#008EC4] border-2 border-white shadow-[0_8px_24px_rgba(0,0,0,0.35)] scale-105"
-                        : "bg-[#EDF3FB] border border-[#C5D7EE] text-[#008EC4] shadow-xs group-hover:bg-white group-hover:text-[#008EC4] group-hover:border-white group-hover:shadow-[0_8px_24px_rgba(0,0,0,0.35)] group-hover:scale-105"
-                    }`}
-                  >
-                    <Icon className="w-7 h-7 text-[#008EC4] stroke-[2.2] transition-colors duration-300" />
-                  </div>
-                  <h3
-                    style={{ color: isHovered ? "#ffffff" : undefined }}
-                    className={`font-bold tracking-tight mb-2 sm:mb-3 transition-colors duration-300 ${
-                      item.isTall ? "text-lg sm:text-xl" : "text-base sm:text-lg"
-                    } ${isHovered ? "!text-white" : "text-[#0D306C] group-hover:!text-white"}`}
-                  >
-                    {item.title}
-                  </h3>
-                  <p
-                    style={{ color: isHovered ? "#ffffff" : undefined }}
-                    className={`leading-relaxed font-normal transition-colors duration-300 ${
-                      item.isTall ? "text-sm sm:text-base" : "text-xs sm:text-sm"
-                    } ${isHovered ? "!text-white" : "text-[#505D74] group-hover:!text-white"}`}
-                  >
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        {/* Pill feature cards (matches the AI Engineering / GCC Operations card language) */}
+        <PillFeatureCardGrid
+          items={AI_WORKFORCE_CHANGES.map((item) => ({
+            title: item.title,
+            desc: item.desc,
+          }))}
+          className="max-w-6xl mx-auto"
+        />
 
         <p className="mt-10 sm:mt-12 text-center text-sm sm:text-base text-[#505D74] max-w-3xl mx-auto leading-relaxed">
           Building an AI-focused center? See{" "}

@@ -294,7 +294,7 @@ export default function LocationStrategy() {
             icon: r.icon,
           }))}
           footer={
-            <div className="mt-8 text-center max-w-4xl mx-auto">
+            <div className="mt-8 text-center max-w-6xl mx-auto">
               <p className="text-xs sm:text-sm text-[#505D74] leading-relaxed">
                 Hiring for these roles is its own discipline.{" "}
                 <Link
@@ -429,7 +429,7 @@ export default function LocationStrategy() {
           </div>
 
           {/* Centered Source Note below table */}
-          <p className="text-center text-xs text-[#505D74] leading-relaxed max-w-4xl mx-auto mt-4 mb-12">
+          <p className="text-center text-xs text-[#505D74] leading-relaxed max-w-6xl mx-auto mt-4 mb-12">
             <span className="font-semibold text-[#0D306C]">Source:</span> Official state government policy documents
             for each shortlisted state. Last checked Sep 2026. Policy names, amounts, and conditions are confirmed from
             the current official document for each shortlisted state during the engagement and are not reproduced here,

@@ -91,7 +91,7 @@ export default function RelatedGccServices({
             viewBox="0 0 1440 140"
             fill="none"
             preserveAspectRatio="none"
-            className="w-full h-10 sm:h-14 lg:h-16 xl:h-18 block pointer-events-none"
+            className="w-full h-10 sm:h-14 lg:h-16 xl:h-16 block pointer-events-none"
           >
             <path
               d="M0,-4 L1440,-4 L1440,30 C1300,32 1160,65 1000,82 C840,99 720,74 540,84 C360,94 200,136 0,136 Z"
@@ -145,7 +145,7 @@ export default function RelatedGccServices({
               <li key={item.href + item.label} className="h-full flex">
                 <Link
                   to={item.href}
-                  className={`group relative flex flex-col justify-between w-full h-full min-h-[185px] sm:min-h-[200px] p-4 sm:p-4.5 rounded-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8] focus-visible:ring-offset-2 ${
+                  className={`group relative flex flex-col justify-between w-full h-full min-h-[185px] sm:min-h-[200px] p-4 sm:p-4 rounded-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8] focus-visible:ring-offset-2 ${
                     isNavy
                       ? "bg-gradient-to-b from-[#081B3E] via-[#0A224E] to-[#061530] border border-[#16427D]/70 hover:border-[#38BDF8]/70 backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.14),0_8px_24px_rgba(4,18,43,0.32)] hover:shadow-[0_14px_36px_rgba(22,157,200,0.28)]"
                       : "bg-white/95 backdrop-blur-sm border border-[#0D306C]/10 hover:border-[#169DC8]/35 shadow-[0_4px_24px_rgba(13,48,108,0.05)] hover:shadow-[0_12px_32px_rgba(13,48,108,0.09)]"
@@ -256,7 +256,7 @@ export default function RelatedGccServices({
               <li key={tool.href} className="h-full flex">
                 <Link
                   to={tool.href}
-                  className={`group relative flex flex-col justify-between w-full h-full min-h-[195px] sm:min-h-[210px] p-4 sm:p-4.5 rounded-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8] focus-visible:ring-offset-2 ${
+                  className={`group relative flex flex-col justify-between w-full h-full min-h-[195px] sm:min-h-[210px] p-4 sm:p-4 rounded-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8] focus-visible:ring-offset-2 ${
                     isNavy
                       ? "bg-gradient-to-b from-[#081B3E] via-[#0A224E] to-[#061530] border border-[#16427D]/70 hover:border-[#38BDF8]/70 backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.14),0_8px_24px_rgba(4,18,43,0.32)] hover:shadow-[0_14px_36px_rgba(22,157,200,0.28)]"
                       : "bg-white/95 backdrop-blur-sm border border-[#0D306C]/10 hover:border-[#169DC8]/35 shadow-[0_4px_24px_rgba(13,48,108,0.05)] hover:shadow-[0_12px_32px_rgba(13,48,108,0.09)]"
@@ -312,7 +312,7 @@ export default function RelatedGccServices({
                             <ToolIcon className="w-4 h-4" />
                           </div>
                         </div>
-                        <div className="w-6.5 h-6.5 rounded-full bg-white/10 group-hover:bg-[#38BDF8] text-white/70 group-hover:text-[#0A224E] flex items-center justify-center transition-all duration-200">
+                        <div className="w-6 h-6 rounded-full bg-white/10 group-hover:bg-[#38BDF8] text-white/70 group-hover:text-[#0A224E] flex items-center justify-center transition-all duration-200">
                           <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
                         </div>
                       </div>

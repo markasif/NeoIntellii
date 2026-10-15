@@ -19,7 +19,7 @@ interface TypewriterParagraphProps {
 export default function TypewriterParagraph({
   text,
   className = "drop-cap-amber",
-  cursorColor = "#F59E0B",
+  cursorColor,
   delayMs = 120,
 }: TypewriterParagraphProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -29,9 +29,14 @@ export default function TypewriterParagraph({
   const [isTyping, setIsTyping] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
 
-  // Compute smooth typing interval based on text length (targets ~2.6s - 3.2s total duration)
-  const charInterval = useMemo(() => {
-    return Math.max(7, Math.min(14, Math.round(2600 / Math.max(text.length, 1))));
+  const effectiveCursorColor = cursorColor ?? (className.includes("f19326") ? "#F19326" : "#F59E0B");
+
+  // Dynamic step and interval targeting ~2.0s - 2.6s total duration across any text length
+  const { charInterval, step } = useMemo(() => {
+    const len = Math.max(text.length, 1);
+    const calculatedStep = Math.max(1, Math.ceil(len / 180));
+    const interval = Math.max(8, Math.min(14, Math.round(2200 / (len / calculatedStep))));
+    return { charInterval: interval, step: calculatedStep };
   }, [text.length]);
 
   useEffect(() => {
@@ -52,14 +57,11 @@ export default function TypewriterParagraph({
       let currentIdx = 0;
 
       intervalId = setInterval(() => {
-        // Increment by 1 or 2 characters for extra fluid teletype feel on long texts
-        const step = text.length > 300 ? 2 : 1;
         currentIdx = Math.min(text.length, currentIdx + step);
         setDisplayedLength(currentIdx);
 
         if (currentIdx >= text.length) {
           if (intervalId) clearInterval(intervalId);
-          // Allow cursor to linger briefly then fade
           setTimeout(() => {
             setIsTyping(false);
             setIsFinished(true);
@@ -72,7 +74,7 @@ export default function TypewriterParagraph({
       if (timeoutId) clearTimeout(timeoutId);
       if (intervalId) clearInterval(intervalId);
     };
-  }, [isInView, text, charInterval, delayMs, isFinished]);
+  }, [isInView, text, charInterval, step, delayMs, isFinished]);
 
   // When completely finished, render standard static paragraph
   if (isFinished) {
@@ -95,6 +97,13 @@ export default function TypewriterParagraph({
       {/* Active typing paragraph */}
       <p className={`${className} absolute inset-0 select-text`} aria-live="polite">
         {displayedText}
+        {isTyping && (
+          <span
+            className="inline-block w-[3px] h-[0.95em] ml-1 align-baseline rounded-xs animate-pulse"
+            style={{ backgroundColor: effectiveCursorColor }}
+            aria-hidden="true"
+          />
+        )}
       </p>
     </div>
   );

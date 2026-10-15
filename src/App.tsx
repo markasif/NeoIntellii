@@ -76,6 +76,7 @@ const pageLoaders: Record<string, PageLoader> = {
   "/gcc-readiness-assessment":                      () => import("./pages/gcc-readiness-assessment"),
   "/gcc-roi-estimator":                             () => import("./pages/gcc-roi-estimator"),
   "/gcc-faq":                                       () => import("./pages/gcc-faq"),
+  "/faq":                                           () => import("./pages/gcc-faq"),
   "/careers":                                       () => import("./pages/careers"),
   "/industries/manufacturing-gcc":                  () => import("./pages/industries/manufacturing-gcc"),
   "/industries/private-equity-gcc":                 () => import("./pages/industries/private-equity-gcc"),

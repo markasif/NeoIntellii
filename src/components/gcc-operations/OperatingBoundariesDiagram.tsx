@@ -468,7 +468,7 @@ export default function OperatingBoundariesDiagram() {
             {/* Core Circular GCC Hub Node */}
             <div
               ref={gccRef}
-              className="relative w-36 h-36 sm:w-42 sm:h-42 rounded-full bg-white flex flex-col items-center justify-center text-center shadow-[0_10px_35px_rgba(13,48,108,0.08)] border border-[#D0E3F5] transition-transform duration-300 hover:scale-105 z-20"
+              className="relative w-36 h-36 sm:w-40 sm:h-40 rounded-full bg-white flex flex-col items-center justify-center text-center shadow-[0_10px_35px_rgba(13,48,108,0.08)] border border-[#D0E3F5] transition-transform duration-300 hover:scale-105 z-20"
             >
               {/* Dominant GCC text */}
               <span className="text-3xl sm:text-[38px] font-black tracking-tight text-[#0D244D] leading-none mb-1">

@@ -105,7 +105,7 @@ export default function Section({
             viewBox="0 0 1440 140"
             fill="none"
             preserveAspectRatio="none"
-            className="w-full h-10 sm:h-14 lg:h-16 xl:h-18 block pointer-events-none"
+            className="w-full h-10 sm:h-14 lg:h-16 xl:h-16 block pointer-events-none"
           >
             <path
               d="M0,-4 L1440,-4 L1440,30 C1300,32 1160,65 1000,82 C840,99 720,74 540,84 C360,94 200,136 0,136 Z"

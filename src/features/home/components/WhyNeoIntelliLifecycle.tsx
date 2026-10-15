@@ -17,9 +17,9 @@ import {
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import AmbientGlow from "@/components/ui/AmbientGlow";
-import UniversalLifecycle, {
-  type LifecycleStageItem,
-} from "@/components/shared/UniversalLifecycle";
+import HexagonArcLifecycle, {
+  type HexagonLifecycleStage,
+} from "@/components/shared/HexagonArcLifecycle";
 
 // Animated Counting Number for Stats
 function AnimatedCounter({
@@ -71,49 +71,49 @@ export default function WhyNeoIntelliLifecycle() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-60px" });
 
-  // 6 Stages for Why NeoIntelli Lifecycle — Content strictly matching Reference Image 2
-  const stages: LifecycleStageItem[] = [
+  // 6 Stages for Why NeoIntelli Lifecycle — Content strictly matching Reference Image
+  const stages: HexagonLifecycleStage[] = [
     {
       id: "01",
       name: "Strategy",
       description: "Decide what the center should own.",
-      icon: Target,
       href: "/services/gcc/strategy-business-case",
+      iconType: "target",
     },
     {
       id: "02",
       name: "Talent",
       description: "Find and validate specialist people.",
-      icon: Users,
       href: "/services/ai-talent",
+      iconType: "talent",
     },
     {
       id: "03",
       name: "Engineering",
       description: "Build production AI capability.",
-      icon: Cpu,
       href: "/services/ai-engineering",
+      iconType: "engineering",
     },
     {
       id: "04",
       name: "Delivery",
       description: "Deploy execution capacity.",
-      icon: Layers,
       href: "/services/ai-delivery-teams",
+      iconType: "delivery",
     },
     {
       id: "05",
       name: "Setup",
       description: "Launch the GCC.",
-      icon: Building2,
       href: "/services/gcc/setup-launch",
+      iconType: "setup",
     },
     {
       id: "06",
       name: "Operations",
       description: "Run and scale the center.",
-      icon: RefreshCw,
       href: "/services/gcc-operations",
+      iconType: "operations",
     },
   ];
 
@@ -217,7 +217,7 @@ export default function WhyNeoIntelliLifecycle() {
             viewBox="0 0 1440 140"
             fill="none"
             preserveAspectRatio="none"
-            className="w-full h-10 sm:h-14 lg:h-16 xl:h-18 block pointer-events-none"
+            className="w-full h-10 sm:h-14 lg:h-16 xl:h-16 block pointer-events-none"
           >
             <path
               d="M0,-4 L1440,-4 L1440,30 C1300,32 1160,65 1000,82 C840,99 720,74 540,84 C360,94 200,136 0,136 Z"
@@ -237,7 +237,7 @@ export default function WhyNeoIntelliLifecycle() {
 
         <div className="relative z-10 mx-auto max-w-7xl">
           {/* Header */}
-          <div className="max-w-3xl mx-auto text-center px-2 mb-8 sm:mb-12">
+          <div className="max-w-3xl mx-auto text-center px-2 mb-6 sm:mb-8">
             <span className="block text-xs sm:text-[13px] font-bold uppercase tracking-[0.22em] text-[#38BDF8] mb-3">
               WHY NEOINTELLI
             </span>
@@ -249,14 +249,9 @@ export default function WhyNeoIntelliLifecycle() {
             </p>
           </div>
 
-          {/* Continuous Sinusoidal Wave Lifecycle Visualization (UniversalLifecycle) */}
-          <div className="mt-2 sm:mt-4">
-            <UniversalLifecycle
-              stages={stages}
-              id="why-neointelli-lifecycle"
-              theme="navy"
-              tagStyle="none"
-            />
+          {/* Hexagonal Radial Fan Lifecycle Visualization */}
+          <div>
+            <HexagonArcLifecycle stages={stages} id="why-neointelli-lifecycle" />
           </div>
         </div>
 
@@ -543,7 +538,7 @@ export default function WhyNeoIntelliLifecycle() {
                         aria-hidden="true"
                         className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white shadow-md border border-slate-100/90 flex items-center justify-center text-[#0D306C] group-hover:bg-[#169DC8] group-hover:text-white group-hover:scale-105 transition-all duration-300"
                       >
-                        <ArrowRight className="w-4 h-4 sm:w-4.5 sm:h-4.5 transition-transform group-hover:translate-x-0.5" />
+                        <ArrowRight className="w-4 h-4 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-0.5" />
                       </div>
                     </div>
                   </Link>

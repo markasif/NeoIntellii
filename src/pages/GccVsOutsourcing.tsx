@@ -251,16 +251,16 @@ export default function GccVsOutsourcing() {
                 <table className="w-full min-w-[700px] text-left border-collapse">
                   <thead>
                     <tr className="bg-[#F0F5FA] border-b border-[#D2DCF0]">
-                      <th className="py-4.5 px-6 text-xs font-mono font-bold uppercase tracking-wider text-[#505D74] w-1/4">
+                      <th className="py-4 px-6 text-xs font-mono font-bold uppercase tracking-wider text-[#505D74] w-1/4">
                         Factor
                       </th>
-                      <th className="py-4.5 px-6 text-xs font-mono font-bold uppercase tracking-wider text-[#0D306C] bg-[#00A3E0]/10 border-x border-[#00A3E0]/20 w-[37.5%]">
+                      <th className="py-4 px-6 text-xs font-mono font-bold uppercase tracking-wider text-[#0D306C] bg-[#00A3E0]/10 border-x border-[#00A3E0]/20 w-[37.5%]">
                         <div className="flex items-center gap-2">
                           <span className="w-2 h-2 rounded-full bg-[#00A3E0]" />
                           GCC (Captive Center)
                         </div>
                       </th>
-                      <th className="py-4.5 px-6 text-xs font-mono font-bold uppercase tracking-wider text-[#505D74] w-[37.5%]">
+                      <th className="py-4 px-6 text-xs font-mono font-bold uppercase tracking-wider text-[#505D74] w-[37.5%]">
                         IT Outsourcing
                       </th>
                     </tr>
@@ -405,13 +405,13 @@ export default function GccVsOutsourcing() {
                 <table className="w-full min-w-[600px] text-left border-collapse">
                   <thead>
                     <tr className="bg-[#F0F5FA] border-b border-[#D2DCF0]">
-                      <th className="py-4.5 px-6 text-xs font-mono font-bold uppercase tracking-wider text-[#505D74] w-1/3">
+                      <th className="py-4 px-6 text-xs font-mono font-bold uppercase tracking-wider text-[#505D74] w-1/3">
                         Cost Component
                       </th>
-                      <th className="py-4.5 px-6 text-xs font-mono font-bold uppercase tracking-wider text-[#0D306C] bg-[#00A3E0]/10 border-x border-[#00A3E0]/20 w-1/3">
+                      <th className="py-4 px-6 text-xs font-mono font-bold uppercase tracking-wider text-[#0D306C] bg-[#00A3E0]/10 border-x border-[#00A3E0]/20 w-1/3">
                         GCC (5 Years)
                       </th>
-                      <th className="py-4.5 px-6 text-xs font-mono font-bold uppercase tracking-wider text-[#505D74] w-1/3">
+                      <th className="py-4 px-6 text-xs font-mono font-bold uppercase tracking-wider text-[#505D74] w-1/3">
                         Outsourcing (5 Years)
                       </th>
                     </tr>

@@ -17,7 +17,7 @@ interface Props {
  * gradient on hover.
  */
 const iconChipClass = (active: boolean) =>
-  `mt-0.5 flex h-7.5 w-7.5 shrink-0 items-center justify-center rounded-lg border transition-colors duration-200 group-hover:border-transparent group-hover:text-white group-hover:[background-image:linear-gradient(90deg,#0e92b8_0%,#0a6f8e_50%,#0e92b8_100%)] ${
+  `mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border transition-colors duration-200 group-hover:border-transparent group-hover:text-white group-hover:[background-image:linear-gradient(90deg,#0e92b8_0%,#0a6f8e_50%,#0e92b8_100%)] ${
     active
       ? "border-[#0a93bd]/30 bg-white text-[#0a93bd]"
       : "border-[#0e1320]/08 bg-white text-[#0e1320]"

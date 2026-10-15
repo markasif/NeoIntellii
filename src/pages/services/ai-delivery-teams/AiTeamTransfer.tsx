@@ -34,6 +34,9 @@ import AiDeliveryTeamsSubnav from "@/components/shared/AiDeliveryTeamsSubnav";
 import InBrief from "@/components/ai-gcc/InBrief";
 import Section from "@/components/ai-gcc/Section";
 import UniversalLifecycle from "@/components/shared/UniversalLifecycle";
+import HexagonArcLifecycle, {
+  type HexagonLifecycleStage,
+} from "@/components/shared/HexagonArcLifecycle";
 import AmberChecklist from "@/components/shared/AmberChecklist";
 import AnswerBlock from "@/components/ai-gcc/AnswerBlock";
 import SmoothLineReveal from "@/components/gcc-operations/SmoothLineReveal";
@@ -57,6 +60,65 @@ const stages = [
   { step: "Reverse shadow", detail: "Your team leads the work and the delivery team supports. This is where readiness becomes visible.", icon: TrendingUp },
   { step: "Transfer", detail: "Ownership moves when the readiness checklist is satisfied, not when a date arrives.", icon: Heart },
   { step: "Scale", detail: "The internal team continues alone, grows into a Micro GCC, or becomes part of a broader AI GCC.", icon: Target },
+];
+
+const destinationStages: HexagonLifecycleStage[] = [
+  {
+    id: "01",
+    name: "Delivery team",
+    description: "Immediate roadmap execution",
+    icon: Code2,
+    href: "#why",
+  },
+  {
+    id: "02",
+    name: "Stabilise",
+    description: "Production & evaluation maturity",
+    icon: ShieldCheck,
+    href: "#not-bot",
+  },
+  {
+    id: "03",
+    name: "Recruit",
+    description: "Define & validate permanent roles",
+    icon: UserPlus,
+    href: "#recruiting-team",
+  },
+  {
+    id: "04",
+    name: "Pair",
+    description: "Engineers work on real production",
+    icon: Users,
+    href: "#stages",
+  },
+  {
+    id: "05",
+    name: "Shadow",
+    description: "Observe operations & incidents",
+    icon: Compass,
+    href: "#stages",
+  },
+  {
+    id: "06",
+    name: "Reverse shadow",
+    description: "Your team leads, ours supports",
+    icon: TrendingUp,
+    href: "#transfer-readiness",
+  },
+  {
+    id: "07",
+    name: "Transfer",
+    description: "Handover verified on checklist",
+    icon: LogOut,
+    href: "#transfer-readiness",
+  },
+  {
+    id: "08",
+    name: "Ownership",
+    description: "Internal team leads & scales",
+    icon: CheckCircle2,
+    href: "#recruiting-team",
+  },
 ];
 
 const readiness = [
@@ -271,20 +333,13 @@ export default function AiTeamTransfer() {
           width="wide"
           wavesOnMobile
         >
-          <UniversalLifecycle
-            theme="navy"
-            variant="navy"
-            steps={[
-              { name: "Delivery team", icon: Code2 },
-              { name: "Stabilise", icon: ShieldCheck },
-              { name: "Recruit", icon: UserPlus },
-              { name: "Pair", icon: Users },
-              { name: "Shadow", icon: Compass },
-              { name: "Reverse shadow", icon: TrendingUp },
-              { name: "Transfer", icon: LogOut },
-              { name: "Client ownership", icon: CheckCircle2 },
-            ]}
-          />
+          <div className="mb-10">
+            <HexagonArcLifecycle
+              stages={destinationStages}
+              centerTitle="OWNERSHIP"
+              id="destination-hexagon-lifecycle"
+            />
+          </div>
 
           {/* Three destination cards */}
           <div className="grid sm:grid-cols-3 gap-4 max-w-5xl mx-auto mt-10">
@@ -324,7 +379,7 @@ export default function AiTeamTransfer() {
           width="regular"
           align="center"
         >
-          <div className="max-w-4xl mx-auto text-[#505D74] text-sm sm:text-base lg:text-lg leading-relaxed font-normal space-y-6 text-left">
+          <div className="max-w-6xl mx-auto text-[#505D74] text-sm sm:text-base lg:text-lg leading-relaxed font-normal space-y-6 text-left">
             <p>
               Transfer needs someone to transfer to. Where you want internal ownership, NeoIntelli can recruit and
               technically validate the permanent roles: role calibration against the actual system, AI-assisted

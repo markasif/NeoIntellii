@@ -34,6 +34,10 @@ import {
   Rocket,
   Building2,
   Monitor,
+  Compass,
+  Laptop,
+  GitFork,
+  type LucideIcon,
 } from "lucide-react";
 import GccOperationsLayout from "@/components/gcc-operations/GccOperationsLayout";
 import OpsSection from "@/components/gcc-operations/OpsSection";
@@ -53,8 +57,30 @@ import BotJourney from "@/components/gcc-operations/BotJourney";
 import GccPerformanceFramework from "@/components/gcc-operations/GccPerformanceFramework";
 import SourceNote, { SCOPE_NOTE } from "@/components/gcc-operations/SourceNote";
 import SmoothLineReveal from "@/components/gcc-operations/SmoothLineReveal";
+import TypewriterParagraph from "@/components/gcc-operations/TypewriterParagraph";
 import OperatingRealitySection from "@/components/gcc-operations/OperatingRealitySection";
-import { gccOperationsPage, gccOperationsFaqs, PILLAR_LINKS, GCC_OPERATIONS_BASE } from "@/data/gccOperationsContent";
+import CommercialTransparencyGraphic from "@/components/gcc-operations/CommercialTransparencyGraphic";
+import SpecialistHiringMosaic from "@/components/ai-talent/SpecialistHiringMosaic";
+import { gccOperationsPage, gccOperationsFaqs, PILLAR_LINKS, GCC_OPERATIONS_BASE, GCC_OPERATIONS_CHILD_PAGES } from "@/data/gccOperationsContent";
+
+const OPS_ICONS: Record<string, LucideIcon> = {
+  people: Users,
+  workforce: Compass,
+  workplace: Laptop,
+  performance: BarChart3,
+  governance: ShieldCheck,
+  bot: GitFork,
+  scale: Layers,
+};
+
+const OPERATING_MODEL_PAGES = GCC_OPERATIONS_CHILD_PAGES.map((p) => ({
+  key: p.key,
+  name: p.cardTitle,
+  summary: p.summary,
+  path: p.path,
+  anchor: `Explore ${p.shortName}`,
+  icon: OPS_ICONS[p.key] || Users,
+}));
 
 const page = gccOperationsPage("overview");
 const faqs = gccOperationsFaqs[page.path];
@@ -250,10 +276,10 @@ export default function GccOperations() {
         align="center"
         width="wide"
       >
-        <SmoothLineReveal className="max-w-5xl mx-auto text-[#505D74] text-sm sm:text-base lg:text-lg leading-relaxed font-normal space-y-6 sm:space-y-7 text-left">
-          <p className="drop-cap-amber">
-            GCC managed services provide the local operating systems required to run a Global Capability Center without requiring the parent company to build every support function internally on day one. Depending on the model, this can include people operations, workplace and IT support, workforce planning, service management, governance, compliance coordination and transition support, while the client retains strategic ownership of the center.
-          </p>
+        <SmoothLineReveal className="max-w-6xl mx-auto text-[#505D74] text-sm sm:text-base lg:text-lg leading-relaxed font-normal space-y-6 sm:space-y-7 text-left">
+          <TypewriterParagraph
+            text="GCC managed services provide the local operating systems required to run a Global Capability Center without requiring the parent company to build every support function internally on day one. Depending on the model, this can include people operations, workplace and IT support, workforce planning, service management, governance, compliance coordination and transition support, while the client retains strategic ownership of the center."
+          />
           <p>
             This is different from outsourcing. In an outsourcing contract the vendor owns the team and the delivery. In a managed GCC the client owns the team, the intellectual property, the roadmap and the data. The partner runs the scaffolding: the hiring engine, the HR administration, the devices and access, the service desk, the operating reviews, the vendor relationships and the compliance workflows.
           </p>
@@ -411,13 +437,14 @@ export default function GccOperations() {
 
       <OpsSection
         id="operating-model"
-        eyebrow="THE OPERATING MODEL"
-        title="One operating model around the center."
-        intro="Seven operating functions, run as one accountable layer. Each has its own page with scope, responsibilities, buyer questions and the point where AI can help."
-        align="center"
         width="wide"
       >
-        <OperatingLayerGrid />
+        <SpecialistHiringMosaic
+          eyebrow="THE OPERATING MODEL"
+          title="One operating model around the center."
+          lead="Seven operating functions, run as one accountable layer. Each has its own page with scope, responsibilities, buyer questions and the point where AI can help."
+          pages={OPERATING_MODEL_PAGES}
+        />
       </OpsSection>
 
       <OpsSection
@@ -880,48 +907,14 @@ export default function GccOperations() {
               </Link>
             </div>
 
-            {/* 3 Metrics / Feature Pillars */}
-            <div className="grid grid-cols-3 divide-x divide-[#0D306C]/15 pt-6 sm:pt-8 border-t border-[#0D306C]/10 max-w-xl">
-              <div className="pr-4 sm:pr-6">
-                <div className="w-11 h-11 rounded-2xl bg-[#E1EEFA] text-[#008EC4] flex items-center justify-center mb-3 shadow-xs">
-                  <IndianRupee className="w-5 h-5 stroke-[2]" />
-                </div>
-                <p className="text-xs sm:text-sm font-semibold text-[#0D244D] leading-snug">
-                  Clear cost<br />breakdown
-                </p>
-              </div>
-
-              <div className="px-4 sm:px-6">
-                <div className="w-11 h-11 rounded-2xl bg-[#E1EEFA] text-[#008EC4] flex items-center justify-center mb-3 shadow-xs">
-                  <FileText className="w-5 h-5 stroke-[2]" />
-                </div>
-                <p className="text-xs sm:text-sm font-semibold text-[#0D244D] leading-snug">
-                  Aligned<br />reporting
-                </p>
-              </div>
-
-              <div className="pl-4 sm:pr-2">
-                <div className="w-11 h-11 rounded-2xl bg-[#E1EEFA] text-[#008EC4] flex items-center justify-center mb-3 shadow-xs">
-                  <BarChart3 className="w-5 h-5 stroke-[2]" />
-                </div>
-                <p className="text-xs sm:text-sm font-semibold text-[#0D244D] leading-snug">
-                  Better decisions<br />as you scale
-                </p>
-              </div>
-            </div>
+            {/* Feature labels (Clear cost / Aligned reporting / Better decisions)
+                now live inside the right pillar of the graphic, so the duplicated
+                row that used to sit here has been removed. */}
           </div>
 
-          {/* Right Column: 3D Stack Graphic - truly transparent background PNG */}
-          <div className="lg:col-span-6 xl:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[480px]">
-              <img
-                src="/images/services/gcc-operations/commercial-transparency-stack-transparent.webp"
-                alt="Commercial transparency: separated people cost, operating services, and project infrastructure"
-                className="w-full h-auto object-contain select-none pointer-events-none drop-shadow-md"
-                width={499}
-                height={499}
-              />
-            </div>
+          {/* Right Column: 3D Perspective Stepped Pillars Graphic */}
+          <div className="lg:col-span-6 xl:col-span-5 flex justify-center lg:justify-end w-full">
+            <CommercialTransparencyGraphic />
           </div>
         </div>
       </OpsSection>

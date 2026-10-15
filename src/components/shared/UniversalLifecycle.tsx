@@ -64,6 +64,7 @@ export interface UniversalLifecycleProps {
   theme?: LifecycleTheme;
   variant?: "default" | "employee-journey" | "workforce-model" | "navy" | string;
   tagStyle?: LifecycleTagStyle;
+  itemsLayout?: "inline" | "list";
 }
 
 /**
@@ -82,6 +83,7 @@ export default function UniversalLifecycle({
   theme: themeProp,
   variant = "default",
   tagStyle: tagStyleProp,
+  itemsLayout = "inline",
 }: UniversalLifecycleProps) {
   // Normalize input data
   const rawStages: LifecycleStageItem[] = useMemo(() => {
@@ -367,7 +369,11 @@ export default function UniversalLifecycle({
       {/* ========================================================================= */}
       <div
         className={`hidden lg:block relative ${
-          rawStages.some((s) => s.items && s.items.length > 0) ? "h-[620px]" : "h-[530px]"
+          rawStages.some((s) => s.items && s.items.length > 0)
+            ? itemsLayout === "list"
+              ? "h-[620px]"
+              : "h-[500px]"
+            : "h-[490px]"
         } w-full select-none transition-all duration-1000 ease-out delay-200 ${
           isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
@@ -483,9 +489,9 @@ export default function UniversalLifecycle({
                       }
                     }
                   }}
-                  className={`relative flex flex-col items-center group cursor-pointer transition-all duration-300 ${
+                  className={`relative flex flex-col items-center group cursor-pointer transition-all duration-300 scale-105 ${
                     isActive
-                      ? "scale-105"
+                      ? ""
                       : isPast
                       ? "opacity-95"
                       : "opacity-80 hover:opacity-100"
@@ -493,11 +499,11 @@ export default function UniversalLifecycle({
                 >
                   {/* Number Above Hexagon */}
                   <span
-                    className={`text-xs sm:text-sm font-mono font-bold mb-1.5 transition-all duration-300 ${
+                    className={`text-xs sm:text-sm font-mono font-bold mb-1.5 scale-110 transition-colors duration-300 ${
                       isActive
                         ? isNavy
-                          ? "text-[#38BDF8] font-extrabold scale-110 drop-shadow-[0_0_8px_rgba(56,189,248,0.7)]"
-                          : "text-[#169DC8] font-extrabold scale-110"
+                          ? "text-[#38BDF8] drop-shadow-[0_0_8px_rgba(56,189,248,0.7)]"
+                          : "text-[#169DC8]"
                         : isNavy
                         ? "text-[#38BDF8]/70"
                         : "text-[#169DC8]/80"
@@ -507,7 +513,7 @@ export default function UniversalLifecycle({
                   </span>
 
                   {/* Hexagon Icon Node matching NeoIntelli Brand Shape */}
-                  <div className="relative flex items-center justify-center w-13 h-14 z-20">
+                  <div className="relative flex items-center justify-center w-12 h-14 z-20">
                     {/* Solid masking backdrop to block background line */}
                     <div
                       className={`absolute inset-0.5 rounded-full -z-10 ${
@@ -533,12 +539,12 @@ export default function UniversalLifecycle({
 
                     <svg
                       viewBox="0 0 54 60"
-                      className={`w-12 h-13 transition-all duration-300 drop-shadow-md ${
+                      className={`w-12 h-12 transition-all duration-300 scale-110 ${
                         isActive
                           ? isNavy
-                            ? "scale-110 drop-shadow-[0_0_16px_rgba(56,189,248,0.45)]"
-                            : "scale-110 drop-shadow-lg"
-                          : "group-hover:scale-105"
+                            ? "drop-shadow-[0_0_16px_rgba(56,189,248,0.45)]"
+                            : "drop-shadow-lg"
+                          : "drop-shadow-md group-hover:drop-shadow-lg"
                       }`}
                     >
                       <polygon
@@ -585,7 +591,11 @@ export default function UniversalLifecycle({
                   {/* Stage Title & Details Below */}
                   <div
                     className={`mt-3.5 text-center ${
-                      numStages <= 5 ? "w-44 sm:w-52" : "w-36 sm:w-44"
+                      numStages <= 5
+                        ? "w-44 sm:w-52"
+                        : numStages === 6
+                        ? "w-40 sm:w-48"
+                        : "w-36 sm:w-44"
                     } flex flex-col items-center`}
                   >
                     <h3
@@ -630,33 +640,65 @@ export default function UniversalLifecycle({
 
                     {/* Detailed Framework Items (e.g. Business problem, Workflow, etc.) */}
                     {stage.items && stage.items.length > 0 && (
-                      <ul className="mt-2.5 space-y-1 list-none p-0 m-0 text-center">
-                        {stage.items.map((item) => (
-                          <li
-                            key={item}
-                            className={`text-[11px] leading-tight font-normal transition-colors duration-200 ${
-                              isNavy
-                                ? isActive
+                      itemsLayout === "inline" ? (
+                        <p
+                          className={`mt-2 text-[11px] sm:text-[11.5px] leading-relaxed font-normal text-center transition-colors duration-200 ${
+                            isNavy
+                              ? isActive
                                 ? "text-[#38BDF8]"
                                 : "text-[#93A5C8]"
                               : isActive
                               ? "text-[#0D306C] font-semibold"
                               : "text-[#505D74]"
-                            }`}
-                          >
-                            {ITEM_LINKS[item] ? (
-                              <Link
-                                to={ITEM_LINKS[item]}
-                                className="underline underline-offset-2 hover:text-[#169DC8] transition-colors"
-                              >
-                                {item}
-                              </Link>
-                            ) : (
-                              item
-                            )}
-                          </li>
-                        ))}
-                      </ul>
+                          }`}
+                        >
+                          {stage.items.map((item, idx) => (
+                            <React.Fragment key={item}>
+                              {ITEM_LINKS[item] ? (
+                                <Link
+                                  to={ITEM_LINKS[item]}
+                                  className="underline underline-offset-2 hover:text-[#169DC8] transition-colors"
+                                >
+                                  {item}
+                                </Link>
+                              ) : (
+                                <span>{item}</span>
+                              )}
+                              {idx < stage.items!.length - 1 && (
+                                <span className={isNavy ? "text-[#C5D7F0]/40" : "text-[#505D74]/50"}>, </span>
+                              )}
+                            </React.Fragment>
+                          ))}
+                        </p>
+                      ) : (
+                        <ul className="mt-2.5 space-y-1 list-none p-0 m-0 text-center">
+                          {stage.items.map((item) => (
+                            <li
+                              key={item}
+                              className={`text-[11px] leading-tight font-normal transition-colors duration-200 ${
+                                isNavy
+                                  ? isActive
+                                  ? "text-[#38BDF8]"
+                                  : "text-[#93A5C8]"
+                                : isActive
+                                ? "text-[#0D306C] font-semibold"
+                                : "text-[#505D74]"
+                              }`}
+                            >
+                              {ITEM_LINKS[item] ? (
+                                <Link
+                                  to={ITEM_LINKS[item]}
+                                  className="underline underline-offset-2 hover:text-[#169DC8] transition-colors"
+                                >
+                                  {item}
+                                </Link>
+                              ) : (
+                                item
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      )
                     )}
 
                     {/* Tag Pills (rendered only when no items are supplied) */}
@@ -721,7 +763,7 @@ export default function UniversalLifecycle({
                 {/* Node on Vertical Line - Hexagon Shape */}
                 <div
                   ref={index === computedStages.length - 1 ? lastNodeRef : undefined}
-                  className="relative z-10 -ml-6 sm:-ml-8 shrink-0 flex items-center justify-center w-12 h-13"
+                  className="relative z-10 -ml-6 sm:-ml-8 shrink-0 flex items-center justify-center w-12 h-12"
                 >
                   <svg
                     viewBox="0 0 54 60"
@@ -764,7 +806,7 @@ export default function UniversalLifecycle({
                         : "text-[#169DC8]"
                     }`}
                   >
-                    {IconComponent && <IconComponent className="w-4.5 h-4.5" />}
+                    {IconComponent && <IconComponent className="w-4 h-4" />}
                   </div>
                 </div>
 
@@ -819,29 +861,55 @@ export default function UniversalLifecycle({
 
                   {/* Detailed Framework Items */}
                   {stage.items && stage.items.length > 0 && (
-                    <ul className="mt-2 mb-1 flex flex-wrap gap-1.5 list-none p-0">
-                      {stage.items.map((item) => (
-                        <li
-                          key={item}
-                          className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10.5px] font-medium border ${
-                            isNavy
-                              ? "border-white/15 bg-white/5 text-[#C5D7F0]"
-                              : "border-[#D2DCF0] bg-white/90 text-[#3B4B68]"
-                          }`}
-                        >
-                          {ITEM_LINKS[item] ? (
-                            <Link
-                              to={ITEM_LINKS[item]}
-                              className="underline underline-offset-2 hover:text-[#169DC8] transition-colors"
-                            >
-                              {item}
-                            </Link>
-                          ) : (
-                            item
-                          )}
-                        </li>
-                      ))}
-                    </ul>
+                    itemsLayout === "inline" ? (
+                      <p
+                        className={`mt-1.5 text-xs sm:text-[13px] leading-relaxed font-normal ${
+                          isNavy ? "text-[#C5D7F0]" : "text-[#505D74]"
+                        }`}
+                      >
+                        {stage.items.map((item, idx) => (
+                          <React.Fragment key={item}>
+                            {ITEM_LINKS[item] ? (
+                              <Link
+                                to={ITEM_LINKS[item]}
+                                className="underline underline-offset-2 hover:text-[#169DC8] transition-colors"
+                              >
+                                {item}
+                              </Link>
+                            ) : (
+                              <span>{item}</span>
+                            )}
+                            {idx < stage.items!.length - 1 && (
+                              <span className={isNavy ? "text-[#C5D7F0]/40" : "text-[#505D74]/50"}>, </span>
+                            )}
+                          </React.Fragment>
+                        ))}
+                      </p>
+                    ) : (
+                      <ul className="mt-2 mb-1 flex flex-wrap gap-1.5 list-none p-0">
+                        {stage.items.map((item) => (
+                          <li
+                            key={item}
+                            className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10.5px] font-medium border ${
+                              isNavy
+                                ? "border-white/15 bg-white/5 text-[#C5D7F0]"
+                                : "border-[#D2DCF0] bg-white/90 text-[#3B4B68]"
+                            }`}
+                          >
+                            {ITEM_LINKS[item] ? (
+                              <Link
+                                to={ITEM_LINKS[item]}
+                                className="underline underline-offset-2 hover:text-[#169DC8] transition-colors"
+                              >
+                                {item}
+                              </Link>
+                            ) : (
+                              item
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    )
                   )}
 
                   {/* Mobile Tag Pill (rendered only when no items are supplied) */}

@@ -537,7 +537,7 @@ export default function GCCServices() {
             </div>
 
             {/* Workstreams that run together in transparent PillFeature design */}
-            <div className="max-w-4xl mx-auto mb-8 sm:mb-10 text-center">
+            <div className="max-w-6xl mx-auto mb-8 sm:mb-10 text-center">
               <p className="text-2xs font-mono font-bold uppercase tracking-[0.2em] text-[#008EC4] mb-4">
                 Workstreams that run together
               </p>
@@ -611,7 +611,7 @@ export default function GCCServices() {
           </ol>
 
           {/* Callout sentence and action buttons */}
-          <div className="mt-10 sm:mt-12 max-w-4xl mx-auto text-center">
+          <div className="mt-10 sm:mt-12 max-w-6xl mx-auto text-center">
             <p className="text-sm sm:text-base font-semibold text-[#0D306C] max-w-3xl mx-auto mb-6 leading-relaxed">
               Government incentives are treated as validated upside, not as the reason to choose a location or justify a GCC.
             </p>

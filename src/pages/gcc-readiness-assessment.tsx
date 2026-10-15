@@ -157,6 +157,9 @@ const QUESTION_STEPS = [
   { id: 8, stepNum: 8, title: "Industry Sector", short: "Business domain" },
 ];
 
+/** How many step nodes the mobile status bar shows at once (8 do not fit on phones). */
+const MOBILE_STEPS = 4;
+
 /* ------------------------------------------------------------------ */
 /* Scoring helpers (Preserved 100% exact logic) */
 /* ------------------------------------------------------------------ */
@@ -254,6 +257,12 @@ export default function GCCReadinessAssessment() {
 
   const question = questions[currentStep];
   const progress = ((currentStep + 1) / questions.length) * 100;
+  // The mobile status bar shows one window of 4 steps at a time; it advances to
+  // the next window once the current step moves past the first four.
+  const mobileWindowStart = Math.min(
+    QUESTION_STEPS.length - MOBILE_STEPS,
+    Math.floor(currentStep / MOBILE_STEPS) * MOBILE_STEPS,
+  );
 
   /* --- handlers --- */
 
@@ -546,45 +555,39 @@ export default function GCCReadinessAssessment() {
               {/* RIGHT COLUMN: Executive Navy Console (Rectangle Shape) */}
               {/* ============================================================ */}
               <div className="lg:col-span-8 xl:col-span-8 min-w-0 flex flex-col">
-                {/* MOBILE TOP STEPPER CARD: Clean, compact horizontal progress */}
-                <div className="block lg:hidden bg-white rounded-2xl border border-[#D2DCF0] p-4 sm:p-5 shadow-xs mb-6">
-                  {/* Top row with Question indicator & percent */}
-                  <div className="flex items-center justify-between gap-2 mb-2 pb-2.5 border-b border-[#E2E8F0]">
-                    <div className="flex items-center gap-2">
-                      <span className="text-2xs sm:text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#008EC4]">
-                        {showResults ? "ASSESSMENT RESULTS" : `QUESTION 0${currentStep + 1} OF 08`}
-                      </span>
+                {/* MOBILE TOP STATUS BAR: sleek 4-step tracker (matches gcc-cost-calculator), no white card */}
+                <div className="block lg:hidden mb-6 px-2">
+                  <div className="relative pt-1 pb-1">
+                    {/* Connector Track */}
+                    <div className="absolute top-[18px] left-7 right-7 h-[2.5px] bg-[#CBD5E1] rounded-full -z-0">
+                      <div
+                        className="h-full bg-[#10B981] rounded-full transition-all duration-300"
+                        style={{
+                          width: showResults
+                            ? "100%"
+                            : `${Math.min(
+                                100,
+                                Math.max(
+                                  0,
+                                  ((currentStep - mobileWindowStart) / (MOBILE_STEPS - 1)) * 100,
+                                ),
+                              )}%`,
+                        }}
+                      />
                     </div>
-                    <span className="text-2xs font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#00A3E0]/15 text-[#008EC4] border border-[#00A3E0]/30 tabular-nums">
-                      {showResults
-                        ? "100% COMPLETE"
-                        : `${Math.round(((currentStep + (answers[QUESTION_STEPS[currentStep]?.id] !== undefined ? 1 : 0)) / 8) * 100)}% COMPLETE`}
-                    </span>
-                  </div>
 
-                  {/* Current Question Milestone Title */}
-                  <div className="mb-3">
-                    <h3 className="text-sm sm:text-base font-extrabold font-manrope text-[#0D306C] tracking-tight">
-                      {showResults ? "Readiness Milestones Completed" : QUESTION_STEPS[currentStep]?.title}
-                    </h3>
-                    <p className="text-2xs text-[#505D74] mt-0.5 font-sans">
-                      {showResults
-                        ? "Review your objective score and strategic feasibility report below."
-                        : QUESTION_STEPS[currentStep]?.short}
-                    </p>
-                  </div>
-
-                  {/* 8-segment horizontal progress bar */}
-                  <div className="space-y-2">
-                    <div className="grid grid-cols-8 gap-1.5 w-full">
-                      {QUESTION_STEPS.map((s, idx) => {
+                    <div className="flex items-center justify-between relative z-10">
+                      {QUESTION_STEPS.slice(mobileWindowStart, mobileWindowStart + MOBILE_STEPS).map((s, i) => {
+                        const idx = mobileWindowStart + i;
                         const isAnswered = answers[s.id] !== undefined;
                         const isCurrent = idx === currentStep && !showResults;
+                        const isCompleted = isAnswered && !isCurrent;
+
                         return (
                           <button
                             key={s.id}
                             type="button"
-                            disabled={!isAnswered && !isCurrent}
+                            disabled={(!isAnswered && !isCurrent) || showResults}
                             onClick={() => {
                               if (isAnswered) {
                                 setDirection(idx < currentStep ? -1 : 1);
@@ -594,24 +597,62 @@ export default function GCCReadinessAssessment() {
                               }
                             }}
                             title={`Step ${s.stepNum}: ${s.title}`}
-                            className={`h-2.5 rounded-full transition-all cursor-pointer ${
-                              isAnswered
-                                ? "bg-[#10B981] hover:bg-[#059669]"
+                            className={`flex flex-col items-center group transition-all ${
+                              isCompleted
+                                ? "cursor-pointer"
                                 : isCurrent
-                                ? "bg-[#00A3E0] ring-2 ring-[#00A3E0]/30 shadow-xs"
-                                : "bg-[#E2E8F0]"
+                                ? "cursor-default"
+                                : "cursor-not-allowed opacity-60"
                             }`}
-                          />
+                          >
+                            <div
+                              className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${
+                                isCompleted
+                                  ? "bg-[#10B981] text-white shadow-xs group-hover:scale-105"
+                                  : isCurrent
+                                  ? "ring-4 ring-[#008EC4]/25 bg-[#0D306C] border-2 border-[#00A3E0] text-white shadow-xs"
+                                  : "bg-white border-2 border-[#CBD5E1] text-[#94A3B8]"
+                              }`}
+                            >
+                              {isCompleted ? (
+                                <Check className="w-4 h-4 stroke-[2.5]" aria-hidden="true" />
+                              ) : (
+                                <span className="text-xs font-bold font-mono">{s.stepNum}</span>
+                              )}
+                            </div>
+                            <span
+                              className={`text-xs font-manrope font-bold mt-1.5 transition-colors ${
+                                isCurrent
+                                  ? "text-[#0D306C]"
+                                  : isCompleted
+                                  ? "text-[#10B981]"
+                                  : "text-[#64748B]"
+                              }`}
+                            >
+                              Step {s.stepNum}
+                            </span>
+                            <span
+                              className={`text-2xs font-medium transition-colors text-center ${
+                                isCurrent
+                                  ? "text-[#008EC4] font-semibold"
+                                  : isCompleted
+                                  ? "text-[#505D74]"
+                                  : "text-[#94A3B8]"
+                              }`}
+                            >
+                              {s.short}
+                            </span>
+                          </button>
                         );
                       })}
                     </div>
 
-                    <div className="flex items-center justify-between text-3xs font-mono font-semibold text-[#505D74]">
-                      <span>Q1: Revenue</span>
+                    <div className="flex items-center justify-between mt-3 text-3xs font-mono font-semibold text-[#505D74]">
+                      <span>Q{mobileWindowStart + 1}</span>
                       <span className="text-[#008EC4] font-bold">
                         {showResults ? "8/8 Done" : `Step ${currentStep + 1} of 8`}
                       </span>
-                      <span>Q8: Sector</span>
+                      <span>Q{mobileWindowStart + MOBILE_STEPS}</span>
                     </div>
                   </div>
                 </div>
@@ -899,7 +940,7 @@ export default function GCCReadinessAssessment() {
         {/* ============================================================ */}
         {/* 3. PROVEN DELIVERY ENGINE & TRUST STRIP WITH WAVE DIVIDER */}
         {/* ============================================================ */}
-        <TrustStrip />
+        <TrustStrip waveFill="#E7EDF9" />
       </main>
 
       <Footer />

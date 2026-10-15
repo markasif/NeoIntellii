@@ -18,13 +18,17 @@ import {
   TrendingUp,
   BarChart3,
   ShieldCheck,
+  Code2,
+  Database,
+  ClipboardList,
+  Network,
+  Calculator,
 } from "lucide-react";
 import CapabilitiesSection from "@/components/ai-gcc/CapabilitiesSection";
 import InteractiveNumberCards from "@/components/shared/InteractiveNumberCards";
 import UniversalLifecycle from "@/components/shared/UniversalLifecycle";
 import DeliverablesList from "@/components/ai-gcc/DeliverablesList";
 import AnswerBlock from "@/components/ai-gcc/AnswerBlock";
-import IndustryChallengesGrid from "@/components/shared/IndustryChallengesGrid";
 import RecruitmentRealityCardGrid, {
   RECRUITMENT_INDUSTRIES,
 } from "@/components/recruitment/RecruitmentRealityCardGrid";
@@ -136,13 +140,13 @@ const successMetrics = [
 
 
 
-const rolesClosed = [
-  "Software engineers (backend, frontend, full-stack, mobile, platform)",
-  "Data engineers, ML engineers, AI/GenAI engineers, MLOps and data scientists",
-  "Product managers, design leads, technical program managers",
-  "Architects (enterprise, solution, cloud, data, security)",
-  "Finance, accounting, FP&A, internal audit and risk",
-  "Sales, business development, customer success and revenue operations",
+const roleCoverage = [
+  { icon: Code2, text: "Software engineers (backend, frontend, full-stack, mobile, platform)" },
+  { icon: Database, text: "Data engineers, ML engineers, AI/GenAI engineers, MLOps and data scientists" },
+  { icon: ClipboardList, text: "Product managers, design leads, technical program managers" },
+  { icon: Network, text: "Architects (enterprise, solution, cloud, data, security)" },
+  { icon: Calculator, text: "Finance, accounting, FP&A, internal audit and risk" },
+  { icon: TrendingUp, text: "Sales, business development, customer success and revenue operations" },
 ];
 
 const faqs = [
@@ -193,7 +197,7 @@ export default function Permanent() {
       </StatementSection>
 
       <Section id="why-it-matters" eyebrow="Why it matters" title="Why permanent hiring needs a specialist partner" width="regular" align="center">
-        <div className="space-y-6 text-[#505D74] text-sm sm:text-base leading-relaxed max-w-4xl mx-auto text-left">
+        <div className="space-y-6 text-[#505D74] text-sm sm:text-base leading-relaxed max-w-6xl mx-auto text-left">
           <p>
             Mid-to-senior mandates need a specific motion: deep market mapping, confidential outreach, structured assessment and a tight closing process. That is what we build every permanent search around.
           </p>
@@ -227,12 +231,10 @@ export default function Permanent() {
         id="roles"
         eyebrow="Coverage"
         title="Roles we close for India enterprises"
-        theme="navy"
-        width="wide"
+        width="regular"
         align="center"
-        wavesOnMobile
       >
-        <IndustryChallengesGrid items={rolesClosed} />
+        <DeliverablesList items={roleCoverage} iconBadge="hexagon" />
       </Section>
 
       <Section id="faqs" eyebrow="Clarifications" title="Frequently asked questions" width="regular" align="center">

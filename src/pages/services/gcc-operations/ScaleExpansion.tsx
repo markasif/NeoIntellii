@@ -523,7 +523,7 @@ export default function ScaleExpansion() {
       >
         {/* Left: Navy Outline Icon */}
         <div className="shrink-0 text-[#0D244D] group-hover:text-[#008EC4] transition-colors mt-0.5">
-          <IconComponent className="w-6 h-6 sm:w-6.5 sm:h-6.5 stroke-[1.8]" />
+          <IconComponent className="w-6 h-6 sm:w-6 sm:h-6 stroke-[1.8]" />
         </div>
 
         {/* Middle: Test Badge, Title & Description */}
@@ -559,7 +559,7 @@ export default function ScaleExpansion() {
       >
         {/* Left: Navy Outline Icon */}
         <div className="shrink-0 text-[#0D244D] group-hover:text-[#008EC4] transition-colors mt-0.5">
-          <IconComponent className="w-6 h-6 sm:w-6.5 sm:h-6.5 stroke-[1.8]" />
+          <IconComponent className="w-6 h-6 sm:w-6 sm:h-6 stroke-[1.8]" />
         </div>
 
         {/* Middle: Condition Badge, Title & Description */}
@@ -742,19 +742,19 @@ export default function ScaleExpansion() {
         {/* Modular "business card" grid - OperatingRealityCard design (no numbers) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 max-w-7xl mx-auto items-stretch">
           {[
-            { title: "AI-enabled productivity", desc: "Engineering, support and operations teams working with AI tools, measured on cycle time and quality.", icon: Zap, href: undefined },
-            { title: "Workflow redesign and automation", desc: "Eliminate, standardize and automate before adding people to a process.", icon: Workflow, href: undefined },
-            { title: "GenAI and agentic AI", desc: "Copilots, assistants and controlled agents built into the center's own products and operations.", icon: Bot, href: undefined },
-            { title: "Data capability", desc: "Data engineering and platform ownership that makes AI and analytics work possible.", icon: Database, href: undefined },
-            { title: "Platform ownership", desc: "Owning a platform end to end rather than delivering tickets on it.", icon: Building2, href: undefined },
-            { title: "Upskilling and new operating roles", desc: "Reskilling paths for existing teams and a small number of anchors in AI engineering, evaluation and AI governance.", icon: Users, href: undefined },
-            { title: "AI Engineering", desc: "Build the AI capability and automate operating processes.", icon: Code2, href: PILLAR_LINKS.aiEngineering },
-            { title: "AI Talent", desc: "Find and technically validate the AI, data and platform roles.", icon: Users, href: PILLAR_LINKS.aiTalent },
-            { title: "AI GCC", desc: "Build an AI-focused capability center, or turn the existing one into one.", icon: Globe, href: PILLAR_LINKS.aiGcc },
+            { title: "AI-enabled productivity", desc: "Engineering, support and operations teams working with AI tools, measured on cycle time and quality.", icon: Zap, href: undefined, image: "/images/services/ai-engineering/production_capability.webp" },
+            { title: "Workflow redesign and automation", desc: "Eliminate, standardize and automate before adding people to a process.", icon: Workflow, href: undefined, image: "/images/services/ai-engineering/Agentic_workflow.webp" },
+            { title: "GenAI and agentic AI", desc: "Copilots, assistants and controlled agents built into the center's own products and operations.", icon: Bot, href: undefined, image: "/images/services/ai-gcc/genai/agentic-ai.webp" },
+            { title: "Data capability", desc: "Data engineering and platform ownership that makes AI and analytics work possible.", icon: Database, href: undefined, image: "/images/services/ai-engineering/data-engineering-capability.webp" },
+            { title: "Platform ownership", desc: "Owning a platform end to end rather than delivering tickets on it.", icon: Building2, href: undefined, image: "/images/services/ai-engineering/mlops-platform-capability.webp" },
+            { title: "Upskilling and new operating roles", desc: "Reskilling paths for existing teams and a small number of anchors in AI engineering, evaluation and AI governance.", icon: Users, href: undefined, image: "/images/services/ai-talent/reskilling-academy.webp" },
+            { title: "AI Engineering", desc: "Build the AI capability and automate operating processes.", icon: Code2, href: PILLAR_LINKS.aiEngineering, image: "/images/services/ai-engineering/genai-capability.webp" },
+            { title: "AI Talent", desc: "Find and technically validate the AI, data and platform roles.", icon: Users, href: PILLAR_LINKS.aiTalent, image: "/images/services/ai-talent/aiml-recruitment.webp" },
+            { title: "AI GCC", desc: "Build an AI-focused capability center, or turn the existing one into one.", icon: Globe, href: PILLAR_LINKS.aiGcc, image: "/images/services/ai-gcc/ai-architecture.webp" },
           ].map((c) => (
             <OperatingRealityCard
               key={c.title}
-              item={{ title: c.title, desc: c.desc, icon: c.icon, href: c.href }}
+              item={{ title: c.title, desc: c.desc, icon: c.icon, href: c.href, image: c.image }}
             />
           ))}
         </div>

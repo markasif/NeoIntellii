@@ -105,21 +105,19 @@ const nextConfig = {
       { source: '/talent/staffing-solutions/', destination: '/services/gcc-operations/workforce-strategy', permanent: true },
       { source: '/sitemap', destination: '/sitemap.xml', permanent: true },
       // AI Talent consolidation: 301 permanent redirects consolidating legacy
-      // recruitment pages into the modern /services/ai-talent/* canonical hierarchy.
+      // AI Talent alias paths into the modern /services/ai-talent/* hierarchy.
+      //
+      // NOTE: the /recruitment/* routes are intentionally NOT redirected. The
+      // pages exist (pages/recruitment/*), are linked from the navbar, footer
+      // and sitemap, and render on client-side navigation. A server 301 here
+      // made a direct load / refresh of /recruitment (for example from
+      // /recruitment#recruitment-content) land on the AI Talent pages, while an
+      // in-app click rendered the recruitment page — a router inconsistency.
+      // The recruitment routes stay live so both paths resolve identically.
       { source: '/services/ai-data-recruitment', destination: '/services/ai-talent', statusCode: 301 },
       { source: '/services/ai-data-recruitment/', destination: '/services/ai-talent', statusCode: 301 },
       { source: '/services/ai-talent-acquisition', destination: '/services/ai-talent/recruitment-hub', statusCode: 301 },
       { source: '/services/ai-talent-acquisition/', destination: '/services/ai-talent/recruitment-hub', statusCode: 301 },
-      { source: '/recruitment', destination: '/services/ai-talent/recruitment-hub', statusCode: 301 },
-      { source: '/recruitment/', destination: '/services/ai-talent/recruitment-hub', statusCode: 301 },
-      { source: '/recruitment/permanent', destination: '/services/ai-talent/ai-ml-recruitment', statusCode: 301 },
-      { source: '/recruitment/permanent/', destination: '/services/ai-talent/ai-ml-recruitment', statusCode: 301 },
-      { source: '/recruitment/contract-staffing', destination: '/services/ai-delivery-teams', statusCode: 301 },
-      { source: '/recruitment/contract-staffing/', destination: '/services/ai-delivery-teams', statusCode: 301 },
-      { source: '/recruitment/rpo', destination: '/services/ai-talent/recruitment-hub', statusCode: 301 },
-      { source: '/recruitment/rpo/', destination: '/services/ai-talent/recruitment-hub', statusCode: 301 },
-      { source: '/recruitment/executive-search', destination: '/services/ai-talent/ai-leadership-executive-search', statusCode: 301 },
-      { source: '/recruitment/executive-search/', destination: '/services/ai-talent/ai-leadership-executive-search', statusCode: 301 },
       { source: '/sitemap/', destination: '/sitemap.xml', permanent: true },
       // GCC Operations & Managed Services pillar. The legacy operating pages were
       // consolidated into /services/gcc-operations; every old URL redirects in a

@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
+import TypewriterParagraph from "@/components/gcc-operations/TypewriterParagraph";
 
 interface InBriefProps {
   children: ReactNode;
@@ -57,7 +58,7 @@ export default function InBrief({ children, className = "", variant = "editorial
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-5xl mx-auto"
+        className="max-w-6xl mx-auto"
       >
         {/* 1. CENTERED HEADING & 2. AMBER UNDERLINE */}
         <div className="text-center mb-6 sm:mb-8 lg:mb-10">
@@ -74,11 +75,9 @@ export default function InBrief({ children, className = "", variant = "editorial
         </div>
 
         {/* 3. TRANSPARENT EDITORIAL PARAGRAPH WITH 4. LARGE AMBER DROP-CAP (#F19326) */}
-        <div className="max-w-5xl mx-auto text-[#505D74] text-sm sm:text-base lg:text-lg leading-relaxed font-normal space-y-6 sm:space-y-7 text-left">
+        <div className="max-w-6xl mx-auto text-[#505D74] text-sm sm:text-base lg:text-lg leading-relaxed font-normal space-y-6 sm:space-y-7 text-left">
           {typeof content === "string" ? (
-            <p className="drop-cap-amber-f19326">
-              {content}
-            </p>
+            <TypewriterParagraph text={content} className="drop-cap-amber-f19326" />
           ) : (
             <div className="drop-cap-amber-f19326">
               {content}

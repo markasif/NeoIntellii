@@ -50,7 +50,6 @@ import SmoothLineReveal from "@/components/gcc-operations/SmoothLineReveal";
 import Section from "@/components/ai-gcc/Section";
 import ResponsiveTable from "@/components/ai-gcc/ResponsiveTable";
 import CapabilitiesSection from "@/components/ai-gcc/CapabilitiesSection";
-import DataCapabilitiesGrid from "@/components/ai-gcc/DataCapabilitiesGrid";
 import UniversalLifecycle from "@/components/shared/UniversalLifecycle";
 import AmberChecklist from "@/components/shared/AmberChecklist";
 import AnswerBlock from "@/components/ai-gcc/AnswerBlock";
@@ -715,7 +714,7 @@ export default function AiDeliveryTeams() {
             headers={["Dimension", ...decisionColumns]}
             rows={decisionRows.map((r) => [r.dimension, ...r.values])}
           />
-          <div className="mt-4 max-w-4xl mx-auto text-center px-4">
+          <div className="mt-4 max-w-6xl mx-auto text-center px-4">
             <p className="text-[#505D74] text-xs sm:text-sm leading-relaxed font-normal">
               If the capability is core, permanent and you can absorb the hiring cycle, hire. If the scope is narrow and your own leads will direct it, staff augmentation is cheaper and simpler. The three delivery models below are for the cases in between, where someone has to own the outcome end to end.
             </p>
@@ -811,7 +810,7 @@ export default function AiDeliveryTeams() {
           headerClassName="max-w-5xl"
         >
           {/* Centered Sentence / Narrative */}
-          <div className="max-w-4xl mx-auto space-y-4 sm:space-y-5 text-[#505D74] text-base sm:text-lg leading-relaxed font-normal text-center mb-10 sm:mb-12">
+          <div className="max-w-6xl mx-auto space-y-4 sm:space-y-5 text-[#505D74] text-base sm:text-lg leading-relaxed font-normal text-center mb-10 sm:mb-12">
             <p>
               In many enterprises the prototype already works. Someone has demonstrated the model, the retrieval or the agent, and the demo is convincing. The work that follows is a different discipline.
             </p>
@@ -983,7 +982,7 @@ export default function AiDeliveryTeams() {
           width="wide"
           align="center"
         >
-          <DataCapabilitiesGrid items={measures} theme="light" />
+          <CapabilitiesSection items={measures} />
         </Section>
 
         {/* 14. Capability Transfer */}
@@ -995,7 +994,7 @@ export default function AiDeliveryTeams() {
           width="wide"
         >
           {/* Narrative sentence matching InBrief / above sentence text size and style */}
-          <div className="max-w-4xl mx-auto text-center text-sm sm:text-base md:text-lg text-[#2B3D66] font-normal leading-relaxed mb-10 sm:mb-12">
+          <div className="max-w-6xl mx-auto text-center text-sm sm:text-base md:text-lg text-[#2B3D66] font-normal leading-relaxed mb-10 sm:mb-12">
             <p>
               How much transfer happens, and when, depends on whether you have people to receive it. That is a joint decision, and it is why the recruitment and Micro GCC paths sit next to this one.
             </p>

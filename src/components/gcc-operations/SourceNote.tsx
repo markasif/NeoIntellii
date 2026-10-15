@@ -34,7 +34,7 @@ export default function SourceNote({
         isDark
           ? "bg-[#0A224E]/40 border-white/10 text-slate-300"
           : "bg-white/60 backdrop-blur-xs border-[#D2DCF0]/80 text-[#505D74]"
-      } py-2.5 px-3.5 sm:px-4 flex items-start sm:items-center gap-2.5 max-w-4xl mx-auto text-xs leading-relaxed ${className}`}
+      } py-2.5 px-3.5 sm:px-4 flex items-start sm:items-center gap-2.5 max-w-6xl mx-auto text-xs leading-relaxed ${className}`}
     >
       <Info className={`w-3.5 h-3.5 shrink-0 mt-0.5 sm:mt-0 ${isDark ? "text-[#38BDF8]" : "text-[#169DC8]"}`} />
       <p className="flex-1">

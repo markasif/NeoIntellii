@@ -164,7 +164,7 @@ export default function NeoIntelliHero({
   const renderCtaLink = (
     cta: HeroCtaItem,
     className: string,
-    extraProps?: Record<string, any>
+    extraProps?: Record<string, string | number | boolean | undefined>
   ) => {
     if (cta.isExternal || isExternalUrl(cta.href)) {
       return (

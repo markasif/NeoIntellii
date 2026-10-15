@@ -601,7 +601,7 @@ export default function HireAiMlEngineers() {
 
       {/* SECTION 1+2 - Hero with embedded form */}
       <section className="relative overflow-hidden px-6 sm:px-8 lg:px-12 pt-12 pb-14 md:pt-20 md:pb-20">
-        <AuroraBackdrop withVideo />
+        <AuroraBackdrop />
         <div className="absolute inset-0 opacity-50 md:opacity-80">
           <NeuralBackground colorA={NEURAL_COLOR_A} colorB={NEURAL_COLOR_B} density={56} intensity={0.55} />
         </div>
